@@ -5,5 +5,8 @@ import { InputComponent } from './input/input.component';
 @NgModule({
   imports: [CommonModule],
   declarations: [InputComponent],
+  exports: [
+    InputComponent
+  ]
 })
 export class InputsModule {}

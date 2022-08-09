@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'ria-poc-input',
+  selector: 'inputs-input',
   templateUrl: './input.component.html',
   styleUrls: ['./input.component.scss'],
 })

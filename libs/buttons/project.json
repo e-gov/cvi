@@ -1,7 +1,7 @@
 {
   "projectType": "library",
   "sourceRoot": "libs/buttons/src",
-  "prefix": "ria-poc",
+  "prefix": "buttons",
   "targets": {
     "test": {
       "executor": "@nrwl/jest:jest",
