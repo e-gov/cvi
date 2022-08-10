@@ -1,0 +1,380 @@
+.c-sidenav {
+  font-size: 14px;
+
+  a {
+    color: getColor(white);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+  }
+  //bootstrap overwrite
+  p{
+    margin:0;
+  }
+
+  .shadowClass {
+    box-shadow: inset 10px 0 20px -10px var(--color-sapphire-blue-15);
+  }
+  /* ---------------------------------------------------
+      SIDEBAR STYLE
+  ----------------------------------------------------- */
+
+  .wrapper {
+    display: flex;
+    align-items: stretch;
+  }
+
+  //overwrites bootstrap dropdown collapsing animation
+  .collapsing {
+    -webkit-transition: none;
+    transition: none;
+    display: none;
+  }
+
+  // gives expanded tabs active/hover styling
+  a[aria-expanded="true"] {
+    background: getColor(sapphire-blue-12);
+    font-weight: bold;
+    box-shadow: inset 10px 0 20px -10px getColor(sapphire-blue-15);
+  }
+
+  #sidebar {
+    background: getColor(sapphire-blue-10);
+  }
+
+  #sidebar ul li a {
+    border: 3px solid transparent;
+    border-bottom: 1px solid getColor(sapphire-blue-14);
+    box-sizing: border-box;
+    color: getColor(white);
+    display: flex;
+    align-items: center;
+    text-align: left;
+    padding-left: 31px;
+    p {
+      display: inline-block;
+      color: getColor(white);
+      padding-left: 20px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      .ie10up {
+        p {
+          position: relative;
+          width: 400px;
+          overflow: hidden;
+          display: -webkit-box;
+          line-height: 21px;
+          max-height: 44px;
+          -webkit-box-orient: vertical;
+          -moz-box-orient: vertical;
+        }
+
+        p::after {
+          letter-spacing: 0.1em;
+          content: "...";
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          padding: 0 10px 2px 45px;
+        }
+      }
+    }
+
+    &:hover {
+      background: getColor(sapphire-blue-12);
+      box-shadow: inset 10px 0 20px -10px getColor(sapphire-blue-15);
+    }
+
+    &:focus {
+      border-color: getColor(sapphire-blue-4);
+      border-bottom-width: 3px;
+    }
+  }
+
+  #sidebar.active a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+
+  }
+
+  // level definitions
+  #sidebar ul ul {
+    background: getColor(sapphire-blue-10);
+  }
+
+  #sidebar ul ul ul {
+    background: getColor(sapphire-blue-10);
+    a {
+      padding-left: 20px;
+    }
+  }
+
+  &--over-8 {
+    img {
+      height: 20px;
+      min-width: 20px;
+      opacity: 0.5;
+    }
+
+    #sidebar {
+      min-width: 200px;
+      max-width: 200px;
+      li {
+        min-width: 200px;
+        max-width: 200px;
+      }
+    }
+    #sidebar.active {
+      min-width: 57px;
+      max-width: 57px;
+      text-align: center;
+      li {
+        min-width: 57px;
+        max-width: 57px;
+        a p {
+          display: none;
+        }
+      }
+    }
+
+    #sidebar ul li a {
+      height: 50px;
+      padding-left: 17px;
+    }
+
+    #sidebar.active a {
+      display: flex;
+      justify-content: center;
+      padding: 0;
+    }
+
+    #sidebar ul ul {
+      position: absolute;
+
+      left: 200px;
+      margin-top: -50px;
+    }
+
+    #sidebar ul ul ul {
+      position: absolute;
+
+      left: 200px;
+      margin-top: -50px;
+    }
+    //changes between close and open text in nav header
+    #sidebar .sidenav-header img {
+      opacity: 1;
+      &:first-child {
+        display: none;
+      }
+    }
+    #sidebar.active .sidenav-header {
+      img:first-child {
+        display: block;
+      }
+      img {
+        display: none;
+      }
+    }
+  }
+  &--under-8 {
+    font-size: 18px;
+
+    img {
+      height: 32px;
+      min-width: 32px;
+      opacity: 0.5;
+    }
+
+    #sidebar li {
+      min-width: 280px;
+      max-width: 280px;
+      a {
+        height: 100px;
+        padding: 0 20px;
+
+        p {
+          text-align: center;
+          padding-left: 20px;
+        }
+      }
+    }
+
+    #sidebar.active {
+      font-size: 14px;
+
+      min-width: 144px;
+      max-width: 144px;
+      li {
+        min-width: 144px;
+        max-width: 144px;
+        a p {
+          padding-left: 0;
+        }
+      }
+
+      //changes between close and open text in nav header
+      .sidenav-header > div:last-child {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .sidenav-header > div:first-child {
+        display: none;
+      }
+    }
+
+    #sidebar ul ul {
+      position: absolute;
+      left: 280px;
+      margin-top: -100px;
+    }
+
+    #sidebar ul ul ul {
+      position: absolute;
+      left: 280px;
+      margin-top: -100px;
+    }
+
+    .sidenav-header div {
+      align-items: center;
+      display: flex;
+    }
+    //changes between close and open text in nav header
+    .sidenav-header img {
+      opacity: 1;
+    }
+    #sidebar .sidenav-header > div:last-child {
+      display: none;
+
+    }
+  }
+  &--mobile {
+    width: 375px;
+
+    img {
+      height: 24px;
+      min-width: 24px;
+      opacity: 0.5;
+    }
+
+    #sidebar.active {
+      display: none;
+    }
+
+    #sidebar {
+      min-width: 100%;
+      max-width: 100%;
+      a {
+        height: 50px;
+      }
+    }
+
+    // level definitions
+    #sidebar ul ul {
+      position: relative;
+
+      background: getColor(sapphire-blue-15);
+    }
+
+    #sidebar ul ul ul {
+      background: getColor(sapphire-blue-17);
+      a {
+        padding-left: 41px;
+      }
+    }
+  }
+
+  /* ---------------------------------------------------
+      CONTENT STYLE
+  ----------------------------------------------------- */
+
+  #content {
+    width: 100%;
+    padding: 20px;
+    min-height: 100vh;
+    transition: all 0.3s;
+  }
+
+  /* ---------------------------------------------------
+      MEDIAQUERIES
+  ----------------------------------------------------- */
+
+  @media only screen and (max-width: 375px) {
+    width: 375px;
+
+    img {
+      height: 24px;
+      min-width: 24px;
+      opacity: 0.5;
+    }
+
+    #content {
+      padding: 0;
+    }
+
+    #sidebar.active {
+      display: none;
+    }
+
+    #sidebar {
+      min-width: 100%;
+      max-width: 100%;
+      li {
+        min-width: 100%;
+        max-width: 100%;
+      }
+      a {
+        height: 50px;
+      }
+    }
+
+    // level definitions
+    #sidebar ul ul {
+      background: getColor(sapphire-blue-15);
+      position: relative;
+      left: 0;
+      margin-top: 0;
+    }
+
+    #sidebar ul ul ul {
+      background: getColor(sapphire-blue-17);
+      position: relative;
+      left: 0;
+      margin-top: 0;
+      a {
+        padding-left: 41px;
+      }
+    }
+  }
+}
+
+// For demonstration
+.c-mobile-header {
+  width: 375px;
+  height: 70px;
+  border-bottom: 1px solid getColor(sapphire-blue-14);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: getColor(sapphire-blue-10);
+
+  &.active {
+    background: getColor(white);
+  }
+
+  img {
+    height: 40px;
+    min-width: 35px;
+  }
+}

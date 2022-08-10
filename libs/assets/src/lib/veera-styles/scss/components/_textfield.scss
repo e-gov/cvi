@@ -1,0 +1,47 @@
+.c-textfield {
+  background: getColor(white);
+  border: 1px solid getColor(black-coral-5);
+  border-radius: 5px;
+  font-size: $o-font-size-base;
+  height: 40px;
+  width: 420px;
+  padding-left: 8px;
+
+  &:focus {
+    border: 2px solid getColor(sapphire-blue-10);
+  }
+
+  &:disabled {
+    background-color: getColor(black-coral-0);
+    border: 1px solid getColor(black-coral-5);
+  }
+}
+
+//To display labels and inputs correctly in example file
+.c-textfield-example-format {
+  form {
+    display: table;
+  }
+
+  div {
+    display: table-row;
+  }
+
+  .c-textfield-mobile{
+    display: block;
+  }
+
+  label {
+    display: table-cell;
+    padding-right: 16px;
+  }
+
+  input {
+    display: table-cell;
+  }
+  @media only screen and (max-width: 375px) {
+    div{
+      display: block;
+    }
+  }
+}

@@ -1,0 +1,4 @@
+// Returns variable as a CSS variable
+@function getColor($color-name) {
+  @return var(--color-#{$color-name});
+}

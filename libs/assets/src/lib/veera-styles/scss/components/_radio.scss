@@ -1,0 +1,45 @@
+.c-radio {
+  legend {
+    font-size: $o-font-size-base;
+  }
+
+  label {
+    cursor: pointer;
+    display: block;
+    font-size: $o-font-size-base;
+    line-height: 2.5;
+  }
+
+  :not(.lt-ie9) {
+    [type="radio"] {
+      border: 0;
+      clip: rect(0 0 0 0);
+      height: 1px;
+      width: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+    }
+
+    [type="radio"] + span::before {
+      border-radius: 1em;
+      border: 1px solid #8f91a8;
+      content: "";
+      display: inline-block;
+      height: 1em;
+      width: 1em;
+      margin-right: 0.75em;
+      vertical-align: -0.15em;
+    }
+
+    [type="radio"]:checked + span::before {
+      background: getColor(sapphire-blue-10);
+      box-shadow: inset 0 0 0 2px getColor(white);
+    }
+
+    [type="radio"]:focus + span {
+      outline: 1px dotted getColor(sapphire-blue-10);
+    }
+  }
+}

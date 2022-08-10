@@ -1,0 +1,259 @@
+.c-card {
+  background-color: getColor(white);
+  border-radius: 4px;
+  border: 1px solid getColor(black-coral-2);
+  font-family: $font-family-base;
+  width: 392px;
+
+  &--small {
+    height: 80px;
+  }
+
+  &--large {
+    height: 256px;
+  }
+
+  .title-row {
+    display: flex;
+  }
+
+  .card-title-icon {
+    height: 16px;
+    width: 16px;
+    margin-right: 12px;
+    margin-left: 28px;
+    margin-top: 13px;
+    vertical-align: middle;
+  }
+
+  .line {
+    border-color: getColor(black-coral-2);
+    border-top: 1px;
+    width: 343px;
+    margin: 0 25px;
+  }
+
+  h1 {
+    color: getColor(black-coral-10);
+    display: inline-flex;
+    font-size: 14px;
+    line-height: 22px;
+    text-transform: uppercase;
+    margin: 11px 0 2px 0;
+  }
+
+  h2 {
+    color: getColor(sapphire-blue-10);
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 27px;
+    margin: 7px 0 0 25px;
+  }
+
+  a {
+    color: getColor(sapphire-blue-10);
+    font-size: 14px;
+    line-height: 23px;
+    margin-right: 6px;
+  }
+
+  p {
+    padding-right: 8px;
+    margin: 0;
+  }
+
+  .link-divider {
+    margin: 8px 0 8px 25px;
+  }
+
+  th, td {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 21px;
+    padding: 4px 0 4px 25px;
+    text-align: left;
+  }
+
+  .card-columns {
+    column-count: 4;
+  }
+
+  &--info-arrow {
+    margin-top: 7px;
+    margin-right: 25px;
+    margin-left: 8px;
+  }
+
+  .arrow-rotate {
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+
+  .card-info-button {
+    color: getColor(sapphire-blue-10);
+    display: inline-flex;
+    font-size: 14px;
+    line-height: 22px;
+    margin-top: 11px;
+    margin-left: auto;
+    outline: none;
+  }
+
+}
+
+.c-card-cookie {
+  background-color: getColor(white);
+  border: 1px solid getColor(black-coral-2);
+  border-radius: 4px;
+  font-family: $font-family-base;
+  font-size: $o-font-size-sm;
+  height: 83px;
+  width: 323px;
+
+  p {
+    color: getColor(black);
+    font-size: 12px;
+    line-height: 18px;
+    margin: 0;
+    padding: 8px 8px 6px 8px;
+  }
+
+  a {
+    color: getColor(sapphire-blue-10);
+  }
+
+  &--buttons {
+    display: inline-flex;
+    width: 100%;
+    place-content: center;
+  }
+
+  &--btn-text {
+    border: 2px solid transparent;
+    color: getColor(sapphire-blue-10);
+    margin-right: 8px;
+    margin-top: 3px;
+    text-decoration: underline;
+
+
+    &:focus {
+      border: 2px solid getColor(sapphire-blue-10);
+      border-radius: 2px;
+    }
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  &--btn-primary {
+    background-color: getColor(sapphire-blue-10);
+    border: 2px solid getColor(sapphire-blue-10);
+    border-radius: 20px;
+    color: getColor(white);
+    width: 87px;
+    height: 25px;
+    margin-left: 8px;
+
+    &:hover {
+      background-color: getColor(sapphire-blue-13);
+      border-color: getColor(sapphire-blue-13);
+    }
+
+    &:focus {
+      box-shadow: inset 1px 0 0 getColor(white), inset -1px 0 0 getColor(white),
+      inset 0 1px 0 getColor(white), inset 0 -1px 0 getColor(white);
+    }
+  }
+}
+
+.c-list {
+  background-color: getColor(white);
+  border-radius: 4px;
+  border: 1px solid getColor(black-coral-2);
+  font-family: $font-family-base;
+
+  h1 {
+    color: getColor(sapphire-blue-10);
+    font-size: $o-font-size-lg;
+    font-weight: normal;
+    margin: 0;
+    line-height: 27px;
+  }
+
+  h2 {
+    color: #34394C;
+    font-size: $o-font-size-lg;
+    font-weight: normal;
+    line-height: 22px;
+    margin: 0;
+  }
+
+  p {
+    line-height: 22px;
+    font-size: 14px;
+    color: getColor(black-coral-10);
+    margin: 0;
+  }
+
+  .line {
+    border-color: getColor(black-coral-2);
+    width: auto;
+  }
+
+  &--price {
+    background-color: getColor(black-coral-1);
+  }
+
+  //mobile
+  @media only screen and (max-width: 767px) {
+    width: 340px;
+    height: 183px;
+    .price-break {
+      display: none;
+    }
+
+    &--text {
+      padding: 0 20px;
+    }
+
+    &--price {
+      border-bottom-left-radius: 4px;
+      border-bottom-right-radius: 4px;
+      text-align: center;
+      position: inherit;
+      padding: 15px;
+      margin-top: 10px;
+    }
+
+    .line {
+      margin-top: 35.89px;
+      margin-bottom: 7.11px;
+    }
+  }
+
+  //desktop
+  @media only screen and (min-width: 768px) {
+    width: 100%;
+    height: 135px;
+    display: flex;
+    .text-break {
+      display: none;
+    }
+
+    &--text {
+      padding-left: 25px;
+      flex: auto;
+    }
+
+    &--price {
+      float: right;
+      padding: 46px 61px 43px 51px;
+    }
+
+    .line {
+      margin: 30px 0 18px 0;
+    }
+  }
+}

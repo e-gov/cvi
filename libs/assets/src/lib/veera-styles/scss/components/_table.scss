@@ -1,0 +1,69 @@
+.c-table {
+  font-size: $o-font-size-base;
+  font-family: $font-family-base;
+  line-height: 1;
+
+  thead{
+    font-size: 14px;
+    color:getColor(black-coral-11);
+    border-bottom: 1px solid getColor(black-coral-7);
+
+    tr, th{
+      position: relative;
+    }
+
+    button{
+      position:absolute;
+      left:-1px;
+    }
+  }
+
+  tbody {
+    font-size: 16px;
+    tr{
+      border-bottom: 1px solid getColor(black-coral-2);
+      height:50px;
+    }
+    tr:last-child{
+      border-bottom: 1px solid getColor(black-coral-7);
+    }
+
+    td{
+      vertical-align: middle;
+      p {
+        margin: 0;
+        &[contenteditable="true"] {
+          width: 80%;
+          border: 1px solid getColor(black-coral-5);
+          padding: 8px;
+          border-radius: 5px;
+        }
+      }
+      &:last-child{
+        color: getColor(sapphire-blue-10);
+        button{
+          margin-left: 5px;
+        }
+        p{
+          display: inline;
+        }
+      }
+    }
+
+  }
+
+  tfoot{
+    display:flex;
+  }
+
+  button{
+    color: getColor(sapphire-blue-10);
+    text-decoration: underline;
+  }
+
+  &-footer{
+    ul {
+      display: flex;
+    }
+  }
+}

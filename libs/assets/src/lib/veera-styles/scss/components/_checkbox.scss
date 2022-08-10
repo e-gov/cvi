@@ -1,0 +1,64 @@
+.c-checkbox {
+  div {
+    box-sizing: border-box;
+    position: relative;
+  }
+  label {
+    cursor: pointer;
+    display: block;
+    font-size: $o-font-size-base;
+    line-height: 2.5;
+  }
+
+  [type="checkbox"] {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+
+  [type="checkbox"] + label::before {
+    border: 1px solid getColor(black-coral-2);
+    border-radius: 2px;
+    content: "";
+    display: inline-block;
+    height: 1em;
+    width: 1em;
+    margin-right: 0.75em;
+    vertical-align: -0.15em;
+  }
+
+  [type="checkbox"]:checked + label::before {
+    background: getColor(sapphire-blue-10);
+    border: 1px solid getColor(sapphire-blue-10);
+  }
+
+  [type="checkbox"] + label::after {
+    content: "";
+    display: inline-block;
+    height: 1em;
+    width: 1em;
+    position: absolute;
+    top: 0.5em;
+    left: 0.5em;
+    transform: rotate(0deg);
+  }
+
+  [type="checkbox"]:checked + label::after {
+    border-right: 0.1em solid getColor(white);
+    border-bottom: 0.1em solid getColor(white);
+    top: 0.9em;
+    left: 0.35em;
+    width: 0.3em;
+    height: 0.5em;
+    transform: rotate(45deg);
+  }
+
+  [type="checkbox"]:focus + label {
+    outline: 1px dotted getColor(sapphire-blue-10);
+  }
+}

@@ -1,0 +1,48 @@
+.c-dropdown {
+  box-sizing: border-box;
+  font-size: $o-font-size-base;
+  position: relative;
+  padding-left: 8px;
+
+  select {
+    background: getColor(white);
+    border: 1px solid getColor(black-coral-5);
+    border-radius: 5px;
+    cursor: pointer;
+    color: getColor(black-coral-10);
+    font-size: $o-font-size-base;
+    height: 40px;
+    padding-left: 8px;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+
+  /* Targetting Webkit browsers only. FF will show the dropdown arrow with so much padding. */
+  @media screen and (-webkit-min-device-pixel-ratio: 0) {
+    select {
+      padding-right: 18px;
+    }
+  }
+  &:after {
+    border-right: 0.25em solid getColor(black-coral-10);
+    border-bottom: 0.25em solid getColor(black-coral-10);
+    content: "";
+    height: 0.7em;
+    width: 0.7em;
+    transform: rotate(45deg);
+    right: 0.7em;
+    top: 0.2em;
+    position: absolute;
+    pointer-events: none;
+  }
+
+  &--large {
+    width: 420px;
+  }
+
+  &--small {
+    width: 140px;
+  }
+}

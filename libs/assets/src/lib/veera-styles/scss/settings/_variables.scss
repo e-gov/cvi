@@ -1,0 +1,51 @@
+// Font
+$font-family-base: 'Roboto', Arial, Helvetica, sans-serif !default;
+
+// Font sizes
+$o-font-size-base: 16px !default;
+$o-font-size-xs:   10px !default;
+$o-font-size-sm:   12px !default;
+$o-font-size-lg:   18px !default;
+$o-font-size-xl:   28px !default;
+$o-font-size-xxl:  36px !default;
+$o-font-size-xxxl: 48px !default;
+
+// Grid settings
+$grid-columns:      12 !default;
+$grid-gutter-width: 16px !default;
+
+// Grid breakpoints
+$grid-breakpoints: (
+  xs: 0,
+  sm: 601px,
+  md: 801px,
+  lg: 1025px,
+  xl: 1281px,
+  xxl: 1601px
+) !default;
+
+// Spacing
+$spacer: 5px !default;
+$spacers: () !default;
+$spacers: map-merge(
+  (
+    0: 0,
+    1: ($spacer * 1),
+    2: ($spacer * 2),
+    3: ($spacer * 3),
+    4: ($spacer * 4),
+    5: ($spacer * 5),
+    6: ($spacer * 6),
+    7: ($spacer * 7),
+    8: ($spacer * 8),
+    9: ($spacer * 9),
+    10: ($spacer * 10)
+  ),
+  $spacers
+);
+
+// Border radius
+$border-radius-base: 4px !default;
+
+// Fontawesome
+//$fa-font-path: "../assets/fontawesome" !default;

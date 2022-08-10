@@ -1,0 +1,54 @@
+.c-btn {
+  font-size: $o-font-size-base;
+  line-height: 1;
+  &--primary {
+    padding: 10px 30px;
+    color: getColor(white);
+    background-color: getColor(sapphire-blue-10);
+    border: 2px solid getColor(sapphire-blue-10);
+    border-radius: 20px;
+    &:hover {
+      background-color: getColor(sapphire-blue-13);
+      border-color: getColor(sapphire-blue-13);
+    }
+    &:focus {
+      box-shadow: inset 1px 0 0 getColor(white), inset -1px 0 0 getColor(white),
+        inset 0 1px 0 getColor(white), inset 0 -1px 0 getColor(white);
+    }
+    &:disabled {
+      color: getColor(black-coral-10);
+      background-color: getColor(black-coral-1);
+      border-color: getColor(black-coral-1);
+    }
+  }
+  &--secondary {
+    padding: 10px 30px;
+    color: getColor(black-coral-20);
+    background-color: getColor(white);
+    border: 2px solid getColor(black-coral-10);
+    border-radius: 20px;
+    &:hover {
+      border-color: getColor(black-coral-1);
+    }
+    &:focus {
+      border-color: getColor(sapphire-blue-10);
+    }
+    &:disabled {
+      background-color: getColor(black-coral-0);
+      border-color: getColor(black-coral-1);
+    }
+  }
+  &--text {
+    padding: 10px;
+    color: getColor(sapphire-blue-10);
+    text-decoration: underline;
+    border: 2px solid transparent;
+    &:hover {
+      text-decoration: none;
+    }
+    &:focus {
+      border: 2px solid getColor(sapphire-blue-10);
+      border-radius: 2px;
+    }
+  }
+}

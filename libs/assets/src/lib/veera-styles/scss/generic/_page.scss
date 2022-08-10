@@ -1,0 +1,26 @@
+body {
+  font-family: $font-family-base;
+  font-size: $o-font-size-base;
+  line-height: 1.47;
+}
+a, input, select, textarea, button {
+  transition: background-color 0.25s, color 0.25s, border-color 0.25s;
+}
+a {
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+.svg-icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
