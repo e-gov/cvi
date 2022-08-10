@@ -15,8 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@ria-poc/buttons": ["libs/buttons/src/index.ts"],
-      "@ria-poc/inputs": ["libs/inputs/src/index.ts"]
+      "@ria-poc/button": ["libs/button/src/index.ts"],
+      "@ria-poc/input": ["libs/input/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

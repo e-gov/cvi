@@ -2,8 +2,8 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
-    "buttons": "libs/buttons",
-    "inputs": "libs/inputs",
+    "button": "libs/button",
+    "input": "libs/input",
     "ria": "apps/ria",
     "ria-e2e": "apps/ria-e2e"
   }
