@@ -1,29 +1,29 @@
 {
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/storybook/src",
   "projectType": "library",
-  "sourceRoot": "libs/input/src",
-  "prefix": "inputs",
   "targets": {
-    "test": {
-      "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/input"],
-      "options": {
-        "jestConfig": "libs/input/jest.config.ts",
-        "passWithNoTests": true
-      }
-    },
     "lint": {
       "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["libs/input/**/*.ts", "libs/input/**/*.html"]
+        "lintFilePatterns": ["libs/storybook/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/storybook"],
+      "options": {
+        "jestConfig": "libs/storybook/jest.config.ts",
+        "passWithNoTests": true
       }
     },
     "storybook": {
       "executor": "@storybook/angular:start-storybook",
       "options": {
         "port": 4400,
-        "configDir": "libs/input/.storybook",
-        "browserTarget": "input:build-storybook",
+        "configDir": "libs/storybook/.storybook",
+        "browserTarget": "storybook:build-storybook",
         "compodoc": false
       },
       "configurations": {
@@ -36,9 +36,9 @@
       "executor": "@storybook/angular:build-storybook",
       "outputs": ["{options.outputDir}"],
       "options": {
-        "outputDir": "dist/storybook/input",
-        "configDir": "libs/input/.storybook",
-        "browserTarget": "input:build-storybook",
+        "outputDir": "dist/storybook/storybook",
+        "configDir": "libs/storybook/.storybook",
+        "browserTarget": "storybook:build-storybook",
         "compodoc": false
       },
       "configurations": {

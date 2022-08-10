@@ -13,7 +13,13 @@
         "polyfills": "apps/ria/src/polyfills.ts",
         "tsConfig": "apps/ria/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": ["apps/ria/src/favicon.ico", "apps/ria/src/assets", "libs/assets/src/lib/veera-styles/assets/Icons"],
+        "assets": ["apps/ria/src/favicon.ico", "apps/ria/src/assets",
+          {
+            "glob": "*",
+            "input": "libs/assets/src/lib/veera-styles/assets/Icons",
+            "output": "assets/Icons/"
+          }
+        ],
         "styles": ["apps/ria/src/styles.scss", "libs/assets/src/lib/veera-styles/scss/main.scss"],
         "scripts": []
       },

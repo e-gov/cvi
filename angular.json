@@ -6,6 +6,7 @@
     "button": "libs/button",
     "input": "libs/input",
     "ria": "apps/ria",
-    "ria-e2e": "apps/ria-e2e"
+    "ria-e2e": "apps/ria-e2e",
+    "storybook": "libs/storybook"
   }
 }
