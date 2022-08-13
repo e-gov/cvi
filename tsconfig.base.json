@@ -16,9 +16,8 @@
     "baseUrl": ".",
     "paths": {
       "@ria-poc/assets": ["libs/assets/src/index.ts"],
-      "@ria-poc/button": ["libs/button/src/index.ts"],
-      "@ria-poc/input": ["libs/input/src/index.ts"],
-      "@ria-poc/storybook": ["libs/storybook/src/index.ts"]
+      "@ria-poc/storybook": ["libs/storybook/src/index.ts"],
+      "@ria-poc/ui": ["libs/ui/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
