@@ -7,7 +7,7 @@
   @at-root {
     #{$base}__button {
       padding: get-spacing('rapla') get-spacing('viljandi');
-      border-radius: 999px;
+      border-radius: $veera-radius-pill;
 
       #{$base}--appearance-primary & {
         color: get-color(white);
@@ -51,8 +51,8 @@
           text-decoration: none;
         }
         &:focus {
-          border: 2px solid get-color(sapphire-blue-10);
-          border-radius: 2px;
+          border: $veera-border-width solid get-color(sapphire-blue-10);
+          border-radius: $veera-radius-xs;
         }
       }
       #{$base}--size-s & {
