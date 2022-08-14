@@ -1,9 +1,9 @@
 // Grid settings
-$grid-columns: 12;
-$grid-gutter-width: 16px;
+$veera-grid-columns: 12;
+$veera-grid-gutter-width: 16px;
 
 // Grid breakpoints
-$grid-breakpoints: (
+$veera-grid-breakpoints: (
   xs: 0,
   sm: 601px,
   md: 801px,
@@ -13,24 +13,24 @@ $grid-breakpoints: (
 );
 
 // Spacing
-$spacer: 5px;
-$spacers: ();
-$spacers: map-merge(
+$veera-spacer: 5px;
+$veera-spacers: ();
+$veera-spacers: map-merge(
   (
     0: 0,
-    1: ($spacer * 1),
-    2: ($spacer * 2),
-    3: ($spacer * 3),
-    4: ($spacer * 4),
-    5: ($spacer * 5),
-    6: ($spacer * 6),
-    7: ($spacer * 7),
-    8: ($spacer * 8),
-    9: ($spacer * 9),
-    10: ($spacer * 10)
+    1: ($veera-spacer * 1),
+    2: ($veera-spacer * 2),
+    3: ($veera-spacer * 3),
+    4: ($veera-spacer * 4),
+    5: ($veera-spacer * 5),
+    6: ($veera-spacer * 6),
+    7: ($veera-spacer * 7),
+    8: ($veera-spacer * 8),
+    9: ($veera-spacer * 9),
+    10: ($veera-spacer * 10)
   ),
-  $spacers
+  $veera-spacers
 );
 
 // Border radius
-$border-radius-base: 4px;
+$veera-border-radius-base: 4px;

@@ -1,12 +1,12 @@
-// Settings
+// Settings - Sass variables and mixins
 @import "settings/colors";
 @import "settings/variables";
 @import "settings/variables/typography";
 
-// Tools
+// Tools - Sass functions
 @import "tools/color";
 
-// Generic
+// Generic - global CSS styling and CSS at-rules
 @import "generic/reset";
 @import "generic/fonts";
 @import "generic/base";

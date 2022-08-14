@@ -1,6 +1,6 @@
 // Color codes
-$colors: (
-  
+$veera-colors: (
+
   // Black coral
   black-coral-0: #f0f0f2,
   black-coral-1: #e1e2e5,
@@ -23,7 +23,7 @@ $colors: (
   black-coral-18: #1a1b1f,
   black-coral-19: #111215,
   black-coral-20: #09090b,
-  
+
   // Dark tangerine
   dark-tangerine-0: #fff8e9,
   dark-tangerine-1: #fff1d3,
@@ -46,7 +46,7 @@ $colors: (
   dark-tangerine-18: #463205,
   dark-tangerine-19: #2f2104,
   dark-tangerine-20: #181102,
-  
+
   // Jasper
   jasper-0: #fbeded,
   jasper-1: #f7dbdb,
@@ -69,7 +69,7 @@ $colors: (
   jasper-18: #3b1111,
   jasper-19: #280c0c,
   jasper-20: #140606,
-  
+
   // Orange
   orange-0: #fff3e7,
   orange-1: #ffe7d0,
@@ -92,7 +92,7 @@ $colors: (
   orange-18: #462300,
   orange-19: #2f1800,
   orange-20: #180c00,
-  
+
   // Sapphire blue
   sapphire-blue-0: #e7f0f6,
   sapphire-blue-1: #d0e1ee,
@@ -147,7 +147,7 @@ $colors: (
 
 // Css variables
 :root {
-  @each $name, $color in $colors {
-    --color-#{'' + $name}: #{$color};
+  @each $name, $color in $veera-colors {
+    --veera-color-#{'' + $name}: #{$color};
   }
 }
