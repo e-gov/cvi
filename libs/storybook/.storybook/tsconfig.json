@@ -13,5 +13,8 @@
     "../**/*.stories.tsx",
     "../**/*.stories.mdx",
     "*.js"
+  ],
+  "files": [
+    "../../../globals.d.ts"
   ]
 }

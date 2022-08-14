@@ -1,4 +1,5 @@
 import { moduleMetadata, Story, Meta } from '@storybook/angular';
+import notes from './button.md';
 import { ButtonComponent } from './button.component';
 
 export default {
@@ -9,6 +10,7 @@ export default {
       imports: [],
     }),
   ],
+  parameters: { notes },
   argTypes: {
     appearance: {
       name: 'Appearance',
