@@ -29,7 +29,7 @@ const Template: Story<ButtonComponent> = (args: ButtonComponent) => ({
   props: args,
   /* template */
   template: `
-    <ria-poc-button [appearance]="appearance">{{ content }}</ria-poc-button>
+    <ria-poc-button [disabled]="disabled" [size]="size" [appearance]="appearance">{{ content }}</ria-poc-button>
   `
 });
 
