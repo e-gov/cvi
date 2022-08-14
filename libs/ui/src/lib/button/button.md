@@ -2,7 +2,7 @@
 
 Feature | Description
 - | -
-Selector | `veera-button`
+Selector | `ria-poc-button`
 Component name | `ButtonComponent`
 Design system name | Buttons
 Content | yes

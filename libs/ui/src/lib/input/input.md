@@ -2,7 +2,7 @@
 
 Feature | Description
 - | -
-Selector | `veera-input`
+Selector | `ria-poc-input`
 Component name | `InputComponent`
 Design system name | Form elements
 Content | no
