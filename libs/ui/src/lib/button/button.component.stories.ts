@@ -18,7 +18,8 @@ export default {
   },
   args: {
     content: 'Button label',
-    appearance: 'primary'
+    appearance: 'primary',
+    disabled: false
   },
 } as Meta<ButtonComponent>;
 
