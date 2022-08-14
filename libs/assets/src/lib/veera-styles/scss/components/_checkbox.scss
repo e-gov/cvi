@@ -22,7 +22,7 @@
   }
 
   [type="checkbox"] + label::before {
-    border: 1px solid getColor(black-coral-2);
+    border: 1px solid get-color(black-coral-2);
     border-radius: 2px;
     content: "";
     display: inline-block;
@@ -33,8 +33,8 @@
   }
 
   [type="checkbox"]:checked + label::before {
-    background: getColor(sapphire-blue-10);
-    border: 1px solid getColor(sapphire-blue-10);
+    background: get-color(sapphire-blue-10);
+    border: 1px solid get-color(sapphire-blue-10);
   }
 
   [type="checkbox"] + label::after {
@@ -49,8 +49,8 @@
   }
 
   [type="checkbox"]:checked + label::after {
-    border-right: 0.1em solid getColor(white);
-    border-bottom: 0.1em solid getColor(white);
+    border-right: 0.1em solid get-color(white);
+    border-bottom: 0.1em solid get-color(white);
     top: 0.9em;
     left: 0.35em;
     width: 0.3em;
@@ -59,6 +59,6 @@
   }
 
   [type="checkbox"]:focus + label {
-    outline: 1px dotted getColor(sapphire-blue-10);
+    outline: 1px dotted get-color(sapphire-blue-10);
   }
 }

@@ -34,12 +34,12 @@
     }
 
     [type="radio"]:checked + span::before {
-      background: getColor(sapphire-blue-10);
-      box-shadow: inset 0 0 0 2px getColor(white);
+      background: get-color(sapphire-blue-10);
+      box-shadow: inset 0 0 0 2px get-color(white);
     }
 
     [type="radio"]:focus + span {
-      outline: 1px dotted getColor(sapphire-blue-10);
+      outline: 1px dotted get-color(sapphire-blue-10);
     }
   }
 }

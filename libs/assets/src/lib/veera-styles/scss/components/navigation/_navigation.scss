@@ -2,7 +2,7 @@
   font-size: 14px;
 
   a {
-    color: getColor(white);
+    color: get-color(white);
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: normal;
@@ -33,27 +33,27 @@
 
   // gives expanded tabs active/hover styling
   a[aria-expanded="true"] {
-    background: getColor(sapphire-blue-12);
+    background: get-color(sapphire-blue-12);
     font-weight: bold;
-    box-shadow: inset 10px 0 20px -10px getColor(sapphire-blue-15);
+    box-shadow: inset 10px 0 20px -10px get-color(sapphire-blue-15);
   }
 
   #sidebar {
-    background: getColor(sapphire-blue-10);
+    background: get-color(sapphire-blue-10);
   }
 
   #sidebar ul li a {
     border: 3px solid transparent;
-    border-bottom: 1px solid getColor(sapphire-blue-14);
+    border-bottom: 1px solid get-color(sapphire-blue-14);
     box-sizing: border-box;
-    color: getColor(white);
+    color: get-color(white);
     display: flex;
     align-items: center;
     text-align: left;
     padding-left: 31px;
     p {
       display: inline-block;
-      color: getColor(white);
+      color: get-color(white);
       padding-left: 20px;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -87,12 +87,12 @@
     }
 
     &:hover {
-      background: getColor(sapphire-blue-12);
-      box-shadow: inset 10px 0 20px -10px getColor(sapphire-blue-15);
+      background: get-color(sapphire-blue-12);
+      box-shadow: inset 10px 0 20px -10px get-color(sapphire-blue-15);
     }
 
     &:focus {
-      border-color: getColor(sapphire-blue-4);
+      border-color: get-color(sapphire-blue-4);
       border-bottom-width: 3px;
     }
   }
@@ -108,11 +108,11 @@
 
   // level definitions
   #sidebar ul ul {
-    background: getColor(sapphire-blue-10);
+    background: get-color(sapphire-blue-10);
   }
 
   #sidebar ul ul ul {
-    background: getColor(sapphire-blue-10);
+    background: get-color(sapphire-blue-10);
     a {
       padding-left: 20px;
     }
@@ -284,11 +284,11 @@
     #sidebar ul ul {
       position: relative;
 
-      background: getColor(sapphire-blue-15);
+      background: get-color(sapphire-blue-15);
     }
 
     #sidebar ul ul ul {
-      background: getColor(sapphire-blue-17);
+      background: get-color(sapphire-blue-17);
       a {
         padding-left: 41px;
       }
@@ -341,14 +341,14 @@
 
     // level definitions
     #sidebar ul ul {
-      background: getColor(sapphire-blue-15);
+      background: get-color(sapphire-blue-15);
       position: relative;
       left: 0;
       margin-top: 0;
     }
 
     #sidebar ul ul ul {
-      background: getColor(sapphire-blue-17);
+      background: get-color(sapphire-blue-17);
       position: relative;
       left: 0;
       margin-top: 0;
@@ -363,14 +363,14 @@
 .c-mobile-header {
   width: 375px;
   height: 70px;
-  border-bottom: 1px solid getColor(sapphire-blue-14);
+  border-bottom: 1px solid get-color(sapphire-blue-14);
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background: getColor(sapphire-blue-10);
+  background: get-color(sapphire-blue-10);
 
   &.active {
-    background: getColor(white);
+    background: get-color(white);
   }
 
   img {

@@ -1,7 +1,7 @@
 .c-card {
-  background-color: getColor(white);
+  background-color: get-color(white);
   border-radius: 4px;
-  border: 1px solid getColor(black-coral-2);
+  border: 1px solid get-color(black-coral-2);
   font-family: $font-family-base;
   width: 392px;
 
@@ -27,14 +27,14 @@
   }
 
   .line {
-    border-color: getColor(black-coral-2);
+    border-color: get-color(black-coral-2);
     border-top: 1px;
     width: 343px;
     margin: 0 25px;
   }
 
   h1 {
-    color: getColor(black-coral-10);
+    color: get-color(black-coral-10);
     display: inline-flex;
     font-size: 14px;
     line-height: 22px;
@@ -43,7 +43,7 @@
   }
 
   h2 {
-    color: getColor(sapphire-blue-10);
+    color: get-color(sapphire-blue-10);
     font-weight: normal;
     font-size: 18px;
     line-height: 27px;
@@ -51,7 +51,7 @@
   }
 
   a {
-    color: getColor(sapphire-blue-10);
+    color: get-color(sapphire-blue-10);
     font-size: 14px;
     line-height: 23px;
     margin-right: 6px;
@@ -91,7 +91,7 @@
   }
 
   .card-info-button {
-    color: getColor(sapphire-blue-10);
+    color: get-color(sapphire-blue-10);
     display: inline-flex;
     font-size: 14px;
     line-height: 22px;
@@ -103,8 +103,8 @@
 }
 
 .c-card-cookie {
-  background-color: getColor(white);
-  border: 1px solid getColor(black-coral-2);
+  background-color: get-color(white);
+  border: 1px solid get-color(black-coral-2);
   border-radius: 4px;
   font-family: $font-family-base;
   font-size: $o-font-size-sm;
@@ -112,7 +112,7 @@
   width: 323px;
 
   p {
-    color: getColor(black);
+    color: get-color(black);
     font-size: 12px;
     line-height: 18px;
     margin: 0;
@@ -120,7 +120,7 @@
   }
 
   a {
-    color: getColor(sapphire-blue-10);
+    color: get-color(sapphire-blue-10);
   }
 
   &--buttons {
@@ -131,14 +131,14 @@
 
   &--btn-text {
     border: 2px solid transparent;
-    color: getColor(sapphire-blue-10);
+    color: get-color(sapphire-blue-10);
     margin-right: 8px;
     margin-top: 3px;
     text-decoration: underline;
 
 
     &:focus {
-      border: 2px solid getColor(sapphire-blue-10);
+      border: 2px solid get-color(sapphire-blue-10);
       border-radius: 2px;
     }
 
@@ -148,34 +148,34 @@
   }
 
   &--btn-primary {
-    background-color: getColor(sapphire-blue-10);
-    border: 2px solid getColor(sapphire-blue-10);
+    background-color: get-color(sapphire-blue-10);
+    border: 2px solid get-color(sapphire-blue-10);
     border-radius: 20px;
-    color: getColor(white);
+    color: get-color(white);
     width: 87px;
     height: 25px;
     margin-left: 8px;
 
     &:hover {
-      background-color: getColor(sapphire-blue-13);
-      border-color: getColor(sapphire-blue-13);
+      background-color: get-color(sapphire-blue-13);
+      border-color: get-color(sapphire-blue-13);
     }
 
     &:focus {
-      box-shadow: inset 1px 0 0 getColor(white), inset -1px 0 0 getColor(white),
-      inset 0 1px 0 getColor(white), inset 0 -1px 0 getColor(white);
+      box-shadow: inset 1px 0 0 get-color(white), inset -1px 0 0 get-color(white),
+      inset 0 1px 0 get-color(white), inset 0 -1px 0 get-color(white);
     }
   }
 }
 
 .c-list {
-  background-color: getColor(white);
+  background-color: get-color(white);
   border-radius: 4px;
-  border: 1px solid getColor(black-coral-2);
+  border: 1px solid get-color(black-coral-2);
   font-family: $font-family-base;
 
   h1 {
-    color: getColor(sapphire-blue-10);
+    color: get-color(sapphire-blue-10);
     font-size: $o-font-size-lg;
     font-weight: normal;
     margin: 0;
@@ -193,17 +193,17 @@
   p {
     line-height: 22px;
     font-size: 14px;
-    color: getColor(black-coral-10);
+    color: get-color(black-coral-10);
     margin: 0;
   }
 
   .line {
-    border-color: getColor(black-coral-2);
+    border-color: get-color(black-coral-2);
     width: auto;
   }
 
   &--price {
-    background-color: getColor(black-coral-1);
+    background-color: get-color(black-coral-1);
   }
 
   //mobile

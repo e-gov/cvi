@@ -5,8 +5,8 @@
 
   thead{
     font-size: 14px;
-    color:getColor(black-coral-11);
-    border-bottom: 1px solid getColor(black-coral-7);
+    color:get-color(black-coral-11);
+    border-bottom: 1px solid get-color(black-coral-7);
 
     tr, th{
       position: relative;
@@ -21,11 +21,11 @@
   tbody {
     font-size: 16px;
     tr{
-      border-bottom: 1px solid getColor(black-coral-2);
+      border-bottom: 1px solid get-color(black-coral-2);
       height:50px;
     }
     tr:last-child{
-      border-bottom: 1px solid getColor(black-coral-7);
+      border-bottom: 1px solid get-color(black-coral-7);
     }
 
     td{
@@ -34,13 +34,13 @@
         margin: 0;
         &[contenteditable="true"] {
           width: 80%;
-          border: 1px solid getColor(black-coral-5);
+          border: 1px solid get-color(black-coral-5);
           padding: 8px;
           border-radius: 5px;
         }
       }
       &:last-child{
-        color: getColor(sapphire-blue-10);
+        color: get-color(sapphire-blue-10);
         button{
           margin-left: 5px;
         }
@@ -57,7 +57,7 @@
   }
 
   button{
-    color: getColor(sapphire-blue-10);
+    color: get-color(sapphire-blue-10);
     text-decoration: underline;
   }
 

@@ -1,6 +1,6 @@
 .c-textfield {
-  background: getColor(white);
-  border: 1px solid getColor(black-coral-5);
+  background: get-color(white);
+  border: 1px solid get-color(black-coral-5);
   border-radius: 5px;
   font-size: $o-font-size-base;
   height: 40px;
@@ -8,11 +8,11 @@
   padding-left: 8px;
 
   &:focus {
-    border: 2px solid getColor(sapphire-blue-10);
+    border: 2px solid get-color(sapphire-blue-10);
   }
 
   &:disabled {
-    background-color: getColor(black-coral-0);
-    border: 1px solid getColor(black-coral-5);
+    background-color: get-color(black-coral-0);
+    border: 1px solid get-color(black-coral-5);
   }
 }

@@ -23,7 +23,7 @@
 
   a{
     text-decoration: underline;
-    color: getColor(sapphire-blue-10);
+    color: get-color(sapphire-blue-10);
   }
   .close {
     float: right;
@@ -42,23 +42,23 @@
   }
 
   &--info {
-    background-color: getColor(sapphire-blue-1);
-    border: 1px solid getColor(sapphire-blue-10);
+    background-color: get-color(sapphire-blue-1);
+    border: 1px solid get-color(sapphire-blue-10);
   }
 
   &--success {
-    background-color: getColor(sea-green-2);
-    border: 1px solid getColor(sea-green-10);
+    background-color: get-color(sea-green-2);
+    border: 1px solid get-color(sea-green-10);
   }
 
   &--warning {
-    background-color: getColor(dark-tangerine-2);
-    border: 1px solid getColor(dark-tangerine-11);
+    background-color: get-color(dark-tangerine-2);
+    border: 1px solid get-color(dark-tangerine-11);
   }
 
   &--error {
-    background-color: getColor(jasper-1);
-    border: 1px solid getColor(jasper-10);
+    background-color: get-color(jasper-1);
+    border: 1px solid get-color(jasper-10);
   }
   &--info-grayscale {
     background-color: #DDDDDD;
