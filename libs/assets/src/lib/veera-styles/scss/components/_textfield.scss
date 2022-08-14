@@ -1,18 +1,23 @@
-.c-textfield {
-  background: get-color(white);
-  border: 1px solid get-color(black-coral-5);
-  border-radius: $veera-border-radius-base;
-  font-size: $veera-font-size-base;
-  height: 40px;
-  width: 420px;
-  padding-left: 8px;
+@mixin veera-textfield($base: &) {
 
-  &:focus {
-    border: 2px solid get-color(sapphire-blue-10);
-  }
+  @at-root {
+    #{$base}__input {
+      background: get-color(white);
+      border: 1px solid get-color(black-coral-5);
+      border-radius: $veera-border-radius-base;
+      font-size: $veera-font-size-base;
+      height: 40px;
+      width: 420px;
+      padding-left: 8px;
 
-  &:disabled {
-    background-color: get-color(black-coral-0);
-    border: 1px solid get-color(black-coral-5);
+      &:focus {
+        border: 2px solid get-color(sapphire-blue-10);
+      }
+
+      &:disabled {
+        background-color: get-color(black-coral-0);
+        border: 1px solid get-color(black-coral-5);
+      }
+    }
   }
 }
