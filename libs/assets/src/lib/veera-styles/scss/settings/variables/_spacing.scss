@@ -1,7 +1,9 @@
 $veera-spacing-unit: 4px;
 
 $veera-spacing-patterns: (
+  'loksa': $veera-spacing-unit,
   'paldiski': 8px,
+  'rapla': 10px,
   'elva': 12px,
   'haapsalu': 16px,
   'valga': 20px,
@@ -9,3 +11,9 @@ $veera-spacing-patterns: (
   'viljandi': 30px,
   'narva': 60px,
 );
+
+:root {
+  @each $name, $size in $veera-spacing-patterns {
+    --veera-spacing-#{'' + $name}: #{$size};
+  }
+}

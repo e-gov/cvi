@@ -1,0 +1,4 @@
+// Returns variable as a CSS variable
+@function get-spacing($spacing-name) {
+  @return var(--veera-spacing-#{$spacing-name});
+}

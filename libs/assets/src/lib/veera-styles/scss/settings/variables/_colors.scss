@@ -145,7 +145,7 @@ $veera-colors: (
 
 );
 
-// Css variables
+// CSS variables
 :root {
   @each $name, $color in $veera-colors {
     --veera-color-#{'' + $name}: #{$color};
