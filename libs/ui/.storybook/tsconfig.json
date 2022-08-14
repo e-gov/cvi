@@ -12,5 +12,8 @@
     "../src/**/*.stories.tsx",
     "../src/**/*.stories.mdx",
     "*.js"
+  ],
+  "files": [
+    "../../../globals.d.ts"
   ]
 }
