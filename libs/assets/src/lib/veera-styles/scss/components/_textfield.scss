@@ -14,7 +14,7 @@
         border: 2px solid get-color(sapphire-blue-10);
       }
 
-      &:disabled {
+      #{$base}--is-disabled & {
         background-color: get-color(black-coral-0);
         border: 1px solid get-color(black-coral-5);
       }
