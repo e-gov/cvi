@@ -9,10 +9,17 @@ export default {
       imports: [],
     }),
   ],
+  args: {
+    content: 'Button label',
+  },
 } as Meta<ButtonComponent>;
 
 const Template: Story<ButtonComponent> = (args: ButtonComponent) => ({
   props: args,
+  /* template */
+  template: `
+    <ria-poc-button>{{ content }}</ria-poc-button>
+  `
 });
 
 export const Primary = Template.bind({});
