@@ -1,7 +1,10 @@
 // Settings - Sass variables and mixins
-@import "settings/colors";
-@import "settings/variables";
+@import "settings/variables/colors";
 @import "settings/variables/typography";
+@import "settings/variables/breakpoints";
+@import "settings/variables/grid";
+@import "settings/variables/spacing";
+@import "settings/variables/other";
 
 // Tools - Sass functions
 @import "tools/color";
