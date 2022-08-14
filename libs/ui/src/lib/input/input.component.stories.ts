@@ -1,4 +1,5 @@
 import { moduleMetadata, Story, Meta } from '@storybook/angular';
+import notes from './input.md';
 import { InputComponent } from './input.component';
 
 export default {
@@ -9,6 +10,7 @@ export default {
       imports: [],
     }),
   ],
+  parameters: { notes },
 } as Meta<InputComponent>;
 
 const Template: Story<InputComponent> = (args: InputComponent) => ({
