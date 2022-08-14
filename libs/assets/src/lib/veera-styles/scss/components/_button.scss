@@ -1,7 +1,7 @@
 @mixin veera-button($base: &) {
 
   font-size: $veera-font-size-base;
-  line-height: 1;
+  line-height: $veera-line-height-a;
   display: block;
 
   @at-root {
