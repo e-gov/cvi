@@ -15,6 +15,7 @@
     "*.js"
   ],
   "files": [
-    "../../../globals.d.ts"
+    "../../../globals.d.ts",
+    "../../ui/src/index.ts"
   ]
 }
