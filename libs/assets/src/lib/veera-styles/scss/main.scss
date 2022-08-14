@@ -6,23 +6,18 @@
 // Tools
 @import "tools/color";
 
-// Bootstrap mixins & grid
-//@import "bootstrap/mixins";
-//@import "bootstrap/bootstrap-grid";
-
 // Generic
 @import "generic/reset";
 @import "generic/page";
-@import "generic/typography";
 
 // Components
 @import "components/btn";
-@import "components/radio";
-@import "components/checkbox";
 @import "components/textfield";
-@import "components/dropdown";
-@import "components/textarea";
-@import "components/snackbar";
-@import "components/cards";
-@import "components/table";
-@import "components/navigation/navigation";
+// @import "components/radio";
+// @import "components/checkbox";
+// @import "components/dropdown";
+// @import "components/textarea";
+// @import "components/snackbar";
+// @import "components/cards";
+// @import "components/table";
+// @import "components/navigation/navigation";
