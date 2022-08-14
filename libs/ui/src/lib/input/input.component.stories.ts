@@ -5,11 +5,6 @@ import { InputComponent } from './input.component';
 export default {
   title: 'Angular/Input',
   component: InputComponent,
-  decorators: [
-    moduleMetadata({
-      imports: [],
-    }),
-  ],
   parameters: { notes },
 } as Meta<InputComponent>;
 

@@ -5,11 +5,6 @@ import { ButtonComponent } from './button.component';
 export default {
   title: 'Angular/Button',
   component: ButtonComponent,
-  decorators: [
-    moduleMetadata({
-      imports: [],
-    }),
-  ],
   parameters: { notes },
   argTypes: {
     appearance: {

@@ -1,4 +1,6 @@
+import { moduleMetadata } from '@storybook/angular';
 import { setCompodocJson } from '@storybook/addon-docs/angular';
+import { UiModule } from '@ria-poc/ui';
 import docJson from './documentation.json';
 
 setCompodocJson(docJson);
@@ -13,3 +15,11 @@ export const parameters = {
     },
   },
 };
+
+export const decorators = [
+  moduleMetadata({
+      imports: [
+        UiModule,
+      ]
+  }),
+];
