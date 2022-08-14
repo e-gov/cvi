@@ -1,6 +1,6 @@
 // Grid settings
-$grid-columns:      12 !default;
-$grid-gutter-width: 16px !default;
+$grid-columns: 12;
+$grid-gutter-width: 16px;
 
 // Grid breakpoints
 $grid-breakpoints: (
@@ -10,11 +10,11 @@ $grid-breakpoints: (
   lg: 1025px,
   xl: 1281px,
   xxl: 1601px
-) !default;
+);
 
 // Spacing
-$spacer: 5px !default;
-$spacers: () !default;
+$spacer: 5px;
+$spacers: ();
 $spacers: map-merge(
   (
     0: 0,
@@ -33,4 +33,4 @@ $spacers: map-merge(
 );
 
 // Border radius
-$border-radius-base: 4px !default;
+$border-radius-base: 4px;
