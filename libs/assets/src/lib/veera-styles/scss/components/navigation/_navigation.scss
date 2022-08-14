@@ -13,7 +13,7 @@
   }
 
   .shadowClass {
-    box-shadow: inset 10px 0 20px -10px var(--color-sapphire-blue-15);
+    box-shadow: inset 10px 0 20px -10px get-color(sapphire-blue-15);
   }
   /* ---------------------------------------------------
       SIDEBAR STYLE
