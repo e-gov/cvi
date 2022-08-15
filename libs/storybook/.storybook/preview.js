@@ -6,6 +6,9 @@ import docJson from './documentation.json';
 setCompodocJson(docJson);
 
 export const parameters = {
+  html: {
+    root: '[ng-version]',
+  },
   docs: {
     extractComponentDescription: (_, { notes }) => {
       if (notes) {
