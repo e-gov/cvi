@@ -1,5 +1,5 @@
-import { moduleMetadata, Story, Meta } from '@storybook/angular';
-import notes from './input.md';
+import { Story, Meta } from '@storybook/angular';
+import notes from './input.component.md';
 import { InputComponent } from './input.component';
 
 export default {

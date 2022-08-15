@@ -1,30 +1,41 @@
 import { Story, Meta } from '@storybook/angular';
-import notes from './button.component.md';
-import { ButtonComponent } from './button.component';
+import notes from './button.html.md';
 
 export default {
-  title: 'Angular/Button',
-  component: ButtonComponent,
-  parameters: { notes },
+  title: 'HTML/Button',
+  parameters: {
+    notes,
+    options: { selectedPanel: 'html/panel' },
+  },
   argTypes: {
     appearance: {
       name: 'Appearance',
       options: ['primary', 'secondary', 'text'],
       control: { type: 'inline-radio' },
     },
+    size: {
+      name: 'Size',
+      options: ['m', 's'],
+      control: { type: 'inline-radio' },
+    },
   },
   args: {
     content: 'Button label',
     appearance: 'primary',
+    size: 'm',
     disabled: false
   },
-} as Meta<ButtonComponent>;
+} as Meta;
 
-const Template: Story<ButtonComponent> = (args: ButtonComponent) => ({
+const Template: Story = args => ({
   props: args,
   /* template */
   template: `
-    <ria-poc-button [disabled]="disabled" [size]="size" [appearance]="appearance">{{ content }}</ria-poc-button>
+    <div
+      class="veera-button veera-button--appearance-{{ appearance }} veera-button--size-{{ size }}"
+    >
+      <button type="button" class="veera-button__button">{{ content }}</button>
+    </div>
   `
 });
 

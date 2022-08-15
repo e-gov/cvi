@@ -1,5 +1,5 @@
 import { Story, Meta } from '@storybook/angular';
-import notes from './form-item.md';
+import notes from './form-item.component.md';
 import { FormItemComponent } from './form-item.component';
 
 export default {
