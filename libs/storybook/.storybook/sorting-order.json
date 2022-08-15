@@ -1,6 +1,8 @@
 {
   "ids": [
     "Intro",
+    "Installation",
+    "Usage",
     "Styles",
     [
       "Design tokens",
