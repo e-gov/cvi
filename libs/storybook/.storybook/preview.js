@@ -2,6 +2,7 @@ import { moduleMetadata } from '@storybook/angular';
 import { setCompodocJson } from '@storybook/addon-docs/angular';
 import { UiModule } from '@ria-poc/ui';
 import docJson from './documentation.json';
+import sortingOrder from './sorting-order';
 
 setCompodocJson(docJson);
 
@@ -16,6 +17,11 @@ export const parameters = {
       }
       return null;
     },
+  },
+  options: {
+      storySort: {
+          order: sortingOrder.ids 
+      }
   },
 };
 
