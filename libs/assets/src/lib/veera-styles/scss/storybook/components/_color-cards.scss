@@ -1,0 +1,14 @@
+.c-color-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: get-spacing('haapsalu');
+  &__item-swatch {
+    aspect-ratio: 1;
+    border-radius: $veera-radius-s;
+    height: 140px;
+    background-color: var(--color);
+  }
+  &__item-label {
+    padding-top: get-spacing('paldiski');
+  }
+}

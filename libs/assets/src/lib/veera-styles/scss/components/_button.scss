@@ -8,7 +8,7 @@
     #{$base}__button {
       padding: get-spacing('rapla') get-spacing('viljandi');
       border-radius: $veera-radius-pill;
-      
+
       &:disabled {
         cursor: default;
       }

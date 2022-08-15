@@ -1,0 +1,26 @@
+.c-type-tester {
+  display: block;
+  margin-block: 1em;
+  line-height: 1.2;
+  &--size-base {
+    font-size: $veera-font-size-base;
+  }
+  &--size-xs {
+    font-size: $veera-font-size-xs;
+  }
+  &--size-sm {
+    font-size: $veera-font-size-sm;
+  }
+  &--size-lg {
+    font-size: $veera-font-size-lg;
+  }
+  &--size-xl {
+    font-size: $veera-font-size-xl;
+  }
+  &--size-xxl {
+    font-size: $veera-font-size-xxl;
+  }
+  &--size-xxxl {
+    font-size: $veera-font-size-xxxl;
+  }
+}

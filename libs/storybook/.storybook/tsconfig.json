@@ -16,6 +16,7 @@
   ],
   "files": [
     "../../../globals.d.ts",
-    "../../ui/src/index.ts"
+    "../../ui/src/index.ts",
+    "../src/lib/storybook.module.ts"
   ]
 }
