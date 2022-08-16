@@ -11,3 +11,7 @@ Permitted Sass components as children | -
 ## Where to use
 
 Styled text input. Use inside of `veera-form-item`.
+
+## How to use
+
+Add directly to HTML using `.veera-textfield*` classes or `@include` mixin `@veera-textfield` in your Sass code. When including the mixin, you can change the base class with `$base` parameter.
