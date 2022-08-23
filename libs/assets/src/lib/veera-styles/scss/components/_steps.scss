@@ -1,0 +1,97 @@
+@mixin veera-steps($base: &) {
+
+  $border-color: get-color(black-coral-2);
+  $number-border-width: 2px;
+
+  @at-root {
+    #{$base}__title {
+      font-size: $veera-font-size-350;
+      line-height: $veera-line-height-500;
+      font-weight: $veera-font-weight-alpha;
+      margin-bottom: get-spacing('haapsalu');
+    }
+    #{$base}__list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: get-spacing('paldiski');
+      list-style: none;
+      counter-reset: numberedlist;
+    }
+    #{$base}__list-item {
+      flex: 1 1 0;
+      padding: get-spacing('paldiski');
+      padding-top: get-spacing('valga');
+      background-color: get-color(white);
+      border: 1px solid $border-color;
+      border-radius: $veera-radius-m;
+      &.is-current {
+        font-weight: bold;
+      }
+    }
+    #{$base}__list-item-inner {
+      position: relative;
+      border-top: $number-border-width solid $border-color;
+      padding-top: inherit;
+      &::before {
+        content: counter(numberedlist);
+        counter-increment: numberedlist;
+        border-radius: 51%;
+        border: $number-border-width solid $border-color;
+        color: get-color(black-coral-6);
+        font-size: $veera-font-size-50;
+        line-height: 0;
+        aspect-ratio: 1;
+        padding-inline: 8px;
+        position: absolute;
+        top: -1px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: get-color(white);
+        transform: translateY(-50%);
+      }
+      #{$base}__list-item.is-current & {
+        border-top-color: transparent;
+        &::before {
+          content: '';
+          border-width: 9px;
+          border-color: get-color(sapphire-blue-10);
+          padding: 4px;
+        }
+      }
+    }
+    #{$base}__list-item-title {
+    }
+    #{$base}__content-panel {
+      border: 1px solid $border-color;
+      background-color: get-color(white);
+      padding-top: get-spacing('kuressaare');
+      padding-bottom: get-spacing('parnu');
+      padding-inline: 15%;
+      border-radius: $veera-radius-m;
+      margin-top: get-spacing('haapsalu');
+      &:not([hidden]) {
+        display: block;
+      }
+    }
+    #{$base}__content-panel-title {
+      font-size: $veera-font-size-250;
+      line-height: $veera-line-height-500;
+      margin-bottom: get-spacing('paldiski');
+      display: flex;
+      gap: get-spacing('paldiski');
+      align-items: center;
+      &::before {
+        content: '';
+        border-radius: 51%;
+        display: inline-block;
+        width: 26px;
+        height: 26px;
+        border: 9px solid get-color(sapphire-blue-10);
+        aspect-ratio: 1;
+        background-color: get-color(white);
+        padding: 4px;
+      }
+    }
+  }
+}

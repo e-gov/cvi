@@ -1,0 +1,10 @@
+<h1 *ngIf="title" class="veera-steps__title">{{ title }}</h1>
+<ol class="veera-steps__list">
+  <li class="veera-steps__list-item" *ngFor="let stepTitle of stepTitles; let i = index"
+    [ngClass]="{'is-past': i <= currentStepIndex, 'is-current': i === currentStepIndex}">
+    <div class="veera-steps__list-item-inner">
+      <span class="veera-steps__list-item-title">{{ stepTitle }}</span>
+    </div>
+  </li>
+</ol>
+<ng-content></ng-content>

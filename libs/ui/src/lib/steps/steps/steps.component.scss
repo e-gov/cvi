@@ -1,0 +1,59 @@
+@import '../../../styles/sass.scss';
+
+:host {
+  display: block;
+  width: 100%;
+  font-size: 14px;
+}
+
+.title {
+  font-size: 24px;
+}
+
+.steps {
+  padding: 0;
+  margin-top: 56px;
+  margin-bottom: 32px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+
+  @include screen(md) {
+    gap: 4px;
+  }
+}
+
+.is-past {
+
+  .step-line {
+    background-color: var(--purple);
+  }
+
+  .step-description {
+    font-weight: bold;
+  }
+
+}
+
+.step-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  gap: 4px;
+  align-items: center;
+}
+
+.step-line {
+  width: 100%;
+  margin: 0 10px;
+  height: 4px;
+  overflow: hidden;
+  display: inline-block;
+  background-color: var(--gray);
+}
+
+.step-description {
+  font-weight: var(--normal);
+  text-align: center;
+  padding: 0 10px;
+}

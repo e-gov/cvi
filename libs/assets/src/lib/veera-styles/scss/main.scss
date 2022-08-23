@@ -1,37 +1,38 @@
 // Settings - Sass variables and mixins
-@import "settings/variables/colors";
-@import "settings/variables/typography";
-@import "settings/variables/breakpoints";
-@import "settings/variables/grid";
-@import "settings/variables/spacing";
-@import "settings/variables/other";
-@import "settings/mixins";
-@import "settings/utility-classes";
+@import 'settings/variables/colors';
+@import 'settings/variables/typography';
+@import 'settings/variables/breakpoints';
+@import 'settings/variables/grid';
+@import 'settings/variables/spacing';
+@import 'settings/variables/other';
+@import 'settings/mixins';
+@import 'settings/utility-classes';
 
 // Tools - Sass functions
-@import "tools/color";
-@import "tools/spacing";
+@import 'tools/color';
+@import 'tools/spacing';
 
 // Generic - global CSS styling and CSS at-rules
-@import "generic/reset";
-@import "generic/fonts";
-@import "generic/base";
+@import 'generic/reset';
+@import 'generic/fonts';
+@import 'generic/base';
 
 // Components
-@import "components/button";
-@import "components/textfield";
-@import "components/form-item";
-// @import "components/radio";
-// @import "components/checkbox";
-// @import "components/dropdown";
-// @import "components/textarea";
-// @import "components/snackbar";
-// @import "components/cards";
-// @import "components/table";
-// @import "components/navigation/navigation";
+@import 'components/button';
+@import 'components/textfield';
+@import 'components/form-item';
+@import 'components/steps';
+// @import 'components/radio';
+// @import 'components/checkbox';
+// @import 'components/dropdown';
+// @import 'components/textarea';
+// @import 'components/snackbar';
+// @import 'components/cards';
+// @import 'components/table';
+// @import 'components/navigation/navigation';
 
-@import "apply";
+@import 'apply';
 
-@import "storybook/components/color-cards";
-@import "storybook/components/type-tester";
-@import "storybook/components/spacing-specimen";
+@import 'storybook/components/color-cards';
+@import 'storybook/components/type-tester';
+@import 'storybook/components/spacing-specimen';
