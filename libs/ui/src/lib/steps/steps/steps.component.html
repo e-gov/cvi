@@ -8,3 +8,7 @@
   </li>
 </ol>
 <ng-content></ng-content>
+<div *ngIf="this.stepChildren.length > 1" class="veera-steps__directional-buttons">
+  <button *ngIf="this.currentStepIndex > 0" class="veera-steps__directional-button veera-steps__directional-button--direction-prev" (click)="(this.currentStepIndex = this.currentStepIndex - 1)">&lt; {{ this.stepTitles[this.currentStepIndex - 1]}}</button>
+  <button *ngIf="this.currentStepIndex < this.stepChildren.length - 1" class="veera-steps__directional-button veera-steps__directional-button--direction-next" (click)="(this.currentStepIndex = this.currentStepIndex + 1)">{{ this.stepTitles[this.currentStepIndex + 1] }} &gt;</button>
+</div>

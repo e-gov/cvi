@@ -38,8 +38,6 @@ const Template: Story<StepsComponent> = (args: StepsComponent) => ({
       <ria-poc-step title="Thirrrrd">{{ stepsContent[2] }}</ria-poc-step>
       <ria-poc-step title="4ourth">{{ stepsContent[3] }}</ria-poc-step>
     </ria-poc-steps>
-    <ria-poc-button (click)="(this.currentStepIndex = this.currentStepIndex > 0 ? this.currentStepIndex - 1 : 0)">Back</ria-poc-button>
-    <ria-poc-button (click)="(this.currentStepIndex = this.currentStepIndex < this.stepsContent.length - 1 ? this.currentStepIndex + 1 : this.stepsContent.length - 1)">Next</ria-poc-button>
   `
 });
 

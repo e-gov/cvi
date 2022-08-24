@@ -1,5 +1,6 @@
 @mixin veera-steps($base: &) {
 
+  $background-color: get-color(white);
   $border-color: get-color(black-coral-2);
   $number-border-width: 2px;
 
@@ -21,7 +22,7 @@
       flex: 1 1 0;
       padding: get-spacing('paldiski');
       padding-top: get-spacing('valga');
-      background-color: get-color(white);
+      background-color: $background-color;
       border: 1px solid $border-color;
       border-radius: $veera-radius-m;
       &.is-current {
@@ -47,7 +48,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: get-color(white);
+        background-color: $background-color;
         transform: translateY(-50%);
       }
       #{$base}__list-item.is-current & {
@@ -64,11 +65,12 @@
     }
     #{$base}__content-panel {
       border: 1px solid $border-color;
-      background-color: get-color(white);
+      background-color: $background-color;
       padding-top: get-spacing('kuressaare');
       padding-bottom: get-spacing('parnu');
       padding-inline: 15%;
-      border-radius: $veera-radius-m;
+      border-top-left-radius: $veera-radius-m;
+      border-top-right-radius: $veera-radius-m;
       margin-top: get-spacing('haapsalu');
       &:not([hidden]) {
         display: block;
@@ -89,8 +91,29 @@
         height: 26px;
         border: 9px solid get-color(sapphire-blue-10);
         aspect-ratio: 1;
-        background-color: get-color(white);
+        background-color: $background-color;
         padding: 4px;
+      }
+    }
+    #{$base}__directional-buttons {
+      display: flex;
+      justify-content: space-between;
+      border-bottom-left-radius: $veera-radius-m;
+      border-bottom-right-radius: $veera-radius-m;
+      border: 1px solid $border-color;
+      border-top: none;
+    }
+    #{$base}__directional-button {
+      text-decoration: underline;
+      padding-inline: get-spacing('kuressaare');
+      padding-block: get-spacing('haapsalu');
+      color: get-color(sapphire-blue-10);
+      font-size: $veera-font-size-100;
+      &--direction-prev {
+        margin-right: auto;
+      }
+      &--direction-next {
+        margin-left: auto;
       }
     }
   }
