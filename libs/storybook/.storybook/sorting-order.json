@@ -1,0 +1,24 @@
+{
+  "ids": [
+    "Intro",
+    "Installation",
+    "Usage",
+    "Styles",
+    [
+      "Design tokens",
+      ["Colors", "Typography", "Spacing"]
+    ],
+    "HTML",
+    [
+      "Button",
+      "Form item",
+      "Input"
+    ],
+    "Angular",
+    [
+      "Button",
+      "Form item",
+      "Input"
+    ]
+  ]
+}

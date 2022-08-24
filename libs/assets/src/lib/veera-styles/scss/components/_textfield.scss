@@ -1,0 +1,24 @@
+@mixin veera-textfield($base: &) {
+
+  @at-root {
+    #{$base}__input {
+      background: get-color(white);
+      border: 1px solid get-color(black-coral-5);
+      border-radius: $veera-radius-s;
+      font-size: $veera-font-size-base;
+      height: 40px;
+      min-width: 200px;
+      max-width: 420px;
+      padding-left: 8px;
+
+      &:focus {
+        border: 2px solid get-color(sapphire-blue-10);
+      }
+
+      #{$base}--is-disabled & {
+        background-color: get-color(black-coral-0);
+        border: 1px solid get-color(black-coral-5);
+      }
+    }
+  }
+}

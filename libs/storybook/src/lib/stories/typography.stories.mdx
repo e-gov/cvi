@@ -1,0 +1,30 @@
+import { Meta, Story } from '@storybook/addon-docs';
+
+<Meta title="Styles/Design tokens/Typography" parameters={{ viewMode: 'docs', layout: 'fullscreen' }} />
+
+export const sizes = [
+  { name: 'xs', value: 10 }, 
+  { name: 'sm', value: 12 }, 
+  { name: 'base', value: 16 },
+  { name: 'lg', value: 18 }, 
+  { name: 'xl', value: 28 },
+  { name: 'xxl', value: 36 },
+  { name: 'xxxl', value: 48 },
+];
+
+# Font size scale
+
+See [information on typography on the Veera Design System page](https://veera.eesti.ee/3d136290e/p/070c6e-tpograafia/b/1507db). 
+
+Veera has many font sizes to choose from. 
+
+You can pick a font size by employing Sass variables (prefixed with `$veera-font-size`).
+
+<Story name="Font sizes" height="650px">
+  {{
+    props: { sizes },
+    template: `
+      <ria-poc-storybook-type-tester *ngFor="let size of sizes" [size]="size.name">Font size: {{ size.value }}px. City trail fallen select drop she tower else flight glass.</ria-poc-storybook-type-tester>
+    `,
+  }}
+</Story>

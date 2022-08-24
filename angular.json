@@ -1,0 +1,11 @@
+{
+  "$schema": "./node_modules/nx/schemas/workspace-schema.json",
+  "version": 2,
+  "projects": {
+    "assets": "libs/assets",
+    "ria": "apps/ria",
+    "ria-e2e": "apps/ria-e2e",
+    "storybook": "libs/storybook",
+    "ui": "libs/ui"
+  }
+}
