@@ -18,7 +18,9 @@
     [
       "Button",
       "Form item",
-      "Input"
+      "Input",
+      "Steps",
+      ["Steps", "Step"]
     ]
   ]
 }

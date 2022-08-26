@@ -12,6 +12,12 @@ export default {
       options: ['primary', 'secondary', 'text'],
       control: { type: 'inline-radio' },
     },
+    content: {
+      name: 'Content',
+      table: {
+        category: 'Playground',
+      },
+    },
   },
   args: {
     content: 'Button label',
