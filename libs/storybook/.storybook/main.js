@@ -21,4 +21,5 @@ module.exports = {
 
     return config;
   },
+  staticDirs: ['../../assets/src/lib/veera-styles/assets'],
 };
