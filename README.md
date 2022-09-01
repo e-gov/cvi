@@ -8,7 +8,7 @@
 
 [Interactive Tutorial](https://nx.dev/react-tutorial/01-create-application)
 
-## Understand your workspace
+## Running the Storybook
 
 Run `npm run storybook` to build documentation and run the Storybook locally.
 
