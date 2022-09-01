@@ -1,0 +1,20 @@
+@mixin veera-labeled-icon($base: &) {
+  @at-root {
+    #{$base}__image {
+      width: $veera-font-size-250;
+      height: $veera-font-size-250;
+      vertical-align: middle;
+      margin-right: get-spacing('haapsalu');
+    }
+
+    #{$base}__content {
+      vertical-align: middle;
+      display: inline-block;
+
+      & a {
+        color: inherit;
+        text-decoration-line: underline;
+      }
+    }
+  }
+}
