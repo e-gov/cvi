@@ -10,7 +10,7 @@ node_modules
 
 # IDEs and editors
 /.idea
-ria-poc.iml
+*.iml
 .project
 .classpath
 .c9/
