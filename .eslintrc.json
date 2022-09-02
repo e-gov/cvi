@@ -15,6 +15,14 @@
               {
                 "sourceTag": "*",
                 "onlyDependOnLibsWithTags": ["*"]
+              },
+              {
+                "sourceTag": "scope:assets",
+                "onlyDependOnLibsWithTags": [""]
+              },
+              {
+                "sourceTag": "scope:ng-components",
+                "onlyDependOnLibsWithTags": [""]
               }
             ]
           }
