@@ -17,11 +17,11 @@
                 "onlyDependOnLibsWithTags": ["*"]
               },
               {
-                "sourceTag": "scope:assets",
+                "sourceTag": "scope:veera-styles",
                 "onlyDependOnLibsWithTags": [""]
               },
               {
-                "sourceTag": "scope:ng-components",
+                "sourceTag": "scope:veera-ng",
                 "onlyDependOnLibsWithTags": [""]
               }
             ]

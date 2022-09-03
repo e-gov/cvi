@@ -3,9 +3,29 @@
   "sourceRoot": "libs/assets/src",
   "prefix": "ria-poc",
   "targets": {
+    "build": {
+      "executor": "@nrwl/angular:package",
+      "outputs": [
+        "dist/libs/assets"
+      ],
+      "options": {
+        "project": "libs/assets/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/assets/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/assets/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/assets"],
+      "outputs": [
+        "coverage/libs/assets"
+      ],
       "options": {
         "jestConfig": "libs/assets/jest.config.ts",
         "passWithNoTests": true
@@ -14,9 +34,14 @@
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "options": {
-        "lintFilePatterns": ["libs/assets/**/*.ts", "libs/assets/**/*.html"]
+        "lintFilePatterns": [
+          "libs/assets/**/*.ts",
+          "libs/assets/**/*.html"
+        ]
       }
     }
   },
-  "tags": ["scope:assets"]
+  "tags": [
+    "scope:veera-styles"
+  ]
 }

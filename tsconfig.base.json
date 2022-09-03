@@ -15,9 +15,10 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@ria-poc/assets": ["libs/assets/src/index.ts"],
-      "@ria-poc/storybook": ["libs/storybook/src/index.ts"],
-      "@ria-poc/ui": ["libs/ui/src/index.ts"]
+      "@ria/storybook": ["libs/storybook/src/index.ts"],
+      "@ria/test": ["libs/test2/src/index.ts"],
+      "@ria/veera-ng": ["libs/ui/src/index.ts"],
+      "@ria/veera-styles": ["libs/assets/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

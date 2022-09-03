@@ -1,6 +1,6 @@
 import { moduleMetadata } from '@storybook/angular';
 import { setCompodocJson } from '@storybook/addon-docs/angular';
-import { UiModule } from '@ria-poc/ui';
+import { UiModule } from '@ria/veera-ng';
 import { StorybookModule } from '../src/lib/storybook.module';
 import docJson from './documentation.json';
 import sortingOrder from './sorting-order';
@@ -21,7 +21,7 @@ export const parameters = {
   },
   options: {
       storySort: {
-          order: sortingOrder.ids 
+          order: sortingOrder.ids
       }
   },
 };

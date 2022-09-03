@@ -18,13 +18,13 @@
           "apps/ria/src/assets",
           {
             "glob": "*",
-            "input": "libs/assets/src/lib/veera-styles/assets/Icons",
+            "input": "libs/assets/src/lib/assets/Icons",
             "output": "assets/Icons/"
           }
         ],
         "styles": [
           "apps/ria/src/styles.scss",
-          "libs/assets/src/lib/veera-styles/scss/main.scss"
+          "libs/assets/src/lib/scss/main.scss"
         ],
         "scripts": []
       },
