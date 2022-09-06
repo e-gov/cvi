@@ -9,7 +9,7 @@
     "build": "nx build",
     "test": "nx test",
     "lint:all": "nx workspace-lint && nx run-many --target=lint --all",
-    "storybook:compodoc": "npx compodoc -p ./tsconfig.compodoc.json -e json -d ./libs/storybook/.storybook --disableLifeCycleHooks",
+    "storybook:compodoc": "npx compodoc -p ./tsconfig.compodoc.json -e json -d ./libs/storybook/.storybook --disableLifeCycleHooks --disableInternal",
     "storybook": "npm run storybook:compodoc && nx run storybook:storybook"
   },
   "private": true,
