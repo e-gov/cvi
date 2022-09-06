@@ -12,13 +12,15 @@
     [
       "Button",
       "Form item",
-      "Input"
+      "Input",
+      "Accordion"
     ],
     "Angular",
     [
       "Button",
       "Form item",
       "Input",
+      "Accordion",
       "Steps",
       ["Steps", "Step"]
     ]
