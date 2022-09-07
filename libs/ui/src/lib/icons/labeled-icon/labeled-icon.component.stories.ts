@@ -3,7 +3,7 @@ import { LabeledIconComponent } from './labeled-icon.component';
 import notes from './labeled-icon.component.md';
 
 export default {
-  title: 'Angular/Icon',
+  title: 'Angular/Labeled icon',
   component: LabeledIconComponent,
   parameters: { notes },
   argTypes: {

@@ -22,6 +22,10 @@
   @include veera-labeled-icon;
 }
 
+.veera-html-section {
+  @include veera-html-section;
+}
+
 .veera-accordion {
   @include veera-accordion;
 }

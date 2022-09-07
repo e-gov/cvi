@@ -1,19 +1,25 @@
 @mixin veera-labeled-icon($base: &) {
+  display: flex;
+
   @at-root {
     #{$base}__image {
       width: $veera-font-size-250;
       height: $veera-font-size-250;
       vertical-align: middle;
       margin-right: get-spacing('haapsalu');
+      fill: get-color(sapphire-blue-10);
     }
 
     #{$base}__content {
       vertical-align: middle;
-      display: inline-block;
 
       & a {
         color: inherit;
         text-decoration-line: underline;
+
+        &:hover {
+          color: get-color(sapphire-blue-10);
+        }
       }
     }
   }
