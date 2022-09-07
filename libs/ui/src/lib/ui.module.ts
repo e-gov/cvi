@@ -19,6 +19,10 @@ import { AccordionItemDirective } from './accordion/directives/accordion-item.di
 import { AccordionContentDirective } from './accordion/directives/accordion-content.directive';
 import { AccordionTitleDirective } from './accordion/directives/accordion-title.directive';
 import { AccordionHeaderDirective } from './accordion/directives/accordion-header.directive';
+import { HtmlSectionComponent } from './html-section/html-section.component';
+import { SafeHtmlPipe } from './pipes/safe-html-pipe';
+import { AngularSvgIconModule } from 'angular-svg-icon';
+import { HttpClientModule } from '@angular/common/http';
 
 const components = [
   ButtonComponent,
@@ -32,6 +36,7 @@ const components = [
   OptionButtonComponent,
   FeedbackComponent,
   TextareaComponent,
+  HtmlSectionComponent,
   AccordionComponent,
   AccordionItemDirective,
   AccordionContentDirective,
@@ -39,9 +44,19 @@ const components = [
   AccordionHeaderDirective
 ];
 
+const pipes = [
+  SafeHtmlPipe,
+];
+
 @NgModule({
-  imports: [CommonModule, TextFieldModule, BrowserAnimationsModule],
-  declarations: [...components],
-  exports: [...components, TextFieldModule],
+  imports: [
+    CommonModule,
+    TextFieldModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+    AngularSvgIconModule.forRoot()
+  ],
+  declarations: [...components, ...pipes],
+  exports: [...components, ...pipes, TextFieldModule],
 })
 export class UiModule {}
