@@ -1,5 +1,7 @@
 @mixin veera-form-item($base: &) {
 
+  --comment: 'A wrapper for a form field';
+
   display: flex;
   gap: get-spacing('haapsalu');
   &--label-position-top {

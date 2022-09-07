@@ -1,5 +1,7 @@
 @mixin veera-button($base: &) {
 
+  --comment: 'A regular button';
+
   font-size: $veera-font-size-100;
   line-height: $veera-line-height-100;
   display: block;

@@ -13,6 +13,7 @@
       "Button",
       "Form item",
       "Input",
+      "Radio button",
       "Accordion"
     ],
     "Angular",
@@ -20,6 +21,7 @@
       "Button",
       "Form item",
       "Input",
+      "Radio button",
       "Accordion",
       "Steps",
       ["Steps", "Step"]
