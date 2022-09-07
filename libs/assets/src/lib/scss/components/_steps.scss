@@ -1,5 +1,7 @@
 @mixin veera-steps($base: &) {
 
+  --comment: 'Sequential tabs that do not block non-linear interaction';
+
   $background-color: get-color(white);
   $border-color: get-color(black-coral-2);
   $number-border-width: 2px;

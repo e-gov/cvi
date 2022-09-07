@@ -13,16 +13,22 @@
       "Button",
       "Form item",
       "Input",
-      "Accordion"
+      "Radio button",
+      "Accordion",
+      "Labeled icon",
+      "Html Section"
     ],
     "Angular",
     [
       "Button",
       "Form item",
       "Input",
+      "Radio button",
       "Accordion",
+      "Labeled icon",
       "Steps",
-      ["Steps", "Step"]
+      ["Steps", "Step"],
+      "Html Section"
     ]
   ]
 }
