@@ -1,5 +1,7 @@
 @mixin veera-textfield($base: &) {
 
+  --comment: 'A form text control';
+
   @at-root {
     #{$base}__input {
       background: get-color(white);

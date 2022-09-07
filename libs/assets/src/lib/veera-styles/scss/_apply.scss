@@ -14,6 +14,10 @@
   @include veera-steps;
 }
 
+.veera-radio-buttons {
+  @include veera-radio-buttons;
+}
+
 .veera-labeled-icon {
   @include veera-labeled-icon;
 }
