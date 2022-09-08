@@ -6,9 +6,7 @@ export default {
   title: 'Angular/Html section',
   component: HtmlSectionComponent,
   parameters: { notes },
-  argTypes: {
-
-  },
+  argTypes: {},
   args: {
     html: `
       <h3 class="veera-html-section__title">Politsei- ja Piirivalveameti kontaktid</h3>
@@ -18,24 +16,24 @@ export default {
           <p>Telefonikõnedele vastatakse E-R 9-17 ning kõnesid teenindatakse eesti, vene ja inglise keeles</p>
         </div>
         <div class="veera-html-section__content-elements">
-          <ria-poc-labeled-icon name="call"><a href="tel:+3726123000">+372 612 3000</a></ria-poc-labeled-icon>
-          <ria-poc-labeled-icon name="email"><a href="mailto:ppa@politsei.ee">ppa@politsei.ee</a></ria-poc-labeled-icon>
-          <ria-poc-labeled-icon name="screen_share"><a href="https://politsei.ee" target="_blank">politsei.ee</a></ria-poc-labeled-icon>
-          <ria-poc-labeled-icon name="location">Pärnu mnt 139, 15060 Tallinn</ria-poc-labeled-icon>
+          <veera-ng-labeled-icon name="call"><a href="tel:+3726123000">+372 612 3000</a></veera-ng-labeled-icon>
+          <veera-ng-labeled-icon name="email"><a href="mailto:ppa@politsei.ee">ppa@politsei.ee</a></veera-ng-labeled-icon>
+          <veera-ng-labeled-icon name="screen_share"><a href="https://politsei.ee" target="_blank">politsei.ee</a></veera-ng-labeled-icon>
+          <veera-ng-labeled-icon name="location">Pärnu mnt 139, 15060 Tallinn</veera-ng-labeled-icon>
         </div>
-      </div>   
-    `
-  }
+      </div>
+    `,
+  },
 } as Meta;
 
 const Template: Story<HtmlSectionComponent> = (args: HtmlSectionComponent) => ({
   component: HtmlSectionComponent,
   props: {
-    ...args
+    ...args,
   },
   template: `
-    <ria-poc-html-section [html]="html"></ria-poc-html-section>
-  `
+    <veera-ng-html-section [html]="html"></veera-ng-html-section>
+  `,
 });
 
 export const Default = Template.bind({});
@@ -50,10 +48,10 @@ Contacts.args = {
         <p>Võta ühendust perekonnaseisuasutusega, kus soovid abielu sõlmida</p>
       </div>
       <div class="veera-html-section__content-elements">
-        <ria-poc-labeled-icon name="screen_share"><a href="#">Maakonnakeskuste kohalikud omavalitsused</a></ria-poc-labeled-icon>
-        <ria-poc-labeled-icon name="screen_share"><a href="#">Notarid</a></ria-poc-labeled-icon>
-        <ria-poc-labeled-icon name="screen_share"><a href="#">Abielu sõlmimise õigust omavad vaimulikud</a></ria-poc-labeled-icon>
+        <veera-ng-labeled-icon name="screen_share"><a href="#">Maakonnakeskuste kohalikud omavalitsused</a></veera-ng-labeled-icon>
+        <veera-ng-labeled-icon name="screen_share"><a href="#">Notarid</a></veera-ng-labeled-icon>
+        <veera-ng-labeled-icon name="screen_share"><a href="#">Abielu sõlmimise õigust omavad vaimulikud</a></veera-ng-labeled-icon>
       </div>
-    </div>   
-  `
-}
+    </div>
+  `,
+};

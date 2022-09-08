@@ -5,15 +5,20 @@ import {
   AfterViewInit,
   QueryList,
   Renderer2,
-  SimpleChanges, SimpleChange, OnChanges, AfterContentInit
+  SimpleChanges,
+  SimpleChange,
+  OnChanges,
+  AfterContentInit,
 } from '@angular/core';
 import { StepComponent } from '../step/step.component';
 
 @Component({
-  selector: 'ria-poc-steps',
+  selector: 'veera-ng-steps',
   templateUrl: './steps.component.html',
 })
-export class StepsComponent implements AfterViewInit, AfterContentInit, OnChanges {
+export class StepsComponent
+  implements AfterViewInit, AfterContentInit, OnChanges
+{
   @Input() title!: string;
   @Input() currentStepIndex = 0;
   stepTitles!: string[];
@@ -23,7 +28,9 @@ export class StepsComponent implements AfterViewInit, AfterContentInit, OnChange
   @ContentChildren(StepComponent) stepChildren!: QueryList<StepComponent>;
 
   ngAfterContentInit(): void {
-    this.stepTitles = this.stepChildren.map((step: StepComponent) => step.title);
+    this.stepTitles = this.stepChildren.map(
+      (step: StepComponent) => step.title
+    );
   }
 
   ngAfterViewInit(): void {
@@ -32,7 +39,10 @@ export class StepsComponent implements AfterViewInit, AfterContentInit, OnChange
 
   ngOnChanges(changes: SimpleChanges): void {
     const change: SimpleChange = changes['currentStepIndex'];
-    if ( !change.isFirstChange() && change.currentValue !== change.previousValue ) {
+    if (
+      !change.isFirstChange() &&
+      change.currentValue !== change.previousValue
+    ) {
       this.hideStepsContent();
     }
   }
@@ -48,5 +58,4 @@ export class StepsComponent implements AfterViewInit, AfterContentInit, OnChange
       }
     });
   }
-
 }

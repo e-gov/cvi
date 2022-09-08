@@ -1,7 +1,7 @@
 {
   "projectType": "application",
   "sourceRoot": "apps/ria/src",
-  "prefix": "ria-poc",
+  "prefix": "veera-ng",
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",

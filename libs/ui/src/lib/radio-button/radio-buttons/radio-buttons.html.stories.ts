@@ -1,5 +1,5 @@
 import { Meta, Story } from '@storybook/angular';
-import notes from './radio-buttons.html.md'
+import notes from './radio-buttons.html.md';
 
 export default {
   title: 'HTML/Radio button',
@@ -12,16 +12,16 @@ export default {
       name: 'Appearance',
       options: ['regular', 'compact'],
       control: { type: 'inline-radio' },
-    }
+    },
   },
   args: {
     title: 'Example title',
     appearance: 'regular',
     label: 'Option 1',
-  }
+  },
 } as Meta;
 
-const Template: Story = args => ({
+const Template: Story = (args) => ({
   props: args,
   /* template */
   template: `
@@ -56,16 +56,15 @@ const Template: Story = args => ({
         </ul>
       </fieldset>
     </div>
-  `
+  `,
 });
 
 export const Default = Template.bind({});
 Default.args = {
-  title: 'Default radio buttons example'
-}
+  title: 'Default radio buttons example',
+};
 
-
-const OptionButtonTemplate: Story = args => ({
+const OptionButtonTemplate: Story = (args) => ({
   props: args,
   /* template */
   template: `
@@ -98,17 +97,16 @@ const OptionButtonTemplate: Story = args => ({
         </ul>
       </fieldset>
     </div>
-  `
+  `,
 });
 
 export const OptionButton = OptionButtonTemplate.bind({});
 OptionButton.args = {
   title: 'Radio buttons with labels that look like buttons',
-  appearance: 'regular'
-}
+  appearance: 'regular',
+};
 
-
-const OptionButtonCompactTemplate: Story = args => ({
+const OptionButtonCompactTemplate: Story = (args) => ({
   props: args,
   /* template */
   template: `
@@ -141,11 +139,11 @@ const OptionButtonCompactTemplate: Story = args => ({
         </ul>
       </fieldset>
     </div>
-  `
+  `,
 });
 
 export const OptionButtonCompact = OptionButtonCompactTemplate.bind({});
 OptionButtonCompact.args = {
   title: 'Radio buttons with labels that look like compact buttons',
-  appearance: 'compact'
-}
+  appearance: 'compact',
+};

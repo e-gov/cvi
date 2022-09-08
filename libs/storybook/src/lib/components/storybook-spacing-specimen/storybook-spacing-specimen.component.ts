@@ -1,7 +1,7 @@
 import { Component, HostBinding } from '@angular/core';
 
 @Component({
-  selector: 'ria-poc-storybook-spacing-specimen',
+  selector: 'veera-ng-storybook-spacing-specimen',
   template: `<ng-content></ng-content>`,
 })
 export class StorybookSpacingSpecimen {

@@ -20,17 +20,14 @@ export const parameters = {
     },
   },
   options: {
-      storySort: {
-          order: sortingOrder.ids
-      }
+    storySort: {
+      order: sortingOrder.ids,
+    },
   },
 };
 
 export const decorators = [
   moduleMetadata({
-      imports: [
-        UiModule,
-        StorybookModule
-      ]
+    imports: [UiModule, StorybookModule],
   }),
 ];

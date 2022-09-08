@@ -5,7 +5,7 @@ import { AccordionTitleDirective } from './accordion-title.directive';
 
 @Directive({
   // eslint-disable-next-line @angular-eslint/directive-selector
-  selector: 'ria-poc-accordion-item'
+  selector: 'veera-ng-accordion-item',
 })
 export class AccordionItemDirective {
   @Input() title = '';
@@ -13,5 +13,6 @@ export class AccordionItemDirective {
   @Input() disabled = false;
   @ContentChild(AccordionContentDirective) content!: AccordionContentDirective;
   @ContentChild(AccordionTitleDirective) customTitle!: AccordionTitleDirective;
-  @ContentChild(AccordionHeaderDirective) customHeader!: AccordionHeaderDirective;
+  @ContentChild(AccordionHeaderDirective)
+  customHeader!: AccordionHeaderDirective;
 }

@@ -1,7 +1,7 @@
 import { Component, HostBinding, Input } from '@angular/core';
 
 @Component({
-  selector: 'ria-poc-storybook-type-tester',
+  selector: 'veera-ng-storybook-type-tester',
   template: `<ng-content></ng-content>`,
 })
 export class StorybookTypeTester {

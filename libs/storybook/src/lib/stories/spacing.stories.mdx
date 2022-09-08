@@ -3,10 +3,10 @@ import { Meta, Story } from '@storybook/addon-docs';
 <Meta title="Styles/Design tokens/Spacing" parameters={{ viewMode: 'docs', layout: 'fullscreen' }} />
 
 export const sizes = [
-  { name: 'loksa', value: 4 }, 
-  { name: 'paldiski', value: 8 }, 
+  { name: 'loksa', value: 4 },
+  { name: 'paldiski', value: 8 },
   { name: 'rapla', value: 10 },
-  { name: 'elva', value: 12 }, 
+  { name: 'elva', value: 12 },
   { name: 'haapsalu', value: 16 },
   { name: 'valga', value: 20 },
   { name: 'kuressaare', value: 24 },
@@ -17,11 +17,11 @@ export const sizes = [
 
 # Spacing patterns
 
-Information on spacing is currently missing from the Veera Design System. 
+Information on spacing is currently missing from the Veera Design System.
 
-Veera has numerous options when it comes to spacing. 
+Veera has numerous options when it comes to spacing.
 
-Spacing patterns are named according to a [list of Estonian cities](https://en.wikipedia.org/wiki/List_of_cities_and_towns_in_Estonia) and sorted by their population. This should give a good idea about a pattern's size while allowing to insert newer sizes in between. 
+Spacing patterns are named according to a [list of Estonian cities](https://en.wikipedia.org/wiki/List_of_cities_and_towns_in_Estonia) and sorted by their population. This should give a good idea about a pattern's size while allowing to insert newer sizes in between.
 
 You can pick a font size by employing Sass variables (with `get-spacing()` function) or using `--veera-spacing-` CSS variables.
 
@@ -29,9 +29,9 @@ You can pick a font size by employing Sass variables (with `get-spacing()` funct
   {{
     props: { sizes },
     template: `
-      <ria-poc-storybook-spacing-specimen>
-        <ria-poc-storybook-spacing-specimen-item *ngFor="let size of sizes" [ngStyle]="{'--spacing': 'var(--veera-spacing-' + size.name}" [label]="'' + (size.name | titlecase) + ': ' + size.value + 'px'"></ria-poc-storybook-spacing-specimen-item>
-      </ria-poc-storybook-spacing-specimen>
+      <veera-ng-storybook-spacing-specimen>
+        <veera-ng-storybook-spacing-specimen-item *ngFor="let size of sizes" [ngStyle]="{'--spacing': 'var(--veera-spacing-' + size.name}" [label]="'' + (size.name | titlecase) + ': ' + size.value + 'px'"></veera-ng-storybook-spacing-specimen-item>
+      </veera-ng-storybook-spacing-specimen>
     `,
   }}
 </Story>

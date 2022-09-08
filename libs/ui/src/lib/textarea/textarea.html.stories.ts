@@ -9,7 +9,7 @@ export default {
     maxLength: 2000,
     minRows: 3,
     maxRows: 5,
-  }
+  },
 } as Meta;
 
 const Template: Story = (args) => ({
@@ -24,7 +24,7 @@ const Template: Story = (args) => ({
               [cdkAutosizeMinRows]="minRows"
               [cdkAutosizeMaxRows]="maxRows"
     ></textarea>
-  `
+  `,
 });
 
 export const Default = Template.bind({});

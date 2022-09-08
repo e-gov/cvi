@@ -22,7 +22,7 @@ export default {
   args: {
     content: 'Button label',
     appearance: 'primary',
-    disabled: false
+    disabled: false,
   },
 } as Meta<ButtonComponent>;
 
@@ -30,8 +30,8 @@ const Template: Story<ButtonComponent> = (args: ButtonComponent) => ({
   props: args,
   /* template */
   template: `
-    <ria-poc-button [disabled]="disabled" [size]="size" [appearance]="appearance">{{ content }}</ria-poc-button>
-  `
+    <veera-ng-button [disabled]="disabled" [size]="size" [appearance]="appearance">{{ content }}</veera-ng-button>
+  `,
 });
 
 export const Primary = Template.bind({});
@@ -39,15 +39,15 @@ Primary.args = {};
 
 export const Secondary = Template.bind({});
 Secondary.args = {
-  appearance: 'secondary'
+  appearance: 'secondary',
 };
 
 export const Small = Template.bind({});
 Small.args = {
-  size: 's'
+  size: 's',
 };
 
 export const Text = Template.bind({});
 Text.args = {
-  appearance: 'text'
+  appearance: 'text',
 };

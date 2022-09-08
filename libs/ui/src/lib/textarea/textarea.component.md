@@ -2,7 +2,7 @@
 
 Feature | Description
 - | -
-Selector | `ria-poc-textarea`
+Selector | `veera-ng-textarea`
 Component name | `TextareaComponent`
 Design system module | -
 Permitted parent/ancestors | any

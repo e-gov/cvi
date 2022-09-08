@@ -1,7 +1,7 @@
 import { Component, HostBinding } from '@angular/core';
 
 @Component({
-  selector: 'ria-poc-storybook-color-cards',
+  selector: 'veera-ng-storybook-color-cards',
   template: `<ng-content></ng-content>`,
 })
 export class StorybookColorCards {

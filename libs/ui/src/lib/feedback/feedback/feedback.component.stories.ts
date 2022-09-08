@@ -12,7 +12,7 @@ const title = 'Did you find what you were looking for?';
 const options = [
   { value: 'NO', label: 'No' },
   { value: 'PARTIALLY', label: 'Partially' },
-  { value: 'YES', label: 'Yes' }
+  { value: 'YES', label: 'Yes' },
 ];
 
 const Template: Story<FeedbackComponent> = (args: FeedbackComponent) => ({
@@ -26,8 +26,9 @@ Default.args = {
   showIcons: false,
 };
 
-
-const WithIconsTemplate: Story<FeedbackComponent> = (args: FeedbackComponent) => ({
+const WithIconsTemplate: Story<FeedbackComponent> = (
+  args: FeedbackComponent
+) => ({
   props: args,
 });
 

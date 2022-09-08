@@ -15,7 +15,7 @@ export default {
   args: {
     title: 'First step is the importantest',
     content: 'Nevertheless, Cosy Moments thrives. It has its public.',
-  }
+  },
 } as Meta;
 
 const Template: Story<StepComponent> = (args: StepComponent) => ({
@@ -25,10 +25,10 @@ const Template: Story<StepComponent> = (args: StepComponent) => ({
   },
   /* template */
   template: `
-    <ria-poc-steps title="Abiellumine" [currentStepIndex]="0">
-      <ria-poc-step [title]="title">{{ content }}</ria-poc-step>
-    </ria-poc-steps>
-  `
+    <veera-ng-steps title="Abiellumine" [currentStepIndex]="0">
+      <veera-ng-step [title]="title">{{ content }}</veera-ng-step>
+    </veera-ng-steps>
+  `,
 });
 
 export const Default = Template.bind({});

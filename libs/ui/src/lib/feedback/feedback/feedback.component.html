@@ -1,9 +1,9 @@
-<ria-poc-radio-buttons [appearance]="appearance" [title]="title">
-  <ria-poc-labeled-icon *ngIf="showIcons" [name]="'sad_face'"></ria-poc-labeled-icon>
-  <ria-poc-option-button *ngFor="let q of options"
+<veera-ng-radio-buttons [appearance]="appearance" [title]="title">
+  <veera-ng-labeled-icon *ngIf="showIcons" [name]="'sad_face'"></veera-ng-labeled-icon>
+  <veera-ng-option-button *ngFor="let q of options"
                                    [label]="q.label"
                                    [name]="title"
                                    [value]="q.value"
-  ></ria-poc-option-button>
-  <ria-poc-labeled-icon *ngIf="showIcons" [name]="'happy_face'"></ria-poc-labeled-icon>
-</ria-poc-radio-buttons>
+  ></veera-ng-option-button>
+  <veera-ng-labeled-icon *ngIf="showIcons" [name]="'happy_face'"></veera-ng-labeled-icon>
+</veera-ng-radio-buttons>

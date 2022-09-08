@@ -1,5 +1,5 @@
 export type IconName =
-  'call'
+  | 'call'
   | 'email'
   | 'location'
   | 'screen_share'

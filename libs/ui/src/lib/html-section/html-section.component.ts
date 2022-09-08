@@ -3,26 +3,27 @@ import { createCustomElement } from '@angular/elements';
 import { LabeledIconComponent } from '../icons/labeled-icon/labeled-icon.component';
 
 @Component({
-  selector: 'ria-poc-html-section',
-  templateUrl: './html-section.component.html'
+  selector: 'veera-ng-html-section',
+  templateUrl: './html-section.component.html',
 })
 export class HtmlSectionComponent implements OnInit {
   @Input() html?: string;
 
-  constructor(
-    private readonly injector: Injector
-  ) {
-  }
+  constructor(private readonly injector: Injector) {}
 
   ngOnInit() {
-    this.createCustomElements([[LabeledIconComponent, 'ria-poc-labeled-icon']]);
+    this.createCustomElements([
+      [LabeledIconComponent, 'veera-ng-labeled-icon'],
+    ]);
   }
 
   private createCustomElements(elements: [any, string][]) {
     elements
       .filter(([, name]) => !customElements.get(name))
       .forEach(([component, name]) => {
-        const element = createCustomElement(component, {injector: this.injector});
+        const element = createCustomElement(component, {
+          injector: this.injector,
+        });
         customElements.define(name, element);
       });
   }

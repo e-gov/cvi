@@ -14,13 +14,8 @@ const components = [
 ];
 
 @NgModule({
-  imports: [
-  ],
-  declarations: [
-    ...components
-  ],
-  exports: [
-    ...components,
-  ]
+  imports: [],
+  declarations: [...components],
+  exports: [...components],
 })
 export class StorybookModule {}

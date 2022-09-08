@@ -2,7 +2,7 @@
 
 Feature | Description
 - | -
-  Selector | `ria-poc-feedback`
+  Selector | `veera-ng-feedback`
 Corresponding Javascript component | `FeedbackComponent`
 Design system module | -
 Permitted parent/ancestors | any

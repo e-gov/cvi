@@ -23,11 +23,11 @@ export default {
     content: 'Button label',
     appearance: 'primary',
     size: 'm',
-    disabled: false
+    disabled: false,
   },
 } as Meta;
 
-const Template: Story = args => ({
+const Template: Story = (args) => ({
   props: args,
   /* template */
   template: `
@@ -36,7 +36,7 @@ const Template: Story = args => ({
     >
       <button type="button" class="veera-button__button">{{ content }}</button>
     </div>
-  `
+  `,
 });
 
 export const Primary = Template.bind({});
@@ -44,15 +44,15 @@ Primary.args = {};
 
 export const Secondary = Template.bind({});
 Secondary.args = {
-  appearance: 'secondary'
+  appearance: 'secondary',
 };
 
 export const Small = Template.bind({});
 Small.args = {
-  size: 's'
+  size: 's',
 };
 
 export const Text = Template.bind({});
 Text.args = {
-  appearance: 'text'
+  appearance: 'text',
 };

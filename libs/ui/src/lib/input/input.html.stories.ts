@@ -9,14 +9,14 @@ export default {
   },
 } as Meta;
 
-const Template: Story = args => ({
+const Template: Story = (args) => ({
   props: args,
   /* template */
   template: `
     <span class="veera-textfield">
       <input type="text" class="veera-textfield__input" id="some-id" />
     </span>
-  `
+  `,
 });
 
 export const Primary = Template.bind({});

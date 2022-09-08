@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'ria-poc-textarea',
+  selector: 'veera-ng-textarea',
   templateUrl: './textarea.component.html',
 })
 export class TextareaComponent {

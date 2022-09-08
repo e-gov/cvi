@@ -1,0 +1,17 @@
+#!/bin/sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+message="$(head -1 $1)"
+message_pattern="^((build|chore|ci|docs|feat|fix|perf|refactor|revert|style|test|format){1}(\([a-zA-Z0-9.-]+\))?!?:([[:space:]][a-z',.-]+)+)|(Merge([[:space:]][a-zA-Z0-9/'-]+)+)$"
+
+if ! [[ $message =~ $message_pattern ]];
+then
+  echo "---"
+  echo "Violation of commit message format!"
+  echo "The commit message must have conventional formatting:"
+  echo "<prefix>: <description>"
+  echo "Example: feat(lang): add Estonian language"
+  echo "For more information, check script in .husky/commit-msg"
+  echo "---"
+  exit 1
+fi

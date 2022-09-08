@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { HtmlSectionComponent } from './html-section.component';
+import { SafeHtmlPipe } from '../pipes/safe-html-pipe';
 
 describe('ContactsComponent', () => {
   let component: HtmlSectionComponent;
@@ -8,7 +9,7 @@ describe('ContactsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [HtmlSectionComponent],
+      declarations: [HtmlSectionComponent, SafeHtmlPipe],
     }).compileComponents();
 
     fixture = TestBed.createComponent(HtmlSectionComponent);

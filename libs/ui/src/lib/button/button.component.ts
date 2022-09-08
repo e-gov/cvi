@@ -1,7 +1,7 @@
 import { Component, HostBinding, Input } from '@angular/core';
 
 @Component({
-  selector: 'ria-poc-button',
+  selector: 'veera-ng-button',
   templateUrl: './button.component.html',
 })
 export class ButtonComponent {
@@ -14,6 +14,10 @@ export class ButtonComponent {
   @Input() disabled = false;
 
   @HostBinding('class') get getHostClasses(): string {
-    return `veera-button veera-button--appearance-${this.appearance} veera-button--size-${this.size}${this.disabled ? ' veera-button--is-disabled' : ''}`;
+    return `veera-button veera-button--appearance-${
+      this.appearance
+    } veera-button--size-${this.size}${
+      this.disabled ? ' veera-button--is-disabled' : ''
+    }`;
   }
 }

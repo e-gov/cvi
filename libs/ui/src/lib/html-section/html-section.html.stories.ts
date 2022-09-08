@@ -6,10 +6,10 @@ export default {
   parameters: {
     notes,
     options: { selectedPanel: 'html/panel' },
-  }
+  },
 } as Meta;
 
-const Template: Story = args => ({
+const Template: Story = (args) => ({
   props: args,
   template: `
     <div class="veera-html-section">
@@ -55,7 +55,7 @@ const Template: Story = args => ({
         </div>
       </div>
     </div>
-  `
+  `,
 });
 
 export const Default = Template.bind({});

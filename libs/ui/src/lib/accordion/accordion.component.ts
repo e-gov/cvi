@@ -4,23 +4,37 @@ import {
   ContentChildren,
   HostBinding,
   Input,
-  QueryList
+  QueryList,
 } from '@angular/core';
-import { trigger, state, style, transition, animate } from '@angular/animations';
+import {
+  trigger,
+  state,
+  style,
+  transition,
+  animate,
+} from '@angular/animations';
 import { AccordionItemDirective } from './directives/accordion-item.directive';
 
 @Component({
-  selector: 'ria-poc-accordion',
+  selector: 'veera-ng-accordion',
   templateUrl: './accordion.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   animations: [
     trigger('contentExpansion', [
-      state('expanded', style({ height: '*', opacity: 1, visibility: 'visible' })),
-      state('collapsed', style({ height: '0px', opacity: 0, visibility: 'hidden' })),
-      transition('expanded <=> collapsed',
-        animate('200ms cubic-bezier(.37,1.04,.68,.98)')),
-    ])
-  ]
+      state(
+        'expanded',
+        style({ height: '*', opacity: 1, visibility: 'visible' })
+      ),
+      state(
+        'collapsed',
+        style({ height: '0px', opacity: 0, visibility: 'hidden' })
+      ),
+      transition(
+        'expanded <=> collapsed',
+        animate('200ms cubic-bezier(.37,1.04,.68,.98)')
+      ),
+    ]),
+  ],
 })
 export class AccordionComponent {
   /** Removing this will break the Storybook story due to https://github.com/storybookjs/storybook/issues/18198 */
@@ -28,7 +42,8 @@ export class AccordionComponent {
   expandedItems: number[] = [];
   @Input() singleOpen = true;
 
-  @ContentChildren(AccordionItemDirective) items!: QueryList<AccordionItemDirective>;
+  @ContentChildren(AccordionItemDirective)
+  items!: QueryList<AccordionItemDirective>;
 
   @HostBinding('class') get getHostClasses(): string {
     return `veera-accordion`;
@@ -36,7 +51,7 @@ export class AccordionComponent {
 
   getToggleState(index: number) {
     return this.toggle.bind(this, index);
-  };
+  }
 
   itemInExpanded(i: number): boolean {
     return this.expandedItems.indexOf(i) >= 0;
@@ -44,7 +59,7 @@ export class AccordionComponent {
 
   toggle(index: number): void {
     if (this.expandedItems.includes(index)) {
-      this.expandedItems = this.expandedItems.filter(i => i !== index);
+      this.expandedItems = this.expandedItems.filter((i) => i !== index);
     } else {
       if (this.singleOpen) {
         this.expandedItems = [];

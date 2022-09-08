@@ -1,7 +1,7 @@
 import { Component, HostBinding, Input } from '@angular/core';
 
 @Component({
-  selector: 'ria-poc-input',
+  selector: 'veera-ng-input',
   templateUrl: './input.component.html',
 })
 export class InputComponent {
@@ -12,6 +12,8 @@ export class InputComponent {
   @Input() disabled = false;
 
   @HostBinding('class') get getHostClasses(): string {
-    return `veera-textfield${this.disabled ? ' veera-textfield--is-disabled' : ''}`;
+    return `veera-textfield${
+      this.disabled ? ' veera-textfield--is-disabled' : ''
+    }`;
   }
 }

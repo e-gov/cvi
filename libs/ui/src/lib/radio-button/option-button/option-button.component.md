@@ -2,7 +2,7 @@
 
 Feature | Description
 - | -
-Selector | `ria-poc-option-button`
+Selector | `veera-ng-option-button`
 Component name | `OptionButtonComponent`
 Design system module | -
 Content | no

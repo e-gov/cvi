@@ -1,0 +1,8 @@
+version: '1.0.0'
+services:
+  storybook:
+    container_name: storybook
+    image: ria-storybook:latest
+    ports:
+      - 3005:80
+    restart: always

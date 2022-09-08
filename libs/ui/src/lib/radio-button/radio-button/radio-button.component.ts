@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'ria-poc-radio-button',
+  selector: 'veera-ng-radio-button',
   templateUrl: './radio-button.component.html',
 })
 export class RadioButtonComponent {

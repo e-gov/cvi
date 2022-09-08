@@ -12,8 +12,8 @@ import { LabeledIconComponent } from './icons/labeled-icon/labeled-icon.componen
 import { StepsComponent } from './steps/steps/steps.component';
 import { FeedbackComponent } from './feedback/feedback/feedback.component';
 import { TextareaComponent } from './textarea/textarea.component';
-import { OptionButtonComponent } from "./radio-button/option-button/option-button.component";
-import { TextFieldModule } from "@angular/cdk/text-field";
+import { OptionButtonComponent } from './radio-button/option-button/option-button.component';
+import { TextFieldModule } from '@angular/cdk/text-field';
 import { AccordionComponent } from './accordion/accordion.component';
 import { AccordionItemDirective } from './accordion/directives/accordion-item.directive';
 import { AccordionContentDirective } from './accordion/directives/accordion-content.directive';
@@ -41,12 +41,10 @@ const components = [
   AccordionItemDirective,
   AccordionContentDirective,
   AccordionTitleDirective,
-  AccordionHeaderDirective
+  AccordionHeaderDirective,
 ];
 
-const pipes = [
-  SafeHtmlPipe,
-];
+const pipes = [SafeHtmlPipe];
 
 @NgModule({
   imports: [
@@ -54,7 +52,7 @@ const pipes = [
     TextFieldModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    AngularSvgIconModule.forRoot()
+    AngularSvgIconModule.forRoot(),
   ],
   declarations: [...components, ...pipes],
   exports: [...components, ...pipes, TextFieldModule],

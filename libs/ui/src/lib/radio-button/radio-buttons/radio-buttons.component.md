@@ -2,7 +2,7 @@
 
 Feature | Description
 - | -
-Selector | `ria-poc-radio-buttons`
+Selector | `veera-ng-radio-buttons`
 Component name | `RadioButtonsComponent`
 Design system module | -
 Content | yes

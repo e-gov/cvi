@@ -7,20 +7,20 @@ export default {
   args: {
     name: 'Name',
     value: 'Value',
-    label: 'Label'
-  }
+    label: 'Label',
+  },
 } as Meta<RadioButtonComponent>;
 
 const Template: Story<RadioButtonComponent> = (args: RadioButtonComponent) => ({
   props: args,
   /* template */
   template: `
-    <ria-poc-radio-button [name]="name"
+    <veera-ng-radio-button [name]="name"
                           [value]="value"
                           [label]="label"
-    ></ria-poc-radio-button>
-  `
+    ></veera-ng-radio-button>
+  `,
 });
 
 export const Default = Template.bind({});
-Default.args = {}
+Default.args = {};

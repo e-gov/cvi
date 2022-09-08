@@ -1,7 +1,7 @@
 import { Directive, TemplateRef } from '@angular/core';
 
 @Directive({
-  selector: '[riaPocAccordionHeader]'
+  selector: '[veeraNgAccordionHeader]',
 })
 export class AccordionHeaderDirective {
   constructor(public templateRef: TemplateRef<any> | null) {}

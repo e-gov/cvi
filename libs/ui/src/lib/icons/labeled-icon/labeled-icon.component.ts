@@ -2,7 +2,7 @@ import { Component, HostBinding, Input } from '@angular/core';
 import { IconName } from '../constants';
 
 @Component({
-  selector: 'ria-poc-labeled-icon',
+  selector: 'veera-ng-labeled-icon',
   templateUrl: './labeled-icon.component.html',
 })
 export class LabeledIconComponent {

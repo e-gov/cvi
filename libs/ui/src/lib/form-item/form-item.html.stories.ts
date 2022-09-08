@@ -9,11 +9,11 @@ export default {
   },
   args: {
     htmlId: 'fksd4kfds',
-    label: 'Your email'
-  }
+    label: 'Your email',
+  },
 } as Meta;
 
-const Template: Story = args => ({
+const Template: Story = (args) => ({
   props: args,
   /* template */
   template: `
@@ -23,7 +23,7 @@ const Template: Story = args => ({
         <input type="text" class="veera-textfield__input" id="{{ htmlId }}" />
       </span>
     </div>
-  `
+  `,
 });
 
 export const Default = Template.bind({});

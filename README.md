@@ -12,6 +12,19 @@
 
 Run `npm run storybook` to build documentation and run the Storybook locally.
 
+### Running storybook locally in docker
+
+docker build -f ./libs/storybook/Dockerfile -t ria-storybook .
+docker-compose up storybook
+docker-compose down
+url: http://localhost:3005/
+
+### Publishing to dockerhub locally
+
+docker build -f ./libs/storybook/Dockerfile -t ria-storybook .
+docker tag ria-storybook:latest riaee/sun-ria-storybook:latest
+docker push riaee/sun-ria-storybook:latest
+
 ## Understand your workspace
 
 Run `nx graph` to see a diagram of the dependencies of your projects.

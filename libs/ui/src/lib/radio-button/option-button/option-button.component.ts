@@ -1,7 +1,7 @@
 import { Component, HostBinding, Input } from '@angular/core';
 
 @Component({
-  selector: 'ria-poc-option-button',
+  selector: 'veera-ng-option-button',
   templateUrl: './option-button.component.html',
 })
 export class OptionButtonComponent {

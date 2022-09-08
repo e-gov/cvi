@@ -2,7 +2,7 @@
 
 Feature | Description
 - | -
-Selector | `ria-poc-button`
+Selector | `veera-ng-button`
 Component name | `ButtonComponent`
 Design system module | [Buttons](https://veera.eesti.ee/3d136290e/p/36dd23-nupud/b/32e1a2)
 Content | yes

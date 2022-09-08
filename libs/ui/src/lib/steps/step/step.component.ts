@@ -1,11 +1,10 @@
 import { Component, ElementRef, HostBinding, Input } from '@angular/core';
 
 @Component({
-  selector: 'ria-poc-step',
+  selector: 'veera-ng-step',
   templateUrl: './step.component.html',
 })
 export class StepComponent {
-
   @Input() title!: string;
 
   @HostBinding('class') get getHostClasses(): string {

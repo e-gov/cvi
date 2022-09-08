@@ -6,10 +6,10 @@ export default {
   parameters: {
     notes,
     options: { selectedPanel: 'html/panel' },
-  }
+  },
 } as Meta;
 
-const Template: Story = args => ({
+const Template: Story = (args) => ({
   props: args,
   /* template */
   template: `
@@ -80,7 +80,7 @@ const Template: Story = args => ({
         </li>
       </ul>
     </div>
-  `
+  `,
 });
 
 export const Default = Template.bind({});

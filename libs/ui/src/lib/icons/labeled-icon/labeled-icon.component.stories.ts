@@ -9,20 +9,20 @@ export default {
   argTypes: {
     name: {
       name: 'Name',
-    }
+    },
   },
   args: {
-    name: 'call'
-  }
+    name: 'call',
+  },
 } as Meta;
 
 const Template: Story<LabeledIconComponent> = (args: LabeledIconComponent) => ({
   props: {
-    ...args
+    ...args,
   },
   template: `
-    <ria-poc-labeled-icon [name]="name"></ria-poc-labeled-icon>
-  `
+    <veera-ng-labeled-icon [name]="name"></veera-ng-labeled-icon>
+  `,
 });
 
 export const Default = Template.bind({});
