@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.1.5](https://stash.ria.ee/scm/sun/veera-components/compare/ui-0.1.4...ui-0.1.5) (2022-09-08)
+
+
+### Bug Fixes
+
+* move fontsource roboto package under peer dependencies ([729f33e](https://stash.ria.ee/scm/sun/veera-components/commits/729f33e313b2748ee9f7494873ef9b0ee0145f9a))
+
+
+
 ## [0.1.4](https://stash.ria.ee/scm/sun/veera-components/compare/ui-0.1.3...ui-0.1.4) (2022-09-08)
 
 
