@@ -121,8 +121,6 @@ pipeline {
         stage('release libraries') {
           steps {
             script {
-              sh "git fetch --prune --prune-tags"
-
               env.previous_assets_library_version = getVersion("assets")
               env.previous_ui_library_version = getVersion("ui")
 
@@ -152,8 +150,17 @@ pipeline {
                   return
                 }
                 sh "npx nx build ${it}"
-                sh "npm run publish:${it}"
-                echo "Published library ${it}"
+
+                try {
+                  sh "npm run publish:${it}"
+                  echo "Published library ${it}"
+                } catch (e) {
+                  def newVersion = getVersion(it)
+                  def tag = sh ( script: "git tag -l ${it}-${newVersion}", returnStdout: true).trim()
+                  if (tag) {
+                    sh "git tag -d ${it}-${newVersion}"
+                  }
+                }
               }
             }
           }
