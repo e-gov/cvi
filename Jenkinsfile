@@ -19,7 +19,9 @@ pipeline {
   }
 
   parameters {
-    booleanParam(name: "DEPLOY_FEATURE_SANDBOX", description: "Deploy to feature sandbox", defaultValue: false)
+    // booleanParam(name: "DEPLOY_FEATURE_SANDBOX", description: "Deploy to feature sandbox", defaultValue: false)
+    booleanParam(name: "PUBLISH_ASSETS", description: "Publish assets (tag exists, but wasn't published before)", defaultValue: false)
+    booleanParam(name: "PUBLISH_UI", description: "Publish ui (tag exists, but wasn't published before)", defaultValue: false)
   }
 
   stages {
@@ -149,11 +151,8 @@ pipeline {
                 sh 'echo "registry=https://nexus.riaint.ee/repository/sun-npm-local/" > .npmrc'
                 sh "echo '_auth=${PASSWORD}' >> .npmrc"
               }
-              env.affected_libraries.split(', ').each {
-                if (it == '' || it == 'storybook') {
-                  return
-                }
-                if (env."previous_${it}_library_version" == getVersion(it)) {
+              ["assets", "ui"].each {
+                if (env."previous_${it}_library_version" == getVersion(it) && !params."PUBLISH_${it.toUpperCase()}") {
                   echo "${it} version ${getVersion(it)} is already published"
                   return
                 }
@@ -208,7 +207,7 @@ pipeline {
         }
       }
     }
-    stage('deploy storybook: feature-sandbox') {
+    /*stage('deploy storybook: feature-sandbox') {
       when {
         allOf {
           not { branch 'master' }
@@ -226,7 +225,7 @@ pipeline {
           deploy();
         }
       }
-    }
+    }*/
     /*stage('deploy storybook: test') {
       when {
         allOf {
