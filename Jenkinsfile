@@ -195,8 +195,7 @@ pipeline {
       when {
         allOf {
           expression { !env.skip_ci }
-          expression { affected("storybook") }
-          expression { isMaster() || waitForUserApproval(100, 'Deploy to dev?')}
+          expression { isMaster() && affected("storybook") || waitForUserApproval(100, 'Deploy to dev?')}
           expression { return currentBuild.result == null || currentBuild.result == 'SUCCESS' }
         }
       }
