@@ -135,10 +135,14 @@ pipeline {
                   }
                 } catch (e) {
                   def newVersion = getVersion(it)
+                  if (env."previous_${it}_library_version" == getVersion(it)) {
+                    throw e
+                  }
                   def tag = sh ( script: "git tag -l ${it}-${newVersion}", returnStdout: true).trim()
                   if (tag) {
-                    sh "git tag -d ${it}-${newVersion}"
+                    sh "git push origin :refs/tags/${it}-${newVersion}"
                   }
+                  throw e
                 }
               }
             }
