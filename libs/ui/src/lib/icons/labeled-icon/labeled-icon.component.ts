@@ -13,6 +13,6 @@ export class LabeledIconComponent {
   }
 
   getIconName(): string {
-    return `/Icons/${this.name}.svg`;
+    return `./Icons/${this.name}.svg`;
   }
 }

@@ -221,7 +221,7 @@ pipeline {
         }
       }
     }
-    stage('deploy storybook: test') {
+    /*stage('deploy storybook: test') {
       when {
         allOf {
           branch 'master'
@@ -238,7 +238,7 @@ pipeline {
           deploy();
         }
       }
-    }
+    }*/
   }
   post {
     always {
