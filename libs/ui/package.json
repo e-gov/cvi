@@ -5,14 +5,13 @@
     "@angular/common": "^14.0.0",
     "@angular/core": "^14.0.0",
     "@angular/elements": "^14.1.3",
-    "@angular/cdk": "^14.2.0"
+    "@angular/cdk": "^14.2.0",
+    "@fontsource/roboto": "^4.5.8",
+    "angular-svg-icon": "14.0.0",
+    "sanitize-html": "2.7.1"
   },
   "dependencies": {
     "tslib": "^2.3.0"
-  },
-  "allowedNonPeerDependencies": {
-    "angular-svg-icon": "14.0.0",
-    "sanitize-html": "2.7.1"
   },
   "publishConfig": {
     "registry": "https://nexus.riaint.ee/repository/sun-npm-local/"
