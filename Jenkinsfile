@@ -125,10 +125,18 @@ pipeline {
               env.previous_ui_library_version = getVersion("ui")
 
               ["assets", "storybook", "ui"].each {
-                sh "npx nx run ${it}:version"
-                if (it == 'storybook') {
-                  env.storybook_library_version = getVersion("storybook")
-                  echo "Current storybook version: ${env.storybook_library_version}"
+                try {
+                  sh "npx nx run ${it}:version"
+                  if (it == 'storybook') {
+                    env.storybook_library_version = getVersion("storybook")
+                    echo "Current storybook version: ${env.storybook_library_version}"
+                  }
+                } catch (e) {
+                  def newVersion = getVersion(it)
+                  def tag = sh ( script: "git tag -l ${it}-${newVersion}", returnStdout: true).trim()
+                  if (tag) {
+                    sh "git tag -d ${it}-${newVersion}"
+                  }
                 }
               }
             }
@@ -150,17 +158,8 @@ pipeline {
                   return
                 }
                 sh "npx nx build ${it}"
-
-                try {
-                  sh "npm run publish:${it}"
-                  echo "Published library ${it}"
-                } catch (e) {
-                  def newVersion = getVersion(it)
-                  def tag = sh ( script: "git tag -l ${it}-${newVersion}", returnStdout: true).trim()
-                  if (tag) {
-                    sh "git tag -d ${it}-${newVersion}"
-                  }
-                }
+                sh "npm run publish:${it}"
+                echo "Published library ${it}"
               }
             }
           }
