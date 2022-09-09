@@ -3,5 +3,10 @@
   "dest": "../../dist/libs/ui",
   "lib": {
     "entryFile": "src/index.ts"
-  }
+  },
+  "allowedNonPeerDependencies": [
+    "@fontsource/roboto",
+    "angular-svg-icon",
+    "sanitize-html"
+  ]
 }
