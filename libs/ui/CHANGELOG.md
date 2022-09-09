@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.1.7](https://stash.ria.ee/scm/sun/veera-components/compare/ui-0.1.6...ui-0.1.7) (2022-09-09)
+
+
+### Bug Fixes
+
+* **angular:** add platform browser to peer dependencies ([8db03f6](https://stash.ria.ee/scm/sun/veera-components/commits/8db03f6d1e92653276fe0678fe437ebbed982377))
+
+
+
 ## [0.1.6](https://stash.ria.ee/scm/sun/veera-components/compare/ui-0.1.5...ui-0.1.6) (2022-09-09)
 
 
