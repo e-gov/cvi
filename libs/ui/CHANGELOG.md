@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.1.8](https://stash.ria.ee/scm/sun/veera-components/compare/ui-0.1.7...ui-0.1.8) (2022-09-09)
+
+
+### Bug Fixes
+
+* **angular:** specify peer dependency versions ([e8a6837](https://stash.ria.ee/scm/sun/veera-components/commits/e8a6837ff78d1355e581c14f7a94af51978d50ea))
+
+
+
 ## [0.1.7](https://stash.ria.ee/scm/sun/veera-components/compare/ui-0.1.6...ui-0.1.7) (2022-09-09)
 
 
