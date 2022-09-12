@@ -12,4 +12,14 @@ export default {
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
   coverageDirectory: '../../coverage/libs/storybook',
+  reporters: [
+    'default',
+    [
+      'jest-junit',
+      {
+        outputDirectory: './reports/jest',
+        outputName: 'storybook-report.xml',
+      },
+    ],
+  ],
 };

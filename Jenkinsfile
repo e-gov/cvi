@@ -61,6 +61,11 @@ pipeline {
             sh "npx nx affected --base=HEAD~1 --target=lint --parallel=3"
             sh "npx nx run-many --all --target=test --parallel --coverage --coverageReporters=lcov"
           }
+          post {
+            always {
+              junit 'reports/jest/*.xml'
+            }
+          }
         }
         stage('get affected projects') {
           steps {
