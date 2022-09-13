@@ -1,12 +1,38 @@
-# Veera Components
+# Veera Components Library
+
+This project includes a pattern library and a re-usable component library for Angular. The pattern library uses [Storybook](https://storybook.js.org).
 
 ## Quick Start & Documentation
 
-[Nx Documentation](https://nx.dev/angular)
+Documentation and Installation instructions can be found in the Storybook:
 
-[10-minute video showing all Nx features](https://nx.dev/getting-started/intro)
+https://sundmusteenus-dev.eesti.ee/storybook/?path=/story/intro--page
 
-[Interactive Tutorial](https://nx.dev/react-tutorial/01-create-application)
+## Developing
+
+### Adding/updating packages
+
+When adding/upgrading peer dependencies then make sure that they are also updated in `libs/LIB-NAME/package.json` in case of peerDependencies and in `libs/LIB-NAME/ng-package.json` for dependencies to be packaged with the library.
+
+### Development guidelines
+
+TO DO
+
+### Testing
+
+TO DO
+
+### Commits
+
+TO DO
+
+### Publishing
+
+In case of `fix` and `feat` commit types a new changelog entry is generated and the packages published automatically after a successful build.
+
+### Code style
+
+TO DO
 
 ## Running the Storybook
 
@@ -28,3 +54,11 @@ docker push riaee/sun-ria-storybook:latest
 ## Understand your workspace
 
 Run `nx graph` to see a diagram of the dependencies of your projects.
+
+## Using the Nx build system
+
+[Nx Documentation](https://nx.dev/angular)
+
+[10-minute video showing all Nx features](https://nx.dev/getting-started/intro)
+
+[Interactive Tutorial](https://nx.dev/react-tutorial/01-create-application)
