@@ -5,20 +5,17 @@ import {
   AfterViewInit,
   QueryList,
   Renderer2,
-  SimpleChanges,
-  SimpleChange,
-  OnChanges,
   AfterContentInit,
+  ChangeDetectionStrategy,
 } from '@angular/core';
 import { StepComponent } from '../step/step.component';
 
 @Component({
   selector: 'veera-ng-steps',
   templateUrl: './steps.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class StepsComponent
-  implements AfterViewInit, AfterContentInit, OnChanges
-{
+export class StepsComponent implements AfterViewInit, AfterContentInit {
   @Input() title!: string;
   @Input() currentStepIndex = 0;
   stepTitles!: string[];
@@ -37,14 +34,12 @@ export class StepsComponent
     this.hideStepsContent();
   }
 
-  ngOnChanges(changes: SimpleChanges): void {
-    const change: SimpleChange = changes['currentStepIndex'];
-    if (
-      !change.isFirstChange() &&
-      change.currentValue !== change.previousValue
-    ) {
-      this.hideStepsContent();
+  stepSelected(stepIndex: number): void {
+    if (this.currentStepIndex == stepIndex) {
+      return;
     }
+    this.currentStepIndex = stepIndex;
+    this.hideStepsContent();
   }
 
   hideStepsContent(): void {

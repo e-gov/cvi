@@ -1,8 +1,15 @@
-import { Component, ElementRef, HostBinding, Input } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  ElementRef,
+  HostBinding,
+  Input,
+} from '@angular/core';
 
 @Component({
   selector: 'veera-ng-step',
   templateUrl: './step.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class StepComponent {
   @Input() title!: string;

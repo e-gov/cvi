@@ -30,6 +30,9 @@
       &.is-current {
         font-weight: bold;
       }
+      &:not(.is-current) {
+        cursor: pointer;
+      }
     }
     #{$base}__list-item-inner {
       position: relative;
