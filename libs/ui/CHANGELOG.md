@@ -2,6 +2,20 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [0.2.0](https://stash.ria.ee/scm/sun/veera-components/compare/ui-0.1.8...ui-0.2.0) (2022-09-13)
+
+
+### Bug Fixes
+
+* change steps on click and change step content ([02e6d5b](https://stash.ria.ee/scm/sun/veera-components/commits/02e6d5b204fb8db3266e930e8101e9cfa1968651))
+
+
+### Features
+
+* update accordion ([46fb384](https://stash.ria.ee/scm/sun/veera-components/commits/46fb38417da3145a27d9df47e4d84e246a6e98d2))
+
+
+
 ## [0.1.8](https://stash.ria.ee/scm/sun/veera-components/compare/ui-0.1.7...ui-0.1.8) (2022-09-09)
 
 
