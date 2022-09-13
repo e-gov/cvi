@@ -1,4 +1,6 @@
+import { animate, state, style, transition, trigger } from '@angular/animations';
 import {
+  AfterViewInit,
   ChangeDetectionStrategy,
   Component,
   ContentChildren,
@@ -6,13 +8,6 @@ import {
   Input,
   QueryList,
 } from '@angular/core';
-import {
-  trigger,
-  state,
-  style,
-  transition,
-  animate,
-} from '@angular/animations';
 import { AccordionItemDirective } from './directives/accordion-item.directive';
 
 @Component({
@@ -36,7 +31,7 @@ import { AccordionItemDirective } from './directives/accordion-item.directive';
     ]),
   ],
 })
-export class AccordionComponent {
+export class AccordionComponent implements AfterViewInit {
   /** Removing this will break the Storybook story due to https://github.com/storybookjs/storybook/issues/18198 */
   /** @internal */
   expandedItems: number[] = [];
@@ -47,6 +42,10 @@ export class AccordionComponent {
 
   @HostBinding('class') get getHostClasses(): string {
     return `veera-accordion`;
+  }
+
+  ngAfterViewInit(): void {
+    this.items.notifyOnChanges()
   }
 
   getToggleState(index: number) {

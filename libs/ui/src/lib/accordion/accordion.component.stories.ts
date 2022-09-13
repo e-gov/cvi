@@ -1,4 +1,5 @@
 import { Story, Meta } from '@storybook/angular';
+import { concatMap, delay, from, of } from 'rxjs';
 import notes from './accordion.component.md';
 import { AccordionComponent } from './accordion.component';
 
@@ -8,6 +9,15 @@ export default {
   parameters: { notes },
   args: {
     singleOpen: true,
+    content$: from([[
+      {
+        title: 'I am the title of the first observable array element',
+        content: 'Content is irrelevant'
+      },
+      {
+        title: 'I am the title of the second observable array element',
+        content: 'This content is also irrelevant'
+      }]]).pipe(concatMap(item => of(item).pipe(delay(1000)))),
   },
 } as Meta<AccordionComponent>;
 
@@ -34,6 +44,13 @@ const Template: Story<AccordionComponent> = (args: AccordionComponent) => ({
       <veera-ng-accordion-item title="And until then, I can never die? Noooooo! I can explain. It's very valuable. Oh, all right, I am. You, minion. Lift my arm. AFTER HIM! You can crush me but you can't crush my spirit! I've been there. My folks were always on me to groom myself and wear underpants. What am I, the pope? A true inspiration for the children.">
         <ng-template veeraNgAccordionContent>
           One helluva content
+        </ng-template>
+      </veera-ng-accordion-item>
+      <veera-ng-accordion-item
+        *ngFor="let elem of content$ | async"
+        title="{{elem.title}}">
+        <ng-template veeraNgAccordionContent>
+          <p>{{elem.content}}</p>
         </ng-template>
       </veera-ng-accordion-item>
     </veera-ng-accordion>
