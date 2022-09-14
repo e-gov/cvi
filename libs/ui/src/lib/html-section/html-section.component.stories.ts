@@ -18,7 +18,7 @@ export default {
         <div class="veera-html-section__content-elements">
           <veera-ng-labeled-icon name="call"><a href="tel:+3726123000">+372 612 3000</a></veera-ng-labeled-icon>
           <veera-ng-labeled-icon name="email"><a href="mailto:ppa@politsei.ee">ppa@politsei.ee</a></veera-ng-labeled-icon>
-          <veera-ng-labeled-icon name="screen_share"><a href="https://politsei.ee" target="_blank">politsei.ee</a></veera-ng-labeled-icon>
+          <veera-ng-labeled-icon name="screen-share"><a href="https://politsei.ee" target="_blank">politsei.ee</a></veera-ng-labeled-icon>
           <veera-ng-labeled-icon name="location">Pärnu mnt 139, 15060 Tallinn</veera-ng-labeled-icon>
         </div>
       </div>
@@ -48,9 +48,9 @@ Contacts.args = {
         <p>Võta ühendust perekonnaseisuasutusega, kus soovid abielu sõlmida</p>
       </div>
       <div class="veera-html-section__content-elements">
-        <veera-ng-labeled-icon name="screen_share"><a href="#">Maakonnakeskuste kohalikud omavalitsused</a></veera-ng-labeled-icon>
-        <veera-ng-labeled-icon name="screen_share"><a href="#">Notarid</a></veera-ng-labeled-icon>
-        <veera-ng-labeled-icon name="screen_share"><a href="#">Abielu sõlmimise õigust omavad vaimulikud</a></veera-ng-labeled-icon>
+        <veera-ng-labeled-icon name="screen-share"><a href="#">Maakonnakeskuste kohalikud omavalitsused</a></veera-ng-labeled-icon>
+        <veera-ng-labeled-icon name="screen-share"><a href="#">Notarid</a></veera-ng-labeled-icon>
+        <veera-ng-labeled-icon name="screen-share"><a href="#">Abielu sõlmimise õigust omavad vaimulikud</a></veera-ng-labeled-icon>
       </div>
     </div>
   `,
