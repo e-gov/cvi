@@ -1,10 +1,21 @@
-import { Meta } from '@storybook/addon-docs';
+import { Meta, Story } from '@storybook/addon-docs';
+import assetsPkg from '/libs/assets/package.json';
+import uiPkg from '/libs/ui/package.json'
 
 <Meta title="Installation" parameters={{ viewMode: 'docs' }} />
 
 # Installation
 
 ## Veera Styles library
+
+<Story name="Veera Styles library">
+  {{
+    props: { assetsPkg },
+    template: `
+      Latest version: {{ assetsPkg.version }}
+    `,
+  }}
+</Story>
 
 ### Installation
 
@@ -24,6 +35,15 @@ npm i --save @ria/veera-styles;
 3. Done, enjoy!
 
 ## Angular Component library
+
+<Story name="Angular Component library">
+  {{
+    props: { uiPkg },
+    template: `
+      Latest version: {{ uiPkg.version }}
+    `,
+  }}
+</Story>
 
 ### Angular component library peerDependencies
 

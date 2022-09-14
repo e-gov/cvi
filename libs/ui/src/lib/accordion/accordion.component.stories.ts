@@ -9,15 +9,18 @@ export default {
   parameters: { notes },
   args: {
     singleOpen: true,
-    content$: from([[
-      {
-        title: 'I am the title of the first observable array element',
-        content: 'Content is irrelevant'
-      },
-      {
-        title: 'I am the title of the second observable array element',
-        content: 'This content is also irrelevant'
-      }]]).pipe(concatMap(item => of(item).pipe(delay(1000)))),
+    content$: from([
+      [
+        {
+          title: 'I am the title of the first observable array element',
+          content: 'Content is irrelevant',
+        },
+        {
+          title: 'I am the title of the second observable array element',
+          content: 'This content is also irrelevant',
+        },
+      ],
+    ]).pipe(concatMap((item) => of(item).pipe(delay(1000)))),
   },
 } as Meta<AccordionComponent>;
 

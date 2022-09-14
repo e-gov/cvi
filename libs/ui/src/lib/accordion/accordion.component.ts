@@ -1,4 +1,10 @@
-import { animate, state, style, transition, trigger } from '@angular/animations';
+import {
+  animate,
+  state,
+  style,
+  transition,
+  trigger,
+} from '@angular/animations';
 import {
   AfterViewInit,
   ChangeDetectionStrategy,
@@ -45,7 +51,7 @@ export class AccordionComponent implements AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    this.items.notifyOnChanges()
+    this.items.notifyOnChanges();
   }
 
   getToggleState(index: number) {

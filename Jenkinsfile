@@ -151,6 +151,9 @@ pipeline {
                   }
                   throw e
                 }
+
+                env.assets_library_version = getVersion("assets")
+                env.ui_library_version = getVersion("ui")
               }
             }
           }
@@ -163,7 +166,7 @@ pipeline {
                 sh "echo '_auth=${PASSWORD}' >> .npmrc"
               }
               ["assets", "ui"].each {
-                if (env."previous_${it}_library_version" == getVersion(it) && !params."PUBLISH_${it.toUpperCase()}") {
+                if (env."previous_${it}_library_version" == env."${it}_library_version" && !params."PUBLISH_${it.toUpperCase()}") {
                   echo "${it} version ${getVersion(it)} is already published"
                   return
                 }
@@ -183,9 +186,14 @@ pipeline {
       }
       steps {
         script {
+          def assets_version = env.assets_library_version ?: getVersion("assets")
+          def ui_version = env.ui_library_version ?: getVersion("ui")
           def dockerImage = docker.build(STORYBOOK_DOCKER_IMAGE, [
             "--build-arg node_version=${PUBLIC_REGISTRY}/node:lts",
             "--build-arg nginx_version=${PUBLIC_REGISTRY}/nginx:1.23.1-alpine",
+            "--build-arg alpine_version=${PUBLIC_REGISTRY}/alpine:3.14",
+            "--build-arg assets_version=${assets_version}",
+            "--build-arg ui_version=${ui_version}",
             "-f ./libs/storybook/Dockerfile",
             "."
           ].join(" "))
