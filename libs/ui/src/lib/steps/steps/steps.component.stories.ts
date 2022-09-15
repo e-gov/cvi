@@ -1,4 +1,5 @@
 import { Meta, Story } from '@storybook/angular/';
+import { concatMap, delay, from, of } from 'rxjs';
 import { StepsComponent } from './steps.component';
 
 export default {
@@ -42,3 +43,25 @@ const Template: Story<StepsComponent> = (args: StepsComponent) => ({
 });
 
 export const Default = Template.bind({});
+
+const TemplateObservableTitles: Story = (args) => ({
+  props: {
+    ...args,
+    labels$: from([['First', 'Second', 'Third']]).pipe(
+      concatMap((item) => of(item).pipe(delay(100)))
+    ),
+  },
+  /* template */
+  template: `
+    <veera-ng-steps [title]="title" [currentStepIndex]="currentStepIndex">
+      <ng-container *ngFor="let label of labels$ | async">
+        <veera-ng-step title="{{label}}">
+            {{ label }}
+        </veera-ng-step>
+      </ng-container>
+    </veera-ng-steps>
+  `,
+});
+
+export const WithObservableTitles = TemplateObservableTitles.bind({});
+WithObservableTitles.args = {};

@@ -1,12 +1,13 @@
 import {
-  Component,
-  Input,
-  ContentChildren,
+  AfterContentInit,
   AfterViewInit,
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  ContentChildren,
+  Input,
   QueryList,
   Renderer2,
-  AfterContentInit,
-  ChangeDetectionStrategy,
 } from '@angular/core';
 import { StepComponent } from '../step/step.component';
 
@@ -20,7 +21,7 @@ export class StepsComponent implements AfterViewInit, AfterContentInit {
   @Input() currentStepIndex = 0;
   stepTitles!: string[];
 
-  constructor(private renderer: Renderer2) {}
+  constructor(private renderer: Renderer2, private cdRef: ChangeDetectorRef) {}
 
   @ContentChildren(StepComponent) stepChildren!: QueryList<StepComponent>;
 
@@ -31,6 +32,11 @@ export class StepsComponent implements AfterViewInit, AfterContentInit {
   }
 
   ngAfterViewInit(): void {
+    this.stepChildren.changes.subscribe((steps) => {
+      this.stepTitles = steps.map((step: StepComponent) => step.title);
+      this.hideStepsContent();
+      this.cdRef.markForCheck();
+    });
     this.hideStepsContent();
   }
 
