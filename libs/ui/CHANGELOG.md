@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.2.1](https://stash.ria.ee/scm/sun/veera-components/compare/ui-0.2.0...ui-0.2.1) (2022-09-15)
+
+
+### Bug Fixes
+
+* hook permissions and package rxjs ([0464c62](https://stash.ria.ee/scm/sun/veera-components/commits/0464c625a39a5eeee2d0355d6748d8db9618f81f))
+
+
+
 # [0.2.0](https://stash.ria.ee/scm/sun/veera-components/compare/ui-0.1.8...ui-0.2.0) (2022-09-13)
 
 
