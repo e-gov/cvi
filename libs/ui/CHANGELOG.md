@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [0.4.0](https://stash.ria.ee/scm/sun/veera-components/compare/ui-0.3.0...ui-0.4.0) (2022-09-15)
+
+
+### Features
+
+* update stepper to allow observable input ([f8383d9](https://stash.ria.ee/scm/sun/veera-components/commits/f8383d94cdf56cf1eb9825da2dfc7fb42623d49d))
+
+
+
 # [0.3.0](https://stash.ria.ee/scm/sun/veera-components/compare/ui-0.2.1...ui-0.3.0) (2022-09-15)
 
 
