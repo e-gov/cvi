@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [0.3.0](https://stash.ria.ee/scm/sun/veera-components/compare/ui-0.2.1...ui-0.3.0) (2022-09-15)
+
+
+### Features
+
+* make html-section sanitization optional ([3afa7d8](https://stash.ria.ee/scm/sun/veera-components/commits/3afa7d86b5072c7bae90f65964d6d6c1a58a9dcc))
+
+
+
 ## [0.2.1](https://stash.ria.ee/scm/sun/veera-components/compare/ui-0.2.0...ui-0.2.1) (2022-09-15)
 
 
