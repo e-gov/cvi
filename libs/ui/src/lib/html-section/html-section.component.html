@@ -1,1 +1,1 @@
-<div class="veera-html-section" [innerHTML]="html | safeHtml"></div>
+<div class="veera-html-section" [innerHTML]="sanitize ? (html | safeHtml) : html"></div>

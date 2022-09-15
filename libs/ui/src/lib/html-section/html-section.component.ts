@@ -8,6 +8,7 @@ import { LabeledIconComponent } from '../icons/labeled-icon/labeled-icon.compone
 })
 export class HtmlSectionComponent implements OnInit {
   @Input() html?: string;
+  @Input() sanitize?: boolean;
 
   constructor(private readonly injector: Injector) {}
 
