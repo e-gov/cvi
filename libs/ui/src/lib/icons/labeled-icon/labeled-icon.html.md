@@ -10,7 +10,7 @@ Permitted Sass components as children of accordion items | any
 
 ## Where to use
 
-Utilise where there is a need to display svg icon
+Use where there is a need to display an SVG icon with a mandatory label. Otherwise use `veera-icon`.
 
 ## How to use
 

@@ -5,120 +5,273 @@
   $background-color: get-color(white);
   $border-color: get-color(black-coral-2);
   $number-border-width: 2px;
+  $number-size--mobile: 32px;
+  $page-padding--mobile: get-spacing('valga');
+
+  & {
+    @include veera-breakpoint-down(sm) {
+      display: block;
+      &:not(.is-any-step-selected) {
+        padding-inline: get-spacing('kuressaare');
+      }
+    }
+  }
 
   @at-root {
     #{$base}__title {
-      font-size: $veera-font-size-350;
-      line-height: $veera-line-height-500;
-      font-weight: $veera-font-weight-alpha;
-      margin-bottom: get-spacing('haapsalu');
+      color: get-color(black-coral-12);
+      margin-block: get-spacing('haapsalu');
+      @include veera-breakpoint-down(sm) {
+        font-size: $veera-font-size-250;
+        line-height: $veera-line-height-100;
+        font-weight: $veera-font-weight-beta;
+        padding-inline: $page-padding--mobile;
+      }
+      @include veera-breakpoint-up(sm) {
+        font-size: $veera-font-size-350;
+        line-height: $veera-line-height-500;
+        font-weight: $veera-font-weight-alpha;
+      }
+    }
+    #{$base}__inner {
+      @include veera-breakpoint-down(sm) {
+        position: relative;
+      }
     }
     #{$base}__list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: get-spacing('paldiski');
-      list-style: none;
       counter-reset: numberedlist;
+      list-style: none;
+      gap: get-spacing('paldiski');
+      @include veera-breakpoint-down(sm) {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: $number-border-width;
+      }
+      @include veera-breakpoint-up(sm) {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      }
     }
     #{$base}__list-item {
-      flex: 1 1 0;
-      padding: get-spacing('paldiski');
-      padding-top: get-spacing('valga');
-      background-color: $background-color;
-      border: 1px solid $border-color;
-      border-radius: $veera-radius-m;
-      &.is-current {
-        font-weight: bold;
+      counter-increment: numberedlist;
+      @include veera-breakpoint-down(sm) {
+        background-color: $background-color;
+        padding-block: get-spacing('paldiski');
+        color: get-color(black-coral-15);
+        font-weight: $veera-font-weight-beta;
+        #{$base}:not(.is-any-step-selected) & {
+          border-radius: $veera-radius-m;
+          padding-left: get-spacing('paldiski');
+          padding-right: get-spacing('haapsalu');
+        }
+        #{$base}.is-any-step-selected & {
+          padding-inline: get-spacing('parnu');
+        }
+        #{$base}.is-any-step-selected &:not(.is-current) {
+          @include veera-screenreader-text;
+        }
       }
-      &:not(.is-current) {
-        cursor: pointer;
+      @include veera-breakpoint-up(sm) {
+        flex: 1 1 0;
+        padding: get-spacing('paldiski');
+        padding-top: get-spacing('valga');
+        background-color: $background-color;
+        border: 1px solid $border-color;
+        border-radius: $veera-radius-l;
+        &.is-current {
+          font-weight: bold;
+        }
+        &:not(.is-current) {
+          cursor: pointer;
+        }
       }
     }
     #{$base}__list-item-inner {
       position: relative;
-      border-top: $number-border-width solid $border-color;
-      padding-top: inherit;
+      font-size: $veera-font-size-100;
+
       &::before {
-        content: counter(numberedlist);
-        counter-increment: numberedlist;
         border-radius: 51%;
-        border: $number-border-width solid $border-color;
-        color: get-color(black-coral-6);
-        font-size: $veera-font-size-50;
-        line-height: 0;
         aspect-ratio: 1;
-        padding-inline: 8px;
-        position: absolute;
-        top: -1px;
+      }
+      @include veera-breakpoint-down(sm) {
         display: flex;
-        justify-content: center;
+        width: 100%;
+        gap: get-spacing('haapsalu');
         align-items: center;
-        background-color: $background-color;
-        transform: translateY(-50%);
+        &::before {
+          flex-shrink: 0;
+          border-radius: 51%;
+          border: $number-border-width solid transparent;
+          content: counter(numberedlist);
+          width: $number-size--mobile;
+          background-image:
+            linear-gradient(
+              get-color(white),
+              get-color(white)
+            ),
+            conic-gradient(
+              get-color(sapphire-blue-10) var(--progress),
+              get-color(black-coral-2) var(--progress)
+          );
+          background-origin: border-box;
+          background-clip: content-box, border-box;
+          aspect-ratio: 1;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-weight: $veera-font-weight-beta;
+          #{$base}:not(.is-any-step-selected) & {
+            color: get-color(sapphire-blue-10);
+          }
+          #{$base}.is-any-step-selected & {
+            color: get-color(black-coral-10);
+          }
+        }
+      }
+      @include veera-breakpoint-up(sm) {
+        border-top: $number-border-width solid $border-color;
+        padding-top: inherit;
+        width: 100%;
+        height: 100%;
+        &::before {
+          content: counter(numberedlist);
+          border-radius: 51%;
+          border: $number-border-width solid $border-color;
+          color: get-color(black-coral-6);
+          font-size: $veera-font-size-50;
+          line-height: 0;
+          aspect-ratio: 1;
+          padding-inline: 8px;
+          position: absolute;
+          top: -1px;
+          background-color: $background-color;
+          transform: translateY(-50%);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
       }
       #{$base}__list-item.is-current & {
-        border-top-color: transparent;
-        &::before {
-          content: '';
-          border-width: 9px;
-          border-color: get-color(sapphire-blue-10);
-          padding: 4px;
+        @include veera-breakpoint-up(sm) {
+          border-top-color: transparent;
+          &::before {
+            content: '';
+            border-width: 9px;
+            border-color: get-color(sapphire-blue-10);
+            padding: 4px;
+          }
         }
       }
     }
     #{$base}__list-item-title {
+      @include veera-breakpoint-down(sm) {
+        flex-grow: 1;
+      }
+    }
+    #{$base}__list-item-arrow-icon {
+      @include veera-breakpoint-down(sm) {
+        fill: get-color(sapphire-blue-10);
+        #{$base}.is-any-step-selected & {
+          display: none;
+        }
+      }
+      @include veera-breakpoint-up(sm) {
+        display: none;
+      }
     }
     #{$base}__content-panel {
-      border: 1px solid $border-color;
-      background-color: $background-color;
-      padding-top: get-spacing('kuressaare');
-      padding-bottom: get-spacing('parnu');
-      padding-inline: 15%;
-      border-top-left-radius: $veera-radius-m;
-      border-top-right-radius: $veera-radius-m;
-      margin-top: get-spacing('haapsalu');
-      &:not([hidden]) {
+      display: none;
+      &.is-current {
         display: block;
+      }
+      @include veera-breakpoint-down(sm) {
+        padding-inline: $page-padding--mobile;
+        padding-block: get-spacing('kuressaare');
+        background-color: get-color(white);
+      }
+      @include veera-breakpoint-up(sm) {
+        border: 1px solid $border-color;
+        background-color: $background-color;
+        padding-top: get-spacing('kuressaare');
+        padding-bottom: get-spacing('parnu');
+        padding-inline: 15%;
+        border-top-left-radius: $veera-radius-l;
+        border-top-right-radius: $veera-radius-l;
+        margin-top: get-spacing('haapsalu');
       }
     }
     #{$base}__content-panel-title {
-      font-size: $veera-font-size-250;
-      line-height: $veera-line-height-500;
-      margin-bottom: get-spacing('paldiski');
-      display: flex;
-      gap: get-spacing('paldiski');
-      align-items: center;
-      &::before {
-        content: '';
-        border-radius: 51%;
-        display: inline-block;
-        width: 26px;
-        height: 26px;
-        border: 9px solid get-color(sapphire-blue-10);
-        aspect-ratio: 1;
-        background-color: $background-color;
-        padding: 4px;
+      @include veera-breakpoint-up(sm) {
+        font-size: $veera-font-size-250;
+        line-height: $veera-line-height-500;
+        margin-bottom: get-spacing('paldiski');
+        display: flex;
+        gap: get-spacing('paldiski');
+        align-items: center;
+        &::before {
+          content: '';
+          border-radius: 51%;
+          display: inline-block;
+          width: 26px;
+          height: 26px;
+          border: 9px solid get-color(sapphire-blue-10);
+          aspect-ratio: 1;
+          background-color: $background-color;
+          padding: 4px;
+        }
       }
     }
     #{$base}__directional-buttons {
-      display: flex;
-      justify-content: space-between;
-      border-bottom-left-radius: $veera-radius-m;
-      border-bottom-right-radius: $veera-radius-m;
-      border: 1px solid $border-color;
-      border-top: none;
+      @include veera-breakpoint-down(sm) {
+        #{$base}:not(.is-any-step-selected) & {
+          display: none;
+        }
+      }
+      @include veera-breakpoint-up(sm) {
+        display: flex;
+        justify-content: space-between;
+        border-bottom-left-radius: $veera-radius-l;
+        border-bottom-right-radius: $veera-radius-l;
+        border: 1px solid $border-color;
+        border-top: none;
+      }
     }
     #{$base}__directional-button {
-      text-decoration: underline;
-      padding-inline: get-spacing('kuressaare');
-      padding-block: get-spacing('haapsalu');
-      color: get-color(sapphire-blue-10);
-      font-size: $veera-font-size-100;
-      &--direction-prev {
-        margin-right: auto;
+      @include veera-breakpoint-down(sm) {
+        #{$base}.is-any-step-selected & {
+          position: absolute;
+          top: 18px;
+        }
+        &--direction-prev {
+          left: $page-padding--mobile;
+        }
+        &--direction-next {
+          right: $page-padding--mobile;
+        }
       }
-      &--direction-next {
-        margin-left: auto;
+      @include veera-breakpoint-up(sm) {
+        text-decoration: underline;
+        padding-inline: get-spacing('kuressaare');
+        padding-block: get-spacing('haapsalu');
+        color: get-color(sapphire-blue-10);
+        font-size: $veera-font-size-100;
+        display: flex;
+        gap: get-spacing('paldiski');
+        &--direction-prev {
+          margin-right: auto;
+        }
+        &--direction-next {
+          margin-left: auto;
+        }
+      }
+    }
+    #{$base}__directional-button-icon {
+      fill: get-color(sapphire-blue-10);
+    }
+    #{$base}__directional-button-label {
+      @include veera-breakpoint-down(sm) {
+        @include veera-screenreader-text;
       }
     }
   }

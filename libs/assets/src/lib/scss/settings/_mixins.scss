@@ -9,3 +9,15 @@
   border: none;
   white-space: nowrap;
 }
+
+@mixin veera-breakpoint-down($breakpoint) {
+  @media (max-width: #{map-get($veera-grid-breakpoints, $breakpoint)}) {
+    @content;
+  }
+}
+
+@mixin veera-breakpoint-up($breakpoint) {
+  @media (min-width: #{map-get($veera-grid-breakpoints, $breakpoint) + 1px}) {
+    @content;
+  }
+}

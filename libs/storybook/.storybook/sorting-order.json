@@ -12,6 +12,7 @@
       "Input",
       "Radio button",
       "Accordion",
+      "Icon",
       "Labeled icon",
       "Html Section"
     ],
@@ -22,6 +23,7 @@
       "Input",
       "Radio button",
       "Accordion",
+      "Icon",
       "Labeled icon",
       "Steps",
       ["Steps", "Step"],

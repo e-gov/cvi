@@ -11,8 +11,4 @@ export class LabeledIconComponent {
   @HostBinding('class') get getHostClasses(): string {
     return 'veera-labeled-icon';
   }
-
-  getIconName(): string {
-    return `./Icons/${this.name}.svg`;
-  }
 }

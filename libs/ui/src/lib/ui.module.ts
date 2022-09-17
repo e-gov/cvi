@@ -8,6 +8,7 @@ import { InputComponent } from './input/input.component';
 import { RadioButtonsComponent } from './radio-button/radio-buttons/radio-buttons.component';
 import { RadioButtonComponent } from './radio-button/radio-button/radio-button.component';
 import { StepComponent } from './steps/step/step.component';
+import { IconComponent } from './icons/icon/icon.component';
 import { LabeledIconComponent } from './icons/labeled-icon/labeled-icon.component';
 import { StepsComponent } from './steps/steps/steps.component';
 import { FeedbackComponent } from './feedback/feedback/feedback.component';
@@ -28,6 +29,7 @@ const components = [
   ButtonComponent,
   InputComponent,
   FormItemComponent,
+  IconComponent,
   LabeledIconComponent,
   StepsComponent,
   StepComponent,

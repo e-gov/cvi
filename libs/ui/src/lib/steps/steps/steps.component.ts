@@ -5,6 +5,7 @@ import {
   ChangeDetectorRef,
   Component,
   ContentChildren,
+  HostBinding,
   Input,
   QueryList,
   Renderer2,
@@ -18,8 +19,16 @@ import { StepComponent } from '../step/step.component';
 })
 export class StepsComponent implements AfterViewInit, AfterContentInit {
   @Input() title!: string;
-  @Input() currentStepIndex = 0;
+  @Input() currentStepIndex: number | null = null;
   stepTitles!: string[];
+  currentProgressCSSVar = 0;
+  anyStepSelected = false;
+
+  @HostBinding('class') get getHostClasses(): string {
+    return (
+      'veera-steps' + (this.anyStepSelected ? ' is-any-step-selected' : '')
+    );
+  }
 
   constructor(private renderer: Renderer2, private cdRef: ChangeDetectorRef) {}
 
@@ -44,8 +53,12 @@ export class StepsComponent implements AfterViewInit, AfterContentInit {
     if (this.currentStepIndex == stepIndex) {
       return;
     }
+    this.anyStepSelected = true;
     this.currentStepIndex = stepIndex;
     this.hideStepsContent();
+    this.currentProgressCSSVar = Math.round(
+      ((stepIndex + 1) / this.stepTitles.length) * 100
+    );
   }
 
   hideStepsContent(): void {
@@ -53,9 +66,9 @@ export class StepsComponent implements AfterViewInit, AfterContentInit {
       const domNode: HTMLElement = step.ref.nativeElement;
 
       if (stepIndex === this.currentStepIndex) {
-        this.renderer.removeAttribute(domNode, 'hidden');
+        this.renderer.addClass(domNode, 'is-current');
       } else {
-        this.renderer.setAttribute(domNode, 'hidden', '');
+        this.renderer.removeClass(domNode, 'is-current');
       }
     });
   }
