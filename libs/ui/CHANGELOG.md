@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [0.5.0](https://stash.ria.ee/scm/sun/veera-components/compare/ui-0.4.0...ui-0.5.0) (2022-09-17)
+
+
+### Features
+
+* step component mobile support & regular icons ([41f2e32](https://stash.ria.ee/scm/sun/veera-components/commits/41f2e320bd08d83933052b4e3555182e9e08a626))
+
+
+
 # [0.4.0](https://stash.ria.ee/scm/sun/veera-components/compare/ui-0.3.0...ui-0.4.0) (2022-09-15)
 
 
