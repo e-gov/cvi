@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [0.3.0](https://stash.ria.ee/scm/sun/veera-components/compare/storybook-0.2.0...storybook-0.3.0) (2022-09-19)
+
+
+### Features
+
+* **angular:** notification component ([146ea73](https://stash.ria.ee/scm/sun/veera-components/commits/146ea7399f912ab1ad1b6cff9fa7c2e6e83d7968))
+
+
+
 # [0.2.0](https://stash.ria.ee/scm/sun/veera-components/compare/storybook-0.1.1...storybook-0.2.0) (2022-09-17)
 
 
