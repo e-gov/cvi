@@ -129,7 +129,7 @@ pipeline {
         stage('verify build') {
           steps {
             script {
-              ["assets", "storybook", "ui"].each {
+              ["assets", "ui"].each {
                 try {
                     sh "npx nx build ${it}"
                 } catch (e) {
