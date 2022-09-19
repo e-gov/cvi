@@ -16,6 +16,7 @@ pipeline {
     STORYBOOK_DOCKER_IMAGE = "riaee/sun-ria-storybook"
     HUSKY = 0
     STORYBOOK_APP_NAME = 'ria-storybook'
+    NAMESPACE = "sun"
   }
 
   parameters {
@@ -225,43 +226,6 @@ pipeline {
         }
       }
     }
-    /*stage('deploy storybook: feature-sandbox') {
-      when {
-        allOf {
-          not { branch 'master' }
-          expression { !env.skip_ci }
-          expression { affected("storybook") }
-          expression { params.DEPLOY_FEATURE_SANDBOX || waitForUserApproval(100, 'Deploy to feature-sandbox?')}
-          expression { return currentBuild.result == null || currentBuild.result == 'SUCCESS' }
-        }
-      }
-      environment {
-        ENV = 'sandbox'
-      }
-      steps {
-        script {
-          deploy();
-        }
-      }
-    }*/
-    /*stage('deploy storybook: test') {
-      when {
-        allOf {
-          branch 'master'
-          expression { !env.skip_ci }
-          expression { affected("storybook") }
-          expression { return currentBuild.result == null || currentBuild.result == 'SUCCESS' }
-        }
-      }
-      environment {
-        ENV = 'test'
-      }
-      steps {
-        script {
-          deploy();
-        }
-      }
-    }*/
   }
   post {
     always {
@@ -301,11 +265,11 @@ void deploy() {
     dir("deployment/${STORYBOOK_APP_NAME}") {
       sh script: """
       helm version
-      helm list -n ${ns}
+      helm list -n ${NAMESPACE}
       helm lint . -f values.yaml -f values-${ENV}.yaml
 
-      helm upgrade -n ${ns} ${STORYBOOK_APP_NAME} . -f values.yaml  -f values-${ENV}.yaml --set image.tag=${STORYBOOK_IMAGE_TAG} --install --create-namespace --atomic --timeout 5m0s
-      helm list -n ${ns} | grep ${STORYBOOK_APP_NAME}
+      helm upgrade -n ${NAMESPACE} ${STORYBOOK_APP_NAME} . -f values.yaml  -f values-${ENV}.yaml --set image.tag=${STORYBOOK_IMAGE_TAG} --install --create-namespace --atomic --timeout 5m0s
+      helm list -n ${NAMESPACE} | grep ${STORYBOOK_APP_NAME}
       """, label: "Deploy application";
     }
   }
