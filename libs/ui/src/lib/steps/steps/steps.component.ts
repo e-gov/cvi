@@ -5,8 +5,10 @@ import {
   ChangeDetectorRef,
   Component,
   ContentChildren,
+  EventEmitter,
   HostBinding,
   Input,
+  Output,
   QueryList,
   Renderer2,
 } from '@angular/core';
@@ -20,6 +22,8 @@ import { StepComponent } from '../step/step.component';
 export class StepsComponent implements AfterViewInit, AfterContentInit {
   @Input() title!: string;
   @Input() currentStepIndex: number | null = null;
+  @Output() stepChange = new EventEmitter<number>();
+
   stepTitles!: string[];
   currentProgressCSSVar = 0;
   anyStepSelected = false;
@@ -59,6 +63,7 @@ export class StepsComponent implements AfterViewInit, AfterContentInit {
     this.currentProgressCSSVar = Math.round(
       ((stepIndex + 1) / this.stepTitles.length) * 100
     );
+    this.stepChange.emit(this.currentStepIndex);
   }
 
   hideStepsContent(): void {
