@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.6.1](https://stash.ria.ee/scm/sun/veera-components/compare/ui-0.6.0...ui-0.6.1) (2022-09-19)
+
+
+### Bug Fixes
+
+* icon import order ([35eb0d7](https://stash.ria.ee/scm/sun/veera-components/commits/35eb0d76fe039fc402454d2380798fb866a41681))
+
+
+
 # [0.6.0](https://stash.ria.ee/scm/sun/veera-components/compare/ui-0.5.0...ui-0.6.0) (2022-09-19)
 
 
