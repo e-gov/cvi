@@ -9,7 +9,8 @@
   <div class="veera-notification__title" *ngIf="type !== 'compact'">
     <div *ngIf="showHeaderIcon else withoutHeaderIconTemplate"
          class="veera-notification__title-icon">
-      <veera-ng-labeled-icon [name]="type | toHeaderIcon">
+      <veera-ng-labeled-icon *ngIf="type | toHeaderIcon as iconName"
+                             [name]="iconName">
         <ng-template [ngTemplateOutlet]="withoutHeaderIconTemplate"></ng-template>
       </veera-ng-labeled-icon>
     </div>

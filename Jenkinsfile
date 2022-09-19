@@ -126,6 +126,19 @@ pipeline {
             sh "git remote set-url origin https://${BITBUCKET_USR}:${BITBUCKET_PSW}@stash.ria.ee/scm/sun/veera-components.git"
           }
         }
+        stage('verify build') {
+          steps {
+            script {
+              ["assets", "storybook", "ui"].each {
+                try {
+                    sh "npx nx build ${it}"
+                } catch (e) {
+                   throw e
+                }
+             }
+            }
+          }
+        }
         stage('release libraries') {
           steps {
             script {
