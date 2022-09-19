@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.7.1](https://stash.ria.ee/scm/sun/veera-components/compare/ui-0.7.0...ui-0.7.1) (2022-09-19)
+
+
+### Bug Fixes
+
+* **angular:** labeled icon story ([4606921](https://stash.ria.ee/scm/sun/veera-components/commits/460692121aa26f0cc9f30fce9c08462d4bc34cf7))
+
+
+
 # [0.7.0](https://stash.ria.ee/scm/sun/veera-components/compare/ui-0.6.2...ui-0.7.0) (2022-09-19)
 
 
