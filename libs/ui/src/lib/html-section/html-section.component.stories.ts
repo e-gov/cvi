@@ -6,7 +6,6 @@ export default {
   title: 'Angular/Html section',
   component: HtmlSectionComponent,
   parameters: { notes },
-  argTypes: {},
   args: {
     html: `
       <h3 class="veera-html-section__title">Politsei- ja Piirivalveameti kontaktid</h3>
@@ -27,12 +26,11 @@ export default {
 } as Meta;
 
 const Template: Story<HtmlSectionComponent> = (args: HtmlSectionComponent) => ({
-  component: HtmlSectionComponent,
   props: {
     ...args,
   },
   template: `
-    <veera-ng-html-section [html]="html"></veera-ng-html-section>
+    <veera-ng-html-section [html]="html" [sanitize]="sanitize"></veera-ng-html-section>
   `,
 });
 
@@ -54,4 +52,5 @@ Contacts.args = {
       </div>
     </div>
   `,
+  sanitize: true,
 };

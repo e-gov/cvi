@@ -67,7 +67,7 @@
     "@storybook/manager-webpack5": "~6.5.9",
     "@types/jest": "27.4.1",
     "@types/node": "16.11.7",
-    "@types/sanitize-html": "2.6.2",
+    "@types/sanitize-html": "^2.6.2",
     "@typescript-eslint/eslint-plugin": "^5.29.0",
     "@typescript-eslint/parser": "^5.29.0",
     "@whitespace/storybook-addon-html": "^5.0.0",

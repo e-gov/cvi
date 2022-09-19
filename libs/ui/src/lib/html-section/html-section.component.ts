@@ -8,13 +8,14 @@ import { LabeledIconComponent } from '../icons/labeled-icon/labeled-icon.compone
 })
 export class HtmlSectionComponent implements OnInit {
   @Input() html?: string;
-  @Input() sanitize?: boolean;
+  @Input() sanitize = true;
 
   constructor(private readonly injector: Injector) {}
 
   ngOnInit() {
     this.createCustomElements([
       [LabeledIconComponent, 'veera-ng-labeled-icon'],
+      [LabeledIconComponent, 'veera-ng-icon'],
     ]);
   }
 
