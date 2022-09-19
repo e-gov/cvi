@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [0.6.0](https://stash.ria.ee/scm/sun/veera-components/compare/ui-0.5.0...ui-0.6.0) (2022-09-19)
+
+
+### Features
+
+* **angular:** emit step change index ([fe8b630](https://stash.ria.ee/scm/sun/veera-components/commits/fe8b63081bb8ad5d2899b802e34971d9f8da9276))
+
+
+
 # [0.5.0](https://stash.ria.ee/scm/sun/veera-components/compare/ui-0.4.0...ui-0.5.0) (2022-09-17)
 
 
