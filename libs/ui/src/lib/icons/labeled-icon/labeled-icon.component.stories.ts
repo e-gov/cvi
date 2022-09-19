@@ -21,7 +21,7 @@ const Template: Story<LabeledIconComponent> = (args: LabeledIconComponent) => ({
     ...args,
   },
   template: `
-    <veera-ng-labeled-icon [name]="name"></veera-ng-labeled-icon>
+    <veera-ng-labeled-icon [name]="name">This is a labeled icon</veera-ng-labeled-icon>
   `,
 });
 
