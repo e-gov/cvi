@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.6.2](https://stash.ria.ee/scm/sun/veera-components/compare/ui-0.6.1...ui-0.6.2) (2022-09-19)
+
+
+### Bug Fixes
+
+* **angular:** icon support for html section ([8d97123](https://stash.ria.ee/scm/sun/veera-components/commits/8d97123e3144bd90e4a09eb7936cd831e6ff3d75))
+
+
+
 ## [0.6.1](https://stash.ria.ee/scm/sun/veera-components/compare/ui-0.6.0...ui-0.6.1) (2022-09-19)
 
 
