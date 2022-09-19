@@ -3,6 +3,7 @@ export type IconName =
   | 'email'
   | 'arrow-a-left'
   | 'arrow-a-right'
+  | 'library-add'
   | 'location'
   | 'screen-share'
   | 'happy-face'
