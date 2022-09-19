@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { IconName } from '../constants';
+import { IconName } from '../icon-name';
 
 @Component({
   selector: 'veera-ng-icon',

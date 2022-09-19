@@ -1,6 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { NotificationType } from './constants';
-import { IconName } from '../icons/constants';
+import { IconName } from '../icons/icon-name';
 
 @Pipe({
   name: 'toHeaderIcon',
