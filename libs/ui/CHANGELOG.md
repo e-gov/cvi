@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [0.7.0](https://stash.ria.ee/scm/sun/veera-components/compare/ui-0.6.2...ui-0.7.0) (2022-09-19)
+
+
+### Features
+
+* **angular:** notification component ([146ea73](https://stash.ria.ee/scm/sun/veera-components/commits/146ea7399f912ab1ad1b6cff9fa7c2e6e83d7968))
+
+
+
 ## [0.6.2](https://stash.ria.ee/scm/sun/veera-components/compare/ui-0.6.1...ui-0.6.2) (2022-09-19)
 
 
