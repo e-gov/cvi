@@ -24,6 +24,8 @@ import { HtmlSectionComponent } from './html-section/html-section.component';
 import { SafeHtmlPipe } from './pipes/safe-html-pipe';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 import { HttpClientModule } from '@angular/common/http';
+import { NotificationComponent } from './notification/notification.component';
+import { NotificationTypeToHeaderIconPipe } from './notification/notification-type-to-header-icon.pipe';
 
 const components = [
   ButtonComponent,
@@ -44,9 +46,10 @@ const components = [
   AccordionContentDirective,
   AccordionTitleDirective,
   AccordionHeaderDirective,
+  NotificationComponent,
 ];
 
-const pipes = [SafeHtmlPipe];
+const pipes = [SafeHtmlPipe, NotificationTypeToHeaderIconPipe];
 
 @NgModule({
   imports: [
@@ -57,6 +60,6 @@ const pipes = [SafeHtmlPipe];
     AngularSvgIconModule.forRoot(),
   ],
   declarations: [...components, ...pipes],
-  exports: [...components, ...pipes, TextFieldModule],
+  exports: [...components, ...pipes, TextFieldModule, AngularSvgIconModule],
 })
 export class UiModule {}

@@ -1,0 +1,26 @@
+<div class="veera-notification veera-notification__{{type}}">
+  <button *ngIf="showCloseButton && type !== 'compact'"
+          aria-label="close-button"
+          class="veera-notification__close-button"
+          type="button"
+  >
+    <veera-ng-icon (click)="close()" name="close"></veera-ng-icon>
+  </button>
+  <div class="veera-notification__title" *ngIf="type !== 'compact'">
+    <div *ngIf="showHeaderIcon else withoutHeaderIconTemplate"
+         class="veera-notification__title-icon">
+      <veera-ng-labeled-icon [name]="type | toHeaderIcon">
+        <ng-template [ngTemplateOutlet]="withoutHeaderIconTemplate"></ng-template>
+      </veera-ng-labeled-icon>
+    </div>
+
+    <ng-template #withoutHeaderIconTemplate>
+      <h5>
+        {{header}}
+      </h5>
+    </ng-template>
+  </div>
+  <div class="veera-notification__content">
+    <ng-content></ng-content>
+  </div>
+</div>

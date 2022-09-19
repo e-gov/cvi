@@ -12,6 +12,7 @@
 
     #{$base}__content {
       vertical-align: middle;
+      min-width: max-content;
 
       & a {
         color: inherit;

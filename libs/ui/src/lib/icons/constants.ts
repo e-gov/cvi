@@ -7,4 +7,10 @@ export type IconName =
   | 'location'
   | 'screen-share'
   | 'happy-face'
-  | 'sad-face';
+  | 'sad-face'
+  | 'light-bulb'
+  | 'warning-amber'
+  | 'error-outline'
+  | 'check-circle-outline'
+  | 'info'
+  | 'close';

@@ -18,6 +18,6 @@ export class FeedbackComponent {
   /** Should radio buttons have regular or compact outline button styling */
   @Input() appearance: 'regular' | 'compact' = 'regular';
 
-  /** Display or hide 'sad_face' and 'happy_face' icons */
+  /** Display or hide 'sad-face' and 'happy-face' icons */
   @Input() showIcons = false;
 }
