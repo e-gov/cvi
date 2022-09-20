@@ -1,5 +1,4 @@
 @mixin veera-html-section($base: &) {
-  padding: get-spacing('kuressaare');
 
   @media screen and (min-width: map-get($veera-grid-breakpoints, sm)) {
     #{$base}__content {
