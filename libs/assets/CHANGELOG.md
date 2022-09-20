@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.4.1](https://stash.ria.ee/scm/sun/veera-components/compare/assets-0.4.0...assets-0.4.1) (2022-09-20)
+
+
+### Bug Fixes
+
+* remove padding from html-section ([3d0700a](https://stash.ria.ee/scm/sun/veera-components/commits/3d0700a66d2f1d16d6dcc35bc14ea270aed99955))
+
+
+
 # [0.4.0](https://stash.ria.ee/scm/sun/veera-components/compare/assets-0.3.0...assets-0.4.0) (2022-09-19)
 
 
