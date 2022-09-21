@@ -6,6 +6,7 @@ export * from './lib/icons/labeled-icon/labeled-icon.component';
 export * from './lib/icons/icon/icon.component';
 export * from './lib/icons/icon-name';
 export * from './lib/notification/notification-type-to-header-icon.pipe';
+export * from './lib/notification/notification-type';
 export * from './lib/notification/notification.component';
 export * from './lib/input/input.component';
 export * from './lib/steps/step/step.component';

@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { NotificationType } from './constants';
+import { NotificationType } from './notification-type';
 import { IconName } from '../icons/icon-name';
 
 @Pipe({

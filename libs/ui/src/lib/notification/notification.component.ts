@@ -5,7 +5,7 @@ import {
   Input,
   Output,
 } from '@angular/core';
-import { NotificationType } from './constants';
+import { NotificationType } from './notification-type';
 
 @Component({
   selector: 'veera-ng-notification',
