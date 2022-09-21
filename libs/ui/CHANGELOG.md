@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [0.9.0](https://bitbucket.ria.ee/scm/sun/veera-components/compare/ui-0.8.4...ui-0.9.0) (2022-09-21)
+
+
+### Features
+
+* icons library ([e5326f2](https://bitbucket.ria.ee/scm/sun/veera-components/commits/e5326f2fe4d93e5b2b14cd9f53a61767f8398208))
+
+
+
 ## [0.8.4](https://stash.ria.ee/scm/sun/veera-components/compare/ui-0.8.3...ui-0.8.4) (2022-09-21)
 
 

@@ -14,10 +14,10 @@ WORKDIR /usr/component-library
 COPY ./libs/styles/package.json ./styles-package.json
 COPY ./libs/ui/package.json ./ui-package.json
 COPY ./libs/icons/package.json ./icons-package.json
-ARG styles_version
+ARG assets_version
 ARG ui_version
 ARG icons_version
-RUN jq --arg v "$styles_version" '.version = $v' ./styles-package.json > ./styles-package.tmp.json
+RUN jq --arg v "$assets_version" '.version = $v' ./styles-package.json > ./styles-package.tmp.json
 RUN jq --arg v "$ui_version" '.version = $v' ./ui-package.json > ./ui-package.tmp.json
 RUN jq --arg v "$icons_version" '.version = $v' ./icons-package.json > ./icons-package.tmp.json
 
@@ -33,6 +33,7 @@ RUN npm ci
 COPY . .
 COPY --from=apk ./usr/component-library/styles-package.tmp.json ./libs/styles/package.json
 COPY --from=apk ./usr/component-library/ui-package.tmp.json ./libs/ui/package.json
+COPY --from=apk ./usr/component-library/icons-package.tmp.json ./libs/icons/package.json
 RUN npm run storybook:compodoc
 RUN npm run generate-icons
 RUN npm run build-storybook
