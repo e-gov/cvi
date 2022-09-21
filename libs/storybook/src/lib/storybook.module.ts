@@ -4,6 +4,7 @@ import { StorybookSpacingSpecimenItem } from './components/storybook-spacing-spe
 import { StorybookColorCards } from './components/storybook-color-cards/storybook-color-cards.component';
 import { StorybookColorCard } from './components/storybook-color-cards/storybook-color-card.component';
 import { StorybookTypeTester } from './components/storybook-type-tester/storybook-type-tester.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const components = [
   StorybookColorCards,
@@ -14,7 +15,7 @@ const components = [
 ];
 
 @NgModule({
-  imports: [],
+  imports: [BrowserAnimationsModule],
   declarations: [...components],
   exports: [...components],
 })

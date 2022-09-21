@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ButtonComponent } from './button/button.component';
 import { FormItemComponent } from './form-item/form-item.component';
 import { InputComponent } from './input/input.component';
@@ -55,7 +54,6 @@ const pipes = [SafeHtmlPipe, NotificationTypeToHeaderIconPipe];
   imports: [
     CommonModule,
     TextFieldModule,
-    BrowserAnimationsModule,
     HttpClientModule,
     AngularSvgIconModule.forRoot(),
   ],
