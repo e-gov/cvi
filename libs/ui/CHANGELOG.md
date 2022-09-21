@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.8.2](https://stash.ria.ee/scm/sun/veera-components/compare/ui-0.8.1...ui-0.8.2) (2022-09-21)
+
+
+### Bug Fixes
+
+* export notification type ([1624b65](https://stash.ria.ee/scm/sun/veera-components/commits/1624b65c6ce531c849676ba301b305cfcfa34423))
+
+
+
 ## [0.8.1](https://stash.ria.ee/scm/sun/veera-components/compare/ui-0.8.0...ui-0.8.1) (2022-09-19)
 
 
