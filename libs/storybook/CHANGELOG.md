@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.3.1](https://stash.ria.ee/scm/sun/veera-components/compare/storybook-0.3.0...storybook-0.3.1) (2022-09-21)
+
+
+### Bug Fixes
+
+* remove browser animations module from ui module STPA-105 (Pull request [#41](https://stash.ria.ee/scm/sun/veera-components/issues/41)) ([8d4774d](https://stash.ria.ee/scm/sun/veera-components/commits/8d4774dd48c873a12a0c7ef749d5c270d7b74046))
+
+
+
 # [0.3.0](https://stash.ria.ee/scm/sun/veera-components/compare/storybook-0.2.0...storybook-0.3.0) (2022-09-19)
 
 
