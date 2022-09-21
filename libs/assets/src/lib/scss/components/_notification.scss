@@ -1,5 +1,4 @@
 @mixin veera-notification($base: &) {
-  max-width: 1200px;
   margin: auto;
   padding: 17.5px;
   position: relative;
@@ -31,7 +30,6 @@
     }
 
     #{$base}__compact {
-      max-width: 780px;
       background-color: get-color(black-coral-1);
       border: 1px solid get-color(black-coral-2);
     }
