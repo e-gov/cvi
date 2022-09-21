@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.4.2](https://stash.ria.ee/scm/sun/veera-components/compare/assets-0.4.1...assets-0.4.2) (2022-09-21)
+
+
+### Bug Fixes
+
+* remove max width css property from notifications ([8382665](https://stash.ria.ee/scm/sun/veera-components/commits/8382665412d57c93cbd848d306301bb8aa957c94))
+
+
+
 ## [0.4.1](https://stash.ria.ee/scm/sun/veera-components/compare/assets-0.4.0...assets-0.4.1) (2022-09-20)
 
 
