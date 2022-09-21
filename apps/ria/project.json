@@ -13,10 +13,7 @@
         "polyfills": "apps/ria/src/polyfills.ts",
         "tsConfig": "apps/ria/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": [
-          "apps/ria/src/favicon.ico",
-          "apps/ria/src/assets"
-        ],
+        "assets": ["apps/ria/src/favicon.ico", "apps/ria/src/assets"],
         "styles": [
           "apps/ria/src/styles.scss",
           "libs/styles/src/lib/scss/main.scss"

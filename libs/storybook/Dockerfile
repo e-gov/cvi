@@ -34,6 +34,7 @@ COPY . .
 COPY --from=apk ./usr/component-library/styles-package.tmp.json ./libs/styles/package.json
 COPY --from=apk ./usr/component-library/ui-package.tmp.json ./libs/ui/package.json
 RUN npm run storybook:compodoc
+RUN npm run generate-icons
 RUN npm run build-storybook
 
 FROM $nginx_version

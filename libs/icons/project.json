@@ -23,6 +23,27 @@
         "jestConfig": "libs/icons/jest.config.ts",
         "passWithNoTests": true
       }
+    },
+    "version": {
+      "executor": "@jscutlery/semver:version",
+      "options": {
+        "preset": "angular",
+        "baseBranch": "master",
+        "push": true,
+        "noVerify": true,
+        "commitMessageFormat": "chore(${projectName}): release version ${version} [skip ci]",
+        "skipCommitTypes": [
+          "build",
+          "chore",
+          "ci",
+          "docs",
+          "refactor",
+          "revert",
+          "style",
+          "test",
+          "format"
+        ]
+      }
     }
   },
   "tags": ["scope:veera-icons"]
