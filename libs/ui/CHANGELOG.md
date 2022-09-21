@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.8.3](https://stash.ria.ee/scm/sun/veera-components/compare/ui-0.8.2...ui-0.8.3) (2022-09-21)
+
+
+### Bug Fixes
+
+* remove browser animations module from ui module STPA-105 (Pull request [#41](https://stash.ria.ee/scm/sun/veera-components/issues/41)) ([8d4774d](https://stash.ria.ee/scm/sun/veera-components/commits/8d4774dd48c873a12a0c7ef749d5c270d7b74046))
+
+
+
 ## [0.8.2](https://stash.ria.ee/scm/sun/veera-components/compare/ui-0.8.1...ui-0.8.2) (2022-09-21)
 
 
