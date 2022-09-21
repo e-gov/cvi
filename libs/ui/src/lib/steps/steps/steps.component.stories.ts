@@ -47,8 +47,11 @@ export const Default = Template.bind({});
 export const Mobile = Template.bind({});
 Mobile.parameters = {
   layout: 'fullscreen',
+  backgrounds: {
+    default: 'light',
+  },
   viewport: {
-    defaultViewport: 'mobile2',
+    defaultViewport: 'iphone12mini',
   },
 };
 
