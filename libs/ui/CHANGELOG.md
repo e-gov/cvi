@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.8.4](https://stash.ria.ee/scm/sun/veera-components/compare/ui-0.8.3...ui-0.8.4) (2022-09-21)
+
+
+### Bug Fixes
+
+* mobile viewport by default in the steps story ([17613da](https://stash.ria.ee/scm/sun/veera-components/commits/17613da7e6ec4640ab2cfa4881638bdfba9db0ce))
+
+
+
 ## [0.8.3](https://stash.ria.ee/scm/sun/veera-components/compare/ui-0.8.2...ui-0.8.3) (2022-09-21)
 
 
