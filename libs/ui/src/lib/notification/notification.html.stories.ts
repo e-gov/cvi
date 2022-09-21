@@ -17,17 +17,17 @@ const Template: Story = (args) => ({
                 class="veera-notification__close-button"
                 type="button"
         >
-          <svg-icon class="veera-labeled-icon__image"
-                    src="/Icons/close.svg"
+          <veera-ng-icon class="veera-labeled-icon__image"
+                         name="close"
           >
-        </svg-icon>
+        </veera-ng-icon>
         </button>
         <div class="veera-notification__title">
           <div *ngIf="showHeaderIcon" class="veera-notification__title-icon">
-            <svg-icon class="veera-labeled-icon__image"
-                      src="/Icons/info.svg"
+            <veera-ng-icon class="veera-labeled-icon__image"
+                           name="info"
             >
-            </svg-icon>
+            </veera-ng-icon>
           </div>
           <h5>
             Info notification
@@ -46,17 +46,17 @@ const Template: Story = (args) => ({
                 class="veera-notification__close-button"
                 type="button"
         >
-          <svg-icon class="veera-labeled-icon__image"
-                    src="/Icons/close.svg"
-          >
-        </svg-icon>
+            <veera-ng-icon class="veera-labeled-icon__image"
+                           name="close"
+            >
+            </veera-ng-icon>
         </button>
         <div class="veera-notification__title">
           <div *ngIf="showHeaderIcon" class="veera-notification__title-icon">
-            <svg-icon class="veera-labeled-icon__image"
-                      src="/Icons/check-circle-outline.svg"
+            <veera-ng-icon class="veera-labeled-icon__image"
+                           name="check_circle_outline"
             >
-            </svg-icon>
+            </veera-ng-icon>
           </div>
           <h5>
             Success notification
@@ -75,17 +75,17 @@ const Template: Story = (args) => ({
                 class="veera-notification__close-button"
                 type="button"
         >
-          <svg-icon class="veera-labeled-icon__image"
-                    src="/Icons/close.svg"
-          >
-        </svg-icon>
+            <veera-ng-icon class="veera-labeled-icon__image"
+                           name="close"
+            >
+            </veera-ng-icon>
         </button>
         <div class="veera-notification__title">
           <div *ngIf="showHeaderIcon" class="veera-notification__title-icon">
-            <svg-icon class="veera-labeled-icon__image"
-                      src="/Icons/warning-amber.svg"
+            <veera-ng-icon class="veera-labeled-icon__image"
+                           name="warning_amber"
             >
-            </svg-icon>
+            </veera-ng-icon>
           </div>
           <h5>
             Warning notification
@@ -105,17 +105,17 @@ const Template: Story = (args) => ({
                 class="veera-notification__close-button"
                 type="button"
         >
-          <svg-icon class="veera-labeled-icon__image"
-                    src="/Icons/close.svg"
-          >
-        </svg-icon>
+            <veera-ng-icon class="veera-labeled-icon__image"
+                           name="close"
+            >
+            </veera-ng-icon>
         </button>
         <div class="veera-notification__title">
           <div *ngIf="showHeaderIcon" class="veera-notification__title-icon">
-            <svg-icon class="veera-labeled-icon__image"
-                      src="/Icons/error-outline.svg"
+            <veera-ng-icon class="veera-labeled-icon__image"
+                           name="error_outline"
             >
-            </svg-icon>
+            </veera-ng-icon>
           </div>
           <h5>
             Error notification

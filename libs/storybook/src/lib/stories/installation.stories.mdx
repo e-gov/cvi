@@ -1,18 +1,19 @@
 import { Meta, Story } from '@storybook/addon-docs';
-import assetsPkg from '/libs/assets/package.json';
+import stylesPkg from '/libs/styles/package.json';
 import uiPkg from '/libs/ui/package.json'
+import iconsPkg from '/libs/icons/package.json'
 
 <Meta title="Installation" parameters={{ viewMode: 'docs' }} />
 
 # Installation
 
-## Veera Styles library
+## Styles
 
-<Story name="Veera Styles library">
+<Story name="Styles library">
   {{
-    props: { assetsPkg },
+    props: { stylesPkg },
     template: `
-      Latest version: {{ assetsPkg.version }}
+      Latest version: {{ stylesPkg.version }}
     `,
   }}
 </Story>
@@ -21,7 +22,7 @@ import uiPkg from '/libs/ui/package.json'
 
 1. Install the library
 ```
-npm i --save @ria/veera-styles;
+npm i --save @ria/veera-styles
 ```
 
 2. Include styles in the project
@@ -32,11 +33,29 @@ npm i --save @ria/veera-styles;
 @use '~@ria/veera-styles';
 ```
 
-3. Done, enjoy!
+## Icons
 
-## Angular Component library
+<Story name="Icons library">
+  {{
+    props: { iconsPkg },
+    template: `
+      Latest version: {{ iconsPkg.version }}
+    `,
+  }}
+</Story>
 
-<Story name="Angular Component library">
+### Installation
+
+1. Install the library
+```
+npm i --save @ria/veera-icons
+```
+
+2. Check the usage page for examples
+
+## Angular components
+
+<Story name="Angular component library">
   {{
     props: { uiPkg },
     template: `
@@ -45,7 +64,7 @@ npm i --save @ria/veera-styles;
   }}
 </Story>
 
-### Angular component library peerDependencies
+### peerDependencies
 
 ```
 "@angular/animations": "^14.1.1",
@@ -75,5 +94,3 @@ import { UiModule } from '@ria/veera-ng';
   ...
 })
 ```
-
-3. Done, enjoy!

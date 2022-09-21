@@ -4,4 +4,57 @@ import { Meta } from '@storybook/addon-docs';
 
 # Usage
 
-Veera UI library consists of several modules. ...
+## Icons
+
+
+### Angular
+
+We provide a reusable component for the icons (IconComponent). It is a component that accepts a name as an Input property and displays the icon. In essence, we want to have support for tree shaking. If the icon library contains hundreds of icons but only one of them is used, only one ends up in the resulting bundle. Also, this approach supports code splitting and lazy loading in a way that the icon only ends up in the chunk it is used.
+
+For these reasons, the icon registry should be used to register used icons:
+
+```
+constructor(private registry: IconsRegistry) {
+    this.registry.registerIcons([
+      veeraCall
+    ]);
+  }
+```
+
+### Typescript
+
+```
+import {veeraCall, VeeraIcon} from '@ria/veera-icons';
+
+const conatiner = document.getElementById('.container');
+
+function buildSVGElement(icon: VeeraIcon): SVGElement {
+    const div = document.createElement('DIV');
+    div.innerHTML = icon.data;
+    return (
+        div.querySelector('svg') ||
+        this.document.createElementNS('http://www.w3.org/2000/svg', 'path')
+    );
+}
+
+container.appendChild(buildSVGElement(icon));
+```
+
+### Vanilla JS
+
+```
+import {veeraCall} from '@ria/veera-icons';
+
+const conatiner = document.getElementById('.container');
+
+function buildSVGElement(icon) {
+    const div = document.createElement('DIV');
+    div.innerHTML = icon.data;
+    return (
+        div.querySelector('svg') ||
+        this.document.createElementNS('http://www.w3.org/2000/svg', 'path')
+    );
+}
+
+container.appendChild(buildSVGElement(icon);
+```

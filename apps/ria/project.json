@@ -15,16 +15,11 @@
         "inlineStyleLanguage": "scss",
         "assets": [
           "apps/ria/src/favicon.ico",
-          "apps/ria/src/assets",
-          {
-            "glob": "*",
-            "input": "libs/assets/src/lib/assets/Icons",
-            "output": "assets/Icons/"
-          }
+          "apps/ria/src/assets"
         ],
         "styles": [
           "apps/ria/src/styles.scss",
-          "libs/assets/src/lib/scss/main.scss"
+          "libs/styles/src/lib/scss/main.scss"
         ],
         "scripts": []
       },

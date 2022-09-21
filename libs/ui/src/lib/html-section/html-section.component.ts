@@ -1,6 +1,7 @@
 import { Component, Injector, Input, OnInit } from '@angular/core';
 import { createCustomElement } from '@angular/elements';
 import { LabeledIconComponent } from '../icons/labeled-icon/labeled-icon.component';
+import { IconComponent } from '../icons/icon/icon.component';
 
 @Component({
   selector: 'veera-ng-html-section',
@@ -15,7 +16,7 @@ export class HtmlSectionComponent implements OnInit {
   ngOnInit() {
     this.createCustomElements([
       [LabeledIconComponent, 'veera-ng-labeled-icon'],
-      [LabeledIconComponent, 'veera-ng-icon'],
+      [IconComponent, 'veera-ng-icon'],
     ]);
   }
 

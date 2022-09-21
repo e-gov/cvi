@@ -3,17 +3,17 @@ import { NotificationTypeToHeaderIconPipe } from './notification-type-to-header-
 describe('NotificationTypeToHeaderIconPipe', () => {
   it('should return icon name for notification type === success', () => {
     const pipe = new NotificationTypeToHeaderIconPipe();
-    expect(pipe.transform('success')).toStrictEqual('check-circle-outline');
+    expect(pipe.transform('success')).toStrictEqual('check_circle_outline');
   });
 
   it('should return icon name for notification type === warning', () => {
     const pipe = new NotificationTypeToHeaderIconPipe();
-    expect(pipe.transform('warning')).toStrictEqual('warning-amber');
+    expect(pipe.transform('warning')).toStrictEqual('warning_amber');
   });
 
   it('should return icon name for notification type === error', () => {
     const pipe = new NotificationTypeToHeaderIconPipe();
-    expect(pipe.transform('error')).toStrictEqual('error-outline');
+    expect(pipe.transform('error')).toStrictEqual('error_outline');
   });
 
   it('should return icon name for notification type === info', () => {

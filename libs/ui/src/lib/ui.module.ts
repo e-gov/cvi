@@ -21,10 +21,24 @@ import { AccordionTitleDirective } from './accordion/directives/accordion-title.
 import { AccordionHeaderDirective } from './accordion/directives/accordion-header.directive';
 import { HtmlSectionComponent } from './html-section/html-section.component';
 import { SafeHtmlPipe } from './pipes/safe-html-pipe';
-import { AngularSvgIconModule } from 'angular-svg-icon';
-import { HttpClientModule } from '@angular/common/http';
 import { NotificationComponent } from './notification/notification.component';
 import { NotificationTypeToHeaderIconPipe } from './notification/notification-type-to-header-icon.pipe';
+import { IconsRegistry } from './icons/icons-registry.service';
+import {
+  veeraArrowALeft,
+  veeraArrowARight,
+  veeraCall,
+  veeraCheckCircleOutline,
+  veeraClose,
+  veeraEmail,
+  veeraErrorOutline,
+  veeraHappyFace,
+  veeraInfo,
+  veeraLocation,
+  veeraSadFace,
+  veeraScreenShare,
+  veeraWarningAmber,
+} from '@ria/veera-icons';
 
 const components = [
   ButtonComponent,
@@ -51,13 +65,26 @@ const components = [
 const pipes = [SafeHtmlPipe, NotificationTypeToHeaderIconPipe];
 
 @NgModule({
-  imports: [
-    CommonModule,
-    TextFieldModule,
-    HttpClientModule,
-    AngularSvgIconModule.forRoot(),
-  ],
+  imports: [CommonModule, TextFieldModule],
   declarations: [...components, ...pipes],
-  exports: [...components, ...pipes, TextFieldModule, AngularSvgIconModule],
+  exports: [...components, ...pipes, TextFieldModule],
 })
-export class UiModule {}
+export class UiModule {
+  constructor(private registry: IconsRegistry) {
+    this.registry.registerIcons([
+      veeraCall,
+      veeraClose,
+      veeraInfo,
+      veeraCheckCircleOutline,
+      veeraWarningAmber,
+      veeraErrorOutline,
+      veeraArrowALeft,
+      veeraArrowARight,
+      veeraSadFace,
+      veeraHappyFace,
+      veeraScreenShare,
+      veeraEmail,
+      veeraLocation,
+    ]);
+  }
+}

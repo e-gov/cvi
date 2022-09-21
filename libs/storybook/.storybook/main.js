@@ -21,5 +21,4 @@ module.exports = {
 
     return config;
   },
-  staticDirs: ['../../assets/src/lib/assets'],
 };

@@ -1,0 +1,20 @@
+.c-spacing-specimen {
+  display: flex;
+  flex-direction: column;
+  gap: get-spacing('haapsalu');
+  &__item-swatch {
+    height: 140px;
+    display: flex;
+    gap: var(--spacing);
+    &::before,
+    &::after {
+      content: '';
+      background-color: get-color(black-coral-16);
+      flex: 1 1 0;
+      height: 100%;
+    }
+  }
+  &__item-label {
+    padding-top: get-spacing('paldiski');
+  }
+}

@@ -11,12 +11,15 @@ RUN apk update && apk upgrade
 # install package without cache index locally
 RUN apk add --no-cache jq
 WORKDIR /usr/component-library
-COPY ./libs/assets/package.json ./assets-package.json
+COPY ./libs/styles/package.json ./styles-package.json
 COPY ./libs/ui/package.json ./ui-package.json
-ARG assets_version
+COPY ./libs/icons/package.json ./icons-package.json
+ARG styles_version
 ARG ui_version
-RUN jq --arg v "$assets_version" '.version = $v' ./assets-package.json > ./assets-package.tmp.json
+ARG icons_version
+RUN jq --arg v "$styles_version" '.version = $v' ./styles-package.json > ./styles-package.tmp.json
 RUN jq --arg v "$ui_version" '.version = $v' ./ui-package.json > ./ui-package.tmp.json
+RUN jq --arg v "$icons_version" '.version = $v' ./icons-package.json > ./icons-package.tmp.json
 
 FROM $node_version AS image
 WORKDIR /usr/component-library
@@ -28,7 +31,7 @@ ENV CYPRESS_DOWNLOAD_MIRROR=https://nexus.riaint.ee/repository/cypress-raw-proxy
 RUN npm config set registry https://nexus.riaint.ee/repository/npm-public/
 RUN npm ci
 COPY . .
-COPY --from=apk ./usr/component-library/assets-package.tmp.json ./libs/assets/package.json
+COPY --from=apk ./usr/component-library/styles-package.tmp.json ./libs/styles/package.json
 COPY --from=apk ./usr/component-library/ui-package.tmp.json ./libs/ui/package.json
 RUN npm run storybook:compodoc
 RUN npm run build-storybook

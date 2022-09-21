@@ -6,8 +6,8 @@
   },
   "allowedNonPeerDependencies": [
     "@fontsource/roboto",
-    "angular-svg-icon",
     "sanitize-html",
-    "rxjs"
+    "rxjs",
+    "@ria/veera-icons"
   ]
 }

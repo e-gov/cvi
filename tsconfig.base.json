@@ -17,10 +17,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@ria/storybook": ["libs/storybook/src/index.ts"],
-      "@ria/test": ["libs/test2/src/index.ts"],
-      "@ria/veera-ng": ["libs/ui/src/index.ts"],
-      "@ria/veera-styles": ["libs/assets/src/index.ts"]
+      "@ria/veera-styles": ["libs/styles/src/index.ts"],
+      "@ria/veera-icons": ["dist/libs/icons/index"],
+      "@ria/veera-ng": ["libs/ui/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

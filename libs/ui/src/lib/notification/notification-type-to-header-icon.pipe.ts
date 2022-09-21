@@ -1,20 +1,20 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { NotificationType } from './notification-type';
-import { IconName } from '../icons/icon-name';
+import { VeeraIconName } from '@ria/veera-icons';
 
 @Pipe({
   name: 'toHeaderIcon',
 })
 export class NotificationTypeToHeaderIconPipe implements PipeTransform {
-  transform(type: NotificationType): IconName | undefined {
+  transform(type: NotificationType): VeeraIconName | undefined {
     if (type === 'success') {
-      return 'check-circle-outline';
+      return 'check_circle_outline';
     }
     if (type === 'warning') {
-      return 'warning-amber';
+      return 'warning_amber';
     }
     if (type === 'error') {
-      return 'error-outline';
+      return 'error_outline';
     }
     return type === 'info' ? 'info' : undefined;
   }

@@ -21,8 +21,9 @@ pipeline {
 
   parameters {
     // booleanParam(name: "DEPLOY_FEATURE_SANDBOX", description: "Deploy to feature sandbox", defaultValue: false)
-    booleanParam(name: "PUBLISH_ASSETS", description: "Publish assets (tag exists, but wasn't published before)", defaultValue: false)
+    booleanParam(name: "PUBLISH_STYLES", description: "Publish styles (tag exists, but wasn't published before)", defaultValue: false)
     booleanParam(name: "PUBLISH_UI", description: "Publish ui (tag exists, but wasn't published before)", defaultValue: false)
+    booleanParam(name: "PUBLISH_ICONS", description: "Publish icons (tag exists, but wasn't published before)", defaultValue: false)
   }
 
   stages {
@@ -58,6 +59,7 @@ pipeline {
         }
         stage('code analysis') {
           steps {
+            sh "npm run generate-icons"
             sh "npx nx workspace-lint"
             sh "npx nx affected --base=HEAD~1 --target=lint --parallel=3"
             sh "npx nx run-many --all --target=test --parallel --coverage --coverageReporters=lcov"
@@ -129,7 +131,7 @@ pipeline {
         stage('verify build') {
           steps {
             script {
-              ["assets", "ui"].each {
+              ["styles", "ui", "icons"].each {
                 try {
                     sh "npx nx build ${it}"
                 } catch (e) {
@@ -142,10 +144,11 @@ pipeline {
         stage('release libraries') {
           steps {
             script {
-              env.previous_assets_library_version = getVersion("assets")
+              env.previous_styles_library_version = getVersion("styles")
               env.previous_ui_library_version = getVersion("ui")
+              env.previous_icons_library_version = getVersion("icons")
 
-              ["assets", "storybook", "ui"].each {
+              ["styles", "ui", "icons", "storybook"].each {
                 try {
                   sh "npx nx run ${it}:version"
                   if (it == 'storybook') {
@@ -166,8 +169,9 @@ pipeline {
                   throw e
                 }
 
-                env.assets_library_version = getVersion("assets")
+                env.styles_library_version = getVersion("styles")
                 env.ui_library_version = getVersion("ui")
+                env.icons_library_version = getVersion("icons")
               }
             }
           }
@@ -179,7 +183,7 @@ pipeline {
                 sh 'echo "registry=https://nexus.riaint.ee/repository/sun-npm-local/" > .npmrc'
                 sh "echo '_auth=${PASSWORD}' >> .npmrc"
               }
-              ["assets", "ui"].each {
+              ["styles", "ui", "icons"].each {
                 if (env."previous_${it}_library_version" == env."${it}_library_version" && !params."PUBLISH_${it.toUpperCase()}") {
                   echo "${it} version ${getVersion(it)} is already published"
                   return
@@ -200,14 +204,16 @@ pipeline {
       }
       steps {
         script {
-          def assets_version = env.assets_library_version ?: getVersion("assets")
+          def styles_version = env.styles_library_version ?: getVersion("styles")
           def ui_version = env.ui_library_version ?: getVersion("ui")
+          def icons_version = env.icons_library_version ?: getVersion("icons")
           def dockerImage = docker.build(STORYBOOK_DOCKER_IMAGE, [
             "--build-arg node_version=${PUBLIC_REGISTRY}/node:lts",
             "--build-arg nginx_version=${PUBLIC_REGISTRY}/nginx:1.23.1-alpine",
             "--build-arg alpine_version=${PUBLIC_REGISTRY}/alpine:3.14",
-            "--build-arg assets_version=${assets_version}",
+            "--build-arg styles_version=${styles_version}",
             "--build-arg ui_version=${ui_version}",
+            "--build-arg icons_version=${icons_version}",
             "-f ./libs/storybook/Dockerfile",
             "."
           ].join(" "))

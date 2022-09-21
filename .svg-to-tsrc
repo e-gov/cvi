@@ -1,0 +1,15 @@
+{
+    "conversionType": "files",
+    "srcFiles": [
+      "./libs/icons/src/lib/svg/**/*.svg"
+    ],
+    "outputDirectory": "./dist/libs/icons",
+    "interfaceName": "VeeraIcon",
+    "typeName": "VeeraIconName",
+    "prefix": "veera",
+    "generateType": true,
+    "exportCompleteIconSet": true,
+    "optimizeForLazyLoading": true,
+    "modelFileName": "veera-icon.model",
+    "compileSources": true
+}

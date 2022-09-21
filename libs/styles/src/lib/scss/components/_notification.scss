@@ -1,0 +1,74 @@
+@mixin veera-notification($base: &) {
+  margin: auto;
+  padding: 17.5px;
+  position: relative;
+  border-radius: 5px;
+
+  svg {
+    fill: get-color(black-coral-18);
+  }
+
+  @at-root {
+    #{$base}__info {
+      background: get-color(sapphire-blue-1);
+      border: 1px solid get-color(sapphire-blue-10);
+    }
+
+    #{$base}__warning {
+      background-color: get-color(dark-tangerine-1);
+      border: 1px solid get-color(dark-tangerine-10);
+    }
+
+    #{$base}__success {
+      background-color: get-color(sea-green-1);
+      border: 1px solid get-color(sea-green-10);
+    }
+
+    #{$base}__error {
+      background-color: get-color(jasper-1);
+      border: 1px solid get-color(jasper-10);
+    }
+
+    #{$base}__compact {
+      background-color: get-color(black-coral-1);
+      border: 1px solid get-color(black-coral-2);
+    }
+
+    #{$base}__title {
+      font-size: $veera-font-size-200;
+      line-height: 1.5;
+      color: get-color(black-coral-20);
+      margin: 0 40px 8px 0;
+      display: inline-flex;
+    }
+
+    #{$base}__title-icon {
+      width: 24px;
+    }
+
+    #{$base}__close-button {
+      border: 0;
+      background: none;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      z-index: 2;
+      padding: 5px 8px;
+      width: 40px;
+      height: 40px;
+      transition: transform ease-in-out 0.3s;
+
+      &:hover {
+        cursor: pointer;
+        opacity: 0.8;
+      }
+    }
+
+    #{$base}__content {
+      display: block;
+      color: get-color(black-coral-18);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+  }
+}

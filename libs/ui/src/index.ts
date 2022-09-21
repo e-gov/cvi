@@ -4,7 +4,7 @@ export * from './lib/form-item/form-item.component';
 export * from './lib/icons/icon/icon.component';
 export * from './lib/icons/labeled-icon/labeled-icon.component';
 export * from './lib/icons/icon/icon.component';
-export * from './lib/icons/icon-name';
+export * from './lib/icons/icons-registry.service';
 export * from './lib/notification/notification-type-to-header-icon.pipe';
 export * from './lib/notification/notification-type';
 export * from './lib/notification/notification.component';

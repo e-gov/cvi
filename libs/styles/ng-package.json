@@ -1,0 +1,14 @@
+{
+  "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../dist/libs/styles",
+  "lib": {
+    "entryFile": "src/index.ts"
+  },
+  "assets": [
+    {
+      "input": "./src/lib/scss",
+      "glob": "**/*",
+      "output": "scss"
+    }
+  ]
+}
