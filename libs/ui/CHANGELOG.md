@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [0.11.0](https://stash.ria.ee/scm/sun/veera-components/compare/ui-0.10.0...ui-0.11.0) (2022-09-22)
+
+
+### Features
+
+* **styles:** remove unused import ([ca8bf32](https://stash.ria.ee/scm/sun/veera-components/commits/ca8bf32b556c7606d3c2665c4d6e4c248997a2bb))
+
+
+
 # [0.10.0](https://stash.ria.ee/scm/sun/veera-components/compare/ui-0.9.0...ui-0.10.0) (2022-09-22)
 
 
