@@ -2,6 +2,22 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [0.4.0](https://stash.ria.ee/scm/sun/veera-components/compare/storybook-0.3.1...storybook-0.4.0) (2022-09-22)
+
+
+### Bug Fixes
+
+* icons & styles versioning ([8f43144](https://stash.ria.ee/scm/sun/veera-components/commits/8f43144b5f82f70cd2ff63b81d04d544dcb9c037))
+* jenkinsfile ([9043b5b](https://stash.ria.ee/scm/sun/veera-components/commits/9043b5bb0816b9924592012c64b66cc6701f486c))
+* tags ([20aa0cf](https://stash.ria.ee/scm/sun/veera-components/commits/20aa0cf459dbb5f5ca1ce92879830a014e60c9f9))
+
+
+### Features
+
+* icons library ([e5326f2](https://stash.ria.ee/scm/sun/veera-components/commits/e5326f2fe4d93e5b2b14cd9f53a61767f8398208))
+
+
+
 ## [0.3.1](https://stash.ria.ee/scm/sun/veera-components/compare/storybook-0.3.0...storybook-0.3.1) (2022-09-21)
 
 
