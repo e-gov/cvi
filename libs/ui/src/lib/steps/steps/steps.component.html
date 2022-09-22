@@ -4,7 +4,7 @@
     <li class="veera-steps__list-item" *ngFor="let stepTitle of stepTitles; let i = index" [ngClass]="{'is-past': this.currentStepIndex !== null && i <= currentStepIndex, 'is-current': i === currentStepIndex}">
       <button class="veera-steps__list-item-inner" (click)="stepSelected(i)">
         <span class="veera-steps__list-item-title">{{ stepTitle }}</span>
-        <veera-ng-icon svgClass="veera-steps__list-item-arrow-icon" name="arrow_a_right" ></veera-ng-icon>
+        <veera-ng-icon [name]="'arrow_a_right'" [svgClass]="'veera-steps__list-item-arrow-icon'"></veera-ng-icon>
       </button>
     </li>
   </ol>
