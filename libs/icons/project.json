@@ -6,7 +6,7 @@
     "build": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "npm run generate-icons"
+        "command": "npm run generate-icons && npm run copy-icons-assets"
       }
     },
     "lint": {
