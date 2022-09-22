@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.11.2](https://stash.ria.ee/scm/sun/veera-components/compare/ui-0.11.1...ui-0.11.2) (2022-09-22)
+
+
+### Bug Fixes
+
+* add step index input that is used to initiate step change from parent component ([7301a3f](https://stash.ria.ee/scm/sun/veera-components/commits/7301a3f5fbcbb6d400546a41c2ec33efc08c36b0))
+
+
+
 ## [0.11.1](https://stash.ria.ee/scm/sun/veera-components/compare/ui-0.11.0...ui-0.11.1) (2022-09-22)
 
 
