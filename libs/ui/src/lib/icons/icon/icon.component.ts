@@ -4,7 +4,9 @@ import {
   ElementRef,
   Inject,
   Input,
+  OnChanges,
   Optional,
+  SimpleChanges,
 } from '@angular/core';
 import { IconsRegistry } from '../icons-registry.service';
 import { DOCUMENT } from '@angular/common';
@@ -16,7 +18,7 @@ import { VeeraIconName } from '@ria/veera-icons';
   styles: [':host::ng-deep svg{width: 24px; height: 24px}'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class IconComponent {
+export class IconComponent implements OnChanges {
   private svgIcon!: SVGElement;
 
   /** A class for SVG element */
@@ -24,16 +26,7 @@ export class IconComponent {
 
   /** Icon name */
   @Input()
-  set name(iconName: VeeraIconName) {
-    if (this.svgIcon) {
-      this.element.nativeElement.removeChild(this.svgIcon);
-    }
-    const svgData = this.registry.getIcon(iconName);
-    if (svgData) {
-      this.svgIcon = this.svgElementFromString(svgData);
-      this.element.nativeElement.appendChild(this.svgIcon);
-    }
-  }
+  name!: VeeraIconName;
 
   constructor(
     private element: ElementRef,
@@ -49,5 +42,19 @@ export class IconComponent {
     return (
       svg || this.document.createElementNS('http://www.w3.org/2000/svg', 'path')
     );
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (!this.name) {
+      return;
+    }
+    if (this.svgIcon) {
+      this.element.nativeElement.removeChild(this.svgIcon);
+    }
+    const svgData = this.registry.getIcon(this.name);
+    if (svgData) {
+      this.svgIcon = this.svgElementFromString(svgData);
+      this.element.nativeElement.appendChild(this.svgIcon);
+    }
   }
 }
