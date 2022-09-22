@@ -24,9 +24,9 @@ export class IconComponent implements OnChanges {
   /** A class for SVG element */
   @Input() svgClass = '';
 
-  /** Icon name */
+  /** Typed icon name */
   @Input()
-  name!: VeeraIconName;
+  name?: VeeraIconName;
 
   constructor(
     private element: ElementRef,
