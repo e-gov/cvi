@@ -8,9 +8,11 @@ import {
   EventEmitter,
   HostBinding,
   Input,
+  OnChanges,
   Output,
   QueryList,
   Renderer2,
+  SimpleChanges,
 } from '@angular/core';
 import { StepComponent } from '../step/step.component';
 
@@ -19,9 +21,16 @@ import { StepComponent } from '../step/step.component';
   templateUrl: './steps.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class StepsComponent implements AfterViewInit, AfterContentInit {
+export class StepsComponent
+  implements AfterViewInit, AfterContentInit, OnChanges
+{
   @Input() title!: string;
+
   @Input() currentStepIndex: number | null = null;
+
+  /** Index of a step, used to initiate step change from a parent component */
+  @Input() stepIndex: number | null = null;
+
   @Output() stepChange = new EventEmitter<number>();
 
   stepTitles!: string[];
@@ -51,6 +60,13 @@ export class StepsComponent implements AfterViewInit, AfterContentInit {
       this.cdRef.markForCheck();
     });
     this.hideStepsContent();
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    const stepIndexChange = changes['stepIndex'];
+    if (stepIndexChange) {
+      this.stepSelected(stepIndexChange.currentValue);
+    }
   }
 
   stepSelected(stepIndex: number): void {
