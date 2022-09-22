@@ -14,10 +14,10 @@ WORKDIR /usr/component-library
 COPY ./libs/styles/package.json ./styles-package.json
 COPY ./libs/ui/package.json ./ui-package.json
 COPY ./libs/icons/package.json ./icons-package.json
-ARG assets_version
+ARG styles_version
 ARG ui_version
 ARG icons_version
-RUN jq --arg v "$assets_version" '.version = $v' ./styles-package.json > ./styles-package.tmp.json
+RUN jq --arg v "$styles_version" '.version = $v' ./styles-package.json > ./styles-package.tmp.json
 RUN jq --arg v "$ui_version" '.version = $v' ./ui-package.json > ./ui-package.tmp.json
 RUN jq --arg v "$icons_version" '.version = $v' ./icons-package.json > ./icons-package.tmp.json
 

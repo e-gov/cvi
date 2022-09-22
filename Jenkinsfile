@@ -144,7 +144,7 @@ pipeline {
         stage('release libraries') {
           steps {
             script {
-              env.previous_assets_library_version = getVersion("assets")
+              env.previous_styles_library_version = getVersion("styles")
               env.previous_ui_library_version = getVersion("ui")
               env.previous_icons_library_version = getVersion("icons")
 
@@ -169,7 +169,7 @@ pipeline {
                   throw e
                 }
 
-                env.assets_library_version = getVersion("assets")
+                env.styles_library_version = getVersion("styles")
                 env.ui_library_version = getVersion("ui")
                 env.icons_library_version = getVersion("icons")
               }
@@ -204,14 +204,14 @@ pipeline {
       }
       steps {
         script {
-          def assets_version = env.assets_library_version ?: getVersion("assets")
+          def styles_version = env.styles_library_version ?: getVersion("styles")
           def ui_version = env.ui_library_version ?: getVersion("ui")
           def icons_version = env.icons_library_version ?: getVersion("icons")
           def dockerImage = docker.build(STORYBOOK_DOCKER_IMAGE, [
             "--build-arg node_version=${PUBLIC_REGISTRY}/node:lts",
             "--build-arg nginx_version=${PUBLIC_REGISTRY}/nginx:1.23.1-alpine",
             "--build-arg alpine_version=${PUBLIC_REGISTRY}/alpine:3.14",
-            "--build-arg assets_version=${assets_version}",
+            "--build-arg styles_version=${styles_version}",
             "--build-arg ui_version=${ui_version}",
             "--build-arg icons_version=${icons_version}",
             "-f ./libs/storybook/Dockerfile",
