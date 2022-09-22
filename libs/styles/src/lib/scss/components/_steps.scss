@@ -2,7 +2,7 @@
   --comment: 'Sequential tabs that do not block non-linear interaction';
 
   $background-color: get-color(white);
-  $border-color: get-color(black-coral-2);
+  $border-color: get-color(sapphire-blue-10);
   $number-border-width: 2px;
   $number-size--mobile: 32px;
   $page-padding--mobile: get-spacing('valga');
@@ -20,6 +20,7 @@
     #{$base}__title {
       color: get-color(black-coral-12);
       margin-block: get-spacing('haapsalu');
+
       @include veera-breakpoint-down(sm) {
         font-size: $veera-font-size-250;
         line-height: $veera-line-height-100;
@@ -32,11 +33,13 @@
         font-weight: $veera-font-weight-alpha;
       }
     }
+
     #{$base}__inner {
       @include veera-breakpoint-down(sm) {
         position: relative;
       }
     }
+
     #{$base}__list {
       counter-reset: numberedlist;
       list-style: none;
@@ -51,6 +54,7 @@
         grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
       }
     }
+
     #{$base}__list-item {
       counter-increment: numberedlist;
       @include veera-breakpoint-down(sm) {
@@ -75,7 +79,7 @@
         padding: get-spacing('paldiski');
         padding-top: get-spacing('valga');
         background-color: $background-color;
-        border: 1px solid $border-color;
+        border: 2px solid $border-color;
         border-radius: $veera-radius-l;
         &.is-current {
           font-weight: bold;
@@ -85,6 +89,7 @@
         }
       }
     }
+
     #{$base}__list-item-inner {
       position: relative;
       font-size: $veera-font-size-100;
@@ -93,6 +98,7 @@
         border-radius: 51%;
         aspect-ratio: 1;
       }
+
       @include veera-breakpoint-down(sm) {
         display: flex;
         width: 100%;
@@ -105,10 +111,10 @@
           content: counter(numberedlist);
           width: $number-size--mobile;
           background-image: linear-gradient(get-color(white), get-color(white)),
-            conic-gradient(
+          conic-gradient(
               get-color(sapphire-blue-10) var(--progress),
               get-color(black-coral-2) var(--progress)
-            );
+          );
           background-origin: border-box;
           background-clip: content-box, border-box;
           aspect-ratio: 1;
@@ -116,9 +122,11 @@
           justify-content: center;
           align-items: center;
           font-weight: $veera-font-weight-beta;
+
           #{$base}:not(.is-any-step-selected) & {
             color: get-color(sapphire-blue-10);
           }
+
           #{$base}.is-any-step-selected & {
             color: get-color(black-coral-10);
           }
@@ -133,7 +141,7 @@
           content: counter(numberedlist);
           border-radius: 51%;
           border: $number-border-width solid $border-color;
-          color: get-color(black-coral-6);
+          color: get-color(sapphire-blue-10);
           font-size: $veera-font-size-50;
           line-height: 0;
           aspect-ratio: 1;
@@ -147,9 +155,12 @@
           align-items: center;
         }
       }
+
       #{$base}__list-item.is-current & {
         @include veera-breakpoint-up(sm) {
           border-top-color: transparent;
+          font-weight: bold;
+
           &::before {
             content: '';
             border-width: 9px;
@@ -159,11 +170,13 @@
         }
       }
     }
+
     #{$base}__list-item-title {
       @include veera-breakpoint-down(sm) {
         flex-grow: 1;
       }
     }
+
     #{$base}__list-item-arrow-icon {
       @include veera-breakpoint-down(sm) {
         fill: get-color(sapphire-blue-10);
@@ -175,11 +188,14 @@
         display: none;
       }
     }
+
     #{$base}__content-panel {
       display: none;
+
       &.is-current {
         display: block;
       }
+
       @include veera-breakpoint-down(sm) {
         padding-inline: $page-padding--mobile;
         padding-block: get-spacing('kuressaare');
@@ -196,6 +212,7 @@
         margin-top: get-spacing('haapsalu');
       }
     }
+
     #{$base}__content-panel-title {
       @include veera-breakpoint-up(sm) {
         font-size: $veera-font-size-250;
@@ -217,6 +234,7 @@
         }
       }
     }
+
     #{$base}__directional-buttons {
       @include veera-breakpoint-down(sm) {
         #{$base}:not(.is-any-step-selected) & {
@@ -232,6 +250,7 @@
         border-top: none;
       }
     }
+
     #{$base}__directional-button {
       @include veera-breakpoint-down(sm) {
         #{$base}.is-any-step-selected & {
@@ -261,9 +280,11 @@
         }
       }
     }
+
     #{$base}__directional-button-icon {
       fill: get-color(sapphire-blue-10);
     }
+
     #{$base}__directional-button-label {
       @include veera-breakpoint-down(sm) {
         @include veera-screenreader-text;
