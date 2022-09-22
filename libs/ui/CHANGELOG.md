@@ -2,6 +2,22 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [0.10.0](https://stash.ria.ee/scm/sun/veera-components/compare/ui-0.9.0...ui-0.10.0) (2022-09-22)
+
+
+### Bug Fixes
+
+* release ([462a3c5](https://stash.ria.ee/scm/sun/veera-components/commits/462a3c5c79834c5260bdaa8aa37aac46c8e18ccc))
+* stepper styles ([5f45c67](https://stash.ria.ee/scm/sun/veera-components/commits/5f45c67ad84ff4745610d0eb12c34f8b5e37e84b))
+* tags ([20aa0cf](https://stash.ria.ee/scm/sun/veera-components/commits/20aa0cf459dbb5f5ca1ce92879830a014e60c9f9))
+
+
+### Features
+
+* icons library ([e5326f2](https://stash.ria.ee/scm/sun/veera-components/commits/e5326f2fe4d93e5b2b14cd9f53a61767f8398208))
+
+
+
 # [0.9.0](https://bitbucket.ria.ee/scm/sun/veera-components/compare/ui-0.8.4...ui-0.9.0) (2022-09-21)
 
 
