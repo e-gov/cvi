@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.2.1](https://stash.ria.ee/scm/sun/veera-components/compare/icons-0.2.0...icons-0.2.1) (2022-09-22)
+
+
+### Bug Fixes
+
+* **icons:** publishing ([b90c71a](https://stash.ria.ee/scm/sun/veera-components/commits/b90c71a0b3b6b92db6cf90300ad403b296976b6a))
+
+
+
 # [0.2.0](https://stash.ria.ee/scm/sun/veera-components/compare/icons-0.1.0...icons-0.2.0) (2022-09-22)
 
 
