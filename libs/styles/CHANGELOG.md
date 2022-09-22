@@ -2,6 +2,23 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [0.9.0](https://stash.ria.ee/scm/sun/veera-components/compare/styles-0.8.4...styles-0.9.0) (2022-09-22)
+
+
+### Bug Fixes
+
+* stepper border color ([adeacef](https://stash.ria.ee/scm/sun/veera-components/commits/adeacefe144b0cc2cb6badbf0e324cfa5004cd25))
+* stepper styles ([5f45c67](https://stash.ria.ee/scm/sun/veera-components/commits/5f45c67ad84ff4745610d0eb12c34f8b5e37e84b))
+* steps visuals ([d1c6c1c](https://stash.ria.ee/scm/sun/veera-components/commits/d1c6c1cd1e126962d2e030b78713f032b4eb206c))
+* tags ([20aa0cf](https://stash.ria.ee/scm/sun/veera-components/commits/20aa0cf459dbb5f5ca1ce92879830a014e60c9f9))
+
+
+### Features
+
+* icons library ([e5326f2](https://stash.ria.ee/scm/sun/veera-components/commits/e5326f2fe4d93e5b2b14cd9f53a61767f8398208))
+
+
+
 ## [0.8.5](https://bitbucket.ria.ee/scm/sun/veera-components/compare/styles-0.4.2...styles-0.8.5) (2022-09-21)
 
 
