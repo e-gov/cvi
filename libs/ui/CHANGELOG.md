@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.11.1](https://stash.ria.ee/scm/sun/veera-components/compare/ui-0.11.0...ui-0.11.1) (2022-09-22)
+
+
+### Bug Fixes
+
+* **angular:** svgClass input ([ce9eb7c](https://stash.ria.ee/scm/sun/veera-components/commits/ce9eb7ca171fdd7afc67db25d8619f6e6df32524))
+
+
+
 # [0.11.0](https://stash.ria.ee/scm/sun/veera-components/compare/ui-0.10.0...ui-0.11.0) (2022-09-22)
 
 
