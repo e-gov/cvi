@@ -1,9 +1,9 @@
 <veera-ng-radio-buttons [appearance]="appearance" [title]="title">
-  <veera-ng-icon *ngIf="showIcons" name="sad_face"></veera-ng-icon>
+  <veera-ng-icon *ngIf="showIcons" [name]="'sad_face'"></veera-ng-icon>
   <veera-ng-option-button *ngFor="let q of options"
                           [label]="q.label"
                           [name]="title"
                           [value]="q.value"
   ></veera-ng-option-button>
-  <veera-ng-icon *ngIf="showIcons" name="happy_face"></veera-ng-icon>
+  <veera-ng-icon *ngIf="showIcons" [name]="'happy_face'"></veera-ng-icon>
 </veera-ng-radio-buttons>
