@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.11.5](https://stash.ria.ee/scm/sun/veera-components/compare/ui-0.11.4...ui-0.11.5) (2022-09-23)
+
+
+### Bug Fixes
+
+* **ui:** passing labeled icons svg class ([00679da](https://stash.ria.ee/scm/sun/veera-components/commits/00679da1fd84b7d853da8c799bc72e9a024ec151))
+
+
+
 ## [0.11.4](https://stash.ria.ee/scm/sun/veera-components/compare/ui-0.11.3...ui-0.11.4) (2022-09-23)
 
 
