@@ -64,7 +64,7 @@ export class StepsComponent
 
   ngOnChanges(changes: SimpleChanges) {
     const stepIndexChange = changes['stepIndex'];
-    if (stepIndexChange) {
+    if (stepIndexChange && this.stepChildren) {
       this.stepSelected(stepIndexChange.currentValue);
     }
   }
