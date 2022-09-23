@@ -1,7 +1,8 @@
 <h1 *ngIf="title" class="veera-steps__title">{{ title }}</h1>
 <div class="veera-steps__inner">
   <ol class="veera-steps__list" [style.--progress]="anyStepSelected ? currentProgressCSSVar + '%' : '100%'">
-    <li class="veera-steps__list-item" *ngFor="let stepTitle of stepTitles; let i = index" [ngClass]="{'is-past': this.currentStepIndex !== null && i <= currentStepIndex, 'is-current': i === currentStepIndex}">
+    <li class="veera-steps__list-item" *ngFor="let stepTitle of stepTitles; let i = index"
+        [ngClass]="{'is-past': this.currentStepIndex !== null && i <= currentStepIndex, 'is-current': i === currentStepIndex}">
       <button class="veera-steps__list-item-inner" (click)="stepSelected(i)">
         <span class="veera-steps__list-item-title">{{ stepTitle }}</span>
         <veera-ng-icon [name]="'arrow_a_right'" [svgClass]="'veera-steps__list-item-arrow-icon'"></veera-ng-icon>
@@ -10,17 +11,21 @@
   </ol>
   <ng-content></ng-content>
   <div *ngIf="this.stepChildren.length > 1 && this.currentStepIndex !== null" class="veera-steps__directional-buttons">
-    <button *ngIf="this.currentStepIndex > 0" class="veera-steps__directional-button veera-steps__directional-button--direction-prev" (click)="stepSelected(this.currentStepIndex - 1)" [title]="this.stepTitles[this.currentStepIndex - 1]">
-      <veera-ng-icon name="arrow_a_left" class="veera-steps__directional-button-icon"></veera-ng-icon>
+    <button *ngIf="this.currentStepIndex > 0"
+            class="veera-steps__directional-button veera-steps__directional-button--direction-prev"
+            (click)="stepSelected(this.currentStepIndex - 1)" [title]="this.stepTitles[this.currentStepIndex - 1]">
+      <veera-ng-icon [name]="'arrow_a_left'" [svgClass]="'veera-steps__directional-button-icon'"></veera-ng-icon>
       <span class="veera-steps__directional-button-label">
         {{ this.stepTitles[this.currentStepIndex - 1] }}
       </span>
     </button>
-    <button *ngIf="this.currentStepIndex < this.stepChildren.length - 1" class="veera-steps__directional-button veera-steps__directional-button--direction-next" (click)="stepSelected(this.currentStepIndex + 1)" [title]="this.stepTitles[this.currentStepIndex + 1]">
+    <button *ngIf="this.currentStepIndex < this.stepChildren.length - 1"
+            class="veera-steps__directional-button veera-steps__directional-button--direction-next"
+            (click)="stepSelected(this.currentStepIndex + 1)" [title]="this.stepTitles[this.currentStepIndex + 1]">
       <span class="veera-steps__directional-button-label">
         {{ this.stepTitles[this.currentStepIndex + 1] }}
       </span>
-      <veera-ng-icon name="arrow_a_right" class="veera-steps__directional-button-icon"></veera-ng-icon>
+      <veera-ng-icon [name]="'arrow_a_right'" [svgClass]="'veera-steps__directional-button-icon'"></veera-ng-icon>
     </button>
   </div>
 </div>
