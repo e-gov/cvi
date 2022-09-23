@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.11.3](https://stash.ria.ee/scm/sun/veera-components/compare/ui-0.11.2...ui-0.11.3) (2022-09-23)
+
+
+### Bug Fixes
+
+* stepper mobile icons showing in desktop view ([f3c55f8](https://stash.ria.ee/scm/sun/veera-components/commits/f3c55f8583a0427216176b9702ba244c6e14ac37))
+
+
+
 ## [0.11.2](https://stash.ria.ee/scm/sun/veera-components/compare/ui-0.11.1...ui-0.11.2) (2022-09-22)
 
 
