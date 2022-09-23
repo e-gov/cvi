@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.11.4](https://stash.ria.ee/scm/sun/veera-components/compare/ui-0.11.3...ui-0.11.4) (2022-09-23)
+
+
+### Bug Fixes
+
+* check whether step children exist when changing step ([d82e078](https://stash.ria.ee/scm/sun/veera-components/commits/d82e07852dad49be3bf584d6c95ac2bf8cadafe9))
+
+
+
 ## [0.11.3](https://stash.ria.ee/scm/sun/veera-components/compare/ui-0.11.2...ui-0.11.3) (2022-09-23)
 
 
