@@ -42,6 +42,12 @@
       }
     }
 
+    .is-active {
+      #{$base}__item-toggle-icon {
+        transform: scaleY(-1);
+      }
+    }
+
     #{$base}__item-content {
       color: get-color(black-coral-12);
       &.is-expanded {
