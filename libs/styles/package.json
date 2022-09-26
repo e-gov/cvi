@@ -1,6 +1,6 @@
 {
   "name": "@ria/veera-styles",
-  "version": "0.10.0",
+  "version": "0.10.1",
   "peerDependencies": {
     "@angular/common": "^14.0.0",
     "@angular/core": "^14.0.0"

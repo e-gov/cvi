@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.10.1](https://stash.ria.ee/scm/sun/veera-components/compare/styles-0.10.0...styles-0.10.1) (2022-09-26)
+
+
+### Bug Fixes
+
+* flip accordion icon when item active (Pull request [#60](https://stash.ria.ee/scm/sun/veera-components/issues/60)) ([0eba6f0](https://stash.ria.ee/scm/sun/veera-components/commits/0eba6f095be342e9ac31b7a4af24adb2918950d3))
+
+
+
 # [0.10.0](https://stash.ria.ee/scm/sun/veera-components/compare/styles-0.9.0...styles-0.10.0) (2022-09-22)
 
 
