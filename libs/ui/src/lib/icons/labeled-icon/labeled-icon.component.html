@@ -1,5 +1,7 @@
-<veera-ng-icon [name]="name" [svgClass]="'veera-labeled-icon__image'">
+<veera-ng-icon *ngIf="iconPosition === 'before'" [name]="name" [svgClass]="'veera-labeled-icon__image-before'">
 </veera-ng-icon>
 <div class="veera-labeled-icon__content">
   <ng-content></ng-content>
 </div>
+<veera-ng-icon *ngIf="iconPosition === 'after'" [name]="name" [svgClass]="'veera-labeled-icon__image-after'">
+</veera-ng-icon>

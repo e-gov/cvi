@@ -2,12 +2,14 @@
   display: flex;
 
   @at-root {
-    #{$base}__image {
-      width: $veera-font-size-250;
-      height: $veera-font-size-250;
-      vertical-align: middle;
+    #{$base}__image-before {
+      @include label-image;
       margin-right: get-spacing('haapsalu');
-      fill: get-color(sapphire-blue-10);
+    }
+
+    #{$base}__image-after {
+      @include label-image;
+      margin-left: get-spacing('haapsalu');
     }
 
     #{$base}__content {
@@ -24,4 +26,11 @@
       }
     }
   }
+}
+
+@mixin label-image {
+  width: $veera-font-size-250;
+  height: $veera-font-size-250;
+  vertical-align: middle;
+  fill: get-color(sapphire-blue-10);
 }
