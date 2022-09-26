@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [0.11.0](https://stash.ria.ee/scm/sun/veera-components/compare/styles-0.10.1...styles-0.11.0) (2022-09-26)
+
+
+### Features
+
+* add an option to use an icon after the label ([61601eb](https://stash.ria.ee/scm/sun/veera-components/commits/61601ebc8a2bb210489ff557fe178f287ab3dd1a))
+
+
+
 ## [0.10.1](https://stash.ria.ee/scm/sun/veera-components/compare/styles-0.10.0...styles-0.10.1) (2022-09-26)
 
 
