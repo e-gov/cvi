@@ -13,8 +13,7 @@ export default {
     showCloseButton: true,
     title: 'Notification title',
     content:
-      'Header icon and close buttons are not displayed if notification size is compact',
-    contentIconName: '',
+      'Header icon and close buttons are not displayed if notification size is compact'
   },
 } as Meta<NotificationComponent>;
 

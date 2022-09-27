@@ -5,6 +5,7 @@ import {
   Input,
   Output,
 } from '@angular/core';
+import { VeeraIconName } from '@ria/veera-icons';
 import { NotificationSeverity, NotificationSize } from './notification';
 
 @Component({
@@ -23,7 +24,7 @@ export class NotificationComponent {
   @Input() showHeaderIcon = true;
 
   /** Icon to show before content if size is compact */
-  @Input() contentIconName = '';
+  @Input() contentIconName?: VeeraIconName;
 
   /** Should the close button be displayed */
   @Input() showCloseButton = true;
