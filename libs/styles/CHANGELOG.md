@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.0.1](https://stash.ria.ee/scm/sun/veera-components/compare/styles-1.0.0...styles-1.0.1) (2022-09-27)
+
+
+### Bug Fixes
+
+* notification icon position and color (Pull request [#67](https://stash.ria.ee/scm/sun/veera-components/issues/67)) ([ab08190](https://stash.ria.ee/scm/sun/veera-components/commits/ab08190a02e233a999cc0edcb02f0e0aff92172b))
+
+
+
 # [1.0.0](https://stash.ria.ee/scm/sun/veera-components/compare/styles-0.11.0...styles-1.0.0) (2022-09-27)
 
 
