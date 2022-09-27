@@ -24,6 +24,7 @@ import { SafeHtmlPipe } from './pipes/safe-html-pipe';
 import { NotificationComponent } from './notification/notification.component';
 import { NotificationSeverityToHeaderIconPipe } from './notification/notification-severity-to-header-icon.pipe';
 import { IconsRegistry } from './icons/icons-registry.service';
+import { TabContainerComponent } from './tab-container/tab-container.component';
 import {
   veeraArrowALeft,
   veeraArrowARight,
@@ -60,6 +61,7 @@ const components = [
   AccordionTitleDirective,
   AccordionHeaderDirective,
   NotificationComponent,
+  TabContainerComponent,
 ];
 
 const pipes = [SafeHtmlPipe, NotificationSeverityToHeaderIconPipe];

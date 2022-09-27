@@ -1,0 +1,17 @@
+<div>
+  <ul class="tab-container" role="tabslist">
+    <li *ngFor="let tab of tabs" role="presentation">
+      <button [ngClass]="{'active': tab.active}"
+              (click)="selectTab(tab.id)"
+              type="button"
+              role="tab"
+              aria-controls="tabpanel"
+              class="tab-container__veera-tab-btn">
+        {{ tab.title }}
+      </button>
+    </li>
+  </ul>
+  <div class="tab-container__veera-tab-content">
+    <ng-content></ng-content>
+  </div>
+</div>

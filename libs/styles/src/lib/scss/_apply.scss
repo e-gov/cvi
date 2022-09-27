@@ -33,3 +33,7 @@
 .veera-notification {
   @include veera-notification;
 }
+
+.tab-container {
+  @include tab-container;
+}
