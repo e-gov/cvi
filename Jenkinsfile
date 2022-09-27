@@ -70,6 +70,15 @@ pipeline {
             }
           }
         }
+        stage('verify build') {
+          steps {
+            script {
+              ["styles", "ui", "icons"].each {
+                sh "npx nx build ${it}"
+             }
+            }
+          }
+        }
         stage('get affected projects') {
           steps {
             script {
@@ -126,19 +135,6 @@ pipeline {
             sh "git config --global user.name 'semantic-release-bot'"
             sh "git config --global user.email 'semantic-release-bot@example.com'"
             sh "git remote set-url origin https://${BITBUCKET_USR}:${BITBUCKET_PSW}@stash.ria.ee/scm/sun/veera-components.git"
-          }
-        }
-        stage('verify build') {
-          steps {
-            script {
-              ["styles", "ui", "icons"].each {
-                try {
-                    sh "npx nx build ${it}"
-                } catch (e) {
-                   throw e
-                }
-             }
-            }
           }
         }
         stage('release libraries') {
