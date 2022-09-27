@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [0.5.0](https://stash.ria.ee/scm/sun/veera-components/compare/storybook-0.4.0...storybook-0.5.0) (2022-09-27)
+
+
+### Features
+
+* add functionality to radio buttons ([dea5d45](https://stash.ria.ee/scm/sun/veera-components/commits/dea5d45c3dad3d63266bc22fdc6aa36b62521126))
+
+
+
 # [0.4.0](https://stash.ria.ee/scm/sun/veera-components/compare/storybook-0.3.1...storybook-0.4.0) (2022-09-22)
 
 
