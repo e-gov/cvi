@@ -1,74 +1,97 @@
 @mixin veera-notification($base: &) {
   margin: auto;
-  padding: 17.5px;
+  padding: get-spacing('haapsalu');
   position: relative;
-  border-radius: 5px;
-
-  svg {
-    fill: get-color(black-coral-18);
-  }
+  border-radius: $veera-radius-m;
 
   @at-root {
-    #{$base}__info {
+    #{$base}--severity-info {
       background: get-color(sapphire-blue-1);
       border: 1px solid get-color(sapphire-blue-10);
     }
 
-    #{$base}__warning {
+    #{$base}--severity-warning {
       background-color: get-color(dark-tangerine-1);
       border: 1px solid get-color(dark-tangerine-10);
     }
 
-    #{$base}__success {
+    #{$base}--severity-success {
       background-color: get-color(sea-green-1);
       border: 1px solid get-color(sea-green-10);
     }
 
-    #{$base}__error {
+    #{$base}--severity-error {
       background-color: get-color(jasper-1);
       border: 1px solid get-color(jasper-10);
     }
 
-    #{$base}__compact {
+    #{$base}--severity-neutral {
       background-color: get-color(black-coral-1);
       border: 1px solid get-color(black-coral-2);
     }
 
+    #{$base}__header {
+      display: flex;
+      gap: get-spacing('rapla');
+      margin-bottom: get-spacing('elva');
+    }
     #{$base}__title {
-      font-size: $veera-font-size-200;
-      line-height: 1.5;
+      line-height: $veera-line-height-500;
       color: get-color(black-coral-20);
-      margin: 0 40px 8px 0;
-      display: inline-flex;
     }
 
-    #{$base}__title-icon {
-      width: 24px;
+    #{$base}__header-icon-wrapper {
+      display: block;
+      width: 20px;
+      height: 20px;
+    }
+
+    #{$base}__header-icon, #{$base}__content-icon {
+      display: block;
+      #{$base}--severity-info & {
+        fill: get-color(sapphire-blue-10);
+      }
+
+      #{$base}--severity-warning & {
+        fill: get-color(dark-tangerine-10);
+      }
+
+      #{$base}--severity-success & {
+        fill: get-color(sea-green-10);
+      }
+
+      #{$base}--severity-error & {
+        fill: get-color(jasper-10);
+      }
+
+      #{$base}--severity-neutral & {
+        fill: get-color(black-coral-10);
+      }
     }
 
     #{$base}__close-button {
-      border: 0;
-      background: none;
       position: absolute;
-      top: 10px;
-      right: 10px;
-      z-index: 2;
-      padding: 5px 8px;
-      width: 40px;
-      height: 40px;
-      transition: transform ease-in-out 0.3s;
+      top: 20px;
+      right: 20px;
+      cursor: pointer;
+    }
 
-      &:hover {
-        cursor: pointer;
-        opacity: 0.8;
-      }
+    #{$base}__close-button-inner {
+      display: block;
+    }
+
+    #{$base}__close-button-icon {
+      fill: get-color(black-coral-18);
+      display: block;
+      width: 16px;
+      height: 16px;
     }
 
     #{$base}__content {
       display: block;
       color: get-color(black-coral-18);
-      font-size: 14px;
-      line-height: 1.5;
+      font-size: $veera-font-size-80;
+      line-height: $veera-line-height-500;
     }
   }
 }

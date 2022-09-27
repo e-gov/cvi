@@ -5,7 +5,7 @@ import {
   Input,
   Output,
 } from '@angular/core';
-import { NotificationType } from './notification-type';
+import { NotificationSeverity, NotificationSize } from './notification';
 
 @Component({
   selector: 'veera-ng-notification',
@@ -13,17 +13,23 @@ import { NotificationType } from './notification-type';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NotificationComponent {
-  /** Notification type */
-  @Input() type: NotificationType = 'info';
+  /** Notification severity */
+  @Input() severity: NotificationSeverity = 'info';
 
-  /** Should the close button be displayed */
+  /** Notification size */
+  @Input() size: NotificationSize = 'regular';
+
+  /** Should the header icon be displayed */
   @Input() showHeaderIcon = true;
+
+  /** Icon to show before content if size is compact */
+  @Input() contentIconName = '';
 
   /** Should the close button be displayed */
   @Input() showCloseButton = true;
 
-  /** Notification header */
-  @Input() header!: string;
+  /** Notification title */
+  @Input() title!: string;
 
   /** Emitter for the close button click */
   @Output() closed = new EventEmitter<void>();

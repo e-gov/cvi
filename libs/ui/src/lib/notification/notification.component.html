@@ -1,27 +1,30 @@
-<div class="veera-notification veera-notification__{{type}}">
-  <button *ngIf="showCloseButton && type !== 'compact'"
+<div class="veera-notification veera-notification--size-{{size}} veera-notification--severity-{{severity}}">
+  <button *ngIf="showCloseButton && size !== 'compact'"
           aria-label="close-button"
           class="veera-notification__close-button"
-          type="button"
-  >
-    <veera-ng-icon (click)="close()" name="close"></veera-ng-icon>
+          (click)="close()"
+          type="button">
+    <veera-ng-icon name="close" class="veera-notification__close-button-inner" svgClass="veera-notification__close-button-icon"></veera-ng-icon>
   </button>
-  <div class="veera-notification__title" *ngIf="type !== 'compact'">
-    <div *ngIf="showHeaderIcon else withoutHeaderIconTemplate"
-         class="veera-notification__title-icon">
-      <veera-ng-labeled-icon *ngIf="type | toHeaderIcon as iconName"
-                             [name]="iconName">
-        <ng-template [ngTemplateOutlet]="withoutHeaderIconTemplate"></ng-template>
-      </veera-ng-labeled-icon>
+  <div class="veera-notification__inner">
+    <div class="veera-notification__header" *ngIf="size !== 'compact'">
+      <ng-container *ngIf="showHeaderIcon">
+        <veera-ng-icon *ngIf="severity | toHeaderIcon as iconName" [name]="iconName" class="veera-notification__header-icon-wrapper" svgClass="veera-notification__header-icon"></veera-ng-icon>
+      </ng-container>
+      <h2 class="veera-notification__title">{{ title }}</h2>
     </div>
-
-    <ng-template #withoutHeaderIconTemplate>
-      <h5>
-        {{header}}
-      </h5>
-    </ng-template>
-  </div>
-  <div class="veera-notification__content">
-    <ng-content></ng-content>
+    <div class="veera-notification__content">
+      <ng-container *ngIf="contentIconName && size === 'compact'">
+        <veera-ng-labeled-icon [name]="contentIconName" class="veera-notification__content-icon-wrapper" svgClass="veera-notification__content-icon">
+          <ng-container *ngTemplateOutlet="content"></ng-container>
+        </veera-ng-labeled-icon>
+      </ng-container>
+      <ng-container *ngIf="!contentIconName || size !== 'compact'">
+        <ng-container *ngTemplateOutlet="content"></ng-container>
+      </ng-container>
+      <ng-template #content>
+        <ng-content></ng-content>
+      </ng-template>
+    </div>
   </div>
 </div>

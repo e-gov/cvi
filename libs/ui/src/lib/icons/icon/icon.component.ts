@@ -15,7 +15,6 @@ import { VeeraIconName } from '@ria/veera-icons';
 @Component({
   selector: 'veera-ng-icon',
   templateUrl: './icon.component.html',
-  styles: [':host::ng-deep svg{width: 24px; height: 24px}'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class IconComponent implements OnChanges {

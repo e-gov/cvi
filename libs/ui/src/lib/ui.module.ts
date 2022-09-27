@@ -22,7 +22,7 @@ import { AccordionHeaderDirective } from './accordion/directives/accordion-heade
 import { HtmlSectionComponent } from './html-section/html-section.component';
 import { SafeHtmlPipe } from './pipes/safe-html-pipe';
 import { NotificationComponent } from './notification/notification.component';
-import { NotificationTypeToHeaderIconPipe } from './notification/notification-type-to-header-icon.pipe';
+import { NotificationSeverityToHeaderIconPipe } from './notification/notification-severity-to-header-icon.pipe';
 import { IconsRegistry } from './icons/icons-registry.service';
 import {
   veeraArrowALeft,
@@ -62,7 +62,7 @@ const components = [
   NotificationComponent,
 ];
 
-const pipes = [SafeHtmlPipe, NotificationTypeToHeaderIconPipe];
+const pipes = [SafeHtmlPipe, NotificationSeverityToHeaderIconPipe];
 
 @NgModule({
   imports: [CommonModule, TextFieldModule],

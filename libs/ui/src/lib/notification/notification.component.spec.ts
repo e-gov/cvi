@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { NotificationComponent } from './notification.component';
 import { IconComponent } from '../icons/icon/icon.component';
-import { NotificationTypeToHeaderIconPipe } from './notification-type-to-header-icon.pipe';
+import { NotificationSeverityToHeaderIconPipe } from './notification-severity-to-header-icon.pipe';
 
 describe('NotificationComponent', () => {
   let component: NotificationComponent;
@@ -13,7 +13,7 @@ describe('NotificationComponent', () => {
       declarations: [
         NotificationComponent,
         IconComponent,
-        NotificationTypeToHeaderIconPipe,
+        NotificationSeverityToHeaderIconPipe,
       ],
     }).compileComponents();
 
