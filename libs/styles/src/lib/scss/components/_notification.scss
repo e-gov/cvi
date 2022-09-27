@@ -46,8 +46,11 @@
       height: 20px;
     }
 
-    #{$base}__header-icon, #{$base}__content-icon {
+    #{$base}__header-icon {
       display: block;
+    }
+
+    #{$base}__header-icon, #{$base}__content-icon {
       #{$base}--severity-info & {
         fill: get-color(sapphire-blue-10);
       }
