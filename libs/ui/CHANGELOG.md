@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [1.1.0](https://stash.ria.ee/scm/sun/veera-components/compare/ui-1.0.1...ui-1.1.0) (2022-09-27)
+
+
+### Features
+
+* add functionality to radio buttons ([dea5d45](https://stash.ria.ee/scm/sun/veera-components/commits/dea5d45c3dad3d63266bc22fdc6aa36b62521126))
+
+
+
 ## [1.0.1](https://stash.ria.ee/scm/sun/veera-components/compare/ui-1.0.0...ui-1.0.1) (2022-09-27)
 
 
