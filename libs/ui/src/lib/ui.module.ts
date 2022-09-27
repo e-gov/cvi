@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { ButtonComponent } from './button/button.component';
 import { FormItemComponent } from './form-item/form-item.component';
 import { InputComponent } from './input/input.component';
-import { RadioButtonsComponent } from './radio-button/radio-buttons/radio-buttons.component';
+import { RadioGroupComponent } from './radio-button/radio-group/radio-group.component';
 import { RadioButtonComponent } from './radio-button/radio-button/radio-button.component';
 import { StepComponent } from './steps/step/step.component';
 import { IconComponent } from './icons/icon/icon.component';
@@ -40,6 +40,7 @@ import {
   veeraScreenShare,
   veeraWarningAmber,
 } from '@ria/veera-icons';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const components = [
   ButtonComponent,
@@ -49,7 +50,7 @@ const components = [
   LabeledIconComponent,
   StepsComponent,
   StepComponent,
-  RadioButtonsComponent,
+  RadioGroupComponent,
   RadioButtonComponent,
   OptionButtonComponent,
   FeedbackComponent,
@@ -67,7 +68,7 @@ const components = [
 const pipes = [SafeHtmlPipe, NotificationSeverityToHeaderIconPipe];
 
 @NgModule({
-  imports: [CommonModule, TextFieldModule],
+  imports: [CommonModule, TextFieldModule, ReactiveFormsModule],
   declarations: [...components, ...pipes],
   exports: [...components, ...pipes, TextFieldModule],
 })

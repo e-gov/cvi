@@ -12,7 +12,7 @@ export * from './lib/input/input.component';
 export * from './lib/steps/step/step.component';
 export * from './lib/steps/steps/steps.component';
 export * from './lib/radio-button/radio-button/radio-button.component';
-export * from './lib/radio-button/radio-buttons/radio-buttons.component';
+export * from './lib/radio-button/radio-group/radio-group.component';
 export * from './lib/radio-button/option-button/option-button.component';
 export * from './lib/feedback/feedback/feedback.component';
 export * from './lib/accordion/accordion.component';

@@ -2,12 +2,12 @@
 
 Feature | Description
 - | -
-Selector | `veera-ng-radio-buttons`
-Component name | `RadioButtonsComponent`
+Selector | `veera-ng-radio-group`
+Component name | `RadioGroupComponent`
 Design system module | -
 Content | yes
 Permitted parent/ancestors | any
-Permitted children | `RadioButtonComponent`
+Permitted children | `RadioGroupComponent`
 
 ## Where to use
 

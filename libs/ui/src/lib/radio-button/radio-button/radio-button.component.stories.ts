@@ -16,8 +16,8 @@ const Template: Story<RadioButtonComponent> = (args: RadioButtonComponent) => ({
   /* template */
   template: `
     <veera-ng-radio-button [name]="name"
-                          [value]="value"
-                          [label]="label"
+                           [value]="value"
+                           [label]="label"
     ></veera-ng-radio-button>
   `,
 });

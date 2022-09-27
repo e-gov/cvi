@@ -1,9 +1,10 @@
-<label class="veera-radio-buttons__item-inner">
-  <input [name]="name"
-         [value]="value"
-         class="c-radio"
+<label class="veera-radio-group__item-inner">
+  <input class="c-radio"
          type="radio"
-  >
+         [name]="name"
+         [value]="value"
+         [checked]="checked"
+         (change)="onInputInteraction($event)">
   <span>
     {{label}}
   </span>

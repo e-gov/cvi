@@ -1,4 +1,4 @@
-@mixin veera-radio-buttons($base: &) {
+@mixin veera-radio-group($base: &) {
   --comment: 'Radios that look like regular buttons';
 
   & {

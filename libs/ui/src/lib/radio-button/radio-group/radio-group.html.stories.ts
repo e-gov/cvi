@@ -1,8 +1,8 @@
 import { Meta, Story } from '@storybook/angular';
-import notes from './radio-buttons.html.md';
+import notes from './radio-group.html.md';
 
 export default {
-  title: 'HTML/Radio button',
+  title: 'HTML/Radio button group',
   parameters: {
     notes,
     options: { selectedPanel: 'html/panel' },
@@ -25,12 +25,12 @@ const Template: Story = (args) => ({
   props: args,
   /* template */
   template: `
-    <div class="veera-radio-buttons">
-      <fieldset class="veera-radio-buttons__inner">
-        <legend class="veera-radio-buttons__title">{{title}}</legend>
-        <ul class="veera-radio-buttons__list">
-          <li class="veera-radio-buttons__item">
-            <label class="veera-radio-buttons__item-inner">
+    <div class="veera-radio-group">
+      <fieldset class="veera-radio-group__inner">
+        <legend class="veera-radio-group__title">{{title}}</legend>
+        <ul class="veera-radio-group__list">
+          <li class="veera-radio-group__item">
+            <label class="veera-radio-group__item-inner">
               <input name="name"
                      value="value_1"
                      class="c-radio"
@@ -41,8 +41,8 @@ const Template: Story = (args) => ({
               </span>
             </label>
           </li>
-          <li class="veera-radio-buttons__item">
-            <label class="veera-radio-buttons__item-inner">
+          <li class="veera-radio-group__item">
+            <label class="veera-radio-group__item-inner">
               <input name="name"
                      value="value_2"
                      class="c-radio"
@@ -68,28 +68,28 @@ const OptionButtonTemplate: Story = (args) => ({
   props: args,
   /* template */
   template: `
-    <div class="veera-radio-buttons veera-radio-buttons--appearance-{{appearance}}">
-      <fieldset class="veera-radio-buttons__inner">
-        <legend class="veera-radio-buttons__title">{{title}}</legend>
-        <ul class="veera-radio-buttons__list">
-          <li class="veera-radio-buttons__item">
-            <label class="veera-radio-buttons__item-inner">
+    <div class="veera-radio-group veera-radio-group--appearance-{{appearance}}">
+      <fieldset class="veera-radio-group__inner">
+        <legend class="veera-radio-group__title">{{title}}</legend>
+        <ul class="veera-radio-group__list">
+          <li class="veera-radio-group__item">
+            <label class="veera-radio-group__item-inner">
               <input type="radio"
-                     class="veera-radio-buttons__input"
+                     class="veera-radio-group__input"
                      name="example-name"
                      value="value_1"
               />
-              <span class="veera-radio-buttons__button">{{label}}</span>
+              <span class="veera-radio-group__button">{{label}}</span>
             </label>
           </li>
-          <li class="veera-radio-buttons__item">
-            <label class="veera-radio-buttons__item-inner">
+          <li class="veera-radio-group__item">
+            <label class="veera-radio-group__item-inner">
               <input type="radio"
-                     class="veera-radio-buttons__input"
+                     class="veera-radio-group__input"
                      name="example-name"
                      value="value_2"
               />
-              <span class="veera-radio-buttons__button">
+              <span class="veera-radio-group__button">
                 Option 2
               </span>
             </label>
@@ -110,28 +110,28 @@ const OptionButtonCompactTemplate: Story = (args) => ({
   props: args,
   /* template */
   template: `
-    <div class="veera-radio-buttons veera-radio-buttons--appearance-{{appearance}}">
-      <fieldset class="veera-radio-buttons__inner">
-        <legend class="veera-radio-buttons__title">{{title}}</legend>
-        <ul class="veera-radio-buttons__list">
-          <li class="veera-radio-buttons__item">
-            <label class="veera-radio-buttons__item-inner">
+    <div class="veera-radio-group veera-radio-group--appearance-{{appearance}}">
+      <fieldset class="veera-radio-group__inner">
+        <legend class="veera-radio-group__title">{{title}}</legend>
+        <ul class="veera-radio-group__list">
+          <li class="veera-radio-group__item">
+            <label class="veera-radio-group__item-inner">
               <input type="radio"
-                     class="veera-radio-buttons__input"
+                     class="veera-radio-group__input"
                      name="example-name"
                      value="value_1"
               />
-              <span class="veera-radio-buttons__button">{{label}}</span>
+              <span class="veera-radio-group__button">{{label}}</span>
             </label>
           </li>
-          <li class="veera-radio-buttons__item">
-            <label class="veera-radio-buttons__item-inner">
+          <li class="veera-radio-group__item">
+            <label class="veera-radio-group__item-inner">
               <input type="radio"
-                     class="veera-radio-buttons__input"
+                     class="veera-radio-group__input"
                      name="example-name"
                      value="value_2"
               />
-              <span class="veera-radio-buttons__button">
+              <span class="veera-radio-group__button">
                 Option 2
               </span>
             </label>
