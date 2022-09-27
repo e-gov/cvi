@@ -1,14 +1,15 @@
 @mixin veera-labeled-icon($base: &) {
   display: flex;
+  align-items: center;
 
   @at-root {
-    #{$base}__image-before {
-      @include label-image;
+    #{$base}__icon-before {
+      @include label-icon;
       margin-right: get-spacing('haapsalu');
     }
 
-    #{$base}__image-after {
-      @include label-image;
+    #{$base}__icon-after {
+      @include label-icon;
       margin-left: get-spacing('haapsalu');
     }
 
@@ -28,9 +29,6 @@
   }
 }
 
-@mixin label-image {
-  width: $veera-font-size-250;
-  height: $veera-font-size-250;
-  vertical-align: middle;
+@mixin label-icon {
   fill: get-color(sapphire-blue-10);
 }
