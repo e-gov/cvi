@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [1.2.0](https://stash.ria.ee/scm/sun/veera-components/compare/styles-1.1.0...styles-1.2.0) (2022-09-28)
+
+
+### Features
+
+* **angular:** labeled icon centered inside container ([a479947](https://stash.ria.ee/scm/sun/veera-components/commits/a479947779914414ca36b220a25d1e0c076b8d5a))
+
+
+
 # [1.1.0](https://stash.ria.ee/scm/sun/veera-components/compare/styles-1.0.1...styles-1.1.0) (2022-09-27)
 
 
