@@ -3,19 +3,22 @@
   align-items: center;
 
   @at-root {
+
     #{$base}__icon-before {
       @include label-icon;
+      margin-left: auto;
       margin-right: get-spacing('haapsalu');
     }
 
     #{$base}__icon-after {
       @include label-icon;
+      margin-right: auto;
+      order: 2;
       margin-left: get-spacing('haapsalu');
     }
 
     #{$base}__content {
-      vertical-align: middle;
-      min-width: max-content;
+      overflow: auto;
 
       & a {
         color: inherit;

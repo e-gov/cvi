@@ -35,7 +35,7 @@ const TemplateIconAfter: Story<LabeledIconComponent> = (
     iconPosition: 'after',
   },
   template: `
-    <veera-ng-labeled-icon [name]="name" [iconPosition]="iconPosition">This is a icon'ed label</veera-ng-labeled-icon>
+    <veera-ng-labeled-icon [name]="name" [iconPosition]="iconPosition">This is a labeled icon</veera-ng-labeled-icon>
   `,
 });
 
@@ -50,9 +50,9 @@ const TemplateIconAfterButton: Story<LabeledIconComponent> = (
   },
   template: `
   <veera-ng-button appearance="secondary">
-    <veera-ng-labeled-icon [name]="name" [iconPosition]="iconPosition">This is a icon'ed label</veera-ng-labeled-icon>
+    <veera-ng-labeled-icon [name]="name" [iconPosition]="iconPosition">This is a labeled icon</veera-ng-labeled-icon>
   </veera-ng-button>
   `,
 });
 
-export const WithIconAfterInsideButton = TemplateIconAfterButton.bind({});
+export const LabeledIconInsideButton = TemplateIconAfterButton.bind({});
