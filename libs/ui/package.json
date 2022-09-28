@@ -15,7 +15,7 @@
     "@fontsource/roboto": "^4.5.8",
     "sanitize-html": "2.7.1",
     "rxjs": "~7.5.6",
-    "@ria/veera-icons": "~0.2.1"
+    "@ria/veera-icons": "~1.0.0"
   },
   "publishConfig": {
     "registry": "https://nexus.riaint.ee/repository/sun-npm-local/"
