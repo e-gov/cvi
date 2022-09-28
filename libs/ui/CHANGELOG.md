@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.2.1](https://stash.ria.ee/scm/sun/veera-components/compare/ui-1.2.0...ui-1.2.1) (2022-09-28)
+
+
+### Bug Fixes
+
+* **angular:** ui package icons dependency version ([6d9d8f0](https://stash.ria.ee/scm/sun/veera-components/commits/6d9d8f0f3612535e653979bd6a1ba98780f64c0d))
+
+
+
 # [1.2.0](https://stash.ria.ee/scm/sun/veera-components/compare/ui-1.1.0...ui-1.2.0) (2022-09-28)
 
 
