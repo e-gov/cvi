@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.2.2](https://stash.ria.ee/scm/sun/veera-components/compare/ui-1.2.1...ui-1.2.2) (2022-09-28)
+
+
+### Bug Fixes
+
+* **angular:** ui lib missing forms peerDependency ([413b808](https://stash.ria.ee/scm/sun/veera-components/commits/413b8086ad52ec3ef9c43dd959447faa0c34191b))
+
+
+
 ## [1.2.1](https://stash.ria.ee/scm/sun/veera-components/compare/ui-1.2.0...ui-1.2.1) (2022-09-28)
 
 

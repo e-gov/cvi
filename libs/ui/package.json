@@ -1,6 +1,6 @@
 {
   "name": "@ria/veera-ng",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "peerDependencies": {
     "@angular/animations": "^14.1.1",
     "@angular/cdk": "^14.2.0",
