@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [1.3.0](https://stash.ria.ee/scm/sun/veera-components/compare/ui-1.2.3...ui-1.3.0) (2022-09-29)
+
+
+### Features
+
+* add breadcrumbs component (Pull request [#70](https://stash.ria.ee/scm/sun/veera-components/issues/70)) ([e32c1dc](https://stash.ria.ee/scm/sun/veera-components/commits/e32c1dc120726aa7a0a414050eba1d4cc27d010b))
+
+
+
 ## [1.2.3](https://stash.ria.ee/scm/sun/veera-components/compare/ui-1.2.2...ui-1.2.3) (2022-09-29)
 
 
