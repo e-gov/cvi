@@ -2,6 +2,16 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.2.3](https://stash.ria.ee/scm/sun/veera-components/compare/ui-1.2.2...ui-1.2.3) (2022-09-29)
+
+
+### Bug Fixes
+
+* html content icons ([ce9bc89](https://stash.ria.ee/scm/sun/veera-components/commits/ce9bc895b68095796ab9c84c8d892e89acdf4da4))
+* mobile accordion styles (Pull request [#76](https://stash.ria.ee/scm/sun/veera-components/issues/76)) ([c7050a5](https://stash.ria.ee/scm/sun/veera-components/commits/c7050a53ceaa4a142f8680ecac9939cc6796a474))
+
+
+
 ## [1.2.2](https://stash.ria.ee/scm/sun/veera-components/compare/ui-1.2.1...ui-1.2.2) (2022-09-28)
 
 
