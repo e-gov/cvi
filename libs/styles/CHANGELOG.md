@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.3.1](https://stash.ria.ee/scm/sun/veera-components/compare/styles-1.3.0...styles-1.3.1) (2022-09-29)
+
+
+### Bug Fixes
+
+* steps directional button style ([f89aac8](https://stash.ria.ee/scm/sun/veera-components/commits/f89aac8cf7c763f4cfe315c49553505a7e1db55b))
+
+
+
 # [1.3.0](https://stash.ria.ee/scm/sun/veera-components/compare/styles-1.2.1...styles-1.3.0) (2022-09-29)
 
 
