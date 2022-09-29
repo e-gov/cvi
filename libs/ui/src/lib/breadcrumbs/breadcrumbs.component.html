@@ -1,0 +1,5 @@
+<ul class="veera-breadcrumbs">
+  <li *ngFor="let label of breadcrumbLabels; index as index" class="veera-breadcrumbs__item">
+    <a class="veera-breadcrumbs__item-link" (click)="breadcrumbChange.emit(index)">{{ label }}</a>
+  </li>
+</ul>

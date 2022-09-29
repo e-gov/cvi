@@ -41,6 +41,7 @@ import {
   veeraWarningAmber,
 } from '@ria/veera-icons';
 import { ReactiveFormsModule } from '@angular/forms';
+import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
 
 const components = [
   ButtonComponent,
@@ -63,6 +64,7 @@ const components = [
   AccordionHeaderDirective,
   NotificationComponent,
   TabContainerComponent,
+  BreadcrumbsComponent,
 ];
 
 const pipes = [SafeHtmlPipe, NotificationSeverityToHeaderIconPipe];

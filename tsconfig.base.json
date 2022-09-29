@@ -17,9 +17,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@ria/veera-styles": ["libs/styles/src/index.ts"],
       "@ria/veera-icons": ["dist/libs/icons/index"],
-      "@ria/veera-ng": ["libs/ui/src/index.ts"]
+      "@ria/veera-ng": ["libs/ui/src/index.ts"],
+      "@ria/veera-styles": ["libs/styles/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
