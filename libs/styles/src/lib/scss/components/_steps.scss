@@ -281,7 +281,6 @@
         }
       }
       @include veera-breakpoint-up(sm) {
-        text-decoration: underline;
         padding-inline: get-spacing('kuressaare');
         padding-block: get-spacing('haapsalu');
         color: get-color(sapphire-blue-10);
@@ -293,6 +292,10 @@
         }
         &--direction-next {
           margin-left: auto;
+        }
+        &:hover {
+          text-decoration: underline;
+          color: get-color(sapphire-blue-17);
         }
       }
     }
