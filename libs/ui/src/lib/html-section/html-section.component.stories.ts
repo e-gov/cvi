@@ -15,10 +15,10 @@ export default {
           <p>Telefonikõnedele vastatakse E-R 9-17 ning kõnesid teenindatakse eesti, vene ja inglise keeles</p>
         </div>
         <div class="veera-html-section__content-elements">
-          <veera-ng-labeled-icon name="call"><a href="tel:+3726123000">+372 612 3000</a></veera-ng-labeled-icon>
-          <veera-ng-labeled-icon name="email"><a href="mailto:ppa@politsei.ee">ppa@politsei.ee</a></veera-ng-labeled-icon>
-          <veera-ng-labeled-icon name="screen_share"><a href="https://politsei.ee" target="_blank">politsei.ee</a></veera-ng-labeled-icon>
-          <veera-ng-labeled-icon name="location">Pärnu mnt 139, 15060 Tallinn</veera-ng-labeled-icon>
+          <veera-web-labeled-icon name="call"><a href="tel:+3726123000">+372 612 3000</a></veera-web-labeled-icon>
+          <veera-web-labeled-icon name="email"><a href="mailto:ppa@politsei.ee">ppa@politsei.ee</a></veera-web-labeled-icon>
+          <veera-web-labeled-icon name="screen_share"><a href="https://politsei.ee" target="_blank">politsei.ee</a></veera-web-labeled-icon>
+          <veera-web-labeled-icon name="location">Pärnu mnt 139, 15060 Tallinn</veera-web-labeled-icon>
         </div>
       </div>
     `,
@@ -46,9 +46,9 @@ Contacts.args = {
         <p>Võta ühendust perekonnaseisuasutusega, kus soovid abielu sõlmida</p>
       </div>
       <div class="veera-html-section__content-elements">
-        <veera-ng-labeled-icon name="screen_share"><a href="#">Maakonnakeskuste kohalikud omavalitsused</a></veera-ng-labeled-icon>
-        <veera-ng-labeled-icon name="screen_share"><a href="#">Notarid</a></veera-ng-labeled-icon>
-        <veera-ng-labeled-icon name="screen_share"><a href="#">Abielu sõlmimise õigust omavad vaimulikud</a></veera-ng-labeled-icon>
+        <veera-web-labeled-icon name="screen_share"><a href="#">Maakonnakeskuste kohalikud omavalitsused</a></veera-web-labeled-icon>
+        <veera-web-labeled-icon name="screen_share"><a href="#">Notarid</a></veera-web-labeled-icon>
+        <veera-web-labeled-icon name="screen_share"><a href="#">Abielu sõlmimise õigust omavad vaimulikud</a></veera-web-labeled-icon>
       </div>
     </div>
   `,

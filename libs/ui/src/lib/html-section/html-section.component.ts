@@ -1,11 +1,18 @@
-import { Component, Injector, Input, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  Injector,
+  Input,
+  OnInit,
+} from '@angular/core';
 import { createCustomElement } from '@angular/elements';
-import { LabeledIconComponent } from '../icons/labeled-icon/labeled-icon.component';
 import { IconComponent } from '../icons/icon/icon.component';
+import { LabeledIconComponent } from '../icons/labeled-icon/labeled-icon.component';
 
 @Component({
   selector: 'veera-ng-html-section',
   templateUrl: './html-section.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HtmlSectionComponent implements OnInit {
   @Input() html?: string;
@@ -15,8 +22,8 @@ export class HtmlSectionComponent implements OnInit {
 
   ngOnInit() {
     this.createCustomElements([
-      [LabeledIconComponent, 'veera-ng-labeled-icon'],
-      [IconComponent, 'veera-ng-icon'],
+      [LabeledIconComponent, 'veera-web-labeled-icon'],
+      [IconComponent, 'veera-web-icon'],
     ]);
   }
 

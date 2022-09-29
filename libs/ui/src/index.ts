@@ -22,5 +22,5 @@ export * from './lib/accordion/directives/accordion-item.directive';
 export * from './lib/accordion/directives/accordion-title.directive';
 export * from './lib/html-section/html-section.component';
 export * from './lib/textarea/textarea.component';
-export * from './lib/pipes/safe-html-pipe';
+export * from './lib/html-section/safe-html-pipe';
 export * from './lib/tab-container/tab-container.component';

@@ -20,7 +20,7 @@ import { AccordionContentDirective } from './accordion/directives/accordion-cont
 import { AccordionTitleDirective } from './accordion/directives/accordion-title.directive';
 import { AccordionHeaderDirective } from './accordion/directives/accordion-header.directive';
 import { HtmlSectionComponent } from './html-section/html-section.component';
-import { SafeHtmlPipe } from './pipes/safe-html-pipe';
+import { SafeHtmlPipe } from './html-section/safe-html-pipe';
 import { NotificationComponent } from './notification/notification.component';
 import { NotificationSeverityToHeaderIconPipe } from './notification/notification-severity-to-header-icon.pipe';
 import { IconsRegistry } from './icons/icons-registry.service';
