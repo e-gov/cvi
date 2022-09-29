@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.3.1](https://stash.ria.ee/scm/sun/veera-components/compare/ui-1.3.0...ui-1.3.1) (2022-09-29)
+
+
+### Bug Fixes
+
+* hide steps on mobile view when step selected first time (Pull request [#71](https://stash.ria.ee/scm/sun/veera-components/issues/71)) ([55c7ebb](https://stash.ria.ee/scm/sun/veera-components/commits/55c7ebb7b3e63f9732290a529e2551976cd46420))
+
+
+
 # [1.3.0](https://stash.ria.ee/scm/sun/veera-components/compare/ui-1.2.3...ui-1.3.0) (2022-09-29)
 
 
