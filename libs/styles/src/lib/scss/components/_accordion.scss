@@ -14,8 +14,17 @@
     }
 
     #{$base}__item {
-      border: 1px solid get-color(black-coral-2);
-      border-radius: $veera-radius-s;
+      @include veera-breakpoint-down(sm) {
+        border-bottom: 1px solid get-color(black-coral-2);
+        &:first-child {
+          border-top: 1px solid get-color(black-coral-2);
+        }
+      }
+
+      @include veera-breakpoint-up(sm) {
+        border: 1px solid get-color(black-coral-2);
+        border-radius: $veera-radius-s;
+      }
     }
 
     #{$base}__item-toggle-button {
@@ -31,6 +40,12 @@
       &.is-disabled {
         cursor: default;
         color: $color-disabled;
+      }
+
+      @include veera-breakpoint-down(sm) {
+        padding: 12px 0;
+        flex-direction: row-reverse;
+        justify-content: space-between;
       }
     }
 
@@ -57,14 +72,23 @@
 
     #{$base}__item-details,
     #{$base}__item-content-inner {
-      padding-left: $content-padding-left;
-      padding-right: $padding-inline;
+      @include veera-breakpoint-up(sm) {
+        padding-left: $content-padding-left;
+        padding-right: $padding-inline;
+      }
     }
 
     #{$base}__item-details {
       background-color: get-color(black-coral-0);
       padding-block: $header-padding-block;
       margin-bottom: $header-padding-block;
+
+      @include veera-breakpoint-down(sm) {
+        font-size: $veera-font-size-70;
+      }
+      @include veera-breakpoint-up(sm) {
+        font-size: $veera-font-size-80;
+      }
     }
   }
 }

@@ -63,6 +63,17 @@ const Template: Story<AccordionComponent> = (args: AccordionComponent) => ({
 export const Default = Template.bind({});
 Default.args = {};
 
+export const Mobile = Template.bind({});
+Mobile.parameters = {
+  layout: 'fullscreen',
+  backgrounds: {
+    default: 'light',
+  },
+  viewport: {
+    defaultViewport: 'iphone12mini',
+  },
+};
+
 const TemplateCustomTitle: Story = (args) => ({
   props: args,
   /* template */
