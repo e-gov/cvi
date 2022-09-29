@@ -184,6 +184,9 @@
     #{$base}__list-item-title {
       @include veera-breakpoint-down(sm) {
         flex-grow: 1;
+        #{$base}.is-any-step-selected & {
+          color: get-color(sapphire-blue-10);
+        }
       }
     }
 
@@ -224,6 +227,9 @@
     }
 
     #{$base}__content-panel-title {
+      @include veera-breakpoint-down(sm) {
+        display: none;
+      }
       @include veera-breakpoint-up(sm) {
         font-size: $veera-font-size-250;
         line-height: $veera-line-height-500;
