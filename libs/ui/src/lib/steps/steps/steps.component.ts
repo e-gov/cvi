@@ -34,8 +34,8 @@ export class StepsComponent
   @Output() stepChange = new EventEmitter<number>();
 
   stepTitles!: string[];
-  currentProgressCSSVar = 0;
-  anyStepSelected = false;
+  @Input() currentProgressCSSVar = 0;
+  @Input() anyStepSelected = false;
 
   @HostBinding('class') get getHostClasses(): string {
     return (
@@ -51,6 +51,10 @@ export class StepsComponent
     this.stepTitles = this.stepChildren.map(
       (step: StepComponent) => step.title
     );
+    if (this.currentStepIndex) {
+      this.anyStepSelected = true;
+      this.setProgress(this.currentStepIndex);
+    }
   }
 
   ngAfterViewInit(): void {
@@ -76,9 +80,7 @@ export class StepsComponent
     this.anyStepSelected = true;
     this.currentStepIndex = stepIndex;
     this.hideStepsContent();
-    this.currentProgressCSSVar = Math.round(
-      ((stepIndex + 1) / this.stepTitles.length) * 100
-    );
+    this.setProgress(stepIndex);
     this.stepChange.emit(this.currentStepIndex);
   }
 
@@ -92,5 +94,11 @@ export class StepsComponent
         this.renderer.removeClass(domNode, 'is-current');
       }
     });
+  }
+
+  setProgress(stepIndex: number) {
+    this.currentProgressCSSVar = Math.round(
+      ((stepIndex + 1) / this.stepTitles.length) * 100
+    );
   }
 }
