@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.3.2](https://stash.ria.ee/scm/sun/veera-components/compare/styles-1.3.1...styles-1.3.2) (2022-09-30)
+
+
+### Bug Fixes
+
+* radio group title in firefox ([da0f00e](https://stash.ria.ee/scm/sun/veera-components/commits/da0f00e484cad342fe107836fedcdf037047cc3a))
+
+
+
 ## [1.3.1](https://stash.ria.ee/scm/sun/veera-components/compare/styles-1.3.0...styles-1.3.1) (2022-09-29)
 
 
