@@ -20,7 +20,9 @@
     #{$base}__inner {
     }
     #{$base}__title {
-      text-align: center;
+      width: auto;
+      margin-left: auto;
+      margin-right: auto;
       margin-bottom: get-spacing('paldiski');
     }
     #{$base}__list {
