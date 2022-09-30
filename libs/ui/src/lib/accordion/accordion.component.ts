@@ -38,9 +38,7 @@ import { AccordionItemDirective } from './directives/accordion-item.directive';
   ],
 })
 export class AccordionComponent implements AfterViewInit {
-  /** Removing this will break the Storybook story due to https://github.com/storybookjs/storybook/issues/18198 */
-  /** @internal */
-  expandedItems: number[] = [];
+  @Input() expandedItems: number[] = [];
   @Input() singleOpen = true;
 
   @ContentChildren(AccordionItemDirective)
