@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.3.3](https://stash.ria.ee/scm/sun/veera-components/compare/styles-1.3.2...styles-1.3.3) (2022-10-03)
+
+
+### Bug Fixes
+
+* steps footer background color (Pull request [#81](https://stash.ria.ee/scm/sun/veera-components/issues/81)) ([ad6f786](https://stash.ria.ee/scm/sun/veera-components/commits/ad6f786b2e7efd5c739a873dec6fbbb1d32b7626))
+
+
+
 ## [1.3.2](https://stash.ria.ee/scm/sun/veera-components/compare/styles-1.3.1...styles-1.3.2) (2022-09-30)
 
 
