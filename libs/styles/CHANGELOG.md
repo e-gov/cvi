@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.4.1](https://stash.ria.ee/scm/sun/veera-components/compare/styles-1.4.0...styles-1.4.1) (2022-10-03)
+
+
+### Bug Fixes
+
+* **styles:** lib name ([34dcf24](https://stash.ria.ee/scm/sun/veera-components/commits/34dcf242e78542c89db824be68f3d5402e2f723b))
+
+
+
 # [1.4.0](https://stash.ria.ee/scm/sun/veera-components/compare/styles-1.3.3...styles-1.4.0) (2022-10-03)
 
 
