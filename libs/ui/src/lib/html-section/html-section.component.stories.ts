@@ -54,3 +54,22 @@ Contacts.args = {
   `,
   sanitize: true,
 };
+
+export const List = Template.bind({});
+List.args = {
+  html: `
+    <p>Ordered <b>list</b></p>
+    <ol>
+      <li>Item 1</li>
+      <li>Item 2</li>
+    </ol>
+    <br>
+    <p>Unordered <i>list</i></p>
+    <ul>
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ul>
+  `,
+  sanitize: true,
+};

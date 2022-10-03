@@ -39,4 +39,12 @@
       }
     }
   }
+
+  ol, ul {
+    padding: 0 get-spacing('haapsalu');
+  }
+
+  ul {
+    list-style-type: disc;
+  }
 }
