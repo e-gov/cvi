@@ -44,16 +44,16 @@
       border-radius: $veera-radius-pill;
       padding-block: get-spacing('loksa');
       border: 1px solid get-color(black-coral-10);
+
+      #{$base}__input:hover + &,
       #{$base}__input:focus + &,
       #{$base}__input:checked + & {
+        background-color: get-color(sapphire-blue-20);
         color: get-color(white);
-        border-color: transparent;
       }
-      #{$base}__input:focus + & {
-        background-color: get-color(black-coral-7);
-      }
-      #{$base}__input:checked + & {
-        background-color: get-color(sapphire-blue-10);
+
+      #{$base}__input:focus-visible + & {
+        box-shadow: 0 0 0 0.2rem #0083ba80;
       }
     }
   }
