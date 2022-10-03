@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.4.1](https://stash.ria.ee/scm/sun/veera-components/compare/ui-1.4.0...ui-1.4.1) (2022-10-03)
+
+
+### Bug Fixes
+
+* step padding (Pull request [#87](https://stash.ria.ee/scm/sun/veera-components/issues/87)) ([0a897ae](https://stash.ria.ee/scm/sun/veera-components/commits/0a897ae3cca73026a628571f6808026259e39374))
+
+
+
 # [1.4.0](https://stash.ria.ee/scm/sun/veera-components/compare/ui-1.3.2...ui-1.4.0) (2022-10-03)
 
 
