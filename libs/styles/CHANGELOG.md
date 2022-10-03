@@ -2,6 +2,16 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.4.3](https://stash.ria.ee/scm/sun/veera-components/compare/styles-1.4.2...styles-1.4.3) (2022-10-03)
+
+
+### Bug Fixes
+
+* feedback styles (Pull request [#86](https://stash.ria.ee/scm/sun/veera-components/issues/86)) ([43b3a7e](https://stash.ria.ee/scm/sun/veera-components/commits/43b3a7e79ec9ce9f8af693eb3ced45db01a4e6dd))
+* step padding (Pull request [#87](https://stash.ria.ee/scm/sun/veera-components/issues/87)) ([0a897ae](https://stash.ria.ee/scm/sun/veera-components/commits/0a897ae3cca73026a628571f6808026259e39374))
+
+
+
 ## [1.4.2](https://stash.ria.ee/scm/sun/veera-components/compare/styles-1.4.1...styles-1.4.2) (2022-10-03)
 
 
