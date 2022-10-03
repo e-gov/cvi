@@ -1,5 +1,5 @@
 {
-  "name": "@ria/styles",
+  "name": "@ria/veera-styles",
   "version": "1.4.0",
   "dependencies": {
     "tslib": "^2.3.0",
