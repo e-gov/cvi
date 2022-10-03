@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.4.2](https://stash.ria.ee/scm/sun/veera-components/compare/styles-1.4.1...styles-1.4.2) (2022-10-03)
+
+
+### Bug Fixes
+
+* storybook background (Pull request [#85](https://stash.ria.ee/scm/sun/veera-components/issues/85)) ([5d925c0](https://stash.ria.ee/scm/sun/veera-components/commits/5d925c021057b292fa0e6870e27109dede097967))
+
+
+
 ## [1.4.1](https://stash.ria.ee/scm/sun/veera-components/compare/styles-1.4.0...styles-1.4.1) (2022-10-03)
 
 
