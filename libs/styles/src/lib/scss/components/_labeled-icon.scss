@@ -3,7 +3,6 @@
   align-items: center;
 
   @at-root {
-
     #{$base}__icon-before {
       @include label-icon;
       display: flex;

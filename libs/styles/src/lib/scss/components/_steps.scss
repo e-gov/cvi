@@ -18,7 +18,6 @@
 
   @at-root {
     #{$base}__title {
-
       color: get-color(black-coral-12);
       margin-block: get-spacing('haapsalu');
 
@@ -115,10 +114,10 @@
           content: counter(numberedlist);
           width: $number-size--mobile;
           background-image: linear-gradient(get-color(white), get-color(white)),
-          conic-gradient(
+            conic-gradient(
               get-color(sapphire-blue-10) var(--progress),
               get-color(black-coral-2) var(--progress)
-          );
+            );
           background-origin: border-box;
           background-clip: content-box, border-box;
           aspect-ratio: 1;

@@ -1,17 +1,15 @@
 @mixin veera-breadcrumbs($base: &) {
-
   display: flex;
   flex-wrap: wrap;
 
   @at-root {
-
     #{$base}__item {
       & + &::before {
         float: left;
         padding-right: 0.5rem;
         padding-left: 0.5rem;
         color: #6c757d;
-        content: "/";
+        content: '/';
       }
 
       &:last-child {
@@ -27,5 +25,4 @@
       color: get-color(sapphire-blue-10);
     }
   }
-
 }

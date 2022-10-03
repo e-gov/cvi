@@ -1,5 +1,4 @@
 @mixin veera-html-section($base: &) {
-
   @media screen and (min-width: map-get($veera-grid-breakpoints, sm)) {
     #{$base}__content {
       display: flex;
