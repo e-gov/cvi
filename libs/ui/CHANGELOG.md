@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [1.5.0](https://stash.ria.ee/scm/sun/veera-components/compare/ui-1.4.1...ui-1.5.0) (2022-10-03)
+
+
+### Features
+
+* add html section list styling ([e259590](https://stash.ria.ee/scm/sun/veera-components/commits/e259590c338511fd3099f4682591d412f9aa8ca0))
+
+
+
 ## [1.4.1](https://stash.ria.ee/scm/sun/veera-components/compare/ui-1.4.0...ui-1.4.1) (2022-10-03)
 
 
