@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.5.1](https://stash.ria.ee/scm/sun/veera-components/compare/styles-1.5.0...styles-1.5.1) (2022-10-04)
+
+
+### Bug Fixes
+
+* accordion item details style ([6715272](https://stash.ria.ee/scm/sun/veera-components/commits/67152728030e4a8e6e3cba9ec4ea7963d86f418a))
+
+
+
 # [1.5.0](https://stash.ria.ee/scm/sun/veera-components/compare/styles-1.4.3...styles-1.5.0) (2022-10-03)
 
 
