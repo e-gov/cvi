@@ -5,6 +5,7 @@
   $content-padding-left: $toggle-icon-width +
     map-get($veera-spacing-patterns, 'kuressaare') * 2;
   $color-disabled: get-color(black-coral-2);
+  $item-detail-margin: calc(get-spacing('valga') * -1);
 
   @at-root {
     #{$base}__list {
@@ -85,6 +86,9 @@
 
       @include veera-breakpoint-down(sm) {
         font-size: $veera-font-size-70;
+        margin-left: $item-detail-margin;
+        margin-right: $item-detail-margin;
+        padding-left: get-spacing('valga');
       }
       @include veera-breakpoint-up(sm) {
         font-size: $veera-font-size-80;
