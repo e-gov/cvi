@@ -51,7 +51,7 @@ export class StepsComponent
     this.stepTitles = this.stepChildren.map(
       (step: StepComponent) => step.title
     );
-    if (this.currentStepIndex) {
+    if (this.currentStepIndex !== null) {
       this.anyStepSelected = true;
       this.setProgress(this.currentStepIndex);
     }
