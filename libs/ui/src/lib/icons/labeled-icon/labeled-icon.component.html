@@ -1,6 +1,9 @@
-<veera-ng-icon [name]="name" class="veera-labeled-icon__icon-{{iconPosition}}" svgClass="{{svgClass}}">
+<veera-ng-icon [name]="name"
+               class="veera-labeled-icon__icon-{{iconPosition}}"
+               svgClass="{{svgClass}}"
+               [style.--icon-height]="heightCSSVar">
 </veera-ng-icon>
-<div class="veera-labeled-icon__content">
+<div #content class="veera-labeled-icon__content">
   <ng-content></ng-content>
 </div>
 
