@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.5.1](https://stash.ria.ee/scm/sun/veera-components/compare/storybook-0.5.0...storybook-0.5.1) (2022-10-05)
+
+
+### Bug Fixes
+
+* remove pointer from mobile step item (Pull request [#95](https://stash.ria.ee/scm/sun/veera-components/issues/95)) ([5be70bc](https://stash.ria.ee/scm/sun/veera-components/commits/5be70bc40afb35d2caf1164c3450a74ae982d06f))
+
+
+
 # [0.5.0](https://stash.ria.ee/scm/sun/veera-components/compare/storybook-0.4.0...storybook-0.5.0) (2022-09-27)
 
 
