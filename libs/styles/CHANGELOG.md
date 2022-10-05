@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.5.2](https://stash.ria.ee/scm/sun/veera-components/compare/styles-1.5.1...styles-1.5.2) (2022-10-05)
+
+
+### Bug Fixes
+
+* mobile steps title position (Pull request [#91](https://stash.ria.ee/scm/sun/veera-components/issues/91)) ([edffb6a](https://stash.ria.ee/scm/sun/veera-components/commits/edffb6af0620f1a5b09c966732048b5d8119aeff))
+
+
+
 ## [1.5.1](https://stash.ria.ee/scm/sun/veera-components/compare/styles-1.5.0...styles-1.5.1) (2022-10-04)
 
 
