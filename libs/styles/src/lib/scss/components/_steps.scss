@@ -102,6 +102,9 @@
           padding-left: get-spacing('paldiski');
           padding-right: get-spacing('haapsalu');
         }
+        #{$base}.is-any-step-selected & {
+          pointer-events: none;
+        }
       }
       @include veera-breakpoint-up(sm) {
         width: 100%;
