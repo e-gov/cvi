@@ -1,0 +1,28 @@
+import {Meta, Story} from '@storybook/addon-docs';
+import stylesPkg from '/libs/styles/package.json';
+
+# How to Install Veera Styles
+
+<Meta title="Styles/Installation" parameters={{viewMode: 'docs'}}/>
+
+<Story name="Installation">
+  {{
+    props: {stylesPkg},
+    template: `
+      Latest version: {{ stylesPkg.version }}
+    `,
+  }}
+</Story>
+
+1. Install the library
+```
+npm i --save @ria/veera-styles
+```
+
+2. Include styles in the project
+
+`@use` or `@forward` the styles into your stylesheet (install Dart Sass):
+
+```
+@use '~@ria/veera-styles';
+```

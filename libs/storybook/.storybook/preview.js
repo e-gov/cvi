@@ -4,7 +4,7 @@ import { UiModule } from '@ria/veera-ng';
 import { StorybookModule } from '../src/lib/storybook.module';
 import docJson from './documentation.json';
 import sortingOrder from './sorting-order';
-import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
+import { DEFAULT_VIEWPORT } from '@storybook/addon-viewport';
 
 setCompodocJson(docJson);
 
@@ -27,7 +27,7 @@ export const parameters = {
   },
   layout: 'centered',
   viewport: {
-    viewports: INITIAL_VIEWPORTS,
+    viewports: DEFAULT_VIEWPORT,
   },
 };
 

@@ -1,13 +1,10 @@
 import { Meta } from '@storybook/addon-docs';
 
-<Meta title="Usage" parameters={{ viewMode: 'docs' }} />
+<Meta title="Icons/Usage" parameters={{ viewMode: 'docs' }} />
 
 # Usage
 
-## Icons
-
-
-### Angular
+## Angular
 
 We provide a reusable component for the icons (IconComponent). It is a component that accepts a name as an Input property and displays the icon. In essence, we want to have support for tree shaking. If the icon library contains hundreds of icons but only one of them is used, only one ends up in the resulting bundle. Also, this approach supports code splitting and lazy loading in a way that the icon only ends up in the chunk it is used.
 
@@ -21,7 +18,8 @@ constructor(private registry: IconsRegistry) {
   }
 ```
 
-### Typescript
+
+## Typescript
 
 ```
 import {veeraCall, VeeraIcon} from '@ria/veera-icons';
@@ -40,7 +38,7 @@ function buildSVGElement(icon: VeeraIcon): SVGElement {
 container.appendChild(buildSVGElement(icon));
 ```
 
-### Vanilla JS
+## Vanilla JS
 
 ```
 import {veeraCall} from '@ria/veera-icons';

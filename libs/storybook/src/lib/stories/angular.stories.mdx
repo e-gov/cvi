@@ -1,0 +1,46 @@
+import {Meta, Story} from '@storybook/addon-docs';
+import uiPkg from '/libs/ui/package.json'
+
+<Meta title="Angular/Installation" parameters={{viewMode: 'docs'}}/>
+
+# How to Install the Angular UI Kit
+
+<Story name="Installation">
+  {{
+    props: {uiPkg},
+    template: `
+      Latest version: {{ uiPkg.version }}
+    `,
+  }}
+</Story>
+
+## peerDependencies
+
+```
+"@angular/animations": "^14.1.1",
+"@angular/cdk": "^14.2.0",
+"@angular/common": "^14.1.1",
+"@angular/core": "^14.1.1",
+"@angular/elements": "^14.1.3",
+"@angular/platform-browser": "^14.1.1",
+"@angular/platform-browser-dynamic": "^14.1.1"
+```
+
+## Installation
+
+1. Install the library
+```
+npm i --save @ria/veera-ng;
+```
+
+2. Import UiModule in your app.module.ts.
+
+```
+import { UiModule } from '@ria/veera-ng';
+
+@NgModule({
+  ...
+  imports: [BrowserModule, UiModule],
+  ...
+})
+```

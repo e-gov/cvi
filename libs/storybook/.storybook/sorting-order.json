@@ -1,10 +1,16 @@
 {
   "ids": [
     "Intro",
-    "Installation",
-    "Usage",
+    "TODOS",
     "Styles",
-    ["Design tokens", ["Colors", "Typography", "Spacing"]],
+    [
+      "Installation",
+      "Guidelines",
+      "Design tokens",
+      ["Colors", "Typography", "Spacing"]
+    ],
+    "Icons",
+    ["Installation", "Usage"],
     "HTML",
     [
       "Button",
@@ -21,6 +27,7 @@
     ],
     "Angular",
     [
+      "Installation",
       "Button",
       "Form item",
       "Input",
@@ -30,7 +37,7 @@
       "Icon",
       "Labeled icon",
       "Steps",
-      ["Steps", "Step"],
+      ["Step", "Steps"],
       "Textarea",
       "Notification",
       "Html Section"
