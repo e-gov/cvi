@@ -25,7 +25,9 @@
         font-size: $veera-font-size-250;
         line-height: $veera-line-height-100;
         font-weight: $veera-font-weight-beta;
-        padding-inline: $page-padding--mobile;
+        #{$base}.is-any-step-selected & {
+          padding-inline: $page-padding--mobile;
+        }
       }
       @include veera-breakpoint-up(sm) {
         font-size: $veera-font-size-350;
