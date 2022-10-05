@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.5.2](https://stash.ria.ee/scm/sun/veera-components/compare/ui-1.5.1...ui-1.5.2) (2022-10-05)
+
+
+### Bug Fixes
+
+* icon position for icon with label (Pull request [#93](https://stash.ria.ee/scm/sun/veera-components/issues/93)) ([540006b](https://stash.ria.ee/scm/sun/veera-components/commits/540006b315012edf0f9fb9a79e2f1c4763d436eb))
+
+
+
 ## [1.5.1](https://stash.ria.ee/scm/sun/veera-components/compare/ui-1.5.0...ui-1.5.1) (2022-10-05)
 
 
