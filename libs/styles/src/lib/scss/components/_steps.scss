@@ -179,8 +179,9 @@
 
           &::before {
             content: '';
-            border-width: 9px;
-            border-color: get-color(sapphire-blue-10);
+            width: 26px;
+            height: 26px;
+            border: 9px solid get-color(sapphire-blue-10);
             padding: 4px;
           }
         }
