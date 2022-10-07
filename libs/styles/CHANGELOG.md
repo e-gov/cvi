@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.5.5](https://stash.ria.ee/scm/sun/veera-components/compare/styles-1.5.4...styles-1.5.5) (2022-10-07)
+
+
+### Bug Fixes
+
+* stepper's current list item's circle in safari ([b49c2ee](https://stash.ria.ee/scm/sun/veera-components/commits/b49c2eea691df3a8c3d3ef2380764da611584f56))
+
+
+
 ## [1.5.4](https://stash.ria.ee/scm/sun/veera-components/compare/styles-1.5.3...styles-1.5.4) (2022-10-05)
 
 
