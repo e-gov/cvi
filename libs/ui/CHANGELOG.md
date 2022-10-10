@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [1.6.0](https://stash.ria.ee/scm/sun/veera-components/compare/ui-1.5.2...ui-1.6.0) (2022-10-10)
+
+
+### Features
+
+* add select component ([75eea1b](https://stash.ria.ee/scm/sun/veera-components/commits/75eea1b08cf4181315956b6904a04d8bcee3f9b2))
+
+
+
 ## [1.5.2](https://stash.ria.ee/scm/sun/veera-components/compare/ui-1.5.1...ui-1.5.2) (2022-10-05)
 
 
