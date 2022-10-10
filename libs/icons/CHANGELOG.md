@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [1.1.0](https://stash.ria.ee/scm/sun/veera-components/compare/icons-1.0.0...icons-1.1.0) (2022-10-10)
+
+
+### Features
+
+* add select component ([75eea1b](https://stash.ria.ee/scm/sun/veera-components/commits/75eea1b08cf4181315956b6904a04d8bcee3f9b2))
+
+
+
 # [1.0.0](https://stash.ria.ee/scm/sun/veera-components/compare/icons-0.2.1...icons-1.0.0) (2022-09-27)
 
 
