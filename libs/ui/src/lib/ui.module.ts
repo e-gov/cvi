@@ -39,9 +39,17 @@ import {
   veeraSadFace,
   veeraScreenShare,
   veeraWarningAmber,
+  veeraArrowDown,
+  veeraArrowUp,
+  veeraEditSimple,
 } from '@ria/veera-icons';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
+import { SelectComponent } from './select/select.component';
+import {
+  LabelTemplateDirective,
+  OptionTemplateDirective,
+} from './select/select-templates.directive';
 
 const components = [
   ButtonComponent,
@@ -65,6 +73,9 @@ const components = [
   NotificationComponent,
   TabContainerComponent,
   BreadcrumbsComponent,
+  SelectComponent,
+  LabelTemplateDirective,
+  OptionTemplateDirective,
 ];
 
 const pipes = [SafeHtmlPipe, NotificationSeverityToHeaderIconPipe];
@@ -90,6 +101,9 @@ export class UiModule {
       veeraScreenShare,
       veeraEmail,
       veeraLocation,
+      veeraArrowDown,
+      veeraArrowUp,
+      veeraEditSimple,
     ]);
   }
 }

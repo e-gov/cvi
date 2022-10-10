@@ -40,6 +40,7 @@
       ["Step", "Steps"],
       "Textarea",
       "Notification",
+      "Select",
       "Html Section"
     ]
   ]

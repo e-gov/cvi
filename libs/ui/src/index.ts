@@ -25,3 +25,5 @@ export * from './lib/textarea/textarea.component';
 export * from './lib/html-section/safe-html-pipe';
 export * from './lib/tab-container/tab-container.component';
 export * from './lib/breadcrumbs/breadcrumbs.component';
+export * from './lib/select/select-templates.directive';
+export * from './lib/select/select.component';
