@@ -50,6 +50,7 @@ import {
   LabelTemplateDirective,
   OptionTemplateDirective,
 } from './select/select-templates.directive';
+import { DataAttributeDirective } from './directives/data-attribute.directive';
 
 const components = [
   ButtonComponent,
@@ -76,6 +77,7 @@ const components = [
   SelectComponent,
   LabelTemplateDirective,
   OptionTemplateDirective,
+  DataAttributeDirective,
 ];
 
 const pipes = [SafeHtmlPipe, NotificationSeverityToHeaderIconPipe];
@@ -83,7 +85,7 @@ const pipes = [SafeHtmlPipe, NotificationSeverityToHeaderIconPipe];
 @NgModule({
   imports: [CommonModule, TextFieldModule, ReactiveFormsModule],
   declarations: [...components, ...pipes],
-  exports: [...components, ...pipes, TextFieldModule],
+  exports: [...components, ...pipes, TextFieldModule, DataAttributeDirective],
 })
 export class UiModule {
   constructor(private registry: IconsRegistry) {

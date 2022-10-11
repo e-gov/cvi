@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AccordionComponent } from './accordion.component';
+import { AccordionComponent } from '@ria/veera-ng';
 
 describe('AccordionComponent', () => {
   let component: AccordionComponent;

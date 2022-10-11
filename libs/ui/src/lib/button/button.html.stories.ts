@@ -1,5 +1,6 @@
-import { Story, Meta } from '@storybook/angular';
+import { Meta, Story } from '@storybook/angular';
 import notes from './button.html.md';
+import { ButtonAppearance, ButtonSize } from './button';
 
 export default {
   title: 'HTML/Button',
@@ -10,19 +11,23 @@ export default {
   argTypes: {
     appearance: {
       name: 'Appearance',
-      options: ['primary', 'secondary', 'text'],
+      options: [
+        ButtonAppearance.PRIMARY,
+        ButtonAppearance.SECONDARY,
+        ButtonAppearance.TEXT,
+      ],
       control: { type: 'inline-radio' },
     },
     size: {
       name: 'Size',
-      options: ['m', 's'],
+      options: [ButtonSize.S, ButtonSize.M],
       control: { type: 'inline-radio' },
     },
   },
   args: {
     content: 'Button label',
-    appearance: 'primary',
-    size: 'm',
+    appearance: ButtonAppearance.PRIMARY,
+    size: ButtonSize.M,
     disabled: false,
   },
 } as Meta;
@@ -44,15 +49,15 @@ Primary.args = {};
 
 export const Secondary = Template.bind({});
 Secondary.args = {
-  appearance: 'secondary',
+  appearance: ButtonAppearance.SECONDARY,
 };
 
 export const Small = Template.bind({});
 Small.args = {
-  size: 's',
+  size: ButtonSize.S,
 };
 
 export const Text = Template.bind({});
 Text.args = {
-  appearance: 'text',
+  appearance: ButtonAppearance.TEXT,
 };

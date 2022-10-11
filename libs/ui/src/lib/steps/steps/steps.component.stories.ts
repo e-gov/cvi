@@ -34,10 +34,10 @@ const Template: Story<StepsComponent> = (args: StepsComponent) => ({
   /* template */
   template: `
     <veera-ng-steps [title]="title" [currentStepIndex]="currentStepIndex">
-      <veera-ng-step title="First item with a lot of different words in it and some more so that it spans to multiple lines">{{ stepsContent[0] }}</veera-ng-step>
-      <veera-ng-step title="Second">{{ stepsContent[1] }}</veera-ng-step>
-      <veera-ng-step title="Thirrrrd">{{ stepsContent[2] }}</veera-ng-step>
-      <veera-ng-step title="4ourth">{{ stepsContent[3] }}</veera-ng-step>
+      <veera-ng-step title="First item with a lot of different words in it and some more so that it spans to multiple lines" dataAttribute="step_1">{{ stepsContent[0] }}</veera-ng-step>
+      <veera-ng-step title="Second" dataAttribute="step_2">{{ stepsContent[1] }}</veera-ng-step>
+      <veera-ng-step title="Thirrrrd" dataAttribute="step_3">{{ stepsContent[2] }}</veera-ng-step>
+      <veera-ng-step title="4ourth" dataAttribute="step_4">{{ stepsContent[3] }}</veera-ng-step>
     </veera-ng-steps>
   `,
 });
@@ -66,7 +66,7 @@ const TemplateObservableTitles: Story = (args) => ({
   template: `
     <veera-ng-steps [title]="title" [currentStepIndex]="currentStepIndex">
       <ng-container *ngFor="let label of labels$ | async">
-        <veera-ng-step title="{{label}}">
+        <veera-ng-step title="{{label}}" dataAttribute="step_1">
             {{ label }}
         </veera-ng-step>
       </ng-container>

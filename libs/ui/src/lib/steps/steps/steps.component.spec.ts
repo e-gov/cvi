@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { StepsComponent } from './steps.component';
+import { StepsComponent } from '@ria/veera-ng';
 
 describe('StepsComponent', () => {
   let component: StepsComponent;

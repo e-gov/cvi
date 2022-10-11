@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { OptionButtonComponent } from './option-button.component';
+import { OptionButtonComponent } from '@ria/veera-ng';
 
 describe('OptionButtonComponent', () => {
   let component: OptionButtonComponent;

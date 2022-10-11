@@ -18,6 +18,7 @@ export default {
         category: 'Playground',
       },
     },
+    onClick: { action: 'Button clicked!' },
   },
   args: {
     content: 'Button label',

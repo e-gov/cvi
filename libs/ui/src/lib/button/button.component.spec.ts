@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ButtonComponent } from './button.component';
+import { ButtonComponent } from '@ria/veera-ng';
 
 describe('ButtonComponent', () => {
   let component: ButtonComponent;

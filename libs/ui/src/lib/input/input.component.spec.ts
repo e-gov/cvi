@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { InputComponent } from './input.component';
+import { InputComponent } from '@ria/veera-ng';
 
 describe('InputComponent', () => {
   let component: InputComponent;

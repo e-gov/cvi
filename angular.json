@@ -7,6 +7,7 @@
     "ria-e2e": "apps/ria-e2e",
     "storybook": "libs/storybook",
     "styles": "libs/styles",
-    "ui": "libs/ui"
+    "ui": "libs/ui",
+    "ui-e2e": "apps/ui-e2e"
   }
 }

@@ -22,7 +22,8 @@
     "copy-styles-assets": "cpy './libs/styles/package.json' dist && cpy './libs/styles/README.md' dist",
     "publish:styles": "npm publish dist/libs/styles",
     "publish:ui": "npm publish dist/libs/ui",
-    "publish:icons": "npm publish dist/libs/icons"
+    "publish:icons": "npm publish dist/libs/icons",
+    "cy:ui": "npx cypress open --project=apps/ui-e2e"
   },
   "private": true,
   "dependencies": {
@@ -64,6 +65,7 @@
     "@nrwl/storybook": "^14.5.4",
     "@nrwl/workspace": "14.5.4",
     "@storybook/addon-a11y": "^6.5.10",
+    "@storybook/addon-actions": "^6.5.12",
     "@storybook/addon-essentials": "~6.5.9",
     "@storybook/addon-viewport": "^6.5.12",
     "@storybook/angular": "~6.5.9",
@@ -77,7 +79,8 @@
     "@typescript-eslint/parser": "^5.29.0",
     "@whitespace/storybook-addon-html": "^5.0.0",
     "cpy-cli": "^4.2.0",
-    "cypress": "^10.2.0",
+    "cypress": "10.8.0",
+    "cypress-storybook": "^0.5.1",
     "eslint": "~8.15.0",
     "eslint-config-prettier": "8.1.0",
     "eslint-plugin-cypress": "^2.10.3",

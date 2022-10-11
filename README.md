@@ -63,3 +63,9 @@ Run `nx graph` to see a diagram of the dependencies of your projects.
 [10-minute video showing all Nx features](https://nx.dev/getting-started/intro)
 
 [Interactive Tutorial](https://nx.dev/react-tutorial/01-create-application)
+
+## Running Cypress tests against Storybook
+
+Storybook needs to be up and running as Cypress tests are using its Angular components in iFrame windows. Check previous chapter about 'Running the Storybook'
+
+When storybook is up and running, run `npm run cy:ui` which opens up Cypress visual testing tool. Select E2E Testing, which presents you all components tests

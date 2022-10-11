@@ -1,8 +1,10 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NotificationComponent } from './notification.component';
-import { IconComponent } from '../icons/icon/icon.component';
-import { NotificationSeverityToHeaderIconPipe } from './notification-severity-to-header-icon.pipe';
+import {
+  IconComponent,
+  NotificationComponent,
+  NotificationSeverityToHeaderIconPipe,
+} from '@ria/veera-ng';
 
 describe('NotificationComponent', () => {
   let component: NotificationComponent;

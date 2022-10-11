@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FeedbackComponent } from './feedback.component';
+import { FeedbackComponent } from '@ria/veera-ng';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('ArticleFeedbackComponent', () => {

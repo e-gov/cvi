@@ -5,6 +5,7 @@ import { StorybookModule } from '../src/lib/storybook.module';
 import docJson from './documentation.json';
 import sortingOrder from './sorting-order';
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
+import 'cypress-storybook/angular';
 
 setCompodocJson(docJson);
 

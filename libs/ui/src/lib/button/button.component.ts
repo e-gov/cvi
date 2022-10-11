@@ -1,4 +1,10 @@
-import { Component, HostBinding, Input } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  HostBinding,
+  Input,
+  Output,
+} from '@angular/core';
 
 @Component({
   selector: 'veera-ng-button',
@@ -13,11 +19,17 @@ export class ButtonComponent {
   /** Button is disabled */
   @Input() disabled = false;
 
+  @Output() clickEvent = new EventEmitter();
+
   @HostBinding('class') get getHostClasses(): string {
     return `veera-button veera-button--appearance-${
       this.appearance
     } veera-button--size-${this.size}${
       this.disabled ? ' veera-button--is-disabled' : ''
     }`;
+  }
+
+  onClick(): void {
+    this.clickEvent.emit();
   }
 }

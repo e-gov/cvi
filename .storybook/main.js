@@ -6,6 +6,7 @@ module.exports = {
     '@storybook/addon-a11y',
     'storybook-addon-pseudo-states',
     '@storybook/addon-viewport',
+    '@storybook/addon-actions',
   ],
   core: { disableTelemetry: true },
   // uncomment the property below if you want to apply some webpack config globally

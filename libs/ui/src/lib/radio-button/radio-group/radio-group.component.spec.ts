@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RadioGroupComponent } from './radio-group.component';
+import { RadioGroupComponent } from '@ria/veera-ng';
 
 describe('RadioGroupComponent', () => {
   let component: RadioGroupComponent;

@@ -6,12 +6,13 @@
               type="button"
               role="tab"
               aria-controls="tabpanel"
-              class="tab-container__veera-tab-btn">
+              class="tab-container__veera-tab-btn"
+              [dataAttribute]="'tab-button_' + tab.id">
         {{ tab.title }}
       </button>
     </li>
   </ul>
-  <div class="tab-container__veera-tab-content">
+  <div class="tab-container__veera-tab-content" dataAttribute="tab-content">
     <ng-content></ng-content>
   </div>
 </div>
