@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [1.7.0](https://stash.ria.ee/scm/sun/veera-components/compare/ui-1.6.0...ui-1.7.0) (2022-10-11)
+
+
+### Features
+
+* added storybook cypress tests ([3a84755](https://stash.ria.ee/scm/sun/veera-components/commits/3a84755ec8c6d2db396716fc3a4a0707a1a10528))
+
+
+
 # [1.6.0](https://stash.ria.ee/scm/sun/veera-components/compare/ui-1.5.2...ui-1.6.0) (2022-10-10)
 
 
