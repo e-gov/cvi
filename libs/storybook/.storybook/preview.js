@@ -30,6 +30,7 @@ export const parameters = {
   viewport: {
     viewports: INITIAL_VIEWPORTS,
   },
+  angularLegacyRendering: true,
 };
 
 export const decorators = [

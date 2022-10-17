@@ -1,8 +1,11 @@
 <div class="veera-select"
      [class.filtered]="!!searchTerm"
      [class.has-value]="hasValue"
-     [class.open]="isOpen">
+     [class.open]="isOpen"
+     [class.touched]="touched"
+     [class.invalid]="invalid">
   <div class="veera-select__container"
+       [class.background-disabled]="backgroundDisabled"
        (mousedown)="handleMousedown($event)">
     <div class="veera-select__value-container">
       <div *ngIf="!hasValue && !searchTerm" class="veera-select__placeholder">{{placeholder}}</div>
@@ -28,10 +31,10 @@
     </div>
     <span class="veera-select__icon-wrapper"
           (mousedown)="handleArrowClick($event)">
-      <veera-ng-icon *ngIf="!isOpen && !hasValue"
+      <veera-ng-icon *ngIf="!isOpen && (!hasValue || !backgroundDisabled)"
                      name="arrow_down">
       </veera-ng-icon>
-      <veera-ng-icon *ngIf="!isOpen && hasValue"
+      <veera-ng-icon *ngIf="!isOpen && hasValue && backgroundDisabled"
                      class="veera-select__icon"
                      name="edit_simple">
       </veera-ng-icon>
@@ -54,6 +57,11 @@
             [ngTemplateOutlet]="optionTemplate || defaultOptionTemplate"
             [ngTemplateOutletContext]="{ item: item.value }">
         </ng-template>
+      </li>
+      <li *ngIf="showAddItem"
+          role="option"
+          class="veera-select__dropdown-item" (click)="addItem()">
+        <span>{{addItemLabel}}</span> "{{searchTerm}}"
       </li>
     </ul>
   </div>

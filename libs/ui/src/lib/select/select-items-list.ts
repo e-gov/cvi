@@ -24,9 +24,16 @@ export class SelectItemsList {
     this._selectedItem = item;
   }
 
-  setItems(items: any[]) {
+  setItems(items: unknown[]) {
     this._items = items.map((item) => this.mapItem(item));
     this._filteredItems = [...this._items];
+  }
+
+  addItem(item: any) {
+    const option = this.mapItem(item);
+    this._items.push(option);
+    this._filteredItems.push(option);
+    return option;
   }
 
   mapItem(item: any): SelectOption {

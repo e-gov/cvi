@@ -14,6 +14,7 @@ import {
   OnInit,
   Optional,
   Output,
+  Self,
   SimpleChanges,
   TemplateRef,
   ViewChild,
@@ -21,7 +22,7 @@ import {
 import { fromEvent, merge, Subject } from 'rxjs';
 import { DOCUMENT } from '@angular/common';
 import { takeUntil } from 'rxjs/operators';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { ControlValueAccessor, NgControl } from '@angular/forms';
 import {
   LabelTemplateDirective,
   OptionTemplateDirective,
@@ -29,17 +30,12 @@ import {
 import { SelectOption } from './select.types';
 import { SelectItemsList } from './select-items-list';
 
+export type AddItemFn = (term: string) => unknown | Promise<unknown>;
+
 @Component({
   selector: 'veera-ng-select',
   templateUrl: './select.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  providers: [
-    {
-      provide: NG_VALUE_ACCESSOR,
-      multi: true,
-      useExisting: forwardRef(() => SelectComponent),
-    },
-  ],
 })
 export class SelectComponent
   implements ControlValueAccessor, OnInit, OnDestroy, OnChanges
@@ -50,6 +46,10 @@ export class SelectComponent
   @Input() placeholder = '';
   @Input() searchFn?: ((search: string, item: unknown) => boolean) | null =
     null;
+  @Input() addItemLabel: string | undefined;
+  @Input() addItemFn: AddItemFn | undefined;
+  @Input() minTermLength = 0;
+  @Input() backgroundDisabled = false;
 
   @Output() itemChanged = new EventEmitter();
 
@@ -77,10 +77,20 @@ export class SelectComponent
     private zone: NgZone,
     elementRef: ElementRef,
     private cd: ChangeDetectorRef,
-    @Optional() @Inject(DOCUMENT) private document: any
+    @Optional() @Inject(DOCUMENT) private document: Document,
+    @Self() @Optional() public control: NgControl
   ) {
+    this.control && (this.control.valueAccessor = this);
     this.select = elementRef.nativeElement;
     this.itemsList = new SelectItemsList(this);
+  }
+
+  get invalid(): boolean {
+    return this.control ? !!this.control.invalid : false;
+  }
+
+  get touched(): boolean {
+    return this.control ? !!this.control.touched : false;
   }
 
   get selectedItem(): SelectOption | undefined {
@@ -89,6 +99,14 @@ export class SelectComponent
 
   get hasValue() {
     return !!this.selectedItem;
+  }
+
+  get showAddItem() {
+    if (!this.validTerm) {
+      return false;
+    }
+
+    return !!this.addItemFn;
   }
 
   ngOnInit(): void {
@@ -132,7 +150,7 @@ export class SelectComponent
   }
 
   handleMousedown(event: MouseEvent) {
-    if (!this.hasValue) {
+    if (!this.hasValue || !this.backgroundDisabled) {
       const target = event.target as HTMLElement;
       if (target.tagName !== 'INPUT') {
         event.preventDefault();
@@ -159,6 +177,10 @@ export class SelectComponent
   }
 
   close() {
+    if (!this.isOpen) {
+      return;
+    }
+
     this.isOpen = false;
     this.searchTerm = null;
     this.itemsList.resetFilteredItems();
@@ -216,7 +238,32 @@ export class SelectComponent
     this.itemsList.filter(term);
   }
 
-  private setItems(items: any[]) {
+  private setItems(items: unknown[]) {
     this.itemsList.setItems(items);
+  }
+
+  addItem() {
+    let item;
+    if (this.addItemFn instanceof Function && !!this.searchTerm) {
+      item = this.addItemFn(this.searchTerm);
+    } else {
+      item = this.searchTerm;
+    }
+
+    if (item instanceof Promise) {
+      item
+        .then((result) => this.selectItem(this.itemsList.addItem(result)))
+        // eslint-disable-next-line @typescript-eslint/no-empty-function
+        .catch(() => {
+          /* empty */
+        });
+    } else {
+      this.selectItem(this.itemsList.addItem(item));
+    }
+  }
+
+  private get validTerm() {
+    const term = this.searchTerm && this.searchTerm.trim();
+    return term && term.length >= this.minTermLength;
   }
 }
