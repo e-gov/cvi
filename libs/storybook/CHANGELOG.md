@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [0.8.0](https://stash.ria.ee/scm/sun/veera-components/compare/storybook-0.7.0...storybook-0.8.0) (2022-10-17)
+
+
+### Features
+
+* select add custom values ([1d45d2d](https://stash.ria.ee/scm/sun/veera-components/commits/1d45d2d2e2cd6bf09b7cedcb5f4499f920deeb19))
+
+
+
 # [0.7.0](https://stash.ria.ee/scm/sun/veera-components/compare/storybook-0.6.0...storybook-0.7.0) (2022-10-11)
 
 
