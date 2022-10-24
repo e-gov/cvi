@@ -24,7 +24,6 @@ import { SafeHtmlPipe } from './html-section/safe-html-pipe';
 import { NotificationComponent } from './notification/notification.component';
 import { NotificationSeverityToHeaderIconPipe } from './notification/notification-severity-to-header-icon.pipe';
 import { IconsRegistry } from './icons/icons-registry.service';
-import { TabContainerComponent } from './tab-container/tab-container.component';
 import {
   veeraArrowALeft,
   veeraArrowARight,
@@ -53,6 +52,8 @@ import {
 import { DataAttributeDirective } from './directives/data-attribute.directive';
 import { TooltipComponent } from './tooltip/tooltip.component';
 import { TooltipDirective } from './tooltip/tooltip.directive';
+import { TabComponent } from './tabs/tab.component';
+import { TabGroupComponent } from './tabs/tab-group.component';
 
 const components = [
   ButtonComponent,
@@ -74,7 +75,6 @@ const components = [
   AccordionTitleDirective,
   AccordionHeaderDirective,
   NotificationComponent,
-  TabContainerComponent,
   BreadcrumbsComponent,
   SelectComponent,
   LabelTemplateDirective,
@@ -82,6 +82,8 @@ const components = [
   DataAttributeDirective,
   TooltipComponent,
   TooltipDirective,
+  TabComponent,
+  TabGroupComponent,
 ];
 
 const pipes = [SafeHtmlPipe, NotificationSeverityToHeaderIconPipe];

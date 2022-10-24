@@ -41,6 +41,7 @@
       "Textarea",
       "Notification",
       "Select",
+      "Tab group",
       "Html Section",
       "Tooltip"
     ]

@@ -34,10 +34,6 @@
   @include veera-notification;
 }
 
-.tab-container {
-  @include tab-container;
-}
-
 .veera-breadcrumbs {
   @include veera-breadcrumbs;
 }
@@ -48,4 +44,8 @@
 
 .veera-tooltip {
   @include veera-tooltip;
+}
+
+.veera-tab-group {
+  @include veera-tab-group
 }

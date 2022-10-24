@@ -1,0 +1,30 @@
+@mixin veera-tab-group($base: &) {
+  list-style-type: none;
+  display: flex;
+  margin-bottom: -1px;
+
+  @at-root {
+    #{$base}__tab-btn {
+      border: none;
+      padding: get-spacing('haapsalu');
+      font-size: $veera-font-size-100;
+      color: get-color(sapphire-blue-20);
+      cursor: pointer;
+
+      &.active {
+        background-color: get-color(white);
+        border-radius: 5px 5px 0 0;
+        color: get-color(sapphire-blue-10);
+        border: 1px solid get-color(black-coral-2);
+        border-bottom: none;
+      }
+    }
+
+    #{$base}__tab-content {
+      background-color: get-color(white);
+      padding: get-spacing('haapsalu');
+      border: 1px solid get-color(black-coral-2);
+      border-radius: 5px;
+    }
+  }
+}
