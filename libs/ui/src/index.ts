@@ -30,3 +30,5 @@ export * from './lib/directives/data-attribute.directive';
 export * from './lib/breadcrumbs/breadcrumbs.component';
 export * from './lib/select/select-templates.directive';
 export * from './lib/select/select.component';
+export * from './lib/tooltip/tooltip.component';
+export * from './lib/tooltip/tooltip.directive';

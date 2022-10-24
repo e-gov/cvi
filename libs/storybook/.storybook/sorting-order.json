@@ -41,7 +41,8 @@
       "Textarea",
       "Notification",
       "Select",
-      "Html Section"
+      "Html Section",
+      "Tooltip"
     ]
   ]
 }

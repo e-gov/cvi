@@ -51,6 +51,8 @@ import {
   OptionTemplateDirective,
 } from './select/select-templates.directive';
 import { DataAttributeDirective } from './directives/data-attribute.directive';
+import { TooltipComponent } from './tooltip/tooltip.component';
+import { TooltipDirective } from './tooltip/tooltip.directive';
 
 const components = [
   ButtonComponent,
@@ -78,6 +80,8 @@ const components = [
   LabelTemplateDirective,
   OptionTemplateDirective,
   DataAttributeDirective,
+  TooltipComponent,
+  TooltipDirective,
 ];
 
 const pipes = [SafeHtmlPipe, NotificationSeverityToHeaderIconPipe];
