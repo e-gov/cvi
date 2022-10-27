@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [1.8.0](https://stash.ria.ee/scm/sun/veera-components/compare/styles-1.7.2...styles-1.8.0) (2022-10-27)
+
+
+### Features
+
+* added h2 styling ([cfb8d1f](https://stash.ria.ee/scm/sun/veera-components/commits/cfb8d1f44c28b098a78d504cb5b86b5b1b6ccae0))
+
+
+
 ## [1.7.2](https://stash.ria.ee/scm/sun/veera-components/compare/styles-1.7.1...styles-1.7.2) (2022-10-24)
 
 
