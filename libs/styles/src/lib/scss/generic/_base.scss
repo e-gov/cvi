@@ -29,3 +29,7 @@ img {
 button {
   font-family: inherit;
 }
+h2 {
+  font-size: $veera-font-size-220;
+  margin-bottom: get-spacing('elva');
+}
