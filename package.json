@@ -12,7 +12,7 @@
     "affected:lint": "nx affected:lint --fix --parallel --uncommitted",
     "workspace-lint": "nx workspace-lint --uncommitted",
     "storybook:compodoc": "npx compodoc -p ./tsconfig.compodoc.json -e json -d ./libs/storybook/.storybook --disableLifeCycleHooks --disableInternal",
-    "storybook": "npm run generate-icons && npm run storybook:compodoc  && nx run storybook:storybook",
+    "storybook": "npm run generate-icons && npm run storybook:compodoc && nx run storybook:storybook",
     "build-storybook": "nx run storybook:build-storybook",
     "prepare": "husky install",
     "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\"",

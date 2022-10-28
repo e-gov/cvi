@@ -1,4 +1,5 @@
 {
+  "name": "storybook",
   "sourceRoot": "libs/storybook/src",
   "projectType": "library",
   "targets": {

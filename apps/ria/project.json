@@ -1,4 +1,5 @@
 {
+  "name": "ria",
   "projectType": "application",
   "sourceRoot": "apps/ria/src",
   "prefix": "veera-ng",

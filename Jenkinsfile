@@ -92,6 +92,28 @@ pipeline {
         }
       }
     }
+    stage('cypress tests') {
+      agent {
+        docker {
+          image 'nexus.riaint.ee:8500/cypress/base:18.6.0'
+        }
+      }
+      environment {
+        HOME = "${env.WORKSPACE}"
+      }
+      steps {
+        sh 'npm config set registry https://nexus.riaint.ee/repository/npm-public/'
+        sh 'npm ci'
+        sh 'npm run generate-icons'
+        sh 'npm run storybook:compodoc'
+        sh 'npx nx run ui-e2e:e2e'
+      }
+      post {
+        always {
+          junit 'reports/cypress/*.xml'
+        }
+      }
+    }
     stage('sonarqube analysis') {
       when {
         expression { !env.skip_ci }
