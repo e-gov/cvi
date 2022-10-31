@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.8.5](https://stash.ria.ee/scm/sun/veera-components/compare/ui-1.8.4...ui-1.8.5) (2022-10-31)
+
+
+### Bug Fixes
+
+* accordion rendering in prod STPA-198 ([ec8f517](https://stash.ria.ee/scm/sun/veera-components/commits/ec8f517228689aedd4303114d7c03725e83486f4))
+
+
+
 ## [1.8.4](https://stash.ria.ee/scm/sun/veera-components/compare/ui-1.8.3...ui-1.8.4) (2022-10-31)
 
 
