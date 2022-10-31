@@ -5,7 +5,6 @@ import {
   ContentChild,
   ElementRef,
   EventEmitter,
-  forwardRef,
   Inject,
   Input,
   NgZone,
@@ -111,6 +110,14 @@ export class SelectComponent
 
   ngOnInit(): void {
     this.handleOutsideClick();
+
+    if (this.control.control) {
+      const originalMarkAsTouched = this.control.control.markAsTouched;
+      this.control.control.markAsTouched = (args) => {
+        originalMarkAsTouched.apply(this.control.control, [args]);
+        this.cd.markForCheck();
+      };
+    }
   }
 
   ngOnDestroy() {
@@ -207,6 +214,7 @@ export class SelectComponent
     const item = this.itemsList.findItem(obj);
     if (item) {
       this.itemsList.select(item);
+      this.cd.markForCheck();
     }
   }
 
