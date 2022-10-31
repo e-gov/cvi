@@ -111,7 +111,7 @@ export class SelectComponent
   ngOnInit(): void {
     this.handleOutsideClick();
 
-    if (this.control.control) {
+    if (this.control?.control) {
       const originalMarkAsTouched = this.control.control.markAsTouched;
       this.control.control.markAsTouched = (args) => {
         originalMarkAsTouched.apply(this.control.control, [args]);

@@ -1,25 +1,25 @@
-<ul class="veera-accordion__list">
-  <ng-container *ngIf="items.changes | async">
-    <li *ngFor="let item of items; index as i"
+<ul class="veera-accordion__list" *ngIf="items$ | async">
+  <li *ngFor="let item of accordionItemDirectives; index as i"
       class="veera-accordion__item" [class.is-disabled]="item.disabled" [class.is-active]="itemInExpanded(i)">
-      <ng-container
-        [ngTemplateOutlet]="(item?.customHeader?.templateRef || defaultHeader)"
-        [ngTemplateOutletContext]="{$implicit: item, index: i, toggle: getToggleState(i)}"></ng-container>
-      <div class="veera-accordion__item-content" [class.is-expanded]="itemInExpanded(i)" [@contentExpansion]="itemInExpanded(i) ? 'expanded' : 'collapsed'">
-        <ng-container *ngIf="item?.content">
-          <div *ngIf="item?.details" class="veera-accordion__item-details">{{ item.details }}</div>
-          <div class="veera-accordion__item-content-inner">
-            <ng-container *ngTemplateOutlet="item.content.templateRef"></ng-container>
-          </div>
-        </ng-container>
-      </div>
-    </li>
-  </ng-container>
+    <ng-container
+      [ngTemplateOutlet]="(item?.customHeader?.templateRef || defaultHeader)"
+      [ngTemplateOutletContext]="{$implicit: item, index: i, toggle: getToggleState(i)}"></ng-container>
+    <div class="veera-accordion__item-content" [class.is-expanded]="itemInExpanded(i)"
+         [@contentExpansion]="itemInExpanded(i) ? 'expanded' : 'collapsed'">
+      <ng-container *ngIf="item?.content">
+        <div *ngIf="item?.details" class="veera-accordion__item-details">{{ item.details }}</div>
+        <div class="veera-accordion__item-content-inner">
+          <ng-container *ngTemplateOutlet="item.content.templateRef"></ng-container>
+        </div>
+      </ng-container>
+    </div>
+  </li>
 </ul>
 
 <ng-template #defaultHeader let-item let-index="index">
   <header class="veera-accordion__item-header">
-    <button class="veera-accordion__item-toggle-button" [class.is-disabled]="item.disabled" [disabled]="item.disabled" (click)="item.disabled ? {} : toggle(index)">
+    <button class="veera-accordion__item-toggle-button" [class.is-disabled]="item.disabled" [disabled]="item.disabled"
+            (click)="item.disabled ? {} : toggle(index)">
       <svg
         class="veera-accordion__item-toggle-icon"
         xmlns="http://www.w3.org/2000/svg"

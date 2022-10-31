@@ -1,11 +1,11 @@
-import { Story, Meta } from '@storybook/angular';
+import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { concatMap, delay, from, of } from 'rxjs';
 import notes from './accordion.component.md';
 import { AccordionComponent } from './accordion.component';
+import { UiModule } from '../ui.module';
 
 export default {
   title: 'Angular/Accordion',
-  component: AccordionComponent,
   parameters: { notes },
   args: {
     singleOpen: true,
@@ -20,8 +20,13 @@ export default {
           content: 'This content is also irrelevant',
         },
       ],
-    ]).pipe(concatMap((item) => of(item).pipe(delay(1000)))),
+    ]).pipe(concatMap((item) => of(item).pipe(delay(500)))),
   },
+  decorators: [
+    moduleMetadata({
+      imports: [UiModule],
+    }),
+  ],
 } as Meta<AccordionComponent>;
 
 const Template: Story<AccordionComponent> = (args: AccordionComponent) => ({

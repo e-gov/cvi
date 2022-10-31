@@ -12,9 +12,11 @@ import {
   ContentChildren,
   HostBinding,
   Input,
+  OnDestroy,
   QueryList,
 } from '@angular/core';
 import { AccordionItemDirective } from './directives/accordion-item.directive';
+import { BehaviorSubject, Subscription } from 'rxjs';
 
 @Component({
   selector: 'veera-ng-accordion',
@@ -37,19 +39,25 @@ import { AccordionItemDirective } from './directives/accordion-item.directive';
     ]),
   ],
 })
-export class AccordionComponent implements AfterViewInit {
+export class AccordionComponent implements AfterViewInit, OnDestroy {
   @Input() expandedItems: number[] = [];
   @Input() singleOpen = true;
 
   @ContentChildren(AccordionItemDirective)
-  items!: QueryList<AccordionItemDirective>;
+  accordionItemDirectives!: QueryList<AccordionItemDirective>;
+
+  private items = new BehaviorSubject<AccordionItemDirective[]>([]);
+  items$ = this.items.asObservable();
+  changesSubscription = new Subscription();
 
   @HostBinding('class') get getHostClasses(): string {
     return `veera-accordion`;
   }
 
   ngAfterViewInit(): void {
-    this.items.notifyOnChanges();
+    this.changesSubscription = this.accordionItemDirectives?.changes.subscribe(
+      () => this.items.next(this.accordionItemDirectives.toArray())
+    );
   }
 
   getToggleState(index: number) {
@@ -68,6 +76,12 @@ export class AccordionComponent implements AfterViewInit {
         this.expandedItems = [];
       }
       this.expandedItems = [...this.expandedItems, index];
+    }
+  }
+
+  ngOnDestroy(): void {
+    if (this.changesSubscription) {
+      this.changesSubscription.unsubscribe();
     }
   }
 }

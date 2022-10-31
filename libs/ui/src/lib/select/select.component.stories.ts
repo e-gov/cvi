@@ -7,13 +7,13 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
+import { UiModule } from '../ui.module';
 
 export default {
   title: 'Angular/Select',
-  component: SelectComponent,
   decorators: [
     moduleMetadata({
-      imports: [ReactiveFormsModule],
+      imports: [UiModule, ReactiveFormsModule],
     }),
   ],
   parameters: { notes },
@@ -117,9 +117,11 @@ const FormTemplate: Story<SelectComponent> = (args: SelectComponent) => {
   const form = new FormGroup({
     item: new FormControl(null, Validators.required),
   });
+
   function selectedValue() {
     return form.getRawValue().item;
   }
+
   return {
     props: {
       ...args,
@@ -127,7 +129,7 @@ const FormTemplate: Story<SelectComponent> = (args: SelectComponent) => {
       selectedValue: selectedValue,
     },
     template: `
-      <div style="width: 200px" 
+      <div style="width: 200px"
            [formGroup]="form">
         <veera-ng-select [items]="items"
                          formControlName="item"
