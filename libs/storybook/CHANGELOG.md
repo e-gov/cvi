@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [0.9.0](https://stash.ria.ee/scm/sun/veera-components/compare/storybook-0.8.3...storybook-0.9.0) (2022-11-07)
+
+
+### Features
+
+* toasts ([d91044b](https://stash.ria.ee/scm/sun/veera-components/commits/d91044bfbe526e6df2c966b6c5d76c870dde147e))
+
+
+
 ## [0.8.3](https://stash.ria.ee/scm/sun/veera-components/compare/storybook-0.8.2...storybook-0.8.3) (2022-10-28)
 
 
