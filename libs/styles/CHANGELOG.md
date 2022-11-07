@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [1.9.0](https://stash.ria.ee/scm/sun/veera-components/compare/styles-1.8.0...styles-1.9.0) (2022-11-07)
+
+
+### Features
+
+* toasts ([d91044b](https://stash.ria.ee/scm/sun/veera-components/commits/d91044bfbe526e6df2c966b6c5d76c870dde147e))
+
+
+
 # [1.8.0](https://stash.ria.ee/scm/sun/veera-components/compare/styles-1.7.2...styles-1.8.0) (2022-10-27)
 
 
