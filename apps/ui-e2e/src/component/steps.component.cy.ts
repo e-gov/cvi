@@ -42,6 +42,8 @@ describe('StepsComponent', () => {
   it('Renders mobile steps and clicks on the first step', () => {
     cy.loadStory('Angular Steps Steps', 'Mobile').setDevice('mobile');
 
+    cy.shouldExist('[data-cy="steps-description"]');
+
     cy.runStepsCommonTest();
   });
 
