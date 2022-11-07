@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [1.9.0](https://stash.ria.ee/scm/sun/veera-components/compare/ui-1.8.5...ui-1.9.0) (2022-11-07)
+
+
+### Features
+
+* enable to add custom content before steps (Pull request [#110](https://stash.ria.ee/scm/sun/veera-components/issues/110)) ([7a4ae8c](https://stash.ria.ee/scm/sun/veera-components/commits/7a4ae8c0352ca4eaa86ca3e2bf94eeddf1df1c9b))
+
+
+
 ## [1.8.5](https://stash.ria.ee/scm/sun/veera-components/compare/ui-1.8.4...ui-1.8.5) (2022-10-31)
 
 
