@@ -47,5 +47,17 @@
 }
 
 .veera-tab-group {
-  @include veera-tab-group
+  @include veera-tab-group;
+}
+
+.veera-toast {
+  @include veera-toast;
+}
+
+.veera-toast-container {
+  @include veera-toast-container;
+}
+
+.veera-track {
+  @include veera-track;
 }

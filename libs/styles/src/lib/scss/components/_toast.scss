@@ -1,0 +1,106 @@
+@mixin veera-toast($base: &) {
+  --comment: 'A toast aka floating notification';
+
+  position: relative;
+  width: 300px;
+  overflow: hidden;
+  padding: var(--veera-spacing-haapsalu);
+  margin-bottom: var(--veera-spacing-paldiski);
+  border-radius: 5px;
+  color: var(--veera-color-black-coral-18);
+  cursor: pointer;
+  display: block;
+
+  &:hover {
+    box-shadow: $veera-shadow-alpha;
+  }
+
+  @at-root {
+    #{$base}__icon-wrapper {
+      fill: get-color(black-coral-18);
+      display: block;
+    }
+
+    #{$base}__icon {
+      display: block;
+      width: 16px;
+      height: 16px;
+    }
+
+    #{$base}--appearance-success {
+      background-color: var(--veera-color-sea-green-0);
+      border: 1px solid var(--veera-color-sea-green-10);
+
+      & #{$base}__progress-bar {
+        background-color: var(--veera-color-sea-green-10);
+      }
+    }
+
+    #{$base}--appearance-info {
+      background-color: var(--veera-color-sapphire-blue-1);
+      border: 1px solid var(--veera-color-sapphire-blue-10);
+
+      & #{$base}__progress-bar {
+        background-color: var(--veera-color-sapphire-blue-10);
+      }
+    }
+
+    #{$base}--appearance-warning {
+      background-color: var(--veera-color-dark-tangerine-1);
+      border: 1px solid var(--veera-color-dark-tangerine-11);
+
+      & #{$base}__progress-bar {
+        background-color: var(--veera-color-dark-tangerine-11);
+      }
+    }
+
+    #{$base}--appearance-error {
+      background-color: var(--veera-color-jasper-0);
+      border: 1px solid var(--veera-color-jasper-10);
+
+      & #{$base}__progress-bar {
+        background-color: var(--veera-color-jasper-10);
+      }
+    }
+
+    #{$base}__title {
+      display: flex;
+      align-items: center;
+    }
+
+    #{$base}__title-text {
+      font-size: 18px;
+      margin-left: 10px;
+    }
+
+    #{$base}__close-button {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      cursor: pointer;
+    }
+
+    #{$base}__close-button-icon {
+      fill: get-color(black-coral-18);
+      display: block;
+      width: 16px;
+      height: 16px;
+    }
+
+    #{$base}__close-button-inner {
+      display: block;
+    }
+
+    #{$base}__message {
+      margin-top: var(--veera-spacing-elva);
+    }
+
+    #{$base}__progress-bar {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 4px;
+      opacity: 0.4;
+    }
+  }
+}

@@ -149,4 +149,7 @@ $veera-colors: (
   @each $name, $color in $veera-colors {
     --veera-color-#{'' + $name}: #{$color};
   }
+  @each $name, $color in $veera-colors {
+    --veera-color-rgb-#{'' + $name}: #{red($color) green($color) blue($color)};
+  }
 }

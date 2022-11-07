@@ -1,0 +1,12 @@
+@mixin veera-track($base: &) {
+  --comment: 'An utility for quick grid setting';
+
+  display: flex;
+  gap: calc(var(--veera-spacing-unit) * var(--gap));
+  justify-content: var(--horizontal-alignment);
+  flex-direction: var(--direction);
+  flex-wrap: var(--wrap);
+
+  @at-root {
+  }
+}

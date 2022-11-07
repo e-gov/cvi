@@ -43,7 +43,7 @@ To create a new Sass component, follow these steps:
    6. Breakpoints (`@media` queries).
 
 2. Use `get-spacing(<spacing-name>)` Sass function or `--veera-spacing-<name>` CSS variable to set margin and padding values.
-3. Use `get-color(<color-name>)` Sass function or `--veera-color-<name>` CSS variable to set color values.
+3. Use `get-color(<color-name>)` Sass function or `--veera-color-<name>` CSS variable to set color values. Use `--veera-color-rgb-<name>` to achieve translucent color, in this format: `rgba(var(--veera-color-rgb-<name>) / <opacity>)`, for example `rgba(var(--veera-color-rgb-dark-tangerine-2) / .15)`.
 4. Use `veera-breakpoint-down()` and `veera-breakpoint-up()` mixins to set media queries.
 5. Avoid decimal values (eg `13.2px`).
 6. Round pixel values to the nearest even integer, preferably one that is divisible by 4 (eg `12px` is better than `13px`, but `14px` but is still OK). This applies even if the Figma design tells otherwise.

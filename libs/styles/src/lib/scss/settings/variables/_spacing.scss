@@ -14,6 +14,7 @@ $veera-spacing-patterns: (
 );
 
 :root {
+  --veera-spacing-unit: #{$veera-spacing-unit};
   @each $name, $size in $veera-spacing-patterns {
     --veera-spacing-#{'' + $name}: #{$size};
   }

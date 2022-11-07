@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
+import { TrackComponent } from './track/track.component';
 import { ButtonComponent } from './button/button.component';
 import { FormItemComponent } from './form-item/form-item.component';
 import { InputComponent } from './input/input.component';
@@ -37,6 +38,7 @@ import {
   veeraLocation,
   veeraSadFace,
   veeraScreenShare,
+  veeraSuccess,
   veeraWarningAmber,
   veeraArrowDown,
   veeraArrowUp,
@@ -54,8 +56,12 @@ import { TooltipComponent } from './tooltip/tooltip.component';
 import { TooltipDirective } from './tooltip/tooltip.directive';
 import { TabComponent } from './tabs/tab.component';
 import { TabGroupComponent } from './tabs/tab-group.component';
+import { DefaultToastConfig, TOAST_CONFIG } from './toast/toast-config';
+import { ToastComponent } from './toast/toast.component';
+import { ToastContainerComponent } from './toast/toast-container.component';
 
 const components = [
+  TrackComponent,
   ButtonComponent,
   InputComponent,
   FormItemComponent,
@@ -84,6 +90,8 @@ const components = [
   TooltipDirective,
   TabComponent,
   TabGroupComponent,
+  ToastComponent,
+  ToastContainerComponent,
 ];
 
 const pipes = [SafeHtmlPipe, NotificationSeverityToHeaderIconPipe];
@@ -92,6 +100,14 @@ const pipes = [SafeHtmlPipe, NotificationSeverityToHeaderIconPipe];
   imports: [CommonModule, TextFieldModule, ReactiveFormsModule],
   declarations: [...components, ...pipes],
   exports: [...components, ...pipes, TextFieldModule, DataAttributeDirective],
+  providers: [
+    {
+      provide: TOAST_CONFIG,
+      useValue: {
+        default: DefaultToastConfig,
+      },
+    },
+  ],
 })
 export class UiModule {
   constructor(private registry: IconsRegistry) {
@@ -107,6 +123,7 @@ export class UiModule {
       veeraSadFace,
       veeraHappyFace,
       veeraScreenShare,
+      veeraSuccess,
       veeraEmail,
       veeraLocation,
       veeraArrowDown,

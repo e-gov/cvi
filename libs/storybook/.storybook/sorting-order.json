@@ -13,6 +13,7 @@
     ["Installation", "Usage"],
     "HTML",
     [
+      "Track",
       "Button",
       "Form item",
       "Input",
@@ -28,6 +29,7 @@
     "Angular",
     [
       "Installation",
+      "Track",
       "Button",
       "Form item",
       "Input",
@@ -43,7 +45,8 @@
       "Select",
       "Tab group",
       "Html Section",
-      "Tooltip"
+      "Tooltip",
+      "Toast"
     ]
   ]
 }
