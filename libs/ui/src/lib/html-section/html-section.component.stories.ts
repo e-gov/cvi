@@ -46,7 +46,7 @@ Contacts.args = {
         <p>Võta ühendust perekonnaseisuasutusega, kus soovid abielu sõlmida</p>
       </div>
       <div class="veera-html-section__content-elements">
-        <veera-web-labeled-icon name="screen_share"><a href="#">Maakonnakeskuste kohalikud omavalitsused</a></veera-web-labeled-icon>
+        <veera-web-labeled-icon name="screen_share"><a href="#" class="external-link">Maakonnakeskuste kohalikud omavalitsused</a></veera-web-labeled-icon>
         <veera-web-labeled-icon name="screen_share"><a href="#">Notarid</a></veera-web-labeled-icon>
         <veera-web-labeled-icon name="screen_share"><a href="#">Abielu sõlmimise õigust omavad vaimulikud</a></veera-web-labeled-icon>
       </div>
@@ -66,7 +66,7 @@ List.args = {
     <br>
     <p>Unordered <i>list</i></p>
     <ul>
-      <li>Item 1</li>
+      <li><a href="#" target="_blank" class="external-link">Item 1</a></li>
       <li>Item 2</li>
       <li>Item 3</li>
     </ul>
