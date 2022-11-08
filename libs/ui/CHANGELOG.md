@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [1.11.0](https://stash.ria.ee/scm/sun/veera-components/compare/ui-1.10.0...ui-1.11.0) (2022-11-08)
+
+
+### Features
+
+* add icon for external links (Pull request [#111](https://stash.ria.ee/scm/sun/veera-components/issues/111)) ([ad21d4f](https://stash.ria.ee/scm/sun/veera-components/commits/ad21d4fe3a43941ad0a3dc3a66df1600e066a791))
+
+
+
 # [1.10.0](https://stash.ria.ee/scm/sun/veera-components/compare/ui-1.9.0...ui-1.10.0) (2022-11-07)
 
 
