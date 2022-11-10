@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [2.1.1](https://stash.ria.ee/scm/sun/veera-components/compare/ui-2.1.0...ui-2.1.1) (2022-11-10)
+
+
+### Bug Fixes
+
+* ng components icon version STPA-204 ([a9251af](https://stash.ria.ee/scm/sun/veera-components/commits/a9251afe4bf55e225d6b96ffc4735ea457ce7066))
+
+
+
 # [2.1.0](https://stash.ria.ee/scm/sun/veera-components/compare/ui-2.0.0...ui-2.1.0) (2022-11-10)
 
 
