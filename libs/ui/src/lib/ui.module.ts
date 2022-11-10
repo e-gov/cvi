@@ -101,6 +101,7 @@ const pipes = [SafeHtmlPipe, NotificationSeverityToHeaderIconPipe];
   declarations: [...components, ...pipes],
   exports: [...components, ...pipes, TextFieldModule, DataAttributeDirective],
   providers: [
+    ...pipes,
     {
       provide: TOAST_CONFIG,
       useValue: {

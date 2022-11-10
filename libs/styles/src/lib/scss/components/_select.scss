@@ -83,6 +83,14 @@
       align-items: center;
     }
 
+    #{$base}__icon-svg {
+      height: 8px;
+    }
+
+    #{$base}__icon-edit-svg {
+      height: 16px;
+    }
+
     #{$base}__dropdown {
       position: absolute;
       width: 100%;

@@ -7,22 +7,26 @@
     }
 
     #{$base}--align-start {
-      #{$base}__icon-before, #{$base}__icon-after {
+      #{$base}__wrapper--icon-before, #{$base}__wrapper--icon-after {
         align-self: flex-start;
-        height: var(--icon-height);
       }
     }
 
-    #{$base}__icon-before {
+    #{$base}__wrapper--icon-before {
       @include label-icon;
       margin-right: get-spacing('haapsalu');
     }
 
-    #{$base}__icon-after {
+    #{$base}__wrapper--icon-after {
       @include label-icon;
       margin-right: auto;
       order: 2;
       margin-left: get-spacing('haapsalu');
+    }
+
+    #{$base}__icon-svg {
+      height: 100%;
+      width: auto;
     }
 
     #{$base}__content {
@@ -37,11 +41,14 @@
         }
       }
     }
+
+    #{$base}__wrapper {
+      display: flex;
+      align-items: center;
+    }
   }
 }
 
 @mixin label-icon {
   fill: get-color(sapphire-blue-10);
-  display: flex;
-  align-items: center;
 }

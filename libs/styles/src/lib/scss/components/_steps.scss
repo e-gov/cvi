@@ -205,6 +205,7 @@
 
     #{$base}__list-item-arrow-icon {
       @include veera-breakpoint-down(sm) {
+        height: 12px;
         fill: get-color(sapphire-blue-10);
         #{$base}.is-any-step-selected & {
           display: none;
@@ -315,6 +316,7 @@
     }
 
     #{$base}__directional-button-icon {
+      height: 12px;
       fill: get-color(sapphire-blue-10);
     }
 

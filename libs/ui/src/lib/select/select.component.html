@@ -32,13 +32,16 @@
     <span class="veera-select__icon-wrapper"
           (mousedown)="handleArrowClick($event)">
       <veera-ng-icon *ngIf="!isOpen && (!hasValue || !backgroundDisabled)"
+                     svgClass="veera-select__icon-svg"
                      name="arrow_down">
       </veera-ng-icon>
       <veera-ng-icon *ngIf="!isOpen && hasValue && backgroundDisabled"
                      class="veera-select__icon"
+                     svgClass="veera-select__icon-edit-svg"
                      name="edit_simple">
       </veera-ng-icon>
       <veera-ng-icon *ngIf="isOpen"
+                     svgClass="veera-select__icon-svg"
                      name="arrow_up">
       </veera-ng-icon>
     </span>

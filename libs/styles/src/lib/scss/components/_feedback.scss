@@ -1,0 +1,8 @@
+@mixin veera-feedback($base: &) {
+
+  @at-root {
+    #{$base}__icon-svg {
+      height: 21px;
+    }
+  }
+}

@@ -1,7 +1,5 @@
 import {
-  AfterViewInit,
   ChangeDetectionStrategy,
-  ChangeDetectorRef,
   Component,
   ElementRef,
   HostBinding,
@@ -16,7 +14,7 @@ import { IconPosition } from './icon-position';
   templateUrl: './labeled-icon.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class LabeledIconComponent implements AfterViewInit {
+export class LabeledIconComponent {
   /** Icon location */
   @Input() iconPosition: IconPosition = 'before';
 
@@ -26,22 +24,14 @@ export class LabeledIconComponent implements AfterViewInit {
   /** Additional classes for the SVG element */
   @Input() svgClass = '';
 
+  /** Additional classes for the veera-ng-icon element. You can set icon height here */
+  @Input() iconClass = '';
+
   @Input() alignment: 'start' | 'center' = 'start';
 
   @ViewChild('content') content!: ElementRef;
 
-  heightCSSVar = '';
-
   @HostBinding('class') get getHostClasses(): string {
     return `veera-labeled-icon veera-labeled-icon--align-${this.alignment}`;
-  }
-
-  constructor(private cdRef: ChangeDetectorRef) {}
-
-  ngAfterViewInit() {
-    this.heightCSSVar = window.getComputedStyle(
-      this.content.nativeElement
-    ).lineHeight;
-    this.cdRef.markForCheck();
   }
 }

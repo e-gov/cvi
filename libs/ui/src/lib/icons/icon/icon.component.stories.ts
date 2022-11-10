@@ -13,6 +13,7 @@ export default {
   },
   args: {
     name: 'call',
+    height: 40,
   },
 } as Meta;
 
@@ -21,8 +22,38 @@ const Template: Story<IconComponent> = (args: IconComponent) => ({
     ...args,
   },
   template: `
-    <veera-ng-icon [name]="name"></veera-ng-icon>
+    <veera-ng-icon [name]="name" [height]="height"></veera-ng-icon>
   `,
 });
 
 export const Default = Template.bind({});
+
+const TemplateWithDefaultHeight: Story<IconComponent> = (
+  args: IconComponent
+) => ({
+  props: {
+    ...args,
+  },
+  template: `
+    <veera-ng-icon [name]="name"></veera-ng-icon>
+  `,
+});
+export const WithDefaultHeight = TemplateWithDefaultHeight.bind({});
+
+const TemplateWithStyling: Story<IconComponent> = (args: IconComponent) => ({
+  props: {
+    ...args,
+  },
+  template: `
+    <veera-ng-icon [name]="name" [svgClass]="svgClass"></veera-ng-icon>
+  `,
+  styles: [
+    `::ng-deep .red {
+      fill: red;
+      height: 50px;
+    }`,
+  ],
+});
+
+export const WithStyling = TemplateWithStyling.bind({});
+WithStyling.args = { svgClass: 'red' };

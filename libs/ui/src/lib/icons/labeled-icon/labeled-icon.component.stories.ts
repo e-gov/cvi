@@ -13,42 +13,28 @@ export default {
   },
   args: {
     name: 'call',
+    iconPosition: 'before',
   },
-} as Meta;
+} as Meta<LabeledIconComponent>;
 
 const Template: Story<LabeledIconComponent> = (args: LabeledIconComponent) => ({
-  props: {
-    ...args,
-  },
+  props: args,
   template: `
-    <veera-ng-labeled-icon [name]="name">This is a labeled icon</veera-ng-labeled-icon>
+    <veera-ng-labeled-icon [name]="name" [iconPosition]="iconPosition" [alignment]="alignment">
+        This is a labeled icon
+    </veera-ng-labeled-icon>
   `,
 });
 
 export const Default = Template.bind({});
 
-const TemplateIconAfter: Story<LabeledIconComponent> = (
-  args: LabeledIconComponent
-) => ({
-  props: {
-    ...args,
-    iconPosition: 'after',
-  },
-  template: `
-    <veera-ng-labeled-icon [name]="name" [iconPosition]="iconPosition">This is a labeled icon</veera-ng-labeled-icon>
-  `,
-});
-
-export const WithIconAfter = TemplateIconAfter.bind({});
+export const WithIconAfter = Template.bind({});
+WithIconAfter.args = { iconPosition: 'after' };
 
 const TemplateIconAfterButton: Story<LabeledIconComponent> = (
   args: LabeledIconComponent
 ) => ({
-  props: {
-    ...args,
-    iconPosition: 'after',
-    alignment: 'center',
-  },
+  props: args,
   template: `
   <veera-ng-button appearance="secondary">
     <veera-ng-labeled-icon [name]="name" [iconPosition]="iconPosition" [alignment]="alignment">
@@ -59,3 +45,34 @@ const TemplateIconAfterButton: Story<LabeledIconComponent> = (
 });
 
 export const LabeledIconInsideButton = TemplateIconAfterButton.bind({});
+LabeledIconInsideButton.args = { iconPosition: 'after', alignment: 'center' };
+
+const TemplateWithStyling: Story<LabeledIconComponent> = (
+  args: LabeledIconComponent
+) => ({
+  props: args,
+  template: `
+    <veera-ng-labeled-icon [name]="name"
+                           [iconPosition]="iconPosition"
+                           [alignment]="alignment"
+                           [iconClass]="iconClass"
+                           [svgClass]="svgClass">
+        This is a labeled icon
+    </veera-ng-labeled-icon>
+  `,
+  styles: [
+    `::ng-deep .red {
+      fill: red;
+    }
+
+    ::ng-deep .size-40 {
+      height: 40px;
+    }`,
+  ],
+});
+export const WithStyling = TemplateWithStyling.bind({});
+WithStyling.args = {
+  iconClass: 'size-40',
+  svgClass: 'red',
+  alignment: 'center',
+};

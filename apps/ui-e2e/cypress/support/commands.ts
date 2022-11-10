@@ -51,6 +51,11 @@ declare global {
         attrNameValuePair: AttrNameValuePair | AttrNameValuePair[]
       ): Cypress.Chainable;
 
+      shouldHaveStyle(
+        element: string,
+        attrNameValuePair: AttrNameValuePair | AttrNameValuePair[]
+      ): Cypress.Chainable;
+
       setDevice(device: Device): void;
 
       storyAction(actionName: string): void;
@@ -61,7 +66,8 @@ declare global {
         type: NotificationSeverity,
         size: NotificationSize,
         showIcon: boolean,
-        showCloseButton: boolean
+        showCloseButton: boolean,
+        iconName: string
       ): void;
 
       runLabeledIconCommonTest(
@@ -116,6 +122,14 @@ Cypress.Commands.add('shouldHaveAttributes', (element, attrNameValuePair) => {
     .forEach((value) => cy.should('have.attr', value.name, value.value));
 });
 
+Cypress.Commands.add('shouldHaveStyle', (element, attrNameValuePair) => {
+  cy.get(element);
+
+  []
+    .concat(attrNameValuePair || [])
+    .forEach((value) => cy.should('have.css', value.name, value.value));
+});
+
 Cypress.Commands.add('setDevice', (device = 'desktop') => {
   if (device === 'tablet') {
     cy.viewport('ipad-2');
@@ -156,7 +170,8 @@ Cypress.Commands.add(
     type = 'info',
     size = 'regular',
     showIcon = false,
-    showCloseButton = true
+    showCloseButton = true,
+    iconName = ''
   ) => {
     cy.get('veera-ng-notification').within(() => {
       cy.shouldHaveClasses('[data-cy="notification"]', [
@@ -170,18 +185,36 @@ Cypress.Commands.add(
           cy.shouldHaveClasses('button', 'veera-notification__close-button')
             .click()
             .within(() => {
-              cy.shouldHaveAttributes('veera-ng-icon', {
+              cy.shouldHaveAttributes('[data-cy="close-icon"]', {
                 name: 'name',
                 value: 'close',
               });
             });
         });
+      } else {
+        cy.shouldNotExist('[data-cy="close-icon"]');
       }
       cy.shouldHaveClasses(
         '[data-cy="inner"]',
         'veera-notification__inner'
       ).within(() => {
-        if (size !== 'compact') {
+        cy.shouldHaveClasses(
+          '[data-cy="content"]',
+          'veera-notification__content'
+        );
+        if (size === 'compact') {
+          if (showIcon) {
+            cy.shouldHaveClasses(
+              '[data-cy="icon"]',
+              'veera-notification__content-icon-wrapper'
+            ).shouldHaveAttributes('[data-cy="icon"]', {
+              name: 'ng-reflect-name',
+              value: iconName,
+            });
+          } else {
+            cy.shouldNotExist('[data-cy="icon"]');
+          }
+        } else {
           cy.shouldHaveClasses(
             '[data-cy="header"]',
             'veera-notification__header'
@@ -190,15 +223,16 @@ Cypress.Commands.add(
           if (showIcon) {
             cy.get('[data-cy="header"]').within(() => {
               cy.shouldHaveClasses(
-                'veera-ng-icon',
+                '[data-cy="header-icon"]',
                 'veera-notification__header-icon-wrapper'
-              ).shouldHaveClasses('svg', 'veera-notification__header-icon');
+              ).shouldHaveAttributes('[data-cy="header-icon"]', {
+                name: 'ng-reflect-name',
+                value: iconName,
+              });
             });
+          } else {
+            cy.shouldNotExist('veera-ng-labeled-icon');
           }
-          cy.shouldHaveClasses(
-            '[data-cy="content"]',
-            'veera-notification__content'
-          );
         }
       });
     });
@@ -210,10 +244,13 @@ Cypress.Commands.add('runLabeledIconCommonTest', (alignment, position) => {
     'veera-labeled-icon',
     `veera-labeled-icon--align-${alignment}`,
   ]).within(() => {
-    cy.shouldHaveClasses(
-      'veera-ng-icon',
-      `veera-labeled-icon__icon-${position}`
-    ).shouldHaveClasses('div', 'veera-labeled-icon__content');
+    cy.shouldHaveClasses('div', [
+      'veera-labeled-icon__wrapper',
+      `veera-labeled-icon__wrapper--icon-${position}`,
+    ]).within(() => {
+      cy.shouldExist('veera-ng-icon');
+    });
+    cy.shouldHaveClasses('div', 'veera-labeled-icon__content');
   });
 });
 

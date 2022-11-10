@@ -9,11 +9,11 @@ export default {
   args: {
     severity: 'info',
     size: 'regular',
-    showHeaderIcon: true,
+    showIcon: true,
     showCloseButton: true,
     title: 'Notification title',
     content:
-      'Header icon and close buttons are not displayed if notification size is compact',
+      'Header and close buttons are not displayed if notification size is compact. Header and close buttons are not displayed if notification size is compact. Header and close buttons are not displayed if notification size is compact.',
   },
 } as Meta<NotificationComponent>;
 
@@ -25,10 +25,10 @@ const Template: Story<NotificationComponent> = (
   template: `
     <veera-ng-notification [severity]="severity"
                            [size]="size"
-                           [showHeaderIcon]="showHeaderIcon"
+                           [showIcon]="showIcon"
                            [showCloseButton]="showCloseButton"
                            [title]="title"
-                           [contentIconName]="contentIconName"
+                           [iconName]="iconName"
     >
       {{content}}
     </veera-ng-notification>
@@ -51,11 +51,14 @@ export const Neutral = Template.bind({});
 Neutral.args = { severity: 'neutral' };
 
 export const Compact = Template.bind({});
-Compact.args = { size: 'compact' };
+Compact.args = { severity: 'neutral', size: 'compact' };
 
 export const CompactWithIcon = Template.bind({});
-CompactWithIcon.args = {
+CompactWithIcon.args = { severity: 'info', size: 'compact' };
+
+export const CompactWithCustomIcon = Template.bind({});
+CompactWithCustomIcon.args = {
   severity: 'neutral',
   size: 'compact',
-  contentIconName: 'arrow_a_left',
+  iconName: 'check_circle_outline',
 };

@@ -17,6 +17,7 @@ describe('NotificationComponent', () => {
         IconComponent,
         NotificationSeverityToHeaderIconPipe,
       ],
+      providers: [NotificationSeverityToHeaderIconPipe],
     }).compileComponents();
 
     fixture = TestBed.createComponent(NotificationComponent);

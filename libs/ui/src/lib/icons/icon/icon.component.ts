@@ -27,6 +27,10 @@ export class IconComponent implements OnChanges {
   @Input()
   name?: VeeraIconName;
 
+  /** Icon height in px */
+  @Input()
+  height?: number = 24;
+
   constructor(
     private element: ElementRef,
     private registry: IconsRegistry,
@@ -37,7 +41,10 @@ export class IconComponent implements OnChanges {
     const div = this.document.createElement('DIV');
     div.innerHTML = svgContent;
     const svg = div.querySelector('svg');
-    svg.setAttribute('class', this.svgClass);
+    svg.setAttribute('class', `veera-icon ${this.svgClass} ${!this.svgClass}`);
+    if (this.height) {
+      svg.setAttribute('height', `${this.height}px`);
+    }
     return (
       svg || this.document.createElementNS('http://www.w3.org/2000/svg', 'path')
     );

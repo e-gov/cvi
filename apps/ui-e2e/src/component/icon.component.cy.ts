@@ -17,4 +17,18 @@ describe('IconComponent', () => {
       value: 'happy_face',
     });
   });
+
+  it('Renders icon with custom style', () => {
+    cy.loadStory('Angular Icon', 'WithStyling').get('veera-ng-icon');
+
+    cy.shouldHaveAttributes('veera-ng-icon', {
+      name: 'ng-reflect-name',
+      value: 'call',
+    }).within(() => {
+      cy.shouldHaveStyle('svg', [
+        { name: 'fill', value: 'rgb(255, 0, 0)' },
+        { name: 'height', value: '50px' },
+      ]);
+    });
+  });
 });

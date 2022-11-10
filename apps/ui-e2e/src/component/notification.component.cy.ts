@@ -7,8 +7,9 @@ describe('NotificationComponent', () => {
     cy.loadStory('Angular Notification', 'Default').runNotificationCommonTest(
       'info',
       'regular',
-      false,
-      true
+      true,
+      true,
+      'info'
     );
   });
 
@@ -16,8 +17,9 @@ describe('NotificationComponent', () => {
     cy.loadStory('Angular Notification', 'Error').runNotificationCommonTest(
       'error',
       'regular',
-      false,
-      true
+      true,
+      true,
+      'error_outline'
     );
   });
 
@@ -26,7 +28,8 @@ describe('NotificationComponent', () => {
       'neutral',
       'regular',
       false,
-      true
+      true,
+      ''
     );
   });
 
@@ -34,8 +37,9 @@ describe('NotificationComponent', () => {
     cy.loadStory('Angular Notification', 'Success').runNotificationCommonTest(
       'success',
       'regular',
-      false,
-      true
+      true,
+      true,
+      'check_circle_outline'
     );
   });
 
@@ -43,17 +47,19 @@ describe('NotificationComponent', () => {
     cy.loadStory('Angular Notification', 'Warning').runNotificationCommonTest(
       'warning',
       'regular',
-      false,
-      true
+      true,
+      true,
+      'warning_amber'
     );
   });
 
   it('Renders compact notification and clicks close button', () => {
     cy.loadStory('Angular Notification', 'Compact').runNotificationCommonTest(
-      'info',
+      'neutral',
       'compact',
       false,
-      false
+      false,
+      ''
     );
   });
 
@@ -61,6 +67,19 @@ describe('NotificationComponent', () => {
     cy.loadStory(
       'Angular Notification',
       'Compact With Icon'
-    ).runNotificationCommonTest('neutral', 'compact', true, false);
+    ).runNotificationCommonTest('info', 'compact', true, false, 'info');
+  });
+
+  it('Renders compact with custom icon notification and clicks close button', () => {
+    cy.loadStory(
+      'Angular Notification',
+      'Compact With Custom Icon'
+    ).runNotificationCommonTest(
+      'neutral',
+      'compact',
+      true,
+      false,
+      'check_circle_outline'
+    );
   });
 });
