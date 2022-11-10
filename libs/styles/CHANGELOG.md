@@ -2,6 +2,20 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [2.1.0](https://stash.ria.ee/scm/sun/veera-components/compare/styles-2.0.0...styles-2.1.0) (2022-11-10)
+
+
+### Bug Fixes
+
+* labeled icon's overflow ([2dc3f17](https://stash.ria.ee/scm/sun/veera-components/commits/2dc3f175ab32a36c0efca35b67aeefb25a0e29f7))
+
+
+### Features
+
+* new h2 style EBS-76 ([ea5458b](https://stash.ria.ee/scm/sun/veera-components/commits/ea5458b027d5538deb47993613dda6099096ae0d))
+
+
+
 # [2.0.0](https://stash.ria.ee/scm/sun/veera-components/compare/styles-1.10.0...styles-2.0.0) (2022-11-10)
 
 
