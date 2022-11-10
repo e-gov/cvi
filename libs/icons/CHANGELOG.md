@@ -2,6 +2,20 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [2.0.0](https://stash.ria.ee/scm/sun/veera-components/compare/icons-1.2.0...icons-2.0.0) (2022-11-10)
+
+
+### Features
+
+* scale svgs (Pull request [#109](https://stash.ria.ee/scm/sun/veera-components/issues/109)) ([497fd59](https://stash.ria.ee/scm/sun/veera-components/commits/497fd593ba7a4580eb2919bfc8b7cbc96ef7c47d))
+
+
+### BREAKING CHANGES
+
+* labeled-icon, notification
+
+
+
 # [1.2.0](https://stash.ria.ee/scm/sun/veera-components/compare/icons-1.1.0...icons-1.2.0) (2022-11-07)
 
 
