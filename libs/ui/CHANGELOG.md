@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [2.1.0](https://stash.ria.ee/scm/sun/veera-components/compare/ui-2.0.0...ui-2.1.0) (2022-11-10)
+
+
+### Features
+
+* new h2 style EBS-76 ([ea5458b](https://stash.ria.ee/scm/sun/veera-components/commits/ea5458b027d5538deb47993613dda6099096ae0d))
+
+
+
 # [2.0.0](https://stash.ria.ee/scm/sun/veera-components/compare/ui-1.11.0...ui-2.0.0) (2022-11-10)
 
 
