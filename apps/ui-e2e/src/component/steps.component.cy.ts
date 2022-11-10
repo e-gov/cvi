@@ -45,6 +45,13 @@ describe('StepsComponent', () => {
     cy.shouldExist('[data-cy="steps-description"]');
 
     cy.runStepsCommonTest();
+
+    cy.get('[data-cy="step_1"]').within(() => {
+      cy.shouldHaveClasses(
+        'span',
+        'veera-steps__content-panel-step-number'
+      ).shouldNotBeVisible('span');
+    });
   });
 
   it('Renders steps with observable titles and clicks on the first step', () => {

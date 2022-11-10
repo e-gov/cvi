@@ -25,7 +25,14 @@ describe('StepComponent', () => {
         'is-current',
       ])
       .within(() => {
-        cy.shouldHaveClasses('h2', 'veera-steps__content-panel-title');
+        cy.shouldHaveClasses('div', 'veera-steps__content-panel-header').within(
+          () => {
+            cy.shouldHaveClasses(
+              'span',
+              'veera-steps__content-panel-step-number'
+            ).shouldHaveClasses('h2', 'veer-steps__content-panel-title');
+          }
+        );
       });
   });
 });

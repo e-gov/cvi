@@ -36,16 +36,15 @@ export class StepsComponent
   stepTitles!: string[];
   @Input() currentProgressCSSVar = 0;
   @Input() anyStepSelected = false;
+  @ContentChildren(StepComponent) stepChildren!: QueryList<StepComponent>;
+
+  constructor(private renderer: Renderer2, private cdRef: ChangeDetectorRef) {}
 
   @HostBinding('class') get getHostClasses(): string {
     return (
       'veera-steps' + (this.anyStepSelected ? ' is-any-step-selected' : '')
     );
   }
-
-  constructor(private renderer: Renderer2, private cdRef: ChangeDetectorRef) {}
-
-  @ContentChildren(StepComponent) stepChildren!: QueryList<StepComponent>;
 
   ngAfterContentInit(): void {
     this.stepTitles = this.stepChildren.map(
@@ -55,6 +54,7 @@ export class StepsComponent
       this.anyStepSelected = true;
       this.setProgress(this.currentStepIndex);
     }
+    this.setStepsNumbers();
   }
 
   ngAfterViewInit(): void {
@@ -62,6 +62,7 @@ export class StepsComponent
       this.stepTitles = steps.map((step: StepComponent) => step.title);
       this.hideStepsContent();
       this.cdRef.markForCheck();
+      this.setStepsNumbers();
     });
     this.hideStepsContent();
   }
@@ -100,5 +101,12 @@ export class StepsComponent
     this.currentProgressCSSVar = Math.round(
       ((stepIndex + 1) / this.stepTitles.length) * 100
     );
+  }
+
+  setStepsNumbers(): void {
+    this.stepChildren?.forEach((step, index) => {
+      step.stepNumber = index + 1;
+      step.updateView();
+    });
   }
 }

@@ -67,7 +67,7 @@ const TemplateObservableTitles: Story = (args) => ({
   template: `
     <veera-ng-steps [title]="title" [currentStepIndex]="currentStepIndex">
       <ng-container *ngFor="let label of labels$ | async">
-        <veera-ng-step title="{{label}}" dataAttribute="step_1">
+        <veera-ng-step [title]="label" dataAttribute="step_1">
             {{ label }}
         </veera-ng-step>
       </ng-container>

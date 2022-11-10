@@ -17,6 +17,10 @@
   }
 
   @at-root {
+    h2 {
+      margin-bottom: get-spacing('paldiski');
+    }
+
     #{$base}__title {
       color: get-color(black-coral-12);
       margin-block: get-spacing('haapsalu');
@@ -240,6 +244,14 @@
       }
     }
 
+    #{$base}__content-panel-header {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 0;
+      gap: 8px;
+    }
+
     #{$base}__content-panel-title {
       @include veera-breakpoint-down(sm) {
         display: none;
@@ -251,17 +263,24 @@
         display: flex;
         gap: get-spacing('paldiski');
         align-items: center;
-        &::before {
-          content: '';
-          border-radius: 51%;
-          display: inline-block;
-          width: 26px;
-          height: 26px;
-          border: 9px solid get-color(sapphire-blue-10);
-          aspect-ratio: 1;
-          background-color: $background-color;
-          padding: 4px;
-        }
+      }
+    }
+
+    #{$base}__content-panel-step-number {
+      @include veera-breakpoint-down(sm) {
+        display: none;
+      }
+      @include veera-breakpoint-up(sm) {
+        box-sizing: border-box;
+        width: 26px;
+        height: 26px;
+        background: get-color(sapphire-blue-13);
+        border-radius: 20px;
+        text-align: center;
+        color: get-color(white);
+        margin-bottom: get-spacing('paldiski');
+        aspect-ratio: 1;
+        padding-top: 1px;
       }
     }
 
