@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [2.1.0](https://stash.ria.ee/scm/sun/veera-components/compare/icons-2.0.0...icons-2.1.0) (2022-11-10)
+
+
+### Features
+
+* new icon for actions block button EBS-77 ([d959355](https://stash.ria.ee/scm/sun/veera-components/commits/d9593552a19bb344ca648d14d5bc6403124a219d))
+
+
+
 # [2.0.0](https://stash.ria.ee/scm/sun/veera-components/compare/icons-1.2.0...icons-2.0.0) (2022-11-10)
 
 
