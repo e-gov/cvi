@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [2.2.0](https://stash.ria.ee/scm/sun/veera-components/compare/icons-2.1.0...icons-2.2.0) (2022-11-10)
+
+
+### Features
+
+* open_in_new icon scaling support STPA-204 ([e17a4ea](https://stash.ria.ee/scm/sun/veera-components/commits/e17a4ea0ff6f11badea1ee8cfe470ad0810c567f))
+
+
+
 # [2.1.0](https://stash.ria.ee/scm/sun/veera-components/compare/icons-2.0.0...icons-2.1.0) (2022-11-10)
 
 
