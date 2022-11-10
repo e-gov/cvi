@@ -10,17 +10,18 @@ pipeline {
   }
 
   environment {
-    STORYBOOK_IMAGE_TAG = getStorybookImageTag()
+    APP_NAME = 'ria-storybook'
+    DOCKER_IMAGE_TAG = getStorybookImageTag()
     CYPRESS_DOWNLOAD_MIRROR = "https://nexus.riaint.ee/repository/cypress-raw-proxy/"
     PUBLIC_REGISTRY = "nexus.riaint.ee:8500"
-    STORYBOOK_DOCKER_IMAGE = "riaee/sun-ria-storybook"
+    HARBOR_REGISTRY = "harbor.riaint.ee"
+    DOCKER_IMAGE = "riaee/sun-ria-storybook"
+    HARBOR_DOCKER_IMAGE = "${HARBOR_REGISTRY}/sun/sun-${APP_NAME}"
     HUSKY = 0
-    STORYBOOK_APP_NAME = 'ria-storybook'
     NAMESPACE = "sun"
   }
 
   parameters {
-    // booleanParam(name: "DEPLOY_FEATURE_SANDBOX", description: "Deploy to feature sandbox", defaultValue: false)
     booleanParam(name: "PUBLISH_STYLES", description: "Publish styles (tag exists, but wasn't published before)", defaultValue: false)
     booleanParam(name: "PUBLISH_UI", description: "Publish ui (tag exists, but wasn't published before)", defaultValue: false)
     booleanParam(name: "PUBLISH_ICONS", description: "Publish icons (tag exists, but wasn't published before)", defaultValue: false)
@@ -225,7 +226,7 @@ pipeline {
           def styles_version = env.styles_library_version ?: getVersion("styles")
           def ui_version = env.ui_library_version ?: getVersion("ui")
           def icons_version = env.icons_library_version ?: getVersion("icons")
-          def dockerImage = docker.build(STORYBOOK_DOCKER_IMAGE, [
+          def dockerImage = docker.build(DOCKER_IMAGE, [
             "--build-arg node_version=${PUBLIC_REGISTRY}/node:lts",
             "--build-arg nginx_version=${PUBLIC_REGISTRY}/nginx:1.23.1-alpine",
             "--build-arg alpine_version=${PUBLIC_REGISTRY}/alpine:3.14",
@@ -236,10 +237,17 @@ pipeline {
             "."
           ].join(" "))
           docker.withRegistry("https://registry-1.docker.io/v2/", 'dockerhub-sun') {
-            dockerImage.push(env.STORYBOOK_IMAGE_TAG)
-            if (isMaster()) {
-              dockerImage.push()
-            }
+            dockerImage.push(env.DOCKER_IMAGE_TAG)
+            dockerImage.push('latest')
+          }
+
+          // MFN requirement: replicate manually to harbor registry
+          docker.withRegistry("https://harbor.riaint.ee/sun", 'harbor-sun') {
+            sh "docker tag ${DOCKER_IMAGE} ${HARBOR_DOCKER_IMAGE}:${DOCKER_IMAGE_TAG}"
+            sh "docker tag ${DOCKER_IMAGE} ${HARBOR_DOCKER_IMAGE}:latest"
+
+            sh "docker push ${HARBOR_DOCKER_IMAGE}:${DOCKER_IMAGE_TAG}"
+            sh "docker push ${HARBOR_DOCKER_IMAGE}:latest"
           }
         }
       }
@@ -299,14 +307,14 @@ void deploy() {
   def ns = "sun-${ENV}"
 
   docker.image('nexus.riaint.ee:8500/alpine/helm:3.9.4').inside('-u 0 --entrypoint= ') {
-    dir("deployment/${STORYBOOK_APP_NAME}") {
+    dir("deployment/${APP_NAME}") {
       sh script: """
       helm version
       helm list -n ${NAMESPACE}
       helm lint . -f values.yaml -f values-${ENV}.yaml
 
-      helm upgrade -n ${NAMESPACE} ${STORYBOOK_APP_NAME} . -f values.yaml  -f values-${ENV}.yaml --set image.tag=${STORYBOOK_IMAGE_TAG} --install --create-namespace --atomic --timeout 5m0s
-      helm list -n ${NAMESPACE} | grep ${STORYBOOK_APP_NAME}
+      helm upgrade -n ${NAMESPACE} ${APP_NAME} . -f values.yaml  -f values-${ENV}.yaml --set image.tag=${DOCKER_IMAGE_TAG} --install --create-namespace --atomic --timeout 5m0s
+      helm list -n ${NAMESPACE} | grep ${APP_NAME}
       """, label: "Deploy application";
     }
   }
