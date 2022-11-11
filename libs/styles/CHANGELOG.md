@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [2.1.1](https://stash.ria.ee/scm/sun/veera-components/compare/styles-2.1.0...styles-2.1.1) (2022-11-11)
+
+
+### Bug Fixes
+
+* h2 font size adjustment STPA-204 ([bc900ec](https://stash.ria.ee/scm/sun/veera-components/commits/bc900ecef5a9b1fec9ab6ceca263e05f90443f6a))
+
+
+
 # [2.1.0](https://stash.ria.ee/scm/sun/veera-components/compare/styles-2.0.0...styles-2.1.0) (2022-11-10)
 
 
