@@ -15,7 +15,7 @@
     "tslib": "^2.3.0",
     "sanitize-html": "2.7.1",
     "rxjs": "~7.5.6",
-    "@ria/veera-icons": "^2.1.0"
+    "@ria/veera-icons": "^2.2.0"
   },
   "publishConfig": {
     "registry": "https://nexus.riaint.ee/repository/sun-npm-local/"
