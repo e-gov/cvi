@@ -94,6 +94,9 @@ pipeline {
       }
     }
     stage('cypress tests') {
+      when {
+         expression { !env.skip_ci }
+      }
       agent {
         docker {
           image 'nexus.riaint.ee:8500/cypress/base:18.6.0'
