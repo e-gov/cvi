@@ -2,6 +2,20 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [2.2.0](https://stash.ria.ee/scm/sun/veera-components/compare/styles-2.1.1...styles-2.2.0) (2022-11-14)
+
+
+### Bug Fixes
+
+* notification styles (STPA-204) (Pull request [#123](https://stash.ria.ee/scm/sun/veera-components/issues/123)) ([18b1699](https://stash.ria.ee/scm/sun/veera-components/commits/18b1699831155f99b52f1bae30e66d949e04f473))
+
+
+### Features
+
+* add option to remove list marker (STPA-204) ([3858ffe](https://stash.ria.ee/scm/sun/veera-components/commits/3858ffe1c725a97659858b47f9a1be31ec5a404c))
+
+
+
 ## [2.1.1](https://stash.ria.ee/scm/sun/veera-components/compare/styles-2.1.0...styles-2.1.1) (2022-11-11)
 
 
