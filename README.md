@@ -33,7 +33,13 @@ In case of `fix` and `feat` commit types a new changelog entry is generated and 
 
 ### Code style
 
-TO DO
+#### Angular
+
+##### Selectors
+
+Use `[veera-component-selector=local-selector-name]` naming convention for [content projection selectors](https://angular.io/guide/content-projection).
+
+For example, if you need to introduce a content selector that inserts custom content before a title in a panel (eg. fictional `PanelComponent/<veera-ng-panel>` component), an appropriate code would be `<ng-content select="[veera-ng-panel=before-title]"></ng-content>`.
 
 ## Running the Storybook
 
@@ -66,6 +72,6 @@ Run `nx graph` to see a diagram of the dependencies of your projects.
 
 ## Running Cypress tests against Storybook
 
-Storybook needs to be up and running as Cypress tests are using its Angular components in iFrame windows. Check previous chapter about 'Running the Storybook'
+Storybook needs to be up and running as Cypress tests are using its Angular components in iFrame windows. Check previous chapter about 'Running the Storybook'.
 
-When storybook is up and running, run `npm run cy:ui` which opens up Cypress visual testing tool. Select E2E Testing, which presents you all components tests
+When storybook is up and running, run `npm run cy:ui` which opens up Cypress visual testing tool. Select E2E Testing, which presents you all components tests.

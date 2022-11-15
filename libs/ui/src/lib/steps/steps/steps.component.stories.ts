@@ -37,7 +37,7 @@ const Template: Story<StepsComponent> = (args: StepsComponent) => ({
   /* template */
   template: `
     <veera-ng-steps [title]="title" [currentStepIndex]="currentStepIndex">
-      <p beforeSteps dataAttribute="steps-description">You can now add custom content before steps</p>
+      <p veera-steps="after-title" dataAttribute="steps-description">You can now add custom content before steps</p>
       <veera-ng-step title="First item with a lot of different words in it and some more so that it spans to multiple lines" dataAttribute="step_1">{{ stepsContent[0] }}</veera-ng-step>
       <veera-ng-step title="Second" dataAttribute="step_2">{{ stepsContent[1] }}</veera-ng-step>
       <veera-ng-step title="Thirrrrd" dataAttribute="step_3">{{ stepsContent[2] }}</veera-ng-step>

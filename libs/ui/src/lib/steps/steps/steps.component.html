@@ -1,7 +1,7 @@
 <h1 *ngIf="title" class="veera-steps__title" dataAttribute="steps_title">{{ title }}</h1>
 <div class="veera-steps__inner-wrapper">
   <div class="veera-steps__intro">
-    <ng-content select="[beforeSteps]"></ng-content>
+    <ng-content select="[veera-steps=after-title]"></ng-content>
   </div>
   <div class="veera-steps__inner" dataAttribute="steps_container">
     <ol class="veera-steps__list" [style.--progress]="anyStepSelected ? currentProgressCSSVar + '%' : '100%'">
