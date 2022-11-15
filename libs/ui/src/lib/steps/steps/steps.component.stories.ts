@@ -5,6 +5,9 @@ import { StepsComponent } from './steps.component';
 export default {
   title: 'Angular/Steps/Steps',
   component: StepsComponent,
+  parameters: {
+    layout: 'padded',
+  },
   argTypes: {
     stepsContent: {
       controls: false,
@@ -47,6 +50,20 @@ export const Default = Template.bind({});
 
 export const Mobile = Template.bind({});
 Mobile.parameters = {
+  layout: 'fullscreen',
+  backgrounds: {
+    default: 'light',
+  },
+  viewport: {
+    defaultViewport: 'iphone12mini',
+  },
+};
+
+export const MobileWithSelectedStep = Template.bind({});
+MobileWithSelectedStep.args = {
+  currentStepIndex: 0,
+};
+MobileWithSelectedStep.parameters = {
   layout: 'fullscreen',
   backgrounds: {
     default: 'light',

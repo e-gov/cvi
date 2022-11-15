@@ -1,26 +1,22 @@
+@use 'sass:math';
+
 @mixin veera-steps($base: &) {
   --comment: 'Sequential tabs that do not block non-linear interaction';
 
-  $background-color: get-color(white);
-  $border-color: get-color(black-coral-2);
   $number-border-width: 2px;
   $number-size--mobile: 32px;
-  $page-padding--mobile: get-spacing('valga');
+  $number-size--desktop: 24px;
+  $inner-padding--mobile: get-spacing('haapsalu');
+  $panel-margin--desktop: 25%;
 
   & {
     @include veera-breakpoint-down(sm) {
       display: block;
-      &:not(.is-any-step-selected) {
-        padding-inline: get-spacing('kuressaare');
-      }
+      padding-inline: get-spacing('kuressaare');
     }
   }
 
   @at-root {
-    h2 {
-      margin-bottom: get-spacing('paldiski');
-    }
-
     #{$base}__title {
       color: get-color(black-coral-12);
       margin-block: get-spacing('haapsalu');
@@ -30,7 +26,7 @@
         line-height: $veera-line-height-100;
         font-weight: $veera-font-weight-beta;
         #{$base}.is-any-step-selected & {
-          padding-inline: $page-padding--mobile;
+          padding-inline: get-spacing('valga');
         }
       }
       @include veera-breakpoint-up(sm) {
@@ -40,9 +36,37 @@
       }
     }
 
+    #{$base}__inner-wrapper {
+      @include veera-breakpoint-down(sm) {
+        border-radius: $veera-radius-s;
+        #{$base}:not(.is-any-step-selected) & {
+          box-shadow: $veera-shadow-gamma;
+          background-color: var(--veera-color-white);
+          padding: $inner-padding--mobile;
+        }
+      }
+    }
+
+    #{$base}__intro {
+      @include veera-breakpoint-down(sm) {
+        #{$base}.is-any-step-selected & {
+          display: none;
+        }
+      }
+      @include veera-breakpoint-up(sm) {
+        margin-bottom: get-spacing('haapsalu');
+      }
+    }
+
     #{$base}__inner {
       @include veera-breakpoint-down(sm) {
         position: relative;
+        #{$base}:not(.is-any-step-selected) & {
+          padding-top: get-spacing('loksa');
+        }
+      }
+      @include veera-breakpoint-up(sm) {
+        counter-reset: contentpanellist;
       }
     }
 
@@ -53,25 +77,25 @@
       @include veera-breakpoint-down(sm) {
         display: flex;
         flex-direction: column;
-        margin-bottom: $number-border-width;
       }
       @include veera-breakpoint-up(sm) {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(224px, 1fr));
+        min-height: 72px;
+        column-gap: 0;
       }
     }
 
     #{$base}__list-item {
       counter-increment: numberedlist;
       @include veera-breakpoint-down(sm) {
-        background-color: $background-color;
         color: get-color(black-coral-15);
         font-weight: $veera-font-weight-beta;
-        #{$base}:not(.is-any-step-selected) & {
-          border-radius: $veera-radius-m;
-        }
+        border-radius: $veera-radius-s;
+        background-color: get-color(white);
         #{$base}.is-any-step-selected & {
           padding-inline: get-spacing('parnu');
+          margin-bottom: 2px;
         }
         #{$base}.is-any-step-selected &:not(.is-current) {
           @include veera-screenreader-text;
@@ -79,24 +103,24 @@
       }
       @include veera-breakpoint-up(sm) {
         flex: 1 1 0;
-        background-color: $background-color;
-        border: 2px solid $border-color;
         border-radius: $veera-radius-l;
-        &.is-current {
-          border-color: get-color(sapphire-blue-10);
-        }
+        // TODO: in future we could try to move the filter code from HTML to CSS for better separation of concerns. However right now there's an issue in Safari where the filter is not applied
+        // filter: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='round'%3E%3CfeGaussianBlur in='SourceGraphic' stdDeviation='3' result='blur' %2f%3E%3CfeColorMatrix in='blur' mode='matrix' values='1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 19 -9' result='goo' %2f%3E%3CfeComposite in='SourceGraphic' in2='goo' operator='atop'%2f%3E%3C%2ffilter%3E%3C%2fsvg%3E#round")
+        filter: url('#round') drop-shadow(0 1px 5px rgba(var(--veera-color-rgb-black) / .15));
+        transition: filter .3s;
         &:not(.is-current) {
           cursor: pointer;
         }
-        &:hover {
-          box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 10px;
+        &:hover,
+        &:focus {
+          filter: url('#round') drop-shadow(0 1px 5px rgba(var(--veera-color-rgb-black) / .3));
         }
       }
     }
 
     #{$base}__list-item-button {
       position: relative;
-      font-size: $veera-font-size-100;
+      font-size: $veera-font-size-80;
 
       @include veera-breakpoint-down(sm) {
         display: flex;
@@ -105,34 +129,46 @@
         #{$base}:not(.is-any-step-selected) & {
           padding-left: get-spacing('paldiski');
           padding-right: get-spacing('haapsalu');
+          background-color: get-color(sapphire-blue-0);
+          box-shadow: $veera-shadow-alpha;
         }
         #{$base}.is-any-step-selected & {
           pointer-events: none;
         }
       }
       @include veera-breakpoint-up(sm) {
+        --clip-path-tip-coord: 16px;
+
+        clip-path: polygon(calc(100% - var(--clip-path-tip-coord)) 0, 100% 50%, calc(100% - var(--clip-path-tip-coord)) 100%, 0% 100%, var(--clip-path-tip-coord) 50%, 0 0);
+        background-color: get-color(sapphire-blue-2);
         width: 100%;
         height: 100%;
-        padding: get-spacing('paldiski');
-        padding-top: get-spacing('valga');
+        padding-inline: get-spacing('kuressaare');
+        padding-block: get-spacing('paldiski');
+        #{$base}__list-item.is-current & {
+          background-color: get-color(sapphire-blue-13);
+        }
       }
     }
 
     #{$base}__list-item-inner {
       @include veera-breakpoint-down(sm) {
+        --number-background-color: var(--veera-color-sapphire-blue-0);
+
         display: flex;
         width: 100%;
         gap: get-spacing('haapsalu');
         align-items: center;
+        color: get-color(sapphire-blue-13);
         &::before {
           flex-shrink: 0;
           border-radius: 51%;
           border: $number-border-width solid transparent;
           content: counter(numberedlist);
           width: $number-size--mobile;
-          background-image: linear-gradient(get-color(white), get-color(white)),
+          background-image: linear-gradient(var(--number-background-color), var(--number-background-color)),
             conic-gradient(
-              get-color(sapphire-blue-10) var(--progress),
+              get-color(sapphire-blue-13) var(--progress),
               get-color(black-coral-2) var(--progress)
             );
           background-origin: border-box;
@@ -143,33 +179,29 @@
           align-items: center;
           font-weight: $veera-font-weight-beta;
 
-          #{$base}:not(.is-any-step-selected) & {
-            color: get-color(sapphire-blue-10);
-          }
-
           #{$base}.is-any-step-selected & {
+            --number-background-color: var(--veera-color-white);
+
             color: get-color(black-coral-10);
           }
         }
       }
       @include veera-breakpoint-up(sm) {
-        border-top: $number-border-width solid get-color(sapphire-blue-10);
-        padding-top: inherit;
+        display: flex;
+        gap: get-spacing('paldiski');
         width: 100%;
         height: 100%;
+        align-items: center;
         &::before {
           content: counter(numberedlist);
           border-radius: 51%;
-          border: $number-border-width solid get-color(sapphire-blue-10);
-          color: get-color(sapphire-blue-10);
+          border: $number-border-width solid currentColor;
+          color: currentColor;
           font-size: $veera-font-size-50;
           line-height: 0;
-          aspect-ratio: 1;
           padding-inline: 8px;
-          position: absolute;
-          top: 20px;
-          background-color: $background-color;
-          transform: translateY(-50%);
+          width: $number-size--desktop;
+          aspect-ratio: 1;
           display: flex;
           justify-content: center;
           align-items: center;
@@ -178,22 +210,14 @@
 
       #{$base}__list-item.is-current & {
         @include veera-breakpoint-up(sm) {
-          border-top-color: transparent;
           font-weight: bold;
-
-          &::before {
-            content: '';
-            width: 26px;
-            height: 26px;
-            border: 9px solid get-color(sapphire-blue-10);
-            padding: 4px;
-          }
+          color: get-color(white);
         }
       }
 
       #{$base}__list-item:not(.is-current) & {
         @include veera-breakpoint-up(sm) {
-          color: get-color(black-coral-10);
+          color: get-color(sapphire-blue-13);
         }
       }
     }
@@ -202,54 +226,65 @@
       @include veera-breakpoint-down(sm) {
         flex-grow: 1;
         #{$base}.is-any-step-selected & {
-          color: get-color(sapphire-blue-10);
+          font-weight: bold;
+        }
+      }
+      @include veera-breakpoint-up(sm) {
+        #{$base}__list-item:not(.is-current) & {
+          text-decoration: underline;
         }
       }
     }
 
-    #{$base}__list-item-arrow-icon {
-      @include veera-breakpoint-down(sm) {
-        height: 12px;
-        fill: get-color(sapphire-blue-10);
-        #{$base}.is-any-step-selected & {
-          display: none;
-        }
-      }
+    #{$base}__list-item-arrow-icon-wrapper {
       @include veera-breakpoint-up(sm) {
         display: none;
       }
     }
 
-    #{$base}__content-panel {
-      display: none;
-
-      &.is-current {
-        display: block;
-      }
-
+    #{$base}__list-item-arrow-icon {
       @include veera-breakpoint-down(sm) {
-        padding-inline: $page-padding--mobile;
-        padding-block: get-spacing('kuressaare');
-        background-color: get-color(white);
-      }
-      @include veera-breakpoint-up(sm) {
-        border: 1px solid $border-color;
-        background-color: $background-color;
-        padding-top: get-spacing('kuressaare');
-        padding-bottom: get-spacing('parnu');
-        padding-inline: 15%;
-        border-top-left-radius: $veera-radius-l;
-        border-top-right-radius: $veera-radius-l;
-        margin-top: get-spacing('haapsalu');
+        fill: currentColor;
+        height: 12px;
+        #{$base}.is-any-step-selected & {
+          display: none;
+        }
       }
     }
 
-    #{$base}__content-panel-header {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      padding: 0;
-      gap: 8px;
+    #{$base}__content-panel,
+    #{$base}__directional-buttons {
+      @include veera-breakpoint-up(sm) {
+        margin-right: $panel-margin--desktop;
+        box-shadow: $veera-shadow-beta;
+      }
+    }
+
+    #{$base}__content-panel {
+      &.is-current {
+        display: block;
+      }
+      &:not(.is-current) {
+        // Why not hiding with display:none? Because CSS counter needs a rendered box in order to get incremented
+        @include veera-screenreader-text;
+      }
+
+      @include veera-breakpoint-down(sm) {
+        padding-inline: $inner-padding--mobile;
+        padding-block: get-spacing('kuressaare');
+        background-color: get-color(white);
+        box-shadow: $veera-shadow-gamma;
+        border-radius: $veera-radius-s;
+      }
+      @include veera-breakpoint-up(sm) {
+        padding-top: get-spacing('kuressaare');
+        padding-bottom: get-spacing('parnu');
+        padding-inline: get-spacing('viljandi');
+        border-top-left-radius: $veera-radius-l;
+        border-top-right-radius: $veera-radius-l;
+        margin-top: get-spacing('kuressaare');
+        counter-increment: contentpanellist;
+      }
     }
 
     #{$base}__content-panel-title {
@@ -262,25 +297,23 @@
         margin-bottom: get-spacing('paldiski');
         display: flex;
         gap: get-spacing('paldiski');
-        align-items: center;
-      }
-    }
-
-    #{$base}__content-panel-step-number {
-      @include veera-breakpoint-down(sm) {
-        display: none;
-      }
-      @include veera-breakpoint-up(sm) {
-        box-sizing: border-box;
-        width: 26px;
-        height: 26px;
-        background: get-color(sapphire-blue-13);
-        border-radius: 20px;
-        text-align: center;
-        color: get-color(white);
-        margin-bottom: get-spacing('paldiski');
-        aspect-ratio: 1;
-        padding-top: 1px;
+        align-items: baseline;
+        &::before {
+          content: counter(contentpanellist);
+          border-radius: 51%;
+          color: get-color(white);
+          background-color: get-color(sapphire-blue-13);
+          font-size: $veera-font-size-50;
+          line-height: 0;
+          padding-inline: 8px;
+          width: $number-size--desktop;
+          aspect-ratio: 1;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          position: relative;
+          top: math.div($number-size--desktop - $veera-font-size-50, 2) * -1 + 1px;
+        }
       }
     }
 
@@ -295,9 +328,8 @@
         justify-content: space-between;
         border-bottom-left-radius: $veera-radius-l;
         border-bottom-right-radius: $veera-radius-l;
-        border: 1px solid $border-color;
-        border-top: none;
         background-color: get-color(white);
+        clip-path: inset(0 $veera-shadow-beta-blur * -1 $veera-shadow-beta-blur * -1);
       }
     }
 
@@ -308,10 +340,10 @@
           top: 18px;
         }
         &--direction-prev {
-          left: $page-padding--mobile;
+          left: $inner-padding--mobile;
         }
         &--direction-next {
-          right: $page-padding--mobile;
+          right: $inner-padding--mobile;
         }
       }
       @include veera-breakpoint-up(sm) {

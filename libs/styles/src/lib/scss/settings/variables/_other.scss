@@ -9,4 +9,8 @@ $veera-radius-xs: 2px;
 $veera-border-width: 2px;
 
 // Shadows
+$veera-shadow-beta-blur: 15px;
+
 $veera-shadow-alpha: 0 1px 5px 0 rgba(var(--veera-color-rgb-black) / .15);
+$veera-shadow-beta: 0 4px $veera-shadow-beta-blur 0 rgba(var(--veera-color-rgb-black) / .15);
+$veera-shadow-gamma: 0 0 20px 0 rgba(var(--veera-color-rgb-sapphire-blue-16) / .1);

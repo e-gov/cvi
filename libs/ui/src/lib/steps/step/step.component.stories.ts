@@ -4,6 +4,9 @@ import { StepComponent } from './step.component';
 export default {
   title: 'Angular/Steps/Step',
   component: StepComponent,
+  parameters: {
+    layout: 'padded',
+  },
   argTypes: {
     content: {
       name: 'Content',
@@ -27,6 +30,7 @@ const Template: Story<StepComponent> = (args: StepComponent) => ({
   template: `
     <veera-ng-steps title="Abiellumine" [currentStepIndex]="0">
       <veera-ng-step [title]="title">{{ content }}</veera-ng-step>
+      <veera-ng-step title="Another step">Some content</veera-ng-step>
     </veera-ng-steps>
   `,
 });
