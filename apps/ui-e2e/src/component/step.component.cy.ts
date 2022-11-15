@@ -23,16 +23,6 @@ describe('StepComponent', () => {
       .shouldHaveClasses('veera-ng-step', [
         'veera-steps__content-panel',
         'is-current',
-      ])
-      .within(() => {
-        cy.shouldHaveClasses('div', 'veera-steps__content-panel-header').within(
-          () => {
-            cy.shouldHaveClasses(
-              'span',
-              'veera-steps__content-panel-step-number'
-            ).shouldHaveClasses('h2', 'veer-steps__content-panel-title');
-          }
-        );
-      });
+      ]);
   });
 });

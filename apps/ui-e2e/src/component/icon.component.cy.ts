@@ -23,7 +23,7 @@ describe('IconComponent', () => {
 
     cy.shouldHaveAttributes('veera-ng-icon', {
       name: 'ng-reflect-name',
-      value: 'call',
+      value: 'action',
     }).within(() => {
       cy.shouldHaveStyle('svg', [
         { name: 'fill', value: 'rgb(255, 0, 0)' },

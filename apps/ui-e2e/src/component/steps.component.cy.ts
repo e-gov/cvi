@@ -23,8 +23,8 @@ describe('StepsComponent', () => {
         'is-past',
         'is-current',
       ])
-      .shouldNotBeVisible('[data-cy="step_1"]')
-      .shouldBeVisible('[data-cy="step_2"]')
+      .shouldNotBeVisibleA11y('[data-cy="step_1"]')
+      .shouldBeVisibleA11y('[data-cy="step_2"]')
       .shouldExist([
         '[data-cy="previous_step_button_1"]',
         '[data-cy="next_step_button_0"]',
@@ -45,13 +45,6 @@ describe('StepsComponent', () => {
     cy.shouldExist('[data-cy="steps-description"]');
 
     cy.runStepsCommonTest();
-
-    cy.get('[data-cy="step_1"]').within(() => {
-      cy.shouldHaveClasses(
-        'span',
-        'veera-steps__content-panel-step-number'
-      ).shouldNotBeVisible('span');
-    });
   });
 
   it('Renders steps with observable titles and clicks on the first step', () => {

@@ -1,6 +1,5 @@
 import {
   ChangeDetectionStrategy,
-  ChangeDetectorRef,
   Component,
   ElementRef,
   HostBinding,
@@ -13,16 +12,11 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class StepComponent {
-  @Input() stepNumber!: number;
   @Input() title!: string;
 
-  constructor(public ref: ElementRef, private cdr: ChangeDetectorRef) {}
+  constructor(public ref: ElementRef) {}
 
   @HostBinding('class') get getHostClasses(): string {
     return 'veera-steps__content-panel';
-  }
-
-  updateView(): void {
-    this.cdr.markForCheck();
   }
 }

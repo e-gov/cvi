@@ -54,7 +54,6 @@ export class StepsComponent
       this.anyStepSelected = true;
       this.setProgress(this.currentStepIndex);
     }
-    this.setStepsNumbers();
   }
 
   ngAfterViewInit(): void {
@@ -62,7 +61,6 @@ export class StepsComponent
       this.stepTitles = steps.map((step: StepComponent) => step.title);
       this.hideStepsContent();
       this.cdRef.markForCheck();
-      this.setStepsNumbers();
     });
     this.hideStepsContent();
   }
@@ -101,12 +99,5 @@ export class StepsComponent
     this.currentProgressCSSVar = Math.round(
       ((stepIndex + 1) / this.stepTitles.length) * 100
     );
-  }
-
-  setStepsNumbers(): void {
-    this.stepChildren?.forEach((step, index) => {
-      step.stepNumber = index + 1;
-      step.updateView();
-    });
   }
 }

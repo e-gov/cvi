@@ -32,6 +32,10 @@ declare global {
 
       shouldNotBeVisible(element: string): Cypress.Chainable;
 
+      shouldNotBeVisibleA11y(element: string): Cypress.Chainable;
+
+      shouldBeVisibleA11y(element: string): Cypress.Chainable;
+
       shouldExist(element: string | string[]): Cypress.Chainable;
 
       shouldNotExist(element: string): Cypress.Chainable;
@@ -92,6 +96,15 @@ Cypress.Commands.add('shouldNotBeVisible', (element) => {
   cy.get(element).should('not.be.visible');
 });
 
+// veera-screenreader-text class or mixin applied
+Cypress.Commands.add('shouldNotBeVisibleA11y', (element) => {
+  cy.get(element).should('have.css', 'clip', 'rect(0px, 0px, 0px, 0px)');
+});
+
+Cypress.Commands.add('shouldBeVisibleA11y', (element) => {
+  cy.get(element).should('not.have.css', 'clip', 'rect(0px, 0px, 0px, 0px)');
+});
+
 Cypress.Commands.add('shouldExist', (element) => {
   [].concat(element || []).forEach((value) => cy.get(value).should('exist'));
 });
@@ -148,8 +161,7 @@ Cypress.Commands.add('storyAction', (actionName) => {
 });
 
 Cypress.Commands.add('runStepsCommonTest', () => {
-  cy.shouldNotBeVisible('[data-cy="step_1"]')
-    .should('not.be.visible')
+  cy.shouldNotBeVisibleA11y('[data-cy="step_1"]')
     .shouldNotHaveClasses('[data-cy="veera-steps__list-item_0"]', [
       'is-past',
       'is-current',
@@ -159,7 +171,7 @@ Cypress.Commands.add('runStepsCommonTest', () => {
       'is-past',
       'is-current',
     ])
-    .shouldBeVisible('[data-cy="step_1"]')
+    .shouldBeVisibleA11y('[data-cy="step_1"]')
     .shouldNotExist('[data-cy="previous_step_button_0"]')
     .shouldExist('[data-cy="next_step_button_0"]');
 });
