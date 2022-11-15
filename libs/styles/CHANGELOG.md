@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [2.2.2](https://stash.ria.ee/scm/sun/veera-components/compare/styles-2.2.1...styles-2.2.2) (2022-11-15)
+
+
+### Bug Fixes
+
+* accordion details background color STPA-204 (Pull request [#128](https://stash.ria.ee/scm/sun/veera-components/issues/128)) ([e3c0f88](https://stash.ria.ee/scm/sun/veera-components/commits/e3c0f88077b4b85a3fad81dcf2480c3d82f8009e))
+
+
+
 ## [2.2.1](https://stash.ria.ee/scm/sun/veera-components/compare/styles-2.2.0...styles-2.2.1) (2022-11-15)
 
 
