@@ -25,6 +25,7 @@ import { SafeHtmlPipe } from './html-section/safe-html-pipe';
 import { NotificationComponent } from './notification/notification.component';
 import { NotificationSeverityToHeaderIconPipe } from './notification/notification-severity-to-header-icon.pipe';
 import { IconsRegistry } from './icons/icons-registry.service';
+// Only import the icons used inside the library
 import {
   veeraArrowALeft,
   veeraArrowARight,

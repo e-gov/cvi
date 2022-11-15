@@ -1,0 +1,17 @@
+import {Meta, Story} from '@storybook/addon-docs';
+import { storybookIconsNames } from '../utils/storybook-icons';
+
+<Meta title="Icons/List" parameters={{ layout: 'padded' }} />
+
+<Story name="All icons">
+  {{
+    props: {icons: storybookIconsNames},
+    template: `
+      <veera-ng-storybook-icon-cards>
+        <veera-ng-storybook-icon-card *ngFor="let name of icons" [label]="name">
+          <veera-ng-icon [name]="name"></veera-ng-icon>
+        </veera-ng-storybook-icon-card>
+      </veera-ng-storybook-icon-cards>
+    `,
+  }}
+</Story>

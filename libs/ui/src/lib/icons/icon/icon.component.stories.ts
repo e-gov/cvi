@@ -9,10 +9,12 @@ export default {
   argTypes: {
     name: {
       name: 'Name',
+      options: ['action', 'call', 'close'],
+      control: { type: 'select' },
     },
   },
   args: {
-    name: 'call',
+    name: 'action',
     height: 40,
   },
 } as Meta;
