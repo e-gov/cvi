@@ -261,6 +261,8 @@
     }
 
     #{$base}__content-panel {
+      background-color: var(--veera-color-white);
+
       &.is-current {
         display: block;
       }
