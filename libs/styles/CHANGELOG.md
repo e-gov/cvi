@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [2.2.3](https://stash.ria.ee/scm/sun/veera-components/compare/styles-2.2.2...styles-2.2.3) (2022-11-16)
+
+
+### Bug Fixes
+
+* steps, accordion visual changes (Pull request [#130](https://stash.ria.ee/scm/sun/veera-components/issues/130)) ([e313f58](https://stash.ria.ee/scm/sun/veera-components/commits/e313f58b377b0fbb56914809af2a4a37a39f332e))
+
+
+
 ## [2.2.2](https://stash.ria.ee/scm/sun/veera-components/compare/styles-2.2.1...styles-2.2.2) (2022-11-15)
 
 
