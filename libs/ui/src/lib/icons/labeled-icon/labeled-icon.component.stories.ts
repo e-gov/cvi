@@ -37,15 +37,24 @@ const TemplateIconAfterButton: Story<LabeledIconComponent> = (
   props: args,
   template: `
   <veera-ng-button appearance="secondary">
-    <veera-ng-labeled-icon [name]="name" [iconPosition]="iconPosition" [alignment]="alignment">
+    <veera-ng-labeled-icon [name]="name" [iconPosition]="iconPosition" [alignment]="alignment" [iconClass]="iconClass">
         This is a labeled icon
     </veera-ng-labeled-icon>
   </veera-ng-button>
   `,
+  styles: [
+    `::ng-deep .size-20 {
+      height: 20px;
+    }`,
+  ],
 });
 
 export const LabeledIconInsideButton = TemplateIconAfterButton.bind({});
-LabeledIconInsideButton.args = { iconPosition: 'after', alignment: 'center' };
+LabeledIconInsideButton.args = {
+  iconPosition: 'after',
+  alignment: 'center',
+  iconClass: 'size-20',
+};
 
 const TemplateWithStyling: Story<LabeledIconComponent> = (
   args: LabeledIconComponent
