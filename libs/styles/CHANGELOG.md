@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [2.2.4](https://stash.ria.ee/scm/sun/veera-components/compare/styles-2.2.3...styles-2.2.4) (2022-11-16)
+
+
+### Bug Fixes
+
+* button font STPA-204 (Pull request [#131](https://stash.ria.ee/scm/sun/veera-components/issues/131)) ([cc5f46c](https://stash.ria.ee/scm/sun/veera-components/commits/cc5f46cb0e5be3f5ecdf81403bd9a888860524de))
+
+
+
 ## [2.2.3](https://stash.ria.ee/scm/sun/veera-components/compare/styles-2.2.2...styles-2.2.3) (2022-11-16)
 
 
