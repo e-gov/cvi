@@ -18,21 +18,19 @@
 
   @at-root {
     #{$base}__title {
-      color: get-color(black-coral-12);
+      color: get-color(black-coral-10);
       margin-block: get-spacing('haapsalu');
+      font-size: $veera-font-size-350;
+      font-weight: $veera-font-weight-alpha;
 
       @include veera-breakpoint-down(sm) {
-        font-size: $veera-font-size-250;
         line-height: $veera-line-height-100;
-        font-weight: $veera-font-weight-beta;
         #{$base}.is-any-step-selected & {
           padding-inline: get-spacing('valga');
         }
       }
       @include veera-breakpoint-up(sm) {
-        font-size: $veera-font-size-350;
         line-height: $veera-line-height-500;
-        font-weight: $veera-font-weight-alpha;
       }
     }
 
@@ -120,7 +118,7 @@
 
     #{$base}__list-item-button {
       position: relative;
-      font-size: $veera-font-size-80;
+      font-size: $veera-font-size-100;
 
       @include veera-breakpoint-down(sm) {
         display: flex;
@@ -177,7 +175,7 @@
           display: flex;
           justify-content: center;
           align-items: center;
-          font-weight: $veera-font-weight-beta;
+          font-weight: $veera-font-weight-gamma;
 
           #{$base}.is-any-step-selected & {
             --number-background-color: var(--veera-color-white);
@@ -210,7 +208,6 @@
 
       #{$base}__list-item.is-current & {
         @include veera-breakpoint-up(sm) {
-          font-weight: bold;
           color: get-color(white);
         }
       }
@@ -225,8 +222,10 @@
     #{$base}__list-item-title {
       @include veera-breakpoint-down(sm) {
         flex-grow: 1;
+        font-weight: $veera-font-weight-gamma;
         #{$base}.is-any-step-selected & {
           font-weight: bold;
+          color: get-color(sapphire-blue-10);
         }
       }
       @include veera-breakpoint-up(sm) {

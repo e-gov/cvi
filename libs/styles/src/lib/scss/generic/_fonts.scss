@@ -8,6 +8,8 @@ $subsets: (latin, latin-ext);
 
 @include Roboto.fontFace($weight: 400, $style: italic, $unicodeMap: $subsets);
 
+@include Roboto.fontFace($weight: 500, $unicodeMap: $subsets);
+
 @include Roboto.fontFace($weight: 700, $unicodeMap: $subsets);
 
 @include Roboto.fontFace($weight: 700, $style: italic, $unicodeMap: $subsets);
