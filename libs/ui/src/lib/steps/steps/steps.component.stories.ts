@@ -21,7 +21,7 @@ export default {
     title: 'Abiellumine',
     currentStepIndex: null,
     stepsContent: [
-      'Nevertheless, Cosy Moments thrives. It has its public.',
+      '<a href="https://www.eesti.ee">Nevertheless, Cosy Moments thrives. It has its public.</a>',
       'Its contents are mildly interesting, if you like that sort of thing.',
       'There is a "Moments in the Nursery" page, conducted by Luella Granville Waterman.',
       'There is a "Moments of Meditation" page, conducted by the Reverend Edwin T. Philpotts.',
@@ -38,7 +38,8 @@ const Template: Story<StepsComponent> = (args: StepsComponent) => ({
   template: `
     <veera-ng-steps [title]="title" [currentStepIndex]="currentStepIndex">
       <p veera-steps="after-title" dataAttribute="steps-description">You can now add custom content before steps</p>
-      <veera-ng-step title="First item with a lot of different words in it and some more so that it spans to multiple lines" dataAttribute="step_1">{{ stepsContent[0] }}</veera-ng-step>
+      <veera-ng-step title="First item with a lot of different words in it and some more so that it spans to multiple lines" dataAttribute="step_1">
+        <veera-ng-html-section html="{{ stepsContent[0] }}"></veera-ng-html-section></veera-ng-step>
       <veera-ng-step title="Second" dataAttribute="step_2">{{ stepsContent[1] }}</veera-ng-step>
       <veera-ng-step title="Thirrrrd" dataAttribute="step_3">{{ stepsContent[2] }}</veera-ng-step>
       <veera-ng-step title="4ourth" dataAttribute="step_4">{{ stepsContent[3] }}</veera-ng-step>

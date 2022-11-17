@@ -268,6 +268,11 @@
       &:not(.is-current) {
         // Why not hiding with display:none? Because CSS counter needs a rendered box in order to get incremented
         @include veera-screenreader-text;
+
+        // Hide elements so they won't be navigable by tab
+        a, button, input, textarea, select {
+          display: none;
+        }
       }
 
       @include veera-breakpoint-down(sm) {
