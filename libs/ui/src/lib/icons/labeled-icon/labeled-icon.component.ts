@@ -25,7 +25,7 @@ export class LabeledIconComponent {
   @Input() svgClass = '';
 
   /** Additional classes for the veera-ng-icon element. You can set icon height here */
-  @Input() iconClass = '';
+  @Input() iconClass = 'veera-labeled-icon__icon';
 
   @Input() alignment: 'start' | 'center' = 'start';
 
