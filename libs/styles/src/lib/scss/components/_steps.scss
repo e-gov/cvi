@@ -106,12 +106,12 @@
         // filter: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='round'%3E%3CfeGaussianBlur in='SourceGraphic' stdDeviation='3' result='blur' %2f%3E%3CfeColorMatrix in='blur' mode='matrix' values='1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 19 -9' result='goo' %2f%3E%3CfeComposite in='SourceGraphic' in2='goo' operator='atop'%2f%3E%3C%2ffilter%3E%3C%2fsvg%3E#round")
         filter: url('#round') drop-shadow(0 1px 5px rgba(var(--veera-color-rgb-black) / .15));
         transition: filter .3s;
-        &:not(.is-current) {
-          cursor: pointer;
-        }
         &:hover,
         &:focus {
           filter: url('#round') drop-shadow(0 1px 5px rgba(var(--veera-color-rgb-black) / .3));
+        }
+        &:focus-within {
+          filter: url('#round') drop-shadow(0 0 2px var(--veera-color-black));
         }
       }
     }
@@ -145,6 +145,10 @@
         padding-block: get-spacing('paldiski');
         #{$base}__list-item.is-current & {
           background-color: get-color(sapphire-blue-13);
+        }
+
+        &:focus-visible {
+          outline: none;
         }
       }
     }
