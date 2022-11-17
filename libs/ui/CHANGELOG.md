@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [2.2.3](https://stash.ria.ee/scm/sun/veera-components/compare/ui-2.2.2...ui-2.2.3) (2022-11-17)
+
+
+### Bug Fixes
+
+* make hidden step content not navigable by tab STPA-204 (Pull request [#133](https://stash.ria.ee/scm/sun/veera-components/issues/133)) ([c8c718b](https://stash.ria.ee/scm/sun/veera-components/commits/c8c718b6e240af6c8546ef650a8f9ffc36c4681e))
+
+
+
 ## [2.2.2](https://stash.ria.ee/scm/sun/veera-components/compare/ui-2.2.1...ui-2.2.2) (2022-11-16)
 
 
