@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [2.2.4](https://stash.ria.ee/scm/sun/veera-components/compare/ui-2.2.3...ui-2.2.4) (2022-11-17)
+
+
+### Bug Fixes
+
+* labeled icon position in firefox STPA-204 (Pull request [#135](https://stash.ria.ee/scm/sun/veera-components/issues/135)) ([92ede66](https://stash.ria.ee/scm/sun/veera-components/commits/92ede6665411ba869935827091dc529bb445b43e))
+
+
+
 ## [2.2.3](https://stash.ria.ee/scm/sun/veera-components/compare/ui-2.2.2...ui-2.2.3) (2022-11-17)
 
 
