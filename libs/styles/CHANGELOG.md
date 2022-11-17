@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [2.2.5](https://stash.ria.ee/scm/sun/veera-components/compare/styles-2.2.4...styles-2.2.5) (2022-11-17)
+
+
+### Bug Fixes
+
+* steps style STPA-204 (Pull request [#132](https://stash.ria.ee/scm/sun/veera-components/issues/132)) ([cea6a91](https://stash.ria.ee/scm/sun/veera-components/commits/cea6a912726ea70cc5e031d99821ef83322c5cd4))
+
+
+
 ## [2.2.4](https://stash.ria.ee/scm/sun/veera-components/compare/styles-2.2.3...styles-2.2.4) (2022-11-16)
 
 
