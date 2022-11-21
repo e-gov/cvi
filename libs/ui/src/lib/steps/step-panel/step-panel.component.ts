@@ -1,19 +1,19 @@
 import {
   ChangeDetectionStrategy,
   Component,
-  ElementRef,
   HostBinding,
+  Input,
 } from '@angular/core';
 
 @Component({
-  selector: 'veera-ng-step',
-  template: `<ng-content></ng-content>`,
+  selector: 'veera-ng-step-panel',
+  templateUrl: './step-panel.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class StepComponent {
-  constructor(public ref: ElementRef) {}
+export class StepPanelComponent {
+  @Input() title!: string;
 
   @HostBinding('class') get getHostClasses(): string {
-    return 'veera-steps__step';
+    return 'veera-steps__content-panel';
   }
 }

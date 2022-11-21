@@ -1,4 +1,5 @@
-import { Meta, Story } from '@storybook/angular/';
+import { Meta, Story } from '@storybook/angular';
+import notes from './step.component.md';
 import { StepComponent } from './step.component';
 
 export default {
@@ -6,18 +7,7 @@ export default {
   component: StepComponent,
   parameters: {
     layout: 'padded',
-  },
-  argTypes: {
-    content: {
-      name: 'Content',
-      table: {
-        category: 'Playground',
-      },
-    },
-  },
-  args: {
-    title: 'First step is the importantest',
-    content: 'Nevertheless, Cosy Moments thrives. It has its public.',
+    notes,
   },
 } as Meta;
 
@@ -29,8 +19,16 @@ const Template: Story<StepComponent> = (args: StepComponent) => ({
   /* template */
   template: `
     <veera-ng-steps title="Abiellumine" [currentStepIndex]="0">
-      <veera-ng-step [title]="title">{{ content }}</veera-ng-step>
-      <veera-ng-step title="Another step">Some content</veera-ng-step>
+      <veera-ng-step veeraNgStorybookCurrentComponent>
+        <veera-ng-step-panel title="The title">
+          Some content for the first step
+        </veera-ng-step-panel>
+      </veera-ng-step>
+      <veera-ng-step veeraNgStorybookCurrentComponent>
+        <veera-ng-step-panel title="Another step">
+          Some content
+        </veera-ng-step-panel>
+      </veera-ng-step>
     </veera-ng-steps>
   `,
 });

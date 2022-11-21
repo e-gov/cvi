@@ -2,7 +2,7 @@ import { Meta, Story } from '@storybook/angular';
 import notes from './html-section.html.md';
 
 export default {
-  title: 'HTML/Html Section',
+  title: 'HTML/Html section',
   parameters: {
     notes,
     options: { selectedPanel: 'html/panel' },

@@ -24,7 +24,8 @@
       "Labeled icon",
       "Textarea",
       "Notification",
-      "Html Section"
+      "Html section",
+      "Table of contents"
     ],
     "Angular",
     [
@@ -39,12 +40,18 @@
       "Icon",
       "Labeled icon",
       "Steps",
-      ["Step", "Steps"],
+      ["Steps", "Step", "Step panel"],
+      "Table of contents",
+      [
+        "Table of contents wrapper",
+        "Table of contents",
+        "Table of contents item"
+      ],
       "Textarea",
       "Notification",
       "Select",
       "Tab group",
-      "Html Section",
+      "Html section",
       "Tooltip",
       "Toast"
     ]

@@ -41,7 +41,7 @@ export class IconComponent implements OnChanges {
     const div = this.document.createElement('DIV');
     div.innerHTML = svgContent;
     const svg = div.querySelector('svg');
-    svg.setAttribute('class', `veera-icon ${this.svgClass} ${!this.svgClass}`);
+    svg.setAttribute('class', this.svgClass);
     if (this.height) {
       svg.setAttribute('height', `${this.height}px`);
     }

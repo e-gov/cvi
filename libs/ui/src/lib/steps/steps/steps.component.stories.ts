@@ -1,4 +1,5 @@
 import { Meta, Story } from '@storybook/angular/';
+import notes from './steps.component.md';
 import { concatMap, delay, from, of } from 'rxjs';
 import { StepsComponent } from './steps.component';
 
@@ -7,6 +8,7 @@ export default {
   component: StepsComponent,
   parameters: {
     layout: 'padded',
+    notes,
   },
   argTypes: {
     stepsContent: {
@@ -36,13 +38,28 @@ const Template: Story<StepsComponent> = (args: StepsComponent) => ({
   },
   /* template */
   template: `
-    <veera-ng-steps [title]="title" [currentStepIndex]="currentStepIndex">
+    <veera-ng-steps [title]="title" [currentStepIndex]="currentStepIndex" [hasTableOfContents]="hasTableOfContents">
       <p veera-steps="after-title" dataAttribute="steps-description">You can now add custom content before steps</p>
-      <veera-ng-step title="First item with a lot of different words in it and some more so that it spans to multiple lines" dataAttribute="step_1">
-        <veera-ng-html-section html="{{ stepsContent[0] }}"></veera-ng-html-section></veera-ng-step>
-      <veera-ng-step title="Second" dataAttribute="step_2">{{ stepsContent[1] }}</veera-ng-step>
-      <veera-ng-step title="Thirrrrd" dataAttribute="step_3">{{ stepsContent[2] }}</veera-ng-step>
-      <veera-ng-step title="4ourth" dataAttribute="step_4">{{ stepsContent[3] }}</veera-ng-step>
+      <veera-ng-step dataAttribute="step_1">
+        <veera-ng-step-panel [title]="title">
+          <veera-ng-html-section html="{{ stepsContent[0] }}"></veera-ng-html-section>
+        </veera-ng-step-panel>
+      </veera-ng-step>
+      <veera-ng-step dataAttribute="step_2">
+        <veera-ng-step-panel title="Second">
+          {{ stepsContent[1] }}
+        </veera-ng-step-panel>
+      </veera-ng-step>
+      <veera-ng-step dataAttribute="step_3">
+        <veera-ng-step-panel title="Third">
+          {{ stepsContent[2] }}
+        </veera-ng-step-panel>
+      </veera-ng-step>
+      <veera-ng-step dataAttribute="step_4">
+        <veera-ng-step-panel title="Fourth">
+          {{ stepsContent[3] }}
+        </veera-ng-step-panel>
+      </veera-ng-step>
     </veera-ng-steps>
   `,
 });
@@ -83,10 +100,12 @@ const TemplateObservableTitles: Story = (args) => ({
   },
   /* template */
   template: `
-    <veera-ng-steps [title]="title" [currentStepIndex]="currentStepIndex">
+    <veera-ng-steps [title]="title" [currentStepIndex]="currentStepIndex" [hasTableOfContents]="hasTableOfContents">
       <ng-container *ngFor="let label of labels$ | async">
-        <veera-ng-step [title]="label" dataAttribute="step_1">
+        <veera-ng-step dataAttribute="step_1">
+          <veera-ng-step-panel [title]="label">
             {{ label }}
+          </veera-ng-step-panel>
         </veera-ng-step>
       </ng-container>
     </veera-ng-steps>

@@ -8,11 +8,21 @@
   $number-size--desktop: 24px;
   $inner-padding--mobile: get-spacing('haapsalu');
   $panel-margin--desktop: 25%;
+  $panel-right-gap: get-spacing('kuressaare');
+
+  // "exported" variable
+  --veera-steps--panel-margin: #{ $panel-margin--desktop };
+  --veera-steps--gap: #{ $panel-right-gap };
 
   & {
     @include veera-breakpoint-down(sm) {
       display: block;
       padding-inline: get-spacing('kuressaare');
+    }
+
+    --has-toc: 0;
+    &.has-toc {
+      --has-toc: 1;
     }
   }
 
@@ -79,8 +89,8 @@
       @include veera-breakpoint-up(sm) {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(224px, 1fr));
-        min-height: 72px;
         column-gap: 0;
+        padding-bottom: get-spacing('kuressaare');
       }
     }
 
@@ -100,6 +110,7 @@
         }
       }
       @include veera-breakpoint-up(sm) {
+        min-height: 72px;
         flex: 1 1 0;
         border-radius: $veera-radius-l;
         // TODO: in future we could try to move the filter code from HTML to CSS for better separation of concerns. However right now there's an issue in Safari where the filter is not applied
@@ -255,17 +266,7 @@
       }
     }
 
-    #{$base}__content-panel,
-    #{$base}__directional-buttons {
-      @include veera-breakpoint-up(sm) {
-        margin-right: $panel-margin--desktop;
-        box-shadow: $veera-shadow-beta;
-      }
-    }
-
-    #{$base}__content-panel {
-      background-color: var(--veera-color-white);
-
+    #{$base}__step {
       &.is-current {
         display: block;
       }
@@ -278,6 +279,18 @@
           display: none;
         }
       }
+    }
+
+    #{$base}__content-panel,
+    #{$base}__directional-buttons {
+      @include veera-breakpoint-up(sm) {
+        box-shadow: $veera-shadow-beta;
+      }
+    }
+
+    #{$base}__content-panel {
+      background-color: var(--veera-color-white);
+      display: block;
 
       @include veera-breakpoint-down(sm) {
         padding-inline: $inner-padding--mobile;
@@ -292,7 +305,6 @@
         padding-inline: get-spacing('viljandi');
         border-top-left-radius: $veera-radius-l;
         border-top-right-radius: $veera-radius-l;
-        margin-top: get-spacing('kuressaare');
         counter-increment: contentpanellist;
       }
     }
@@ -334,12 +346,16 @@
         }
       }
       @include veera-breakpoint-up(sm) {
+        --width: calc(100% - (var(--veera-steps--panel-margin) * var(--has-toc)));
+        --gap: calc(var(--veera-steps--gap) * var(--has-toc) / 1);
+
         display: flex;
         justify-content: space-between;
         border-bottom-left-radius: $veera-radius-l;
         border-bottom-right-radius: $veera-radius-l;
         background-color: get-color(white);
         clip-path: inset(0 $veera-shadow-beta-blur * -1 $veera-shadow-beta-blur * -1);
+        width: calc(var(--width) - var(--gap));
       }
     }
 

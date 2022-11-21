@@ -7,10 +7,11 @@ import { FormItemComponent } from './form-item/form-item.component';
 import { InputComponent } from './input/input.component';
 import { RadioGroupComponent } from './radio-button/radio-group/radio-group.component';
 import { RadioButtonComponent } from './radio-button/radio-button/radio-button.component';
-import { StepComponent } from './steps/step/step.component';
 import { IconComponent } from './icons/icon/icon.component';
 import { LabeledIconComponent } from './icons/labeled-icon/labeled-icon.component';
 import { StepsComponent } from './steps/steps/steps.component';
+import { StepComponent } from './steps/step/step.component';
+import { StepPanelComponent } from './steps/step-panel/step-panel.component';
 import { FeedbackComponent } from './feedback/feedback/feedback.component';
 import { TextareaComponent } from './textarea/textarea.component';
 import { OptionButtonComponent } from './radio-button/option-button/option-button.component';
@@ -60,6 +61,10 @@ import { TabGroupComponent } from './tabs/tab-group.component';
 import { DefaultToastConfig, TOAST_CONFIG } from './toast/toast-config';
 import { ToastComponent } from './toast/toast.component';
 import { ToastContainerComponent } from './toast/toast-container.component';
+import { TableOfContentsSectionDirective } from './table-of-contents/toc-section.directive';
+import { TableOfContentsWrapperComponent } from './table-of-contents/table-of-contents-wrapper/table-of-contents-wrapper.component';
+import { TableOfContentsComponent } from './table-of-contents/table-of-contents/table-of-contents.component';
+import { TableOfContentsItemComponent } from './table-of-contents/table-of-contents-item/table-of-contents-item.component';
 
 const components = [
   TrackComponent,
@@ -70,6 +75,7 @@ const components = [
   LabeledIconComponent,
   StepsComponent,
   StepComponent,
+  StepPanelComponent,
   RadioGroupComponent,
   RadioButtonComponent,
   OptionButtonComponent,
@@ -81,6 +87,10 @@ const components = [
   AccordionContentDirective,
   AccordionTitleDirective,
   AccordionHeaderDirective,
+  TableOfContentsSectionDirective,
+  TableOfContentsWrapperComponent,
+  TableOfContentsComponent,
+  TableOfContentsItemComponent,
   NotificationComponent,
   BreadcrumbsComponent,
   SelectComponent,

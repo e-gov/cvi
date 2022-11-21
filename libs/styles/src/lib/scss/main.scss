@@ -43,10 +43,12 @@
 @import 'components/feedback';
 @import 'components/toast';
 @import 'components/toast-container';
+@import 'components/table-of-contents';
 
 @import 'apply';
 
 @import 'storybook/generic';
+@import 'storybook/components/current-component';
 @import 'storybook/components/color-cards';
 @import 'storybook/components/type-tester';
 @import 'storybook/components/spacing-specimen';

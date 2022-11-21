@@ -15,6 +15,7 @@ import {
   SimpleChanges,
 } from '@angular/core';
 import { StepComponent } from '../step/step.component';
+import { StepPanelComponent } from '../step-panel/step-panel.component';
 
 @Component({
   selector: 'veera-ng-steps',
@@ -27,6 +28,7 @@ export class StepsComponent
   @Input() title!: string;
 
   @Input() currentStepIndex: number | null = null;
+  @Input() hasTableOfContents = false;
 
   /** Index of a step, used to initiate step change from a parent component */
   @Input() stepIndex: number | null = null;
@@ -37,18 +39,20 @@ export class StepsComponent
   @Input() currentProgressCSSVar = 0;
   @Input() anyStepSelected = false;
   @ContentChildren(StepComponent) stepChildren!: QueryList<StepComponent>;
+  @ContentChildren(StepPanelComponent, { descendants: true })
+  stepPanels!: QueryList<StepPanelComponent>;
 
   constructor(private renderer: Renderer2, private cdRef: ChangeDetectorRef) {}
 
   @HostBinding('class') get getHostClasses(): string {
-    return (
-      'veera-steps' + (this.anyStepSelected ? ' is-any-step-selected' : '')
-    );
+    return `veera-steps${this.anyStepSelected ? ' is-any-step-selected' : ''}${
+      this.hasTableOfContents ? ' has-toc' : ''
+    }`;
   }
 
   ngAfterContentInit(): void {
-    this.stepTitles = this.stepChildren.map(
-      (step: StepComponent) => step.title
+    this.stepTitles = this.stepPanels.map(
+      (step: StepPanelComponent) => step.title
     );
     if (this.currentStepIndex !== null) {
       this.anyStepSelected = true;
@@ -57,9 +61,14 @@ export class StepsComponent
   }
 
   ngAfterViewInit(): void {
-    this.stepChildren.changes.subscribe((steps) => {
-      this.stepTitles = steps.map((step: StepComponent) => step.title);
+    this.stepChildren.changes.subscribe(() => {
       this.hideStepsContent();
+      this.cdRef.markForCheck();
+    });
+    this.stepPanels.changes.subscribe((stepPanels) => {
+      this.stepTitles = stepPanels.map(
+        (stepPanel: StepPanelComponent) => stepPanel.title
+      );
       this.cdRef.markForCheck();
     });
     this.hideStepsContent();
