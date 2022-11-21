@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [2.3.0](https://stash.ria.ee/scm/sun/veera-components/compare/styles-2.2.7...styles-2.3.0) (2022-11-21)
+
+
+### Features
+
+* **ui:** added table of contents ([7807560](https://stash.ria.ee/scm/sun/veera-components/commits/78075600c5cc1579e982a6701d09e362a026153e))
+
+
+
 ## [2.2.7](https://stash.ria.ee/scm/sun/veera-components/compare/styles-2.2.6...styles-2.2.7) (2022-11-17)
 
 
