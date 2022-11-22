@@ -16,7 +16,7 @@ export class BreadcrumbsComponent {
   @Input() breadcrumbLabels!: string[];
 
   /** Name of an icon in front of breadcrumb */
-  @Input() iconName!: VeeraIconName;
+  @Input() iconName: VeeraIconName | null = null;
 
   @Output() breadcrumbChange = new EventEmitter<number>();
 }

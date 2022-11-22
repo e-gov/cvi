@@ -1,6 +1,5 @@
 @mixin veera-breadcrumbs($base: &) {
   display: flex;
-  align-items: center;
 
   @at-root {
     #{$base}__items {
