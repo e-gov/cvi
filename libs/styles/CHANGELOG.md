@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [2.4.1](https://stash.ria.ee/scm/sun/veera-components/compare/styles-2.4.0...styles-2.4.1) (2022-11-22)
+
+
+### Bug Fixes
+
+* breadcrumb icon name input and icon style ([93dbd78](https://stash.ria.ee/scm/sun/veera-components/commits/93dbd78127744fc19b6093608e5bf5f11435cbd3))
+
+
+
 # [2.4.0](https://stash.ria.ee/scm/sun/veera-components/compare/styles-2.3.0...styles-2.4.0) (2022-11-22)
 
 
