@@ -21,3 +21,22 @@ const Template: Story<BreadcrumbsComponent> = (args: BreadcrumbsComponent) => ({
 
 export const Primary = Template.bind({});
 Primary.args = {};
+
+const TemplateWithIcon: Story<BreadcrumbsComponent> = (
+  args: BreadcrumbsComponent
+) => ({
+  props: args,
+  /* template */
+  template: `
+    <veera-ng-breadcrumbs
+        [breadcrumbLabels]="breadcrumbLabels"
+        [iconName]="iconName">
+    </veera-ng-breadcrumbs>
+  `,
+});
+
+export const WithIcon = TemplateWithIcon.bind({});
+WithIcon.args = {
+  breadcrumbLabels: ['Abiellumise ülevaade'],
+  iconName: 'arrow_a_left',
+};

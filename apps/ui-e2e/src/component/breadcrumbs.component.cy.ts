@@ -6,7 +6,7 @@ describe('BreadcrumbsComponent', () => {
   it('Renders primary breadcrumbs', () => {
     cy.loadStory('Angular Breadcrumbs', 'Primary')
       .get('veera-ng-breadcrumbs')
-      .shouldHaveClasses('ul', 'veera-breadcrumbs')
+      .shouldHaveClasses('ul', 'veera-breadcrumbs__items')
       .shouldHaveClasses('li', 'veera-breadcrumbs__item')
       .shouldHaveClasses('a', 'veera-breadcrumbs__item-link');
   });
