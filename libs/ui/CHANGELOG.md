@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [2.5.0](https://stash.ria.ee/scm/sun/veera-components/compare/ui-2.4.1...ui-2.5.0) (2022-11-23)
+
+
+### Features
+
+* add form support for input (Pull request [#138](https://stash.ria.ee/scm/sun/veera-components/issues/138)) ([b6f33b9](https://stash.ria.ee/scm/sun/veera-components/commits/b6f33b9b2b2551e794d3ccfbdea74c3fc7536145))
+
+
+
 ## [2.4.1](https://stash.ria.ee/scm/sun/veera-components/compare/ui-2.4.0...ui-2.4.1) (2022-11-22)
 
 
