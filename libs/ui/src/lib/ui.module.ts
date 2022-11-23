@@ -46,7 +46,7 @@ import {
   veeraArrowUp,
   veeraEditSimple,
 } from '@ria/veera-icons';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
 import { SelectComponent } from './select/select.component';
 import {
@@ -108,7 +108,7 @@ const components = [
 const pipes = [SafeHtmlPipe, NotificationSeverityToHeaderIconPipe];
 
 @NgModule({
-  imports: [CommonModule, TextFieldModule, ReactiveFormsModule],
+  imports: [CommonModule, TextFieldModule, ReactiveFormsModule, FormsModule],
   declarations: [...components, ...pipes],
   exports: [...components, ...pipes, TextFieldModule, DataAttributeDirective],
   providers: [
