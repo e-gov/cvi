@@ -11,16 +11,21 @@ export default {
       imports: [UiModule, ReactiveFormsModule],
     }),
   ],
-  component: InputComponent,
   parameters: { notes },
   args: {
     placeholder: 'Username',
     disabled: false,
+    htmlId: '',
   },
 } as Meta<InputComponent>;
 
 const Template: Story<InputComponent> = (args: InputComponent) => ({
   props: args,
+  template: `
+    <veera-ng-input [placeholder]="placeholder"
+                    [disabled]="disabled"
+                    [htmlId]="htmlId"></veera-ng-input>
+  `,
 });
 
 export const Primary = Template.bind({});
@@ -45,7 +50,8 @@ const FormTemplate: Story<InputComponent> = (args: InputComponent) => {
       <div [formGroup]="form">
         <veera-ng-input formControlName="item"
                         [placeholder]="placeholder"
-                        [disabled]="disabled"></veera-ng-input>
+                        [disabled]="disabled"
+                        [htmlId]="htmlId"></veera-ng-input>
         <div>Inserted value: {{selectedValue()}}</div>
       </div>
     `,
