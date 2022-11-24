@@ -80,6 +80,57 @@ InDebugMode.args = {
   debugMode: true,
 } as never;
 
+const TemplateHeadingsWithIds: Story<TableOfContentsWrapperComponent> = (
+  args: TableOfContentsWrapperComponent
+) => ({
+  component: TableOfContentsWrapperComponent,
+  props: {
+    ...args,
+  },
+  /* template */
+  template: `
+    <veera-ng-table-of-contents-wrapper [hideNavOnMobile]="hideNavOnMobile" veeraNgStorybookCurrentComponent>
+      <div>
+        <div>
+          <h1 veeraNgToCSection="section-one">Section One</h1>
+          <div [veeraNgStorybookRandomParagraphs]="10"></div>
+        </div>
+
+        <div>
+          <h1 veeraNgToCSection="section-two">Section Two</h1>
+          <div [veeraNgStorybookRandomParagraphs]="10"></div>
+        </div>
+
+        <div>
+          <h1 veeraNgToCSection="section-three">Section Three</h1>
+          <div [veeraNgStorybookRandomParagraphs]="10"></div>
+        </div>
+
+        <div>
+          <h1 veeraNgToCSection="section-four">Section Four</h1>
+          <div [veeraNgStorybookRandomParagraphs]="10"></div>
+        </div>
+
+        <div>
+          <h1 veeraNgToCSection="section-five">Section Five</h1>
+          <div [veeraNgStorybookRandomParagraphs]="10"></div>
+        </div>
+      </div>
+
+      <veera-ng-table-of-contents title="Sisukord">
+        <veera-ng-table-of-contents-item label="Section One with a very long label that spans many lines" href="#section-one"></veera-ng-table-of-contents-item>
+        <veera-ng-table-of-contents-item label="Section Two" href="#section-two"></veera-ng-table-of-contents-item>
+        <veera-ng-table-of-contents-item label="Section Three" href="#section-three"></veera-ng-table-of-contents-item>
+        <veera-ng-table-of-contents-item label="Section Four" href="#section-four"></veera-ng-table-of-contents-item>
+        <veera-ng-table-of-contents-item label="Section Five" href="#section-five"></veera-ng-table-of-contents-item>
+      </veera-ng-table-of-contents>
+    </veera-ng-table-of-contents-wrapper>
+  `,
+});
+
+export const HeadingsWithIds = TemplateHeadingsWithIds.bind({});
+HeadingsWithIds.storyName = 'With ids on headings';
+
 const TemplateWithSteps: Story<TableOfContentsWrapperComponent> = (
   args: TableOfContentsWrapperComponent
 ) => ({
@@ -248,11 +299,183 @@ const TemplateWithSteps: Story<TableOfContentsWrapperComponent> = (
 });
 
 export const WithSteps = TemplateWithSteps.bind({});
+WithSteps.storyName = 'With steps (ids on heading container)';
 
 export const WithStepsMobile = TemplateWithSteps.bind({});
-WithStepsMobile.storyName = 'With steps (mobile)';
+WithStepsMobile.storyName = 'With steps (ids on heading container, mobile)';
 WithStepsMobile.parameters = {
   viewport: {
     defaultViewport: 'iphone12mini',
   },
 };
+
+const TemplateWithStepsAndHeadingsWithIds: Story<
+  TableOfContentsWrapperComponent
+> = (args: TableOfContentsWrapperComponent) => ({
+  component: TableOfContentsWrapperComponent,
+  props: {
+    ...args,
+  },
+  /* template */
+  template: `
+    <veera-ng-steps title="Abiellumine" [currentStepIndex]="null" [hasTableOfContents]="true">
+      <p veera-steps="after-title">Custom content before steps</p>
+      <veera-ng-step>
+        <veera-ng-table-of-contents-wrapper [hideNavOnMobile]="hideNavOnMobile">
+          <veera-ng-step-panel title="Step One">
+            <div>
+              <h1 veeraNgToCSection="section-one-one">Section One</h1>
+              <div [veeraNgStorybookRandomParagraphs]="10"></div>
+            </div>
+
+            <div>
+              <h1 veeraNgToCSection="section-one-two">Section Two</h1>
+              <div [veeraNgStorybookRandomParagraphs]="10"></div>
+            </div>
+
+            <div>
+              <h1 veeraNgToCSection="section-one-three">Section Three</h1>
+              <div [veeraNgStorybookRandomParagraphs]="10"></div>
+            </div>
+
+            <div>
+              <h1 veeraNgToCSection="section-one-four">Section Four</h1>
+              <div [veeraNgStorybookRandomParagraphs]="10"></div>
+            </div>
+
+            <div>
+              <h1 veeraNgToCSection="section-one-five">Section Five</h1>
+              <div [veeraNgStorybookRandomParagraphs]="10"></div>
+            </div>
+          </veera-ng-step-panel>
+
+          <veera-ng-table-of-contents title="Sisukord">
+            <veera-ng-table-of-contents-item label="Section One with a very long label that spans many lines" href="#section-one-one"></veera-ng-table-of-contents-item>
+            <veera-ng-table-of-contents-item label="Section Two" href="#section-one-two"></veera-ng-table-of-contents-item>
+            <veera-ng-table-of-contents-item label="Section Three" href="#section-one-three"></veera-ng-table-of-contents-item>
+            <veera-ng-table-of-contents-item label="Section Four" href="#section-one-four"></veera-ng-table-of-contents-item>
+            <veera-ng-table-of-contents-item label="Section Five" href="#section-one-five"></veera-ng-table-of-contents-item>
+          </veera-ng-table-of-contents>
+        </veera-ng-table-of-contents-wrapper>
+      </veera-ng-step>
+      <veera-ng-step>
+        <veera-ng-table-of-contents-wrapper [hideNavOnMobile]="true">
+          <veera-ng-step-panel title="Step Two">
+            <div>
+              <h1 veeraNgToCSection="section-two-one">Section One</h1>
+              <div [veeraNgStorybookRandomParagraphs]="10"></div>
+            </div>
+
+            <div>
+              <h1 veeraNgToCSection="section-two-two">Section Two</h1>
+              <div [veeraNgStorybookRandomParagraphs]="10"></div>
+            </div>
+
+            <div>
+              <h1 veeraNgToCSection="section-two-three">Section Three</h1>
+              <div [veeraNgStorybookRandomParagraphs]="10"></div>
+            </div>
+
+            <div>
+              <h1 veeraNgToCSection="section-two-four">Section Four</h1>
+              <div [veeraNgStorybookRandomParagraphs]="10"></div>
+            </div>
+
+            <div>
+              <h1 veeraNgToCSection="section-two-five">Section Five</h1>
+              <div [veeraNgStorybookRandomParagraphs]="10"></div>
+            </div>
+          </veera-ng-step-panel>
+
+          <veera-ng-table-of-contents title="Sisukord">
+            <veera-ng-table-of-contents-item label="Section One with a very long label that spans many lines" href="#section-two-one"></veera-ng-table-of-contents-item>
+            <veera-ng-table-of-contents-item label="Section Two" href="#section-two-two"></veera-ng-table-of-contents-item>
+            <veera-ng-table-of-contents-item label="Section Three" href="#section-two-three"></veera-ng-table-of-contents-item>
+            <veera-ng-table-of-contents-item label="Section Four" href="#section-two-four"></veera-ng-table-of-contents-item>
+            <veera-ng-table-of-contents-item label="Section Five" href="#section-two-five"></veera-ng-table-of-contents-item>
+          </veera-ng-table-of-contents>
+        </veera-ng-table-of-contents-wrapper>
+      </veera-ng-step>
+      <veera-ng-step>
+        <veera-ng-table-of-contents-wrapper [hideNavOnMobile]="true">
+          <veera-ng-step-panel title="Step Three">
+            <div>
+              <h1 veeraNgToCSection="section-three-one">Section One</h1>
+              <div [veeraNgStorybookRandomParagraphs]="10"></div>
+            </div>
+
+            <div>
+              <h1 veeraNgToCSection="section-three-two">Section Two</h1>
+              <div [veeraNgStorybookRandomParagraphs]="10"></div>
+            </div>
+
+            <div>
+              <h1 veeraNgToCSection="section-three-three">Section Three</h1>
+              <div [veeraNgStorybookRandomParagraphs]="10"></div>
+            </div>
+
+            <div>
+              <h1 veeraNgToCSection="section-three-four">Section Four</h1>
+              <div [veeraNgStorybookRandomParagraphs]="10"></div>
+            </div>
+
+            <div>
+              <h1 veeraNgToCSection="section-three-five">Section Five</h1>
+              <div [veeraNgStorybookRandomParagraphs]="10"></div>
+            </div>
+          </veera-ng-step-panel>
+
+          <veera-ng-table-of-contents title="Sisukord">
+            <veera-ng-table-of-contents-item label="Section One with a very long label that spans many lines" href="#section-three-one"></veera-ng-table-of-contents-item>
+            <veera-ng-table-of-contents-item label="Section Two" href="#section-three-two"></veera-ng-table-of-contents-item>
+            <veera-ng-table-of-contents-item label="Section Three" href="#section-three-three"></veera-ng-table-of-contents-item>
+            <veera-ng-table-of-contents-item label="Section Four" href="#section-three-four"></veera-ng-table-of-contents-item>
+            <veera-ng-table-of-contents-item label="Section Five" href="#section-three-five"></veera-ng-table-of-contents-item>
+          </veera-ng-table-of-contents>
+        </veera-ng-table-of-contents-wrapper>
+      </veera-ng-step>
+      <veera-ng-step>
+        <veera-ng-table-of-contents-wrapper [hideNavOnMobile]="true">
+          <veera-ng-step-panel title="Step Four">
+            <div>
+              <h1 veeraNgToCSection="section-four-one">Section One</h1>
+              <div [veeraNgStorybookRandomParagraphs]="10"></div>
+            </div>
+
+            <div>
+              <h1 veeraNgToCSection="section-four-two">Section Two</h1>
+              <div [veeraNgStorybookRandomParagraphs]="10"></div>
+            </div>
+
+            <div>
+              <h1 veeraNgToCSection="section-four-three">Section Three</h1>
+              <div [veeraNgStorybookRandomParagraphs]="10"></div>
+            </div>
+
+            <div>
+              <h1 veeraNgToCSection="section-four-four">Section Four</h1>
+              <div [veeraNgStorybookRandomParagraphs]="10"></div>
+            </div>
+
+            <div>
+              <h1 veeraNgToCSection="section-four-five">Section Five</h1>
+              <div [veeraNgStorybookRandomParagraphs]="10"></div>
+            </div>
+          </veera-ng-step-panel>
+
+          <veera-ng-table-of-contents title="Sisukord">
+            <veera-ng-table-of-contents-item label="Section One with a very long label that spans many lines" href="#section-four-one"></veera-ng-table-of-contents-item>
+            <veera-ng-table-of-contents-item label="Section Two" href="#section-four-two"></veera-ng-table-of-contents-item>
+            <veera-ng-table-of-contents-item label="Section Three" href="#section-four-three"></veera-ng-table-of-contents-item>
+            <veera-ng-table-of-contents-item label="Section Four" href="#section-four-four"></veera-ng-table-of-contents-item>
+            <veera-ng-table-of-contents-item label="Section Five" href="#section-four-five"></veera-ng-table-of-contents-item>
+          </veera-ng-table-of-contents>
+        </veera-ng-table-of-contents-wrapper>
+      </veera-ng-step>
+    </veera-ng-steps>
+  `,
+});
+
+export const WithStepsAndHeadingsWithIds =
+  TemplateWithStepsAndHeadingsWithIds.bind({});
+WithStepsAndHeadingsWithIds.storyName = 'With steps (ids on headings)';

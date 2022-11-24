@@ -45,7 +45,8 @@
       [
         "Table of contents wrapper",
         "Table of contents",
-        "Table of contents item"
+        "Table of contents item",
+        "Generated table of contents"
       ],
       "Textarea",
       "Notification",

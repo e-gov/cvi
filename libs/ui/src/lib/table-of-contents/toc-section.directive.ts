@@ -34,7 +34,8 @@ export class TableOfContentsSectionDirective implements OnInit, OnDestroy {
             this.tocService.setCurrentToCSection(this.sectionId);
           }
         });
-      }
+      },
+      { rootMargin: '0px 0px -50% 0px' }
     );
     this.intersectionObservable.observe(this.elementToObserve);
   }

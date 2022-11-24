@@ -32,6 +32,7 @@ export * from './lib/table-of-contents/toc-section.directive';
 export * from './lib/table-of-contents/table-of-contents-wrapper/table-of-contents-wrapper.component';
 export * from './lib/table-of-contents/table-of-contents/table-of-contents.component';
 export * from './lib/table-of-contents/table-of-contents-item/table-of-contents-item.component';
+export * from './lib/table-of-contents/generated-table-of-contents/generated-table-of-contents.component';
 export * from './lib/directives/data-attribute.directive';
 export * from './lib/breadcrumbs/breadcrumbs.component';
 export * from './lib/select/select-templates.directive';

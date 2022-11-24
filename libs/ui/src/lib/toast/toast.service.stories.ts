@@ -4,7 +4,7 @@ import notes from './toast.service.md';
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'veera-ng-toast-wrapper',
+  selector: 'veera-ng-storybook-toast-wrapper',
   template: `
     <veera-ng-track [gap]="4">
       <veera-ng-button (click)="openSuccessToast()"
@@ -59,7 +59,7 @@ const Template: Story = (args) => ({
     ...args,
   },
   template: `
-  <veera-ng-toast-wrapper></veera-ng-toast-wrapper>
+    <veera-ng-storybook-toast-wrapper></veera-ng-storybook-toast-wrapper>
   `,
 });
 export const Default = Template.bind({});

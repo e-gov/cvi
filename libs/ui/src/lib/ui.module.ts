@@ -62,6 +62,7 @@ import { DefaultToastConfig, TOAST_CONFIG } from './toast/toast-config';
 import { ToastComponent } from './toast/toast.component';
 import { ToastContainerComponent } from './toast/toast-container.component';
 import { TableOfContentsSectionDirective } from './table-of-contents/toc-section.directive';
+import { GeneratedTableOfContentsComponent } from './table-of-contents/generated-table-of-contents/generated-table-of-contents.component';
 import { TableOfContentsWrapperComponent } from './table-of-contents/table-of-contents-wrapper/table-of-contents-wrapper.component';
 import { TableOfContentsComponent } from './table-of-contents/table-of-contents/table-of-contents.component';
 import { TableOfContentsItemComponent } from './table-of-contents/table-of-contents-item/table-of-contents-item.component';
@@ -91,6 +92,7 @@ const components = [
   TableOfContentsWrapperComponent,
   TableOfContentsComponent,
   TableOfContentsItemComponent,
+  GeneratedTableOfContentsComponent,
   NotificationComponent,
   BreadcrumbsComponent,
   SelectComponent,

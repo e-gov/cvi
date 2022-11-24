@@ -1,4 +1,11 @@
-import { Component, HostBinding, Input } from '@angular/core';
+import {
+  Component,
+  HostBinding,
+  Input,
+  OnDestroy,
+  OnInit,
+  Renderer2,
+} from '@angular/core';
 import { Subscription } from 'rxjs';
 import { TableOfContentsService } from '../table-of-contents.service';
 
@@ -6,7 +13,7 @@ import { TableOfContentsService } from '../table-of-contents.service';
   selector: 'veera-ng-table-of-contents-item',
   templateUrl: './table-of-contents-item.component.html',
 })
-export class TableOfContentsItemComponent {
+export class TableOfContentsItemComponent implements OnInit, OnDestroy {
   /** Must be equal to a veeraNgToCSection directive value in order to have scroll tracking working */
   @Input() href!: string;
   @Input() label = '';
@@ -24,8 +31,12 @@ export class TableOfContentsItemComponent {
   }
 
   tocSubscription!: Subscription;
+  scrollListener: any;
 
-  constructor(private tocService: TableOfContentsService) {}
+  constructor(
+    private renderer: Renderer2,
+    private tocService: TableOfContentsService
+  ) {}
 
   ngOnInit() {
     this.tocSubscription = this.tocService.currentToCSection$.subscribe(
@@ -37,5 +48,17 @@ export class TableOfContentsItemComponent {
 
   ngOnDestroy() {
     this.tocSubscription.unsubscribe();
+    this.scrollListener = null;
+  }
+
+  onClick(): void {
+    let timer: any;
+    this.scrollListener = this.renderer.listen(window, 'scroll', () => {
+      clearTimeout(timer);
+
+      timer = setTimeout(() => {
+        this.tocService.setCurrentToCSection(this.href.slice(1));
+      }, 300);
+    });
   }
 }
