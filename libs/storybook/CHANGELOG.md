@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [0.11.0](https://stash.ria.ee/scm/sun/veera-components/compare/storybook-0.10.0...storybook-0.11.0) (2022-11-24)
+
+
+### Features
+
+* **ui:** added automatically generated ToC ([569c72f](https://stash.ria.ee/scm/sun/veera-components/commits/569c72f2e522b9a64e3e7a9a3051d5f7c4d40843))
+
+
+
 # [0.10.0](https://stash.ria.ee/scm/sun/veera-components/compare/storybook-0.9.1...storybook-0.10.0) (2022-11-21)
 
 
