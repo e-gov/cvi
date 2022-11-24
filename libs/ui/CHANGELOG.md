@@ -2,6 +2,21 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [2.6.0](https://stash.ria.ee/scm/sun/veera-components/compare/ui-2.5.0...ui-2.6.0) (2022-11-24)
+
+
+### Bug Fixes
+
+* input story (Pull request [#144](https://stash.ria.ee/scm/sun/veera-components/issues/144)) ([f7ad9c6](https://stash.ria.ee/scm/sun/veera-components/commits/f7ad9c6dba20142e9290a76520b28518b7fc0f7e))
+
+
+### Features
+
+* fix tab group ([52991ae](https://stash.ria.ee/scm/sun/veera-components/commits/52991ae1082af093ad70524ce1216d06ab70f7d7))
+* **ui:** added automatically generated ToC ([569c72f](https://stash.ria.ee/scm/sun/veera-components/commits/569c72f2e522b9a64e3e7a9a3051d5f7c4d40843))
+
+
+
 # [2.5.0](https://stash.ria.ee/scm/sun/veera-components/compare/ui-2.4.1...ui-2.5.0) (2022-11-23)
 
 
