@@ -99,7 +99,8 @@
       @include veera-breakpoint-down(sm) {
         color: get-color(black-coral-15);
         font-weight: $veera-font-weight-beta;
-        border-radius: $veera-radius-s;
+        border-top-left-radius: $veera-radius-s;
+        border-top-right-radius: $veera-radius-s;
         background-color: get-color(white);
         #{$base}.is-any-step-selected & {
           padding-inline: get-spacing('parnu');
@@ -297,7 +298,8 @@
         padding-block: get-spacing('kuressaare');
         background-color: get-color(white);
         box-shadow: $veera-shadow-gamma;
-        border-radius: $veera-radius-s;
+        border-bottom-left-radius: $veera-radius-s;
+        border-bottom-right-radius: $veera-radius-s;
       }
       @include veera-breakpoint-up(sm) {
         padding-top: get-spacing('kuressaare');
