@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [2.4.2](https://stash.ria.ee/scm/sun/veera-components/compare/styles-2.4.1...styles-2.4.2) (2022-11-25)
+
+
+### Bug Fixes
+
+* steps title in mobile view EBS-155 ([83f7746](https://stash.ria.ee/scm/sun/veera-components/commits/83f7746cf5705242939ce04a56b63cc0fb996054))
+
+
+
 ## [2.4.1](https://stash.ria.ee/scm/sun/veera-components/compare/styles-2.4.0...styles-2.4.1) (2022-11-22)
 
 
