@@ -2,6 +2,16 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [2.6.1](https://stash.ria.ee/scm/sun/veera-components/compare/ui-2.6.0...ui-2.6.1) (2022-11-28)
+
+
+### Bug Fixes
+
+* **ui:** fixed StepPanelComponent titles not loading in StepsComponent if provided through translations STPA-204 ([adfc0d7](https://stash.ria.ee/scm/sun/veera-components/commits/adfc0d7595b429d06ee9883c19a435d85c39bded))
+* **ui:** Include content headings delivered asynchronously to ToC in veera-ng-generated-table-of-contents STPA-204 ([0fa5705](https://stash.ria.ee/scm/sun/veera-components/commits/0fa57055f1683b545a05a01ae9a6465847b5ad0c))
+
+
+
 # [2.6.0](https://stash.ria.ee/scm/sun/veera-components/compare/ui-2.5.0...ui-2.6.0) (2022-11-24)
 
 
