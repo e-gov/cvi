@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.11.1](https://stash.ria.ee/scm/sun/veera-components/compare/storybook-0.11.0...storybook-0.11.1) (2022-11-28)
+
+
+### Bug Fixes
+
+* **ui:** fixed StepPanelComponent titles not loading in StepsComponent if provided through translations STPA-204 ([adfc0d7](https://stash.ria.ee/scm/sun/veera-components/commits/adfc0d7595b429d06ee9883c19a435d85c39bded))
+
+
+
 # [0.11.0](https://stash.ria.ee/scm/sun/veera-components/compare/storybook-0.10.0...storybook-0.11.0) (2022-11-24)
 
 
