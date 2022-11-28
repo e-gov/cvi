@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [2.6.2](https://stash.ria.ee/scm/sun/veera-components/compare/ui-2.6.1...ui-2.6.2) (2022-11-28)
+
+
+### Bug Fixes
+
+* **ui:** headingSelector property of veera-ng-generated-table-of-contents is now an input ([74db26a](https://stash.ria.ee/scm/sun/veera-components/commits/74db26ae31d41872861f936d909f90d42d2c5f42))
+
+
+
 ## [2.6.1](https://stash.ria.ee/scm/sun/veera-components/compare/ui-2.6.0...ui-2.6.1) (2022-11-28)
 
 
