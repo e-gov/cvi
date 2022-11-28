@@ -1,0 +1,9 @@
+{
+  "common": {
+    "steps": {
+      "title": "Abiellumine (Eesti keeles)",
+      "step1": "See on mingi tõesti hea tõlkimine @ngx-translate kaudu",
+      "step2": "See on teine tõesti hea tõlkimine @ngx-translate kaudu"
+    }
+  }
+}

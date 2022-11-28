@@ -9,6 +9,7 @@ import {
   HostBinding,
   Input,
   OnChanges,
+  OnDestroy,
   Output,
   QueryList,
   Renderer2,
@@ -16,6 +17,7 @@ import {
 } from '@angular/core';
 import { StepComponent } from '../step/step.component';
 import { StepPanelComponent } from '../step-panel/step-panel.component';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'veera-ng-steps',
@@ -23,7 +25,7 @@ import { StepPanelComponent } from '../step-panel/step-panel.component';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class StepsComponent
-  implements AfterViewInit, AfterContentInit, OnChanges
+  implements AfterViewInit, AfterContentInit, OnChanges, OnDestroy
 {
   @Input() title!: string;
 
@@ -39,8 +41,31 @@ export class StepsComponent
   @Input() currentProgressCSSVar = 0;
   @Input() anyStepSelected = false;
   @ContentChildren(StepComponent) stepChildren!: QueryList<StepComponent>;
+
+  panelSubscription!: Subscription;
+  _stepPanels!: QueryList<StepPanelComponent>;
   @ContentChildren(StepPanelComponent, { descendants: true })
-  stepPanels!: QueryList<StepPanelComponent>;
+  set stepPanels(panels: QueryList<StepPanelComponent>) {
+    if (this.panelSubscription) {
+      this.panelSubscription.unsubscribe();
+    }
+    this.panelSubscription = new Subscription();
+    this._stepPanels = panels;
+    this._stepPanels
+      .toArray()
+      .forEach((stepPanel: StepPanelComponent, i: number) => {
+        this.panelSubscription.add(
+          stepPanel.titleChangeSubject.subscribe((title: string) => {
+            if (this.stepTitles && title) {
+              this.stepTitles[i] = title;
+            }
+          })
+        );
+      });
+  }
+  get stepPanels() {
+    return this._stepPanels;
+  }
 
   constructor(private renderer: Renderer2, private cdRef: ChangeDetectorRef) {}
 
@@ -51,9 +76,7 @@ export class StepsComponent
   }
 
   ngAfterContentInit(): void {
-    this.stepTitles = this.stepPanels.map(
-      (step: StepPanelComponent) => step.title
-    );
+    this.updateTitles(this._stepPanels.toArray());
     if (this.currentStepIndex !== null) {
       this.anyStepSelected = true;
       this.setProgress(this.currentStepIndex);
@@ -65,20 +88,30 @@ export class StepsComponent
       this.hideStepsContent();
       this.cdRef.markForCheck();
     });
-    this.stepPanels.changes.subscribe((stepPanels) => {
-      this.stepTitles = stepPanels.map(
-        (stepPanel: StepPanelComponent) => stepPanel.title
-      );
+    this._stepPanels.changes.subscribe((stepPanels: StepPanelComponent[]) => {
+      this.updateTitles(stepPanels);
       this.cdRef.markForCheck();
     });
     this.hideStepsContent();
   }
 
-  ngOnChanges(changes: SimpleChanges) {
+  ngOnChanges(changes: SimpleChanges): void {
     const stepIndexChange = changes['stepIndex'];
     if (stepIndexChange && this.stepChildren) {
       this.stepSelected(stepIndexChange.currentValue);
     }
+  }
+
+  ngOnDestroy(): void {
+    if (this.panelSubscription) {
+      this.panelSubscription.unsubscribe();
+    }
+  }
+
+  updateTitles(stepPanels: StepPanelComponent[]) {
+    this.stepTitles = stepPanels.map(
+      (stepPanel: StepPanelComponent) => stepPanel.title
+    );
   }
 
   stepSelected(stepIndex: number): void {

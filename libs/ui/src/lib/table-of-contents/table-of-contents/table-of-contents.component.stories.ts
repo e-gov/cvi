@@ -23,7 +23,7 @@ const Template: Story<TableOfContentsComponent> = (
   },
   /* template */
   template: `
-    <veera-ng-table-of-contents-wrapper [hasTableOfContents]="false">
+    <veera-ng-table-of-contents-wrapper>
       <div>
         <div veeraNgToCSection="section-one">
           <h1>Section One</h1>

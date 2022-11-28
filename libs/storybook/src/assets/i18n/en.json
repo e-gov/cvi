@@ -1,0 +1,9 @@
+{
+  "common": {
+    "steps": {
+      "title": "Abiellumine (English translation)",
+      "step1": "This is an English translation provided via @ngx-translate",
+      "step2": "This is another English thing provided via @ngx-translate"
+    }
+  }
+}

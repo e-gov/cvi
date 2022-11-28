@@ -65,6 +65,10 @@ const Template: Story<StepsComponent> = (args: StepsComponent) => ({
 });
 
 export const Default = Template.bind({});
+export const DefaultWithSelectedStep = Template.bind({});
+DefaultWithSelectedStep.args = {
+  currentStepIndex: 0,
+};
 
 export const Mobile = Template.bind({});
 Mobile.parameters = {
@@ -95,7 +99,7 @@ const TemplateObservableTitles: Story = (args) => ({
   props: {
     ...args,
     labels$: from([['First', 'Second', 'Third']]).pipe(
-      concatMap((item) => of(item).pipe(delay(100)))
+      concatMap((item) => of(item).pipe(delay(1000)))
     ),
   },
   /* template */
@@ -114,3 +118,40 @@ const TemplateObservableTitles: Story = (args) => ({
 
 export const WithObservableTitles = TemplateObservableTitles.bind({});
 WithObservableTitles.args = {};
+
+const TemplateWithTranslations: Story<StepsComponent> = (
+  args: StepsComponent
+) => ({
+  component: StepsComponent,
+  props: {
+    ...args,
+  },
+  /* template */
+  template: `
+    <veera-ng-steps [title]="'common.steps.title' | translate" [currentStepIndex]="currentStepIndex" [hasTableOfContents]="hasTableOfContents">
+      <p veera-steps="after-title" dataAttribute="steps-description">You can now add custom content before steps</p>
+      <veera-ng-step dataAttribute="step_1">
+        <veera-ng-step-panel [title]="'common.steps.step1' | translate">
+          <veera-ng-html-section html="{{ stepsContent[0] }}"></veera-ng-html-section>
+        </veera-ng-step-panel>
+      </veera-ng-step>
+      <veera-ng-step dataAttribute="step_2">
+        <veera-ng-step-panel [title]="'common.steps.step2' | translate">
+          {{ stepsContent[1] }}
+        </veera-ng-step-panel>
+      </veera-ng-step>
+      <veera-ng-step dataAttribute="step_3">
+        <veera-ng-step-panel title="Third">
+          {{ stepsContent[2] }}
+        </veera-ng-step-panel>
+      </veera-ng-step>
+      <veera-ng-step dataAttribute="step_4">
+        <veera-ng-step-panel title="Fourth">
+          {{ stepsContent[3] }}
+        </veera-ng-step-panel>
+      </veera-ng-step>
+    </veera-ng-steps>
+  `,
+});
+
+export const WithTranslations = TemplateWithTranslations.bind({});

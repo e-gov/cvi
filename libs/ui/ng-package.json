@@ -4,5 +4,11 @@
   "lib": {
     "entryFile": "src/index.ts"
   },
-  "allowedNonPeerDependencies": ["sanitize-html", "rxjs", "@ria/veera-icons"]
+  "allowedNonPeerDependencies": [
+    "sanitize-html",
+    "rxjs",
+    "@ria/veera-icons",
+    "@ngx-translate/core",
+    "@ngx-translate/http-loader"
+  ]
 }
