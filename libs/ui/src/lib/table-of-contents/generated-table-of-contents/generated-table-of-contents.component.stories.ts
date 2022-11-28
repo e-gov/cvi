@@ -17,7 +17,7 @@ import { concatMap, delay, from, of } from 'rxjs';
     </div>
     <div>
       <div>
-        <h2>A nested heading: string baby explore</h2>
+        <h2>A nested h2 heading: string baby explore</h2>
       </div>
       <div [veeraNgStorybookRandomParagraphs]="10"></div>
     </div>
@@ -41,13 +41,13 @@ class StorybookToCHTMLExampleComponent {}
     </div>
     <div>
       <div>
-        <h2>A nested heading 1: string baby explore</h2>
+        <h2>A nested h2 heading 1: string baby explore</h2>
       </div>
       <div [veeraNgStorybookRandomParagraphs]="10"></div>
     </div>
     <div>
       <div>
-        <h2>A nested heading 2: string baby explore</h2>
+        <h2>A nested h2 heading 2: string baby explore</h2>
       </div>
       <div [veeraNgStorybookRandomParagraphs]="10"></div>
     </div>
@@ -81,6 +81,7 @@ export default {
   ],
   args: {
     title: 'Sisukord',
+    headingSelector: 'h1, h2, h3',
   },
 } as Meta;
 
@@ -93,13 +94,18 @@ const Template: Story<GeneratedTableOfContentsComponent> = (
   },
   /* template */
   template: `
-    <veera-ng-generated-table-of-contents [title]="title">
+    <veera-ng-generated-table-of-contents [title]="title" [headingSelector]="headingSelector">
       <veera-ng-storybook-toc-html-example></veera-ng-storybook-toc-html-example>
     </veera-ng-generated-table-of-contents>
   `,
 });
 
 export const Default = Template.bind({});
+
+export const WithCustomHeadingLevels = Template.bind({});
+WithCustomHeadingLevels.args = {
+  headingSelector: 'h1, h2',
+};
 
 const TemplateWithSteps: Story<GeneratedTableOfContentsComponent> = (
   args: GeneratedTableOfContentsComponent
@@ -136,7 +142,21 @@ const TemplateWithSteps: Story<GeneratedTableOfContentsComponent> = (
       <veera-ng-step>
         <veera-ng-generated-table-of-contents [title]="title">
           <veera-ng-step-panel title="Step Two">
-            <veera-ng-storybook-toc-html-steps-example></veera-ng-storybook-toc-html-steps-example>
+            <div>
+              <div [veeraNgStorybookRandomParagraphs]="2"></div>
+                <h2>Some random h2</h2>
+                <div [veeraNgStorybookRandomParagraphs]="10"></div>
+            </div>
+            <div>
+              <h3>A random h3 heading with a lot of sense in it</h3>
+              <div [veeraNgStorybookRandomParagraphs]="10"></div>
+            </div>
+            <div>
+              <div>
+                <h2>Papadiboopi</h2>
+              </div>
+              <div [veeraNgStorybookRandomParagraphs]="10"></div>
+            </div>
           </veera-ng-step-panel>
         </veera-ng-generated-table-of-contents>
       </veera-ng-step>

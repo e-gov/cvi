@@ -19,12 +19,12 @@ export class GeneratedTableOfContentsComponent
 {
   /** This prop will be passed to veera-ng-table-of-contents */
   @Input() title!: string;
+  @Input() headingSelector = 'h1, h2, h3';
 
   /** The internal marker is needed because of this Storybook bug https://github.com/storybookjs/storybook/issues/17004 */
   /** @internal */
   tocItems: TocItem[] = [];
   domMutations!: MutationObserver;
-  headingSelector = 'h1, h2, h3';
 
   @HostBinding('class') get getHostClasses(): string {
     return `veera-generated-table-of-contents`;
