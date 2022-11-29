@@ -23,8 +23,8 @@ describe('StepsComponent', () => {
         'is-past',
         'is-current',
       ])
-      .shouldNotBeVisibleA11y('[data-cy="step_1"]')
-      .shouldBeVisibleA11y('[data-cy="step_2"]')
+      .shouldNotBeVisible('[data-cy="step_1"]')
+      .shouldBeVisible('[data-cy="step_2"]')
       .shouldExist([
         '[data-cy="previous_step_button_1"]',
         '[data-cy="next_step_button_0"]',

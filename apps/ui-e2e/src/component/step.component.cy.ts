@@ -20,6 +20,7 @@ describe('StepComponent', () => {
           .get('veera-ng-icon')
           .shouldHaveClasses('svg', 'veera-steps__list-item-arrow-icon');
       })
-      .shouldHaveClasses('veera-ng-step', ['veera-steps__step', 'is-current']);
+      .shouldBeVisible('[data-cy="step_1"]')
+      .shouldNotBeVisible('[data-cy="step_2"]');
   });
 });

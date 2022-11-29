@@ -19,12 +19,12 @@ const Template: Story<StepComponent> = (args: StepComponent) => ({
   /* template */
   template: `
     <veera-ng-steps title="Abiellumine" [currentStepIndex]="0">
-      <veera-ng-step veeraNgStorybookCurrentComponent>
+      <veera-ng-step dataAttribute="step_1" veeraNgStorybookCurrentComponent>
         <veera-ng-step-panel title="The title">
           Some content for the first step
         </veera-ng-step-panel>
       </veera-ng-step>
-      <veera-ng-step veeraNgStorybookCurrentComponent>
+      <veera-ng-step dataAttribute="step_2" veeraNgStorybookCurrentComponent>
         <veera-ng-step-panel title="Another step">
           Some content
         </veera-ng-step-panel>

@@ -12,7 +12,6 @@ import {
   OnDestroy,
   Output,
   QueryList,
-  Renderer2,
   SimpleChanges,
 } from '@angular/core';
 import { StepComponent } from '../step/step.component';
@@ -67,12 +66,18 @@ export class StepsComponent
     return this._stepPanels;
   }
 
-  constructor(private renderer: Renderer2, private cdRef: ChangeDetectorRef) {}
+  constructor(private cdRef: ChangeDetectorRef) {}
 
   @HostBinding('class') get getHostClasses(): string {
     return `veera-steps${this.anyStepSelected ? ' is-any-step-selected' : ''}${
       this.hasTableOfContents ? ' has-toc' : ''
     }`;
+  }
+
+  @HostBinding('style.--current-step') get getCurrentStepAsCSSVar(): string {
+    return this.currentStepIndex === null
+      ? ''
+      : `'${this.currentStepIndex + 1}'`;
   }
 
   ngAfterContentInit(): void {
@@ -81,6 +86,7 @@ export class StepsComponent
       this.anyStepSelected = true;
       this.setProgress(this.currentStepIndex);
     }
+    this.hideStepsContent();
   }
 
   ngAfterViewInit(): void {
@@ -92,7 +98,6 @@ export class StepsComponent
       this.updateTitles(stepPanels);
       this.cdRef.markForCheck();
     });
-    this.hideStepsContent();
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -127,13 +132,7 @@ export class StepsComponent
 
   hideStepsContent(): void {
     this.stepChildren.map((step: StepComponent, stepIndex: number) => {
-      const domNode: HTMLElement = step.ref.nativeElement;
-
-      if (stepIndex === this.currentStepIndex) {
-        this.renderer.addClass(domNode, 'is-current');
-      } else {
-        this.renderer.removeClass(domNode, 'is-current');
-      }
+      step.isVisible = stepIndex === this.currentStepIndex;
     });
   }
 

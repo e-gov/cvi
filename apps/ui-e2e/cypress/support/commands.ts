@@ -161,7 +161,7 @@ Cypress.Commands.add('storyAction', (actionName) => {
 });
 
 Cypress.Commands.add('runStepsCommonTest', () => {
-  cy.shouldNotBeVisibleA11y('[data-cy="step_1"]')
+  cy.shouldNotBeVisible('[data-cy="step_1"]')
     .shouldNotHaveClasses('[data-cy="veera-steps__list-item_0"]', [
       'is-past',
       'is-current',
@@ -171,7 +171,7 @@ Cypress.Commands.add('runStepsCommonTest', () => {
       'is-past',
       'is-current',
     ])
-    .shouldBeVisibleA11y('[data-cy="step_1"]')
+    .shouldBeVisible('[data-cy="step_1"]')
     .shouldNotExist('[data-cy="previous_step_button_0"]')
     .shouldExist('[data-cy="next_step_button_0"]');
 });
