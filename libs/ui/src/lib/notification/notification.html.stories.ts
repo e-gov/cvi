@@ -11,7 +11,7 @@ const Template: Story = (args) => ({
   /* template */
   template: `
     <div class="veera-notification veera-notification--severity-info">
-      <button aria-label="close-button" type="button" class="veera-notification__close-button">
+      <button aria-label="Close" type="button" class="veera-notification__close-button">
         <div class="veera-notification__close-button-inner">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" class="veera-notification__close-button-icon">
             <path d="M14 1.4 12.6 0 7 5.6 1.4 0 0 1.4 5.6 7 0 12.6 1.4 14 7 8.4l5.6 5.6 1.4-1.4L8.4 7 14 1.4z"></path>
