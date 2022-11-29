@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [2.6.5](https://stash.ria.ee/scm/sun/veera-components/compare/ui-2.6.4...ui-2.6.5) (2022-11-29)
+
+
+### Bug Fixes
+
+* **ui:** wrong label in aria-label attribute of a close button in notification component ([41a2d7e](https://stash.ria.ee/scm/sun/veera-components/commits/41a2d7ec4130a02afd7ff12985df7b732cbbe697))
+
+
+
 ## [2.6.4](https://stash.ria.ee/scm/sun/veera-components/compare/ui-2.6.3...ui-2.6.4) (2022-11-29)
 
 
