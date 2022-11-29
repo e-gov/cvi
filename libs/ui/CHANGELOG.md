@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [2.6.4](https://stash.ria.ee/scm/sun/veera-components/compare/ui-2.6.3...ui-2.6.4) (2022-11-29)
+
+
+### Bug Fixes
+
+* steps intro margin STPA-204 ([fd3ee16](https://stash.ria.ee/scm/sun/veera-components/commits/fd3ee164819ee31e3cd1db5fc7915f8cf3f38486))
+
+
+
 ## [2.6.3](https://stash.ria.ee/scm/sun/veera-components/compare/ui-2.6.2...ui-2.6.3) (2022-11-29)
 
 
