@@ -52,3 +52,25 @@ export const Text = Template.bind({});
 Text.args = {
   appearance: 'text',
 };
+
+const TemplateTextWithIcon: Story<ButtonComponent> = (args: ButtonComponent) => ({
+  props: args,
+  /* template */
+  template: `
+    <veera-ng-button [appearance]="appearance">
+      <veera-ng-labeled-icon [name]="'add'" [iconPosition]="'before'" [alignment]="'center'" [iconClass]="'size-20'">
+        {{ content }}
+      </veera-ng-labeled-icon>
+    </veera-ng-button>
+  `,
+  styles: [
+    `::ng-deep .size-20 {
+      height: 20px;
+    }`,
+  ],
+});
+
+export const TextWithIcon = TemplateTextWithIcon.bind({});
+TextWithIcon.args = {
+  appearance: 'text',
+};
