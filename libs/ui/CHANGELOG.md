@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [2.6.3](https://stash.ria.ee/scm/sun/veera-components/compare/ui-2.6.2...ui-2.6.3) (2022-11-29)
+
+
+### Bug Fixes
+
+* **ui:** refactored hiding steps to perhaps avoid steps content mixing ([9253274](https://stash.ria.ee/scm/sun/veera-components/commits/925327403083c684453c427578254b73173c0c9b))
+
+
+
 ## [2.6.2](https://stash.ria.ee/scm/sun/veera-components/compare/ui-2.6.1...ui-2.6.2) (2022-11-28)
 
 
