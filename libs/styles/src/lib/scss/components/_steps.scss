@@ -56,6 +56,7 @@
     }
 
     #{$base}__intro {
+      margin-bottom: get-spacing('haapsalu');
       @include veera-breakpoint-down(sm) {
         #{$base}.is-any-step-selected & {
           display: none;

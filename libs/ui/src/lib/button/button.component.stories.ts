@@ -53,7 +53,9 @@ Text.args = {
   appearance: 'text',
 };
 
-const TemplateTextWithIcon: Story<ButtonComponent> = (args: ButtonComponent) => ({
+const TemplateTextWithIcon: Story<ButtonComponent> = (
+  args: ButtonComponent
+) => ({
   props: args,
   /* template */
   template: `
