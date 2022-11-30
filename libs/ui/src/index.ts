@@ -1,4 +1,5 @@
 export * from './lib/ui.module';
+export * from './lib/content-container/content-container.component';
 export * from './lib/button/button.component';
 export * from './lib/button/button';
 export * from './lib/form-item/form-item.component';

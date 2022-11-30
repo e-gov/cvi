@@ -1,0 +1,11 @@
+@mixin veera-content-container($base: &) {
+  --comment: 'A main content area on the page';
+
+  display: block;
+  max-width: 1200px;
+  padding-inline: get-spacing('elva');
+  margin-inline: auto;
+
+  @at-root {
+  }
+}

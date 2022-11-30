@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
 import { TrackComponent } from './track/track.component';
+import { ContentContainerComponent } from './content-container/content-container.component';
 import { ButtonComponent } from './button/button.component';
 import { FormItemComponent } from './form-item/form-item.component';
 import { InputComponent } from './input/input.component';
@@ -71,6 +72,7 @@ import { TableOfContentsItemComponent } from './table-of-contents/table-of-conte
 
 const components = [
   TrackComponent,
+  ContentContainerComponent,
   ButtonComponent,
   InputComponent,
   FormItemComponent,
