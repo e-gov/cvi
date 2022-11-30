@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [2.7.2](https://stash.ria.ee/scm/sun/veera-components/compare/ui-2.7.1...ui-2.7.2) (2022-11-30)
+
+
+### Bug Fixes
+
+* container overflow STPA-204 EBS-172 (Pull request [#156](https://stash.ria.ee/scm/sun/veera-components/issues/156)) ([6533a65](https://stash.ria.ee/scm/sun/veera-components/commits/6533a6557c1b8ca95c4140fcd96fd54201e6507d))
+
+
+
 ## [2.7.1](https://stash.ria.ee/scm/sun/veera-components/compare/ui-2.7.0...ui-2.7.1) (2022-11-30)
 
 
