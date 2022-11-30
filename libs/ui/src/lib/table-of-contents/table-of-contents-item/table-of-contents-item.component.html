@@ -1,1 +1,3 @@
-<a [href]="href" (click)="onClick()" class="veera-table-of-contents__aside-list-item-link">{{ label }}</a>
+<a [href]="fullHref"
+   (click)="$event.stopPropagation();"
+   class="veera-table-of-contents__aside-list-item-link">{{ label }}</a>

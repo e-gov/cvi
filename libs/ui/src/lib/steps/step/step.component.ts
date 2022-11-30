@@ -21,7 +21,7 @@ export class StepComponent {
   private _isVisible = false;
   set isVisible(isVisible) {
     this._isVisible = isVisible;
-    this.cdRef.markForCheck();
+    this.cdRef.detectChanges();
   }
   get isVisible() {
     return this._isVisible;

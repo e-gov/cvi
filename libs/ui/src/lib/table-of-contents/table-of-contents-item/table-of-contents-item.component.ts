@@ -1,4 +1,5 @@
 import {
+  ChangeDetectionStrategy,
   Component,
   HostBinding,
   Input,
@@ -12,6 +13,7 @@ import { TableOfContentsService } from '../table-of-contents.service';
 @Component({
   selector: 'veera-ng-table-of-contents-item',
   templateUrl: './table-of-contents-item.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TableOfContentsItemComponent implements OnInit, OnDestroy {
   /** Must be equal to a veeraNgToCSection directive value in order to have scroll tracking working */
@@ -20,18 +22,24 @@ export class TableOfContentsItemComponent implements OnInit, OnDestroy {
 
   @HostBinding('attr.role') roleAttr = 'listitem';
   @HostBinding('class.is-current') current = false;
+
   @HostBinding('class') get getHostClasses(): string {
     return `veera-table-of-contents__aside-list-item`;
   }
+
   @HostBinding('attr.href') get getHref(): null {
     return null;
   }
+
   @HostBinding('attr.label') get getLabel(): null {
     return null;
   }
 
+  get fullHref() {
+    return location.href.split('#')[0] + this.href;
+  }
+
   tocSubscription!: Subscription;
-  scrollListener: any;
 
   constructor(
     private renderer: Renderer2,
@@ -48,17 +56,5 @@ export class TableOfContentsItemComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.tocSubscription.unsubscribe();
-    this.scrollListener = null;
-  }
-
-  onClick(): void {
-    let timer: any;
-    this.scrollListener = this.renderer.listen(window, 'scroll', () => {
-      clearTimeout(timer);
-
-      timer = setTimeout(() => {
-        this.tocService.setCurrentToCSection(this.href.slice(1));
-      }, 300);
-    });
   }
 }

@@ -1,11 +1,17 @@
-import { Component, HostBinding, Input } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  HostBinding,
+  Input,
+} from '@angular/core';
 
 @Component({
   selector: 'veera-ng-table-of-contents',
   templateUrl: './table-of-contents.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TableOfContentsComponent {
-  @HostBinding('attr.aria-label') @Input() title = '';
+  @HostBinding('attr.aria-label') @Input() title!: string | null;
 
   @HostBinding('attr.role') roleAttr = 'navigation';
   @HostBinding('class') get getHostClasses(): string {

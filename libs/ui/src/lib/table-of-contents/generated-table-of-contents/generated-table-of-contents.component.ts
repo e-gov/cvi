@@ -1,11 +1,15 @@
 import {
   AfterViewInit,
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
   Component,
   ElementRef,
   HostBinding,
   Input,
+  OnChanges,
   OnDestroy,
   Renderer2,
+  SimpleChanges,
   ViewChild,
 } from '@angular/core';
 import { TableOfContentsService } from '../table-of-contents.service';
@@ -13,9 +17,10 @@ import { TableOfContentsService } from '../table-of-contents.service';
 @Component({
   selector: 'veera-ng-generated-table-of-contents',
   templateUrl: './generated-table-of-contents.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class GeneratedTableOfContentsComponent
-  implements AfterViewInit, OnDestroy
+  implements AfterViewInit, OnChanges, OnDestroy
 {
   /** This prop will be passed to veera-ng-table-of-contents */
   @Input() title!: string;
@@ -25,16 +30,26 @@ export class GeneratedTableOfContentsComponent
   /** @internal */
   tocItems: TocItem[] = [];
   domMutations!: MutationObserver;
+  timeout!: NodeJS.Timeout;
 
   @HostBinding('class') get getHostClasses(): string {
     return `veera-generated-table-of-contents`;
   }
+
   @ViewChild('content') content!: ElementRef;
 
   constructor(
     private renderer: Renderer2,
-    private tocService: TableOfContentsService
+    private tocService: TableOfContentsService,
+    private cdRef: ChangeDetectorRef
   ) {}
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (this.domMutations && changes['title']) {
+      clearTimeout(this.timeout);
+      this.timeout = setTimeout(() => this.buildToc(), 1);
+    }
+  }
 
   ngAfterViewInit(): void {
     this.buildToc();
@@ -66,6 +81,7 @@ export class GeneratedTableOfContentsComponent
       });
     }
     this.domMutations.disconnect();
+    clearTimeout(this.timeout);
   }
 
   buildToc(): void {
@@ -101,10 +117,11 @@ export class GeneratedTableOfContentsComponent
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             this.tocService.setCurrentToCSection(anchorId);
+            this.cdRef.markForCheck();
           }
         });
       },
-      { rootMargin: '0px 0px -50% 0px' }
+      { rootMargin: '0px', threshold: [1] }
     );
     intersectionObservable.observe(headingEl);
     return intersectionObservable;
