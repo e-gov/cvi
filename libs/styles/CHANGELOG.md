@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [2.6.0](https://stash.ria.ee/scm/sun/veera-components/compare/styles-2.5.1...styles-2.6.0) (2022-11-30)
+
+
+### Features
+
+* **ui:** added ContentContainerComponent STPA-204 EBS-170 ([2af5727](https://stash.ria.ee/scm/sun/veera-components/commits/2af5727a79f149980b6fafef411d714bea6837e2))
+
+
+
 ## [2.5.1](https://stash.ria.ee/scm/sun/veera-components/compare/styles-2.5.0...styles-2.5.1) (2022-11-30)
 
 
