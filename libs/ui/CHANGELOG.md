@@ -2,6 +2,20 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [2.7.0](https://stash.ria.ee/scm/sun/veera-components/compare/ui-2.6.5...ui-2.7.0) (2022-11-30)
+
+
+### Bug Fixes
+
+* word break STPA-204 (Pull request [#153](https://stash.ria.ee/scm/sun/veera-components/issues/153)) ([cd7753c](https://stash.ria.ee/scm/sun/veera-components/commits/cd7753c01a5b97d9a0d8877a243a006000e669cc))
+
+
+### Features
+
+* add character counter directive STPA-204 ([28ccbda](https://stash.ria.ee/scm/sun/veera-components/commits/28ccbdad662025a76adac37d93997f50b2ce22cf))
+
+
+
 ## [2.6.5](https://stash.ria.ee/scm/sun/veera-components/compare/ui-2.6.4...ui-2.6.5) (2022-11-29)
 
 
