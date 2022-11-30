@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [2.7.1](https://stash.ria.ee/scm/sun/veera-components/compare/ui-2.7.0...ui-2.7.1) (2022-11-30)
+
+
+### Bug Fixes
+
+* toc STPA-204 ([fa16e2e](https://stash.ria.ee/scm/sun/veera-components/commits/fa16e2e34f4e1f714b0ed3b1b19868c089b09fe8))
+
+
+
 # [2.7.0](https://stash.ria.ee/scm/sun/veera-components/compare/ui-2.6.5...ui-2.7.0) (2022-11-30)
 
 
