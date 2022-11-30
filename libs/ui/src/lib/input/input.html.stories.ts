@@ -21,3 +21,16 @@ const Template: Story = (args) => ({
 
 export const Primary = Template.bind({});
 Primary.args = {};
+
+const CharacterCounterTemplate: Story = (args) => ({
+  props: args,
+  /* template */
+  template: `
+    <span class="veera-textfield">
+      <input type="text" class="veera-textfield__input" id="some-id" />
+      <div class="veera-character-counter">0 / 10</div>
+    </span>
+  `,
+});
+
+export const WithCharacterCounter = CharacterCounterTemplate.bind({});

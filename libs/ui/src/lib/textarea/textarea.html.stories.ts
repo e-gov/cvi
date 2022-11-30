@@ -29,3 +29,21 @@ const Template: Story = (args) => ({
 
 export const Default = Template.bind({});
 Default.args = {};
+
+const CharacterCounterTemplate: Story = (args) => ({
+  props: args,
+  /* template */
+  template: `
+    <textarea class="c-textarea"
+              [placeholder]="placeholder"
+              [maxLength]="maxLength"
+              cdkTextareaAutosize
+              #autosize="cdkTextareaAutosize"
+              [cdkAutosizeMinRows]="minRows"
+              [cdkAutosizeMaxRows]="maxRows"
+    ></textarea>
+    <div class="veera-character-counter">0 / 2000</div>
+  `,
+});
+
+export const WithCharacterCounter = CharacterCounterTemplate.bind({});

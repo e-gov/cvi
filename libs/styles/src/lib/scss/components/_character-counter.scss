@@ -1,0 +1,4 @@
+@mixin veera-character-counter($base: &) {
+  text-align: right;
+  font-size: $veera-font-size-80;
+}

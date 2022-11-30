@@ -61,6 +61,8 @@ import { TabGroupComponent } from './tabs/tab-group.component';
 import { DefaultToastConfig, TOAST_CONFIG } from './toast/toast-config';
 import { ToastComponent } from './toast/toast.component';
 import { ToastContainerComponent } from './toast/toast-container.component';
+import { CharacterCounterComponent } from './character-counter/character-counter.component';
+import { CharacterCounterDirective } from './character-counter/character-counter.directive';
 import { TableOfContentsSectionDirective } from './table-of-contents/toc-section.directive';
 import { GeneratedTableOfContentsComponent } from './table-of-contents/generated-table-of-contents/generated-table-of-contents.component';
 import { TableOfContentsWrapperComponent } from './table-of-contents/table-of-contents-wrapper/table-of-contents-wrapper.component';
@@ -105,6 +107,8 @@ const components = [
   TabGroupComponent,
   ToastComponent,
   ToastContainerComponent,
+  CharacterCounterComponent,
+  CharacterCounterDirective,
 ];
 
 const pipes = [SafeHtmlPipe, NotificationSeverityToHeaderIconPipe];

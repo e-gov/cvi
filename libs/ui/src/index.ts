@@ -45,3 +45,5 @@ export * from './lib/toast/toast.component';
 export * from './lib/toast/toast-container.component';
 export * from './lib/toast/overlay';
 export * from './lib/track/track.component';
+export * from './lib/character-counter/character-counter.component';
+export * from './lib/character-counter/character-counter.directive';

@@ -15,3 +15,14 @@ const Template: Story<TextareaComponent> = (args: TextareaComponent) => ({
 
 export const Default = Template.bind({});
 Default.args = {};
+
+const CharacterCounterTemplate: Story<TextareaComponent> = (
+  args: TextareaComponent
+) => ({
+  props: args,
+  template: `
+    <veera-ng-textarea veeraNgCharacterCounter [maxChars]="30"></veera-ng-textarea>
+  `,
+});
+
+export const WithCharacterCounter = CharacterCounterTemplate.bind({});

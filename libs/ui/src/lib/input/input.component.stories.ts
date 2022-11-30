@@ -58,3 +58,18 @@ const FormTemplate: Story<InputComponent> = (args: InputComponent) => {
   };
 };
 export const Form = FormTemplate.bind({});
+
+const CharacterCounterTemplate: Story<InputComponent> = (
+  args: InputComponent
+) => ({
+  props: args,
+  template: `
+    <veera-ng-input [placeholder]="placeholder"
+                    [disabled]="disabled"
+                    [htmlId]="htmlId"
+                    veeraNgCharacterCounter
+                    [maxChars]="10"></veera-ng-input>
+  `,
+});
+
+export const WithCharacterCounter = CharacterCounterTemplate.bind({});

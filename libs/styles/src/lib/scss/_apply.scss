@@ -66,6 +66,10 @@
   @include veera-feedback;
 }
 
+.veera-character-counter {
+  @include veera-character-counter;
+}
+
 .veera-table-of-contents {
   @include veera-table-of-contents;
 }
