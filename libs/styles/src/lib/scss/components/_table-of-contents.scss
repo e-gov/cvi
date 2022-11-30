@@ -5,6 +5,10 @@
   gap: var(--veera-steps--gap, #{get-spacing('kuressaare')});
 
   @at-root {
+    #{$base}__content {
+      min-width: 0;
+    }
+
     #{$base}__aside {
       min-width: var(--veera-steps--panel-margin, 25%);
       width: var(--veera-steps--panel-margin, 25%);
