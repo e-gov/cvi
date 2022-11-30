@@ -8,6 +8,7 @@
 
     #{$base}__content-elements {
       margin-top: 0;
+      min-width: 0;
     }
   }
 
@@ -67,5 +68,10 @@
       display: inline-block;
       vertical-align: middle;
     }
+  }
+
+  p {
+    overflow-wrap: break-word;
+    min-width: 0;
   }
 }

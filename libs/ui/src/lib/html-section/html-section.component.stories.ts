@@ -37,7 +37,27 @@ const Template: Story<HtmlSectionComponent> = (args: HtmlSectionComponent) => ({
 export const Default = Template.bind({});
 Default.args = {};
 
-export const Contacts = Template.bind({});
+const TemplateWithWidth: Story<HtmlSectionComponent> = (
+  args: HtmlSectionComponent
+) => ({
+  props: {
+    ...args,
+  },
+  template: `
+    <div class="container">
+      <veera-ng-html-section [html]="html" [sanitize]="sanitize"></veera-ng-html-section>
+    </div>
+  `,
+  styles: [
+    `.container {
+      width: 400px;
+      background-color: #ccc;
+      padding: 20px;
+    }`,
+  ],
+});
+
+export const Contacts = TemplateWithWidth.bind({});
 Contacts.args = {
   html: `
     <h3 class="veera-html-section__title">Kontaktid</h3>
