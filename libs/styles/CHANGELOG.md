@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [2.7.0](https://stash.ria.ee/scm/sun/veera-components/compare/styles-2.6.0...styles-2.7.0) (2022-12-01)
+
+
+### Features
+
+* modal component EBS-119, STPA-220 (Pull request [#137](https://stash.ria.ee/scm/sun/veera-components/issues/137)) ([835cbdf](https://stash.ria.ee/scm/sun/veera-components/commits/835cbdfe9ea02ec5892f09eb7ffaf241286b631b))
+
+
+
 # [2.6.0](https://stash.ria.ee/scm/sun/veera-components/compare/styles-2.5.1...styles-2.6.0) (2022-11-30)
 
 
