@@ -1,0 +1,16 @@
+<h2 *ngIf="title" id="modal_title" class="veera-modal__title">
+  {{ title }}
+</h2>
+<div class="veera-modal__content">
+  <ng-content></ng-content>
+</div>
+<div class="veera-modal__footer">
+  <veera-ng-track direction="verticalReverseOnMobile" horizontalAlignment="right" [gap]="2">
+    <veera-ng-button *ngIf="cancelButtonText" appearance="secondary" (click)="cancelled.emit()" dataAttribute="modal-cancel">
+      {{ cancelButtonText }}
+    </veera-ng-button>
+    <veera-ng-button *ngIf="confirmButtonText" (click)="confirmed.emit()" dataAttribute="modal-confirm">
+      {{ confirmButtonText }}
+    </veera-ng-button>
+  </veera-ng-track>
+</div>

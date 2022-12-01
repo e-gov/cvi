@@ -1,0 +1,14 @@
+@use 'sass:map';
+
+@function get-z-index($group-name, $element-name) {
+  $groups: $veera-z-indexes;
+
+  $group-name: unquote($group-name);
+  $element-name: unquote($element-name);
+  $group-index: index(map.keys($groups), $group-name);
+  $element-index: index(map.get($groups, $group-name), $element-name);
+  @if $group-index == null or $element-index == null {
+    @warn "Group (#{$group-name}) or element name (#{$element-name}) provided to the z() function is absent from the $veera-z-indexes map!";
+  }
+  @return if($group-index != null and $element-index != null, $group-index * 10 + $element-index, null);
+}

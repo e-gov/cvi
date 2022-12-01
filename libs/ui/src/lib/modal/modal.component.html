@@ -1,0 +1,7 @@
+<div class="veera-modal__dialog" role="dialog" aria-labelledby="modal_title" cdkTrapFocus>
+  <button class="veera-modal__close" (click)="closeModal()">
+    <veera-ng-icon [name]="'close'" [height]="14"></veera-ng-icon>
+  </button>
+  <ng-template [ngTemplateOutlet]="templateRef" [ngTemplateOutletContext]="{ $implicit: this }"></ng-template>
+</div>
+<div class="veera-modal__backdrop" (click)="closeModal()"></div>

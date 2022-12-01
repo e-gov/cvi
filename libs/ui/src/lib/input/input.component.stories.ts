@@ -28,8 +28,8 @@ const Template: Story<InputComponent> = (args: InputComponent) => ({
   `,
 });
 
-export const Primary = Template.bind({});
-Primary.args = {};
+export const Default = Template.bind({});
+Default.args = {};
 
 const FormTemplate: Story<InputComponent> = (args: InputComponent) => {
   const form = new FormGroup({

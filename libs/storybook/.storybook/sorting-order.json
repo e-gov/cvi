@@ -26,7 +26,8 @@
       "Textarea",
       "Notification",
       "Html section",
-      "Table of contents"
+      "Table of contents",
+      "Modal"
     ],
     "Angular",
     [
@@ -56,7 +57,9 @@
       "Tab group",
       "Html section",
       "Tooltip",
-      "Toast"
+      "Toast",
+      "Modal",
+      ["Modal directive", "Modal", "Confirmation modal"]
     ]
   ]
 }

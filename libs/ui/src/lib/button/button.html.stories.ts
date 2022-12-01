@@ -44,8 +44,8 @@ const Template: Story = (args) => ({
   `,
 });
 
-export const Primary = Template.bind({});
-Primary.args = {};
+export const Default = Template.bind({});
+Default.args = {};
 
 export const Secondary = Template.bind({});
 Secondary.args = {

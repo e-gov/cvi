@@ -77,3 +77,7 @@
 .veera-content-container {
   @include veera-content-container;
 }
+
+.veera-modal {
+  @include veera-modal;
+}

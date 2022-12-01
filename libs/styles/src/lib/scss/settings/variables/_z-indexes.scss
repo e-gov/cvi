@@ -1,0 +1,19 @@
+// Z-indexes
+// Usage: z-index: get-z-index('dropdown-popup', '__dropdown');
+// Where 'dropdown-popup' should be a name of a Sass component
+// and '__dropdown' a name of a BEM element within that component
+// For host elements use 'root' as a second parameter
+// Lower position is higher z-index
+
+$veera-z-indexes: (
+  'tooltip': (
+    'root',
+  ),
+  'modal': (
+    '__backdrop',
+    '__dialog'
+  ),
+  'select': (
+    '__dropdown',
+  ),
+);

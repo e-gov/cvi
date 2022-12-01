@@ -22,10 +22,11 @@ export class TrackComponent {
   @Input() horizontalAlignment: 'left' | 'center' | 'right' = 'left';
 
   /** Equivalent of flex-direction in CSS */
-  @HostBinding('style.--direction') get getHostDirection(): string {
-    return this.direction === 'horizontal' ? 'row' : 'column';
-  }
-  @Input() direction: 'horizontal' | 'vertical' = 'horizontal';
+  @Input() direction:
+    | 'horizontal'
+    | 'vertical'
+    | 'verticalOnMobile'
+    | 'verticalReverseOnMobile' = 'horizontal';
 
   /** Equivalent of flex-wrap in CSS */
   @HostBinding('style.--wrap') get getHostIsMultiline(): string {
@@ -34,6 +35,16 @@ export class TrackComponent {
   @Input() isMultiline = false;
 
   @HostBinding('class') get getHostClasses(): string {
-    return `veera-track`;
+    return `veera-track veera-track--direction-${this.getHostDirection()}`;
+  }
+
+  getHostDirection(): string {
+    if (this.direction === 'verticalOnMobile') {
+      return 'vertical-on-mobile';
+    } else if (this.direction === 'verticalReverseOnMobile') {
+      return 'vertical-reversed-on-mobile';
+    } else {
+      return this.direction;
+    }
   }
 }

@@ -12,6 +12,8 @@
     #{$base}__button {
       padding: 6px get-spacing('viljandi');
       border-radius: $veera-radius-pill;
+      text-align: center;
+      width: 100%;
 
       &:disabled {
         cursor: default;

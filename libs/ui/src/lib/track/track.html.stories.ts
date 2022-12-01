@@ -20,7 +20,12 @@ export default {
     },
     direction: {
       name: 'Direction',
-      options: ['row', 'column'],
+      options: [
+        'horizontal',
+        'vertical',
+        'vertical-on-mobile',
+        'vertical-reversed-on-mobile',
+      ],
       control: { type: 'inline-radio' },
     },
     // Boolean in JS
@@ -33,7 +38,7 @@ export default {
   args: {
     gap: 1,
     horizontalAlignment: 'flex-start',
-    direction: 'row',
+    direction: 'horizontal',
     isMultiline: 'nowrap',
   },
 } as Meta;
@@ -42,7 +47,7 @@ const Template: Story = (args) => ({
   props: args,
   /* template */
   template: `
-    <div class="veera-track" style="--gap: {{ gap }}; --horizontal-alignment: {{ horizontalAlignment }}; --direction: {{ direction }}; --wrap: {{ isMultiline }}">
+    <div class="veera-track veera-track--direction-{{direction}}" style="--gap: {{ gap }}; --horizontal-alignment: {{ horizontalAlignment }}; --wrap: {{ isMultiline }}">
       <div class="veera-button veera-button--appearance-primary">
         <button type="button" class="veera-button__button">Button 1</button>
       </div>
@@ -54,4 +59,10 @@ const Template: Story = (args) => ({
 });
 
 export const Default = Template.bind({});
-Default.args = {};
+
+export const Mobile = Template.bind({});
+Mobile.parameters = {
+  viewport: {
+    defaultViewport: 'iphone12mini',
+  },
+};

@@ -48,3 +48,6 @@ export * from './lib/toast/overlay';
 export * from './lib/track/track.component';
 export * from './lib/character-counter/character-counter.component';
 export * from './lib/character-counter/character-counter.directive';
+export * from './lib/modal/modal.component';
+export * from './lib/modal/modal.directive';
+export * from './lib/confirmation-modal/confirmation-modal.component';

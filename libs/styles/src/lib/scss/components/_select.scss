@@ -97,7 +97,7 @@
       background-color: get-color(white);
       border-radius: 0 0 4px 4px;
       border: 1px solid get-color(black-coral-3);
-      z-index: 1000;
+      z-index: get-z-index('select', '__dropdown');
       max-height: 300px;
       overflow-y: auto;
     }

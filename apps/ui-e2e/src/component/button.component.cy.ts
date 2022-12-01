@@ -4,7 +4,7 @@ describe('ButtonComponent', () => {
   });
 
   it('Renders primary button', () => {
-    cy.loadStory('Angular Button', 'Primary').runButtonCommonTest(
+    cy.loadStory('Angular Button', 'Default').runButtonCommonTest(
       'primary',
       'm'
     );

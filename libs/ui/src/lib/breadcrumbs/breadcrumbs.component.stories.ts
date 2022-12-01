@@ -19,8 +19,8 @@ const Template: Story<BreadcrumbsComponent> = (args: BreadcrumbsComponent) => ({
   `,
 });
 
-export const Primary = Template.bind({});
-Primary.args = {};
+export const Default = Template.bind({});
+Default.args = {};
 
 const TemplateWithIcon: Story<BreadcrumbsComponent> = (
   args: BreadcrumbsComponent

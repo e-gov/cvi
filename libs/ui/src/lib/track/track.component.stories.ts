@@ -21,7 +21,7 @@ export default {
     },
     direction: {
       name: 'Direction',
-      options: ['horizontal', 'vertical'],
+      options: ['horizontal', 'vertical', 'verticalOnMobile'],
       control: { type: 'inline-radio' },
     },
     isMultiline: {
@@ -42,8 +42,8 @@ const Template: Story<TrackComponent> = (args: TrackComponent) => ({
   /* template */
   template: `
     <veera-ng-track [gap]="gap" [horizontalAlignment]="horizontalAlignment" [direction]="direction" [isMultiline]="isMultiline">
-      <veera-ng-button>Button 1</veera-ng-button>
-      <veera-ng-button>Button with another label</veera-ng-button>
+      <veera-ng-button appearance="secondary">Cancel</veera-ng-button>
+      <veera-ng-button>Submit</veera-ng-button>
     </veera-ng-track>
   `,
 });
@@ -82,6 +82,42 @@ ItemsCentered.args = {
 export const Vertical = Template.bind({});
 Vertical.args = {
   direction: 'vertical',
+};
+
+export const VerticalMobileOnly = Template.bind({});
+VerticalMobileOnly.storyName = 'Vertical only on mobile (desktop)';
+VerticalMobileOnly.args = {
+  direction: 'verticalOnMobile',
+};
+
+export const VerticalMobileOnlyMobile = Template.bind({});
+VerticalMobileOnlyMobile.storyName = 'Vertical only on mobile (mobile)';
+VerticalMobileOnlyMobile.args = {
+  direction: 'verticalOnMobile',
+};
+VerticalMobileOnlyMobile.parameters = {
+  viewport: {
+    defaultViewport: 'iphone12mini',
+  },
+};
+
+export const VerticalReverseMobileOnly = Template.bind({});
+VerticalReverseMobileOnly.storyName =
+  'Vertical reversed only on mobile (desktop)';
+VerticalReverseMobileOnly.args = {
+  direction: 'verticalReverseOnMobile',
+};
+
+export const VerticalReverseMobileOnlyMobile = Template.bind({});
+VerticalReverseMobileOnlyMobile.storyName =
+  'Vertical reversed only on mobile (mobile)';
+VerticalReverseMobileOnlyMobile.args = {
+  direction: 'verticalReverseOnMobile',
+};
+VerticalReverseMobileOnlyMobile.parameters = {
+  viewport: {
+    defaultViewport: 'iphone12mini',
+  },
 };
 
 export const Multiline = TemplateMultiline.bind({});

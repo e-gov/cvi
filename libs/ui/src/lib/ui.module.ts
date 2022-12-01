@@ -69,6 +69,10 @@ import { GeneratedTableOfContentsComponent } from './table-of-contents/generated
 import { TableOfContentsWrapperComponent } from './table-of-contents/table-of-contents-wrapper/table-of-contents-wrapper.component';
 import { TableOfContentsComponent } from './table-of-contents/table-of-contents/table-of-contents.component';
 import { TableOfContentsItemComponent } from './table-of-contents/table-of-contents-item/table-of-contents-item.component';
+import { ModalComponent } from './modal/modal.component';
+import { ModalDirective } from './modal/modal.directive';
+import { ConfirmationModalComponent } from './confirmation-modal/confirmation-modal.component';
+import { A11yModule } from '@angular/cdk/a11y';
 
 const components = [
   TrackComponent,
@@ -111,12 +115,21 @@ const components = [
   ToastContainerComponent,
   CharacterCounterComponent,
   CharacterCounterDirective,
+  ModalComponent,
+  ModalDirective,
+  ConfirmationModalComponent,
 ];
 
 const pipes = [SafeHtmlPipe, NotificationSeverityToHeaderIconPipe];
 
 @NgModule({
-  imports: [CommonModule, TextFieldModule, ReactiveFormsModule, FormsModule],
+  imports: [
+    CommonModule,
+    TextFieldModule,
+    ReactiveFormsModule,
+    FormsModule,
+    A11yModule,
+  ],
   declarations: [...components, ...pipes],
   exports: [...components, ...pipes, TextFieldModule, DataAttributeDirective],
   providers: [

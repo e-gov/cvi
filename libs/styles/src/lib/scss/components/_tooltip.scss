@@ -11,7 +11,7 @@ $arrowSize: 7px;
   max-width: 400px;
   min-width: 125px;
   font-size: $veera-font-size-80;
-  z-index: 1000;
+  z-index: get-z-index('tooltip', 'root');
 
   &:after {
     content: ' ';
