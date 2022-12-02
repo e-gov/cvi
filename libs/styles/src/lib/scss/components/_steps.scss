@@ -17,7 +17,6 @@
   & {
     @include veera-breakpoint-down(sm) {
       display: block;
-      padding-inline: get-spacing('kuressaare');
     }
 
     --has-toc: 0;
