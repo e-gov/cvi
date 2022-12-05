@@ -1,0 +1,4 @@
+// Returns variable as a CSS variable
+@function get-color($color-name) {
+  @return var(--veera-color-#{'' + $color-name});
+}

@@ -1,0 +1,55 @@
+<h1 *ngIf="title" class="veera-steps__title" dataAttribute="steps_title">{{ title }}</h1>
+<div class="veera-steps__inner-wrapper">
+  <div class="veera-steps__intro">
+    <ng-content select="[veera-steps=after-title]"></ng-content>
+  </div>
+  <div class="veera-steps__inner" dataAttribute="steps_container">
+    <ol class="veera-steps__list" [style.--progress]="anyStepSelected ? currentProgressCSSVar + '%' : '100%'">
+      <li class="veera-steps__list-item"
+          *ngFor="let stepTitle of stepTitles; let i = index"
+          [ngClass]="{'is-past': this.currentStepIndex !== null && i <= currentStepIndex, 'is-current': i === currentStepIndex}"
+          [dataAttribute]="'veera-steps__list-item_' + i">
+        <button class="veera-steps__list-item-button" [dataAttribute]="'veera-steps__list-item-button_' + i" (click)="stepSelected(i)">
+          <div class="veera-steps__list-item-inner">
+            <span class="veera-steps__list-item-title">{{ stepTitle }}</span>
+            <veera-ng-icon [name]="'arrow_a_right'" class="veera-steps__list-item-arrow-icon-wrapper" [svgClass]="'veera-steps__list-item-arrow-icon'"></veera-ng-icon>
+          </div>
+        </button>
+      </li>
+    </ol>
+    <ng-content></ng-content>
+    <div *ngIf="this.stepChildren.length > 1 && this.currentStepIndex !== null"
+        class="veera-steps__directional-buttons"
+        dataAttribute="steps_directional_buttons">
+      <button *ngIf="this.currentStepIndex > 0"
+              class="veera-steps__directional-button veera-steps__directional-button--direction-prev"
+              (click)="stepSelected(this.currentStepIndex - 1)"
+              [title]="this.stepTitles[this.currentStepIndex - 1]"
+              [dataAttribute]="'previous_step_button_' + this.currentStepIndex">
+        <veera-ng-icon [name]="'arrow_a_left'" [svgClass]="'veera-steps__directional-button-icon'"></veera-ng-icon>
+        <span class="veera-steps__directional-button-label">
+          {{ this.stepTitles[this.currentStepIndex - 1] }}
+        </span>
+      </button>
+      <button *ngIf="this.currentStepIndex < this.stepChildren.length - 1"
+              class="veera-steps__directional-button veera-steps__directional-button--direction-next"
+              (click)="stepSelected(this.currentStepIndex + 1)"
+              [title]="this.stepTitles[this.currentStepIndex + 1]"
+              [dataAttribute]="'next_step_button_' + this.currentStepIndex">
+        <span class="veera-steps__directional-button-label">
+          {{ this.stepTitles[this.currentStepIndex + 1] }}
+        </span>
+        <veera-ng-icon [name]="'arrow_a_right'" [svgClass]="'veera-steps__directional-button-icon'"></veera-ng-icon>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- We need this filter in order for rounded corners to work -->
+<svg style="visibility: hidden; position: absolute;" width="0" height="0" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <filter id="round">
+    <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur" />
+    <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 19 -9" result="goo" />
+    <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
+  </filter>
+</svg>

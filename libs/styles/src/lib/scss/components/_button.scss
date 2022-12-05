@@ -1,0 +1,75 @@
+@mixin veera-button($base: &) {
+  --comment: 'A regular button';
+
+  display: inline-block;
+
+  button {
+    font-size: $veera-font-size-100;
+    line-height: $veera-line-height-500;
+  }
+
+  @at-root {
+    #{$base}__button {
+      padding: 6px get-spacing('viljandi');
+      border-radius: $veera-radius-pill;
+      text-align: center;
+      width: 100%;
+
+      &:disabled {
+        cursor: default;
+      }
+
+      #{$base}--appearance-primary & {
+        color: get-color(white);
+        background-color: get-color(sapphire-blue-10);
+        border: $veera-border-width solid get-color(sapphire-blue-10);
+        &:hover {
+          background-color: get-color(sapphire-blue-13);
+          border-color: get-color(sapphire-blue-13);
+        }
+        &:focus {
+          box-shadow: inset 1px 0 0 get-color(white),
+            inset -1px 0 0 get-color(white), inset 0 1px 0 get-color(white),
+            inset 0 -1px 0 get-color(white);
+        }
+        &:disabled {
+          color: get-color(black-coral-10);
+          background-color: get-color(black-coral-1);
+          border-color: get-color(black-coral-1);
+        }
+      }
+      #{$base}--appearance-secondary & {
+        color: get-color(black-coral-20);
+        background-color: get-color(white);
+        border: $veera-border-width solid get-color(black-coral-10);
+        &:hover {
+          border-color: get-color(black-coral-1);
+        }
+        &:focus {
+          border-color: get-color(sapphire-blue-10);
+        }
+        &:disabled {
+          background-color: get-color(black-coral-0);
+          border-color: get-color(black-coral-1);
+        }
+      }
+      #{$base}--appearance-text & {
+        padding: get-spacing('rapla');
+        color: get-color(sapphire-blue-10);
+        text-decoration: underline;
+        border: $veera-border-width solid transparent;
+        &:hover {
+          text-decoration: none;
+        }
+        &:focus {
+          border: $veera-border-width solid get-color(sapphire-blue-10);
+          border-radius: $veera-radius-xs;
+        }
+      }
+      #{$base}--size-s & {
+        padding-inline: get-spacing('valga');
+        padding-block: get-spacing('loksa');
+      }
+    }
+  }
+}

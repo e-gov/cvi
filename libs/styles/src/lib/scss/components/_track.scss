@@ -1,0 +1,27 @@
+@mixin veera-track($base: &) {
+  --comment: 'An utility for quick grid setup';
+
+  display: flex;
+  gap: calc(var(--veera-spacing-unit) * var(--gap));
+  justify-content: var(--horizontal-alignment);
+  flex-wrap: var(--wrap);
+
+  &--direction-vertical {
+    flex-direction: column;
+  }
+  &--direction-vertical-on-mobile {
+    flex-direction: column;
+    @include veera-breakpoint-up(sm) {
+      flex-direction: row;
+    }
+  }
+  &--direction-vertical-reversed-on-mobile {
+    flex-direction: column-reverse;
+    @include veera-breakpoint-up(sm) {
+      flex-direction: row;
+    }
+  }
+
+  @at-root {
+  }
+}

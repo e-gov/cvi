@@ -1,0 +1,21 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "emitDecoratorMetadata": true
+  },
+  "exclude": ["../**/*.spec.ts", "jest.config.ts"],
+  "include": [
+    "../../**/src/lib/**/*.stories.ts",
+    "../**/*.stories.ts",
+    "../**/*.stories.js",
+    "../**/*.stories.jsx",
+    "../**/*.stories.tsx",
+    "../**/*.stories.mdx",
+    "*.js"
+  ],
+  "files": [
+    "../../../globals.d.ts",
+    "../../ui/src/index.ts",
+    "../src/lib/storybook.module.ts"
+  ]
+}

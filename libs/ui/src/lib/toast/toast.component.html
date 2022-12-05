@@ -1,0 +1,14 @@
+<h1 class="veera-toast__title">
+  <veera-ng-icon *ngIf="isSuccessToast" name="success" class="veera-toast__icon-wrapper" svgClass="veera-toast__icon"></veera-ng-icon>
+  <veera-ng-icon *ngIf="isInfoToast" name="info" class="veera-toast__icon-wrapper" svgClass="veera-toast__icon"></veera-ng-icon>
+  <veera-ng-icon *ngIf="isWarningToast" name="warning_amber" class="veera-toast__icon-wrapper" svgClass="veera-toast__icon"></veera-ng-icon>
+  <veera-ng-icon *ngIf="isErrorToast" name="error_outline" class="veera-toast__icon-wrapper" svgClass="veera-toast__icon"></veera-ng-icon>
+  <div class="veera-toast__title-text">{{ title }}</div>
+  <button class="veera-toast__close-button" (click)="remove()">
+    <veera-ng-icon name="close" class="veera-toast__close-button-inner" svgClass="veera-toast__close-button-icon"></veera-ng-icon>
+  </button>
+</h1>
+<div *ngIf="message" class="veera-toast__message">
+  {{ message }}
+</div>
+<div *ngIf="progressBar" class="veera-toast__progress-bar" [style.width]="progressBarWidth + '%'"></div>

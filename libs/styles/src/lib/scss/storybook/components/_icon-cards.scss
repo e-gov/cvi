@@ -1,0 +1,24 @@
+.c-icon-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 170px);
+  grid-template-rows: repeat(6, minmax(100px, 1fr));
+  align-items: center;
+  justify-items: center;
+  gap: get-spacing('haapsalu');
+  &__item {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+    justify-items: center;
+    flex-grow: 1;
+  }
+  &__item-icon {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,78 @@
+@mixin veera-table-of-contents($base: &) {
+  --comment: 'A table of contents with currently visible section highlighted automatically';
+
+  display: flex;
+  gap: var(--veera-steps--gap, #{get-spacing('kuressaare')});
+
+  @at-root {
+    #{$base}__content {
+      min-width: 0;
+    }
+
+    #{$base}__aside {
+      min-width: var(--veera-steps--panel-margin, 25%);
+      width: var(--veera-steps--panel-margin, 25%);
+      #{$base}.is-nav-hidden-on-mobile & {
+        @include veera-breakpoint-down(sm) {
+          display: none;
+        }
+      }
+    }
+
+    #{$base}__aside-stickable {
+      position: sticky;
+      top: get-spacing('elva');
+    }
+
+    #{$base}__aside-inner {
+      --aside-padding-left: #{ get-spacing('valga') };
+
+      position: relative;
+      display: block;
+    }
+
+    #{$base}__aside-title {
+      text-transform: uppercase;
+      color: get-color(black-coral-12);
+      font-size: $veera-font-size-80;
+      padding-left: var(--aside-padding-left);
+      padding-block: get-spacing('elva');
+      margin: 0;
+    }
+
+    #{$base}__aside-list {
+      border-left: 1px solid get-color(black-coral-2);
+    }
+
+    #{$base}__aside-list-item {
+      display: block;
+    }
+
+    #{$base}__aside-list-item-link {
+      color: get-color(black-coral-14);
+      display: block;
+      padding-block: get-spacing('paldiski');
+      padding-left: var(--aside-padding-left);
+      padding-right: get-spacing('kuressaare');
+
+      &:hover {
+        text-decoration: none;
+      }
+
+      #{$base}__aside-list-item.is-current & {
+        font-weight: bold;
+        color: get-color(black-coral-20);
+        position: relative;
+        &::before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 0;
+          height: 100%;
+          background-color: get-color('sapphire-blue-9');
+          width: 5px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,60 @@
+@mixin veera-radio-group($base: &) {
+  --comment: 'Radios that look like regular buttons';
+
+  & {
+    display: block;
+    margin-top: get-spacing('kuressaare');
+    &--appearance-regular {
+      #{$base}__button {
+        padding-inline: get-spacing('kuressaare');
+      }
+    }
+    &--appearance-compact {
+      #{$base}__button {
+        padding-inline: get-spacing('elva');
+      }
+    }
+  }
+
+  @at-root {
+    #{$base}__inner {
+    }
+    #{$base}__title {
+      width: auto;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: get-spacing('paldiski');
+    }
+    #{$base}__list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: get-spacing('paldiski');
+      font-size: $veera-font-size-70;
+      line-height: $veera-line-height-100;
+    }
+    #{$base}__item {
+    }
+    #{$base}__input {
+      @include veera-screenreader-text;
+    }
+    #{$base}__button {
+      display: block;
+      text-align: center;
+      border-radius: $veera-radius-pill;
+      padding-block: get-spacing('loksa');
+      border: 1px solid get-color(black-coral-10);
+
+      #{$base}__input:hover + &,
+      #{$base}__input:focus + &,
+      #{$base}__input:checked + & {
+        background-color: get-color(sapphire-blue-20);
+        color: get-color(white);
+      }
+
+      #{$base}__input:focus-visible + & {
+        box-shadow: 0 0 0 0.2rem #0083ba80;
+      }
+    }
+  }
+}

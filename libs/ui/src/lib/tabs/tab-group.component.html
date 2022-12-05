@@ -1,0 +1,16 @@
+<ul class="veera-tab-group" role="tabslist">
+  <li *ngFor="let tab of allTabs; let i = index" role="presentation">
+    <button dataAttribute="tab-button-{{i}}"
+            [ngClass]="{'active': activeIndex === i}"
+            (click)="makeActive(i)"
+            type="button"
+            role="tab"
+            aria-controls="tabpanel"
+            class="veera-tab-group__tab-btn">
+      {{ tab.title }}
+    </button>
+  </li>
+</ul>
+<div dataAttribute="tab-content" class="veera-tab-group__tab-content">
+  <ng-container *ngTemplateOutlet="getActiveTabContent()"></ng-container>
+</div>

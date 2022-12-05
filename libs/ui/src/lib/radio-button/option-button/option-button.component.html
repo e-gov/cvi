@@ -1,0 +1,11 @@
+<label class="veera-radio-group__item-inner">
+  <input class="veera-radio-group__input"
+         type="radio"
+         [value]="value"
+         [name]="name"
+         [checked]="checked"
+         (change)="onInputInteraction($event)">
+  <span class="veera-radio-group__button">
+    {{ label }}
+  </span>
+</label>

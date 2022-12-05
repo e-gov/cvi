@@ -1,0 +1,10 @@
+<veera-ng-radio-group [appearance]="appearance"
+                      [title]="title"
+                      [formControl]="radioButtonsControl">
+  <veera-ng-icon *ngIf="showIcons" [name]="'sad_face'" svgClass="veera-feedback__icon-svg" dataAttribute="sad_face"></veera-ng-icon>
+  <veera-ng-option-button *ngFor="let q of options"
+                          [label]="q.label"
+                          [value]="q.value"
+  ></veera-ng-option-button>
+  <veera-ng-icon *ngIf="showIcons" [name]="'happy_face'" svgClass="veera-feedback__icon-svg" dataAttribute="happy_face"></veera-ng-icon>
+</veera-ng-radio-group>

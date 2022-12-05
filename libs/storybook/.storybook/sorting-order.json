@@ -1,0 +1,65 @@
+{
+  "ids": [
+    "Intro",
+    "TODOS",
+    "Styles",
+    [
+      "Installation",
+      "Guidelines",
+      "Design tokens",
+      ["Colors", "Typography", "Spacing"]
+    ],
+    "Icons",
+    ["Installation", "Usage", "List"],
+    "HTML",
+    [
+      "Track",
+      "Content container",
+      "Button",
+      "Form item",
+      "Input",
+      "Radio button",
+      "Radio button group",
+      "Accordion",
+      "Icon",
+      "Labeled icon",
+      "Textarea",
+      "Notification",
+      "Html section",
+      "Table of contents",
+      "Modal"
+    ],
+    "Angular",
+    [
+      "Installation",
+      "Track",
+      "Content container",
+      "Button",
+      "Form item",
+      "Input",
+      "Radio button",
+      "Radio button group",
+      "Accordion",
+      "Icon",
+      "Labeled icon",
+      "Steps",
+      ["Steps", "Step", "Step panel"],
+      "Table of contents",
+      [
+        "Table of contents wrapper",
+        "Table of contents",
+        "Table of contents item",
+        "Generated table of contents"
+      ],
+      "Textarea",
+      "Notification",
+      "Select",
+      "Tab group",
+      "Html section",
+      "Tooltip",
+      "Toast",
+      "Modal",
+      ["Modal directive", "Modal", "Confirmation modal"]
+    ]
+  ]
+}

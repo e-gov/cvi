@@ -1,0 +1,69 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Icons/Usage" parameters={{ viewMode: 'docs' }} />
+
+# Usage
+
+## Angular
+
+We provide a reusable component for the icons (IconComponent). It is a component that accepts a name as an Input property and displays the icon. In essence, we want to have support for tree shaking. If the icon library contains hundreds of icons but only one of them is used, only one ends up in the resulting bundle. Also, this approach supports code splitting and lazy loading in a way that the icon only ends up in the chunk it is used.
+
+For these reasons, the icon registry should be used to register used icons:
+
+```
+constructor(private registry: IconsRegistry) {
+    this.registry.registerIcons([
+      veeraCall
+    ]);
+  }
+```
+
+### Adding an icon
+
+To add an icon with a file name of `my-icon-name.svg`:
+
+1. drop the icon file in SVG format into `/libs/icons/src/lib/svg` folder;
+2. run `npm run generate-icons`;
+3. (optional) import the icon to `ui.module.ts` as `veeraMyIconName` if you intend to use it inside of this library.
+
+The new icon can be added to your app with `veera-ng-icon` component using `name` prop in `my_icon_name` format.
+
+Make sure that the SVG code of the icon is cleaned and optimised for recoloring (eg doesn't contain internal CSS or `fill`/`stroke` attributes).
+
+## Typescript
+
+```
+import {veeraCall, VeeraIcon} from '@ria/veera-icons';
+
+const container = document.getElementById('.container');
+
+function buildSVGElement(icon: VeeraIcon): SVGElement {
+    const div = document.createElement('DIV');
+    div.innerHTML = icon.data;
+    return (
+        div.querySelector('svg') ||
+        this.document.createElementNS('http://www.w3.org/2000/svg', 'path')
+    );
+}
+
+container.appendChild(buildSVGElement(icon));
+```
+
+## Vanilla JS
+
+```
+import {veeraCall} from '@ria/veera-icons';
+
+const container = document.getElementById('.container');
+
+function buildSVGElement(icon) {
+    const div = document.createElement('DIV');
+    div.innerHTML = icon.data;
+    return (
+        div.querySelector('svg') ||
+        this.document.createElementNS('http://www.w3.org/2000/svg', 'path')
+    );
+}
+
+container.appendChild(buildSVGElement(icon);
+```

@@ -1,0 +1,62 @@
+@mixin veera-modal($base: &) {
+
+  @at-root {
+    #{$base}, #{$base}__backdrop {
+      @include veera-breakpoint-up(sm) {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    #{$base}__backdrop {
+      @include veera-breakpoint-down(sm) {
+        display: none;
+      }
+      @include veera-breakpoint-up(sm) {
+        background-color: rgba(var(--veera-color-rgb-black-coral-18) / .6);
+        z-index: get-z-index('modal', '__backdrop');
+      }
+    }
+
+    #{$base}__dialog {
+      background-color: get-color(white);
+      z-index: get-z-index('modal', '__dialog');
+      padding: get-spacing('kuressaare');
+      color: get-color(black-coral-18);
+
+      @include veera-breakpoint-down(sm) {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+      @include veera-breakpoint-up(sm) {
+        border-radius: $veera-radius-m;
+        position: relative;
+        margin: get-spacing('narva') auto;
+        max-width: 768px;
+      }
+    }
+
+    #{$base}__close {
+      position: absolute;
+      top: get-spacing('viljandi');
+      right: get-spacing('viljandi');
+    }
+
+    #{$base}__title {
+      font-size: $veera-font-size-250;
+      padding-right: get-spacing('viljandi');
+      padding-bottom: get-spacing('elva');
+    }
+
+    #{$base}__footer {
+      padding-top: get-spacing('kuressaare');
+    }
+  }
+
+}

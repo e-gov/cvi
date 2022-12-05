@@ -1,0 +1,22 @@
+import {Meta, Story} from '@storybook/addon-docs';
+import iconsPkg from '/libs/icons/package.json'
+
+<Meta title="Icons/Installation" parameters={{viewMode: 'docs'}}/>
+
+# How to Install Veera Icons
+
+<Story name="Installation">
+  {{
+    props: {iconsPkg},
+    template: `
+      Latest version: {{ iconsPkg.version }}
+    `,
+  }}
+</Story>
+
+1. Install the library
+```
+npm i --save @ria/veera-icons
+```
+
+2. Check the usage page for examples

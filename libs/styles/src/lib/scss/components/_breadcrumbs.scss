@@ -1,0 +1,42 @@
+@mixin veera-breadcrumbs($base: &) {
+  display: flex;
+
+  @at-root {
+    #{$base}__items {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    #{$base}__item {
+      & + &::before {
+        float: left;
+        padding-right: 0.5rem;
+        padding-left: 0.5rem;
+        color: #6c757d;
+        content: '/';
+      }
+
+      &:last-child:not(&:first-child) {
+        #{$base}__item-link {
+          pointer-events: none;
+          color: get-color(black-coral-10);
+        }
+      }
+    }
+
+    #{$base}__item-link {
+      cursor: pointer;
+      color: get-color(sapphire-blue-10);
+    }
+
+    #{$base}__icon {
+      height: get-spacing('rapla');
+    }
+
+    #{$base}__icon-wrapper {
+      display: flex;
+      fill: get-color(sapphire-blue-10);
+      margin-right: get-spacing('rapla');
+    }
+  }
+}

@@ -1,0 +1,78 @@
+import { Meta, Story } from '@storybook/addon-docs';
+
+<Meta title="Styles/Design tokens/Colors" parameters={{ viewMode: 'docs', layout: 'fullscreen' }} />
+
+export const colorsTotal = 21;
+
+# Colors
+
+See [information on colors on the Veera Design System page](https://veera.eesti.ee/3d136290e/p/820875-vrvid/b/845dc1).
+
+Veera has a choice of colors grouped by basic color variations.
+
+Colors can be used both in Sass (`get-color(dark-tangerine-0)`) and as CSS variables (`var(--veera-color-dark-tangerine-0)`);
+
+## Black coral
+
+<Story name="Black coral" height="540px">
+  {{
+    props: { colorsTotal },
+    template: `
+      <veera-ng-storybook-color-cards>
+        <veera-ng-storybook-color-card *ngFor="let _ of [].constructor(colorsTotal); let i = index" label="black-coral-{{ i }}" [ngStyle]="{'--color': 'var(--veera-color-black-coral-' + i}"></veera-ng-storybook-color-card>
+      </veera-ng-storybook-color-cards>
+    `,
+  }}
+</Story>
+
+## Dark tangerine
+
+<Story name="Dark tangerine" height="540px">
+  {{
+    props: { colorsTotal },
+    template: `
+      <veera-ng-storybook-color-cards>
+        <veera-ng-storybook-color-card *ngFor="let _ of [].constructor(colorsTotal); let i = index" label="dark-tangerine-{{ i }}" [ngStyle]="{'--color': 'var(--veera-color-dark-tangerine-' + i}"></veera-ng-storybook-color-card>
+      </veera-ng-storybook-color-cards>
+    `,
+  }}
+</Story>
+
+## Jasper
+
+<Story name="Jasper" height="540px">
+  {{
+    props: { colorsTotal },
+    template: `
+      <veera-ng-storybook-color-cards>
+        <veera-ng-storybook-color-card *ngFor="let _ of [].constructor(colorsTotal); let i = index" label="jasper-{{ i }}" [ngStyle]="{'--color': 'var(--veera-color-jasper-' + i}"></veera-ng-storybook-color-card>
+      </veera-ng-storybook-color-cards>
+    `,
+  }}
+</Story>
+
+## Orange
+
+<Story name="Orange" height="540px">
+  {{
+    props: { colorsTotal },
+    template: `
+      <veera-ng-storybook-color-cards>
+        <veera-ng-storybook-color-card *ngFor="let _ of [].constructor(colorsTotal); let i = index" label="orange-{{ i }}" [ngStyle]="{'--color': 'var(--veera-color-orange-' + i}"></veera-ng-storybook-color-card>
+      </veera-ng-storybook-color-cards>
+    `,
+  }}
+</Story>
+
+## Sapphire blue
+
+<Story name="Sapphire blue" height="540px">
+  {{
+    props: { colorsTotal },
+    template: `
+      <veera-ng-storybook-color-cards>
+        <veera-ng-storybook-color-card *ngFor="let _ of [].constructor(colorsTotal); let i = index" label="sapphire-blue-{{ i }}" [ngStyle]="{'--color': 'var(--veera-color-sapphire-blue-' + i}"></veera-ng-storybook-color-card>
+      </veera-ng-storybook-color-cards>
+    `,
+  }}
+</Story>

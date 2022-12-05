@@ -1,0 +1,98 @@
+@mixin veera-accordion($base: &) {
+  $padding-inline: get-spacing('kuressaare');
+  $header-padding-block: get-spacing('elva');
+  $toggle-icon-width: 24px;
+  $content-padding-left: $toggle-icon-width +
+    map-get($veera-spacing-patterns, 'kuressaare') * 2;
+  $color-disabled: get-color(black-coral-2);
+  $item-detail-margin: calc(get-spacing('haapsalu') * -1);
+
+  @at-root {
+    #{$base}__list {
+      display: flex;
+      flex-direction: column;
+      gap: get-spacing('paldiski');
+    }
+
+    #{$base}__item {
+      @include veera-breakpoint-down(sm) {
+        border-bottom: 1px solid get-color(black-coral-2);
+        &:first-child {
+          border-top: 1px solid get-color(black-coral-2);
+        }
+      }
+
+      @include veera-breakpoint-up(sm) {
+        border: 1px solid get-color(black-coral-2);
+        border-radius: $veera-radius-s;
+      }
+    }
+
+    #{$base}__item-toggle-button {
+      display: flex;
+      align-items: center;
+      gap: get-spacing('kuressaare');
+      padding-inline: $padding-inline;
+      padding-block: $header-padding-block;
+      text-align: left;
+      width: 100%;
+      font-size: $veera-font-size-100;
+      color: get-color(black-coral-15);
+      &.is-disabled {
+        cursor: default;
+        color: $color-disabled;
+      }
+
+      @include veera-breakpoint-down(sm) {
+        padding: 12px 0;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+      }
+    }
+
+    #{$base}__item-toggle-icon {
+      fill: get-color(sapphire-blue-10);
+      flex-shrink: 0;
+      #{$base}__item-toggle-button.is-disabled & {
+        fill: $color-disabled;
+      }
+    }
+
+    .is-active {
+      #{$base}__item-toggle-icon {
+        transform: scaleY(-1);
+      }
+    }
+
+    #{$base}__item-content {
+      color: get-color(black-coral-12);
+      &.is-expanded {
+        padding-bottom: get-spacing('elva');
+      }
+    }
+
+    #{$base}__item-details,
+    #{$base}__item-content-inner {
+      @include veera-breakpoint-up(sm) {
+        padding-left: $content-padding-left;
+        padding-right: $padding-inline;
+      }
+    }
+
+    #{$base}__item-details {
+      background-color: get-color(extra-light);
+      padding-block: $header-padding-block;
+      margin-bottom: $header-padding-block;
+
+      @include veera-breakpoint-down(sm) {
+        font-size: $veera-font-size-70;
+        margin-left: $item-detail-margin;
+        margin-right: $item-detail-margin;
+        padding-left: get-spacing('valga');
+      }
+      @include veera-breakpoint-up(sm) {
+        font-size: $veera-font-size-80;
+      }
+    }
+  }
+}

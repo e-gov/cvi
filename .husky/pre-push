@@ -1,0 +1,17 @@
+#!/bin/sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+branch_name="$(git rev-parse --abbrev-ref HEAD)"
+branch_pattern="^(feature|fix|test|refactor|chore){1}-[a-zA-Z0-9.-]+$"
+
+if [[ ! $branch_name =~ $branch_pattern ]];
+then
+  echo "---"
+  echo "Violation of branch naming convention!"
+  echo "The branch name must have following formatting:"
+  echo "<feature/fix/test/refactor/chore>-<description>"
+  echo "Example: feature-branch-hook"
+  echo "For more information, check script in .husky/pre-push"
+  echo "---"
+  exit 1
+fi

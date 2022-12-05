@@ -1,0 +1,27 @@
+$arrowSize: 7px;
+
+@mixin veera-tooltip($base: &) {
+  position: fixed;
+  border-radius: 4px;
+  background-color: get-color(white);
+  color: get-color(black-coral-18);
+  box-shadow: 0 4px 20px rgb(0 0 0 / 25%);
+  transform: translate(-50%, calc(-100% - $arrowSize - 3px));
+  padding: var(--veera-spacing-rapla) var(--veera-spacing-elva);
+  max-width: 400px;
+  min-width: 125px;
+  font-size: $veera-font-size-80;
+  z-index: get-z-index('tooltip', 'root');
+
+  &:after {
+    content: ' ';
+    width: 0;
+    height: 0;
+    border-left: $arrowSize solid transparent;
+    border-right: $arrowSize solid transparent;
+    border-top: $arrowSize solid get-color(white);
+    position: absolute;
+    left: calc(50% - $arrowSize);
+    bottom: calc(1px - $arrowSize);
+  }
+}

@@ -1,0 +1,45 @@
+.c-radio {
+  legend {
+    font-size: $veera-font-size-100;
+  }
+
+  label {
+    cursor: pointer;
+    display: block;
+    font-size: $veera-font-size-100;
+    line-height: 2.5;
+  }
+
+  :not(.lt-ie9) {
+    [type='radio'] {
+      border: 0;
+      clip: rect(0 0 0 0);
+      height: 1px;
+      width: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+    }
+
+    [type='radio'] + span::before {
+      border-radius: 1em;
+      border: 1px solid #8f91a8;
+      content: '';
+      display: inline-block;
+      height: 1em;
+      width: 1em;
+      margin-right: 0.75em;
+      vertical-align: -0.15em;
+    }
+
+    [type='radio']:checked + span::before {
+      background: get-color(sapphire-blue-10);
+      box-shadow: inset 0 0 0 2px get-color(white);
+    }
+
+    [type='radio']:focus + span {
+      outline: 1px dotted get-color(sapphire-blue-10);
+    }
+  }
+}

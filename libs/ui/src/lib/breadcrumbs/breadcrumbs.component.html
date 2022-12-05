@@ -1,0 +1,12 @@
+<div class="veera-breadcrumbs">
+  <div *ngIf="iconName" class="veera-breadcrumbs__icon-wrapper">
+    <veera-ng-icon [name]="iconName"
+                   svgClass="veera-breadcrumbs__icon">
+    </veera-ng-icon>
+  </div>
+  <ul class="veera-breadcrumbs__items">
+    <li *ngFor="let label of breadcrumbLabels; index as index" class="veera-breadcrumbs__item">
+      <a class="veera-breadcrumbs__item-link" (click)="breadcrumbChange.emit(index)">{{ label }}</a>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,105 @@
+@mixin veera-notification($base: &) {
+  margin: auto;
+  padding: get-spacing('haapsalu');
+  position: relative;
+  border-radius: $veera-radius-m;
+
+  @at-root {
+    #{$base}--severity-info {
+      background: get-color(sapphire-blue-1);
+      border: 1px solid get-color(sapphire-blue-10);
+    }
+
+    #{$base}--severity-warning {
+      background-color: get-color(dark-tangerine-1);
+      border: 1px solid get-color(dark-tangerine-10);
+    }
+
+    #{$base}--severity-success {
+      background-color: get-color(sea-green-1);
+      border: 1px solid get-color(sea-green-10);
+    }
+
+    #{$base}--severity-error {
+      background-color: get-color(jasper-1);
+      border: 1px solid get-color(jasper-10);
+    }
+
+    #{$base}--severity-neutral {
+      background-color: get-color(black-coral-1);
+      border: 1px solid get-color(black-coral-2);
+    }
+
+    #{$base}__header {
+      display: flex;
+      gap: get-spacing('rapla');
+      margin-bottom: get-spacing('elva');
+    }
+    #{$base}__title {
+      line-height: $veera-line-height-500;
+      color: get-color(black-coral-20);
+    }
+
+    #{$base}__header-icon {
+      #{$base}--severity-info & {
+        fill: get-color(sapphire-blue-10);
+      }
+
+      #{$base}--severity-warning & {
+        fill: get-color(dark-tangerine-10);
+      }
+
+      #{$base}--severity-success & {
+        fill: get-color(sea-green-10);
+      }
+
+      #{$base}--severity-error & {
+        fill: get-color(jasper-10);
+      }
+
+      #{$base}--severity-neutral & {
+        fill: get-color(black-coral-10);
+      }
+    }
+
+    #{$base}__content-icon {
+      fill: get-color(black);
+      margin-top: 1px;
+      margin-right: -6px;
+    }
+
+    #{$base}__header-icon {
+      height: 24px;
+      margin-top: 4px;
+    }
+
+    #{$base}__content-icon {
+      height: 14px;
+    }
+
+    #{$base}__close-button {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      cursor: pointer;
+    }
+
+    #{$base}__close-button-inner {
+      display: block;
+    }
+
+    #{$base}__close-button-icon {
+      fill: get-color(black-coral-18);
+      display: block;
+      width: 16px;
+      height: 16px;
+    }
+
+    #{$base}__content {
+      display: block;
+      color: get-color(black-coral-18);
+      font-size: $veera-font-size-80;
+      line-height: $veera-line-height-500;
+    }
+  }
+}

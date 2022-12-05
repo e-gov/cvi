@@ -1,0 +1,71 @@
+<div class="veera-select"
+     [class.filtered]="!!searchTerm"
+     [class.has-value]="hasValue"
+     [class.open]="isOpen"
+     [class.touched]="touched"
+     [class.invalid]="invalid">
+  <div class="veera-select__container"
+       [class.background-disabled]="backgroundDisabled"
+       (mousedown)="handleMousedown($event)">
+    <div class="veera-select__value-container">
+      <div *ngIf="!hasValue && !searchTerm" class="veera-select__placeholder">{{placeholder}}</div>
+      <div *ngIf="hasValue" class="veera-select__value">
+        <ng-template #defaultLabelTemplate>
+          {{selectedItem?.label}}
+        </ng-template>
+
+        <ng-template
+            [ngTemplateOutlet]="labelTemplate || defaultLabelTemplate"
+            [ngTemplateOutletContext]="{item: selectedItem?.value}">
+        </ng-template>
+      </div>
+    </div>
+    <div class="veera-select__input-container">
+      <input #searchInput
+             type="text"
+             role="presentation"
+             autocomplete="off"
+             [value]="searchTerm ? searchTerm : ''"
+             (input)="filter(searchInput.value)"
+             class="veera-select__input"/>
+    </div>
+    <span class="veera-select__icon-wrapper"
+          (mousedown)="handleArrowClick($event)">
+      <veera-ng-icon *ngIf="!isOpen && (!hasValue || !backgroundDisabled)"
+                     svgClass="veera-select__icon-svg"
+                     name="arrow_down">
+      </veera-ng-icon>
+      <veera-ng-icon *ngIf="!isOpen && hasValue && backgroundDisabled"
+                     class="veera-select__icon"
+                     svgClass="veera-select__icon-edit-svg"
+                     name="edit_simple">
+      </veera-ng-icon>
+      <veera-ng-icon *ngIf="isOpen"
+                     svgClass="veera-select__icon-svg"
+                     name="arrow_up">
+      </veera-ng-icon>
+    </span>
+  </div>
+  <div *ngIf="isOpen"
+       class="veera-select__dropdown">
+    <ul role="listbox">
+      <li role="option"
+          class="veera-select__dropdown-item"
+          *ngFor="let item of itemsList.filteredItems"
+          (click)="selectItem(item)">
+        <ng-template #defaultOptionTemplate>
+          <span class="veera-select__item-label">{{ item.value }}</span>
+        </ng-template>
+        <ng-template
+            [ngTemplateOutlet]="optionTemplate || defaultOptionTemplate"
+            [ngTemplateOutletContext]="{ item: item.value }">
+        </ng-template>
+      </li>
+      <li *ngIf="showAddItem"
+          role="option"
+          class="veera-select__dropdown-item" (click)="addItem()">
+        <span>{{addItemLabel}}</span> "{{searchTerm}}"
+      </li>
+    </ul>
+  </div>
+</div>
