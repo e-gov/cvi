@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [2.8.0](https://stash.ria.ee/scm/sun/veera-components/compare/styles-2.7.2...styles-2.8.0) (2022-12-05)
+
+
+### Features
+
+* reorderable list | STPA-220 | EBS-114 ([359bedb](https://stash.ria.ee/scm/sun/veera-components/commits/359bedb1c3e599e2578616e6806ceca3554e488f))
+
+
+
 ## [2.7.2](https://stash.ria.ee/scm/sun/veera-components/compare/styles-2.7.1...styles-2.7.2) (2022-12-05)
 
 
