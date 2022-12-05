@@ -59,7 +59,8 @@
       "Tooltip",
       "Toast",
       "Modal",
-      ["Modal directive", "Modal", "Confirmation modal"]
+      ["Modal directive", "Modal", "Confirmation modal"],
+      "Reorderable list"
     ]
   ]
 }

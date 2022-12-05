@@ -1,0 +1,10 @@
+<veera-ng-reorderable-list-item
+  *ngFor="let configuration of configurations.slice().reverse(); let first = first; let last = last"
+  [stepNameLabel]="stepNameLabel"
+  [configuration]="configuration"
+  [setAsPreviousStepButtonVisible]="!last"
+  [setAsNextStepButtonVisible]="!first"
+  (swapConfigurationsEvent)="swapConfigurations($event)"
+  (removeStepEvent)="removeStep($event)"
+  [dataAttribute]="'reorderable-list-item-' + getOrderNr(configuration)">
+</veera-ng-reorderable-list-item>

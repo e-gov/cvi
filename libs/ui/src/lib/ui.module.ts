@@ -46,6 +46,8 @@ import {
   veeraArrowDown,
   veeraArrowUp,
   veeraEditSimple,
+  veeraArrowUpAlt,
+  veeraArrowDownAlt,
 } from '@ria/veera-icons';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
@@ -73,6 +75,8 @@ import { ModalComponent } from './modal/modal.component';
 import { ModalDirective } from './modal/modal.directive';
 import { ConfirmationModalComponent } from './confirmation-modal/confirmation-modal.component';
 import { A11yModule } from '@angular/cdk/a11y';
+import { ReorderableListComponent } from './reorderable-list/reorderable-list/reorderable-list.component';
+import { ReorderableListItemComponent } from './reorderable-list/reorderable-list-item/reorderable-list-item.component';
 
 const components = [
   TrackComponent,
@@ -118,6 +122,8 @@ const components = [
   ModalComponent,
   ModalDirective,
   ConfirmationModalComponent,
+  ReorderableListComponent,
+  ReorderableListItemComponent,
 ];
 
 const pipes = [SafeHtmlPipe, NotificationSeverityToHeaderIconPipe];
@@ -162,6 +168,8 @@ export class UiModule {
       veeraArrowDown,
       veeraArrowUp,
       veeraEditSimple,
+      veeraArrowUpAlt,
+      veeraArrowDownAlt,
     ]);
   }
 }

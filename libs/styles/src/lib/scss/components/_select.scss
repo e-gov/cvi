@@ -35,7 +35,7 @@
       padding: 0 get-spacing('paldiski');
       height: 38px;
       width: 100%;
-      border-radius: 4px;
+      border-radius: $veera-radius-s;
       border: 1px solid get-color(black-coral-3);
       background: get-color(white);
     }
@@ -95,7 +95,7 @@
       position: absolute;
       width: 100%;
       background-color: get-color(white);
-      border-radius: 0 0 4px 4px;
+      border-radius: 0 0 $veera-radius-s $veera-radius-s;
       border: 1px solid get-color(black-coral-3);
       z-index: get-z-index('select', '__dropdown');
       max-height: 300px;

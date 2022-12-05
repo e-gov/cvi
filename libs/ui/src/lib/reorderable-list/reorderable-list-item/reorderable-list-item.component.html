@@ -1,0 +1,34 @@
+<button (click)="removeStep()"
+        [dataAttribute]="'step-' + orderNr + '-remove-button'"
+        aria-label="Close"
+        class="veera-reorderable-list__remove-button"
+        type="button">
+  <veera-ng-icon [svgClass]="'veera-reorderable-list__close-icon'" name="close"></veera-ng-icon>
+</button>
+
+<div class="veera-reorderable-list__ordering-buttons">
+  <button (click)="moveStepTo('next')"
+          [dataAttribute]="'step-' + orderNr + '-set-as-next-button'"
+          [ngClass]="setAsNextStepButtonVisible ? '' : 'hidden'"
+          aria-label="Next">
+    <veera-ng-icon name="arrow_up_alt" svgClass="veera-reorderable-list__order-button-icon"></veera-ng-icon>
+  </button>
+  <label>
+    <input [value]="orderNr"
+           [dataAttribute]="'step-' + orderNr + '-order-nr'"
+           class="veera-reorderable-list__order-nr"
+           disabled/>
+  </label>
+  <button (click)="moveStepTo('previous')"
+          [dataAttribute]="'step-' + orderNr + '-set-as-previous-button'"
+          [ngClass]="setAsPreviousStepButtonVisible ? '' : 'hidden'"
+          aria-label="Previous">
+    <veera-ng-icon name="arrow_down_alt" svgClass="veera-reorderable-list__order-button-icon"></veera-ng-icon>
+  </button>
+</div>
+
+<div class="veera-reorderable-list__form-item-wrapper">
+  <veera-ng-form-item [htmlId]="'step-' + orderNr + '-form-item'" [label]="stepNameLabel" class="veera-reorderable-list__form-item">
+    <veera-ng-input [htmlId]="'step-' + orderNr + '-form-item'" [(ngModel)]="configuration.title" [dataAttribute]="'step-' + orderNr + '-name'"></veera-ng-input>
+  </veera-ng-form-item>
+</div>

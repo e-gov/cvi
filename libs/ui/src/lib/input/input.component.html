@@ -1,6 +1,6 @@
-<input type="text"
-       [attr.id]="htmlId"
-       class="veera-textfield__input"
-       [placeholder]="placeholder"
+<input [(ngModel)]="value"
        [attr.disabled]="disabled ? disabled : null"
-       [(ngModel)]="value"/>
+       [attr.id]="htmlId"
+       [placeholder]="placeholder"
+       class="veera-textfield__input"
+       type="text"/>

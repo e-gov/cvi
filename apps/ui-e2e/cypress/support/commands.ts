@@ -84,6 +84,13 @@ declare global {
       runRadioGroupCommonTest(
         appearance: RadioGroupAppearance
       ): Cypress.Chainable;
+
+      reorderableListItemShouldHaveOrderNr(orderNr: number);
+
+      reorderableListItemShouldHaveName(
+        orderNr: number,
+        name: string
+      ): Cypress.Chainable;
     }
   }
 }
@@ -282,4 +289,14 @@ Cypress.Commands.add('runRadioGroupCommonTest', (appearance) => {
     .shouldHaveClasses('fieldset', 'veera-radio-group__inner')
     .shouldHaveClasses('legend', 'veera-radio-group__title')
     .shouldHaveClasses('div', 'veera-radio-group__list');
+});
+
+Cypress.Commands.add('reorderableListItemShouldHaveOrderNr', (orderNr) => {
+  cy.get(`[data-cy="step-${orderNr}-order-nr"]`).should('have.value', orderNr);
+});
+
+Cypress.Commands.add('reorderableListItemShouldHaveName', (orderNr, name) => {
+  cy.get(`[data-cy="step-${orderNr}-name"]`).within(() => {
+    cy.get('input').should('have.value', name);
+  });
 });
