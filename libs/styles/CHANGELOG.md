@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [2.7.2](https://stash.ria.ee/scm/sun/veera-components/compare/styles-2.7.1...styles-2.7.2) (2022-12-05)
+
+
+### Bug Fixes
+
+* step min width adjustment | EBS-202 | STPA-204 ([9d8e162](https://stash.ria.ee/scm/sun/veera-components/commits/9d8e1627fdbd109601f790c2e5b3b64c604cf78a))
+
+
+
 ## [2.7.1](https://stash.ria.ee/scm/sun/veera-components/compare/styles-2.7.0...styles-2.7.1) (2022-12-02)
 
 
