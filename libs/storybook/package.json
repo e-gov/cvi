@@ -1,6 +1,6 @@
 {
   "name": "storybook",
-  "version": "0.13.0",
+  "version": "0.14.0",
   "description": "RIA storybook",
   "homepage": "https://stash.ria.ee/projects/SUN/repos/veera-components/browse/libs/storybook",
   "peerDependencies": {

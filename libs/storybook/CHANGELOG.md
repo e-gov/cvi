@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [0.14.0](https://stash.ria.ee/scm/sun/veera-components/compare/storybook-0.13.0...storybook-0.14.0) (2022-12-05)
+
+
+### Features
+
+* reorderable list | STPA-220 | EBS-114 ([359bedb](https://stash.ria.ee/scm/sun/veera-components/commits/359bedb1c3e599e2578616e6806ceca3554e488f))
+
+
+
 # [0.13.0](https://stash.ria.ee/scm/sun/veera-components/compare/storybook-0.12.0...storybook-0.13.0) (2022-12-01)
 
 
