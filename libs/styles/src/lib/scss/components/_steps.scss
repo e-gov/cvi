@@ -85,7 +85,7 @@
       }
       @include veera-breakpoint-up(sm) {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(224px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(209px, 1fr));
         column-gap: 0;
         padding-bottom: get-spacing('kuressaare');
       }
