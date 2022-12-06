@@ -40,7 +40,7 @@
     "@fontsource/roboto": "^4.5.8",
     "@ngx-translate/core": "^14.0.0",
     "@ngx-translate/http-loader": "^7.0.0",
-    "@nrwl/angular": "14.5.4",
+    "@nrwl/angular": "14.8.6",
     "rxjs": "~7.5.6",
     "sanitize-html": "2.7.1",
     "svg-to-ts": "^8.8.1",
@@ -48,7 +48,7 @@
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~14.1.1",
+    "@angular-devkit/build-angular": "~14.2.10",
     "@angular-eslint/eslint-plugin": "~14.0.0",
     "@angular-eslint/eslint-plugin-template": "~14.0.0",
     "@angular-eslint/template-parser": "~14.0.0",

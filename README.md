@@ -15,18 +15,6 @@ https://sundmusteenus-dev.eesti.ee/storybook/?path=/story/intro--page
 
 When adding/upgrading peer dependencies then make sure that they are also updated in `libs/LIB-NAME/package.json` in case of peerDependencies and in `libs/LIB-NAME/ng-package.json` for dependencies to be packaged with the library.
 
-### Development guidelines
-
-TO DO
-
-### Testing
-
-TO DO
-
-### Commits
-
-TO DO
-
 ### Publishing
 
 In case of `fix` and `feat` commit types a new changelog entry is generated and the packages published automatically after a successful build.
