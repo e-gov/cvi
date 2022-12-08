@@ -10,12 +10,7 @@ body {
   font-family: $font-family-base;
   font-size: $veera-font-size-100;
   line-height: 1.47;
-  background-color: get-color(extra-light);
-  & {
-    @include veera-breakpoint-down(sm) {
-      background-color: get-color(black-coral-0);
-    }
-  }
+  background-color: get-color(black-coral-0);
 }
 a,
 input,
