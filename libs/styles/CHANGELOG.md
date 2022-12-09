@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [2.8.1](https://stash.ria.ee/scm/sun/veera-components/compare/styles-2.8.0...styles-2.8.1) (2022-12-09)
+
+
+### Bug Fixes
+
+* page background color | EBS-213 | STPA-219 ([a5ff71b](https://stash.ria.ee/scm/sun/veera-components/commits/a5ff71ba84df80cf44e10836423774b051381844))
+
+
+
 # [2.8.0](https://stash.ria.ee/scm/sun/veera-components/compare/styles-2.7.2...styles-2.8.0) (2022-12-05)
 
 
