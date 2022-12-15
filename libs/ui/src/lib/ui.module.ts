@@ -31,9 +31,14 @@ import { IconsRegistry } from './icons/icons-registry.service';
 import {
   veeraArrowALeft,
   veeraArrowARight,
+  veeraArrowDown,
+  veeraArrowDownAlt,
+  veeraArrowUp,
+  veeraArrowUpAlt,
   veeraCall,
   veeraCheckCircleOutline,
   veeraClose,
+  veeraEditSimple,
   veeraEmail,
   veeraErrorOutline,
   veeraHappyFace,
@@ -43,11 +48,6 @@ import {
   veeraScreenShare,
   veeraSuccess,
   veeraWarningAmber,
-  veeraArrowDown,
-  veeraArrowUp,
-  veeraEditSimple,
-  veeraArrowUpAlt,
-  veeraArrowDownAlt,
 } from '@ria/veera-icons';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';

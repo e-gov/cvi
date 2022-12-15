@@ -2,7 +2,10 @@
   <div class="veera-table-of-contents__content" #content>
     <ng-content></ng-content>
   </div>
-  <veera-ng-table-of-contents *ngIf="tocItems" [title]="title">
-      <veera-ng-table-of-contents-item *ngFor="let item of tocItems" [label]="item.label" [href]="item.href"></veera-ng-table-of-contents-item>
+  <veera-ng-table-of-contents [title]="title">
+    <veera-ng-table-of-contents-item *ngFor="let item of tocItems"
+                                     [label]="item.label"
+                                     [href]="item.href">
+    </veera-ng-table-of-contents-item>
   </veera-ng-table-of-contents>
 </veera-ng-table-of-contents-wrapper>

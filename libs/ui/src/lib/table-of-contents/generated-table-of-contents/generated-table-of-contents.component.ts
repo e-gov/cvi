@@ -45,28 +45,15 @@ export class GeneratedTableOfContentsComponent
   ) {}
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (this.domMutations && changes['title']) {
+    if (changes['title']) {
       clearTimeout(this.timeout);
       this.timeout = setTimeout(() => this.buildToc(), 1);
     }
   }
 
+  /** For more complex cases we have to observe the entire element */
   ngAfterViewInit(): void {
-    this.buildToc();
-    this.domMutations = new MutationObserver((mutations: MutationRecord[]) => {
-      mutations.forEach((mutation: MutationRecord) => {
-        (Array.from(mutation.addedNodes) as HTMLElement[]).forEach(
-          (addedEl: HTMLElement) => {
-            if (
-              addedEl.nodeType === Node.ELEMENT_NODE &&
-              addedEl.querySelector(this.headingSelector)
-            ) {
-              this.buildToc();
-            }
-          }
-        );
-      });
-    });
+    this.domMutations = new MutationObserver(() => this.buildToc());
 
     this.domMutations.observe(this.content.nativeElement, {
       childList: true,
@@ -75,17 +62,16 @@ export class GeneratedTableOfContentsComponent
   }
 
   ngOnDestroy(): void {
-    if (this.tocItems && this.tocItems.length > 0) {
-      this.tocItems.forEach((item: TocItem) => {
-        item.intersectionObserver.disconnect();
-      });
-    }
+    this.removeToc();
     this.domMutations.disconnect();
     clearTimeout(this.timeout);
   }
 
   buildToc(): void {
-    this.tocItems = [];
+    if (!this.content) {
+      return;
+    }
+    this.removeToc();
     const headingNodes: NodeList = this.content.nativeElement.querySelectorAll(
       this.headingSelector
     );
@@ -115,16 +101,25 @@ export class GeneratedTableOfContentsComponent
     const intersectionObservable = new IntersectionObserver(
       (entries: IntersectionObserverEntry[]) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            this.tocService.setCurrentToCSection(anchorId);
-            this.cdRef.markForCheck();
+          if (entry.isIntersecting && entry.intersectionRatio === 1) {
+            this.tocService.setCurrentToCSection(anchorId, entry.time);
+            this.cdRef.detectChanges();
           }
         });
       },
-      { rootMargin: '0px', threshold: [1] }
+      { rootMargin: '0px 0px -50% 0px', threshold: 1 }
     );
     intersectionObservable.observe(headingEl);
     return intersectionObservable;
+  }
+
+  private removeToc() {
+    if (this.tocItems?.length > 0) {
+      this.tocItems.forEach((item: TocItem) =>
+        item.intersectionObserver.disconnect()
+      );
+      this.tocItems = [];
+    }
   }
 }
 
