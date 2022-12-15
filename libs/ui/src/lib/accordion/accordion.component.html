@@ -1,5 +1,5 @@
 <ul class="veera-accordion__list" *ngIf="items$ | async">
-  <li *ngFor="let item of accordionItemDirectives; index as i"
+  <li *ngFor="let item of accordionItemDirectives; index as i" id="accordion-item-{{i}}"
       class="veera-accordion__item" [class.is-disabled]="item.disabled" [class.is-active]="itemInExpanded(i)">
     <ng-container
       [ngTemplateOutlet]="(item?.customHeader?.templateRef || defaultHeader)"
