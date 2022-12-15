@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [2.10.2](https://stash.ria.ee/scm/sun/veera-components/compare/ui-2.10.1...ui-2.10.2) (2022-12-15)
+
+
+### Bug Fixes
+
+* accordion single open scroll EBS-203 STPA-204 ([35add49](https://stash.ria.ee/scm/sun/veera-components/commits/35add494d194c1109b38a218636e773d4c203b8c))
+
+
+
 ## [2.10.1](https://stash.ria.ee/scm/sun/veera-components/compare/ui-2.10.0...ui-2.10.1) (2022-12-15)
 
 
