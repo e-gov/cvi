@@ -1,5 +1,4 @@
 # Veera Components Library
-[![Quality Gate Status](https://sonarqube.riaint.ee/api/project_badges/measure?project=SUN.veera-components&metric=alert_status&token=2feffdfcc088c3804517a49b7bb7add619501691)](https://sonarqube.riaint.ee/dashboard?id=SUN.veera-components)
 
 This project includes a pattern library and a re-usable component library for Angular. The pattern library uses [Storybook](https://storybook.js.org).
 
@@ -7,7 +6,11 @@ This project includes a pattern library and a re-usable component library for An
 
 Documentation and Installation instructions can be found in the Storybook:
 
-https://sundmusteenus-dev.eesti.ee/storybook/?path=/story/intro--page
+https://sundmusteenus-dev.eesti.ee/storybook/?path=/story/intro--page (will be replaced soon with a public version)
+
+Styles are based on the original Veera Design System:
+
+https://www.figma.com/file/nNCV5kRqdRkS8MOCK1ZbqU/Veera-Design-System
 
 ## Developing
 
