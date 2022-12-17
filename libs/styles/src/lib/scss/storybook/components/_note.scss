@@ -1,0 +1,16 @@
+.c-storybook-note {
+  display: block;
+  background-color: get-color(black-coral-1);
+  border: 1px solid get-color(black-coral-2);
+  margin-inline: 10%;
+  border-radius: $veera-radius-m;
+  padding: get-spacing('paldiski');
+  margin-bottom: get-spacing('viljandi');
+
+  &__content {
+    display: block;
+    color: get-color(black-coral-18);
+    font-size: $veera-font-size-80;
+    line-height: $veera-line-height-500;
+  }
+}

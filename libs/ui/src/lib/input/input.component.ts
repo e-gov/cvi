@@ -35,7 +35,7 @@ export class InputComponent implements ControlValueAccessor {
   private onTouched: () => unknown = () => {};
 
   @HostBinding('class') get getHostClasses(): string {
-    return `veera-textfield${
+    return `veera-textfield veera-textfield--type-single-line${
       this.disabled ? ' veera-textfield--is-disabled' : ''
     }`;
   }

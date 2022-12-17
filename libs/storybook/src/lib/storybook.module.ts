@@ -15,6 +15,7 @@ import { StorybookColorCard } from './components/storybook-color-cards/storybook
 import { StorybookIconCards } from './components/storybook-icon-cards/storybook-icon-cards.component';
 import { StorybookIconCard } from './components/storybook-icon-cards/storybook-icon-card.component';
 import { StorybookTypeTester } from './components/storybook-type-tester/storybook-type-tester.component';
+import { StorybookNote } from './components/storybook-note/storybook-note.component';
 import { StorybookRandomParagraphsDirective } from './directives/storybook-random-paragraphs/storybook-random-paragraphs.directive';
 import { StorybookCurrentComponentDirective } from './directives/storybook-current-component/storybook-current-component.directive';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -33,6 +34,7 @@ const components = [
   StorybookIconCards,
   StorybookIconCard,
   StorybookTypeTester,
+  StorybookNote,
   StorybookSpacingSpecimen,
   StorybookSpacingSpecimenItem,
   StorybookRandomParagraphsDirective,

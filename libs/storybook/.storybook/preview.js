@@ -22,6 +22,7 @@ export const parameters = {
     },
   },
   options: {
+    // stories inside one file will be sorted in alphabetical order because of this bug https://github.com/storybookjs/storybook/issues/18659
     storySort: {
       order: sortingOrder.ids,
     },

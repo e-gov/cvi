@@ -1,0 +1,171 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+
+<Meta title="Angular/Track/Quick start" parameters={{viewMode: 'docs', layout: 'fullscreen'}}/>
+
+# Quick start and component FAQ
+
+## How to move items to opposite edges?
+
+Use `layout="flex"` (default) with `horizontalAlignment="justify"`:
+
+<Canvas>
+  <Story name="Opposite edges">
+    {{
+      template: `
+        <veera-ng-track layout="flex" horizontalAlignment="justify">
+          <veera-ng-button>Button 1</veera-ng-button>
+          <veera-ng-button>Button on the other edge</veera-ng-button>
+        </veera-ng-track>
+      `,
+    }}
+  </Story>
+</Canvas>
+
+## Can I do a toolbar-like layout using just `veera-ng-track`?
+
+Sure! Just nest two tracks.
+
+Note that in cases like this you can also use `verticalAlignment="center"` to balance items vertically.
+
+<Canvas>
+  <Story name="Toolbar with several buttons grouped">
+    {{
+      template: `
+        <veera-ng-track layout="flex" horizontalAlignment="justify" verticalAlignment="center">
+          <veera-ng-track [gap]="4">
+            <veera-ng-button>Button to the left</veera-ng-button>
+            <veera-ng-button>Another button</veera-ng-button>
+          </veera-ng-track>
+          <veera-ng-track [gap]="4">
+            <a href="#">A link on the right</a>
+          </veera-ng-track>
+        </veera-ng-track>
+      `,
+    }}
+  </Story>
+</Canvas>
+
+## I need to have some form items of equal width, they need to wrap into multiple rows if they don't fit. I don't care about item width across different rows. Is it possible?
+
+Yes, you can. Use `layout="flex"` (default) with `flexColumnsEqual="true"` and `flexIsMultiline="true"`. You can also set `verticalAlignment="bottom"` to make sure labels with multiple lines won't create misalignment with neighbouring items.
+
+Note: by default some form controls have a maximum width. You can set `--veera-textfield--single-line--max-width`, `--veera-textfield--multiple-lines--max-width` or similar CSS variables of a form control component to `100%` to make sure a form control fills all available space.
+
+The variables can be set anywhere in a common parent eg. via `[ngStyle]`.
+
+<Canvas>
+  <Story name="Flexible form items" height="200px">
+    {{
+      template: `
+        <veera-ng-track [gap]="3" [flexColumnsEqual]="true" [flexIsMultiline]="true" verticalAlignment="bottom" [ngStyle]="{'--veera-textfield--single-line--max-width': '100%', '--veera-textfield--multiple-lines--max-width': '100%'}">
+          <veera-ng-form-item label="Huge unspeakablethingamabob, field 1" htmlId="someid">
+            <veera-ng-input htmlId="someid"></veera-ng-input>
+          </veera-ng-form-item>
+          <veera-ng-form-item label="Field 2 with more characters" htmlId="someid2">
+            <veera-ng-input htmlId="someid2"></veera-ng-input>
+          </veera-ng-form-item>
+          <veera-ng-form-item label="Field 3, even lengthier" htmlId="someid3">
+            <veera-ng-input htmlId="someid3"></veera-ng-input>
+          </veera-ng-form-item>
+          <veera-ng-form-item label="Field 4" htmlId="someid4">
+            <veera-ng-input htmlId="someid4"></veera-ng-input>
+          </veera-ng-form-item>
+          <veera-ng-form-item label="Last field" htmlId="lastid">
+            <veera-ng-textarea htmlId="lastid"></veera-ng-textarea>
+          </veera-ng-form-item>
+        </veera-ng-track>
+      `,
+    }}
+  </Story>
+</Canvas>
+
+## I need to put some form items of equal width on the first row along with a single form item on the second row taking all space. Can I do it?
+
+Yes, you can. Create a track and set it to `flexDirection="vertical"` with some `gap`. Drop another track into it as a container for the first row. Then just add a single form item next to this child track.
+
+See the previous question to stretch a form item to all available width.
+
+<Canvas>
+  <Story name="Two row fixed form items" height="200px">
+    {{
+      template: `
+        <veera-ng-track [gap]="3" flexDirection="vertical">
+          <veera-ng-track [gap]="2" [flexColumnsEqual]="true" verticalAlignment="bottom">
+            <veera-ng-form-item label="Huge unspeakablethingamabob, field 1" htmlId="someid">
+              <veera-ng-input htmlId="someid"></veera-ng-input>
+            </veera-ng-form-item>
+            <veera-ng-form-item label="Field 2 with more characters" htmlId="someid2">
+              <veera-ng-input htmlId="someid2"></veera-ng-input>
+            </veera-ng-form-item>
+            <veera-ng-form-item label="Field 3, even lengthier" htmlId="someid3">
+              <veera-ng-input htmlId="someid3"></veera-ng-input>
+            </veera-ng-form-item>
+            <veera-ng-form-item label="Field 4" htmlId="someid4">
+              <veera-ng-input htmlId="someid4"></veera-ng-input>
+            </veera-ng-form-item>
+          </veera-ng-track>
+          <veera-ng-form-item label="Second row field" htmlId="lastid" [ngStyle]="{'--veera-textfield--multiple-lines--max-width': '100%'}">
+            <veera-ng-textarea htmlId="lastid"></veera-ng-textarea>
+          </veera-ng-form-item>
+        </veera-ng-track>
+      `,
+    }}
+  </Story>
+</Canvas>
+
+## I need to have some form items of equal width (table-like layout). Items should flow from left to right. Can it be done?
+
+Yes, just use `layout="grid"`. Items will wrap automatically into multiple rows if needed.
+
+<Canvas>
+  <Story name="Form items as a grid" height="200px">
+    {{
+      template: `
+        <veera-ng-track [gap]="3" layout="grid" verticalAlignment="bottom">
+          <veera-ng-form-item label="Huge unspeakablethingamabob, field 1" htmlId="someid">
+            <veera-ng-input htmlId="someid"></veera-ng-input>
+          </veera-ng-form-item>
+          <veera-ng-form-item label="Field 2 with more characters" htmlId="someid2">
+            <veera-ng-input htmlId="someid2"></veera-ng-input>
+          </veera-ng-form-item>
+          <veera-ng-form-item label="Field 3, even lengthier" htmlId="someid3">
+            <veera-ng-input htmlId="someid3"></veera-ng-input>
+          </veera-ng-form-item>
+          <veera-ng-form-item label="Field 4" htmlId="someid4">
+            <veera-ng-input htmlId="someid4"></veera-ng-input>
+          </veera-ng-form-item>
+          <veera-ng-form-item label="Last field" htmlId="lastid">
+            <veera-ng-textarea htmlId="lastid"></veera-ng-textarea>
+          </veera-ng-form-item>
+        </veera-ng-track>
+      `,
+    }}
+  </Story>
+</Canvas>
+
+## I need to have some form items of equal width (table-like layout). But the items should flow from top to bottom, column by column. Can it be done?
+
+Yes, use `layout="grid"` with `gridRows` set to the needed amount of rows.
+
+<Canvas>
+  <Story name="Form items as a grid, grouped by columns" height="200px">
+    {{
+      template: `
+        <veera-ng-track [gap]="3" layout="grid" verticalAlignment="bottom" [gridRows]="3">
+          <veera-ng-form-item label="Huge unspeakablethingamabob, field 1" htmlId="someid">
+            <veera-ng-input htmlId="someid"></veera-ng-input>
+          </veera-ng-form-item>
+          <veera-ng-form-item label="Field 2 with more characters" htmlId="someid2">
+            <veera-ng-input htmlId="someid2"></veera-ng-input>
+          </veera-ng-form-item>
+          <veera-ng-form-item label="Field 3, even lengthier" htmlId="someid3">
+            <veera-ng-input htmlId="someid3"></veera-ng-input>
+          </veera-ng-form-item>
+          <veera-ng-form-item label="Last field" htmlId="lastid">
+            <veera-ng-input htmlId="lastid"></veera-ng-input>
+          </veera-ng-form-item>
+        </veera-ng-track>
+      `,
+    }}
+  </Story>
+</Canvas>

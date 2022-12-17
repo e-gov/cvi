@@ -16,7 +16,7 @@ const Template: Story = (args) => ({
   props: args,
   /* template */
   template: `
-    <textarea class="c-textarea"
+    <textarea class="veera-textfield__text-control"
               [placeholder]="placeholder"
               [maxLength]="maxLength"
               cdkTextareaAutosize
@@ -34,7 +34,7 @@ const CharacterCounterTemplate: Story = (args) => ({
   props: args,
   /* template */
   template: `
-    <textarea class="c-textarea"
+    <textarea class="veera-textfield__text-control"
               [placeholder]="placeholder"
               [maxLength]="maxLength"
               cdkTextareaAutosize

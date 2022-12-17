@@ -1,10 +1,10 @@
 @mixin veera-reorderable-list($base: &) {
-  --veera-textfield--min-width: 100%;
+  --veera-textfield--single-line--min-width: 100%;
 
   padding: get-spacing('haapsalu');
   position: relative;
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   width: 100%;
   gap: get-spacing('haapsalu');
 
@@ -43,6 +43,7 @@
       height: 24px;
       text-align: center;
       background-color: #FDFDFD;
+      color: get-color(black);
     }
     #{$base}__ordering-buttons {
       margin-right: get-spacing('parnu');

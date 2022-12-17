@@ -8,7 +8,8 @@ export default {
   parameters: { notes },
   args: {
     htmlId: 'fksd4kfds',
-    label: 'Your email',
+    label: 'Example label',
+    placeholder: 'Placeholder text...',
   },
 } as Meta<FormItemComponent>;
 
@@ -16,11 +17,36 @@ const Template: Story<FormItemComponent> = (args: FormItemComponent) => ({
   props: args,
   /* template */
   template: `
-    <veera-ng-form-item [labelPosition]="labelPosition" [isLabelHidden]="isLabelHidden" [required]="required" [label]="label" [htmlId]="htmlId">
-      <veera-ng-input [htmlId]="htmlId"></veera-ng-input>
+    <veera-ng-form-item [labelPosition]="labelPosition"
+                        [isLabelHidden]="isLabelHidden"
+                        [required]="required"
+                        [label]="label"
+                        [htmlId]="htmlId">
+      <veera-ng-input [placeholder]="placeholder"
+                      [htmlId]="htmlId">
+      </veera-ng-input>
     </veera-ng-form-item>
   `,
 });
 
 export const Default = Template.bind({});
-Default.args = {};
+
+const TextareaTemplate: Story<FormItemComponent> = (
+  args: FormItemComponent
+) => ({
+  props: args,
+  /* template */
+  template: `
+    <veera-ng-form-item [labelPosition]="labelPosition"
+                        [isLabelHidden]="isLabelHidden"
+                        [required]="required"
+                        [label]="label"
+                        [htmlId]="htmlId">
+      <veera-ng-textarea [placeholder]="placeholder"
+                         [htmlId]="htmlId">
+      </veera-ng-textarea>
+    </veera-ng-form-item>
+  `,
+});
+
+export const WithTextarea = TextareaTemplate.bind({});

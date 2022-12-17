@@ -5,7 +5,7 @@
   <ng-content></ng-content>
 </div>
 <div class="veera-modal__footer">
-  <veera-ng-track direction="verticalReverseOnMobile" horizontalAlignment="right" [gap]="2">
+  <veera-ng-track flexDirection="verticalReverseOnMobile" horizontalAlignment="right" [gap]="2">
     <veera-ng-button *ngIf="cancelButtonText" appearance="secondary" (click)="cancelled.emit()" dataAttribute="modal-cancel">
       {{ cancelButtonText }}
     </veera-ng-button>
