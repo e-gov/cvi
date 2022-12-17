@@ -1,6 +1,6 @@
 {
   "name": "@ria/veera-styles",
-  "version": "2.8.1",
+  "version": "3.0.0",
   "dependencies": {
     "tslib": "^2.3.0",
     "@fontsource/roboto": "^4.5.8"
