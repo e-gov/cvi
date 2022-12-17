@@ -2,6 +2,82 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [1.0.0](https://stash.ria.ee/scm/sun/veera-components/compare/storybook-0.14.0...storybook-1.0.0) (2022-12-17)
+
+
+### Features
+
+* grid support under track + reorderable list improvements | EBS-120 | EBS-114 | STPA-220 ([4f03bf3](https://stash.ria.ee/scm/sun/veera-components/commits/4f03bf31084bd05890f583fbd92f9d1936139179))
+
+
+### BREAKING CHANGES
+
+* direction prop of veera-ng-track renamed to flexDirection
+
+commit 7234bc55ae486aefb067e7f1274c293900e22b04
+Author: Aleksandr Beliaev <aleksandr.beliaev@nortal.com>
+Date:   Sat Dec 10 21:48:02 2022 +0200
+
+    docs(storybook): display some of the controls of veera-ng-track story conditionally
+
+commit 8bbcbdd23a2a9529973daf4957a1fd59401d5b56
+Author: Aleksandr Beliaev <aleksandr.beliaev@nortal.com>
+Date:   Sat Dec 10 21:45:42 2022 +0200
+
+    docs(ui): updated docs for veera-track Sass component and veera-ng-track Angular component
+
+commit 7e1fd198641c19324ed3582351458158d51297a4
+Author: Aleksandr Beliaev <aleksandr.beliaev@nortal.com>
+Date:   Sat Dec 10 21:11:44 2022 +0200
+
+    chore(storybook): added categories to controls of veera-ng-track story for usage clarity
+
+commit 66c5d6102c30ea3740adb339203c07dafe27d7c5
+Author: Aleksandr Beliaev <aleksandr.beliaev@nortal.com>
+Date:   Sat Dec 10 20:54:53 2022 +0200
+
+    feat(ui): enable horizontalAlignment and verticalAlignment props of veera-ng-track component when layout=grid
+
+commit 66dfb8705410d26dff86131e30af9c2ab1bbfd8e
+Author: Aleksandr Beliaev <aleksandr.beliaev@nortal.com>
+Date:   Sat Dec 10 20:51:13 2022 +0200
+
+    feat(ui): added justify value to horizontalAlignment prop of veera-ng-track component
+
+commit 0bf7f49b5f75ead6f660849c74b4ac39748ab8cf
+Author: Martin Luik <martinluik@Martins-MacBook-Pro.local>
+Date:   Sat Dec 10 17:48:45 2022 +0200
+
+    feat: reorderable list improvements
+
+commit 86b72858af4d7207fd158dcd99fdd5e89c982273
+Author: Aleksandr Beliaev <aleksandr.beliaev@nortal.com>
+Date:   Sat Dec 10 17:48:22 2022 +0200
+
+    fix(ui): fixed textarea not aligned in a veera-ng-form-item inside of veera-ng-track with verticalAlignment=bottom
+
+commit 8f78988366cfa4701d354027e633944c5d04e94b
+Author: Aleksandr Beliaev <aleksandr.beliaev@nortal.com>
+Date:   Sat Dec 10 17:47:20 2022 +0200
+
+    feat(ui): added verticalAlignment prop to veera-ng-track component
+
+commit 4a6c8c92c70dd5fb2e5155276febdaa94611a9c9
+Author: Aleksandr Beliaev <aleksandr.beliaev@nortal.com>
+Date:   Sat Dec 10 17:12:40 2022 +0200
+
+    chore(ui): removed get prefix from getter names in veera-ng-track component
+
+commit 2e8015916eb30d3bc4aaefd5eadda363eda83d12
+Author: Aleksandr Beliaev <aleksandr.beliaev@nortal.com>
+Date:   Sat Dec 10 17:11:18 2022 +0200
+
+    fix(ui): added null value to all host CSS prop getters in veera-ng-track component to remove unset CSS properties
+
+... and 16 more commits
+
+
+
 # [0.14.0](https://stash.ria.ee/scm/sun/veera-components/compare/storybook-0.13.0...storybook-0.14.0) (2022-12-05)
 
 
