@@ -41,8 +41,14 @@
     }
   }
 
-  ol, ul {
-    padding: 0 get-spacing('haapsalu');
+  ol:not(.list-style-none) {
+    list-style-position: inside;
+    padding-left: get-spacing('haapsalu');
+    text-indent: calc(-1 * get-spacing('haapsalu'));
+  }
+
+  ul:not(.list-style-none) {
+    padding-left: 18px;
   }
 
   ul {
