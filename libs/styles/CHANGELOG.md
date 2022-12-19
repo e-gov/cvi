@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [3.0.1](https://stash.ria.ee/scm/sun/veera-components/compare/styles-3.0.0...styles-3.0.1) (2022-12-19)
+
+
+### Bug Fixes
+
+* list numbers and bullets alignment | EBS-185 | STPA-204 ([afd87fc](https://stash.ria.ee/scm/sun/veera-components/commits/afd87fc52f6dc297a550e0b6a1d1561ea821f02f))
+
+
+
 # [3.0.0](https://stash.ria.ee/scm/sun/veera-components/compare/styles-2.8.1...styles-3.0.0) (2022-12-17)
 
 
