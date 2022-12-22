@@ -27,7 +27,8 @@
       "Notification",
       "Html section",
       "Table of contents",
-      "Modal"
+      "Modal",
+      "Tooltip"
     ],
     "Angular",
     [
