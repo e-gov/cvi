@@ -2,6 +2,10 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.0.1](https://stash.ria.ee/scm/sun/veera-components/compare/storybook-1.0.0...storybook-1.0.1) (2022-12-22)
+
+
+
 # [1.0.0](https://stash.ria.ee/scm/sun/veera-components/compare/storybook-0.14.0...storybook-1.0.0) (2022-12-17)
 
 
