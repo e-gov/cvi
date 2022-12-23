@@ -2,6 +2,10 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [3.0.3](https://stash.ria.ee/scm/sun/veera-components/compare/styles-3.0.2...styles-3.0.3) (2022-12-23)
+
+
+
 ## [3.0.2](https://stash.ria.ee/scm/sun/veera-components/compare/styles-3.0.1...styles-3.0.2) (2022-12-22)
 
 
