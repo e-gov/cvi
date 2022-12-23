@@ -16,7 +16,7 @@
       max-width: 400px;
       min-width: 125px;
       font-size: $veera-font-size-80;
-      z-index: get-z-index('tooltip', 'root');
+      z-index: var(--veera-tooltip-zindex, #{get-z-index('tooltip', 'root')});
 
       & {
         @include veera-breakpoint-down(sm) {
@@ -26,11 +26,14 @@
     }
 
     #{$base}__arrow {
+      // If --veera-tooltip-zindex is not set, --arrow-configurable-index is not set too
+      --arrow-configurable-index: calc(var(--veera-tooltip-zindex) + 1);
+
       background-color: get-color(white);
       transform: rotate(45deg);
       width: 15px;
       height: 15px;
-      z-index: get-z-index('tooltip', 'arrow');
+      z-index: var(--arrow-configurable-index, #{get-z-index('tooltip', 'root') + 1});
     }
   }
 }

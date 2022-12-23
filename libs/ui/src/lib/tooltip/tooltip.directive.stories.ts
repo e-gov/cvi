@@ -3,7 +3,7 @@ import { TooltipDirective } from './tooltip.directive';
 import notes from './tooltip.directive.md';
 
 export default {
-  title: 'Angular/Tooltip Directive',
+  title: 'Angular/Tooltip/Tooltip Directive',
   component: TooltipDirective,
   parameters: { notes },
   argTypes: {},
