@@ -4,7 +4,7 @@ import { BehaviorSubject } from 'rxjs';
 @Injectable({ providedIn: 'root' })
 export class TableOfContentsService {
   private currentToCSectionTimestamp: number | undefined;
-  private currentToCSectionSource = new BehaviorSubject<string>('');
+  private currentToCSectionSource = new BehaviorSubject<string>('toc-0');
   currentToCSection$ = this.currentToCSectionSource.asObservable();
 
   /** Timestamp is for ordering sections that are set at the same time */

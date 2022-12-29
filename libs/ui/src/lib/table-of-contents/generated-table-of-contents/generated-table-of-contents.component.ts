@@ -91,6 +91,7 @@ export class GeneratedTableOfContentsComponent
           });
         }
       });
+      this.cdRef.detectChanges();
     }
   }
 
