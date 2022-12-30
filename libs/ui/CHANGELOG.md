@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [3.0.4](https://stash.ria.ee/scm/sun/veera-components/compare/ui-3.0.3...ui-3.0.4) (2022-12-30)
+
+
+### Bug Fixes
+
+* table of content not showing on initial load v2 | EBS-418 | STPA-219 ([14a896a](https://stash.ria.ee/scm/sun/veera-components/commits/14a896a07526de59513e8f79bfc5c3c1c67bce93))
+
+
+
 ## [3.0.3](https://stash.ria.ee/scm/sun/veera-components/compare/ui-3.0.2...ui-3.0.3) (2022-12-29)
 
 
