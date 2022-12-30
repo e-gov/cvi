@@ -59,6 +59,7 @@ export class GeneratedTableOfContentsComponent
       childList: true,
       subtree: true,
     });
+    this.cdRef.markForCheck();
   }
 
   ngOnDestroy(): void {
