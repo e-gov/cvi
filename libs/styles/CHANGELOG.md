@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [3.1.1](https://stash.ria.ee/scm/sun/veera-components/compare/styles-3.1.0...styles-3.1.1) (2023-01-02)
+
+
+### Bug Fixes
+
+* steps mobile buttons | EBS-429 | STPA-219 ([d1a42d4](https://stash.ria.ee/scm/sun/veera-components/commits/d1a42d459b3955c1a1bedf9117b8314a6b15183e))
+
+
+
 # [3.1.0](https://stash.ria.ee/scm/sun/veera-components/compare/styles-3.0.3...styles-3.1.0) (2023-01-02)
 
 
