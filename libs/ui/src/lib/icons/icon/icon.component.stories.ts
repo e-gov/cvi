@@ -1,6 +1,7 @@
 import { Meta, Story } from '@storybook/angular/';
 import { IconComponent } from './icon.component';
 import notes from './icon.component.md';
+import { storybookIconsNames } from '../storybook-icons';
 
 export default {
   title: 'Angular/Icon',
@@ -9,7 +10,7 @@ export default {
   argTypes: {
     name: {
       name: 'Name',
-      options: ['action', 'call', 'close'],
+      options: storybookIconsNames,
       control: { type: 'select' },
     },
   },

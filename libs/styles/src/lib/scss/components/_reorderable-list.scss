@@ -1,4 +1,6 @@
 @mixin veera-reorderable-list($base: &) {
+  --comment: 'Interactive list of editable form groups';
+
   --veera-textfield--single-line--min-width: 100%;
 
   padding: get-spacing('haapsalu');

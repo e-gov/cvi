@@ -3,7 +3,9 @@ import { NgModule } from '@angular/core';
 
 import { TrackComponent } from './track/track.component';
 import { ContentContainerComponent } from './content-container/content-container.component';
+import { ContentPanelComponent } from './content-panel/content-panel.component';
 import { ButtonComponent } from './button/button.component';
+import { StatusBadgeComponent } from './status-badge/status-badge.component';
 import { FormItemComponent } from './form-item/form-item.component';
 import { InputComponent } from './input/input.component';
 import { RadioGroupComponent } from './radio-button/radio-group/radio-group.component';
@@ -29,6 +31,7 @@ import { NotificationSeverityToHeaderIconPipe } from './notification/notificatio
 import { IconsRegistry } from './icons/icons-registry.service';
 // Only import the icons used inside the library
 import {
+  veeraLoupe,
   veeraArrowALeft,
   veeraArrowARight,
   veeraArrowDown,
@@ -77,10 +80,16 @@ import { ConfirmationModalComponent } from './confirmation-modal/confirmation-mo
 import { A11yModule } from '@angular/cdk/a11y';
 import { ReorderableListComponent } from './reorderable-list/reorderable-list/reorderable-list.component';
 import { ReorderableListItemComponent } from './reorderable-list/reorderable-list-item/reorderable-list-item.component';
+import { TableComponent } from './table/table.component';
+import { BodyCellComponent } from './table/body-cell/body-cell.component';
+import { HeaderCellComponent } from './table/header-cell/header-cell.component';
+import { ScreenreaderTextComponent } from './screenreader-text/screenreader-text.component';
 
 const components = [
   TrackComponent,
   ContentContainerComponent,
+  ContentPanelComponent,
+  StatusBadgeComponent,
   ButtonComponent,
   InputComponent,
   FormItemComponent,
@@ -124,6 +133,10 @@ const components = [
   ConfirmationModalComponent,
   ReorderableListComponent,
   ReorderableListItemComponent,
+  TableComponent,
+  ScreenreaderTextComponent,
+  BodyCellComponent,
+  HeaderCellComponent,
 ];
 
 const pipes = [SafeHtmlPipe, NotificationSeverityToHeaderIconPipe];
@@ -157,6 +170,7 @@ export class UiModule {
       veeraCheckCircleOutline,
       veeraWarningAmber,
       veeraErrorOutline,
+      veeraLoupe,
       veeraArrowALeft,
       veeraArrowARight,
       veeraSadFace,

@@ -1,0 +1,29 @@
+@mixin veera-content-panel($base: &) {
+  --comment: 'A prominent box for any kind of primary content';
+
+  & {
+    background-color: get-color(white);
+    border: 1px solid get-color(black-coral-2);
+    display: block;
+
+    @include veera-breakpoint-down(sm) {
+      padding-inline: get-spacing('haapsalu');
+      padding-block: get-spacing('kuressaare');
+      border-radius: $veera-radius-s;
+    }
+    @include veera-breakpoint-up(sm) {
+      padding-top: get-spacing('kuressaare');
+      padding-bottom: get-spacing('parnu');
+      padding-inline: get-spacing('viljandi');
+      border-radius: $veera-radius-l;
+    }
+  }
+
+  @at-root {
+    #{$base}__title {
+      font-size: $veera-font-size-250;
+      line-height: $veera-line-height-500;
+      margin-bottom: get-spacing('paldiski');
+    }
+  }
+}

@@ -54,8 +54,9 @@
         }
       }
       #{$base}--appearance-text & {
-        padding: get-spacing('rapla');
+        padding: 0;
         color: get-color(sapphire-blue-10);
+        fill: get-color(sapphire-blue-10);
         text-decoration: underline;
         border: $veera-border-width solid transparent;
         &:hover {
@@ -65,8 +66,14 @@
           border: $veera-border-width solid get-color(sapphire-blue-10);
           border-radius: $veera-radius-xs;
         }
+        &:disabled {
+          color: get-color(black-coral-10);
+          fill: get-color(black-coral-10);
+          text-decoration: line-through;
+          cursor: not-allowed;
+        }
       }
-      #{$base}--size-s & {
+      #{$base}--size-s:not(#{$base}--appearance-text) & {
         padding-inline: get-spacing('valga');
         padding-block: get-spacing('loksa');
       }

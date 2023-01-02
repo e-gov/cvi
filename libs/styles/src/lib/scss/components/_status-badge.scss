@@ -1,0 +1,19 @@
+@mixin veera-status-badge($base: &) {
+  --comment: 'A colored status badge with some text';
+
+  display: inline-flex;
+  padding-inline: get-spacing('elva');
+  padding-block: calc(#{get-spacing('loksa')} - 1px);
+  align-items: center;
+  font-weight: bold;
+  border: $veera-border-width solid var(--border-color, var(--color));
+  color: var(--color);
+  background-color: var(--background-color);
+  border-radius: $veera-radius-s;
+  font-size: $veera-font-size-80;
+  line-height: $veera-line-height-100;
+  white-space: nowrap;
+
+  @at-root {
+  }
+}

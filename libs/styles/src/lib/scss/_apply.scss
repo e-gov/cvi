@@ -85,3 +85,15 @@
 .veera-reorderable-list {
   @include veera-reorderable-list;
 }
+
+.veera-table {
+  @include veera-table;
+}
+
+.veera-content-panel {
+  @include veera-content-panel;
+}
+
+.veera-status-badge {
+  @include veera-status-badge;
+}

@@ -6,6 +6,7 @@ import {
   Input,
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { VeeraIconName } from '@ria/veera-icons';
 
 @Component({
   selector: 'veera-ng-input',
@@ -28,6 +29,9 @@ export class InputComponent implements ControlValueAccessor {
   /** Placeholder */
   @Input() placeholder = '';
 
+  /** Icon added to the right */
+  @Input() suffixIconName!: VeeraIconName;
+
   private internalValue?: any;
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   private onChanged: (value: unknown) => void = () => {};
@@ -37,7 +41,7 @@ export class InputComponent implements ControlValueAccessor {
   @HostBinding('class') get getHostClasses(): string {
     return `veera-textfield veera-textfield--type-single-line${
       this.disabled ? ' veera-textfield--is-disabled' : ''
-    }`;
+    }${this.suffixIconName ? ' veera-textfield--has-suffix-icon' : ''}`;
   }
 
   constructor(private readonly cdRef: ChangeDetectorRef) {}

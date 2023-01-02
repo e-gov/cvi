@@ -16,14 +16,16 @@ const Template: Story = (args) => ({
   props: args,
   /* template */
   template: `
-    <textarea class="veera-textfield__text-control"
-              [placeholder]="placeholder"
-              [maxLength]="maxLength"
-              cdkTextareaAutosize
-              #autosize="cdkTextareaAutosize"
-              [cdkAutosizeMinRows]="minRows"
-              [cdkAutosizeMaxRows]="maxRows"
-    ></textarea>
+    <span class="veera-textfield veera-textfield--type-multiple-lines">
+      <textarea class="veera-textfield__text-control"
+                [placeholder]="placeholder"
+                [maxLength]="maxLength"
+                cdkTextareaAutosize
+                #autosize="cdkTextareaAutosize"
+                [cdkAutosizeMinRows]="minRows"
+                [cdkAutosizeMaxRows]="maxRows"
+      ></textarea>
+    </span>
   `,
 });
 
@@ -34,14 +36,16 @@ const CharacterCounterTemplate: Story = (args) => ({
   props: args,
   /* template */
   template: `
-    <textarea class="veera-textfield__text-control"
-              [placeholder]="placeholder"
-              [maxLength]="maxLength"
-              cdkTextareaAutosize
-              #autosize="cdkTextareaAutosize"
-              [cdkAutosizeMinRows]="minRows"
-              [cdkAutosizeMaxRows]="maxRows"
-    ></textarea>
+    <span class="veera-textfield veera-textfield--type-multiple-lines">
+      <textarea class="veera-textfield__text-control"
+                [placeholder]="placeholder"
+                [maxLength]="maxLength"
+                cdkTextareaAutosize
+                #autosize="cdkTextareaAutosize"
+                [cdkAutosizeMinRows]="minRows"
+                [cdkAutosizeMaxRows]="maxRows"
+      ></textarea>
+    </span>
     <div class="veera-character-counter">0 / 2000</div>
   `,
 });
