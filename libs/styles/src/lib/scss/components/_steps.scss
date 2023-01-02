@@ -80,6 +80,7 @@
       list-style: none;
       gap: get-spacing('paldiski');
       @include veera-breakpoint-down(sm) {
+        position: relative;
         display: flex;
         flex-direction: column;
       }
@@ -352,13 +353,16 @@
       @include veera-breakpoint-down(sm) {
         #{$base}.is-any-step-selected & {
           position: absolute;
-          top: 18px;
+          top: 0;
+          width: get-spacing('parnu');
+          height: get-spacing('parnu');
+          text-align: center;
         }
         &--direction-prev {
-          left: $inner-padding--mobile;
+          left: 0;
         }
         &--direction-next {
-          right: $inner-padding--mobile;
+          right: 0;
         }
       }
       @include veera-breakpoint-up(sm) {
