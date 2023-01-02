@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [3.1.0](https://stash.ria.ee/scm/sun/veera-components/compare/styles-3.0.3...styles-3.1.0) (2023-01-02)
+
+
+### Features
+
+* add table component STPA-220 EBS-113 ([28c36d4](https://stash.ria.ee/scm/sun/veera-components/commits/28c36d44880eb4f95fbac505eb24f43e2abcc0e8))
+
+
+
 ## [3.0.3](https://stash.ria.ee/scm/sun/veera-components/compare/styles-3.0.2...styles-3.0.3) (2022-12-23)
 
 
