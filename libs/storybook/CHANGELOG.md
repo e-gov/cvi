@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [1.1.0](https://stash.ria.ee/scm/sun/veera-components/compare/storybook-1.0.1...storybook-1.1.0) (2023-01-02)
+
+
+### Features
+
+* add table component STPA-220 EBS-113 ([28c36d4](https://stash.ria.ee/scm/sun/veera-components/commits/28c36d44880eb4f95fbac505eb24f43e2abcc0e8))
+
+
+
 ## [1.0.1](https://stash.ria.ee/scm/sun/veera-components/compare/storybook-1.0.0...storybook-1.0.1) (2022-12-22)
 
 
