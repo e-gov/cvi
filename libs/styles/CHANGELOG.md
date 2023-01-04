@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [3.1.2](https://stash.ria.ee/scm/sun/veera-components/compare/styles-3.1.1...styles-3.1.2) (2023-01-04)
+
+
+### Bug Fixes
+
+* step progress circle color EBS-437, STPA-219 ([88afc5c](https://stash.ria.ee/scm/sun/veera-components/commits/88afc5cb822d68fb9f497d509f2c935723820d05))
+
+
+
 ## [3.1.1](https://stash.ria.ee/scm/sun/veera-components/compare/styles-3.1.0...styles-3.1.1) (2023-01-02)
 
 
