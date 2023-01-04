@@ -13,6 +13,8 @@ import {
   ViewChild,
 } from '@angular/core';
 import { TableOfContentsService } from '../table-of-contents.service';
+import { fromEvent, Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 
 @Component({
   selector: 'veera-ng-generated-table-of-contents',
@@ -31,6 +33,9 @@ export class GeneratedTableOfContentsComponent
   tocItems: TocItem[] = [];
   domMutations!: MutationObserver;
   timeout!: NodeJS.Timeout;
+  scrollingTimeout!: NodeJS.Timeout;
+
+  private readonly destroy$ = new Subject<void>();
 
   @HostBinding('class') get getHostClasses(): string {
     return `veera-generated-table-of-contents`;
@@ -42,7 +47,23 @@ export class GeneratedTableOfContentsComponent
     private renderer: Renderer2,
     private tocService: TableOfContentsService,
     private cdRef: ChangeDetectorRef
-  ) {}
+  ) {
+    fromEvent(window, 'scroll')
+      .pipe(takeUntil(this.destroy$))
+      .subscribe(() => {
+        if (this.scrollingTimeout) {
+          clearTimeout(this.scrollingTimeout);
+        }
+        this.scrollingTimeout = setTimeout(() => {
+          if (this.tocService.toCItemToHighlight) {
+            this.tocService.setCurrentToCSection(
+              this.tocService.toCItemToHighlight
+            );
+            this.tocService.toCItemToHighlight = undefined;
+          }
+        }, 100);
+      });
+  }
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['title']) {
@@ -66,6 +87,10 @@ export class GeneratedTableOfContentsComponent
     this.removeToc();
     this.domMutations.disconnect();
     clearTimeout(this.timeout);
+
+    this.destroy$.next();
+    this.destroy$.complete();
+    this.destroy$.unsubscribe();
   }
 
   buildToc(): void {
@@ -103,13 +128,17 @@ export class GeneratedTableOfContentsComponent
     const intersectionObservable = new IntersectionObserver(
       (entries: IntersectionObserverEntry[]) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting && entry.intersectionRatio === 1) {
+          if (
+            entry.isIntersecting &&
+            entry.intersectionRatio === 1 &&
+            !this.tocService.toCItemToHighlight
+          ) {
             this.tocService.setCurrentToCSection(anchorId, entry.time);
             this.cdRef.detectChanges();
           }
         });
       },
-      { rootMargin: '0px 0px -50% 0px', threshold: 1 }
+      { rootMargin: '5px 0px -50% 0px', threshold: 1 }
     );
     intersectionObservable.observe(headingEl);
     return intersectionObservable;

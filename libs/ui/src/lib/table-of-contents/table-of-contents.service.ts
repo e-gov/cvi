@@ -5,7 +5,14 @@ import { BehaviorSubject } from 'rxjs';
 export class TableOfContentsService {
   private currentToCSectionTimestamp: number | undefined;
   private currentToCSectionSource = new BehaviorSubject<string>('toc-0');
+
   currentToCSection$ = this.currentToCSectionSource.asObservable();
+  toCItemToHighlight: string | undefined;
+
+  highlightToCSectionAndSetAsCurrent(id: string) {
+    this.toCItemToHighlight = id;
+    this.setCurrentToCSection(id);
+  }
 
   /** Timestamp is for ordering sections that are set at the same time */
   setCurrentToCSection(id: string, timestamp?: number) {
