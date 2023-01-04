@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [3.1.1](https://stash.ria.ee/scm/sun/veera-components/compare/ui-3.1.0...ui-3.1.1) (2023-01-04)
+
+
+### Bug Fixes
+
+* table of contents highlight | EBS-419 | STPA-219 ([1e017d2](https://stash.ria.ee/scm/sun/veera-components/commits/1e017d27c6c827ca462c3ef28345a093ea3b66ff))
+
+
+
 # [3.1.0](https://stash.ria.ee/scm/sun/veera-components/compare/ui-3.0.4...ui-3.1.0) (2023-01-02)
 
 
