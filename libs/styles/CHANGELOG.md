@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [3.1.3](https://stash.ria.ee/scm/sun/veera-components/compare/styles-3.1.2...styles-3.1.3) (2023-01-10)
+
+
+### Bug Fixes
+
+* toc collapse EBS-129 STPA-221 ([382961f](https://stash.ria.ee/scm/sun/veera-components/commits/382961f645dbff159f2d55bb1d389a64f9dc74fc))
+
+
+
 ## [3.1.2](https://stash.ria.ee/scm/sun/veera-components/compare/styles-3.1.1...styles-3.1.2) (2023-01-04)
 
 
