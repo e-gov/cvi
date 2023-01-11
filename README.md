@@ -1,4 +1,4 @@
-# Veera Components Library
+# Common Visual Identity Component Library
 
 This project includes a pattern library and a re-usable component library for Angular. The pattern library uses [Storybook](https://storybook.js.org).
 
@@ -6,21 +6,32 @@ This project includes a pattern library and a re-usable component library for An
 
 Documentation and Installation instructions can be found in the Storybook:
 
-https://sundmusteenus-dev.eesti.ee/storybook/?path=/story/intro--page (will be replaced soon with a public version)
+https://e-gov.github.io/cvi/
 
 Styles are based on the original Veera Design System:
 
 https://www.figma.com/file/nNCV5kRqdRkS8MOCK1ZbqU/Veera-Design-System
 
-## Developing
+## Using the Components
+
+The built packages are published to the public Koodivaramu repository, from where you can download and add them to your application:
+
+https://koodivaramu.eesti.ee/e-gov/cvi/-/packages
+
+In addition, the storybook docker image is also published to the Koodivaramu repository:
+
+https://koodivaramu.eesti.ee/e-gov/cvi/container_registry
+
+## Contributing
+If you want to contribute to the Common Visual Identity Component Library, create a fork, make changes and create a pull-request back to this repository.  
+Follow the [GitHub contribution guide](https://docs.github.com/en/get-started/quickstart/contributing-to-projects) for more detailed instructions.
 
 ### Adding/updating packages
-
 When adding/upgrading peer dependencies then make sure that they are also updated in `libs/LIB-NAME/package.json` in case of peerDependencies and in `libs/LIB-NAME/ng-package.json` for dependencies to be packaged with the library.
 
-### Publishing
-
-In case of `fix` and `feat` commit types a new changelog entry is generated and the packages published automatically after a successful build.
+### Commit message format
+The project follows the [conventional commit format](https://www.conventionalcommits.org) convention and uses the [semver nx plugin](https://github.com/jscutlery/semver) for versioning.
+Make sure to use the appropriate commit messages.
 
 ### Code style
 
@@ -38,16 +49,10 @@ Run `npm run storybook` to build documentation and run the Storybook locally.
 
 ### Running storybook locally in docker
 
-docker build -f ./libs/storybook/Dockerfile -t ria-storybook .
+docker build -f ./libs/storybook/Dockerfile -t veera-storybook .
 docker-compose up storybook
 docker-compose down
 url: http://localhost:3005/
-
-### Publishing to dockerhub locally
-
-docker build -f ./libs/storybook/Dockerfile -t ria-storybook .
-docker tag ria-storybook:latest riaee/sun-ria-storybook:latest
-docker push riaee/sun-ria-storybook:latest
 
 ## Understand your workspace
 

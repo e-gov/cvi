@@ -1,11 +1,24 @@
 ARG node_version=node:lts
 ARG nginx_version=nginx:1.23.1-alpine
 ARG alpine_version=alpine:3.14
+ARG cypress_download_mirror="https://registry.npmjs.org/@cypress/"
+ARG use_private_registry=false
+ARG private_apk_registry=""
+ARG private_npm_registry=""
+
 
 FROM $alpine_version AS apk
-# configure apk to mirror packages from ria nexus apk proxy
-RUN ["sh", "-c", "mv /etc/apk/repositories /etc/apk/repositories-backup-of-default"]
-RUN ["sh", "-c", "echo https://nexus.riaint.ee/repository/apk-proxy/v3.14/main/ > /etc/apk/repositories"]
+ARG use_private_registry
+ARG private_apk_registry
+ARG styles_version
+ARG ui_version
+ARG icons_version
+
+RUN if [ "$use_private_registry" = true ]; then \
+    sh -c "mv /etc/apk/repositories /etc/apk/repositories-backup-of-default" && \
+    echo $private_apk_registry > /etc/apk/repositories \
+; fi
+
 # update upgrade
 RUN apk update && apk upgrade
 # install package without cache index locally
@@ -14,21 +27,28 @@ WORKDIR /usr/component-library
 COPY ./libs/styles/package.json ./styles-package.json
 COPY ./libs/ui/package.json ./ui-package.json
 COPY ./libs/icons/package.json ./icons-package.json
-ARG styles_version
-ARG ui_version
-ARG icons_version
+
 RUN jq --arg v "$styles_version" '.version = $v' ./styles-package.json > ./styles-package.tmp.json
 RUN jq --arg v "$ui_version" '.version = $v' ./ui-package.json > ./ui-package.tmp.json
 RUN jq --arg v "$icons_version" '.version = $v' ./icons-package.json > ./icons-package.tmp.json
+
 
 FROM $node_version AS image
 WORKDIR /usr/component-library
 COPY ./package*.json ./
 COPY ./decorate-angular-cli.js ./
 
+
 FROM image AS build
-ENV CYPRESS_DOWNLOAD_MIRROR=https://nexus.riaint.ee/repository/cypress-raw-proxy/
-RUN npm config set registry https://nexus.riaint.ee/repository/npm-public/
+ARG cypress_download_mirror
+ARG use_private_registry
+ARG private_npm_registry
+
+RUN if [ "$use_private_registry" = true ]; then \
+    npm config set registry $private_npm_registry \
+	export CYPRESS_DOWNLOAD_MIRROR="$cypress_download_mirror" \
+; fi
+
 RUN npm ci
 COPY . .
 COPY --from=apk ./usr/component-library/styles-package.tmp.json ./libs/styles/package.json
@@ -37,6 +57,7 @@ COPY --from=apk ./usr/component-library/icons-package.tmp.json ./libs/icons/pack
 RUN npm run storybook:compodoc
 RUN npm run generate-icons
 RUN npm run build-storybook
+
 
 FROM $nginx_version
 COPY ./nginx/http-nginx.conf /etc/nginx/conf.d/default.conf

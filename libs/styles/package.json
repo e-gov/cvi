@@ -1,11 +1,11 @@
 {
   "name": "@ria/veera-styles",
-  "version": "3.1.3",
+  "version": "0.0.1",
   "dependencies": {
     "tslib": "^2.3.0",
     "@fontsource/roboto": "^4.5.8"
   },
   "publishConfig": {
-    "registry": "https://nexus.riaint.ee/repository/sun-npm-local/"
+    "registry": "https://koodivaramu.eesti.ee/api/v4/projects/433/packages/npm/"
   }
 }
