@@ -1,24 +1,55 @@
 @mixin veera-track($base: &) {
-  --comment: 'An utility for quick grid setup';
+  --comment: 'An utility for quick layout setup';
 
-  display: flex;
   gap: calc(var(--veera-spacing-unit) * var(--gap));
   justify-content: var(--horizontal-alignment);
-  flex-wrap: var(--wrap);
+  align-items: var(--vertical-alignment);
+  &--layout-flex {
+    display: flex;
 
-  &--direction-vertical {
-    flex-direction: column;
-  }
-  &--direction-vertical-on-mobile {
-    flex-direction: column;
-    @include veera-breakpoint-up(sm) {
-      flex-direction: row;
+    flex-wrap: var(--wrap);
+
+    &#{$base}--direction-vertical {
+      flex-direction: column;
+    }
+    &#{$base}--direction-vertical-on-mobile {
+      flex-direction: column;
+      @include veera-breakpoint-up(sm) {
+        flex-direction: row;
+      }
+    }
+    &#{$base}--direction-vertical-reversed-on-mobile {
+      flex-direction: column-reverse;
+      @include veera-breakpoint-up(sm) {
+        flex-direction: row;
+      }
+    }
+
+    &#{$base}--items-have-equal-width > * {
+      flex-grow: 1;
+      // we could use flex-basis: min-content; with min-width: 0; too but it is only supported in Safari 16+
+      flex-basis: 0;
     }
   }
-  &--direction-vertical-reversed-on-mobile {
-    flex-direction: column-reverse;
+  &--layout-grid {
+    // reset to top-to-bottom flow for mobile, but keep the gap
+    @include veera-breakpoint-down(sm) {
+      display: flex;
+      flex-direction: column;
+    }
     @include veera-breakpoint-up(sm) {
-      flex-direction: row;
+      display: grid;
+
+      // row by row grid
+      &:not(#{$base}--has-rows) {
+        // minimum value is same as $min-width in veera-textfield
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      }
+      // column by column grid
+      &#{$base}--has-rows {
+        grid-template-rows: repeat(var(--rows), min-content);
+        grid-auto-flow: column;
+      }
     }
   }
 

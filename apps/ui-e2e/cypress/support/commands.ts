@@ -292,7 +292,7 @@ Cypress.Commands.add('runRadioGroupCommonTest', (appearance) => {
 });
 
 Cypress.Commands.add('reorderableListItemShouldHaveOrderNr', (orderNr) => {
-  cy.get(`[data-cy="step-${orderNr}-order-nr"]`).should('have.value', orderNr);
+  cy.get(`[data-cy="step-${orderNr}-order-nr"]`).contains(orderNr);
 });
 
 Cypress.Commands.add('reorderableListItemShouldHaveName', (orderNr, name) => {

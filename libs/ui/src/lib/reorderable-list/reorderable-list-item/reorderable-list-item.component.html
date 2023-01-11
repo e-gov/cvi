@@ -13,12 +13,9 @@
           aria-label="Next">
     <veera-ng-icon name="arrow_up_alt" svgClass="veera-reorderable-list__order-button-icon"></veera-ng-icon>
   </button>
-  <label>
-    <input [value]="orderNr"
-           [dataAttribute]="'step-' + orderNr + '-order-nr'"
-           class="veera-reorderable-list__order-nr"
-           disabled/>
-  </label>
+  <div [dataAttribute]="'step-' + orderNr + '-order-nr'" class="veera-reorderable-list__order-nr">
+    {{ orderNr }}
+  </div>
   <button (click)="moveStepTo('previous')"
           [dataAttribute]="'step-' + orderNr + '-set-as-previous-button'"
           [ngClass]="setAsPreviousStepButtonVisible ? '' : 'hidden'"
@@ -28,7 +25,5 @@
 </div>
 
 <div class="veera-reorderable-list__form-item-wrapper">
-  <veera-ng-form-item [htmlId]="'step-' + orderNr + '-form-item'" [label]="stepNameLabel" class="veera-reorderable-list__form-item">
-    <veera-ng-input [htmlId]="'step-' + orderNr + '-form-item'" [(ngModel)]="configuration.title" [dataAttribute]="'step-' + orderNr + '-name'"></veera-ng-input>
-  </veera-ng-form-item>
+  <ng-content></ng-content>
 </div>

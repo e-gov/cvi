@@ -57,4 +57,8 @@ export class TableOfContentsItemComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.tocSubscription.unsubscribe();
   }
+
+  highlightSection() {
+    this.tocService.highlightToCSectionAndSetAsCurrent(this.href.substring(1));
+  }
 }

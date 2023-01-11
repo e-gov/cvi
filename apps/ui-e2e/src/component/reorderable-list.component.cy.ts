@@ -1,10 +1,13 @@
-describe(`ReorderableListComponent`, () => {
-  beforeEach(() => {
+describe('ReorderableListComponent', () => {
+  before(() => {
     cy.visitStorybook();
   });
 
   it('Renders default reorderable list with 5 steps', () => {
-    cy.loadStory('Angular Reorderable list', 'Default')
+    cy.loadStory(
+      'Angular Reorderable list',
+      'Reorderable List Single Form Item'
+    )
       // 1st step
       .shouldHaveClasses(
         '[data-cy="reorderable-list-item-1"]',
@@ -18,8 +21,7 @@ describe(`ReorderableListComponent`, () => {
         ).within(() => {
           cy.shouldBeVisible('[data-cy="step-1-set-as-next-button"]')
             .shouldNotBeVisible('[data-cy="step-1-set-as-previous-button"]')
-            .shouldHaveClasses('input', 'veera-reorderable-list__order-nr')
-            .and('be.disabled');
+            .shouldHaveClasses('div', 'veera-reorderable-list__order-nr');
 
           cy.reorderableListItemShouldHaveOrderNr(1);
         });
@@ -63,7 +65,7 @@ describe(`ReorderableListComponent`, () => {
   });
 
   it('Clicking remove button on the First step removes it and second step becomes first', () => {
-    cy.loadStory('Angular Reorderable list', 'Default')
+    cy.loadStory('Angular Reorderable list', 'ReorderableListSingleFormItem')
       // Check 2nd step name
       .reorderableListItemShouldHaveName(2, 'Confirmation of time and place')
       // Check 1st step name
@@ -76,7 +78,7 @@ describe(`ReorderableListComponent`, () => {
   });
 
   it('Clicking second step up arrow button swaps it with third', () => {
-    cy.loadStory('Angular Reorderable list', 'Default')
+    cy.loadStory('Angular Reorderable list', 'ReorderableListSingleFormItem')
       // Check 3rd step name
       .reorderableListItemShouldHaveName(3, 'Getting married')
       // Check 2nd step name

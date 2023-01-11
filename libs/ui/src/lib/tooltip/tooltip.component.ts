@@ -1,11 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, HostBinding, Input } from '@angular/core';
 
 @Component({
   selector: 'veera-ng-tooltip',
   templateUrl: './tooltip.component.html',
 })
 export class TooltipComponent {
-  message = '';
-  left = 0;
-  top = 0;
+  @Input() message = '';
+  @Input() left = 0;
+  @Input() top = 0;
+  @Input() arrowLeft = 0;
+  @Input() arrowTop = 0;
+  @HostBinding('class') get getHostClasses(): string {
+    return 'veera-tooltip';
+  }
 }

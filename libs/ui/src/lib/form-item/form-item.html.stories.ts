@@ -19,8 +19,8 @@ const Template: Story = (args) => ({
   template: `
     <div class="veera-form-item veera-form-item--label-position-top">
       <label for="{{ htmlId }}" class="veera-form-item__label">{{ label }}</label>
-      <span class="veera-textfield">
-        <input type="text" class="veera-textfield__input" id="{{ htmlId }}" />
+      <span class="veera-textfield veera-textfield--type-single-line">
+        <input type="text" class="veera-textfield__text-control" id="{{ htmlId }}" />
       </span>
     </div>
   `,

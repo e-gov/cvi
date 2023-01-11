@@ -2,5 +2,6 @@
        [attr.disabled]="disabled ? disabled : null"
        [attr.id]="htmlId"
        [placeholder]="placeholder"
-       class="veera-textfield__input"
+       class="veera-textfield__text-control"
        type="text"/>
+<veera-ng-icon *ngIf="suffixIconName" [name]="suffixIconName" [height]="16" class="veera-textfield__suffix-icon-wrapper" svgClass="veera-textfield__suffix-icon"></veera-ng-icon>

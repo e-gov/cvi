@@ -6,11 +6,11 @@ import {
   Input,
   OnChanges,
   Optional,
-  SimpleChanges,
 } from '@angular/core';
 import { IconsRegistry } from '../icons-registry.service';
 import { DOCUMENT } from '@angular/common';
 import { VeeraIconName } from '@ria/veera-icons';
+import { iconSizeDefault } from './icon';
 
 @Component({
   selector: 'veera-ng-icon',
@@ -29,7 +29,7 @@ export class IconComponent implements OnChanges {
 
   /** Icon height in px */
   @Input()
-  height?: number = 24;
+  height?: number = iconSizeDefault;
 
   constructor(
     private element: ElementRef,
@@ -50,7 +50,7 @@ export class IconComponent implements OnChanges {
     );
   }
 
-  ngOnChanges(changes: SimpleChanges): void {
+  ngOnChanges(): void {
     if (!this.name) {
       return;
     }

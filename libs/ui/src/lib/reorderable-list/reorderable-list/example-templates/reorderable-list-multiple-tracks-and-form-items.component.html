@@ -1,0 +1,89 @@
+<veera-ng-track horizontalAlignment="right">
+  <veera-ng-button (click)="addNewItem()" [appearance]="'text'">
+    <veera-ng-labeled-icon
+      [alignment]="'center'"
+      [iconPosition]="'before'"
+      [name]="'add'"
+    >
+      Add item
+    </veera-ng-labeled-icon>
+  </veera-ng-button>
+</veera-ng-track>
+
+<veera-ng-reorderable-list [items]="items">
+  <ng-template let-item>
+    <veera-ng-reorderable-list-item
+      (removeStepEvent)="removeStep(item)"
+      (swapStepsEvent)="swapSteps($event)"
+      [dataAttribute]="'reorderable-list-item-' + getOrderNr(item)"
+      [index]="getIndex(item)"
+      [setAsNextStepButtonVisible]="isNotLastItem(item)"
+      [setAsPreviousStepButtonVisible]="isNotFirstItem(item)"
+    >
+      <!-- Additional track for gaps between containing elements -->
+      <veera-ng-track gap="8" flexDirection="vertical">
+        <!-- 1st track-->
+        <veera-ng-track gap="4"
+                        gridRows="1"
+                        layout="grid">
+          <veera-ng-form-item [htmlId]="'track-1-field-1-step-' + getOrderNr(item) + '-form-item'"
+                              [label]="'Track 1 form item 1 label'">
+            <veera-ng-input [(ngModel)]="item.track1Field1"
+                            [dataAttribute]="'step-' + getOrderNr(item) + '-name'"
+                            [htmlId]="'track-1-field-1-step-' + getOrderNr(item) + '-form-item'">
+            </veera-ng-input>
+          </veera-ng-form-item>
+          <veera-ng-form-item [htmlId]="'track-1-field-2-step-' + getOrderNr(item) + '-form-item'"
+                              [label]="'Track 1 form item 2 label'">
+            <veera-ng-input [(ngModel)]="item.track1Field2"
+                            [dataAttribute]="'step-' + getOrderNr(item) + '-name'"
+                            [htmlId]="'track-1-field-2-step-' + getOrderNr(item) + '-form-item'">
+            </veera-ng-input>
+          </veera-ng-form-item>
+          <veera-ng-form-item [htmlId]="'track-1-field-3-step-' + getOrderNr(item) + '-form-item'"
+                              [label]="'Track 1 form item 3 label'">
+            <veera-ng-input [(ngModel)]="item.track1Field3"
+                            [dataAttribute]="'step-' + getOrderNr(item) + '-name'"
+                            [htmlId]="'track-1-field-3-step-' + getOrderNr(item) + '-form-item'">
+            </veera-ng-input>
+          </veera-ng-form-item>
+        </veera-ng-track>
+
+        <!-- 2nd track -->
+        <veera-ng-track gap="4"
+                        gridRows="1"
+                        layout="grid">
+          <veera-ng-form-item [htmlId]="'track-2-field-1-step-' + getOrderNr(item) + '-form-item'"
+                              [label]="'Track 2 form item 1 label'">
+            <veera-ng-input [(ngModel)]="item.track2Field1"
+                            [dataAttribute]="'step-' + getOrderNr(item) + '-name'"
+                            [htmlId]="'track-2-field-1-step-' + getOrderNr(item) + '-form-item'">
+            </veera-ng-input>
+          </veera-ng-form-item>
+          <veera-ng-form-item [htmlId]="'track-2-field-2-step-' + getOrderNr(item) + '-form-item'"
+                              [label]="'Track 2 form item 2 label'">
+            <veera-ng-input [(ngModel)]="item.track2Field2"
+                            [dataAttribute]="'step-' + getOrderNr(item) + '-name'"
+                            [htmlId]="'track-2-field-2-step-' + getOrderNr(item) + '-form-item'">
+            </veera-ng-input>
+          </veera-ng-form-item>
+        </veera-ng-track>
+
+        <veera-ng-form-item [htmlId]="'single-field-step-' + getOrderNr(item) + '-form-item'"
+                            [label]="'Single form item without a track label'">
+          <veera-ng-textarea [(ngModel)]="item.singleField"
+                             [htmlId]="'single-field-step-' + getOrderNr(item) + '-form-item'"
+                             maxChars="100"
+                             ngDefaultControl veeraNgCharacterCounter>
+          </veera-ng-textarea>
+        </veera-ng-form-item>
+
+      </veera-ng-track>
+    </veera-ng-reorderable-list-item>
+  </ng-template>
+</veera-ng-reorderable-list>
+
+<div style="padding: 16px">
+  <pre>Items:</pre>
+  <pre>{{ items | json }}</pre>
+</div>

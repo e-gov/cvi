@@ -2,6 +2,7 @@ import { Story, Meta, moduleMetadata } from '@storybook/angular';
 import notes from './input.component.md';
 import { InputComponent } from './input.component';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { storybookIconsNames } from '../icons/storybook-icons';
 import { UiModule } from '../ui.module';
 
 export default {
@@ -12,10 +13,17 @@ export default {
     }),
   ],
   parameters: { notes },
+  argTypes: {
+    suffixIconName: {
+      name: 'Icon',
+      options: storybookIconsNames,
+      control: { type: 'select' },
+    },
+  },
   args: {
     placeholder: 'Username',
     disabled: false,
-    htmlId: '',
+    htmlId: 'some-input',
   },
 } as Meta<InputComponent>;
 
@@ -24,12 +32,17 @@ const Template: Story<InputComponent> = (args: InputComponent) => ({
   template: `
     <veera-ng-input [placeholder]="placeholder"
                     [disabled]="disabled"
+                    [suffixIconName]="suffixIconName"
                     [htmlId]="htmlId"></veera-ng-input>
   `,
 });
 
 export const Default = Template.bind({});
-Default.args = {};
+
+export const WithSuffixIcon = Template.bind({});
+WithSuffixIcon.args = {
+  suffixIconName: 'loupe',
+};
 
 const FormTemplate: Story<InputComponent> = (args: InputComponent) => {
   const form = new FormGroup({
@@ -57,7 +70,8 @@ const FormTemplate: Story<InputComponent> = (args: InputComponent) => {
     `,
   };
 };
-export const Form = FormTemplate.bind({});
+export const WithFormGroup = FormTemplate.bind({});
+WithFormGroup.storyName = 'With formGroup';
 
 const CharacterCounterTemplate: Story<InputComponent> = (
   args: InputComponent
@@ -73,3 +87,20 @@ const CharacterCounterTemplate: Story<InputComponent> = (
 });
 
 export const WithCharacterCounter = CharacterCounterTemplate.bind({});
+
+const FormItemTemplate: Story<InputComponent> = (args: InputComponent) => ({
+  props: args,
+  template: `
+    <veera-ng-form-item label="Some label"
+                        [htmlId]="htmlId">
+      <veera-ng-input [placeholder]="placeholder"
+                      [disabled]="disabled"
+                      [htmlId]="htmlId"></veera-ng-input>
+    </veera-ng-form-item>
+  `,
+});
+
+export const WithFormItem = FormItemTemplate.bind({});
+WithFormItem.args = {
+  htmlId: 'some-item',
+};

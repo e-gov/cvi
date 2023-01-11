@@ -1,6 +1,7 @@
-import { Story, Meta } from '@storybook/angular';
+import { Story, Meta, ArgTypes } from '@storybook/angular';
 import notes from './button.component.md';
 import { ButtonComponent } from './button.component';
+import { iconSizeDefault } from '../icons/icon/icon';
 
 export default {
   title: 'Angular/Button',
@@ -53,26 +54,34 @@ Text.args = {
   appearance: 'text',
 };
 
-const TemplateTextWithIcon: Story<ButtonComponent> = (
+const TemplateTextButtonWithIcon: Story<ButtonComponent> = (
   args: ButtonComponent
 ) => ({
   props: args,
   /* template */
   template: `
-    <veera-ng-button [appearance]="appearance">
-      <veera-ng-labeled-icon [name]="'add'" [iconPosition]="'before'" [alignment]="'center'" [iconClass]="'size-20'">
+    <veera-ng-button appearance="text">
+      <veera-ng-labeled-icon name="add" iconPosition="before" alignment="center" [iconHeight]="iconHeight">
         {{ content }}
       </veera-ng-labeled-icon>
     </veera-ng-button>
   `,
-  styles: [
-    `::ng-deep .size-20 {
-      height: 20px;
-    }`,
-  ],
 });
 
-export const TextWithIcon = TemplateTextWithIcon.bind({});
-TextWithIcon.args = {
-  appearance: 'text',
+type TextButtonWithIconWithCustomArgs = ButtonComponent & {
+  iconHeight: number;
 };
+
+export const TextButtonWithIcon = TemplateTextButtonWithIcon.bind({});
+TextButtonWithIcon.argTypes = {
+  iconHeight: {
+    name: 'Icon height',
+    table: {
+      category: 'Playground',
+    },
+  },
+} as Partial<ArgTypes<TextButtonWithIconWithCustomArgs>>;
+TextButtonWithIcon.args = {
+  appearance: 'text',
+  iconHeight: iconSizeDefault,
+} as TextButtonWithIconWithCustomArgs;

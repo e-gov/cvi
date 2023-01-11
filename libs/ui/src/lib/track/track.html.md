@@ -10,7 +10,7 @@ Permitted Sass components as children | -
 
 ## When to use
 
-Use with multiple children to provide a flex-like layout and ensure equal gaps between them. CSS variables can be used to customise the layout. In your Javascript component you can assign the CSS variables to conveniently named props.
+Use with multiple children to provide a flex- or grid-like layout and ensure equal gaps between them. CSS variables can be used to customise the layout. In your Javascript component you can assign the CSS variables to conveniently named props.
 
 ## How to use
 

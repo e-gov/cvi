@@ -11,10 +11,12 @@ export default {
 
 const Template: Story<TextareaComponent> = (args: TextareaComponent) => ({
   props: args,
+  template: `
+    <veera-ng-textarea [disabled]="disabled" [maxLength]="maxLength" [minRows]="minRows" [maxRows]="maxRows" [placeholder]="placeholder" [htmlId]="htmlId"></veera-ng-textarea>
+  `,
 });
 
 export const Default = Template.bind({});
-Default.args = {};
 
 const CharacterCounterTemplate: Story<TextareaComponent> = (
   args: TextareaComponent
@@ -26,3 +28,20 @@ const CharacterCounterTemplate: Story<TextareaComponent> = (
 });
 
 export const WithCharacterCounter = CharacterCounterTemplate.bind({});
+
+const FormItemTemplate: Story<TextareaComponent> = (
+  args: TextareaComponent
+) => ({
+  props: args,
+  template: `
+    <veera-ng-form-item label="Some label"
+                        [htmlId]="htmlId">
+      <veera-ng-textarea [htmlId]="htmlId"></veera-ng-textarea>
+    </veera-ng-form-item>
+  `,
+});
+
+export const WithFormItem = FormItemTemplate.bind({});
+WithFormItem.args = {
+  htmlId: 'some-item',
+};

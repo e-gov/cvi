@@ -7,6 +7,7 @@ import {
   ViewChild,
 } from '@angular/core';
 import { VeeraIconName } from '@ria/veera-icons';
+import { iconSizeDefault } from '../icon/icon';
 import { IconPosition } from './icon-position';
 
 @Component({
@@ -23,6 +24,10 @@ export class LabeledIconComponent {
 
   /** Additional classes for the SVG element */
   @Input() svgClass = '';
+
+  /** Icon height in px */
+  @Input()
+  iconHeight?: number = iconSizeDefault;
 
   /** Additional classes for the veera-ng-icon element. You can set icon height here */
   @Input() iconClass = 'veera-labeled-icon__icon';

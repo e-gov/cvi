@@ -6,7 +6,7 @@ describe('InputComponent', () => {
   it('Renders default input', () => {
     cy.loadStory('Angular Input', 'Default')
       .shouldHaveClasses('veera-ng-input', 'veera-textfield')
-      .shouldHaveClasses('input', 'veera-textfield__input');
+      .shouldHaveClasses('input', 'veera-textfield__text-control');
   });
 
   it('Renders disabled input with custom htmlId', () => {
@@ -22,7 +22,7 @@ describe('InputComponent', () => {
       .shouldHaveAttributes('veera-ng-input', [
         { name: 'ng-reflect-html-id', value: 'Qwerty123' },
       ])
-      .shouldHaveClasses('input', 'veera-textfield__input')
+      .shouldHaveClasses('input', 'veera-textfield__text-control')
       .and('be.disabled');
   });
 });

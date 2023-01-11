@@ -1,0 +1,26 @@
+<div class="veera-table__inner">
+  <ng-content>
+  </ng-content>
+
+  <table class="veera-table__table">
+    <tr class="veera-table__header-row">
+      <ng-container
+        *ngTemplateOutlet="headers || defaultHeaderTemplate; context: { $implicit: headers }"
+      ></ng-container>
+    </tr>
+
+    <tr *ngFor="let row of data" class="veera-table__body-row">
+      <ng-container
+        *ngTemplateOutlet="rows || defaultRowTemplate; context: { $implicit: row }"
+      ></ng-container>
+    </tr>
+  </table>
+</div>
+
+<ng-template #defaultHeaderTemplate let-data>
+  <div *ngFor="let header of data[0] | keyvalue">{{ header.key }}</div>
+</ng-template>
+
+<ng-template #defaultRowTemplate let-row>
+  <div *ngFor="let row of row | keyvalue">{{ row.value }}</div>
+</ng-template>
