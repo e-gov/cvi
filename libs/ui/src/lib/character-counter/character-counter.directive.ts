@@ -1,5 +1,4 @@
 import {
-  AfterViewChecked,
   AfterViewInit,
   ComponentRef,
   Directive,
@@ -16,7 +15,7 @@ import { CharacterCounterComponent } from './character-counter.component';
   exportAs: 'veeraNgCharacterCounter',
 })
 export class CharacterCounterDirective
-  implements AfterViewInit, AfterViewChecked
+  implements AfterViewInit
 {
   @Input() maxChars = '';
 
@@ -58,10 +57,8 @@ export class CharacterCounterDirective
       );
       this.componentRef.instance.charsUsed = this.inputRef.value.length;
       this.componentRef.instance.charsMax = this.inputRef.maxLength;
-    }
-  }
 
-  ngAfterViewChecked(): void {
-    setTimeout(() => this.onInputChange());
+      setTimeout(() => this.onInputChange());
+    }
   }
 }
