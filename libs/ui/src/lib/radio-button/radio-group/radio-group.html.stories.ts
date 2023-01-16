@@ -33,7 +33,7 @@ const Template: Story = (args) => ({
             <label class="veera-radio-group__item-inner">
               <input name="name"
                      value="value_1"
-                     class="c-radio"
+                     class="veera-radio-group__item-control"
                      type="radio"
               >
               <span>
@@ -45,7 +45,7 @@ const Template: Story = (args) => ({
             <label class="veera-radio-group__item-inner">
               <input name="name"
                      value="value_2"
-                     class="c-radio"
+                     class="veera-radio-group__item-control"
                      type="radio"
               >
               <span>

@@ -22,6 +22,8 @@ export class StepPanelComponent implements OnDestroy {
   get title() {
     return this._title;
   }
+
+  /** @internal */
   public titleChangeSubject = new ReplaySubject<string>(1);
 
   @HostBinding('class') get getHostClasses(): string {

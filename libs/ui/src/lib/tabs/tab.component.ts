@@ -18,6 +18,7 @@ export class TabComponent implements OnChanges, OnDestroy {
   @Input() title: string | undefined;
   @ViewChild(TemplateRef, { static: true }) _content!: TemplateRef<any>;
 
+  /** @internal */
   _stateChanges = new Subject<void>();
 
   get content() {

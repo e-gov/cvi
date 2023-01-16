@@ -14,9 +14,7 @@ import { CharacterCounterComponent } from './character-counter.component';
   selector: '[veeraNgCharacterCounter]',
   exportAs: 'veeraNgCharacterCounter',
 })
-export class CharacterCounterDirective
-  implements AfterViewInit
-{
+export class CharacterCounterDirective implements AfterViewInit {
   @Input() maxChars = '';
 
   private componentRef: ComponentRef<CharacterCounterComponent> | null = null;

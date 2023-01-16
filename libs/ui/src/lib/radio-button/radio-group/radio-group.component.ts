@@ -52,6 +52,8 @@ export class RadioGroupComponent
   radioButtons?: QueryList<RadioButtonComponent>;
 
   private selected: RadioButtonComponent | null = null;
+
+  /** @internal */
   private destroyed$ = new Subject();
 
   // eslint-disable-next-line @typescript-eslint/no-empty-function

@@ -20,6 +20,7 @@ export class TabGroupComponent implements AfterViewInit, OnDestroy {
 
   activeIndex = 0;
 
+  /** @internal */
   private tabChangesSubscription = Subscription.EMPTY;
 
   constructor(private cd: ChangeDetectorRef) {}

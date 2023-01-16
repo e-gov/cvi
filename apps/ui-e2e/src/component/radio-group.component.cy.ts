@@ -8,7 +8,7 @@ describe('RadioGroupComponent', () => {
       .runRadioGroupCommonTest('regular')
       .get('[data-cy="option_1"]')
       .shouldHaveClasses('label', 'veera-radio-group__item-inner')
-      .shouldHaveClasses('input', 'c-radio');
+      .shouldHaveClasses('input', 'veera-radio-group__item-control');
 
     cy.get('[type="radio"]')
       .first()

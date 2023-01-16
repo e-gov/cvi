@@ -44,8 +44,10 @@ export class FeedbackComponent
   /** Display or hide 'sad-face' and 'happy-face' icons */
   @Input() showIcons = false;
 
+  /** @internal */
   radioButtonsControl = new FormControl('');
 
+  /** @internal */
   private destroyed$ = new Subject();
 
   // eslint-disable-next-line @typescript-eslint/no-empty-function

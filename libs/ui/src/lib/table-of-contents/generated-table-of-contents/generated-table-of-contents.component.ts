@@ -35,6 +35,7 @@ export class GeneratedTableOfContentsComponent
   timeout!: NodeJS.Timeout;
   scrollingTimeout!: NodeJS.Timeout;
 
+  /** @internal */
   private readonly destroy$ = new Subject<void>();
 
   @HostBinding('class') get getHostClasses(): string {
