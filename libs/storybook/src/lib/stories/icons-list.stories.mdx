@@ -1,17 +1,25 @@
 import {Meta, Story} from '@storybook/addon-docs';
 import { storybookIconsNames } from '../../../../ui/src/lib/icons/storybook-icons';
 
-<Meta title="Icons/List" parameters={{ layout: 'padded' }} />
+<Meta title="Icons/List" parameters={{
+  layout: 'padded',
+}} argTypes={{
+  fill: {
+    name: 'Icon color',
+    control: { type: 'color' }
+  }
+}} args={{ fill: 'red' }} />
 
-<Story name="All icons">
-  {{
-    props: {icons: storybookIconsNames},
-    template: `
-      <veera-ng-storybook-icon-cards>
-        <veera-ng-storybook-icon-card *ngFor="let name of icons" [label]="name">
-          <veera-ng-icon [name]="name"></veera-ng-icon>
-        </veera-ng-storybook-icon-card>
-      </veera-ng-storybook-icon-cards>
-    `,
-  }}
+export const Template = (args) => ({ props: { ...args, icons: storybookIconsNames }, template: `
+  <veera-ng-storybook-icon-cards>
+    <veera-ng-storybook-icon-card *ngFor="let name of icons" [label]="name" [ngStyle]="{ 'fill': fill }">
+      <veera-ng-icon [name]="name"></veera-ng-icon>
+    </veera-ng-storybook-icon-card>
+  </veera-ng-storybook-icon-cards>
+` })
+
+Switch to *Canvas* tab for a full-screen view.
+
+<Story name="All icons" height="540px">
+  { Template.bind({}) }
 </Story>
