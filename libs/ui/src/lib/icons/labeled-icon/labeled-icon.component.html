@@ -1,10 +1,21 @@
-<div class="veera-labeled-icon__wrapper veera-labeled-icon__wrapper--icon-{{iconPosition}}">
+<veera-ng-track [gap]="4" [verticalAlignment]="verticalAlignment">
+  <ng-container *ngIf="iconPosition === 'before'">
+    <ng-container *ngTemplateOutlet="icon"></ng-container>
+  </ng-container>
+
+  <div #content class="veera-labeled-icon__content">
+    <ng-content></ng-content>
+  </div>
+
+  <ng-container *ngIf="iconPosition === 'after'">
+    <ng-container *ngTemplateOutlet="icon"></ng-container>
+  </ng-container>
+</veera-ng-track>
+
+<ng-template #icon>
   <veera-ng-icon [name]="name"
                  [height]="iconHeight"
-                 svgClass="{{svgClass}} veera-labeled-icon__icon-svg"
-                 class="{{iconClass}}">
+                 svgClass="{{ svgClass }} veera-labeled-icon__icon-svg"
+                 class="{{ iconClass }}">
   </veera-ng-icon>
-</div>
-<div #content class="veera-labeled-icon__content">
-  <ng-content></ng-content>
-</div>
+</ng-template>

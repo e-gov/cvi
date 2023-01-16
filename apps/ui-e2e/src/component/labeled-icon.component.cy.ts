@@ -5,7 +5,7 @@ describe('LabeledIconComponent', () => {
 
   it('Renders default labeled icon', () => {
     cy.loadStory('Angular Labeled Icon', 'Default').runLabeledIconCommonTest(
-      'start',
+      'normal',
       'before'
     );
   });

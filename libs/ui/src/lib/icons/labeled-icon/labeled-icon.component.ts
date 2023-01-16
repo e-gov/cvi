@@ -8,7 +8,8 @@ import {
 } from '@angular/core';
 import { VeeraIconName } from '@ria/veera-icons';
 import { iconSizeDefault } from '../icon/icon';
-import { IconPosition } from './icon-position';
+import { LabeledIconPosition } from './icon-position';
+import { LabeledIconVerticalAlignment } from './vertical-alignment';
 
 @Component({
   selector: 'veera-ng-labeled-icon',
@@ -17,7 +18,7 @@ import { IconPosition } from './icon-position';
 })
 export class LabeledIconComponent {
   /** Icon location */
-  @Input() iconPosition: IconPosition = 'before';
+  @Input() iconPosition: LabeledIconPosition = 'before';
 
   /** Icon name */
   @Input() name!: VeeraIconName;
@@ -30,13 +31,13 @@ export class LabeledIconComponent {
   iconHeight?: number = iconSizeDefault;
 
   /** Additional classes for the veera-ng-icon element. You can set icon height here */
-  @Input() iconClass = 'veera-labeled-icon__icon';
+  @Input() iconClass = 'veera-labeled-icon__icon-wrapper';
 
-  @Input() alignment: 'start' | 'center' = 'start';
+  @Input() verticalAlignment: LabeledIconVerticalAlignment = 'normal';
 
   @ViewChild('content') content!: ElementRef;
 
-  @HostBinding('class') get getHostClasses(): string {
-    return `veera-labeled-icon veera-labeled-icon--align-${this.alignment}`;
+  @HostBinding('class') get hostClasses(): string {
+    return `veera-labeled-icon`;
   }
 }

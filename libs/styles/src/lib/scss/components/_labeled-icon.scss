@@ -1,54 +1,17 @@
 @mixin veera-labeled-icon($base: &) {
-  display: flex;
+  --comment: 'An SVG icon with a mandatory label';
+
+  fill: get-color(sapphire-blue-10);
 
   @at-root {
-    #{$base}--align-center {
-      align-items: center;
-    }
-
-    #{$base}--align-start {
-      #{$base}__wrapper--icon-before, #{$base}__wrapper--icon-after {
-        align-self: flex-start;
-      }
-    }
-
-    #{$base}__wrapper--icon-before {
-      @include label-icon;
-      margin-right: get-spacing('haapsalu');
-    }
-
-    #{$base}__wrapper--icon-after {
-      @include label-icon;
-      margin-right: auto;
-      order: 2;
-      margin-left: get-spacing('haapsalu');
-    }
-
-    #{$base}__icon-svg {
-      height: 100%;
-      width: auto;
-    }
-
     #{$base}__content {
       overflow-wrap: break-word;
       min-width: 0;
-      & a {
-        color: inherit;
-        text-decoration-line: underline;
-
-        &:hover {
-          color: get-color(sapphire-blue-10);
-        }
-      }
     }
 
-    #{$base}__wrapper {
+    #{$base}__icon-wrapper {
       display: flex;
-      align-items: center;
+      align-items: baseline;
     }
   }
-}
-
-@mixin label-icon {
-  fill: get-color(sapphire-blue-10);
 }

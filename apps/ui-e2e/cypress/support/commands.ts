@@ -14,14 +14,13 @@ import {
   NotificationSeverity,
   NotificationSize,
   RadioGroupAppearance,
+  LabeledIconPosition,
+  LabeledIconVerticalAlignment,
 } from '@ria/veera-ng';
 
 type AttrNameValuePair = { name: string; value: string | number };
 
 type Device = 'desktop' | 'tablet' | 'mobile';
-
-type LabeledIconAlignment = 'start' | 'center';
-type LabeledIconPosition = 'before' | 'after';
 
 declare global {
   // eslint-disable-next-line @typescript-eslint/no-namespace
@@ -50,6 +49,20 @@ declare global {
         className: string | string[]
       ): Cypress.Chainable;
 
+      shouldHaveCSSVar(
+        element: string,
+        cssVarName: string,
+        cssVarValue: string
+      ): Cypress.Chainable;
+
+      shouldBeFirstChild(firstElement: string): Cypress.Chainable;
+
+      shouldBeLastChild(lastElement: string): Cypress.Chainable;
+
+      shouldHaveBefore(element: string, prevElement: string): Cypress.Chainable;
+
+      shouldHaveAfter(element: string, nextElement: string): Cypress.Chainable;
+
       shouldHaveAttributes(
         element: string,
         attrNameValuePair: AttrNameValuePair | AttrNameValuePair[]
@@ -75,8 +88,8 @@ declare global {
       ): void;
 
       runLabeledIconCommonTest(
-        alignment: LabeledIconAlignment,
-        position: LabeledIconPosition
+        alignment: LabeledIconVerticalAlignment,
+        iconPosition: LabeledIconPosition
       ): void;
 
       runButtonCommonTest(appearance: ButtonAppearance, size: ButtonSize): void;
@@ -141,6 +154,51 @@ Cypress.Commands.add('shouldHaveAttributes', (element, attrNameValuePair) => {
     .concat(attrNameValuePair || [])
     .forEach((value) => cy.should('have.attr', value.name, value.value));
 });
+
+Cypress.Commands.add(
+  'shouldHaveCSSVar',
+  (element: string, cssVarName: string, cssVarValue: string) => {
+    cy.window().then((win) => {
+      cy.get(element).should(($el) => {
+        const customProp = win
+          .getComputedStyle($el[0])
+          .getPropertyValue(cssVarName)
+          .trim();
+        expect(customProp).to.equal(cssVarValue);
+      });
+    });
+  }
+);
+
+Cypress.Commands.add('shouldBeFirstChild', (firstElement: string) => {
+  cy.get(firstElement).should(($el) => {
+    expect($el.is(':first-child')).to.be.true;
+  });
+});
+
+Cypress.Commands.add('shouldBeLastChild', (lastElement: string) => {
+  cy.get(lastElement).should(($el) => {
+    expect($el.is(':last-child')).to.be.true;
+  });
+});
+
+Cypress.Commands.add(
+  'shouldHaveBefore',
+  (element: string, prevElement: string) => {
+    cy.get(element).should(($el) => {
+      expect($el.prev(prevElement)).to.have.length(1);
+    });
+  }
+);
+
+Cypress.Commands.add(
+  'shouldHaveAfter',
+  (element: string, nextElement: string) => {
+    cy.get(element).should(($el) => {
+      expect($el.next(nextElement)).to.have.length(1);
+    });
+  }
+);
 
 Cypress.Commands.add('shouldHaveStyle', (element, attrNameValuePair) => {
   cy.get(element);
@@ -258,19 +316,24 @@ Cypress.Commands.add(
   }
 );
 
-Cypress.Commands.add('runLabeledIconCommonTest', (alignment, position) => {
-  cy.shouldHaveClasses('veera-ng-labeled-icon', [
-    'veera-labeled-icon',
-    `veera-labeled-icon--align-${alignment}`,
-  ]).within(() => {
-    cy.shouldHaveClasses('div', [
-      'veera-labeled-icon__wrapper',
-      `veera-labeled-icon__wrapper--icon-${position}`,
-    ]).within(() => {
-      cy.shouldExist('veera-ng-icon');
-    });
-    cy.shouldHaveClasses('div', 'veera-labeled-icon__content');
-  });
+Cypress.Commands.add('runLabeledIconCommonTest', (alignment, iconPosition) => {
+  cy.shouldHaveClasses('veera-ng-labeled-icon', ['veera-labeled-icon']).within(
+    () => {
+      cy.shouldHaveCSSVar(
+        'veera-ng-track',
+        '--vertical-alignment',
+        alignment === 'normal' ? '' : 'center'
+      ).within(() => {
+        cy.shouldExist('veera-ng-icon');
+        if (iconPosition === 'after') {
+          cy.shouldBeLastChild('veera-ng-icon');
+        } else {
+          cy.shouldBeFirstChild('veera-ng-icon');
+        }
+      });
+      cy.shouldHaveClasses('div', 'veera-labeled-icon__content');
+    }
+  );
 });
 
 Cypress.Commands.add('runButtonCommonTest', (appearance, size) => {

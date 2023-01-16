@@ -13,17 +13,16 @@ const Template: Story = (args) => ({
   props: args,
   template: `
     <div class="veera-labeled-icon">
-      <svg  class="veera-labeled-icon__icon-before" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <g>
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M4 3H7.5C8.05 3 8.5 3.45 8.5 4C8.5 5.25 8.7 6.45 9.07 7.57C9.18 7.92 9.1 8.31 8.82 8.59L6.62 10.79C8.06 13.62 10.38 15.93 13.21 17.38L15.41 15.18C15.61 14.99 15.86 14.89 16.12 14.89C16.22 14.89 16.33 14.9 16.43 14.94C17.55 15.31 18.76 15.51 20 15.51C20.55 15.51 21 15.96 21 16.51V20C21 20.55 20.55 21 20 21C10.61 21 3 13.39 3 4C3 3.45 3.45 3 4 3ZM6.54 5C6.6 5.89 6.75 6.76 6.99 7.59L5.79 8.79C5.38 7.59 5.12 6.32 5.03 5H6.54ZM16.4 17.02C17.25 17.26 18.12 17.41 19 17.47V18.96C17.68 18.87 16.41 18.61 15.2 18.21L16.4 17.02Z"/>
-        </g>
-      </svg>
-      <div class="veera-labeled-icon__content">
-        <p>Some text next to icon</p>
+      <div class="veera-track veera-track--direction-horizontal veera-track--layout-flex" style="--gap:4;">
+        <div class="veera-labeled-icon__icon-wrapper">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="veera-labeled-icon__icon-svg" height="24px">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M4 3h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.2-.19.45-.29.71-.29.1 0 .21.01.31.05 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1Zm2.54 2c.06.89.21 1.76.45 2.59l-1.2 1.2c-.41-1.2-.67-2.47-.76-3.79h1.51Zm9.86 12.02c.85.24 1.72.39 2.6.45v1.49c-1.32-.09-2.59-.35-3.8-.75l1.2-1.19Z"></path>
+          </svg>
+        </div>
+        <div class="veera-labeled-icon__content">This is a labeled icon</div>
       </div>
     </div>
   `,
 });
 
 export const Default = Template.bind({});
-Default.args = {};

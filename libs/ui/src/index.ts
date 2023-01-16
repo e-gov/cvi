@@ -7,6 +7,7 @@ export * from './lib/status-badge/status-badge.component';
 export * from './lib/form-item/form-item.component';
 export * from './lib/icons/icon/icon.component';
 export * from './lib/icons/labeled-icon/icon-position';
+export * from './lib/icons/labeled-icon/vertical-alignment';
 export * from './lib/icons/labeled-icon/labeled-icon.component';
 export * from './lib/icons/icons-registry.service';
 export * from './lib/notification/notification-severity-to-header-icon.pipe';

@@ -1,1 +1,1 @@
-export type IconPosition = 'before' | 'after';
+export type LabeledIconPosition = 'before' | 'after';
