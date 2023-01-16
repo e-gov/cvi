@@ -2,7 +2,7 @@ import { Meta, Story } from '@storybook/angular';
 import { RadioButtonComponent } from './radio-button.component';
 
 export default {
-  title: 'Angular/Radio button',
+  title: 'Angular/Form/Radio button',
   component: RadioButtonComponent,
   args: {
     name: 'Name',

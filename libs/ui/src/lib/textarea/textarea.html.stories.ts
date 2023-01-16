@@ -2,7 +2,7 @@ import { Meta, Story } from '@storybook/angular';
 import notes from './textarea.html.md';
 
 export default {
-  title: 'HTML/Textarea',
+  title: 'HTML/Form/Textarea',
   parameters: { notes },
   args: {
     placeholder: 'Placeholder...',

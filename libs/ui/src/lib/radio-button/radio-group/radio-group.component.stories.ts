@@ -4,7 +4,7 @@ import { RadioGroupComponent } from './radio-group.component';
 import { RadioGroupAppearance } from './radio-group';
 
 export default {
-  title: 'Angular/Radio button group',
+  title: 'Angular/Form/Radio button group',
   component: RadioGroupComponent,
   parameters: { notes },
   args: {

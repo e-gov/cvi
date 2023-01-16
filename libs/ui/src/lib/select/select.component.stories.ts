@@ -10,7 +10,7 @@ import {
 import { UiModule } from '../ui.module';
 
 export default {
-  title: 'Angular/Select',
+  title: 'Angular/Form/Select',
   decorators: [
     moduleMetadata({
       imports: [UiModule, ReactiveFormsModule],

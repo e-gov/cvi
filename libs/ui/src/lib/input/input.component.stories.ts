@@ -6,7 +6,7 @@ import { storybookIconsNames } from '../icons/storybook-icons';
 import { UiModule } from '../ui.module';
 
 export default {
-  title: 'Angular/Input',
+  title: 'Angular/Form/Input',
   decorators: [
     moduleMetadata({
       imports: [UiModule, ReactiveFormsModule],

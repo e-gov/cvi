@@ -3,7 +3,7 @@ import notes from './form-item.component.md';
 import { FormItemComponent } from './form-item.component';
 
 export default {
-  title: 'Angular/Form item',
+  title: 'Angular/Form/Form item',
   component: FormItemComponent,
   parameters: { notes },
   args: {

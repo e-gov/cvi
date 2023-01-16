@@ -4,7 +4,7 @@ import notes from './textarea.component.md';
 import { TextareaComponent } from './textarea.component';
 
 export default {
-  title: 'Angular/Textarea',
+  title: 'Angular/Form/Textarea',
   parameters: { notes },
   component: TextareaComponent,
 } as Meta;

@@ -2,7 +2,7 @@ import { Story, Meta } from '@storybook/angular';
 import notes from './input.html.md';
 
 export default {
-  title: 'HTML/Input',
+  title: 'HTML/Form/Input',
   parameters: {
     notes,
     options: { selectedPanel: 'html/panel' },
