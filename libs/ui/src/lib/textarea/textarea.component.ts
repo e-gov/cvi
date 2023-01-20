@@ -38,6 +38,9 @@ export class TextareaComponent {
   /** Input placeholder */
   @Input() placeholder = '';
 
+  /** Textarea is resizable */
+  @Input() resizable = true;
+
   private internalValue?: any;
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   private onChanged: (value: unknown) => void = () => {};
@@ -47,7 +50,7 @@ export class TextareaComponent {
   @HostBinding('class') get getHostClasses(): string {
     return `veera-textfield veera-textfield--type-multiple-lines${
       this.disabled ? ' veera-textfield--is-disabled' : ''
-    }`;
+    }${ this.resizable ? '' : ' veera-textfield--no-resize' }`;
   }
 
   constructor(private readonly cdRef: ChangeDetectorRef) {}

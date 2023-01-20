@@ -4,7 +4,7 @@ describe('RadioGroupComponent', () => {
   });
 
   it('Renders default radio group and checks the first option', () => {
-    cy.loadStory('Angular Radio Button Group', 'Default')
+    cy.loadStory('Angular Form Radio Button Group', 'Default')
       .runRadioGroupCommonTest('regular')
       .get('[data-cy="option_1"]')
       .shouldHaveClasses('label', 'veera-radio-group__item-inner')
@@ -18,7 +18,7 @@ describe('RadioGroupComponent', () => {
   });
 
   it('Renders option radio buttons group and clicks first button', () => {
-    cy.loadStory('Angular Radio Button Group', 'Option Button')
+    cy.loadStory('Angular Form Radio Button Group', 'Option Button')
       .runRadioGroupCommonTest('regular')
       .get('[data-cy="option_1"]')
       .within(() => {
@@ -39,7 +39,7 @@ describe('RadioGroupComponent', () => {
   });
 
   it('Renders option button compact and clicks first button', () => {
-    cy.loadStory('Angular Radio Button Group', 'Option Button Compact')
+    cy.loadStory('Angular Form Radio Button Group', 'Option Button Compact')
       .runRadioGroupCommonTest('compact')
       .get('[data-cy="option_1"]')
       .within(() => {

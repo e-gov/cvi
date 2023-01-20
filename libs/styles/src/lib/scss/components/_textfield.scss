@@ -53,6 +53,10 @@
         background-color: get-color(black-coral-0);
         border: 1px solid get-color(black-coral-5);
       }
+
+      #{$base}--no-resize & {
+        resize: none;
+      }
     }
     #{$base}__suffix-icon-wrapper {
       position: absolute;

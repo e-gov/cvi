@@ -4,7 +4,7 @@ describe('FormItemComponent', () => {
   });
 
   it('Renders default form item', () => {
-    cy.loadStory('Angular Form Item', 'Default')
+    cy.loadStory('Angular Form Form Item', 'Default')
       .get('veera-ng-form-item')
       .should('have.attr', 'ng-reflect-html-id', 'fksd4kfds')
       .and('have.class', 'veera-form-item veera-form-item--label-position-top')
@@ -20,7 +20,7 @@ describe('FormItemComponent', () => {
   });
 
   it('Renders form item with custom htmlId and hidden label', () => {
-    cy.loadStory('Angular Form Item', 'Default')
+    cy.loadStory('Angular Form Form Item', 'Default')
       .changeArg('isLabelHidden', true)
       .changeArg('htmlId', 'Qwerty123')
       .get('veera-ng-form-item')
@@ -33,14 +33,14 @@ describe('FormItemComponent', () => {
   });
 
   it('Renders required Form item', () => {
-    cy.loadStory('Angular Form Item', 'Default')
+    cy.loadStory('Angular Form Form Item', 'Default')
       .changeArg('required', true)
       .get('veera-ng-form-item')
       .contains('Example label *');
   });
 
   it('Renders textarea form item', () => {
-    cy.loadStory('Angular Form Item', 'With Textarea')
+    cy.loadStory('Angular Form Form Item', 'With Textarea')
       .get('veera-ng-form-item')
       .should('have.attr', 'ng-reflect-html-id', 'fksd4kfds')
       .and('have.class', 'veera-form-item veera-form-item--label-position-top')
