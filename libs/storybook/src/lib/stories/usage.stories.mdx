@@ -33,11 +33,11 @@ Make sure that the SVG code of the icon is cleaned and optimised for recoloring 
 ## Typescript
 
 ```
-import {veeraCall, VeeraIcon} from '@ria/veera-icons';
+import {veeraCall, CviIcon} from '@ria/cvi-icons';
 
 const container = document.getElementById('.container');
 
-function buildSVGElement(icon: VeeraIcon): SVGElement {
+function buildSVGElement(icon: CviIcon): SVGElement {
     const div = document.createElement('DIV');
     div.innerHTML = icon.data;
     return (
@@ -52,7 +52,7 @@ container.appendChild(buildSVGElement(icon));
 ## Vanilla JS
 
 ```
-import {veeraCall} from '@ria/veera-icons';
+import {veeraCall} from '@ria/cvi-icons';
 
 const container = document.getElementById('.container');
 

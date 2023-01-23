@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HtmlSectionComponent, SafeHtmlPipe } from '@ria/veera-ng';
+import { HtmlSectionComponent, SafeHtmlPipe } from '@ria/cvi-ng';
 
 describe('ContactsComponent', () => {
   let component: HtmlSectionComponent;

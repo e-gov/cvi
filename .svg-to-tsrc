@@ -4,12 +4,12 @@
       "./libs/icons/src/lib/svg/**/*.svg"
     ],
     "outputDirectory": "./dist/libs/icons",
-    "interfaceName": "VeeraIcon",
-    "typeName": "VeeraIconName",
-    "prefix": "veera",
+    "interfaceName": "CviIcon",
+    "typeName": "CviIconName",
+    "prefix": "cvi",
     "generateType": true,
     "exportCompleteIconSet": true,
     "optimizeForLazyLoading": true,
-    "modelFileName": "veera-icon.model",
+    "modelFileName": "cvi-icon.model",
     "compileSources": true
 }

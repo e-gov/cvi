@@ -1,12 +1,12 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { NotificationSeverity } from './notification';
-import { VeeraIconName } from '@ria/veera-icons';
+import { CviIconName } from '@ria/cvi-icons';
 
 @Pipe({
   name: 'toHeaderIcon',
 })
 export class NotificationSeverityToHeaderIconPipe implements PipeTransform {
-  transform(severity: NotificationSeverity): VeeraIconName | undefined {
+  transform(severity: NotificationSeverity): CviIconName | undefined {
     if (severity === 'success') {
       return 'check_circle_outline';
     }

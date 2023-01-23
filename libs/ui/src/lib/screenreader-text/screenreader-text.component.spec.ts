@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ScreenreaderTextComponent } from '@ria/veera-ng';
+import { ScreenreaderTextComponent } from '@ria/cvi-ng';
 
 describe('ScreenreaderTextComponent', () => {
   let component: ScreenreaderTextComponent;

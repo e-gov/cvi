@@ -1,10 +1,10 @@
 import { CommonModule, registerLocaleData } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { NgModule, LOCALE_ID } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import {
+  TranslateLoader,
   TranslateModule,
   TranslateService,
-  TranslateLoader,
 } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import localeEt from '@angular/common/locales/et';
@@ -21,7 +21,7 @@ import { StorybookCurrentComponentDirective } from './directives/storybook-curre
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // eslint-disable-next-line @nrwl/nx/enforce-module-boundaries
 import { storybookIcons } from '../../../ui/src/lib/icons/storybook-icons';
-import * as veeraNg from '@ria/veera-ng';
+import * as cviNg from '@ria/cvi-ng';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, 'i18n/', '.json');
@@ -61,7 +61,7 @@ const components = [
 })
 export class StorybookModule {
   constructor(
-    private registry: veeraNg.IconsRegistry,
+    private registry: cviNg.IconsRegistry,
     translate: TranslateService
   ) {
     this.registry.registerIcons(storybookIcons);

@@ -5,7 +5,7 @@ import {
   Input,
   Output,
 } from '@angular/core';
-import { VeeraIconName } from '@ria/veera-icons';
+import { CviIconName } from '@ria/cvi-icons';
 
 @Component({
   selector: 'veera-ng-breadcrumbs',
@@ -16,7 +16,7 @@ export class BreadcrumbsComponent {
   @Input() breadcrumbLabels!: string[];
 
   /** Name of an icon in front of breadcrumb */
-  @Input() iconName: VeeraIconName | null = null;
+  @Input() iconName: CviIconName | null = null;
 
   @Output() breadcrumbChange = new EventEmitter<number>();
 }

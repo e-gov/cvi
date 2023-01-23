@@ -56,6 +56,6 @@
       }
     }
   },
-  "tags": ["scope:veera-ng"],
+  "tags": ["scope:cvi-ng"],
   "implicitDependencies": ["icons"]
 }
