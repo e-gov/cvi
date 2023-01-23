@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { StatusBadgeComponent } from '@ria/veera-ng';
+import { StatusBadgeComponent } from '@ria/cvi-ng';
 
 describe('StatusBadgeComponent', () => {
   let component: StatusBadgeComponent;

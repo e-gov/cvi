@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TrackComponent } from '@ria/veera-ng';
+import { TrackComponent } from '@ria/cvi-ng';
 
 describe('TrackComponent', () => {
   let component: TrackComponent;

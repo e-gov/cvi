@@ -2,7 +2,7 @@
   "name": "ria",
   "projectType": "application",
   "sourceRoot": "apps/ria/src",
-  "prefix": "veera-ng",
+  "prefix": "cvi-ng",
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",

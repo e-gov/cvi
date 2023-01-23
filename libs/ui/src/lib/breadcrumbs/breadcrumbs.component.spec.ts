@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BreadcrumbsComponent } from '@ria/veera-ng';
+import { BreadcrumbsComponent } from '@ria/cvi-ng';
 
 describe('BreadcrumbsComponent', () => {
   let component: BreadcrumbsComponent;

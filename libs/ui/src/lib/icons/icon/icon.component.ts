@@ -9,7 +9,7 @@ import {
 } from '@angular/core';
 import { IconsRegistry } from '../icons-registry.service';
 import { DOCUMENT } from '@angular/common';
-import { VeeraIconName } from '@ria/veera-icons';
+import { CviIconName } from '@ria/cvi-icons';
 import { iconSizeDefault } from './icon';
 
 @Component({
@@ -25,7 +25,7 @@ export class IconComponent implements OnChanges {
 
   /** Typed icon name */
   @Input()
-  name?: VeeraIconName;
+  name?: CviIconName;
 
   /** Icon height in px */
   @Input()

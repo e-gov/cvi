@@ -6,7 +6,7 @@ import {
   Input,
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
-import { VeeraIconName } from '@ria/veera-icons';
+import { CviIconName } from '@ria/cvi-icons';
 
 @Component({
   selector: 'veera-ng-input',
@@ -30,7 +30,7 @@ export class InputComponent implements ControlValueAccessor {
   @Input() placeholder = '';
 
   /** Icon added to the right */
-  @Input() suffixIconName!: VeeraIconName;
+  @Input() suffixIconName!: CviIconName;
 
   private internalValue?: any;
   // eslint-disable-next-line @typescript-eslint/no-empty-function

@@ -12,6 +12,8 @@ Styles are based on the original Veera Design System:
 
 https://www.figma.com/file/nNCV5kRqdRkS8MOCK1ZbqU/Veera-Design-System
 
+Keep in mind, that the implementations are not part of the official Veera Design System.
+
 ## Using the Components
 
 The built packages are published to the public Koodivaramu repository, from where you can download and add them to your application:
@@ -62,9 +64,9 @@ Run `nx graph` to see a diagram of the dependencies of your projects.
 
 [Nx Documentation](https://nx.dev/angular)
 
-[10-minute video showing all Nx features](https://nx.dev/getting-started/intro)
+[Getting Started With Nx](https://nx.dev/getting-started/intro)
 
-[Interactive Tutorial](https://nx.dev/react-tutorial/01-create-application)
+[Concepts](https://nx.dev/concepts)
 
 ## Running Cypress tests against Storybook
 

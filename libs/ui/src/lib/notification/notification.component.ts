@@ -5,7 +5,7 @@ import {
   Input,
   Output,
 } from '@angular/core';
-import { VeeraIconName } from '@ria/veera-icons';
+import { CviIconName } from '@ria/cvi-icons';
 import { NotificationSeverity, NotificationSize } from './notification';
 import { NotificationSeverityToHeaderIconPipe } from './notification-severity-to-header-icon.pipe';
 
@@ -25,7 +25,7 @@ export class NotificationComponent {
   @Input() showIcon = true;
 
   /** Icon to show (if not set, showing default icon for severity) */
-  @Input() iconName?: VeeraIconName;
+  @Input() iconName?: CviIconName;
 
   /** Should the close button be displayed */
   @Input() showCloseButton = true;
@@ -40,7 +40,7 @@ export class NotificationComponent {
     private readonly iconPipe: NotificationSeverityToHeaderIconPipe
   ) {}
 
-  getIconName(): VeeraIconName | undefined {
+  getIconName(): CviIconName | undefined {
     return this.showIcon
       ? this.iconName || this.iconPipe.transform(this.severity)
       : undefined;

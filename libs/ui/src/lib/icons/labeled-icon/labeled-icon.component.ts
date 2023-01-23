@@ -6,7 +6,7 @@ import {
   Input,
   ViewChild,
 } from '@angular/core';
-import { VeeraIconName } from '@ria/veera-icons';
+import { CviIconName } from '@ria/cvi-icons';
 import { iconSizeDefault } from '../icon/icon';
 import { LabeledIconPosition } from './icon-position';
 import { LabeledIconVerticalAlignment } from './vertical-alignment';
@@ -21,7 +21,7 @@ export class LabeledIconComponent {
   @Input() iconPosition: LabeledIconPosition = 'before';
 
   /** Icon name */
-  @Input() name!: VeeraIconName;
+  @Input() name!: CviIconName;
 
   /** Additional classes for the SVG element */
   @Input() svgClass = '';

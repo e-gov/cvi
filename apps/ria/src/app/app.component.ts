@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
-  selector: 'veera-ng-root',
+  selector: 'cvi-ng-root',
   template: ``,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

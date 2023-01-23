@@ -7,7 +7,7 @@
   "allowedNonPeerDependencies": [
     "sanitize-html",
     "rxjs",
-    "@ria/veera-icons",
+    "@ria/cvi-icons",
     "@ngx-translate/core",
     "@ngx-translate/http-loader"
   ]

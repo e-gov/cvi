@@ -5,7 +5,7 @@ import { By } from '@angular/platform-browser';
 import {
   CharacterCounterComponent,
   CharacterCounterDirective,
-} from '@ria/veera-ng';
+} from '@ria/cvi-ng';
 
 @Component({
   selector: 'veera-ng-test-textarea',

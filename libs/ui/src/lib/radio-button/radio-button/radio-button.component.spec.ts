@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RadioButtonComponent } from '@ria/veera-ng';
+import { RadioButtonComponent } from '@ria/cvi-ng';
 
 describe('RadioButtonComponent', () => {
   let component: RadioButtonComponent;

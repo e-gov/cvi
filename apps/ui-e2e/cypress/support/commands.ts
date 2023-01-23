@@ -16,7 +16,7 @@ import {
   RadioGroupAppearance,
   LabeledIconPosition,
   LabeledIconVerticalAlignment,
-} from '@ria/veera-ng';
+} from '@ria/cvi-ng';
 
 type AttrNameValuePair = { name: string; value: string | number };
 
