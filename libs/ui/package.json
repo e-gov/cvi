@@ -1,6 +1,6 @@
 {
   "name": "@ria/cvi-ng",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "peerDependencies": {
     "@angular/animations": "^14.1.0",
     "@angular/cdk": "^14.1.0",
