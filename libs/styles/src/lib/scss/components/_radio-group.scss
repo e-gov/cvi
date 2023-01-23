@@ -4,11 +4,13 @@
   & {
     display: block;
     margin-top: get-spacing('kuressaare');
+
     &--appearance-regular {
       #{$base}__button {
         padding-inline: get-spacing('kuressaare');
       }
     }
+
     &--appearance-compact {
       #{$base}__button {
         padding-inline: get-spacing('elva');
@@ -17,8 +19,6 @@
   }
 
   @at-root {
-    #{$base}__inner {
-    }
     #{$base}__title {
       width: auto;
       margin-left: auto;
@@ -32,8 +32,6 @@
       gap: get-spacing('paldiski');
       font-size: $veera-font-size-70;
       line-height: $veera-line-height-100;
-    }
-    #{$base}__item {
     }
     #{$base}__input {
       @include veera-screenreader-text;
@@ -53,7 +51,7 @@
       }
 
       #{$base}__input:focus-visible + & {
-        box-shadow: 0 0 0 0.2rem #0083ba80;
+        box-shadow: $veera-shadow-focus;
       }
     }
   }

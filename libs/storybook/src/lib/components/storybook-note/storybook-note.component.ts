@@ -1,11 +1,8 @@
-import { Component, HostBinding } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'veera-ng-storybook-note',
   templateUrl: './storybook-note.component.html',
+  styleUrls: ['./storybook-note.component.scss'],
 })
-export class StorybookNote {
-  @HostBinding('class') get getHostClasses(): string {
-    return 'c-storybook-note';
-  }
-}
+export class StorybookNoteComponent {}

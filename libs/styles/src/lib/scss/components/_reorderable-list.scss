@@ -30,8 +30,8 @@
     }
     #{$base}__remove-button {
       position: absolute;
-      top: get-spacing('elva');;
-      right: get-spacing('elva');;
+      top: get-spacing('elva');
+      right: get-spacing('elva');
       cursor: pointer;
     }
     #{$base}__close-icon {
@@ -40,11 +40,11 @@
     }
     #{$base}__order-nr {
       border: 1px solid get-color(black-coral-6);
-      border-radius: 5px;
+      border-radius: $veera-radius-s;
       width: 25px;
       height: 24px;
       text-align: center;
-      background-color: #FDFDFD;
+      background-color: get-color(white);
       color: get-color(black);
     }
     #{$base}__ordering-buttons {

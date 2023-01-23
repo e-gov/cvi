@@ -1,3 +1,5 @@
+@use 'sass:color';
+
 // Color codes
 $veera-colors: (
   // Black coral
@@ -150,6 +152,6 @@ $veera-colors: (
     --veera-color-#{'' + $name}: #{$color};
   }
   @each $name, $color in $veera-colors {
-    --veera-color-rgb-#{'' + $name}: #{red($color) green($color) blue($color)};
+    --veera-color-rgb-#{'' + $name}: #{color.red($color) color.green($color) color.blue($color)};
   }
 }

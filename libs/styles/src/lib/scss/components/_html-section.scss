@@ -1,9 +1,17 @@
+/* stylelint-disable selector-max-type, selector-class-pattern, selector-combinator-disallowed-list, selector-no-qualifying-type */
+
 @mixin veera-html-section($base: &) {
-  @media screen and (min-width: map-get($veera-grid-breakpoints, sm)) {
+  @include veera-breakpoint-up(sm) {
     #{$base}__content {
       display: flex;
       gap: get-spacing('parnu');
       margin-top: 0;
+
+      & > * {
+        flex-grow: 1;
+        flex-shrink: 1;
+        flex-basis: 0;
+      }
     }
 
     #{$base}__content-elements {
@@ -13,15 +21,10 @@
   }
 
   @at-root {
+
     #{$base}__title {
       font-size: $veera-font-size-220;
       margin-bottom: get-spacing('elva');
-    }
-
-    #{$base}__content {
-      & > * {
-        flex: 1 1 0;
-      }
     }
 
     #{$base}__content-elements {
@@ -41,14 +44,11 @@
     }
   }
 
+  // TODO: move tag styles to a separate reusable mixin
   ol:not(.list-style-none) {
     list-style-position: inside;
     padding-left: get-spacing('haapsalu');
     text-indent: calc(-1 * get-spacing('haapsalu'));
-  }
-
-  ul:not(.list-style-none) {
-    padding-left: 18px;
   }
 
   ul {
@@ -58,6 +58,15 @@
       list-style: none;
       padding-left: 0;
     }
+
+    &:not(.list-style-none) {
+      padding-left: 18px;
+    }
+  }
+
+  p, a {
+    overflow-wrap: break-word;
+    min-width: 0;
   }
 
   a {
@@ -75,9 +84,6 @@
       vertical-align: middle;
     }
   }
-
-  p, a {
-    overflow-wrap: break-word;
-    min-width: 0;
-  }
 }
+
+/* stylelint-enable selector-max-type, selector-class-pattern, selector-combinator-disallowed-list, selector-no-qualifying-type */

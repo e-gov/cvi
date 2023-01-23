@@ -5,7 +5,7 @@
   padding-inline: get-spacing('elva');
   padding-block: calc(#{get-spacing('loksa')} - 1px);
   align-items: center;
-  font-weight: bold;
+  font-weight: $veera-font-weight-delta;
   border: $veera-border-width solid var(--border-color, var(--color));
   color: var(--color);
   background-color: var(--background-color);
@@ -13,7 +13,4 @@
   font-size: $veera-font-size-80;
   line-height: $veera-line-height-100;
   white-space: nowrap;
-
-  @at-root {
-  }
 }

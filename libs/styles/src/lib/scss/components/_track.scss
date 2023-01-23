@@ -4,9 +4,9 @@
   gap: calc(var(--veera-spacing-unit) * var(--gap));
   justify-content: var(--horizontal-alignment);
   align-items: var(--vertical-alignment);
+
   &--layout-flex {
     display: flex;
-
     flex-wrap: var(--wrap);
 
     &#{$base}--direction-vertical {
@@ -31,6 +31,7 @@
       flex-basis: 0;
     }
   }
+
   &--layout-grid {
     // reset to top-to-bottom flow for mobile, but keep the gap
     @include veera-breakpoint-down(sm) {
@@ -51,8 +52,5 @@
         grid-auto-flow: column;
       }
     }
-  }
-
-  @at-root {
   }
 }

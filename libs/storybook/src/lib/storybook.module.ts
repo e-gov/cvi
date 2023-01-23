@@ -8,14 +8,14 @@ import {
 } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import localeEt from '@angular/common/locales/et';
-import { StorybookSpacingSpecimen } from './components/storybook-spacing-specimen/storybook-spacing-specimen.component';
-import { StorybookSpacingSpecimenItem } from './components/storybook-spacing-specimen/storybook-spacing-specimen-item.component';
-import { StorybookColorCards } from './components/storybook-color-cards/storybook-color-cards.component';
-import { StorybookColorCard } from './components/storybook-color-cards/storybook-color-card.component';
-import { StorybookIconCards } from './components/storybook-icon-cards/storybook-icon-cards.component';
-import { StorybookIconCard } from './components/storybook-icon-cards/storybook-icon-card.component';
-import { StorybookTypeTester } from './components/storybook-type-tester/storybook-type-tester.component';
-import { StorybookNote } from './components/storybook-note/storybook-note.component';
+import { StorybookSpacingSpecimenComponent } from './components/storybook-spacing-specimen/storybook-spacing-specimen.component';
+import { StorybookSpacingSpecimenItemComponent } from './components/storybook-spacing-specimen/storybook-spacing-specimen-item.component';
+import { StorybookColorCardsComponent } from './components/storybook-color-cards/storybook-color-cards.component';
+import { StorybookColorCardComponent } from './components/storybook-color-cards/storybook-color-card.component';
+import { StorybookIconCardsComponent } from './components/storybook-icon-cards/storybook-icon-cards.component';
+import { StorybookIconCardComponent } from './components/storybook-icon-cards/storybook-icon-card.component';
+import { StorybookTypeTesterComponent } from './components/storybook-type-tester/storybook-type-tester.component';
+import { StorybookNoteComponent } from './components/storybook-note/storybook-note.component';
 import { StorybookRandomParagraphsDirective } from './directives/storybook-random-paragraphs/storybook-random-paragraphs.directive';
 import { StorybookCurrentComponentDirective } from './directives/storybook-current-component/storybook-current-component.directive';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -30,14 +30,14 @@ export function HttpLoaderFactory(http: HttpClient) {
 registerLocaleData(localeEt);
 
 const components = [
-  StorybookColorCards,
-  StorybookColorCard,
-  StorybookIconCards,
-  StorybookIconCard,
-  StorybookTypeTester,
-  StorybookNote,
-  StorybookSpacingSpecimen,
-  StorybookSpacingSpecimenItem,
+  StorybookColorCardsComponent,
+  StorybookColorCardComponent,
+  StorybookIconCardsComponent,
+  StorybookIconCardComponent,
+  StorybookTypeTesterComponent,
+  StorybookNoteComponent,
+  StorybookSpacingSpecimenComponent,
+  StorybookSpacingSpecimenItemComponent,
   StorybookRandomParagraphsDirective,
   StorybookCurrentComponentDirective,
 ];

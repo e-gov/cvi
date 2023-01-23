@@ -2,7 +2,6 @@
 @import 'settings/variables/colors';
 @import 'settings/variables/typography';
 @import 'settings/variables/breakpoints';
-@import 'settings/variables/grid';
 @import 'settings/variables/spacing';
 @import 'settings/variables/z-indexes';
 @import 'settings/variables/other';
@@ -50,8 +49,3 @@
 
 @import 'storybook/generic';
 @import 'storybook/components/current-component';
-@import 'storybook/components/color-cards';
-@import 'storybook/components/type-tester';
-@import 'storybook/components/spacing-specimen';
-@import 'storybook/components/icon-cards';
-@import 'storybook/components/note';

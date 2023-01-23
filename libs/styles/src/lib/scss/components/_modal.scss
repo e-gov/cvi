@@ -37,7 +37,8 @@
       @include veera-breakpoint-up(sm) {
         border-radius: $veera-radius-m;
         position: relative;
-        margin: get-spacing('narva') auto;
+        margin-block: get-spacing('narva');
+        margin-inline: auto;
         max-width: 768px;
       }
     }

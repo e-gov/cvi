@@ -1,6 +1,6 @@
 .u-storybook-current-component {
-
   position: relative;
+
   &::after {
     content: '';
     position: absolute;
@@ -53,41 +53,49 @@
         box-shadow: inset 0 0 var(--storybook-current-component-cover-shadow-size) rgba(var(--storybook-current-component-cover-shadow-color) / 0);
         height: 0;
       }
+
       1% {
         background-color: rgba(var(--storybook-current-component-cover-bg-color) / 0);
         box-shadow: inset 0 0 var(--storybook-current-component-cover-shadow-size) rgba(var(--storybook-current-component-cover-shadow-color) / 0);
         height: 100%;
       }
+
       17% {
         background-color: rgba(var(--storybook-current-component-cover-bg-color) / var(--storybook-current-component-cover-opacity));
         box-shadow: inset 0 0 var(--storybook-current-component-cover-shadow-size) rgba(var(--storybook-current-component-cover-shadow-color) / var(--storybook-current-component-cover-opacity));
         height: 100%;
       }
+
       34% {
         background-color: rgba(var(--storybook-current-component-cover-bg-color) / 0);
         box-shadow: inset 0 0 var(--storybook-current-component-cover-shadow-size) rgba(var(--storybook-current-component-cover-shadow-color) / 0);
         height: 100%;
       }
+
       51% {
         background-color: rgba(var(--storybook-current-component-cover-bg-color) / var(--storybook-current-component-cover-opacity));
         box-shadow: inset 0 0 var(--storybook-current-component-cover-shadow-size) rgba(var(--storybook-current-component-cover-shadow-color) / var(--storybook-current-component-cover-opacity));
         height: 100%;
       }
+
       68% {
         background-color: rgba(var(--storybook-current-component-cover-bg-color) / 0);
         box-shadow: inset 0 0 var(--storybook-current-component-cover-shadow-size) rgba(var(--storybook-current-component-cover-shadow-color) / 0);
         height: 100%;
       }
+
       84% {
         background-color: rgba(var(--storybook-current-component-cover-bg-color) / var(--storybook-current-component-cover-opacity));
         box-shadow: inset 0 0 var(--storybook-current-component-cover-shadow-size) rgba(var(--storybook-current-component-cover-shadow-color) / var(--storybook-current-component-cover-opacity));
         height: 100%;
       }
+
       99% {
         background-color: rgba(var(--storybook-current-component-cover-bg-color) / 0);
         box-shadow: inset 0 0 var(--storybook-current-component-cover-shadow-size) rgba(var(--storybook-current-component-cover-shadow-color) / 0);
         height: 100%;
       }
+
       100% {
         background-color: rgba(var(--storybook-current-component-cover-bg-color) / 0);
         box-shadow: inset 0 0 var(--storybook-current-component-cover-shadow-size) rgba(var(--storybook-current-component-cover-shadow-color) / 0);
@@ -99,9 +107,11 @@
       0% {
         box-shadow: 0 0 var(--storybook-current-component-spot-shadow-size) 0 rgba(var(--storybook-current-component-spot-shadow-color) / 0);
       }
+
       70% {
         box-shadow: 0 0 var(--storybook-current-component-spot-shadow-size) 4px rgba(var(--storybook-current-component-spot-shadow-color) / 1);
       }
+
       100% {
         box-shadow: 0 0 var(--storybook-current-component-spot-shadow-size) 0 rgba(var(--storybook-current-component-spot-shadow-color) / 0);
       }

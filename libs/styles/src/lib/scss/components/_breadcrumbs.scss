@@ -10,16 +10,15 @@
     #{$base}__item {
       & + &::before {
         float: left;
-        padding-right: 0.5rem;
-        padding-left: 0.5rem;
-        color: #6c757d;
+        padding-inline: get-spacing('rapla');
+        color: get-color(black-coral-12);
         content: '/';
       }
 
       &:last-child:not(&:first-child) {
         #{$base}__item-link {
           pointer-events: none;
-          color: get-color(black-coral-10);
+          color: get-color(black-coral-12);
         }
       }
     }

@@ -61,9 +61,10 @@
       }
 
       #{$base}__aside-list-item.is-current & {
-        font-weight: bold;
+        font-weight: $veera-font-weight-delta;
         color: get-color(black-coral-20);
         position: relative;
+
         &::before {
           content: '';
           position: absolute;

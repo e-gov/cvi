@@ -1,0 +1,15 @@
+.swatch {
+  height: 140px;
+  display: flex;
+  gap: var(--spacing);
+  &::before,
+  &::after {
+    content: '';
+    background-color: var(--veera-color-black-coral-16);
+    flex: 1 1 0;
+    height: 100%;
+  }
+}
+.label {
+  padding-top: var(--veera-spacing-paldiski);
+}

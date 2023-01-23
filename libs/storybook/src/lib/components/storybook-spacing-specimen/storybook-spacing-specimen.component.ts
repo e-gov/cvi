@@ -1,11 +1,8 @@
-import { Component, HostBinding } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'veera-ng-storybook-spacing-specimen',
   template: `<ng-content></ng-content>`,
+  styleUrls: ['./storybook-spacing-specimen.component.scss'],
 })
-export class StorybookSpacingSpecimen {
-  @HostBinding('class') get getHostClasses(): string {
-    return `c-spacing-specimen`;
-  }
-}
+export class StorybookSpacingSpecimenComponent {}

@@ -3,6 +3,7 @@
 
   display: flex;
   gap: get-spacing('haapsalu');
+
   &--label-position-top {
     flex-direction: column;
     gap: get-spacing('paldiski');

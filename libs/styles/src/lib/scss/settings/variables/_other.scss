@@ -11,6 +11,11 @@ $veera-border-width: 2px;
 // Shadows
 $veera-shadow-beta-blur: 15px;
 
-$veera-shadow-alpha: 0 1px 5px 0 rgba(var(--veera-color-rgb-black) / .15);
-$veera-shadow-beta: 0 4px $veera-shadow-beta-blur 0 rgba(var(--veera-color-rgb-black) / .15);
-$veera-shadow-gamma: 0 0 20px 0 rgba(var(--veera-color-rgb-sapphire-blue-16) / .1);
+$veera-shadow-alpha: 0 1px 5px 0 rgba(var(--veera-color-rgb-black) / 0.15);
+$veera-shadow-beta: 0 4px $veera-shadow-beta-blur 0 rgba(var(--veera-color-rgb-black) / 0.15);
+$veera-shadow-gamma: 0 0 20px 0 rgba(var(--veera-color-rgb-sapphire-blue-16) / 0.1);
+$veera-shadow-delta: inset 1px 0 0 var(--veera-color-white),
+  inset -1px 0 0 var(--veera-color-white), inset 0 1px 0 var(--veera-color-white),
+  inset 0 -1px 0 var(--veera-color-white);
+
+$veera-shadow-focus: $veera-shadow-delta;

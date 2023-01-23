@@ -1,0 +1,11 @@
+@import 'libs/styles/src/lib/scss/settings/variables/other';
+
+.swatch {
+  aspect-ratio: 1;
+  border-radius: $veera-radius-s;
+  height: 140px;
+  background-color: var(--color);
+}
+.label {
+  padding-top: var(--veera-spacing-paldiski);
+}

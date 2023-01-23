@@ -1,0 +1,16 @@
+:host {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  align-items: center;
+  justify-items: center;
+  flex-grow: 1;
+}
+.icon {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+}

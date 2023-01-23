@@ -1,0 +1,4 @@
+/node_modules
+/dist
+/libs/styles/src/lib/scss/storybook
+/libs/storybook

@@ -9,10 +9,10 @@
     }
 
     .has-value #{$base}__container {
-      background: get-color(white);
+      background-color: get-color(white);
 
       &.background-disabled {
-        background: get-color(black-coral-0);
+        background-color: get-color(black-coral-0);
       }
     }
 
@@ -37,11 +37,13 @@
       width: 100%;
       border-radius: $veera-radius-s;
       border: 1px solid get-color(black-coral-3);
-      background: get-color(white);
+      background-color: get-color(white);
     }
 
     #{$base}__value-container {
-      flex: 1;
+      flex-grow: 1;
+      flex-shrink: 1;
+      flex-basis: 0;
     }
 
     #{$base}__placeholder {
@@ -57,9 +59,11 @@
     }
 
     #{$base}__input {
+      // TODO: consider moving these reset styles to _reset.scss
       box-sizing: content-box;
-      background: none transparent;
-      border: 0 none;
+      /* stylelint-disable-next-line declaration-property-value-allowed-list */
+      background-color: none;
+      border: none;
       box-shadow: none;
       outline: none;
       padding: 0;
@@ -96,7 +100,8 @@
       position: absolute;
       width: 100%;
       background-color: get-color(white);
-      border-radius: 0 0 $veera-radius-s $veera-radius-s;
+      border-bottom-left-radius: $veera-radius-s;
+      border-bottom-right-radius: $veera-radius-s;
       border: 1px solid get-color(black-coral-3);
       z-index: get-z-index('select', '__dropdown');
       max-height: 300px;

@@ -19,7 +19,7 @@ Colors can be used both in Sass (`get-color(dark-tangerine-0)`) and as CSS varia
     props: { colorsTotal },
     template: `
       <veera-ng-storybook-color-cards>
-        <veera-ng-storybook-color-card *ngFor="let _ of [].constructor(colorsTotal); let i = index" label="black-coral-{{ i }}" [ngStyle]="{'--color': 'var(--veera-color-black-coral-' + i}"></veera-ng-storybook-color-card>
+        <veera-ng-storybook-color-card *ngFor="let _ of [].constructor(colorsTotal); let i = index" label="black-coral-{{ i }}" [ngStyle]="{'--color': 'var(--veera-color-black-coral-' + i + ')'}"></veera-ng-storybook-color-card>
       </veera-ng-storybook-color-cards>
     `,
   }}

@@ -1,13 +1,10 @@
-import { Component, HostBinding, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'veera-ng-storybook-color-card',
   templateUrl: './storybook-color-card.component.html',
+  styleUrls: ['./storybook-color-card.component.scss'],
 })
-export class StorybookColorCard {
+export class StorybookColorCardComponent {
   @Input() label!: string;
-
-  @HostBinding('class') get getHostClasses(): string {
-    return `c-color-cards__item`;
-  }
 }

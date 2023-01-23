@@ -18,8 +18,6 @@ describe('TextareaComponent', () => {
     cy.loadStory('Angular Form Textarea', 'Default')
       .get('veera-ng-textarea')
       .changeArg('resizable', false)
-      .shouldHaveClasses('veera-ng-textarea', [
-        'veera-textfield--no-resize'
-      ]);
-  })
+      .shouldHaveClasses('veera-ng-textarea', ['veera-textfield--no-resize']);
+  });
 });

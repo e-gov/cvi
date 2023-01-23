@@ -1,6 +1,6 @@
 @use '@fontsource/roboto/scss/mixins' as Roboto;
 
-$subsets: (latin, latin-ext);
+$subsets: (latin, latin-ext, cyrillic);
 
 @include Roboto.fontFace($weight: 300, $unicodeMap: $subsets);
 

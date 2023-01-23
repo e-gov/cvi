@@ -1,0 +1,41 @@
+@import 'libs/styles/src/lib/scss/settings/variables/typography';
+
+:host {
+  display: block;
+  margin-block: 1em;
+  line-height: 1.2;
+}
+
+:host(.--size-50) {
+  font-size: $veera-font-size-50;
+}
+:host(.--size-70) {
+  font-size: $veera-font-size-70;
+}
+:host(.--size-80) {
+  font-size: $veera-font-size-80;
+}
+:host(.--size-100) {
+  font-size: $veera-font-size-100;
+}
+:host(.--size-200) {
+  font-size: $veera-font-size-200;
+}
+:host(.--size-220) {
+  font-size: $veera-font-size-220;
+}
+:host(.--size-250) {
+  font-size: $veera-font-size-250;
+}
+:host(.--size-300) {
+  font-size: $veera-font-size-300;
+}
+:host(.--size-350) {
+  font-size: $veera-font-size-350;
+}
+:host(.--size-400) {
+  font-size: $veera-font-size-400;
+}
+:host(.--size-500) {
+  font-size: $veera-font-size-500;
+}
