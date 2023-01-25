@@ -57,17 +57,7 @@
         "push": true,
         "noVerify": true,
         "commitMessageFormat": "chore(${projectName}): release version ${version} [skip ci]",
-        "skipCommitTypes": [
-          "build",
-          "chore",
-          "ci",
-          "docs",
-          "refactor",
-          "revert",
-          "style",
-          "test",
-          "format"
-        ]
+        "skipCommitTypes": ["chore", "ci", "docs", "style", "test", "format"]
       }
     }
   },
