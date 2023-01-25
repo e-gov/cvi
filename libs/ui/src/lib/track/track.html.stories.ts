@@ -86,18 +86,18 @@ const Template: Story = (args) => ({
   props: args,
   /* template */
   template: `
-    <div class="veera-track veera-track--layout-{{ layout }} veera-track--direction-{{ flexDirection }}" [ngClass]="{'veera-track--items-have-equal-width': flexColumnsEqual, 'veera-track--has-rows': !!gridRows}" style="--gap: {{ gap }}; --horizontal-alignment: {{ horizontalAlignment }}; --vertical-alignment: {{ verticalAlignment }}; --wrap: {{ flexIsMultiline }}; --rows: {{ gridRows }}">
-      <div class="veera-button veera-button--appearance-primary">
-        <button type="button" class="veera-button__button">Button 1</button>
+    <div class="cvi-track cvi-track--layout-{{ layout }} cvi-track--direction-{{ flexDirection }}" [ngClass]="{'cvi-track--items-have-equal-width': flexColumnsEqual, 'cvi-track--has-rows': !!gridRows}" style="--gap: {{ gap }}; --horizontal-alignment: {{ horizontalAlignment }}; --vertical-alignment: {{ verticalAlignment }}; --wrap: {{ flexIsMultiline }}; --rows: {{ gridRows }}">
+      <div class="cvi-button cvi-button--appearance-primary">
+        <button type="button" class="cvi-button__button">Button 1</button>
       </div>
-      <div class="veera-button veera-button--appearance-primary">
-        <button type="button" class="veera-button__button">Button 2</button>
+      <div class="cvi-button cvi-button--appearance-primary">
+        <button type="button" class="cvi-button__button">Button 2</button>
       </div>
-      <div class="veera-button veera-button--appearance-primary">
-        <button type="button" class="veera-button__button">Button 3 with a longer text that does not fit anywhere</button>
+      <div class="cvi-button cvi-button--appearance-primary">
+        <button type="button" class="cvi-button__button">Button 3 with a longer text that does not fit anywhere</button>
       </div>
-      <div class="veera-button veera-button--appearance-primary">
-        <button type="button" class="veera-button__button">Button 4</button>
+      <div class="cvi-button cvi-button--appearance-primary">
+        <button type="button" class="cvi-button__button">Button 4</button>
       </div>
     </div>
   `,

@@ -36,9 +36,9 @@ const Template: Story<LabeledIconComponent> = (args: LabeledIconComponent) => ({
   props: args,
   /* template */
   template: `
-    <veera-ng-labeled-icon [name]="name" [iconPosition]="iconPosition" [verticalAlignment]="verticalAlignment" [iconHeight]="iconHeight">
+    <cvi-ng-labeled-icon [name]="name" [iconPosition]="iconPosition" [verticalAlignment]="verticalAlignment" [iconHeight]="iconHeight">
       {{ content }}
-    </veera-ng-labeled-icon>
+    </cvi-ng-labeled-icon>
   `,
 });
 
@@ -53,11 +53,11 @@ const TemplateInsideButton: Story<LabeledIconComponent> = (
   props: args,
   /* template */
   template: `
-  <veera-ng-button appearance="secondary">
-    <veera-ng-labeled-icon [name]="name" [iconPosition]="iconPosition" [verticalAlignment]="verticalAlignment" [iconHeight]="iconHeight">
+  <cvi-ng-button appearance="secondary">
+    <cvi-ng-labeled-icon [name]="name" [iconPosition]="iconPosition" [verticalAlignment]="verticalAlignment" [iconHeight]="iconHeight">
       {{ content }}
-    </veera-ng-labeled-icon>
-  </veera-ng-button>
+    </cvi-ng-labeled-icon>
+  </cvi-ng-button>
   `,
 });
 
@@ -73,14 +73,14 @@ const TemplateWithCustomStyling: Story<LabeledIconComponent> = (
   props: args,
   /* template */
   template: `
-    <veera-ng-labeled-icon [name]="name"
+    <cvi-ng-labeled-icon [name]="name"
                            [iconPosition]="iconPosition"
                            [verticalAlignment]="verticalAlignment"
                            [iconHeight]="iconHeight"
                            iconClass="icon-wrapper-class"
                            svgClass="svg-class">
       {{ content }}
-    </veera-ng-labeled-icon>
+    </cvi-ng-labeled-icon>
   `,
   styles: [
     // you don't need to use ::ng-deep in your app

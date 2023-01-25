@@ -1,4 +1,4 @@
-@mixin veera-character-counter($base: &) {
+@mixin cvi-character-counter($base: &) {
   text-align: right;
-  font-size: $veera-font-size-80;
+  font-size: $cvi-font-size-80;
 }

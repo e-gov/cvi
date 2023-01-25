@@ -2,7 +2,7 @@
   "name": "ui",
   "projectType": "library",
   "sourceRoot": "libs/ui/src",
-  "prefix": "veera-ng",
+  "prefix": "cvi-ng",
   "targets": {
     "build": {
       "executor": "@nrwl/angular:package",

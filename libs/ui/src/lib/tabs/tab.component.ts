@@ -10,7 +10,7 @@ import {
 import { Subject } from 'rxjs';
 
 @Component({
-  selector: 'veera-ng-tab',
+  selector: 'cvi-ng-tab',
   templateUrl: './tab.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

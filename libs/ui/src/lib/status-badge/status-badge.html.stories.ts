@@ -25,7 +25,7 @@ const Template: Story = (args) => ({
   props: args,
   /* template */
   template: `
-    <span class="veera-status-badge" style="--color: var(--veera-color-sapphire-blue-10); --background-color: var(--veera-color-sapphire-blue-0)">{{ content }}</span>
+    <span class="cvi-status-badge" style="--color: var(--cvi-color-sapphire-blue-10); --background-color: var(--cvi-color-sapphire-blue-0)">{{ content }}</span>
   `,
 });
 

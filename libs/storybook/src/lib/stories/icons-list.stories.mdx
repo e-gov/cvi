@@ -11,11 +11,11 @@ import { storybookIconsNames } from '../../../../ui/src/lib/icons/storybook-icon
 }} args={{ fill: 'red' }} />
 
 export const Template = (args) => ({ props: { ...args, icons: storybookIconsNames }, template: `
-  <veera-ng-storybook-icon-cards>
-    <veera-ng-storybook-icon-card *ngFor="let name of icons" [label]="name" [ngStyle]="{ 'fill': fill }">
-      <veera-ng-icon [name]="name"></veera-ng-icon>
-    </veera-ng-storybook-icon-card>
-  </veera-ng-storybook-icon-cards>
+  <cvi-ng-storybook-icon-cards>
+    <cvi-ng-storybook-icon-card *ngFor="let name of icons" [label]="name" [ngStyle]="{ 'fill': fill }">
+      <cvi-ng-icon [name]="name"></cvi-ng-icon>
+    </cvi-ng-storybook-icon-card>
+  </cvi-ng-storybook-icon-cards>
 ` })
 
 Switch to *Canvas* tab for a full-screen view.

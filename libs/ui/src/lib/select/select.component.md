@@ -2,7 +2,7 @@
 
 | Feature                    | Description       |
 |----------------------------|-------------------|
-| Selector                   | `veera-ng-select` |
+| Selector                   | `cvi-ng-select` |
 | Component name             | `SelectComponent` |
 | Content                    | no                |
 | Permitted parent/ancestors | any               |

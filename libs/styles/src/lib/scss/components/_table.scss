@@ -1,4 +1,4 @@
-@mixin veera-table($base: &) {
+@mixin cvi-table($base: &) {
   --comment: 'A simple table using HTML tables';
 
   display: block;
@@ -6,14 +6,14 @@
   @at-root {
     #{$base}__inner {
       padding: get-spacing('viljandi');
-      background-color: var(--veera-color-white);
+      background-color: var(--cvi-color-white);
       border: 1px solid get-color(black-coral-2);
-      border-radius: $veera-radius-l;
+      border-radius: $cvi-radius-l;
       overflow-x: auto;
     }
     #{$base}__table {
       width: 100%;
-      font-size: $veera-font-size-80;
+      font-size: $cvi-font-size-80;
 
       &:not(:first-child) {
         margin-top: get-spacing('kuressaare');

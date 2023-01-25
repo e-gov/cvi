@@ -1,8 +1,8 @@
-@mixin veera-notification($base: &) {
+@mixin cvi-notification($base: &) {
   margin: auto;
   padding: get-spacing('haapsalu');
   position: relative;
-  border-radius: $veera-radius-m;
+  border-radius: $cvi-radius-m;
 
   @at-root {
     #{$base}--severity-info {
@@ -36,7 +36,7 @@
       margin-bottom: get-spacing('elva');
     }
     #{$base}__title {
-      line-height: $veera-line-height-500;
+      line-height: $cvi-line-height-500;
       color: get-color(black-coral-20);
     }
 
@@ -92,8 +92,8 @@
     #{$base}__content {
       display: block;
       color: get-color(black-coral-18);
-      font-size: $veera-font-size-80;
-      line-height: $veera-line-height-500;
+      font-size: $cvi-font-size-80;
+      line-height: $cvi-line-height-500;
     }
   }
 }

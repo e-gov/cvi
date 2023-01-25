@@ -1,7 +1,7 @@
-$veera-spacing-unit: 4px;
+$cvi-spacing-unit: 4px;
 
-$veera-spacing-patterns: (
-  'loksa': $veera-spacing-unit,
+$cvi-spacing-patterns: (
+  'loksa': $cvi-spacing-unit,
   'paldiski': 8px,
   'rapla': 10px,
   'elva': 12px,
@@ -14,8 +14,8 @@ $veera-spacing-patterns: (
 );
 
 :root {
-  --veera-spacing-unit: #{$veera-spacing-unit};
-  @each $name, $size in $veera-spacing-patterns {
-    --veera-spacing-#{'' + $name}: #{$size};
+  --cvi-spacing-unit: #{$cvi-spacing-unit};
+  @each $name, $size in $cvi-spacing-patterns {
+    --cvi-spacing-#{'' + $name}: #{$size};
   }
 }

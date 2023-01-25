@@ -25,7 +25,7 @@ const Template: Story<IconComponent> = (args: IconComponent) => ({
     ...args,
   },
   template: `
-    <veera-ng-icon [name]="name" [height]="height"></veera-ng-icon>
+    <cvi-ng-icon [name]="name" [height]="height"></cvi-ng-icon>
   `,
 });
 
@@ -38,7 +38,7 @@ const TemplateWithDefaultHeight: Story<IconComponent> = (
     ...args,
   },
   template: `
-    <veera-ng-icon [name]="name"></veera-ng-icon>
+    <cvi-ng-icon [name]="name"></cvi-ng-icon>
   `,
 });
 export const WithDefaultHeight = TemplateWithDefaultHeight.bind({});
@@ -48,7 +48,7 @@ const TemplateWithStyling: Story<IconComponent> = (args: IconComponent) => ({
     ...args,
   },
   template: `
-    <veera-ng-icon [name]="name" [svgClass]="svgClass"></veera-ng-icon>
+    <cvi-ng-icon [name]="name" [svgClass]="svgClass"></cvi-ng-icon>
   `,
   styles: [
     `::ng-deep .red {

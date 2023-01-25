@@ -17,14 +17,14 @@ import { fromEvent, Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
 @Component({
-  selector: 'veera-ng-generated-table-of-contents',
+  selector: 'cvi-ng-generated-table-of-contents',
   templateUrl: './generated-table-of-contents.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class GeneratedTableOfContentsComponent
   implements AfterViewInit, OnChanges, OnDestroy
 {
-  /** This prop will be passed to veera-ng-table-of-contents */
+  /** This prop will be passed to cvi-ng-table-of-contents */
   @Input() title!: string;
   @Input() headingSelector = 'h1, h2, h3';
 
@@ -39,7 +39,7 @@ export class GeneratedTableOfContentsComponent
   private readonly destroy$ = new Subject<void>();
 
   @HostBinding('class') get getHostClasses(): string {
-    return `veera-generated-table-of-contents`;
+    return `cvi-generated-table-of-contents`;
   }
 
   @ViewChild('content') content!: ElementRef;

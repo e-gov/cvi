@@ -2,7 +2,7 @@
 
 Feature | Description
 - | -
-Selector | `veera-ng-content-container`
+Selector | `cvi-ng-content-container`
 Component name | `ContentContainerComponent`
 Design system module | -
 Content | yes

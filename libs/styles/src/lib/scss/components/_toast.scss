@@ -1,18 +1,18 @@
-@mixin veera-toast($base: &) {
+@mixin cvi-toast($base: &) {
   --comment: 'A toast aka floating notification';
 
   position: relative;
   width: 300px;
   overflow: hidden;
-  padding: var(--veera-spacing-haapsalu);
-  margin-bottom: var(--veera-spacing-paldiski);
-  border-radius: $veera-radius-m;
-  color: var(--veera-color-black-coral-18);
+  padding: var(--cvi-spacing-haapsalu);
+  margin-bottom: var(--cvi-spacing-paldiski);
+  border-radius: $cvi-radius-m;
+  color: var(--cvi-color-black-coral-18);
   cursor: pointer;
   display: block;
 
   &:hover {
-    box-shadow: $veera-shadow-alpha;
+    box-shadow: $cvi-shadow-alpha;
   }
 
   @at-root {
@@ -28,38 +28,38 @@
     }
 
     #{$base}--appearance-success {
-      background-color: var(--veera-color-sea-green-0);
-      border: 1px solid var(--veera-color-sea-green-10);
+      background-color: var(--cvi-color-sea-green-0);
+      border: 1px solid var(--cvi-color-sea-green-10);
 
       & #{$base}__progress-bar {
-        background-color: var(--veera-color-sea-green-10);
+        background-color: var(--cvi-color-sea-green-10);
       }
     }
 
     #{$base}--appearance-info {
-      background-color: var(--veera-color-sapphire-blue-1);
-      border: 1px solid var(--veera-color-sapphire-blue-10);
+      background-color: var(--cvi-color-sapphire-blue-1);
+      border: 1px solid var(--cvi-color-sapphire-blue-10);
 
       & #{$base}__progress-bar {
-        background-color: var(--veera-color-sapphire-blue-10);
+        background-color: var(--cvi-color-sapphire-blue-10);
       }
     }
 
     #{$base}--appearance-warning {
-      background-color: var(--veera-color-dark-tangerine-1);
-      border: 1px solid var(--veera-color-dark-tangerine-11);
+      background-color: var(--cvi-color-dark-tangerine-1);
+      border: 1px solid var(--cvi-color-dark-tangerine-11);
 
       & #{$base}__progress-bar {
-        background-color: var(--veera-color-dark-tangerine-11);
+        background-color: var(--cvi-color-dark-tangerine-11);
       }
     }
 
     #{$base}--appearance-error {
-      background-color: var(--veera-color-jasper-0);
-      border: 1px solid var(--veera-color-jasper-10);
+      background-color: var(--cvi-color-jasper-0);
+      border: 1px solid var(--cvi-color-jasper-10);
 
       & #{$base}__progress-bar {
-        background-color: var(--veera-color-jasper-10);
+        background-color: var(--cvi-color-jasper-10);
       }
     }
 
@@ -69,7 +69,7 @@
     }
 
     #{$base}__title-text {
-      font-size: $veera-font-size-200;
+      font-size: $cvi-font-size-200;
       margin-left: 10px;
     }
 
@@ -92,7 +92,7 @@
     }
 
     #{$base}__message {
-      margin-top: var(--veera-spacing-elva);
+      margin-top: var(--cvi-spacing-elva);
     }
 
     #{$base}__progress-bar {

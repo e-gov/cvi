@@ -25,7 +25,7 @@ const Template: Story<ContentPanelComponent> = (
 ) => ({
   props: args,
   template: `
-    <veera-ng-content-panel [title]="title">{{ content }}</veera-ng-content-panel>
+    <cvi-ng-content-panel [title]="title">{{ content }}</cvi-ng-content-panel>
   `,
 });
 

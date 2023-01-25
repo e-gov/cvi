@@ -2,7 +2,7 @@
 
 Feature | Description
 - | -
-Selector | `veera-ng-option-button`
+Selector | `cvi-ng-option-button`
 Component name | `OptionButtonComponent`
 Design system module | -
 Content | no

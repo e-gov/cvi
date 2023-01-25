@@ -2,7 +2,7 @@
 
 Feature | Description
 - | -
-Sass component | `veera-content-panel`
+Sass component | `cvi-content-panel`
 Corresponding Javascript component | `ContentPanelComponent`
 Design system module | -
 Permitted parent/ancestors | any

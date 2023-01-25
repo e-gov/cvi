@@ -2,7 +2,7 @@
 
 Feature | Description
 - | -
-Sass component | `veera-content-container`
+Sass component | `cvi-content-container`
 Corresponding Javascript component | `ContentContainerComponent`
 Design system module | -
 Permitted parent/ancestors | any

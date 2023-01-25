@@ -5,7 +5,7 @@ import {
 } from '@angular/core';
 
 @Component({
-  selector: 'veera-ng-character-counter',
+  selector: 'cvi-ng-character-counter',
   templateUrl: './character-counter.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

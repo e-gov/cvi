@@ -1,4 +1,4 @@
-const varPattern = '^veera-([a-z][a-z0-9]*)(-{1,2}[a-z0-9]+)*$';
+const varPattern = '^cvi-([a-z][a-z0-9]*)(-{1,2}[a-z0-9]+)*$';
 
 module.exports = {
   extends: ['stylelint-config-standard-scss', 'stylelint-config-prettier-scss'],
@@ -39,7 +39,7 @@ module.exports = {
       'media',
       {
         message:
-          'Please use veera-breakpoint-down and veera-breakpoint-up mixins instead of custom @media rules. Add an ignore comment if needed',
+          'Please use cvi-breakpoint-down and cvi-breakpoint-up mixins instead of custom @media rules. Add an ignore comment if needed',
       },
     ],
     'selector-max-type': [
@@ -75,7 +75,7 @@ module.exports = {
       true,
       {
         message:
-          'Only use $veera-color-* variables from _colors.scss file. If "%s" color is not there, add it as a new variable. Also consider using a similar color from an already existing variable',
+          'Only use $cvi-color-* variables from _colors.scss file. If "%s" color is not there, add it as a new variable. Also consider using a similar color from an already existing variable',
       },
     ],
     'alpha-value-notation': null,
@@ -116,15 +116,15 @@ module.exports = {
           '/^get-color\\(/',
           '/^\\$color-/',
         ],
-        'box-shadow': ['/^\\$veera-shadow-/', 'none'],
+        'box-shadow': ['/^\\$cvi-shadow-/', 'none'],
         '/border-([a-z]+-[a-z]+-)*radius/': [
           '/^var\\(/',
           '51%',
-          '/^\\$veera-radius-/',
+          '/^\\$cvi-radius-/',
         ],
-        'font-size': ['/^\\$veera-font-size-/', 'inherit'],
-        'font-weight': ['/^\\$veera-font-weight-/'],
-        'line-height': ['/^\\$veera-line-height-/', '0'],
+        'font-size': ['/^\\$cvi-font-size-/', 'inherit'],
+        'font-weight': ['/^\\$cvi-font-weight-/'],
+        'line-height': ['/^\\$cvi-line-height-/', '0'],
         'z-index': ['/^get-z-index\\(/', '/^var\\(/', '-1'],
       },
     ],
@@ -159,11 +159,11 @@ module.exports = {
       },
     ],
     'scss/at-mixin-pattern': [
-      '^(veera-).+',
+      '^(cvi-).+',
       {
         severity: 'error',
         message:
-          'Please use veera- prefix when naming component or utility mixins',
+          'Please use cvi- prefix when naming component or utility mixins',
       },
     ],
     'custom-property-pattern': [
@@ -183,14 +183,14 @@ module.exports = {
           varPattern,
           {
             message:
-              'Expected custom property name to start from veera- prefix and be kebab-case',
+              'Expected custom property name to start from cvi- prefix and be kebab-case',
           },
         ],
         'scss/dollar-variable-pattern': [
           varPattern,
           {
             message:
-              'Expected variable name to start from veera- prefix and be kebab-case',
+              'Expected variable name to start from cvi- prefix and be kebab-case',
           },
         ],
       },
@@ -225,10 +225,10 @@ module.exports = {
       ],
       rules: {
         'selector-class-pattern': [
-          '^(veera-[a-z]+|hidden)',
+          '^(cvi-[a-z]+|hidden)',
           {
             resolveNestedSelectors: true,
-            message: 'Please use veera- prefix when naming utility classes',
+            message: 'Please use cvi- prefix when naming utility classes',
           },
         ],
       },

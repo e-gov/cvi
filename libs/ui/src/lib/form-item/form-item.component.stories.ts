@@ -17,15 +17,15 @@ const Template: Story<FormItemComponent> = (args: FormItemComponent) => ({
   props: args,
   /* template */
   template: `
-    <veera-ng-form-item [labelPosition]="labelPosition"
+    <cvi-ng-form-item [labelPosition]="labelPosition"
                         [isLabelHidden]="isLabelHidden"
                         [required]="required"
                         [label]="label"
                         [htmlId]="htmlId">
-      <veera-ng-input [placeholder]="placeholder"
+      <cvi-ng-input [placeholder]="placeholder"
                       [htmlId]="htmlId">
-      </veera-ng-input>
-    </veera-ng-form-item>
+      </cvi-ng-input>
+    </cvi-ng-form-item>
   `,
 });
 
@@ -37,15 +37,15 @@ const TextareaTemplate: Story<FormItemComponent> = (
   props: args,
   /* template */
   template: `
-    <veera-ng-form-item [labelPosition]="labelPosition"
+    <cvi-ng-form-item [labelPosition]="labelPosition"
                         [isLabelHidden]="isLabelHidden"
                         [required]="required"
                         [label]="label"
                         [htmlId]="htmlId">
-      <veera-ng-textarea [placeholder]="placeholder"
+      <cvi-ng-textarea [placeholder]="placeholder"
                          [htmlId]="htmlId">
-      </veera-ng-textarea>
-    </veera-ng-form-item>
+      </cvi-ng-textarea>
+    </cvi-ng-form-item>
   `,
 });
 

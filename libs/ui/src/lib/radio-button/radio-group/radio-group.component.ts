@@ -18,7 +18,7 @@ import { Subject, takeUntil } from 'rxjs';
 let nextUniqueId = 0;
 
 @Component({
-  selector: 'veera-ng-radio-group',
+  selector: 'cvi-ng-radio-group',
   templateUrl: './radio-group.component.html',
   providers: [
     {
@@ -43,7 +43,7 @@ export class RadioGroupComponent
   @Input() appearance: 'regular' | 'compact' = 'regular';
 
   @HostBinding('class') get getHostClasses(): string {
-    return `veera-radio-group veera-radio-group--appearance-${this.appearance}`;
+    return `cvi-radio-group cvi-radio-group--appearance-${this.appearance}`;
   }
 
   @ContentChildren(forwardRef(() => RadioButtonComponent), {

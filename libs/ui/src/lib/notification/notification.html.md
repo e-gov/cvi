@@ -14,4 +14,4 @@ Used to display a notification
 
 ## How to use
 
-Add directly to HTML using `.veera-notification*` classes or `@include` mixin `@veera-notification` in your Sass code. When including the mixin, you can change the base class with `$base` parameter.
+Add directly to HTML using `.cvi-notification*` classes or `@include` mixin `@cvi-notification` in your Sass code. When including the mixin, you can change the base class with `$base` parameter.

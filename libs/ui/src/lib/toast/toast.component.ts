@@ -17,7 +17,7 @@ import {
 } from '@angular/animations';
 
 @Component({
-  selector: 'veera-ng-toast',
+  selector: 'cvi-ng-toast',
   templateUrl: './toast.component.html',
   animations: [
     trigger('fade', [
@@ -56,12 +56,12 @@ export class ToastComponent implements AfterViewInit {
     private readonly toastPackage: ToastPackage,
     private readonly cd: ChangeDetectorRef
   ) {
-    this.toastClasses = `veera-toast ${toastPackage.toastType}`;
+    this.toastClasses = `cvi-toast ${toastPackage.toastType}`;
   }
 
   @HostBinding('class')
   get hostClasses(): string {
-    return `veera-toast ${this.toastPackage.toastType}`;
+    return `cvi-toast ${this.toastPackage.toastType}`;
   }
 
   ngAfterViewInit() {

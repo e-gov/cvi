@@ -4,22 +4,22 @@ import notes from './toast.service.md';
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'veera-ng-storybook-toast-wrapper',
+  selector: 'cvi-ng-storybook-toast-wrapper',
   template: `
-    <veera-ng-track [gap]="4">
-      <veera-ng-button (click)="openSuccessToast()"
-        >Open Success Toast</veera-ng-button
+    <cvi-ng-track [gap]="4">
+      <cvi-ng-button (click)="openSuccessToast()"
+        >Open Success Toast</cvi-ng-button
       >
-      <veera-ng-button (click)="openInfoToast()"
-        >Open Info Toast</veera-ng-button
+      <cvi-ng-button (click)="openInfoToast()"
+        >Open Info Toast</cvi-ng-button
       >
-      <veera-ng-button (click)="openWarningToast()"
-        >Open Warning Toast</veera-ng-button
+      <cvi-ng-button (click)="openWarningToast()"
+        >Open Warning Toast</cvi-ng-button
       >
-      <veera-ng-button (click)="openErrorToast()"
-        >Open Error Toast</veera-ng-button
+      <cvi-ng-button (click)="openErrorToast()"
+        >Open Error Toast</cvi-ng-button
       >
-    </veera-ng-track>
+    </cvi-ng-track>
   `,
 })
 class ToastWrapperComponent {
@@ -59,7 +59,7 @@ const Template: Story = (args) => ({
     ...args,
   },
   template: `
-    <veera-ng-storybook-toast-wrapper></veera-ng-storybook-toast-wrapper>
+    <cvi-ng-storybook-toast-wrapper></cvi-ng-storybook-toast-wrapper>
   `,
 });
 export const Default = Template.bind({});

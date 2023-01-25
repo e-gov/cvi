@@ -21,7 +21,7 @@ export default {
 const Template: Story<StatusBadgeComponent> = (args: StatusBadgeComponent) => ({
   props: args,
   template: `
-    <veera-ng-status-badge [severity]="severity" [label]="label"></veera-ng-status-badge>
+    <cvi-ng-status-badge [severity]="severity" [label]="label"></cvi-ng-status-badge>
   `,
 });
 

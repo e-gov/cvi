@@ -2,7 +2,7 @@
 
 Feature | Description
 - | -
-Selector | `veera-ng-radio-group`
+Selector | `cvi-ng-radio-group`
 Component name | `RadioGroupComponent`
 Design system module | -
 Content | yes

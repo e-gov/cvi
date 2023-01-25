@@ -4,32 +4,31 @@ import { Meta, Story } from '@storybook/addon-docs';
 
 # CSS Guidelines
 
-CSS architecture of Veera is pretty specific and it's important to follow its rules to have the code as reusable, flexible, and DRY as possible.
+CSS architecture of CVI is specific and it is important to follow its rules to have the code as reusable, flexible, and DRY as possible.
 
 ## Quick startup for a new component
 
-Veera has its CSS decoupled from implementation, eg. a specific Javascript framework. However it still utilises the concept of **Sass components** that are independent from each other and are designed to be reusable. For example, one Sass component can be used inside another. Or one Javascript component could be styled by several Sass components.
+CVI has its CSS decoupled from implementation, eg. a specific Javascript framework. However it still utilises the concept of **Sass components** that are independent from each other and are designed to be reusable. For example, one Sass component can be used inside another. Or one Javascript component could be styled by several Sass components.
 
 To create a new Sass component, follow these steps:
 
 1. Create a new Sass file in `lib/scss/components` folder. Name it as the component name, e.g. `button.scss`.
-2. The file should have a mixin with a name `veera-<component-name>`, e.g. `veera-button`. CSS applying to host/root of a component could go right under the mixin. CSS applying to the component's children should be nested under `@at-root` rule, with `#{base}` as a prefix (see below).
+2. The file should have a mixin with a name `cvi-<component-name>`, e.g. `cvi-button`. CSS applying to host/root of a component could go right under the mixin. CSS applying to the component's children should be nested under `@at-root` rule, with `#{base}` as a prefix (see below).
 3. Open `main.scss` file in `lib/scss` folder. Add a new import there under the `// Components` section.
 4. Also apply mixin in `apply.scss` file, usually to a class of the same name.
 
 ## Classes and selectors
 
-1. CSS in Veera is global and therefore needs some convention to follow in order to avoid naming conflicts. We roughly follow [BEM naming convention](https://en.bem.info):
+1. CSS in CVI is global and therefore needs some convention to follow in order to avoid naming conflicts. We roughly follow [BEM naming convention](https://en.bem.info):
 
     1. `__` (double space) for an element;
     2. `--` (double hyphen) for a modifier.
 
 2. Classes of one Sass component should not be used in another Sass component.
-3. There're other BEM rules to follow that can be found in the [BEM documentation](https://en.bem.info/methodology/quick-start/).
-4. Avoid using old classes and styling coming from the previous Veera version.
-5. Don't use element selectors (eg `span`). Utilise classes exclusively for selectors. Add class attributes to all elements in the HTML that need to be styled.
-6. All classes should be prefixed with `#{base}` to allow reusing a Sass component as a mixin with a different base name.
-7. Avoid Javascript component-scoped styling (such as `:host` or `:host-context`). Always use classes.
+3. There are other BEM rules to follow that can be found in the [BEM documentation](https://en.bem.info/methodology/quick-start/).
+4. Don't use element selectors (eg `span`). Utilise classes exclusively for selectors. Add class attributes to all elements in the HTML that need to be styled.
+5. All classes should be prefixed with `#{base}` to allow reusing a Sass component as a mixin with a different base name.
+6. Avoid Javascript component-scoped styling (such as `:host` or `:host-context`). Always use classes.
 
 ## Values
 
@@ -42,10 +41,10 @@ To create a new Sass component, follow these steps:
    5. Spacing (`margin`, `padding`);
    6. Breakpoints (`@media` queries).
 
-2. Use `get-spacing(<spacing-name>)` Sass function or `--veera-spacing-<name>` CSS variable to set margin and padding values.
-3. Use `get-color(<color-name>)` Sass function or `--veera-color-<name>` CSS variable to set color values. Use `--veera-color-rgb-<name>` to achieve translucent color, in this format: `rgba(var(--veera-color-rgb-<name>) / <opacity>)`, for example `rgba(var(--veera-color-rgb-dark-tangerine-2) / .15)`.
-4. Use `get-z-index()` Sass function and `$veera-z-indexes` map to set `z-index`. This should prevent `z-index` conflicts and bugs and will help with managing multiple `z-index` values across Sass components. See `_z-indexes.scss` for more information.
-5. Use `veera-breakpoint-down()` and `veera-breakpoint-up()` mixins to set media queries.
+2. Use `get-spacing(<spacing-name>)` Sass function or `--cvi-spacing-<name>` CSS variable to set margin and padding values.
+3. Use `get-color(<color-name>)` Sass function or `--cvi-color-<name>` CSS variable to set color values. Use `--cvi-color-rgb-<name>` to achieve translucent color, in this format: `rgba(var(--cvi-color-rgb-<name>) / <opacity>)`, for example `rgba(var(--cvi-color-rgb-dark-tangerine-2) / .15)`.
+4. Use `get-z-index()` Sass function and `$cvi-z-indexes` map to set `z-index`. This should prevent `z-index` conflicts and bugs and will help with managing multiple `z-index` values across Sass components. See `_z-indexes.scss` for more information.
+5. Use `cvi-breakpoint-down()` and `cvi-breakpoint-up()` mixins to set media queries.
 6. Avoid decimal values (eg `13.2px`).
 7. Round pixel values to the nearest even integer, preferably one that is divisible by 4 (eg `12px` is better than `13px`, but `14px` but is still OK). This applies even if the Figma design tells otherwise.
 

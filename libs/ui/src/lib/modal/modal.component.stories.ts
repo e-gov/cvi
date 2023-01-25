@@ -12,7 +12,7 @@ const Template: Story<ModalComponent> = (args: ModalComponent) => ({
     <ng-template #modal>
       <p>Modal content</p>
     </ng-template>
-    <veera-ng-button [veeraNgModal]="modal">Open modal</veera-ng-button>
+    <cvi-ng-button [cviNgModal]="modal">Open modal</cvi-ng-button>
   `,
 });
 
@@ -35,9 +35,9 @@ const TemplateWithModalInsideModal: Story<ModalComponent> = (
       <ng-template #modal2>
         <p>Modal 2 content</p>
       </ng-template>
-      <veera-ng-button [veeraNgModal]="modal2">Open modal 2 inside modal 1</veera-ng-button>
+      <cvi-ng-button [cviNgModal]="modal2">Open modal 2 inside modal 1</cvi-ng-button>
     </ng-template>
-    <veera-ng-button [veeraNgModal]="modal1">Open modal</veera-ng-button>
+    <cvi-ng-button [cviNgModal]="modal1">Open modal</cvi-ng-button>
   `,
 });
 

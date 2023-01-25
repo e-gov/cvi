@@ -15,8 +15,8 @@ const Template: Story = (args) => ({
   },
   /* template */
   template: `
-    <div class="veera-table-of-contents">
-      <div class="veera-table-of-contents__main">
+    <div class="cvi-table-of-contents">
+      <div class="cvi-table-of-contents__main">
         <div id="section-one">
           <h1>Section One</h1>
           <p>
@@ -100,25 +100,25 @@ const Template: Story = (args) => ({
           </p>
         </div>
       </div>
-      <div class="veera-table-of-contents__aside">
-        <div class="veera-table-of-contents__aside-stickable">
-          <div role="navigation" aria-label="Sisukord" class="veera-table-of-contents__aside-inner">
-            <h2 class="veera-table-of-contents__aside-title">Sisukord</h2>
-            <ul class="veera-table-of-contents__aside-list">
-              <li class="veera-table-of-contents__aside-list-item">
-                <a class="veera-table-of-contents__aside-list-item-link" href="#section-one">Section One with a very long label that spans many lines</a>
+      <div class="cvi-table-of-contents__aside">
+        <div class="cvi-table-of-contents__aside-stickable">
+          <div role="navigation" aria-label="Sisukord" class="cvi-table-of-contents__aside-inner">
+            <h2 class="cvi-table-of-contents__aside-title">Sisukord</h2>
+            <ul class="cvi-table-of-contents__aside-list">
+              <li class="cvi-table-of-contents__aside-list-item">
+                <a class="cvi-table-of-contents__aside-list-item-link" href="#section-one">Section One with a very long label that spans many lines</a>
               </li>
-              <li class="veera-table-of-contents__aside-list-item">
-                <a class="veera-table-of-contents__aside-list-item-link" href="#section-two">Section Two</a>
+              <li class="cvi-table-of-contents__aside-list-item">
+                <a class="cvi-table-of-contents__aside-list-item-link" href="#section-two">Section Two</a>
               </li>
-              <li class="veera-table-of-contents__aside-list-item">
-                <a class="veera-table-of-contents__aside-list-item-link" href="#section-three">Section Three</a>
+              <li class="cvi-table-of-contents__aside-list-item">
+                <a class="cvi-table-of-contents__aside-list-item-link" href="#section-three">Section Three</a>
               </li>
-              <li class="veera-table-of-contents__aside-list-item">
-                <a class="veera-table-of-contents__aside-list-item-link" href="#section-four">Section Four</a>
+              <li class="cvi-table-of-contents__aside-list-item">
+                <a class="cvi-table-of-contents__aside-list-item-link" href="#section-four">Section Four</a>
               </li>
-              <li class="veera-table-of-contents__aside-list-item">
-                <a class="veera-table-of-contents__aside-list-item-link" href="#section-five">Section Five</a>
+              <li class="cvi-table-of-contents__aside-list-item">
+                <a class="cvi-table-of-contents__aside-list-item-link" href="#section-five">Section Five</a>
               </li>
             </ul>
           </div>

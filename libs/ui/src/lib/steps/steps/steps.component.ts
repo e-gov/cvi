@@ -19,7 +19,7 @@ import { StepPanelComponent } from '../step-panel/step-panel.component';
 import { Subscription } from 'rxjs';
 
 @Component({
-  selector: 'veera-ng-steps',
+  selector: 'cvi-ng-steps',
   templateUrl: './steps.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
@@ -69,7 +69,7 @@ export class StepsComponent
   constructor(private cdRef: ChangeDetectorRef) {}
 
   @HostBinding('class') get getHostClasses(): string {
-    return `veera-steps${this.anyStepSelected ? ' is-any-step-selected' : ''}${
+    return `cvi-steps${this.anyStepSelected ? ' is-any-step-selected' : ''}${
       this.hasTableOfContents ? ' has-toc' : ''
     }`;
   }

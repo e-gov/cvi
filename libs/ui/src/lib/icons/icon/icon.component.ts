@@ -13,7 +13,7 @@ import { CviIconName } from '@ria/cvi-icons';
 import { iconSizeDefault } from './icon';
 
 @Component({
-  selector: 'veera-ng-icon',
+  selector: 'cvi-ng-icon',
   templateUrl: './icon.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

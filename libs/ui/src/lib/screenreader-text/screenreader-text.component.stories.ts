@@ -21,8 +21,8 @@ const Template: Story<ScreenreaderTextComponent> = (
   /* template */
   template: `
     <button>
-      <veera-ng-icon name="add" [height]="30"></veera-ng-icon>
-      <veera-ng-screenreader-text [label]="label"></veera-ng-screenreader-text>
+      <cvi-ng-icon name="add" [height]="30"></cvi-ng-icon>
+      <cvi-ng-screenreader-text [label]="label"></cvi-ng-screenreader-text>
     </button>
   `,
 });

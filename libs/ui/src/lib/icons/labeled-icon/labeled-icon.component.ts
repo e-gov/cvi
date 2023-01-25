@@ -12,7 +12,7 @@ import { LabeledIconPosition } from './icon-position';
 import { LabeledIconVerticalAlignment } from './vertical-alignment';
 
 @Component({
-  selector: 'veera-ng-labeled-icon',
+  selector: 'cvi-ng-labeled-icon',
   templateUrl: './labeled-icon.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
@@ -30,14 +30,14 @@ export class LabeledIconComponent {
   @Input()
   iconHeight?: number = iconSizeDefault;
 
-  /** Additional classes for the veera-ng-icon element. You can set icon height here */
-  @Input() iconClass = 'veera-labeled-icon__icon-wrapper';
+  /** Additional classes for the cvi-ng-icon element. You can set icon height here */
+  @Input() iconClass = 'cvi-labeled-icon__icon-wrapper';
 
   @Input() verticalAlignment: LabeledIconVerticalAlignment = 'normal';
 
   @ViewChild('content') content!: ElementRef;
 
   @HostBinding('class') get hostClasses(): string {
-    return `veera-labeled-icon`;
+    return `cvi-labeled-icon`;
   }
 }

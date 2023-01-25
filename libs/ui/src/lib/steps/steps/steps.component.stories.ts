@@ -38,29 +38,29 @@ const Template: Story<StepsComponent> = (args: StepsComponent) => ({
   },
   /* template */
   template: `
-    <veera-ng-steps [title]="title" [currentStepIndex]="currentStepIndex" [hasTableOfContents]="hasTableOfContents">
-      <p veera-steps="after-title" dataAttribute="steps-description">You can now add custom content before steps</p>
-      <veera-ng-step dataAttribute="step_1">
-        <veera-ng-step-panel [title]="title">
-          <veera-ng-html-section html="{{ stepsContent[0] }}"></veera-ng-html-section>
-        </veera-ng-step-panel>
-      </veera-ng-step>
-      <veera-ng-step dataAttribute="step_2">
-        <veera-ng-step-panel title="Second">
+    <cvi-ng-steps [title]="title" [currentStepIndex]="currentStepIndex" [hasTableOfContents]="hasTableOfContents">
+      <p cvi-steps="after-title" dataAttribute="steps-description">You can now add custom content before steps</p>
+      <cvi-ng-step dataAttribute="step_1">
+        <cvi-ng-step-panel [title]="title">
+          <cvi-ng-html-section html="{{ stepsContent[0] }}"></cvi-ng-html-section>
+        </cvi-ng-step-panel>
+      </cvi-ng-step>
+      <cvi-ng-step dataAttribute="step_2">
+        <cvi-ng-step-panel title="Second">
           {{ stepsContent[1] }}
-        </veera-ng-step-panel>
-      </veera-ng-step>
-      <veera-ng-step dataAttribute="step_3">
-        <veera-ng-step-panel title="Third">
+        </cvi-ng-step-panel>
+      </cvi-ng-step>
+      <cvi-ng-step dataAttribute="step_3">
+        <cvi-ng-step-panel title="Third">
           {{ stepsContent[2] }}
-        </veera-ng-step-panel>
-      </veera-ng-step>
-      <veera-ng-step dataAttribute="step_4">
-        <veera-ng-step-panel title="Fourth">
+        </cvi-ng-step-panel>
+      </cvi-ng-step>
+      <cvi-ng-step dataAttribute="step_4">
+        <cvi-ng-step-panel title="Fourth">
           {{ stepsContent[3] }}
-        </veera-ng-step-panel>
-      </veera-ng-step>
-    </veera-ng-steps>
+        </cvi-ng-step-panel>
+      </cvi-ng-step>
+    </cvi-ng-steps>
   `,
 });
 
@@ -104,15 +104,15 @@ const TemplateObservableTitles: Story = (args) => ({
   },
   /* template */
   template: `
-    <veera-ng-steps [title]="title" [currentStepIndex]="currentStepIndex" [hasTableOfContents]="hasTableOfContents">
+    <cvi-ng-steps [title]="title" [currentStepIndex]="currentStepIndex" [hasTableOfContents]="hasTableOfContents">
       <ng-container *ngFor="let label of labels$ | async">
-        <veera-ng-step dataAttribute="step_1">
-          <veera-ng-step-panel [title]="label">
+        <cvi-ng-step dataAttribute="step_1">
+          <cvi-ng-step-panel [title]="label">
             {{ label }}
-          </veera-ng-step-panel>
-        </veera-ng-step>
+          </cvi-ng-step-panel>
+        </cvi-ng-step>
       </ng-container>
-    </veera-ng-steps>
+    </cvi-ng-steps>
   `,
 });
 
@@ -128,29 +128,29 @@ const TemplateWithTranslations: Story<StepsComponent> = (
   },
   /* template */
   template: `
-    <veera-ng-steps [title]="'common.steps.title' | translate" [currentStepIndex]="currentStepIndex" [hasTableOfContents]="hasTableOfContents">
-      <p veera-steps="after-title" dataAttribute="steps-description">You can now add custom content before steps</p>
-      <veera-ng-step dataAttribute="step_1">
-        <veera-ng-step-panel [title]="'common.steps.step1' | translate">
-          <veera-ng-html-section html="{{ stepsContent[0] }}"></veera-ng-html-section>
-        </veera-ng-step-panel>
-      </veera-ng-step>
-      <veera-ng-step dataAttribute="step_2">
-        <veera-ng-step-panel [title]="'common.steps.step2' | translate">
+    <cvi-ng-steps [title]="'common.steps.title' | translate" [currentStepIndex]="currentStepIndex" [hasTableOfContents]="hasTableOfContents">
+      <p cvi-steps="after-title" dataAttribute="steps-description">You can now add custom content before steps</p>
+      <cvi-ng-step dataAttribute="step_1">
+        <cvi-ng-step-panel [title]="'common.steps.step1' | translate">
+          <cvi-ng-html-section html="{{ stepsContent[0] }}"></cvi-ng-html-section>
+        </cvi-ng-step-panel>
+      </cvi-ng-step>
+      <cvi-ng-step dataAttribute="step_2">
+        <cvi-ng-step-panel [title]="'common.steps.step2' | translate">
           {{ stepsContent[1] }}
-        </veera-ng-step-panel>
-      </veera-ng-step>
-      <veera-ng-step dataAttribute="step_3">
-        <veera-ng-step-panel title="Third">
+        </cvi-ng-step-panel>
+      </cvi-ng-step>
+      <cvi-ng-step dataAttribute="step_3">
+        <cvi-ng-step-panel title="Third">
           {{ stepsContent[2] }}
-        </veera-ng-step-panel>
-      </veera-ng-step>
-      <veera-ng-step dataAttribute="step_4">
-        <veera-ng-step-panel title="Fourth">
+        </cvi-ng-step-panel>
+      </cvi-ng-step>
+      <cvi-ng-step dataAttribute="step_4">
+        <cvi-ng-step-panel title="Fourth">
           {{ stepsContent[3] }}
-        </veera-ng-step-panel>
-      </veera-ng-step>
-    </veera-ng-steps>
+        </cvi-ng-step-panel>
+      </cvi-ng-step>
+    </cvi-ng-steps>
   `,
 });
 

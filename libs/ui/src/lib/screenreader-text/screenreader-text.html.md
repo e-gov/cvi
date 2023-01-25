@@ -2,7 +2,7 @@
 
 Feature | Description
 - | -
-Sass component | `veera-screenreader-text`
+Sass component | `cvi-screenreader-text`
 Corresponding Javascript component | `ScreenreaderTextComponent`
 Design system module | -
 Permitted parent/ancestors | any
@@ -14,4 +14,4 @@ Use to provide some label to an accessibility device while hiding it visually. T
 
 ## How to use
 
-Add directly to HTML using `.veera-screenreader-text` class with any element that contains the text. Or `@include` mixin `@veera-screenreader-text` in your Sass code.
+Add directly to HTML using `.cvi-screenreader-text` class with any element that contains the text. Or `@include` mixin `@cvi-screenreader-text` in your Sass code.

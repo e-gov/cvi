@@ -42,7 +42,7 @@ class ReorderableListExampleBaseComponent {
 }
 
 @Component({
-  selector: 'veera-ng-reorderable-list-example',
+  selector: 'cvi-ng-reorderable-list-example',
   templateUrl: './example-templates/reorderable-list-example.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
@@ -60,7 +60,7 @@ class ReorderableListExampleComponent
 }
 
 @Component({
-  selector: 'veera-ng-reorderable-list-single-form-item-example',
+  selector: 'cvi-ng-reorderable-list-single-form-item-example',
   templateUrl:
     './example-templates/reorderable-list-single-form-item.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -81,7 +81,7 @@ class ReorderableListSingleFormItemComponent
 }
 
 @Component({
-  selector: 'veera-ng-reorderable-list-multiple-form-items-example',
+  selector: 'cvi-ng-reorderable-list-multiple-form-items-example',
   templateUrl:
     './example-templates/reorderable-list-multiple-form-items.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -113,7 +113,7 @@ class ReorderableListMultipleFormItemsComponent
 }
 
 @Component({
-  selector: 'veera-ng-reorderable-list-multiple-tracks-and-form-items-example',
+  selector: 'cvi-ng-reorderable-list-multiple-tracks-and-form-items-example',
   templateUrl:
     './example-templates/reorderable-list-multiple-tracks-and-form-items.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -163,8 +163,8 @@ const Template: Story<ReorderableListExampleComponent> = (
 ) => ({
   props: args,
   template: `
-    <veera-ng-reorderable-list-example>
-    </veera-ng-reorderable-list-example>
+    <cvi-ng-reorderable-list-example>
+    </cvi-ng-reorderable-list-example>
   `,
 });
 
@@ -176,8 +176,8 @@ const ReorderableListSingleFormItemTemplate: Story<
 > = (args: ReorderableListSingleFormItemComponent) => ({
   props: args,
   template: `
-    <veera-ng-reorderable-list-single-form-item-example>
-    </veera-ng-reorderable-list-single-form-item-example>
+    <cvi-ng-reorderable-list-single-form-item-example>
+    </cvi-ng-reorderable-list-single-form-item-example>
   `,
 });
 
@@ -191,8 +191,8 @@ const ReorderableListMultipleFormItemsTemplate: Story<
 > = (args: ReorderableListMultipleFormItemsComponent) => ({
   props: args,
   template: `
-    <veera-ng-reorderable-list-multiple-form-items-example>
-    </veera-ng-reorderable-list-multiple-form-items-example>
+    <cvi-ng-reorderable-list-multiple-form-items-example>
+    </cvi-ng-reorderable-list-multiple-form-items-example>
   `,
 });
 
@@ -206,8 +206,8 @@ const ReorderableListMultipleTracksAndFormItemsTemplate: Story<
 > = (args: ReorderableListMultipleTracksAndFormItemsComponent) => ({
   props: args,
   template: `
-    <veera-ng-reorderable-list-multiple-tracks-and-form-items-example>
-    </veera-ng-reorderable-list-multiple-tracks-and-form-items-example>
+    <cvi-ng-reorderable-list-multiple-tracks-and-form-items-example>
+    </cvi-ng-reorderable-list-multiple-tracks-and-form-items-example>
   `,
 });
 

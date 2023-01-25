@@ -23,10 +23,10 @@ export interface ToastToken {
 export const DefaultToastConfig: ToastConfig = {
   timeOut: 5000,
   toastTypes: {
-    error: 'veera-toast--appearance-error',
-    info: 'veera-toast--appearance-info',
-    success: 'veera-toast--appearance-success',
-    warning: 'veera-toast--appearance-warning',
+    error: 'cvi-toast--appearance-error',
+    info: 'cvi-toast--appearance-info',
+    success: 'cvi-toast--appearance-success',
+    warning: 'cvi-toast--appearance-warning',
   },
   progressBar: true,
   easeTime: 300,

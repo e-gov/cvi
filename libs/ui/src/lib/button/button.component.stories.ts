@@ -32,7 +32,7 @@ const Template: Story<ButtonComponent> = (args: ButtonComponent) => ({
   props: args,
   /* template */
   template: `
-    <veera-ng-button [disabled]="disabled" [size]="size" [appearance]="appearance">{{ content }}</veera-ng-button>
+    <cvi-ng-button [disabled]="disabled" [size]="size" [appearance]="appearance">{{ content }}</cvi-ng-button>
   `,
 });
 
@@ -60,11 +60,11 @@ const TemplateTextButtonWithIcon: Story<ButtonComponent> = (
   props: args,
   /* template */
   template: `
-    <veera-ng-button appearance="text">
-      <veera-ng-labeled-icon name="add" iconPosition="before" alignment="center" [iconHeight]="iconHeight">
+    <cvi-ng-button appearance="text">
+      <cvi-ng-labeled-icon name="add" iconPosition="before" alignment="center" [iconHeight]="iconHeight">
         {{ content }}
-      </veera-ng-labeled-icon>
-    </veera-ng-button>
+      </cvi-ng-labeled-icon>
+    </cvi-ng-button>
   `,
 });
 

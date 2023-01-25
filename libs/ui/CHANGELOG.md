@@ -5,14 +5,14 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 # [1.0.0](https://github.com/e-gov/cvi/compare/ui-0.1.0...ui-1.0.0) (2023-01-23)
 
 
-* Pull request #187: feat: rename veera -> cvi ([6b7f266](https://github.com/e-gov/cvi/commit/6b7f266ec95aac7bb17f7ebe5773ab14f17a80a9)), closes [#187](https://github.com/e-gov/cvi/issues/187)
+* Pull request #187: feat: rename cvi -> cvi ([6b7f266](https://github.com/e-gov/cvi/commit/6b7f266ec95aac7bb17f7ebe5773ab14f17a80a9)), closes [#187](https://github.com/e-gov/cvi/issues/187)
 
 
 ### BREAKING CHANGES
 
-* rename veera to cvi
+* rename cvi to cvi
 
-Merge in SUN/veera-components from feature-EBS-123-cvi to master
+Merge in SUN/cvi-components from feature-EBS-123-cvi to master
 
 Squashed commit of the following:
 
@@ -26,7 +26,7 @@ commit af0d7c087c17d40dbeae689dcd95ef9bc39c2d66
 Author: Siim Veskilt <siim.veskilt@nortal.com>
 Date:   Mon Jan 23 15:23:33 2023 +0200
 
-    feat: rename veera -> cvi
+    feat: rename cvi -> cvi
 * rename veera to cvi
 
 

@@ -27,8 +27,8 @@ const Template: Story = (args) => ({
   props: args,
   /* template */
   template: `
-    <div class="veera-content-panel">
-      <h1 class="veera-content-panel__title">{{ title }}</h1>
+    <div class="cvi-content-panel">
+      <h1 class="cvi-content-panel__title">{{ title }}</h1>
       {{ content }}
     </div>
   `,

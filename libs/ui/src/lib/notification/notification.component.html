@@ -1,27 +1,27 @@
-<div class="veera-notification veera-notification--size-{{size}} veera-notification--severity-{{severity}}" dataAttribute="notification">
+<div class="cvi-notification cvi-notification--size-{{size}} cvi-notification--severity-{{severity}}" dataAttribute="notification">
   <button *ngIf="showCloseButton && size !== 'compact'"
           aria-label="Close"
-          class="veera-notification__close-button"
+          class="cvi-notification__close-button"
           (click)="close()"
           type="button">
-    <veera-ng-icon name="close" class="veera-notification__close-button-inner" svgClass="veera-notification__close-button-icon" dataAttribute="close-icon"></veera-ng-icon>
+    <cvi-ng-icon name="close" class="cvi-notification__close-button-inner" svgClass="cvi-notification__close-button-icon" dataAttribute="close-icon"></cvi-ng-icon>
   </button>
-  <div class="veera-notification__inner" dataAttribute="inner">
-    <div class="veera-notification__header" *ngIf="size !== 'compact'" dataAttribute="header">
+  <div class="cvi-notification__inner" dataAttribute="inner">
+    <div class="cvi-notification__header" *ngIf="size !== 'compact'" dataAttribute="header">
       <ng-container *ngIf="getIconName() as iconName">
-        <veera-ng-labeled-icon [name]="iconName" class="veera-notification__header-icon-wrapper" iconClass="veera-notification__header-icon" dataAttribute="header-icon">
-          <h2 class="veera-notification__title">{{ title }}</h2>
-        </veera-ng-labeled-icon>
+        <cvi-ng-labeled-icon [name]="iconName" class="cvi-notification__header-icon-wrapper" iconClass="cvi-notification__header-icon" dataAttribute="header-icon">
+          <h2 class="cvi-notification__title">{{ title }}</h2>
+        </cvi-ng-labeled-icon>
       </ng-container>
       <ng-container *ngIf="!getIconName()">
-        <h2 class="veera-notification__title">{{ title }}</h2>
+        <h2 class="cvi-notification__title">{{ title }}</h2>
       </ng-container>
     </div>
-    <div class="veera-notification__content" dataAttribute="content">
+    <div class="cvi-notification__content" dataAttribute="content">
       <ng-container *ngIf="size === 'compact' && getIconName() as iconName">
-        <veera-ng-labeled-icon [name]="iconName" class="veera-notification__content-icon-wrapper" iconClass="veera-notification__content-icon" dataAttribute="icon">
+        <cvi-ng-labeled-icon [name]="iconName" class="cvi-notification__content-icon-wrapper" iconClass="cvi-notification__content-icon" dataAttribute="icon">
           <ng-container *ngTemplateOutlet="content"></ng-container>
-        </veera-ng-labeled-icon>
+        </cvi-ng-labeled-icon>
       </ng-container>
       <ng-container *ngIf="size !== 'compact' || !getIconName()">
         <ng-container *ngTemplateOutlet="content"></ng-container>

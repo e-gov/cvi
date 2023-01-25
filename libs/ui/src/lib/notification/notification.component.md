@@ -2,7 +2,7 @@
 
 Feature | Description
 - | -
-Selector | `veera-ng-notification`
+Selector | `cvi-ng-notification`
 Component name | `NotificationComponent`
 Design system module | -
 Permitted parent/ancestors | any

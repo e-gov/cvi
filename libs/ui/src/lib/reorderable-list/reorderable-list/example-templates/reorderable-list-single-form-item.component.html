@@ -1,38 +1,38 @@
-<veera-ng-track horizontalAlignment="right">
-  <veera-ng-button (click)="addNewItem()" [appearance]="'text'">
-    <veera-ng-labeled-icon
+<cvi-ng-track horizontalAlignment="right">
+  <cvi-ng-button (click)="addNewItem()" [appearance]="'text'">
+    <cvi-ng-labeled-icon
       [alignment]="'center'"
       [iconPosition]="'before'"
       [name]="'add'"
     >
       Add item
-    </veera-ng-labeled-icon>
-  </veera-ng-button>
-</veera-ng-track>
+    </cvi-ng-labeled-icon>
+  </cvi-ng-button>
+</cvi-ng-track>
 
-<veera-ng-reorderable-list [items]="items">
+<cvi-ng-reorderable-list [items]="items">
   <ng-template let-item>
-    <veera-ng-reorderable-list-item
+    <cvi-ng-reorderable-list-item
       (removeStepEvent)="removeStep(item)"
       (swapStepsEvent)="swapSteps($event)"
       [dataAttribute]="'reorderable-list-item-' + getOrderNr(item)"
       [index]="getIndex(item)"
       [setAsNextStepButtonVisible]="isNotLastItem(item)"
       [setAsPreviousStepButtonVisible]="isNotFirstItem(item)">
-      <veera-ng-form-item
+      <cvi-ng-form-item
         [htmlId]="'step-' + getOrderNr(item) + '-form-item'"
         [label]="'Step name'"
-        class="veera-reorderable-list__form-item"
+        class="cvi-reorderable-list__form-item"
       >
-        <veera-ng-input
+        <cvi-ng-input
           [(ngModel)]="item.title"
           [dataAttribute]="'step-' + getOrderNr(item) + '-name'"
           [htmlId]="'step-' + getOrderNr(item) + '-form-item'"
-        ></veera-ng-input>
-      </veera-ng-form-item>
-    </veera-ng-reorderable-list-item>
+        ></cvi-ng-input>
+      </cvi-ng-form-item>
+    </cvi-ng-reorderable-list-item>
   </ng-template>
-</veera-ng-reorderable-list>
+</cvi-ng-reorderable-list>
 
 <div style="padding: 16px">
   <pre>Items:</pre>

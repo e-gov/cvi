@@ -5,16 +5,16 @@ describe('ConfirmationModalComponent', () => {
 
   it('Renders default confirmation modal', () => {
     cy.loadStory('Angular Modal Confirmation modal', 'Default')
-      .shouldNotExist('veera-ng-confirmation-modal')
+      .shouldNotExist('cvi-ng-confirmation-modal')
       .get('[data-cy="test-button"]')
       .click();
 
-    cy.shouldHaveClasses('div', 'veera-modal__dialog')
-      .shouldHaveClasses('button', 'veera-modal__close')
-      .shouldExist('veera-ng-confirmation-modal');
+    cy.shouldHaveClasses('div', 'cvi-modal__dialog')
+      .shouldHaveClasses('button', 'cvi-modal__close')
+      .shouldExist('cvi-ng-confirmation-modal');
 
     cy.get('[data-cy="modal-cancel"]').click();
 
-    cy.shouldNotExist('veera-ng-confirmation-modal');
+    cy.shouldNotExist('cvi-ng-confirmation-modal');
   });
 });

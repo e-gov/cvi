@@ -8,7 +8,7 @@ import {
 import { CviIconName } from '@ria/cvi-icons';
 
 @Component({
-  selector: 'veera-ng-breadcrumbs',
+  selector: 'cvi-ng-breadcrumbs',
   templateUrl: './breadcrumbs.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

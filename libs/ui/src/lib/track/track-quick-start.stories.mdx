@@ -12,16 +12,16 @@ Use `layout="flex"` (default) with `horizontalAlignment="justify"`:
   <Story name="Opposite edges">
     {{
       template: `
-        <veera-ng-track layout="flex" horizontalAlignment="justify">
-          <veera-ng-button>Button 1</veera-ng-button>
-          <veera-ng-button>Button on the other edge</veera-ng-button>
-        </veera-ng-track>
+        <cvi-ng-track layout="flex" horizontalAlignment="justify">
+          <cvi-ng-button>Button 1</cvi-ng-button>
+          <cvi-ng-button>Button on the other edge</cvi-ng-button>
+        </cvi-ng-track>
       `,
     }}
   </Story>
 </Canvas>
 
-## Can I do a toolbar-like layout using just `veera-ng-track`?
+## Can I do a toolbar-like layout using just `cvi-ng-track`?
 
 Sure! Just nest two tracks.
 
@@ -31,15 +31,15 @@ Note that in cases like this you can also use `verticalAlignment="center"` to ba
   <Story name="Toolbar with several buttons grouped">
     {{
       template: `
-        <veera-ng-track layout="flex" horizontalAlignment="justify" verticalAlignment="center">
-          <veera-ng-track [gap]="4">
-            <veera-ng-button>Button to the left</veera-ng-button>
-            <veera-ng-button>Another button</veera-ng-button>
-          </veera-ng-track>
-          <veera-ng-track [gap]="4">
+        <cvi-ng-track layout="flex" horizontalAlignment="justify" verticalAlignment="center">
+          <cvi-ng-track [gap]="4">
+            <cvi-ng-button>Button to the left</cvi-ng-button>
+            <cvi-ng-button>Another button</cvi-ng-button>
+          </cvi-ng-track>
+          <cvi-ng-track [gap]="4">
             <a href="#">A link on the right</a>
-          </veera-ng-track>
-        </veera-ng-track>
+          </cvi-ng-track>
+        </cvi-ng-track>
       `,
     }}
   </Story>
@@ -49,7 +49,7 @@ Note that in cases like this you can also use `verticalAlignment="center"` to ba
 
 Yes, you can. Use `layout="flex"` (default) with `flexColumnsEqual="true"` and `flexIsMultiline="true"`. You can also set `verticalAlignment="bottom"` to make sure labels with multiple lines won't create misalignment with neighbouring items.
 
-Note: by default some form controls have a maximum width. You can set `--veera-textfield--single-line--max-width`, `--veera-textfield--multiple-lines--max-width` or similar CSS variables of a form control component to `100%` to make sure a form control fills all available space.
+Note: by default some form controls have a maximum width. You can set `--cvi-textfield--single-line--max-width`, `--cvi-textfield--multiple-lines--max-width` or similar CSS variables of a form control component to `100%` to make sure a form control fills all available space.
 
 The variables can be set anywhere in a common parent eg. via `[ngStyle]`.
 
@@ -57,23 +57,23 @@ The variables can be set anywhere in a common parent eg. via `[ngStyle]`.
   <Story name="Flexible form items" height="200px">
     {{
       template: `
-        <veera-ng-track [gap]="3" [flexColumnsEqual]="true" [flexIsMultiline]="true" verticalAlignment="bottom" [ngStyle]="{'--veera-textfield--single-line--max-width': '100%', '--veera-textfield--multiple-lines--max-width': '100%'}">
-          <veera-ng-form-item label="Huge unspeakablethingamabob, field 1" htmlId="someid">
-            <veera-ng-input htmlId="someid"></veera-ng-input>
-          </veera-ng-form-item>
-          <veera-ng-form-item label="Field 2 with more characters" htmlId="someid2">
-            <veera-ng-input htmlId="someid2"></veera-ng-input>
-          </veera-ng-form-item>
-          <veera-ng-form-item label="Field 3, even lengthier" htmlId="someid3">
-            <veera-ng-input htmlId="someid3"></veera-ng-input>
-          </veera-ng-form-item>
-          <veera-ng-form-item label="Field 4" htmlId="someid4">
-            <veera-ng-input htmlId="someid4"></veera-ng-input>
-          </veera-ng-form-item>
-          <veera-ng-form-item label="Last field" htmlId="lastid">
-            <veera-ng-textarea htmlId="lastid"></veera-ng-textarea>
-          </veera-ng-form-item>
-        </veera-ng-track>
+        <cvi-ng-track [gap]="3" [flexColumnsEqual]="true" [flexIsMultiline]="true" verticalAlignment="bottom" [ngStyle]="{'--cvi-textfield--single-line--max-width': '100%', '--cvi-textfield--multiple-lines--max-width': '100%'}">
+          <cvi-ng-form-item label="Huge unspeakablethingamabob, field 1" htmlId="someid">
+            <cvi-ng-input htmlId="someid"></cvi-ng-input>
+          </cvi-ng-form-item>
+          <cvi-ng-form-item label="Field 2 with more characters" htmlId="someid2">
+            <cvi-ng-input htmlId="someid2"></cvi-ng-input>
+          </cvi-ng-form-item>
+          <cvi-ng-form-item label="Field 3, even lengthier" htmlId="someid3">
+            <cvi-ng-input htmlId="someid3"></cvi-ng-input>
+          </cvi-ng-form-item>
+          <cvi-ng-form-item label="Field 4" htmlId="someid4">
+            <cvi-ng-input htmlId="someid4"></cvi-ng-input>
+          </cvi-ng-form-item>
+          <cvi-ng-form-item label="Last field" htmlId="lastid">
+            <cvi-ng-textarea htmlId="lastid"></cvi-ng-textarea>
+          </cvi-ng-form-item>
+        </cvi-ng-track>
       `,
     }}
   </Story>
@@ -89,25 +89,25 @@ See the previous question to stretch a form item to all available width.
   <Story name="Two row fixed form items" height="200px">
     {{
       template: `
-        <veera-ng-track [gap]="3" flexDirection="vertical">
-          <veera-ng-track [gap]="2" [flexColumnsEqual]="true" verticalAlignment="bottom">
-            <veera-ng-form-item label="Huge unspeakablethingamabob, field 1" htmlId="someid">
-              <veera-ng-input htmlId="someid"></veera-ng-input>
-            </veera-ng-form-item>
-            <veera-ng-form-item label="Field 2 with more characters" htmlId="someid2">
-              <veera-ng-input htmlId="someid2"></veera-ng-input>
-            </veera-ng-form-item>
-            <veera-ng-form-item label="Field 3, even lengthier" htmlId="someid3">
-              <veera-ng-input htmlId="someid3"></veera-ng-input>
-            </veera-ng-form-item>
-            <veera-ng-form-item label="Field 4" htmlId="someid4">
-              <veera-ng-input htmlId="someid4"></veera-ng-input>
-            </veera-ng-form-item>
-          </veera-ng-track>
-          <veera-ng-form-item label="Second row field" htmlId="lastid" [ngStyle]="{'--veera-textfield--multiple-lines--max-width': '100%'}">
-            <veera-ng-textarea htmlId="lastid"></veera-ng-textarea>
-          </veera-ng-form-item>
-        </veera-ng-track>
+        <cvi-ng-track [gap]="3" flexDirection="vertical">
+          <cvi-ng-track [gap]="2" [flexColumnsEqual]="true" verticalAlignment="bottom">
+            <cvi-ng-form-item label="Huge unspeakablethingamabob, field 1" htmlId="someid">
+              <cvi-ng-input htmlId="someid"></cvi-ng-input>
+            </cvi-ng-form-item>
+            <cvi-ng-form-item label="Field 2 with more characters" htmlId="someid2">
+              <cvi-ng-input htmlId="someid2"></cvi-ng-input>
+            </cvi-ng-form-item>
+            <cvi-ng-form-item label="Field 3, even lengthier" htmlId="someid3">
+              <cvi-ng-input htmlId="someid3"></cvi-ng-input>
+            </cvi-ng-form-item>
+            <cvi-ng-form-item label="Field 4" htmlId="someid4">
+              <cvi-ng-input htmlId="someid4"></cvi-ng-input>
+            </cvi-ng-form-item>
+          </cvi-ng-track>
+          <cvi-ng-form-item label="Second row field" htmlId="lastid" [ngStyle]="{'--cvi-textfield--multiple-lines--max-width': '100%'}">
+            <cvi-ng-textarea htmlId="lastid"></cvi-ng-textarea>
+          </cvi-ng-form-item>
+        </cvi-ng-track>
       `,
     }}
   </Story>
@@ -121,23 +121,23 @@ Yes, just use `layout="grid"`. Items will wrap automatically into multiple rows 
   <Story name="Form items as a grid" height="200px">
     {{
       template: `
-        <veera-ng-track [gap]="3" layout="grid" verticalAlignment="bottom">
-          <veera-ng-form-item label="Huge unspeakablethingamabob, field 1" htmlId="someid">
-            <veera-ng-input htmlId="someid"></veera-ng-input>
-          </veera-ng-form-item>
-          <veera-ng-form-item label="Field 2 with more characters" htmlId="someid2">
-            <veera-ng-input htmlId="someid2"></veera-ng-input>
-          </veera-ng-form-item>
-          <veera-ng-form-item label="Field 3, even lengthier" htmlId="someid3">
-            <veera-ng-input htmlId="someid3"></veera-ng-input>
-          </veera-ng-form-item>
-          <veera-ng-form-item label="Field 4" htmlId="someid4">
-            <veera-ng-input htmlId="someid4"></veera-ng-input>
-          </veera-ng-form-item>
-          <veera-ng-form-item label="Last field" htmlId="lastid">
-            <veera-ng-textarea htmlId="lastid"></veera-ng-textarea>
-          </veera-ng-form-item>
-        </veera-ng-track>
+        <cvi-ng-track [gap]="3" layout="grid" verticalAlignment="bottom">
+          <cvi-ng-form-item label="Huge unspeakablethingamabob, field 1" htmlId="someid">
+            <cvi-ng-input htmlId="someid"></cvi-ng-input>
+          </cvi-ng-form-item>
+          <cvi-ng-form-item label="Field 2 with more characters" htmlId="someid2">
+            <cvi-ng-input htmlId="someid2"></cvi-ng-input>
+          </cvi-ng-form-item>
+          <cvi-ng-form-item label="Field 3, even lengthier" htmlId="someid3">
+            <cvi-ng-input htmlId="someid3"></cvi-ng-input>
+          </cvi-ng-form-item>
+          <cvi-ng-form-item label="Field 4" htmlId="someid4">
+            <cvi-ng-input htmlId="someid4"></cvi-ng-input>
+          </cvi-ng-form-item>
+          <cvi-ng-form-item label="Last field" htmlId="lastid">
+            <cvi-ng-textarea htmlId="lastid"></cvi-ng-textarea>
+          </cvi-ng-form-item>
+        </cvi-ng-track>
       `,
     }}
   </Story>
@@ -151,20 +151,20 @@ Yes, use `layout="grid"` with `gridRows` set to the needed amount of rows.
   <Story name="Form items as a grid, grouped by columns" height="200px">
     {{
       template: `
-        <veera-ng-track [gap]="3" layout="grid" verticalAlignment="bottom" [gridRows]="3">
-          <veera-ng-form-item label="Huge unspeakablethingamabob, field 1" htmlId="someid">
-            <veera-ng-input htmlId="someid"></veera-ng-input>
-          </veera-ng-form-item>
-          <veera-ng-form-item label="Field 2 with more characters" htmlId="someid2">
-            <veera-ng-input htmlId="someid2"></veera-ng-input>
-          </veera-ng-form-item>
-          <veera-ng-form-item label="Field 3, even lengthier" htmlId="someid3">
-            <veera-ng-input htmlId="someid3"></veera-ng-input>
-          </veera-ng-form-item>
-          <veera-ng-form-item label="Last field" htmlId="lastid">
-            <veera-ng-input htmlId="lastid"></veera-ng-input>
-          </veera-ng-form-item>
-        </veera-ng-track>
+        <cvi-ng-track [gap]="3" layout="grid" verticalAlignment="bottom" [gridRows]="3">
+          <cvi-ng-form-item label="Huge unspeakablethingamabob, field 1" htmlId="someid">
+            <cvi-ng-input htmlId="someid"></cvi-ng-input>
+          </cvi-ng-form-item>
+          <cvi-ng-form-item label="Field 2 with more characters" htmlId="someid2">
+            <cvi-ng-input htmlId="someid2"></cvi-ng-input>
+          </cvi-ng-form-item>
+          <cvi-ng-form-item label="Field 3, even lengthier" htmlId="someid3">
+            <cvi-ng-input htmlId="someid3"></cvi-ng-input>
+          </cvi-ng-form-item>
+          <cvi-ng-form-item label="Last field" htmlId="lastid">
+            <cvi-ng-input htmlId="lastid"></cvi-ng-input>
+          </cvi-ng-form-item>
+        </cvi-ng-track>
       `,
     }}
   </Story>

@@ -14,7 +14,7 @@ import {
 import { Subject, takeUntil } from 'rxjs';
 
 @Component({
-  selector: 'veera-ng-feedback',
+  selector: 'cvi-ng-feedback',
   templateUrl: './feedback.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [

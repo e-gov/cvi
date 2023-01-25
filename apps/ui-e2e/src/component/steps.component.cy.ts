@@ -9,17 +9,17 @@ describe('StepsComponent', () => {
 
   it('Renders default steps and clicks on the second step', () => {
     cy.loadStory('Angular Steps Steps', 'Default')
-      .get('[data-cy="veera-steps__list-item_0"]')
+      .get('[data-cy="cvi-steps__list-item_0"]')
       .click();
 
-    cy.get('[data-cy="veera-steps__list-item_1"]')
+    cy.get('[data-cy="cvi-steps__list-item_1"]')
       .click()
-      .shouldHaveClasses('[data-cy="veera-steps__list-item_0"]', 'is-past')
+      .shouldHaveClasses('[data-cy="cvi-steps__list-item_0"]', 'is-past')
       .shouldNotHaveClasses(
-        '[data-cy="veera-steps__list-item_0"]',
+        '[data-cy="cvi-steps__list-item_0"]',
         'is-current'
       )
-      .shouldHaveClasses('[data-cy="veera-steps__list-item_1"]', [
+      .shouldHaveClasses('[data-cy="cvi-steps__list-item_1"]', [
         'is-past',
         'is-current',
       ])
@@ -30,12 +30,12 @@ describe('StepsComponent', () => {
         '[data-cy="next_step_button_0"]',
       ])
       .shouldHaveClasses('[data-cy="previous_step_button_1"]', [
-        'veera-steps__directional-button',
-        'veera-steps__directional-button--direction-prev',
+        'cvi-steps__directional-button',
+        'cvi-steps__directional-button--direction-prev',
       ])
       .shouldHaveClasses('[data-cy="next_step_button_0"]', [
-        'veera-steps__directional-button',
-        'veera-steps__directional-button--direction-next',
+        'cvi-steps__directional-button',
+        'cvi-steps__directional-button--direction-next',
       ]);
   });
 

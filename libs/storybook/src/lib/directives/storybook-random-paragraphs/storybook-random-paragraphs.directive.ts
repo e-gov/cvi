@@ -8,10 +8,10 @@ import {
 import { storybookRandomParagraphs } from './storybook-random-paragraphs';
 
 @Directive({
-  selector: '[veeraNgStorybookRandomParagraphs]',
+  selector: '[cviNgStorybookRandomParagraphs]',
 })
 export class StorybookRandomParagraphsDirective implements AfterViewInit {
-  @Input('veeraNgStorybookRandomParagraphs') minParagraphs = 5;
+  @Input('cviNgStorybookRandomParagraphs') minParagraphs = 5;
 
   maxParagraphs = 20;
 

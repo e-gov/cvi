@@ -1,4 +1,4 @@
-@mixin veera-textfield($base: &) {
+@mixin cvi-textfield($base: &) {
   $min-width: 200px;
   $single-line--max-width: 300px;
   $multiple-lines--max-width: 670px;
@@ -11,21 +11,21 @@
 
   &--type-single-line {
     #{$base}__text-control {
-      min-width: var(--veera-textfield--single-line--min-width, #{$min-width});
-      max-width: var(--veera-textfield--single-line--max-width, #{$single-line--max-width});
+      min-width: var(--cvi-textfield--single-line--min-width, #{$min-width});
+      max-width: var(--cvi-textfield--single-line--max-width, #{$single-line--max-width});
       width: 100%;
       height: 40px;
     }
   }
 
   &--type-multiple-lines {
-    // without display: flex aligning to bottom in veera-track won't work
+    // without display: flex aligning to bottom in cvi-track won't work
     display: flex;
     flex-direction: column;
     #{$base}__text-control {
       width: 100%;
       min-width: $min-width;
-      max-width: var(--veera-textfield--multiple-lines--max-width, #{$multiple-lines--max-width});
+      max-width: var(--cvi-textfield--multiple-lines--max-width, #{$multiple-lines--max-width});
       padding: get-spacing('paldiski');
       resize: vertical;
     }
@@ -42,8 +42,8 @@
     #{$base}__text-control {
       background-color: get-color(white);
       border: 1px solid get-color(black-coral-5);
-      border-radius: $veera-radius-s;
-      font-size: $veera-font-size-100;
+      border-radius: $cvi-radius-s;
+      font-size: $cvi-font-size-100;
       padding-inline-start: get-spacing('paldiski');
 
       &:focus {

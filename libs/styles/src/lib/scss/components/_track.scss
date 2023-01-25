@@ -1,7 +1,7 @@
-@mixin veera-track($base: &) {
+@mixin cvi-track($base: &) {
   --comment: 'An utility for quick layout setup';
 
-  gap: calc(var(--veera-spacing-unit) * var(--gap));
+  gap: calc(var(--cvi-spacing-unit) * var(--gap));
   justify-content: var(--horizontal-alignment);
   align-items: var(--vertical-alignment);
 
@@ -14,13 +14,13 @@
     }
     &#{$base}--direction-vertical-on-mobile {
       flex-direction: column;
-      @include veera-breakpoint-up(sm) {
+      @include cvi-breakpoint-up(sm) {
         flex-direction: row;
       }
     }
     &#{$base}--direction-vertical-reversed-on-mobile {
       flex-direction: column-reverse;
-      @include veera-breakpoint-up(sm) {
+      @include cvi-breakpoint-up(sm) {
         flex-direction: row;
       }
     }
@@ -34,16 +34,16 @@
 
   &--layout-grid {
     // reset to top-to-bottom flow for mobile, but keep the gap
-    @include veera-breakpoint-down(sm) {
+    @include cvi-breakpoint-down(sm) {
       display: flex;
       flex-direction: column;
     }
-    @include veera-breakpoint-up(sm) {
+    @include cvi-breakpoint-up(sm) {
       display: grid;
 
       // row by row grid
       &:not(#{$base}--has-rows) {
-        // minimum value is same as $min-width in veera-textfield
+        // minimum value is same as $min-width in cvi-textfield
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       }
       // column by column grid

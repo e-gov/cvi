@@ -12,7 +12,7 @@ import {
 } from './status-badge';
 
 @Component({
-  selector: 'veera-ng-status-badge',
+  selector: 'cvi-ng-status-badge',
   templateUrl: './status-badge.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
@@ -21,7 +21,7 @@ export class StatusBadgeComponent {
   @Input() label = '';
 
   @HostBinding('class') get hostClasses(): string {
-    return `veera-status-badge`;
+    return `cvi-status-badge`;
   }
   @HostBinding('style.--color') get hostStyleColor(): string | null {
     return this.getCustomProperty('--color');

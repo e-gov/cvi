@@ -14,10 +14,10 @@ const Template: Story<TabGroupComponent> = (args: TabGroupComponent) => ({
     ...args,
   },
   template: `
-    <veera-ng-tab-group>
-      <veera-ng-tab title="Tab 1">First tab content</veera-ng-tab>
-      <veera-ng-tab title="Tab 2">Second tab content</veera-ng-tab>
-    </veera-ng-tab-group>
+    <cvi-ng-tab-group>
+      <cvi-ng-tab title="Tab 1">First tab content</cvi-ng-tab>
+      <cvi-ng-tab title="Tab 2">Second tab content</cvi-ng-tab>
+    </cvi-ng-tab-group>
   `,
 });
 export const Default = Template.bind({});

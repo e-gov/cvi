@@ -2,7 +2,7 @@
 
 | Feature                    | Description      |
 |----------------------------|------------------|
-| Selector                   | `veeraNgModal`   |
+| Selector                   | `cviNgModal`   |
 | Directive name             | `ModalDirective` |
 | Permitted parent/ancestors | any              |
 

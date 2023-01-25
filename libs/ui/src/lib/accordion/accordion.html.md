@@ -2,7 +2,7 @@
 
 Feature | Description
 - | -
-Sass component | `veera-accordion`
+Sass component | `cvi-accordion`
 Corresponding Javascript component | `AccordionComponent`
 Design system module | -
 Permitted parent/ancestors | any
@@ -14,4 +14,4 @@ Utilise when there is a need to display a list of questions with answers display
 
 ## How to use
 
-Add directly to HTML using `.veera-accordion*` classes or `@include` mixin `@veera-accordion` in your Sass code. When including the mixin, you can change the base class with `$base` parameter.
+Add directly to HTML using `.cvi-accordion*` classes or `@include` mixin `@cvi-accordion` in your Sass code. When including the mixin, you can change the base class with `$base` parameter.

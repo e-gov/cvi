@@ -12,7 +12,7 @@ export default {
 const Template: Story<TextareaComponent> = (args: TextareaComponent) => ({
   props: args,
   template: `
-    <veera-ng-textarea [disabled]="disabled" [maxLength]="maxLength" [minRows]="minRows" [maxRows]="maxRows" [placeholder]="placeholder" [htmlId]="htmlId" [resizable]="resizable"></veera-ng-textarea>
+    <cvi-ng-textarea [disabled]="disabled" [maxLength]="maxLength" [minRows]="minRows" [maxRows]="maxRows" [placeholder]="placeholder" [htmlId]="htmlId" [resizable]="resizable"></cvi-ng-textarea>
   `,
 });
 
@@ -23,7 +23,7 @@ const CharacterCounterTemplate: Story<TextareaComponent> = (
 ) => ({
   props: args,
   template: `
-    <veera-ng-textarea veeraNgCharacterCounter [maxChars]="30" [resizable]="resizable"></veera-ng-textarea>
+    <cvi-ng-textarea cviNgCharacterCounter [maxChars]="30" [resizable]="resizable"></cvi-ng-textarea>
   `,
 });
 
@@ -34,10 +34,10 @@ const FormItemTemplate: Story<TextareaComponent> = (
 ) => ({
   props: args,
   template: `
-    <veera-ng-form-item label="Some label"
+    <cvi-ng-form-item label="Some label"
                         [htmlId]="htmlId">
-      <veera-ng-textarea [htmlId]="htmlId" [resizable]="resizable"></veera-ng-textarea>
-    </veera-ng-form-item>
+      <cvi-ng-textarea [htmlId]="htmlId" [resizable]="resizable"></cvi-ng-textarea>
+    </cvi-ng-form-item>
   `,
 });
 

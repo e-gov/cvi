@@ -5,7 +5,7 @@ describe('TextareaComponent', () => {
 
   it('Renders default textarea and inserts input', () => {
     cy.loadStory('Angular Form Textarea', 'Default')
-      .shouldHaveAttributes('veera-ng-textarea', [
+      .shouldHaveAttributes('cvi-ng-textarea', [
         { name: 'ng-reflect-max-length', value: 2000 },
         { name: 'ng-reflect-min-rows', value: 3 },
         { name: 'ng-reflect-max-rows', value: 5 },
@@ -16,8 +16,8 @@ describe('TextareaComponent', () => {
 
   it('Disables resize when set accordingly', () => {
     cy.loadStory('Angular Form Textarea', 'Default')
-      .get('veera-ng-textarea')
+      .get('cvi-ng-textarea')
       .changeArg('resizable', false)
-      .shouldHaveClasses('veera-ng-textarea', ['veera-textfield--no-resize']);
+      .shouldHaveClasses('cvi-ng-textarea', ['cvi-textfield--no-resize']);
   });
 });

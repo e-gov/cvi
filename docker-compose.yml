@@ -2,7 +2,7 @@ version: '1.0.0'
 services:
   storybook:
     container_name: storybook
-    image: veera-storybook:latest
+    image: cvi-storybook:latest
     ports:
       - 3005:80
     restart: always

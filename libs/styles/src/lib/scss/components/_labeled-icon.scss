@@ -1,4 +1,4 @@
-@mixin veera-labeled-icon($base: &) {
+@mixin cvi-labeled-icon($base: &) {
   --comment: 'An SVG icon with a mandatory label';
 
   fill: get-color(sapphire-blue-10);

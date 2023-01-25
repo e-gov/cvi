@@ -116,7 +116,7 @@ Cypress.Commands.add('shouldNotBeVisible', (element) => {
   cy.get(element).should('not.be.visible');
 });
 
-// veera-screenreader-text class or mixin applied
+// cvi-screenreader-text class or mixin applied
 Cypress.Commands.add('shouldNotBeVisibleA11y', (element) => {
   cy.get(element).should('have.css', 'clip', 'rect(0px, 0px, 0px, 0px)');
 });
@@ -227,12 +227,12 @@ Cypress.Commands.add('storyAction', (actionName) => {
 
 Cypress.Commands.add('runStepsCommonTest', () => {
   cy.shouldNotBeVisible('[data-cy="step_1"]')
-    .shouldNotHaveClasses('[data-cy="veera-steps__list-item_0"]', [
+    .shouldNotHaveClasses('[data-cy="cvi-steps__list-item_0"]', [
       'is-past',
       'is-current',
     ])
     .click()
-    .shouldHaveClasses('[data-cy="veera-steps__list-item_0"]', [
+    .shouldHaveClasses('[data-cy="cvi-steps__list-item_0"]', [
       'is-past',
       'is-current',
     ])
@@ -250,16 +250,16 @@ Cypress.Commands.add(
     showCloseButton = true,
     iconName = ''
   ) => {
-    cy.get('veera-ng-notification').within(() => {
+    cy.get('cvi-ng-notification').within(() => {
       cy.shouldHaveClasses('[data-cy="notification"]', [
-        'veera-notification',
-        `veera-notification--severity-${type}`,
-        `veera-notification--size-${size}`,
+        'cvi-notification',
+        `cvi-notification--severity-${type}`,
+        `cvi-notification--size-${size}`,
       ]);
 
       if (showCloseButton) {
         cy.get('[data-cy="notification"]').within(() => {
-          cy.shouldHaveClasses('button', 'veera-notification__close-button')
+          cy.shouldHaveClasses('button', 'cvi-notification__close-button')
             .click()
             .within(() => {
               cy.shouldHaveAttributes('[data-cy="close-icon"]', {
@@ -273,17 +273,17 @@ Cypress.Commands.add(
       }
       cy.shouldHaveClasses(
         '[data-cy="inner"]',
-        'veera-notification__inner'
+        'cvi-notification__inner'
       ).within(() => {
         cy.shouldHaveClasses(
           '[data-cy="content"]',
-          'veera-notification__content'
+          'cvi-notification__content'
         );
         if (size === 'compact') {
           if (showIcon) {
             cy.shouldHaveClasses(
               '[data-cy="icon"]',
-              'veera-notification__content-icon-wrapper'
+              'cvi-notification__content-icon-wrapper'
             ).shouldHaveAttributes('[data-cy="icon"]', {
               name: 'ng-reflect-name',
               value: iconName,
@@ -294,21 +294,21 @@ Cypress.Commands.add(
         } else {
           cy.shouldHaveClasses(
             '[data-cy="header"]',
-            'veera-notification__header'
+            'cvi-notification__header'
           );
 
           if (showIcon) {
             cy.get('[data-cy="header"]').within(() => {
               cy.shouldHaveClasses(
                 '[data-cy="header-icon"]',
-                'veera-notification__header-icon-wrapper'
+                'cvi-notification__header-icon-wrapper'
               ).shouldHaveAttributes('[data-cy="header-icon"]', {
                 name: 'ng-reflect-name',
                 value: iconName,
               });
             });
           } else {
-            cy.shouldNotExist('veera-ng-labeled-icon');
+            cy.shouldNotExist('cvi-ng-labeled-icon');
           }
         }
       });
@@ -317,41 +317,41 @@ Cypress.Commands.add(
 );
 
 Cypress.Commands.add('runLabeledIconCommonTest', (alignment, iconPosition) => {
-  cy.shouldHaveClasses('veera-ng-labeled-icon', ['veera-labeled-icon']).within(
+  cy.shouldHaveClasses('cvi-ng-labeled-icon', ['cvi-labeled-icon']).within(
     () => {
       cy.shouldHaveCSSVar(
-        'veera-ng-track',
+        'cvi-ng-track',
         '--vertical-alignment',
         alignment === 'normal' ? '' : 'center'
       ).within(() => {
-        cy.shouldExist('veera-ng-icon');
+        cy.shouldExist('cvi-ng-icon');
         if (iconPosition === 'after') {
-          cy.shouldBeLastChild('veera-ng-icon');
+          cy.shouldBeLastChild('cvi-ng-icon');
         } else {
-          cy.shouldBeFirstChild('veera-ng-icon');
+          cy.shouldBeFirstChild('cvi-ng-icon');
         }
       });
-      cy.shouldHaveClasses('div', 'veera-labeled-icon__content');
+      cy.shouldHaveClasses('div', 'cvi-labeled-icon__content');
     }
   );
 });
 
 Cypress.Commands.add('runButtonCommonTest', (appearance, size) => {
-  cy.shouldHaveClasses('veera-ng-button', [
-    'veera-button',
-    `veera-button--appearance-${appearance}`,
-    `veera-button--size-${size}`,
-  ]).shouldHaveClasses('button', 'veera-button__button');
+  cy.shouldHaveClasses('cvi-ng-button', [
+    'cvi-button',
+    `cvi-button--appearance-${appearance}`,
+    `cvi-button--size-${size}`,
+  ]).shouldHaveClasses('button', 'cvi-button__button');
 });
 
 Cypress.Commands.add('runRadioGroupCommonTest', (appearance) => {
-  cy.shouldHaveClasses('veera-ng-radio-group', [
-    'veera-radio-group',
-    `veera-radio-group--appearance-${appearance}`,
+  cy.shouldHaveClasses('cvi-ng-radio-group', [
+    'cvi-radio-group',
+    `cvi-radio-group--appearance-${appearance}`,
   ])
-    .shouldHaveClasses('fieldset', 'veera-radio-group__inner')
-    .shouldHaveClasses('legend', 'veera-radio-group__title')
-    .shouldHaveClasses('div', 'veera-radio-group__list');
+    .shouldHaveClasses('fieldset', 'cvi-radio-group__inner')
+    .shouldHaveClasses('legend', 'cvi-radio-group__title')
+    .shouldHaveClasses('div', 'cvi-radio-group__list');
 });
 
 Cypress.Commands.add('reorderableListItemShouldHaveOrderNr', (orderNr) => {

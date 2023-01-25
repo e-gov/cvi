@@ -14,10 +14,10 @@ import { ModalComponent } from './modal.component';
 import { DOCUMENT } from '@angular/common';
 
 @Directive({
-  selector: '[veeraNgModal]',
+  selector: '[cviNgModal]',
 })
 export class ModalDirective implements OnInit {
-  @Input() veeraNgModal!: TemplateRef<any>;
+  @Input() cviNgModal!: TemplateRef<any>;
   @Input() open = false;
 
   private componentRef: ComponentRef<ModalComponent> | null = null;
@@ -46,7 +46,7 @@ export class ModalDirective implements OnInit {
 
   private createModal() {
     this.componentRef = this.viewContainerRef.createComponent(ModalComponent);
-    this.componentRef.instance.templateRef = this.veeraNgModal;
+    this.componentRef.instance.templateRef = this.cviNgModal;
     this.componentRef.instance.closed.subscribe(() => this.hideModal());
   }
 

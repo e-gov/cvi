@@ -67,31 +67,31 @@ const Template: Story<TableComponent> = (args: TableComponent) => ({
   },
   /* template */
   template: `
-  <veera-ng-table [data]="data">
+  <cvi-ng-table [data]="data">
     <ng-template #headers>
       <ng-container *ngFor="let headerLabel of headerLabels">
-        <th veera-ng-header-cell>{{ headerLabel }}</th>
+        <th cvi-ng-header-cell>{{ headerLabel }}</th>
       </ng-container>
     </ng-template>
     <ng-template #rows let-row>
-      <td veera-ng-body-cell>{{ row.event }}</td>
-      <td veera-ng-body-cell>
-        <veera-ng-status-badge [severity]="row.statusSeverity" [label]="getStatusBadgeLabelBySeverity(row.statusSeverity)"></veera-ng-status-badge>
+      <td cvi-ng-body-cell>{{ row.event }}</td>
+      <td cvi-ng-body-cell>
+        <cvi-ng-status-badge [severity]="row.statusSeverity" [label]="getStatusBadgeLabelBySeverity(row.statusSeverity)"></cvi-ng-status-badge>
       </td>
-      <td veera-ng-body-cell>{{ row.lastChanged }}</td>
-      <td veera-ng-body-cell>
-        <veera-ng-track [gap]="rowIconGap">
+      <td cvi-ng-body-cell>{{ row.lastChanged }}</td>
+      <td cvi-ng-body-cell>
+        <cvi-ng-track [gap]="rowIconGap">
           <button *ngFor="let icon of row.icons" [attr.title]="icon.actionLabel">
-            <veera-ng-screenreader-text [label]="icon.actionLabel"></veera-ng-screenreader-text>
-            <veera-ng-icon [name]="icon.iconName"
+            <cvi-ng-screenreader-text [label]="icon.actionLabel"></cvi-ng-screenreader-text>
+            <cvi-ng-icon [name]="icon.iconName"
                            [svgClass]="svgClass"
                            [height]="rowIconHeight">
-            </veera-ng-icon>
+            </cvi-ng-icon>
           </button>
-        </veera-ng-track>
+        </cvi-ng-track>
       </td>
     </ng-template>
-  </veera-ng-table>
+  </cvi-ng-table>
   `,
 });
 
@@ -116,42 +116,42 @@ const TemplateWithToolbar: Story<TableComponent> = (args: TableComponent) => {
     },
     /* template */
     template: `
-    <veera-ng-table [data]="data">
+    <cvi-ng-table [data]="data">
 
-      <veera-ng-track horizontalAlignment="justify">
-        <veera-ng-form-item label="Otsi sündmusteenust" htmlId="some-table-search-id">
-          <veera-ng-input placeholder="Abiellumine" htmlId="some-table-search-id" suffixIconName="loupe"></veera-ng-input>
-        </veera-ng-form-item>
-        <veera-ng-button appearance="text">
-          <veera-ng-track [gap]="2">
-            <veera-ng-icon name="add" [height]="14"></veera-ng-icon>
+      <cvi-ng-track horizontalAlignment="justify">
+        <cvi-ng-form-item label="Otsi sündmusteenust" htmlId="some-table-search-id">
+          <cvi-ng-input placeholder="Abiellumine" htmlId="some-table-search-id" suffixIconName="loupe"></cvi-ng-input>
+        </cvi-ng-form-item>
+        <cvi-ng-button appearance="text">
+          <cvi-ng-track [gap]="2">
+            <cvi-ng-icon name="add" [height]="14"></cvi-ng-icon>
             Lisa uus sündmusteenus
-          </veera-ng-track>
-        </veera-ng-button>
-      </veera-ng-track>
+          </cvi-ng-track>
+        </cvi-ng-button>
+      </cvi-ng-track>
 
       <ng-template #headers>
         <ng-container *ngFor="let headerLabel of headerLabels">
-          <th veera-ng-header-cell>{{ headerLabel }}</th>
+          <th cvi-ng-header-cell>{{ headerLabel }}</th>
         </ng-container>
       </ng-template>
 
       <ng-template #rows let-row>
-        <td veera-ng-body-cell>{{ row.event }}</td>
-        <td veera-ng-body-cell>{{ row.status }}</td>
-        <td veera-ng-body-cell>{{ row.lastChanged }}</td>
-        <td veera-ng-body-cell>
-          <veera-ng-track [gap]="rowIconGap">
+        <td cvi-ng-body-cell>{{ row.event }}</td>
+        <td cvi-ng-body-cell>{{ row.status }}</td>
+        <td cvi-ng-body-cell>{{ row.lastChanged }}</td>
+        <td cvi-ng-body-cell>
+          <cvi-ng-track [gap]="rowIconGap">
             <button *ngFor="let icon of row.icons" [attr.title]="icon.actionLabel">
-              <veera-ng-screenreader-text [label]="icon.actionLabel"></veera-ng-screenreader-text>
-              <veera-ng-icon [name]="icon.iconName"
+              <cvi-ng-screenreader-text [label]="icon.actionLabel"></cvi-ng-screenreader-text>
+              <cvi-ng-icon [name]="icon.iconName"
                              [height]="rowIconHeight">
-              </veera-ng-icon>
+              </cvi-ng-icon>
             </button>
-          </veera-ng-track>
+          </cvi-ng-track>
         </td>
       </ng-template>
-    </veera-ng-table>
+    </cvi-ng-table>
     `,
   };
 };

@@ -1,4 +1,4 @@
-@mixin veera-feedback($base: &) {
+@mixin cvi-feedback($base: &) {
 
   @at-root {
     #{$base}__icon-svg {

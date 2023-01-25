@@ -2,12 +2,12 @@
 
 Feature | Description
 - | -
-Selector | `veera-ng-reorderable-list`
+Selector | `cvi-ng-reorderable-list`
 Component name | `ReorderableListComponent`
 Design system module | -
 Content | yes
 Permitted parent/ancestors | any
-Permitted children | `veera-ng-reorderable-list-item`
+Permitted children | `cvi-ng-reorderable-list-item`
 
 ## Where to use
 

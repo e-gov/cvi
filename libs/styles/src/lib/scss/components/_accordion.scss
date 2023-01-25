@@ -1,11 +1,11 @@
 @use 'sass:map';
 
-@mixin veera-accordion($base: &) {
+@mixin cvi-accordion($base: &) {
   $padding-inline: get-spacing('kuressaare');
   $header-padding-block: get-spacing('elva');
   $toggle-icon-width: 24px;
   $content-padding-left: $toggle-icon-width +
-    map.get($veera-spacing-patterns, 'kuressaare') * 2;
+    map.get($cvi-spacing-patterns, 'kuressaare') * 2;
   $color-disabled: get-color(black-coral-2);
   $item-detail-margin: calc(get-spacing('haapsalu') * -1);
 
@@ -17,7 +17,7 @@
     }
 
     #{$base}__item {
-      @include veera-breakpoint-down(sm) {
+      @include cvi-breakpoint-down(sm) {
         border-bottom: 1px solid get-color(black-coral-2);
 
         &:first-child {
@@ -25,9 +25,9 @@
         }
       }
 
-      @include veera-breakpoint-up(sm) {
+      @include cvi-breakpoint-up(sm) {
         border: 1px solid get-color(black-coral-2);
-        border-radius: $veera-radius-s;
+        border-radius: $cvi-radius-s;
       }
     }
 
@@ -39,7 +39,7 @@
       padding-block: $header-padding-block;
       text-align: left;
       width: 100%;
-      font-size: $veera-font-size-100;
+      font-size: $cvi-font-size-100;
       color: get-color(black-coral-15);
 
       &.is-disabled {
@@ -47,7 +47,7 @@
         color: $color-disabled;
       }
 
-      @include veera-breakpoint-down(sm) {
+      @include cvi-breakpoint-down(sm) {
         padding: 12px 0;
         flex-direction: row-reverse;
         justify-content: space-between;
@@ -78,7 +78,7 @@
 
     #{$base}__item-details,
     #{$base}__item-content-inner {
-      @include veera-breakpoint-up(sm) {
+      @include cvi-breakpoint-up(sm) {
         padding-left: $content-padding-left;
         padding-right: $padding-inline;
       }
@@ -89,14 +89,14 @@
       padding-block: $header-padding-block;
       margin-bottom: $header-padding-block;
 
-      @include veera-breakpoint-down(sm) {
-        font-size: $veera-font-size-70;
+      @include cvi-breakpoint-down(sm) {
+        font-size: $cvi-font-size-70;
         margin-left: $item-detail-margin;
         margin-right: $item-detail-margin;
         padding-left: get-spacing('valga');
       }
-      @include veera-breakpoint-up(sm) {
-        font-size: $veera-font-size-80;
+      @include cvi-breakpoint-up(sm) {
+        font-size: $cvi-font-size-80;
       }
     }
   }

@@ -1,11 +1,11 @@
 import { Directive, TemplateRef } from '@angular/core';
 
-@Directive({ selector: '[veeraNgSelectLabelTemplate]' })
+@Directive({ selector: '[cviNgSelectLabelTemplate]' })
 export class LabelTemplateDirective {
   constructor(public template: TemplateRef<any>) {}
 }
 
-@Directive({ selector: '[veeraNgSelectOptionTemplate]' })
+@Directive({ selector: '[cviNgSelectOptionTemplate]' })
 export class OptionTemplateDirective {
   constructor(public template: TemplateRef<any>) {}
 }

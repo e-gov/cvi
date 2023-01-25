@@ -2,7 +2,7 @@
 
 Feature | Description
 - | -
-Sass component | `veera-track`
+Sass component | `cvi-track`
 Corresponding Javascript component | `TrackComponent`
 Design system module | -
 Permitted parent/ancestors | any
@@ -14,4 +14,4 @@ Use with multiple children to provide a flex- or grid-like layout and ensure equ
 
 ## How to use
 
-Add directly to HTML using `.veera-track*` classes or `@include` mixin `@veera-track` in your Sass code. When including the mixin, you can change the base class with `$base` parameter.
+Add directly to HTML using `.cvi-track*` classes or `@include` mixin `@cvi-track` in your Sass code. When including the mixin, you can change the base class with `$base` parameter.

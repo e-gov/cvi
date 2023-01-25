@@ -2,7 +2,7 @@
 
 Feature | Description
 - | -
-  Selector | `veera-ng-breadcrumbs`
+  Selector | `cvi-ng-breadcrumbs`
   Component name | `BreadcrumbsComponent`
   Design system module | -
   Permitted parent/ancestors | any

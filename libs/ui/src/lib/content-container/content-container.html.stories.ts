@@ -26,7 +26,7 @@ const Template: Story = (args) => ({
   props: args,
   /* template */
   template: `
-    <div class="veera-content-container">
+    <div class="cvi-content-container">
       {{ content }}
     </div>
   `,

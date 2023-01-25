@@ -11,8 +11,8 @@ import {
 import { CharacterCounterComponent } from './character-counter.component';
 
 @Directive({
-  selector: '[veeraNgCharacterCounter]',
-  exportAs: 'veeraNgCharacterCounter',
+  selector: '[cviNgCharacterCounter]',
+  exportAs: 'cviNgCharacterCounter',
 })
 export class CharacterCounterDirective implements AfterViewInit {
   @Input() maxChars = '';

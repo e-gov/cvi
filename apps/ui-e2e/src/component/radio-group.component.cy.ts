@@ -7,8 +7,8 @@ describe('RadioGroupComponent', () => {
     cy.loadStory('Angular Form Radio Button Group', 'Default')
       .runRadioGroupCommonTest('regular')
       .get('[data-cy="option_1"]')
-      .shouldHaveClasses('label', 'veera-radio-group__item-inner')
-      .shouldHaveClasses('input', 'veera-radio-group__item-control');
+      .shouldHaveClasses('label', 'cvi-radio-group__item-inner')
+      .shouldHaveClasses('input', 'cvi-radio-group__item-control');
 
     cy.get('[type="radio"]')
       .first()
@@ -24,8 +24,8 @@ describe('RadioGroupComponent', () => {
       .within(() => {
         cy.shouldHaveClasses(
           'label',
-          'veera-radio-group__item-inner'
-        ).shouldHaveClasses('input', 'veera-radio-group__input');
+          'cvi-radio-group__item-inner'
+        ).shouldHaveClasses('input', 'cvi-radio-group__input');
       });
 
     cy.get('[data-cy="option_1"]')
@@ -45,8 +45,8 @@ describe('RadioGroupComponent', () => {
       .within(() => {
         cy.shouldHaveClasses(
           'label',
-          'veera-radio-group__item-inner'
-        ).shouldHaveClasses('input', 'veera-radio-group__input');
+          'cvi-radio-group__item-inner'
+        ).shouldHaveClasses('input', 'cvi-radio-group__input');
       });
 
     cy.get('[data-cy="option_1"]')

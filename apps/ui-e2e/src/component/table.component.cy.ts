@@ -5,14 +5,14 @@ describe('TableComponent', () => {
 
   it('Renders default table', () => {
     cy.loadStory('Angular Table', 'Default')
-      .shouldHaveClasses('div', 'veera-table__inner')
+      .shouldHaveClasses('div', 'cvi-table__inner')
       .within(() => {
-        cy.shouldHaveClasses('table', 'veera-table__table').within(() => {
-          cy.shouldHaveClasses('tr', 'veera-table__header-row').within(() => {
-            cy.shouldHaveClasses('th', 'veera-table__header-cell');
+        cy.shouldHaveClasses('table', 'cvi-table__table').within(() => {
+          cy.shouldHaveClasses('tr', 'cvi-table__header-row').within(() => {
+            cy.shouldHaveClasses('th', 'cvi-table__header-cell');
           });
-          cy.shouldHaveClasses('tr', 'veera-table__body-row').within(() => {
-            cy.shouldHaveClasses('td', 'veera-table__body-cell');
+          cy.shouldHaveClasses('tr', 'cvi-table__body-row').within(() => {
+            cy.shouldHaveClasses('td', 'cvi-table__body-cell');
           });
         });
       });

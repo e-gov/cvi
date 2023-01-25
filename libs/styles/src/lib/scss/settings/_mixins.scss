@@ -1,4 +1,4 @@
-@mixin veera-screenreader-text {
+@mixin cvi-screenreader-text {
   position: absolute;
   overflow: hidden;
   clip: rect(0 0 0 0);
@@ -11,14 +11,14 @@
   white-space: nowrap;
 }
 
-@mixin veera-breakpoint-down($breakpoint) {
-  @media (max-width: #{map-get($veera-grid-breakpoints, $breakpoint)}) {
+@mixin cvi-breakpoint-down($breakpoint) {
+  @media (max-width: #{map-get($cvi-grid-breakpoints, $breakpoint)}) {
     @content;
   }
 }
 
-@mixin veera-breakpoint-up($breakpoint) {
-  @media (min-width: #{map-get($veera-grid-breakpoints, $breakpoint) + 1px}) {
+@mixin cvi-breakpoint-up($breakpoint) {
+  @media (min-width: #{map-get($cvi-grid-breakpoints, $breakpoint) + 1px}) {
     @content;
   }
 }

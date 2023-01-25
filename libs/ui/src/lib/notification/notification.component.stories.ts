@@ -23,7 +23,7 @@ const Template: Story<NotificationComponent> = (
   props: args,
   /* template */
   template: `
-    <veera-ng-notification [severity]="severity"
+    <cvi-ng-notification [severity]="severity"
                            [size]="size"
                            [showIcon]="showIcon"
                            [showCloseButton]="showCloseButton"
@@ -31,7 +31,7 @@ const Template: Story<NotificationComponent> = (
                            [iconName]="iconName"
     >
       {{content}}
-    </veera-ng-notification>
+    </cvi-ng-notification>
   `,
 });
 

@@ -16,14 +16,14 @@ export class SafeHtmlPipe implements PipeTransform {
   private sanitize(dirty: string): string {
     return sanitizeHtml(dirty, {
       allowedTags: sanitizeHtml?.defaults?.allowedTags?.concat([
-        'veera-web-labeled-icon',
-        'veera-web-icon',
+        'cvi-web-labeled-icon',
+        'cvi-web-icon',
       ]),
       allowedAttributes: {
         ...sanitizeHtml?.defaults?.allowedAttributes,
         '*': ['class'],
-        'veera-web-labeled-icon': ['name'],
-        'veera-web-icon': ['name'],
+        'cvi-web-labeled-icon': ['name'],
+        'cvi-web-icon': ['name'],
       },
     });
   }
