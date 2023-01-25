@@ -21,8 +21,8 @@ export class FormItemComponent {
   @Input() required = false;
 
   @HostBinding('class') get getHostClasses(): string {
-    return `cvi-form-item cvi-form-item--label-position-${
-      this.labelPosition
-    }${this.required ? ' cvi-form-item--is-required' : ''}`;
+    return `cvi-form-item cvi-form-item--label-position-${this.labelPosition}${
+      this.required ? ' cvi-form-item--is-required' : ''
+    }`;
   }
 }

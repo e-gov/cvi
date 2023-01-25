@@ -10,15 +10,11 @@ import { Component } from '@angular/core';
       <cvi-ng-button (click)="openSuccessToast()"
         >Open Success Toast</cvi-ng-button
       >
-      <cvi-ng-button (click)="openInfoToast()"
-        >Open Info Toast</cvi-ng-button
-      >
+      <cvi-ng-button (click)="openInfoToast()">Open Info Toast</cvi-ng-button>
       <cvi-ng-button (click)="openWarningToast()"
         >Open Warning Toast</cvi-ng-button
       >
-      <cvi-ng-button (click)="openErrorToast()"
-        >Open Error Toast</cvi-ng-button
-      >
+      <cvi-ng-button (click)="openErrorToast()">Open Error Toast</cvi-ng-button>
     </cvi-ng-track>
   `,
 })

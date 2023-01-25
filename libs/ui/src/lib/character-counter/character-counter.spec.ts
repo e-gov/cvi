@@ -41,9 +41,7 @@ class TestRandomComponent {}
       cviNgCharacterCounter
       [maxChars]="10"
     ></cvi-ng-test-text-input>
-    <cvi-ng-test-text-input
-      cviNgCharacterCounter
-    ></cvi-ng-test-text-input>
+    <cvi-ng-test-text-input cviNgCharacterCounter></cvi-ng-test-text-input>
     <cvi-ng-test-button cviNgCharacterCounter></cvi-ng-test-button>
     <cvi-ng-test-random cviNgCharacterCounter></cvi-ng-test-random>`,
 })
