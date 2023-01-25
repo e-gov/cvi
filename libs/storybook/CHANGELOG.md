@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [1.1.0](https://github.com/e-gov/cvi/compare/storybook-1.0.1...storybook-1.1.0) (2023-01-25)
+
+
+### Features
+
+* change package scope to egov ([#6](https://github.com/e-gov/cvi/issues/6)) ([4c49553](https://github.com/e-gov/cvi/commit/4c4955334c45819bf1940bab2f4d89d87c54f56b))
+
+
+
 ## [1.0.1](https://github.com/e-gov/cvi/compare/storybook-1.0.0...storybook-1.0.1) (2023-01-25)
 
 
