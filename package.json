@@ -42,7 +42,7 @@
     "@fontsource/roboto": "^4.5.8",
     "@ngx-translate/core": "^14.0.0",
     "@ngx-translate/http-loader": "^7.0.0",
-    "@nrwl/angular": "14.8.6",
+    "@nrwl/angular": "15.6.2",
     "rxjs": "~7.5.6",
     "sanitize-html": "2.7.1",
     "svg-to-ts": "^8.8.1",
