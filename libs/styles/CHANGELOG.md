@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [1.2.0](https://github.com/e-gov/cvi/compare/styles-1.1.0...styles-1.2.0) (2023-01-25)
+
+
+### Features
+
+* **ng:** custom mobile breadcrumb EBS-191 STPA-204 ([#10](https://github.com/e-gov/cvi/issues/10)) ([84ebb7d](https://github.com/e-gov/cvi/commit/84ebb7daf9b928aba1699148dbccdce9d2b582bd))
+
+
+
 # [1.1.0](https://github.com/e-gov/cvi/compare/styles-1.0.1...styles-1.1.0) (2023-01-25)
 
 
