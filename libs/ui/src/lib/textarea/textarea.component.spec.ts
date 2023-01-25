@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TextareaComponent } from '@ria/cvi-ng';
+import { TextareaComponent } from '@egov/cvi-ng';
 import { TextFieldModule } from '@angular/cdk/text-field';
 
 describe('TextareaComponent', () => {

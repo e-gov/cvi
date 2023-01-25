@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { CviIcon, CviIconName } from '@ria/cvi-icons';
+import { CviIcon, CviIconName } from '@egov/cvi-icons';
 
 @Injectable({
   providedIn: 'root',

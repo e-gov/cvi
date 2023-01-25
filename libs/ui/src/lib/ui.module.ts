@@ -51,7 +51,7 @@ import {
   cviScreenShare,
   cviSuccess,
   cviWarningAmber,
-} from '@ria/cvi-icons';
+} from '@egov/cvi-icons';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
 import { SelectComponent } from './select/select.component';

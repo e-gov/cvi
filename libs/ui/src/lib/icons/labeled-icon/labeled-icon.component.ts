@@ -6,7 +6,7 @@ import {
   Input,
   ViewChild,
 } from '@angular/core';
-import { CviIconName } from '@ria/cvi-icons';
+import { CviIconName } from '@egov/cvi-icons';
 import { iconSizeDefault } from '../icon/icon';
 import { LabeledIconPosition } from './icon-position';
 import { LabeledIconVerticalAlignment } from './vertical-alignment';

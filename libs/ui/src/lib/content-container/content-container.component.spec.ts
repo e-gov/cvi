@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ContentContainerComponent } from '@ria/cvi-ng';
+import { ContentContainerComponent } from '@egov/cvi-ng';
 
 describe('ContentContainerComponent', () => {
   let component: ContentContainerComponent;

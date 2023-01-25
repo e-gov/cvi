@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AccordionComponent } from '@ria/cvi-ng';
+import { AccordionComponent } from '@egov/cvi-ng';
 
 describe('AccordionComponent', () => {
   let component: AccordionComponent;

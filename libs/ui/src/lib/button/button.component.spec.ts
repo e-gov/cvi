@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ButtonComponent } from '@ria/cvi-ng';
+import { ButtonComponent } from '@egov/cvi-ng';
 
 describe('ButtonComponent', () => {
   let component: ButtonComponent;

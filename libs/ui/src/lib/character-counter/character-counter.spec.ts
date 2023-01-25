@@ -5,7 +5,7 @@ import { By } from '@angular/platform-browser';
 import {
   CharacterCounterComponent,
   CharacterCounterDirective,
-} from '@ria/cvi-ng';
+} from '@egov/cvi-ng';
 
 @Component({
   selector: 'cvi-ng-test-textarea',

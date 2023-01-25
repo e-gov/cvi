@@ -16,7 +16,7 @@ import {
   RadioGroupAppearance,
   LabeledIconPosition,
   LabeledIconVerticalAlignment,
-} from '@ria/cvi-ng';
+} from '@egov/cvi-ng';
 
 type AttrNameValuePair = { name: string; value: string | number };
 
