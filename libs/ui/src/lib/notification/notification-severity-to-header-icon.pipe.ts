@@ -1,6 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { NotificationSeverity } from './notification';
-import { CviIconName } from '@ria/cvi-icons';
+import { CviIconName } from '@egov/cvi-icons';
 
 @Pipe({
   name: 'toHeaderIcon',

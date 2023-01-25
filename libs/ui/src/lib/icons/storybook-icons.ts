@@ -1,5 +1,5 @@
-import * as iconsModule from '@ria/cvi-icons';
-import { CviIcon } from '@ria/cvi-icons';
+import * as iconsModule from '@egov/cvi-icons';
+import { CviIcon } from '@egov/cvi-icons';
 
 const icons = Object.entries(iconsModule)
   .filter((item) => item[0] !== 'completeIconSet')

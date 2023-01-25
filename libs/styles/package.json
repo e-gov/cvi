@@ -1,5 +1,5 @@
 {
-  "name": "@ria/cvi-styles",
+  "name": "@egov/cvi-styles",
   "version": "1.0.1",
   "dependencies": {
     "tslib": "^2.3.0",

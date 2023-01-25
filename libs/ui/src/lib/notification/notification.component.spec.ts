@@ -4,7 +4,7 @@ import {
   IconComponent,
   NotificationComponent,
   NotificationSeverityToHeaderIconPipe,
-} from '@ria/cvi-ng';
+} from '@egov/cvi-ng';
 
 describe('NotificationComponent', () => {
   let component: NotificationComponent;

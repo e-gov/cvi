@@ -9,7 +9,7 @@ import {
 } from '@angular/core';
 import { IconsRegistry } from '../icons-registry.service';
 import { DOCUMENT } from '@angular/common';
-import { CviIconName } from '@ria/cvi-icons';
+import { CviIconName } from '@egov/cvi-icons';
 import { iconSizeDefault } from './icon';
 
 @Component({

@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { InputComponent } from '@ria/cvi-ng';
+import { InputComponent } from '@egov/cvi-ng';
 
 describe('InputComponent', () => {
   let component: InputComponent;

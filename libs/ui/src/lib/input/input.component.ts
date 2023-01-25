@@ -6,7 +6,7 @@ import {
   Input,
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
-import { CviIconName } from '@ria/cvi-icons';
+import { CviIconName } from '@egov/cvi-icons';
 
 @Component({
   selector: 'cvi-ng-input',

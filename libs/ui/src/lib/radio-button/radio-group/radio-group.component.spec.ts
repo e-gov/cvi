@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RadioGroupComponent } from '@ria/cvi-ng';
+import { RadioGroupComponent } from '@egov/cvi-ng';
 
 describe('RadioGroupComponent', () => {
   let component: RadioGroupComponent;

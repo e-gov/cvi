@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FeedbackComponent } from '@ria/cvi-ng';
+import { FeedbackComponent } from '@egov/cvi-ng';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('ArticleFeedbackComponent', () => {

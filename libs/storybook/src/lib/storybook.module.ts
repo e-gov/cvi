@@ -21,7 +21,7 @@ import { StorybookCurrentComponentDirective } from './directives/storybook-curre
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // eslint-disable-next-line @nrwl/nx/enforce-module-boundaries
 import { storybookIcons } from '../../../ui/src/lib/icons/storybook-icons';
-import * as cviNg from '@ria/cvi-ng';
+import * as cviNg from '@egov/cvi-ng';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, 'i18n/', '.json');

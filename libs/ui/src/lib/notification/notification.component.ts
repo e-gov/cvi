@@ -5,7 +5,7 @@ import {
   Input,
   Output,
 } from '@angular/core';
-import { CviIconName } from '@ria/cvi-icons';
+import { CviIconName } from '@egov/cvi-icons';
 import { NotificationSeverity, NotificationSize } from './notification';
 import { NotificationSeverityToHeaderIconPipe } from './notification-severity-to-header-icon.pipe';
 

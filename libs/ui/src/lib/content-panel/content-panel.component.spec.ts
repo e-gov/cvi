@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ContentPanelComponent } from '@ria/cvi-ng';
+import { ContentPanelComponent } from '@egov/cvi-ng';
 
 describe('ContentPanelComponent', () => {
   let component: ContentPanelComponent;

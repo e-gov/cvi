@@ -17,9 +17,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@ria/cvi-icons": ["dist/libs/icons/index"],
-      "@ria/cvi-ng": ["libs/ui/src/index.ts"],
-      "@ria/cvi-styles": ["libs/styles/src/index.ts"]
+      "@egov/cvi-icons": ["dist/libs/icons/index"],
+      "@egov/cvi-ng": ["libs/ui/src/index.ts"],
+      "@egov/cvi-styles": ["libs/styles/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

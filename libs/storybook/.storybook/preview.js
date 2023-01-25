@@ -1,6 +1,6 @@
 import { moduleMetadata } from '@storybook/angular';
 import { setCompodocJson } from '@storybook/addon-docs/angular';
-import { UiModule } from '@ria/cvi-ng';
+import { UiModule } from '@egov/cvi-ng';
 import { StorybookModule } from '../src/lib/storybook.module';
 import docJson from './documentation.json';
 import sortingOrder from './sorting-order';
