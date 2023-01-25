@@ -2,7 +2,8 @@
 
 This repository includes a shared CSS library (preprocessed with Sass) and HTML examples based on it, as well as a UI kit in Angular and a typed (and tree-shakable!) icon library.
 
-By design, the CSS has no dependency on a specific Javascript framework (design systems/frameworks such as Bootstrap or Google's Material) and since the styles and html is separated then interested contributors can easily add component libraries in other frameworks such as React or Vue.js.
+By design, the CSS has no dependency on a specific Javascript framework and since the styles and html is separated then interested contributors can easily add component libraries in other frameworks such as React or Vue.js.
+Also, the Angular UI library has no dependency to any design system/framework such as Bootstrap or Google's Material in order to reduce dependence on 3rd party vendors.
 
 ## Quick Start & Documentation
 
