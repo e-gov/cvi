@@ -18,8 +18,8 @@ export default {
     },
   },
   args: {
-    title: 'First step is the importantest',
-    content: 'Nevertheless, Cosy Moments thrives. It has its public.',
+    title: 'First step',
+    content: 'First step content.',
   },
 } as Meta;
 

@@ -26,7 +26,7 @@ const Template: Story<StepComponent> = (args: StepComponent) => ({
       </cvi-ng-step>
       <cvi-ng-step dataAttribute="step_2" cviNgStorybookCurrentComponent>
         <cvi-ng-step-panel title="Another step">
-          Some content
+          Some more content
         </cvi-ng-step-panel>
       </cvi-ng-step>
     </cvi-ng-steps>
