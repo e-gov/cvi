@@ -9,7 +9,7 @@ import {
 import { SwapReorderableListItems } from '../swap-reorderable-list-items';
 
 @Component({
-  selector: 'veera-ng-reorderable-list-item',
+  selector: 'cvi-ng-reorderable-list-item',
   templateUrl: './reorderable-list-item.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
@@ -22,7 +22,7 @@ export class ReorderableListItemComponent {
   @Output() removeStepEvent = new EventEmitter<number>();
 
   @HostBinding('class') get getHostClasses(): string {
-    return `veera-reorderable-list__item`;
+    return `cvi-reorderable-list__item`;
   }
 
   get orderNr(): number {

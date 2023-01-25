@@ -2,7 +2,7 @@
 
 Feature | Description
 - | -
-  Selector | `veera-ng-breadcrumbs`
+  Selector | `cvi-ng-breadcrumbs`
   Component name | `BreadcrumbsComponent`
   Design system module | -
   Permitted parent/ancestors | any
@@ -14,4 +14,4 @@ Use to show info about navigation.
 
 ## How to use
 
-Add directly to HTML using `.veera-breadcrumbs*` classes or `@include` mixin `@veera-breadcrumbs` in your Sass code. When including the mixin, you can change the base class with `$base` parameter.
+Add directly to HTML using `.cvi-breadcrumbs*` classes or `@include` mixin `@cvi-breadcrumbs` in your Sass code. When including the mixin, you can change the base class with `$base` parameter.

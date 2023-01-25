@@ -9,7 +9,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { CviIconName } from '@ria/cvi-icons';
 
 @Component({
-  selector: 'veera-ng-input',
+  selector: 'cvi-ng-input',
   templateUrl: './input.component.html',
   providers: [
     {
@@ -39,9 +39,9 @@ export class InputComponent implements ControlValueAccessor {
   private onTouched: () => unknown = () => {};
 
   @HostBinding('class') get getHostClasses(): string {
-    return `veera-textfield veera-textfield--type-single-line${
-      this.disabled ? ' veera-textfield--is-disabled' : ''
-    }${this.suffixIconName ? ' veera-textfield--has-suffix-icon' : ''}`;
+    return `cvi-textfield cvi-textfield--type-single-line${
+      this.disabled ? ' cvi-textfield--is-disabled' : ''
+    }${this.suffixIconName ? ' cvi-textfield--has-suffix-icon' : ''}`;
   }
 
   constructor(private readonly cdRef: ChangeDetectorRef) {}

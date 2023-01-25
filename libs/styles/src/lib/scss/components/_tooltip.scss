@@ -1,4 +1,4 @@
-@mixin veera-tooltip($base: &) {
+@mixin cvi-tooltip($base: &) {
 
   @at-root {
 
@@ -8,24 +8,24 @@
       position: fixed;
     }
     #{$base}__content {
-      border-radius: $veera-radius-s;
+      border-radius: $cvi-radius-s;
       background-color: get-color(white);
       color: get-color(black-coral-18);
-      box-shadow: $veera-shadow-beta;
-      padding: var(--veera-spacing-rapla) var(--veera-spacing-elva);
+      box-shadow: $cvi-shadow-beta;
+      padding: var(--cvi-spacing-rapla) var(--cvi-spacing-elva);
       max-width: 400px;
       min-width: 125px;
-      font-size: $veera-font-size-80;
-      z-index: var(--veera-tooltip-zindex, #{get-z-index('tooltip', 'root')});
+      font-size: $cvi-font-size-80;
+      z-index: var(--cvi-tooltip-zindex, #{get-z-index('tooltip', 'root')});
 
-      @include veera-breakpoint-down(sm) {
+      @include cvi-breakpoint-down(sm) {
         max-width: 90vw;
       }
     }
 
     #{$base}__arrow {
-      // If --veera-tooltip-zindex is not set, --arrow-configurable-index is not set too
-      --arrow-configurable-index: calc(var(--veera-tooltip-zindex) + 1);
+      // If --cvi-tooltip-zindex is not set, --arrow-configurable-index is not set too
+      --arrow-configurable-index: calc(var(--cvi-tooltip-zindex) + 1);
 
       background-color: get-color(white);
       transform: rotate(45deg);

@@ -25,15 +25,15 @@ const Template: Story = (args) => ({
   props: args,
   /* template */
   template: `
-    <div class="veera-radio-group">
-      <fieldset class="veera-radio-group__inner">
-        <legend class="veera-radio-group__title">{{title}}</legend>
-        <ul class="veera-radio-group__list">
-          <li class="veera-radio-group__item">
-            <label class="veera-radio-group__item-inner">
+    <div class="cvi-radio-group">
+      <fieldset class="cvi-radio-group__inner">
+        <legend class="cvi-radio-group__title">{{title}}</legend>
+        <ul class="cvi-radio-group__list">
+          <li class="cvi-radio-group__item">
+            <label class="cvi-radio-group__item-inner">
               <input name="name"
                      value="value_1"
-                     class="veera-radio-group__item-control"
+                     class="cvi-radio-group__item-control"
                      type="radio"
               >
               <span>
@@ -41,11 +41,11 @@ const Template: Story = (args) => ({
               </span>
             </label>
           </li>
-          <li class="veera-radio-group__item">
-            <label class="veera-radio-group__item-inner">
+          <li class="cvi-radio-group__item">
+            <label class="cvi-radio-group__item-inner">
               <input name="name"
                      value="value_2"
-                     class="veera-radio-group__item-control"
+                     class="cvi-radio-group__item-control"
                      type="radio"
               >
               <span>
@@ -68,28 +68,28 @@ const OptionButtonTemplate: Story = (args) => ({
   props: args,
   /* template */
   template: `
-    <div class="veera-radio-group veera-radio-group--appearance-{{appearance}}">
-      <fieldset class="veera-radio-group__inner">
-        <legend class="veera-radio-group__title">{{title}}</legend>
-        <ul class="veera-radio-group__list">
-          <li class="veera-radio-group__item">
-            <label class="veera-radio-group__item-inner">
+    <div class="cvi-radio-group cvi-radio-group--appearance-{{appearance}}">
+      <fieldset class="cvi-radio-group__inner">
+        <legend class="cvi-radio-group__title">{{title}}</legend>
+        <ul class="cvi-radio-group__list">
+          <li class="cvi-radio-group__item">
+            <label class="cvi-radio-group__item-inner">
               <input type="radio"
-                     class="veera-radio-group__input"
+                     class="cvi-radio-group__input"
                      name="example-name"
                      value="value_1"
               />
-              <span class="veera-radio-group__button">{{label}}</span>
+              <span class="cvi-radio-group__button">{{label}}</span>
             </label>
           </li>
-          <li class="veera-radio-group__item">
-            <label class="veera-radio-group__item-inner">
+          <li class="cvi-radio-group__item">
+            <label class="cvi-radio-group__item-inner">
               <input type="radio"
-                     class="veera-radio-group__input"
+                     class="cvi-radio-group__input"
                      name="example-name"
                      value="value_2"
               />
-              <span class="veera-radio-group__button">
+              <span class="cvi-radio-group__button">
                 Option 2
               </span>
             </label>
@@ -110,28 +110,28 @@ const OptionButtonCompactTemplate: Story = (args) => ({
   props: args,
   /* template */
   template: `
-    <div class="veera-radio-group veera-radio-group--appearance-{{appearance}}">
-      <fieldset class="veera-radio-group__inner">
-        <legend class="veera-radio-group__title">{{title}}</legend>
-        <ul class="veera-radio-group__list">
-          <li class="veera-radio-group__item">
-            <label class="veera-radio-group__item-inner">
+    <div class="cvi-radio-group cvi-radio-group--appearance-{{appearance}}">
+      <fieldset class="cvi-radio-group__inner">
+        <legend class="cvi-radio-group__title">{{title}}</legend>
+        <ul class="cvi-radio-group__list">
+          <li class="cvi-radio-group__item">
+            <label class="cvi-radio-group__item-inner">
               <input type="radio"
-                     class="veera-radio-group__input"
+                     class="cvi-radio-group__input"
                      name="example-name"
                      value="value_1"
               />
-              <span class="veera-radio-group__button">{{label}}</span>
+              <span class="cvi-radio-group__button">{{label}}</span>
             </label>
           </li>
-          <li class="veera-radio-group__item">
-            <label class="veera-radio-group__item-inner">
+          <li class="cvi-radio-group__item">
+            <label class="cvi-radio-group__item-inner">
               <input type="radio"
-                     class="veera-radio-group__input"
+                     class="cvi-radio-group__input"
                      name="example-name"
                      value="value_2"
               />
-              <span class="veera-radio-group__button">
+              <span class="cvi-radio-group__button">
                 Option 2
               </span>
             </label>

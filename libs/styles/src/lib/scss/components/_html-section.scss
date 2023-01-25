@@ -1,7 +1,7 @@
 /* stylelint-disable selector-max-type, selector-class-pattern, selector-combinator-disallowed-list, selector-no-qualifying-type */
 
-@mixin veera-html-section($base: &) {
-  @include veera-breakpoint-up(sm) {
+@mixin cvi-html-section($base: &) {
+  @include cvi-breakpoint-up(sm) {
     #{$base}__content {
       display: flex;
       gap: get-spacing('parnu');
@@ -23,7 +23,7 @@
   @at-root {
 
     #{$base}__title {
-      font-size: $veera-font-size-220;
+      font-size: $cvi-font-size-220;
       margin-bottom: get-spacing('elva');
     }
 

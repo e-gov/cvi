@@ -17,11 +17,11 @@ const Template: Story<RadioGroupComponent> = (args: RadioGroupComponent) => ({
   props: args,
   /* template */
   template: `
-    <veera-ng-radio-group [title]="title">
-      <veera-ng-radio-button value="1" label="Label 1" dataAttribute="option_1"></veera-ng-radio-button>
-      <veera-ng-radio-button value="2" label="Label 2"></veera-ng-radio-button>
-      <veera-ng-radio-button value="3" label="Label 3"></veera-ng-radio-button>
-    </veera-ng-radio-group>
+    <cvi-ng-radio-group [title]="title">
+      <cvi-ng-radio-button value="1" label="Label 1" dataAttribute="option_1"></cvi-ng-radio-button>
+      <cvi-ng-radio-button value="2" label="Label 2"></cvi-ng-radio-button>
+      <cvi-ng-radio-button value="3" label="Label 3"></cvi-ng-radio-button>
+    </cvi-ng-radio-group>
   `,
 });
 
@@ -34,11 +34,11 @@ const OptionButtonTemplate: Story<RadioGroupComponent> = (
   props: args,
   /* template */
   template: `
-    <veera-ng-radio-group [title]="title" [appearance]="appearance">
-      <veera-ng-option-button value="no" label="No" dataAttribute="option_1"></veera-ng-option-button>
-      <veera-ng-option-button value="partially" label="Partially"></veera-ng-option-button>
-      <veera-ng-option-button value="yes" label="Yes"></veera-ng-option-button>
-    </veera-ng-radio-group>
+    <cvi-ng-radio-group [title]="title" [appearance]="appearance">
+      <cvi-ng-option-button value="no" label="No" dataAttribute="option_1"></cvi-ng-option-button>
+      <cvi-ng-option-button value="partially" label="Partially"></cvi-ng-option-button>
+      <cvi-ng-option-button value="yes" label="Yes"></cvi-ng-option-button>
+    </cvi-ng-radio-group>
   `,
 });
 
@@ -51,11 +51,11 @@ const OptionButtonCompactTemplate: Story<RadioGroupComponent> = (
   props: args,
   /* template */
   template: `
-    <veera-ng-radio-group [title]="title" [appearance]="appearance">
-      <veera-ng-option-button value="1" label="1" dataAttribute="option_1"></veera-ng-option-button>
-      <veera-ng-option-button value="2" label="2"></veera-ng-option-button>
-      <veera-ng-option-button value="3" label="3"></veera-ng-option-button>
-    </veera-ng-radio-group>
+    <cvi-ng-radio-group [title]="title" [appearance]="appearance">
+      <cvi-ng-option-button value="1" label="1" dataAttribute="option_1"></cvi-ng-option-button>
+      <cvi-ng-option-button value="2" label="2"></cvi-ng-option-button>
+      <cvi-ng-option-button value="3" label="3"></cvi-ng-option-button>
+    </cvi-ng-radio-group>
   `,
 });
 

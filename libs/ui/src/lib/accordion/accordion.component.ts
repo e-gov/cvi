@@ -19,7 +19,7 @@ import { AccordionItemDirective } from './directives/accordion-item.directive';
 import { BehaviorSubject, Subscription } from 'rxjs';
 
 @Component({
-  selector: 'veera-ng-accordion',
+  selector: 'cvi-ng-accordion',
   templateUrl: './accordion.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   animations: [
@@ -51,7 +51,7 @@ export class AccordionComponent implements AfterViewInit, OnDestroy {
   changesSubscription = new Subscription();
 
   @HostBinding('class') get getHostClasses(): string {
-    return `veera-accordion`;
+    return `cvi-accordion`;
   }
 
   ngAfterViewInit(): void {

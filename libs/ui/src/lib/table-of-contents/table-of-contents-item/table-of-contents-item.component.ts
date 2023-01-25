@@ -11,12 +11,12 @@ import { Subscription } from 'rxjs';
 import { TableOfContentsService } from '../table-of-contents.service';
 
 @Component({
-  selector: 'veera-ng-table-of-contents-item',
+  selector: 'cvi-ng-table-of-contents-item',
   templateUrl: './table-of-contents-item.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TableOfContentsItemComponent implements OnInit, OnDestroy {
-  /** Must be equal to a veeraNgToCSection directive value in order to have scroll tracking working */
+  /** Must be equal to a cviNgToCSection directive value in order to have scroll tracking working */
   @Input() href!: string;
   @Input() label = '';
 
@@ -24,7 +24,7 @@ export class TableOfContentsItemComponent implements OnInit, OnDestroy {
   @HostBinding('class.is-current') current = false;
 
   @HostBinding('class') get getHostClasses(): string {
-    return `veera-table-of-contents__aside-list-item`;
+    return `cvi-table-of-contents__aside-list-item`;
   }
 
   @HostBinding('attr.href') get getHref(): null {

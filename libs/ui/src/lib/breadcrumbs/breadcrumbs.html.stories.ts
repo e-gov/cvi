@@ -13,15 +13,15 @@ const Template: Story = (args) => ({
   props: args,
   /* template */
   template: `
-    <ul class="veera-breadcrumbs">
-      <li class="veera-breadcrumbs__item">
-        <a class="veera-breadcrumbs__item-link">Avaleht</a>
+    <ul class="cvi-breadcrumbs">
+      <li class="cvi-breadcrumbs__item">
+        <a class="cvi-breadcrumbs__item-link">Avaleht</a>
       </li>
-      <li class="veera-breadcrumbs__item">
-        <a class="veera-breadcrumbs__item-link">Abiellumine</a>
+      <li class="cvi-breadcrumbs__item">
+        <a class="cvi-breadcrumbs__item-link">Abiellumine</a>
       </li>
-      <li class="veera-breadcrumbs__item">
-        <a class="veera-breadcrumbs__item-link">Avalduse esitamine</a>
+      <li class="cvi-breadcrumbs__item">
+        <a class="cvi-breadcrumbs__item-link">Avalduse esitamine</a>
       </li>
     </ul>
   `,

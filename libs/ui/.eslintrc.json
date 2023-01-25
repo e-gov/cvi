@@ -13,7 +13,7 @@
           "error",
           {
             "type": "attribute",
-            "prefix": "veeraNg",
+            "prefix": "cviNg",
             "style": "camelCase"
           }
         ],
@@ -21,7 +21,7 @@
           "error",
           {
             "type": "element",
-            "prefix": "veera-ng",
+            "prefix": "cvi-ng",
             "style": "kebab-case"
           }
         ]

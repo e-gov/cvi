@@ -15,7 +15,7 @@ const Template: Story<BreadcrumbsComponent> = (args: BreadcrumbsComponent) => ({
   props: args,
   /* template */
   template: `
-    <veera-ng-breadcrumbs [breadcrumbLabels]="breadcrumbLabels"></veera-ng-breadcrumbs>
+    <cvi-ng-breadcrumbs [breadcrumbLabels]="breadcrumbLabels"></cvi-ng-breadcrumbs>
   `,
 });
 
@@ -28,10 +28,10 @@ const TemplateWithIcon: Story<BreadcrumbsComponent> = (
   props: args,
   /* template */
   template: `
-    <veera-ng-breadcrumbs
+    <cvi-ng-breadcrumbs
         [breadcrumbLabels]="breadcrumbLabels"
         [iconName]="iconName">
-    </veera-ng-breadcrumbs>
+    </cvi-ng-breadcrumbs>
   `,
 });
 

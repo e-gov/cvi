@@ -2,17 +2,17 @@
 
 Feature | Description
 - | -
-Selector | `veera-ng-table-of-contents-item`
+Selector | `cvi-ng-table-of-contents-item`
 Component name | `TableOfContentsItemComponent`
 Design system module | -
 Content | no
-Permitted parent/ancestors | `veera-ng-table-of-contents`
+Permitted parent/ancestors | `cvi-ng-table-of-contents`
 Permitted children | -
 
 ## Where to use
 
-Renders a table of contents navigation link in a `veera-ng-table-of-contents`.
+Renders a table of contents navigation link in a `cvi-ng-table-of-contents`.
 
 ## How to use
 
-See `veera-ng-table-of-contents-wrapper` docs.
+See `cvi-ng-table-of-contents-wrapper` docs.

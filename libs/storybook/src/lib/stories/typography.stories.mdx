@@ -18,17 +18,15 @@ export const sizes = [
 
 # Font size scale
 
-See [information on typography on the Veera Design System page](https://veera.eesti.ee/3d136290e/p/070c6e-tpograafia/b/1507db).
+CVI has many font sizes to choose from.
 
-Veera has many font sizes to choose from.
-
-You can pick a font size by employing Sass variables (prefixed with `$veera-font-size`).
+You can pick a font size by employing Sass variables (prefixed with `$cvi-font-size`).
 
 <Story name="Font sizes" height="650px">
   {{
     props: { sizes },
     template: `
-      <veera-ng-storybook-type-tester *ngFor="let size of sizes" [size]="size.name">Font size: {{ size.value }}px. City trail fallen select drop she tower else flight glass.</veera-ng-storybook-type-tester>
+      <cvi-ng-storybook-type-tester *ngFor="let size of sizes" [size]="size.name">Font size: {{ size.value }}px. City trail fallen select drop she tower else flight glass.</cvi-ng-storybook-type-tester>
     `,
   }}
 </Story>

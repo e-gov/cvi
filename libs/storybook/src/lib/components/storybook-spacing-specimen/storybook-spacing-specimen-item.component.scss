@@ -5,11 +5,11 @@
   &::before,
   &::after {
     content: '';
-    background-color: var(--veera-color-black-coral-16);
+    background-color: var(--cvi-color-black-coral-16);
     flex: 1 1 0;
     height: 100%;
   }
 }
 .label {
-  padding-top: var(--veera-spacing-paldiski);
+  padding-top: var(--cvi-spacing-paldiski);
 }

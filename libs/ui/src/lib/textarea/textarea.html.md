@@ -2,7 +2,7 @@
 
 Feature | Description
 - | -
-Sass component | `components/veera-textarea`
+Sass component | `components/cvi-textarea`
 Corresponding Javascript component | `TextareaComponent`
 Design system module | -
 Permitted parent/ancestors | any

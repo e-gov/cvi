@@ -5,17 +5,17 @@ describe('FormItemComponent', () => {
 
   it('Renders default form item', () => {
     cy.loadStory('Angular Form Form Item', 'Default')
-      .get('veera-ng-form-item')
+      .get('cvi-ng-form-item')
       .should('have.attr', 'ng-reflect-html-id', 'fksd4kfds')
-      .and('have.class', 'veera-form-item veera-form-item--label-position-top')
+      .and('have.class', 'cvi-form-item cvi-form-item--label-position-top')
       .contains('Example label')
-      .should('have.class', 'veera-form-item__label');
+      .should('have.class', 'cvi-form-item__label');
 
-    cy.get('veera-ng-form-item')
-      .get('veera-ng-input')
-      .should('have.class', 'veera-textfield')
+    cy.get('cvi-ng-form-item')
+      .get('cvi-ng-input')
+      .should('have.class', 'cvi-textfield')
       .get('input')
-      .should('have.class', 'veera-textfield__text-control')
+      .should('have.class', 'cvi-textfield__text-control')
       .and('have.id', 'fksd4kfds');
   });
 
@@ -23,36 +23,36 @@ describe('FormItemComponent', () => {
     cy.loadStory('Angular Form Form Item', 'Default')
       .changeArg('isLabelHidden', true)
       .changeArg('htmlId', 'Qwerty123')
-      .get('veera-ng-form-item')
+      .get('cvi-ng-form-item')
       .should('have.attr', 'ng-reflect-html-id', 'Qwerty123')
-      .and('have.class', 'veera-form-item veera-form-item--label-position-top')
-      .get('veera-ng-input')
-      .should('have.class', 'veera-textfield')
+      .and('have.class', 'cvi-form-item cvi-form-item--label-position-top')
+      .get('cvi-ng-input')
+      .should('have.class', 'cvi-textfield')
       .get('input')
-      .should('have.class', 'veera-textfield__text-control');
+      .should('have.class', 'cvi-textfield__text-control');
   });
 
   it('Renders required Form item', () => {
     cy.loadStory('Angular Form Form Item', 'Default')
       .changeArg('required', true)
-      .get('veera-ng-form-item')
+      .get('cvi-ng-form-item')
       .contains('Example label *');
   });
 
   it('Renders textarea form item', () => {
     cy.loadStory('Angular Form Form Item', 'With Textarea')
-      .get('veera-ng-form-item')
+      .get('cvi-ng-form-item')
       .should('have.attr', 'ng-reflect-html-id', 'fksd4kfds')
-      .and('have.class', 'veera-form-item veera-form-item--label-position-top')
+      .and('have.class', 'cvi-form-item cvi-form-item--label-position-top')
       .contains('Example label')
-      .should('have.class', 'veera-form-item__label');
+      .should('have.class', 'cvi-form-item__label');
 
-    cy.get('veera-ng-form-item')
-      .shouldHaveClasses('veera-ng-textarea', [
-        'veera-textfield',
-        'veera-textfield--type-multiple-lines',
+    cy.get('cvi-ng-form-item')
+      .shouldHaveClasses('cvi-ng-textarea', [
+        'cvi-textfield',
+        'cvi-textfield--type-multiple-lines',
       ])
-      .shouldHaveClasses('textarea', 'veera-textfield__text-control')
+      .shouldHaveClasses('textarea', 'cvi-textfield__text-control')
       .shouldHaveAttributes('textarea', [
         { name: 'id', value: 'fksd4kfds' },
         { name: 'placeholder', value: 'Placeholder text...' },

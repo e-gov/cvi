@@ -5,51 +5,51 @@ import { Component, Input } from '@angular/core';
 import { concatMap, delay, from, of } from 'rxjs';
 
 @Component({
-  selector: 'veera-ng-storybook-toc-html-example',
+  selector: 'cvi-ng-storybook-toc-html-example',
   template: `
     <div>
       <h2>An h2: pretty none change slept range afraid</h2>
-      <div [veeraNgStorybookRandomParagraphs]="10"></div>
+      <div [cviNgStorybookRandomParagraphs]="10"></div>
     </div>
     <div>
       <h3>An h3: explore single gain swam base farther courage</h3>
-      <div [veeraNgStorybookRandomParagraphs]="10"></div>
+      <div [cviNgStorybookRandomParagraphs]="10"></div>
     </div>
     <div>
       <div>
         <h2>A nested h2 heading: string baby explore</h2>
       </div>
-      <div [veeraNgStorybookRandomParagraphs]="10"></div>
+      <div [cviNgStorybookRandomParagraphs]="10"></div>
     </div>
   `,
 })
 class StorybookToCHTMLExampleComponent {}
 
 @Component({
-  selector: 'veera-ng-storybook-toc-html-steps-example',
+  selector: 'cvi-ng-storybook-toc-html-steps-example',
   template: `
     <div>
-      <div [veeraNgStorybookRandomParagraphs]="2"></div>
+      <div [cviNgStorybookRandomParagraphs]="2"></div>
       <ng-container *ngIf="headingDisplayed">
         <h2>An h2: pretty none change slept range afraid</h2>
-        <div [veeraNgStorybookRandomParagraphs]="10"></div>
+        <div [cviNgStorybookRandomParagraphs]="10"></div>
       </ng-container>
     </div>
     <div>
       <h3>An h3: explore single gain swam base farther courage</h3>
-      <div [veeraNgStorybookRandomParagraphs]="10"></div>
+      <div [cviNgStorybookRandomParagraphs]="10"></div>
     </div>
     <div>
       <div>
         <h2>A nested h2 heading 1: string baby explore</h2>
       </div>
-      <div [veeraNgStorybookRandomParagraphs]="10"></div>
+      <div [cviNgStorybookRandomParagraphs]="10"></div>
     </div>
     <div>
       <div>
         <h2>A nested h2 heading 2: string baby explore</h2>
       </div>
-      <div [veeraNgStorybookRandomParagraphs]="10"></div>
+      <div [cviNgStorybookRandomParagraphs]="10"></div>
     </div>
     <ng-container *ngIf="extraAsyncSections | async">
       <div *ngFor="let section of extraAsyncSections | async">
@@ -94,9 +94,9 @@ const Template: Story<GeneratedTableOfContentsComponent> = (
   },
   /* template */
   template: `
-    <veera-ng-generated-table-of-contents [title]="title" [headingSelector]="headingSelector">
-      <veera-ng-storybook-toc-html-example></veera-ng-storybook-toc-html-example>
-    </veera-ng-generated-table-of-contents>
+    <cvi-ng-generated-table-of-contents [title]="title" [headingSelector]="headingSelector">
+      <cvi-ng-storybook-toc-html-example></cvi-ng-storybook-toc-html-example>
+    </cvi-ng-generated-table-of-contents>
   `,
 });
 
@@ -130,37 +130,37 @@ const TemplateWithSteps: Story<GeneratedTableOfContentsComponent> = (
   },
   /* template */
   template: `
-    <veera-ng-steps title="Abiellumine" [currentStepIndex]="null" [hasTableOfContents]="true">
-      <p veera-steps="after-title">Custom content before steps</p>
-      <veera-ng-step>
-        <veera-ng-generated-table-of-contents [title]="title">
-          <veera-ng-step-panel title="Step One">
-            <veera-ng-storybook-toc-html-steps-example [extraAsyncSections]="extraAsyncSections"></veera-ng-storybook-toc-html-steps-example>
-          </veera-ng-step-panel>
-        </veera-ng-generated-table-of-contents>
-      </veera-ng-step>
-      <veera-ng-step>
-        <veera-ng-generated-table-of-contents [title]="title">
-          <veera-ng-step-panel title="Step Two">
+    <cvi-ng-steps title="Abiellumine" [currentStepIndex]="null" [hasTableOfContents]="true">
+      <p cvi-steps="after-title">Custom content before steps</p>
+      <cvi-ng-step>
+        <cvi-ng-generated-table-of-contents [title]="title">
+          <cvi-ng-step-panel title="Step One">
+            <cvi-ng-storybook-toc-html-steps-example [extraAsyncSections]="extraAsyncSections"></cvi-ng-storybook-toc-html-steps-example>
+          </cvi-ng-step-panel>
+        </cvi-ng-generated-table-of-contents>
+      </cvi-ng-step>
+      <cvi-ng-step>
+        <cvi-ng-generated-table-of-contents [title]="title">
+          <cvi-ng-step-panel title="Step Two">
             <div>
-              <div [veeraNgStorybookRandomParagraphs]="2"></div>
+              <div [cviNgStorybookRandomParagraphs]="2"></div>
                 <h2>Some random h2</h2>
-                <div [veeraNgStorybookRandomParagraphs]="10"></div>
+                <div [cviNgStorybookRandomParagraphs]="10"></div>
             </div>
             <div>
               <h3>A random h3 heading with a lot of sense in it</h3>
-              <div [veeraNgStorybookRandomParagraphs]="10"></div>
+              <div [cviNgStorybookRandomParagraphs]="10"></div>
             </div>
             <div>
               <div>
                 <h2>Papadiboopi</h2>
               </div>
-              <div [veeraNgStorybookRandomParagraphs]="10"></div>
+              <div [cviNgStorybookRandomParagraphs]="10"></div>
             </div>
-          </veera-ng-step-panel>
-        </veera-ng-generated-table-of-contents>
-      </veera-ng-step>
-    </veera-ng-steps>
+          </cvi-ng-step-panel>
+        </cvi-ng-generated-table-of-contents>
+      </cvi-ng-step>
+    </cvi-ng-steps>
   `,
 });
 

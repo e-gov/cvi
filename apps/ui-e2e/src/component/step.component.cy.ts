@@ -5,20 +5,20 @@ describe('StepComponent', () => {
 
   it('Renders default step', () => {
     cy.loadStory('Angular Steps Step', 'Default')
-      .shouldHaveClasses('[data-cy="steps_title"]', 'veera-steps__title')
-      .shouldHaveClasses('[data-cy="steps_container"]', 'veera-steps__inner')
-      .shouldHaveClasses('ol', 'veera-steps__list')
+      .shouldHaveClasses('[data-cy="steps_title"]', 'cvi-steps__title')
+      .shouldHaveClasses('[data-cy="steps_container"]', 'cvi-steps__inner')
+      .shouldHaveClasses('ol', 'cvi-steps__list')
       .within(() => {
         cy.shouldHaveClasses('li', [
-          'veera-steps__list-item',
+          'cvi-steps__list-item',
           'is-past',
           'is-current',
         ])
-          .shouldHaveClasses('button', 'veera-steps__list-item-button')
-          .shouldHaveClasses('div', 'veera-steps__list-item-inner')
-          .shouldHaveClasses('span', 'veera-steps__list-item-title')
-          .get('veera-ng-icon')
-          .shouldHaveClasses('svg', 'veera-steps__list-item-arrow-icon');
+          .shouldHaveClasses('button', 'cvi-steps__list-item-button')
+          .shouldHaveClasses('div', 'cvi-steps__list-item-inner')
+          .shouldHaveClasses('span', 'cvi-steps__list-item-title')
+          .get('cvi-ng-icon')
+          .shouldHaveClasses('svg', 'cvi-steps__list-item-arrow-icon');
       })
       .shouldBeVisible('[data-cy="step_1"]')
       .shouldNotBeVisible('[data-cy="step_2"]');

@@ -8,7 +8,7 @@ import {
 } from '@angular/core';
 
 @Component({
-  selector: 'veera-ng-radio-button',
+  selector: 'cvi-ng-radio-button',
   templateUrl: './radio-button.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

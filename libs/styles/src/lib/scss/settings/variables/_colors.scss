@@ -1,7 +1,7 @@
 @use 'sass:color';
 
 // Color codes
-$veera-colors: (
+$cvi-colors: (
   // Black coral
   black-coral-0: #f0f0f2,
   black-coral-1: #e1e2e5,
@@ -148,10 +148,10 @@ $veera-colors: (
 
 // CSS variables
 :root {
-  @each $name, $color in $veera-colors {
-    --veera-color-#{'' + $name}: #{$color};
+  @each $name, $color in $cvi-colors {
+    --cvi-color-#{'' + $name}: #{$color};
   }
-  @each $name, $color in $veera-colors {
-    --veera-color-rgb-#{'' + $name}: #{color.red($color) color.green($color) color.blue($color)};
+  @each $name, $color in $cvi-colors {
+    --cvi-color-rgb-#{'' + $name}: #{color.red($color) color.green($color) color.blue($color)};
   }
 }

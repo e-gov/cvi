@@ -1,7 +1,7 @@
 import { Component, HostBinding, Input } from '@angular/core';
 
 @Component({
-  selector: 'veera-ng-storybook-type-tester',
+  selector: 'cvi-ng-storybook-type-tester',
   template: `<ng-content></ng-content>`,
   styleUrls: ['./storybook-type-tester.component.scss'],
 })

@@ -10,7 +10,7 @@ import { IconComponent } from '../icons/icon/icon.component';
 import { LabeledIconComponent } from '../icons/labeled-icon/labeled-icon.component';
 
 @Component({
-  selector: 'veera-ng-html-section',
+  selector: 'cvi-ng-html-section',
   templateUrl: './html-section.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
@@ -22,8 +22,8 @@ export class HtmlSectionComponent implements OnInit {
 
   ngOnInit() {
     this.createCustomElements([
-      [LabeledIconComponent, 'veera-web-labeled-icon'],
-      [IconComponent, 'veera-web-icon'],
+      [LabeledIconComponent, 'cvi-web-labeled-icon'],
+      [IconComponent, 'cvi-web-icon'],
     ]);
   }
 

@@ -11,17 +11,17 @@ describe('ReorderableListComponent', () => {
       // 1st step
       .shouldHaveClasses(
         '[data-cy="reorderable-list-item-1"]',
-        'veera-reorderable-list__item'
+        'cvi-reorderable-list__item'
       )
       // Reordering buttons container
       .within(() => {
         cy.shouldHaveClasses(
           'div',
-          'veera-reorderable-list__ordering-buttons'
+          'cvi-reorderable-list__ordering-buttons'
         ).within(() => {
           cy.shouldBeVisible('[data-cy="step-1-set-as-next-button"]')
             .shouldNotBeVisible('[data-cy="step-1-set-as-previous-button"]')
-            .shouldHaveClasses('div', 'veera-reorderable-list__order-nr');
+            .shouldHaveClasses('div', 'cvi-reorderable-list__order-nr');
 
           cy.reorderableListItemShouldHaveOrderNr(1);
         });
@@ -30,20 +30,20 @@ describe('ReorderableListComponent', () => {
       .within(() => {
         cy.shouldHaveClasses(
           'button',
-          'veera-reorderable-list__remove-button'
+          'cvi-reorderable-list__remove-button'
         ).within(() => {
-          cy.shouldHaveAttributes('veera-ng-icon', {
+          cy.shouldHaveAttributes('cvi-ng-icon', {
             name: 'name',
             value: 'close',
-          }).shouldHaveClasses('svg', 'veera-reorderable-list__close-icon');
+          }).shouldHaveClasses('svg', 'cvi-reorderable-list__close-icon');
         });
       })
       // Step name label and input
       .within(() => {
         cy.shouldHaveClasses(
           'div',
-          'veera-reorderable-list__form-item-wrapper'
-        ).shouldExist('veera-ng-form-item');
+          'cvi-reorderable-list__form-item-wrapper'
+        ).shouldExist('cvi-ng-form-item');
       })
       // 2nd / middle step
       .get('[data-cy="reorderable-list-item-2"]')

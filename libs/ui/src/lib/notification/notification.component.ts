@@ -10,7 +10,7 @@ import { NotificationSeverity, NotificationSize } from './notification';
 import { NotificationSeverityToHeaderIconPipe } from './notification-severity-to-header-icon.pipe';
 
 @Component({
-  selector: 'veera-ng-notification',
+  selector: 'cvi-ng-notification',
   templateUrl: './notification.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

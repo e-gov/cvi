@@ -14,7 +14,7 @@ const Template: Story<TooltipDirective> = (args: TooltipDirective) => ({
     ...args,
   },
   template: `
-    <p [veeraNgTooltip]="'This tooltip is displayed when hovering, if you move mouse out of the element then tooltip dissapears'">
+    <p [cviNgTooltip]="'This tooltip is displayed when hovering, if you move mouse out of the element then tooltip dissapears'">
       Hover over this element to display tooltip
     </p>
   `,
@@ -25,25 +25,25 @@ const TemplateOnButton: Story<TooltipDirective> = (args: TooltipDirective) => ({
     ...args,
   },
   template: `
-    <veera-ng-notification [showIcon]="false" [showCloseButton]="false" [size]="'compact'">
+    <cvi-ng-notification [showIcon]="false" [showCloseButton]="false" [size]="'compact'">
       <p>When hovering on the questionmark, a tooltip appears.</p>
       <p>When clicking just on the tooltip, nothing should happen.</p>
       <p>When clicking on just the button but not the tooltip, a box appears.</p>
       <p>Clicking on a tooltip should not activate any other elements.</p>
-    </veera-ng-notification>
+    </cvi-ng-notification>
 
-    <veera-ng-track [horizontalAlignment]="'center'">
-      <veera-ng-button appearance="secondary" (click)="visible = !visible">
+    <cvi-ng-track [horizontalAlignment]="'center'">
+      <cvi-ng-button appearance="secondary" (click)="visible = !visible">
         Click
-        <veera-ng-icon [name]="'info'" [height]="'16'" [veeraNgTooltip]=
+        <cvi-ng-icon [name]="'info'" [height]="'16'" [cviNgTooltip]=
         "'This tooltip is displayed when hovering, if you move mouse out of element then tooltip dissapears'">
-        </veera-ng-icon>
-      </veera-ng-button>
-    </veera-ng-track>
+        </cvi-ng-icon>
+      </cvi-ng-button>
+    </cvi-ng-track>
 
-    <veera-ng-notification [showIcon]="false" [showCloseButton]="false" [size]="'compact'" *ngIf="visible">
+    <cvi-ng-notification [showIcon]="false" [showCloseButton]="false" [size]="'compact'" *ngIf="visible">
       <p>This should only appear when clicking on a button, not on the tooltip</p>
-    </veera-ng-notification>
+    </cvi-ng-notification>
   `,
 });
 
@@ -52,27 +52,27 @@ const TemplateEdgeTest: Story<TooltipDirective> = (args: TooltipDirective) => ({
     ...args,
   },
   template: `
-    <veera-ng-track [horizontalAlignment]="'center'">
-      <veera-ng-notification [showIcon]="false" [showCloseButton]="false" [size]="'compact'">
+    <cvi-ng-track [horizontalAlignment]="'center'">
+      <cvi-ng-notification [showIcon]="false" [showCloseButton]="false" [size]="'compact'">
         <p>When tooltip elements are located near the right or left side of the window,</p>
         <p>the tooltip is not centered above the element. Instead, tooltips are moved</p>
         <p>away from the sides to prevent being hidden behind the edge.</p>
-      </veera-ng-notification>
-    </veera-ng-track>
+      </cvi-ng-notification>
+    </cvi-ng-track>
 
     <div style="width: 95vw">
-      <veera-ng-button appearance="secondary" style="float: left">
-        <veera-ng-icon [name]="'info'" [height]="'16'" [veeraNgTooltip]=
+      <cvi-ng-button appearance="secondary" style="float: left">
+        <cvi-ng-icon [name]="'info'" [height]="'16'" [cviNgTooltip]=
         "'This tooltip is displayed when hovering, if you move mouse out of element then tooltip dissapears'">
-        </veera-ng-icon>
-      </veera-ng-button>
+        </cvi-ng-icon>
+      </cvi-ng-button>
 
-      <veera-ng-button appearance="secondary" style="float: right">
-        <veera-ng-icon [name]="'info'" [height]="'16'" [veeraNgTooltip]=
+      <cvi-ng-button appearance="secondary" style="float: right">
+        <cvi-ng-icon [name]="'info'" [height]="'16'" [cviNgTooltip]=
         "'This tooltip is displayed when hovering, if you move mouse out of element then tooltip dissapears'">
-        </veera-ng-icon>
+        </cvi-ng-icon>
         Some words here
-      </veera-ng-button>
+      </cvi-ng-button>
     </div>
   `,
 });
@@ -85,20 +85,20 @@ const TemplateHeaderTest: Story<TooltipDirective> = (
   },
   template: `
     <div style="position: fixed; text-align: center; top: 20px; left: 45%">
-      <veera-ng-button appearance="secondary">
-        <veera-ng-icon [name]="'info'" [height]="'16'" [veeraNgTooltip]=
+      <cvi-ng-button appearance="secondary">
+        <cvi-ng-icon [name]="'info'" [height]="'16'" [cviNgTooltip]=
         "'This tooltip is displayed when hovering, if you move mouse out of element then tooltip dissapears'">
-        </veera-ng-icon>
-      </veera-ng-button>
+        </cvi-ng-icon>
+      </cvi-ng-button>
     </div>
 
-    <veera-ng-track [horizontalAlignment]="'center'">
-      <veera-ng-notification [showIcon]="false" [showCloseButton]="false" [size]="'compact'">
+    <cvi-ng-track [horizontalAlignment]="'center'">
+      <cvi-ng-notification [showIcon]="false" [showCloseButton]="false" [size]="'compact'">
         <p>When tooltip elements are located near the top edge of the window,</p>
         <p>the tooltip is hidden above the window edge. To avoid this problem,</p>
         <p>tooltip should not be placed to the top of the window.</p>
-      </veera-ng-notification>
-    </veera-ng-track>
+      </cvi-ng-notification>
+    </cvi-ng-track>
     `,
 });
 

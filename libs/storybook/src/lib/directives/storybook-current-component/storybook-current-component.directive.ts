@@ -7,10 +7,10 @@ import {
 } from '@angular/core';
 
 @Directive({
-  selector: '[veeraNgStorybookCurrentComponent]',
+  selector: '[cviNgStorybookCurrentComponent]',
 })
 export class StorybookCurrentComponentDirective implements AfterViewInit {
-  @Input('veeraNgStorybookCurrentComponent') type!: 'cover' | 'spot';
+  @Input('cviNgStorybookCurrentComponent') type!: 'cover' | 'spot';
 
   private baseClass = 'u-storybook-current-component';
 

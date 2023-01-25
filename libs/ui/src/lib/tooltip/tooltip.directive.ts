@@ -12,11 +12,11 @@ import { DOCUMENT } from '@angular/common';
 import { TooltipComponent } from './tooltip.component';
 
 @Directive({
-  selector: '[veeraNgTooltip]',
-  exportAs: 'veeraNgTooltip',
+  selector: '[cviNgTooltip]',
+  exportAs: 'cviNgTooltip',
 })
 export class TooltipDirective {
-  @Input() veeraNgTooltip = '';
+  @Input() cviNgTooltip = '';
 
   private componentRef: ComponentRef<TooltipComponent> | null = null;
 
@@ -51,7 +51,7 @@ export class TooltipDirective {
 
   private setTooltipComponentProperties() {
     if (this.componentRef !== null) {
-      this.componentRef.instance.message = this.veeraNgTooltip;
+      this.componentRef.instance.message = this.cviNgTooltip;
       this.setTooltipOutOfView();
     }
   }

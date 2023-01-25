@@ -7,7 +7,7 @@ import {
 } from '@angular/core';
 
 @Component({
-  selector: 'veera-ng-button',
+  selector: 'cvi-ng-button',
   templateUrl: './button.component.html',
 })
 export class ButtonComponent {
@@ -22,10 +22,10 @@ export class ButtonComponent {
   @Output() clickEvent = new EventEmitter();
 
   @HostBinding('class') get getHostClasses(): string {
-    return `veera-button veera-button--appearance-${
+    return `cvi-button cvi-button--appearance-${
       this.appearance
-    } veera-button--size-${this.size}${
-      this.disabled ? ' veera-button--is-disabled' : ''
+    } cvi-button--size-${this.size}${
+      this.disabled ? ' cvi-button--is-disabled' : ''
     }`;
   }
 

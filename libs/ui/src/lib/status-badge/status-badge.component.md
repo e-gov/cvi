@@ -2,7 +2,7 @@
 
 Feature | Description
 - | -
-Selector | `veera-ng-status-badge`
+Selector | `cvi-ng-status-badge`
 Component name | `StatusBadgeComponent`
 Design system module | -
 Content | no

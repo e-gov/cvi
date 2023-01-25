@@ -9,7 +9,7 @@ import {
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
-  selector: 'veera-ng-textarea',
+  selector: 'cvi-ng-textarea',
   templateUrl: './textarea.component.html',
   providers: [
     {
@@ -48,9 +48,9 @@ export class TextareaComponent {
   private onTouched: () => unknown = () => {};
 
   @HostBinding('class') get getHostClasses(): string {
-    return `veera-textfield veera-textfield--type-multiple-lines${
-      this.disabled ? ' veera-textfield--is-disabled' : ''
-    }${this.resizable ? '' : ' veera-textfield--no-resize'}`;
+    return `cvi-textfield cvi-textfield--type-multiple-lines${
+      this.disabled ? ' cvi-textfield--is-disabled' : ''
+    }${this.resizable ? '' : ' cvi-textfield--no-resize'}`;
   }
 
   constructor(private readonly cdRef: ChangeDetectorRef) {}

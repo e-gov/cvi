@@ -7,7 +7,7 @@ import {
 } from '@angular/core';
 
 @Component({
-  selector: 'veera-ng-confirmation-modal',
+  selector: 'cvi-ng-confirmation-modal',
   templateUrl: './confirmation-modal.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

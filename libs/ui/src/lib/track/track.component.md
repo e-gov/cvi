@@ -2,7 +2,7 @@
 
 Feature | Description
 - | -
-Selector | `veera-ng-track`
+Selector | `cvi-ng-track`
 Component name | `TrackComponent`
 Design system module | -
 Content | yes

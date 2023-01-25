@@ -11,7 +11,7 @@ import { TabComponent } from './tab.component';
 import { merge, Subscription } from 'rxjs';
 
 @Component({
-  selector: 'veera-ng-tab-group',
+  selector: 'cvi-ng-tab-group',
   templateUrl: './tab-group.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

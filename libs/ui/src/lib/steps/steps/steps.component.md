@@ -2,12 +2,12 @@
 
 Feature | Description
 - | -
-Selector | `veera-ng-steps`
+Selector | `cvi-ng-steps`
 Component name | `StepsComponent`
 Design system module | -
 Content | yes
 Permitted parent/ancestors | any
-Permitted children | `veera-ng-step`
+Permitted children | `cvi-ng-step`
 
 ## Where to use
 

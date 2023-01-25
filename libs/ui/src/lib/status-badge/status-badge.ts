@@ -5,23 +5,23 @@ export const statusBadgeCustomPropertyGroups: StatusBadgeCustomPropertyGroup[] =
     {
       severity: 'info',
       customProperties: {
-        '--color': '--veera-color-sapphire-blue-10',
-        '--background-color': '--veera-color-sapphire-blue-0',
+        '--color': '--cvi-color-sapphire-blue-10',
+        '--background-color': '--cvi-color-sapphire-blue-0',
       },
     },
     {
       severity: 'success',
       customProperties: {
-        '--color': '--veera-color-sea-green-10',
-        '--background-color': '--veera-color-sea-green-0',
+        '--color': '--cvi-color-sea-green-10',
+        '--background-color': '--cvi-color-sea-green-0',
       },
     },
     {
       severity: 'warning',
       customProperties: {
-        '--color': '--veera-color-dark-tangerine-15',
-        '--background-color': '--veera-color-dark-tangerine-1',
-        '--border-color': '--veera-color-dark-tangerine-10',
+        '--color': '--cvi-color-dark-tangerine-15',
+        '--background-color': '--cvi-color-dark-tangerine-1',
+        '--border-color': '--cvi-color-dark-tangerine-10',
       },
     },
   ];

@@ -9,7 +9,7 @@ import {
 } from '@angular/core';
 
 @Component({
-  selector: 'veera-ng-modal',
+  selector: 'cvi-ng-modal',
   templateUrl: './modal.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
@@ -19,7 +19,7 @@ export class ModalComponent implements OnDestroy {
   @Output() closed = new EventEmitter();
 
   @HostBinding('class') get getHostClasses(): string {
-    return `veera-modal`;
+    return `cvi-modal`;
   }
 
   ngOnDestroy(): void {

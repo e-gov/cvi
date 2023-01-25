@@ -23,43 +23,43 @@ const Template: Story<TableOfContentsItemComponent> = (
   },
   /* template */
   template: `
-    <veera-ng-table-of-contents-wrapper>
+    <cvi-ng-table-of-contents-wrapper>
       <div>
-        <div veeraNgToCSection="section-one">
+        <div cviNgToCSection="section-one">
           <h1>Section One</h1>
-          <div [veeraNgStorybookRandomParagraphs]="10"></div>
+          <div [cviNgStorybookRandomParagraphs]="10"></div>
         </div>
 
-        <div veeraNgToCSection="section-two">
+        <div cviNgToCSection="section-two">
           <h1>Section Two</h1>
-          <div [veeraNgStorybookRandomParagraphs]="10"></div>
+          <div [cviNgStorybookRandomParagraphs]="10"></div>
         </div>
 
-        <div veeraNgToCSection="section-three">
+        <div cviNgToCSection="section-three">
           <h1>Section Three</h1>
-          <div [veeraNgStorybookRandomParagraphs]="10"></div>
+          <div [cviNgStorybookRandomParagraphs]="10"></div>
         </div>
 
-        <div veeraNgToCSection="section-four">
+        <div cviNgToCSection="section-four">
           <h1>Section Four</h1>
-          <div [veeraNgStorybookRandomParagraphs]="10"></div>
+          <div [cviNgStorybookRandomParagraphs]="10"></div>
         </div>
 
 
-        <div veeraNgToCSection="section-five">
+        <div cviNgToCSection="section-five">
           <h1>Section Five</h1>
-          <div [veeraNgStorybookRandomParagraphs]="10"></div>
+          <div [cviNgStorybookRandomParagraphs]="10"></div>
         </div>
       </div>
 
-      <veera-ng-table-of-contents title="Sisukord">
-        <veera-ng-table-of-contents-item [label]="label" href="#section-one" veeraNgStorybookCurrentComponent></veera-ng-table-of-contents-item>
-        <veera-ng-table-of-contents-item label="Section Two" href="#section-two" veeraNgStorybookCurrentComponent></veera-ng-table-of-contents-item>
-        <veera-ng-table-of-contents-item label="Section Three" href="#section-three" veeraNgStorybookCurrentComponent></veera-ng-table-of-contents-item>
-        <veera-ng-table-of-contents-item label="Section Four" href="#section-four" veeraNgStorybookCurrentComponent></veera-ng-table-of-contents-item>
-        <veera-ng-table-of-contents-item label="Section Five" href="#section-five" veeraNgStorybookCurrentComponent></veera-ng-table-of-contents-item>
-      </veera-ng-table-of-contents>
-    </veera-ng-table-of-contents-wrapper>
+      <cvi-ng-table-of-contents title="Sisukord">
+        <cvi-ng-table-of-contents-item [label]="label" href="#section-one" cviNgStorybookCurrentComponent></cvi-ng-table-of-contents-item>
+        <cvi-ng-table-of-contents-item label="Section Two" href="#section-two" cviNgStorybookCurrentComponent></cvi-ng-table-of-contents-item>
+        <cvi-ng-table-of-contents-item label="Section Three" href="#section-three" cviNgStorybookCurrentComponent></cvi-ng-table-of-contents-item>
+        <cvi-ng-table-of-contents-item label="Section Four" href="#section-four" cviNgStorybookCurrentComponent></cvi-ng-table-of-contents-item>
+        <cvi-ng-table-of-contents-item label="Section Five" href="#section-five" cviNgStorybookCurrentComponent></cvi-ng-table-of-contents-item>
+      </cvi-ng-table-of-contents>
+    </cvi-ng-table-of-contents-wrapper>
   `,
 });
 

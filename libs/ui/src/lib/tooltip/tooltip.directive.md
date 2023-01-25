@@ -2,7 +2,7 @@
 
 | Feature                    | Description       |
 |----------------------------|-------------------|
-| Selector                   | `veeraNgTooltip`  |
+| Selector                   | `cviNgTooltip`  |
 | Directive name             | `TooltipDirective` |
 | Permitted parent/ancestors | any               |
 
@@ -10,4 +10,4 @@
 
 When directive is applied to HTML element then hovering over the element displays tooltip above the HTML element.
 
-You can customise `z-index` of the tooltip by redefining `--veera-tooltip-zindex` CSS variable in your app.
+You can customise `z-index` of the tooltip by redefining `--cvi-tooltip-zindex` CSS variable in your app.

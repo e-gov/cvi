@@ -8,14 +8,14 @@ import {
 } from '@angular/core';
 
 @Component({
-  selector: 'veera-ng-table',
+  selector: 'cvi-ng-table',
   templateUrl: './table.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TableComponent {
   @Input() data!: any[];
   @HostBinding('class') get getHostClasses(): string {
-    return 'veera-table';
+    return 'cvi-table';
   }
   @ContentChild('headers') headers: TemplateRef<any> | undefined;
   @ContentChild('rows') rows: TemplateRef<any> | undefined;

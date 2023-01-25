@@ -1,18 +1,23 @@
-# Common Visual Identity Component Library
+# e-Gov Common Visual Identity (CVI) Component Library
 
-This project includes a pattern library and a re-usable component library for Angular. The pattern library uses [Storybook](https://storybook.js.org).
+This repository includes a shared CSS library (preprocessed with Sass) and HTML examples based on it, as well as a UI kit in Angular and a typed (and tree-shakable!) icon library.
+
+By design, the CSS has no dependency on a specific Javascript framework and since the styles and html is separated then interested contributors can easily add component libraries in other frameworks such as React or Vue.js.
+Also, the Angular UI library has no dependency to any design system/framework such as Bootstrap or Google's Material in order to reduce dependence on 3rd party vendors.
 
 ## Quick Start & Documentation
 
-Documentation and Installation instructions can be found in the Storybook:
+The pattern library uses [Storybook](https://storybook.js.org)
 
-https://e-gov.github.io/cvi/
+Documentation and Installation instructions can be found in the e-Gov CVI's Storybook:
 
-Styles are based on the original Veera Design System:
+[https://e-gov.github.io/cvi/](https://e-gov.github.io/cvi/)
+
+Styles were based on the initial Veera Design System:
 
 https://www.figma.com/file/nNCV5kRqdRkS8MOCK1ZbqU/Veera-Design-System
 
-Keep in mind, that the implementations are not part of the official Veera Design System.
+**e-Gov CVI is not Veera.**
 
 ## Using the Components
 
@@ -41,9 +46,9 @@ Make sure to use the appropriate commit messages.
 
 ##### Selectors
 
-Use `[veera-component-selector=local-selector-name]` naming convention for [content projection selectors](https://angular.io/guide/content-projection).
+Use `[cvi-component-selector=local-selector-name]` naming convention for [content projection selectors](https://angular.io/guide/content-projection).
 
-For example, if you need to introduce a content selector that inserts custom content before a title in a panel (eg. fictional `PanelComponent/<veera-ng-panel>` component), an appropriate code would be `<ng-content select="[veera-ng-panel=before-title]"></ng-content>`.
+For example, if you need to introduce a content selector that inserts custom content before a title in a panel (eg. fictional `PanelComponent/<cvi-ng-panel>` component), an appropriate code would be `<ng-content select="[cvi-ng-panel=before-title]"></ng-content>`.
 
 ## Running the Storybook
 
@@ -51,7 +56,7 @@ Run `npm run storybook` to build documentation and run the Storybook locally.
 
 ### Running storybook locally in docker
 
-docker build -f ./libs/storybook/Dockerfile -t veera-storybook .
+docker build -f ./libs/storybook/Dockerfile -t cvi-storybook .
 docker-compose up storybook
 docker-compose down
 url: http://localhost:3005/

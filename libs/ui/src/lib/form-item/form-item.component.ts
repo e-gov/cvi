@@ -1,7 +1,7 @@
 import { Component, HostBinding, Input } from '@angular/core';
 
 @Component({
-  selector: 'veera-ng-form-item',
+  selector: 'cvi-ng-form-item',
   templateUrl: './form-item.component.html',
 })
 export class FormItemComponent {
@@ -21,8 +21,8 @@ export class FormItemComponent {
   @Input() required = false;
 
   @HostBinding('class') get getHostClasses(): string {
-    return `veera-form-item veera-form-item--label-position-${
-      this.labelPosition
-    }${this.required ? ' veera-form-item--is-required' : ''}`;
+    return `cvi-form-item cvi-form-item--label-position-${this.labelPosition}${
+      this.required ? ' cvi-form-item--is-required' : ''
+    }`;
   }
 }

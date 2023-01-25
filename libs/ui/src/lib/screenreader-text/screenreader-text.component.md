@@ -2,7 +2,7 @@
 
 Feature | Description
 - | -
-Selector | `veera-ng-screenreader-text`
+Selector | `cvi-ng-screenreader-text`
 Component name | `ScreenreaderTextComponent`
 Design system module | -
 Content | no

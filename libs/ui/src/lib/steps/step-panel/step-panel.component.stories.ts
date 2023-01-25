@@ -18,8 +18,8 @@ export default {
     },
   },
   args: {
-    title: 'First step is the importantest',
-    content: 'Nevertheless, Cosy Moments thrives. It has its public.',
+    title: 'First step',
+    content: 'First step content.',
   },
 } as Meta;
 
@@ -30,18 +30,18 @@ const Template: Story<StepPanelComponent> = (args: StepPanelComponent) => ({
   },
   /* template */
   template: `
-    <veera-ng-steps title="Abiellumine" [currentStepIndex]="0">
-      <veera-ng-step>
-        <veera-ng-step-panel [title]="title" veeraNgStorybookCurrentComponent>
+    <cvi-ng-steps title="Abiellumine" [currentStepIndex]="0">
+      <cvi-ng-step>
+        <cvi-ng-step-panel [title]="title" cviNgStorybookCurrentComponent>
           {{ content }}
-        </veera-ng-step-panel>
-      </veera-ng-step>
-      <veera-ng-step title="Another step">
-        <veera-ng-step-panel title="Another step title" veeraNgStorybookCurrentComponent>
+        </cvi-ng-step-panel>
+      </cvi-ng-step>
+      <cvi-ng-step title="Another step">
+        <cvi-ng-step-panel title="Another step title" cviNgStorybookCurrentComponent>
           Some content
-        </veera-ng-step-panel>
-      </veera-ng-step>
-    </veera-ng-steps>
+        </cvi-ng-step-panel>
+      </cvi-ng-step>
+    </cvi-ng-steps>
   `,
 });
 

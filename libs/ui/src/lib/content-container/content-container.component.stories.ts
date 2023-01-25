@@ -24,7 +24,7 @@ const Template: Story<ContentContainerComponent> = (
 ) => ({
   props: args,
   template: `
-    <veera-ng-content-container>{{ content }}</veera-ng-content-container>
+    <cvi-ng-content-container>{{ content }}</cvi-ng-content-container>
   `,
 });
 

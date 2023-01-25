@@ -1,4 +1,4 @@
-@mixin veera-toast-container($base: &) {
+@mixin cvi-toast-container($base: &) {
   position: fixed;
   top: get-spacing('elva');
   right: get-spacing('elva');

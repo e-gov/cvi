@@ -33,8 +33,8 @@ const Template: Story<TooltipComponentWithCustomArgs> = (
     height: document.body.getBoundingClientRect().height,
   },
   template: `
-    <div [ngStyle]="{'--veera-tooltip-zindex': configurableZIndexCSSVar}">
-      <veera-ng-tooltip [message]="'This is a tooltip'" [left]="width / 2 - 67.5" [top]="175" [arrowLeft]="width / 2 - 7.5" [arrowTop]="207.5"></veera-ng-tooltip>
+    <div [ngStyle]="{'--cvi-tooltip-zindex': configurableZIndexCSSVar}">
+      <cvi-ng-tooltip [message]="'This is a tooltip'" [left]="width / 2 - 67.5" [top]="175" [arrowLeft]="width / 2 - 7.5" [arrowTop]="207.5"></cvi-ng-tooltip>
     </div>
   `,
 });

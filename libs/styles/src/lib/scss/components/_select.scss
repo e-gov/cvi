@@ -1,4 +1,4 @@
-@mixin veera-select($base: &) {
+@mixin cvi-select($base: &) {
   position: relative;
   display: block;
   box-sizing: border-box;
@@ -25,7 +25,7 @@
     }
 
     &.invalid.touched #{$base}__container {
-      border: 1px solid var(--veera-color-jasper-9);
+      border: 1px solid var(--cvi-color-jasper-9);
     }
 
     #{$base}__container {
@@ -35,7 +35,7 @@
       padding: 0 get-spacing('paldiski');
       height: 38px;
       width: 100%;
-      border-radius: $veera-radius-s;
+      border-radius: $cvi-radius-s;
       border: 1px solid get-color(black-coral-3);
       background-color: get-color(white);
     }
@@ -100,8 +100,8 @@
       position: absolute;
       width: 100%;
       background-color: get-color(white);
-      border-bottom-left-radius: $veera-radius-s;
-      border-bottom-right-radius: $veera-radius-s;
+      border-bottom-left-radius: $cvi-radius-s;
+      border-bottom-right-radius: $cvi-radius-s;
       border: 1px solid get-color(black-coral-3);
       z-index: get-z-index('select', '__dropdown');
       max-height: 300px;

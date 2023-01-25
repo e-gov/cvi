@@ -3,13 +3,13 @@
 @use 'sass:map';
 
 @function get-z-index($group-name, $element-name) {
-  $groups: $veera-z-indexes;
+  $groups: $cvi-z-indexes;
   $group-name: string.unquote($group-name);
   $element-name: string.unquote($element-name);
   $group-index: list.index(map.keys($groups), $group-name);
   $element-index: list.index(map.get($groups, $group-name), $element-name);
   @if not $group-index or not $element-index {
-    @warn "Group (#{$group-name}) or element name (#{$element-name}) provided to the z() function is absent from the $veera-z-indexes map!";
+    @warn "Group (#{$group-name}) or element name (#{$element-name}) provided to the z() function is absent from the $cvi-z-indexes map!";
   }
   @return if($group-index != null and $element-index != null, $group-index * 10 + $element-index, null);
 }

@@ -32,7 +32,7 @@ import { SelectItemsList } from './select-items-list';
 export type AddItemFn = (term: string) => unknown | Promise<unknown>;
 
 @Component({
-  selector: 'veera-ng-select',
+  selector: 'cvi-ng-select',
   templateUrl: './select.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

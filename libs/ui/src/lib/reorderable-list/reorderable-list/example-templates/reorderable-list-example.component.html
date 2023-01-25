@@ -1,6 +1,6 @@
-<veera-ng-reorderable-list [items]="items">
+<cvi-ng-reorderable-list [items]="items">
   <ng-template let-item>
-    <veera-ng-reorderable-list-item
+    <cvi-ng-reorderable-list-item
       (removeStepEvent)="removeStep(item)"
       (swapStepsEvent)="swapSteps($event)"
       [dataAttribute]="'reorderable-list-item-' + getOrderNr(item)"
@@ -9,9 +9,9 @@
       [setAsPreviousStepButtonVisible]="isNotFirstItem(item)"
     >
       {{ item.value }}
-    </veera-ng-reorderable-list-item>
+    </cvi-ng-reorderable-list-item>
   </ng-template>
-</veera-ng-reorderable-list>
+</cvi-ng-reorderable-list>
 
 <div style="padding: 16px">
   <pre>Items:</pre>

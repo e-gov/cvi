@@ -1,15 +1,15 @@
-<div class="veera-table__inner">
+<div class="cvi-table__inner">
   <ng-content>
   </ng-content>
 
-  <table class="veera-table__table">
-    <tr class="veera-table__header-row">
+  <table class="cvi-table__table">
+    <tr class="cvi-table__header-row">
       <ng-container
         *ngTemplateOutlet="headers || defaultHeaderTemplate; context: { $implicit: headers }"
       ></ng-container>
     </tr>
 
-    <tr *ngFor="let row of data" class="veera-table__body-row">
+    <tr *ngFor="let row of data" class="cvi-table__body-row">
       <ng-container
         *ngTemplateOutlet="rows || defaultRowTemplate; context: { $implicit: row }"
       ></ng-container>

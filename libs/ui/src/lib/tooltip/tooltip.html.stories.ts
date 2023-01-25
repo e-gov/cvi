@@ -12,11 +12,11 @@ export default {
 const Template: Story = (args) => ({
   props: args,
   template: `
-    <div class="veera-tooltip" style="position: relative; max-width: 400px; min-width: 125px">
-        <div class="veera-tooltip__content">
+    <div class="cvi-tooltip" style="position: relative; max-width: 400px; min-width: 125px">
+        <div class="cvi-tooltip__content">
             This is a tooltip
         </div>
-        <div class="veera-tooltip__arrow" style="position: absolute; right: 55px; bottom: -47px"></div>
+        <div class="cvi-tooltip__arrow" style="position: absolute; right: 55px; bottom: -47px"></div>
     </div>
     `,
 });

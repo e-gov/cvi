@@ -30,8 +30,8 @@ const Template: Story<SelectComponent> = (args: SelectComponent) => ({
   },
   template: `
       <div style="width: 200px">
-        <veera-ng-select [items]="items"
-                         [placeholder]="placeholder"></veera-ng-select>
+        <cvi-ng-select [items]="items"
+                         [placeholder]="placeholder"></cvi-ng-select>
       </div>
   `,
 });
@@ -49,10 +49,10 @@ const AddItemTemplate: Story<SelectComponent> = (args: SelectComponent) => {
     },
     template: `
       <div style="width: 200px">
-        <veera-ng-select [items]="items"
+        <cvi-ng-select [items]="items"
                          [addItemFn]="addItemFn"
                          [addItemLabel]="'Lisa element'"
-                         [placeholder]="placeholder"></veera-ng-select>
+                         [placeholder]="placeholder"></cvi-ng-select>
       </div>
   `,
   };
@@ -67,9 +67,9 @@ const DisabledBackgroundTemplate: Story<SelectComponent> = (
   },
   template: `
       <div style="width: 200px">
-        <veera-ng-select [items]="items"
+        <cvi-ng-select [items]="items"
                          [backgroundDisabled]="true"
-                         [placeholder]="placeholder"></veera-ng-select>
+                         [placeholder]="placeholder"></cvi-ng-select>
       </div>
   `,
 });
@@ -83,16 +83,16 @@ const ObjectsAsItemsTemplate: Story<SelectComponent> = (
   },
   template: `
       <div style="width: 200px">
-        <veera-ng-select [items]="items"
+        <cvi-ng-select [items]="items"
                          [placeholder]="placeholder"
                          [searchFn]="searchFn">
-          <ng-template veeraNgSelectOptionTemplate let-item="item">
+          <ng-template cviNgSelectOptionTemplate let-item="item">
             {{item.name}} ({{item.code}})
           </ng-template>
-          <ng-template veeraNgSelectLabelTemplate let-item="item">
+          <ng-template cviNgSelectLabelTemplate let-item="item">
             {{item.name}} ({{item.code}})
           </ng-template>
-        </veera-ng-select>
+        </cvi-ng-select>
       </div>
   `,
 });
@@ -131,9 +131,9 @@ const FormTemplate: Story<SelectComponent> = (args: SelectComponent) => {
     template: `
       <div style="width: 200px"
            [formGroup]="form">
-        <veera-ng-select [items]="items"
+        <cvi-ng-select [items]="items"
                          formControlName="item"
-                         [placeholder]="placeholder"></veera-ng-select>
+                         [placeholder]="placeholder"></cvi-ng-select>
         <div>Selected value: {{selectedValue()}}</div>
       </div>
   `,

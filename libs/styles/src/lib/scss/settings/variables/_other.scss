@@ -1,21 +1,21 @@
 // Border radii
-$veera-radius-pill: 999px;
-$veera-radius-l: 8px;
-$veera-radius-m: 6px;
-$veera-radius-s: 4px;
-$veera-radius-xs: 2px;
+$cvi-radius-pill: 999px;
+$cvi-radius-l: 8px;
+$cvi-radius-m: 6px;
+$cvi-radius-s: 4px;
+$cvi-radius-xs: 2px;
 
 // Border widths
-$veera-border-width: 2px;
+$cvi-border-width: 2px;
 
 // Shadows
-$veera-shadow-beta-blur: 15px;
+$cvi-shadow-beta-blur: 15px;
 
-$veera-shadow-alpha: 0 1px 5px 0 rgba(var(--veera-color-rgb-black) / 0.15);
-$veera-shadow-beta: 0 4px $veera-shadow-beta-blur 0 rgba(var(--veera-color-rgb-black) / 0.15);
-$veera-shadow-gamma: 0 0 20px 0 rgba(var(--veera-color-rgb-sapphire-blue-16) / 0.1);
-$veera-shadow-delta: inset 1px 0 0 var(--veera-color-white),
-  inset -1px 0 0 var(--veera-color-white), inset 0 1px 0 var(--veera-color-white),
-  inset 0 -1px 0 var(--veera-color-white);
+$cvi-shadow-alpha: 0 1px 5px 0 rgba(var(--cvi-color-rgb-black) / 0.15);
+$cvi-shadow-beta: 0 4px $cvi-shadow-beta-blur 0 rgba(var(--cvi-color-rgb-black) / 0.15);
+$cvi-shadow-gamma: 0 0 20px 0 rgba(var(--cvi-color-rgb-sapphire-blue-16) / 0.1);
+$cvi-shadow-delta: inset 1px 0 0 var(--cvi-color-white),
+  inset -1px 0 0 var(--cvi-color-white), inset 0 1px 0 var(--cvi-color-white),
+  inset 0 -1px 0 var(--cvi-color-white);
 
-$veera-shadow-focus: $veera-shadow-delta;
+$cvi-shadow-focus: $cvi-shadow-delta;

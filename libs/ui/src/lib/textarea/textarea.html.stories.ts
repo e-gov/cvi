@@ -16,8 +16,8 @@ const Template: Story = (args) => ({
   props: args,
   /* template */
   template: `
-    <span class="veera-textfield veera-textfield--type-multiple-lines">
-      <textarea class="veera-textfield__text-control"
+    <span class="cvi-textfield cvi-textfield--type-multiple-lines">
+      <textarea class="cvi-textfield__text-control"
                 [placeholder]="placeholder"
                 [maxLength]="maxLength"
                 cdkTextareaAutosize
@@ -36,8 +36,8 @@ const CharacterCounterTemplate: Story = (args) => ({
   props: args,
   /* template */
   template: `
-    <span class="veera-textfield veera-textfield--type-multiple-lines">
-      <textarea class="veera-textfield__text-control"
+    <span class="cvi-textfield cvi-textfield--type-multiple-lines">
+      <textarea class="cvi-textfield__text-control"
                 [placeholder]="placeholder"
                 [maxLength]="maxLength"
                 cdkTextareaAutosize
@@ -46,7 +46,7 @@ const CharacterCounterTemplate: Story = (args) => ({
                 [cdkAutosizeMaxRows]="maxRows"
       ></textarea>
     </span>
-    <div class="veera-character-counter">0 / 2000</div>
+    <div class="cvi-character-counter">0 / 2000</div>
   `,
 });
 

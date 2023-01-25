@@ -8,44 +8,42 @@ import {
 } from '@ria/cvi-ng';
 
 @Component({
-  selector: 'veera-ng-test-textarea',
+  selector: 'cvi-ng-test-textarea',
   template: `<textarea maxlength="2000"></textarea>`,
 })
 class TestTextAreaComponent {}
 
 @Component({
-  selector: 'veera-ng-test-text-input',
+  selector: 'cvi-ng-test-text-input',
   template: `<input type="text" />`,
 })
 class TestTextInputComponent {}
 
 @Component({
-  selector: 'veera-ng-test-button',
+  selector: 'cvi-ng-test-button',
   template: `<input type="button" />`,
 })
 class TestButtonComponent {}
 
 @Component({
-  selector: 'veera-ng-test-random',
+  selector: 'cvi-ng-test-random',
   template: `<p>Random text</p>`,
 })
 class TestRandomComponent {}
 
 @Component({
-  template: ` <veera-ng-test-textarea
-      veeraNgCharacterCounter
+  template: ` <cvi-ng-test-textarea
+      cviNgCharacterCounter
       [maxChars]="10"
-    ></veera-ng-test-textarea>
-    <veera-ng-test-textarea veeraNgCharacterCounter></veera-ng-test-textarea>
-    <veera-ng-test-text-input
-      veeraNgCharacterCounter
+    ></cvi-ng-test-textarea>
+    <cvi-ng-test-textarea cviNgCharacterCounter></cvi-ng-test-textarea>
+    <cvi-ng-test-text-input
+      cviNgCharacterCounter
       [maxChars]="10"
-    ></veera-ng-test-text-input>
-    <veera-ng-test-text-input
-      veeraNgCharacterCounter
-    ></veera-ng-test-text-input>
-    <veera-ng-test-button veeraNgCharacterCounter></veera-ng-test-button>
-    <veera-ng-test-random veeraNgCharacterCounter></veera-ng-test-random>`,
+    ></cvi-ng-test-text-input>
+    <cvi-ng-test-text-input cviNgCharacterCounter></cvi-ng-test-text-input>
+    <cvi-ng-test-button cviNgCharacterCounter></cvi-ng-test-button>
+    <cvi-ng-test-random cviNgCharacterCounter></cvi-ng-test-random>`,
 })
 class TestComponent {}
 
@@ -98,7 +96,7 @@ describe('CharacterCounterDirective', () => {
 
   it('should render the character counter component after a textarea that has both [maxChars] and maxlength value set', () => {
     expect(des[0].nativeElement.nextSibling.tagName).toBe(
-      'VEERA-NG-CHARACTER-COUNTER'
+      'CVI-NG-CHARACTER-COUNTER'
     );
   });
 
@@ -108,7 +106,7 @@ describe('CharacterCounterDirective', () => {
 
   it('should render the character counter component after a textarea that has no [maxChars] but does have maxlength value set', () => {
     expect(des[1].nativeElement.nextSibling.tagName).toBe(
-      'VEERA-NG-CHARACTER-COUNTER'
+      'CVI-NG-CHARACTER-COUNTER'
     );
   });
 
@@ -118,7 +116,7 @@ describe('CharacterCounterDirective', () => {
 
   it('should render the character counter component after a text input that has [maxChars] but no maxlength value set', () => {
     expect(des[2].nativeElement.nextSibling.tagName).toBe(
-      'VEERA-NG-CHARACTER-COUNTER'
+      'CVI-NG-CHARACTER-COUNTER'
     );
   });
 

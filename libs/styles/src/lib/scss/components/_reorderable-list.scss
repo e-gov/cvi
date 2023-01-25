@@ -1,7 +1,7 @@
-@mixin veera-reorderable-list($base: &) {
+@mixin cvi-reorderable-list($base: &) {
   --comment: 'Interactive list of editable form groups';
 
-  --veera-textfield--single-line--min-width: 100%;
+  --cvi-textfield--single-line--min-width: 100%;
 
   padding: get-spacing('haapsalu');
   position: relative;
@@ -15,7 +15,7 @@
       flex-grow: 1;
     }
     #{$base}__form-item {
-      @include veera-breakpoint-up(sm) {
+      @include cvi-breakpoint-up(sm) {
         max-width: 50%;
       }
     }
@@ -24,7 +24,7 @@
       position: relative;
       display: inline-flex;
       width: 100%;
-      border-radius: $veera-radius-s;
+      border-radius: $cvi-radius-s;
       background-color: get-color(extra-light);
       border: 1px solid get-color(black-coral-2);
     }
@@ -40,7 +40,7 @@
     }
     #{$base}__order-nr {
       border: 1px solid get-color(black-coral-6);
-      border-radius: $veera-radius-s;
+      border-radius: $cvi-radius-s;
       width: 25px;
       height: 24px;
       text-align: center;

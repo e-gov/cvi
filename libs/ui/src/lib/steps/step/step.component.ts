@@ -7,7 +7,7 @@ import {
 } from '@angular/core';
 
 @Component({
-  selector: 'veera-ng-step',
+  selector: 'cvi-ng-step',
   template: `
     <ng-container *ngIf="isVisible">
       <ng-content></ng-content>
@@ -29,6 +29,6 @@ export class StepComponent {
   constructor(public ref: ElementRef, private cdRef: ChangeDetectorRef) {}
 
   @HostBinding('class') get getHostClasses(): string {
-    return 'veera-steps__step';
+    return 'cvi-steps__step';
   }
 }

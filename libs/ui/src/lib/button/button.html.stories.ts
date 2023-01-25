@@ -37,9 +37,9 @@ const Template: Story = (args) => ({
   /* template */
   template: `
     <div
-      class="veera-button veera-button--appearance-{{ appearance }} veera-button--size-{{ size }}"
+      class="cvi-button cvi-button--appearance-{{ appearance }} cvi-button--size-{{ size }}"
     >
-      <button type="button" class="veera-button__button">{{ content }}</button>
+      <button type="button" class="cvi-button__button">{{ content }}</button>
     </div>
   `,
 });

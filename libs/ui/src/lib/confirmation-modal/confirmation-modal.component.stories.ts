@@ -17,16 +17,16 @@ const Template: Story<ConfirmationModalComponent> = (
   props: args,
   template: `
     <ng-template #modal let-modal>
-      <veera-ng-confirmation-modal [title]="title"
+      <cvi-ng-confirmation-modal [title]="title"
                                    [confirmButtonText]="confirmButtonText"
                                    [cancelButtonText]="cancelButtonText"
                                    (cancelled)="modal.closeModal()"
                                    (confirmed)="modal.closeModal()">
         <p>Are you sure about changes?</p>
         <br><p>All will be lost!!!</p>
-      </veera-ng-confirmation-modal>
+      </cvi-ng-confirmation-modal>
     </ng-template>
-    <veera-ng-button [veeraNgModal]="modal" dataAttribute="test-button">Open modal</veera-ng-button>
+    <cvi-ng-button [cviNgModal]="modal" dataAttribute="test-button">Open modal</cvi-ng-button>
   `,
 });
 
@@ -45,16 +45,16 @@ const TemplateModalOpen: Story<ConfirmationModalComponent> = (
   props: args,
   template: `
     <ng-template #modal let-modal>
-      <veera-ng-confirmation-modal [title]="title"
+      <cvi-ng-confirmation-modal [title]="title"
                                    [confirmButtonText]="confirmButtonText"
                                    [cancelButtonText]="cancelButtonText"
                                    (cancelled)="modal.closeModal()"
                                    (confirmed)="modal.closeModal()">
         <p>Are you sure about changes?</p>
         <br><p>All will be lost!!!</p>
-      </veera-ng-confirmation-modal>
+      </cvi-ng-confirmation-modal>
     </ng-template>
-    <veera-ng-button [veeraNgModal]="modal" [open]="true" dataAttribute="test-button">Open modal</veera-ng-button>
+    <cvi-ng-button [cviNgModal]="modal" [open]="true" dataAttribute="test-button">Open modal</cvi-ng-button>
   `,
 });
 

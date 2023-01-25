@@ -1,8 +1,8 @@
-@mixin veera-table-of-contents($base: &) {
+@mixin cvi-table-of-contents($base: &) {
   --comment: 'A table of contents with currently visible section highlighted automatically';
 
   display: flex;
-  gap: var(--veera-steps--gap, #{get-spacing('kuressaare')});
+  gap: var(--cvi-steps--gap, #{get-spacing('kuressaare')});
 
   @at-root {
     #{$base}__content {
@@ -11,10 +11,10 @@
     }
 
     #{$base}__aside {
-      min-width: var(--veera-steps--panel-margin, 25%);
-      width: var(--veera-steps--panel-margin, 25%);
+      min-width: var(--cvi-steps--panel-margin, 25%);
+      width: var(--cvi-steps--panel-margin, 25%);
       #{$base}.is-nav-hidden-on-mobile & {
-        @include veera-breakpoint-down(sm) {
+        @include cvi-breakpoint-down(sm) {
           display: none;
         }
       }
@@ -35,7 +35,7 @@
     #{$base}__aside-title {
       text-transform: uppercase;
       color: get-color(black-coral-12);
-      font-size: $veera-font-size-80;
+      font-size: $cvi-font-size-80;
       padding-left: var(--aside-padding-left);
       padding-block: get-spacing('elva');
       margin: 0;
@@ -61,7 +61,7 @@
       }
 
       #{$base}__aside-list-item.is-current & {
-        font-weight: $veera-font-weight-delta;
+        font-weight: $cvi-font-weight-delta;
         color: get-color(black-coral-20);
         position: relative;
 

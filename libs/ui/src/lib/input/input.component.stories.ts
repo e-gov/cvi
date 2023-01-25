@@ -30,10 +30,10 @@ export default {
 const Template: Story<InputComponent> = (args: InputComponent) => ({
   props: args,
   template: `
-    <veera-ng-input [placeholder]="placeholder"
+    <cvi-ng-input [placeholder]="placeholder"
                     [disabled]="disabled"
                     [suffixIconName]="suffixIconName"
-                    [htmlId]="htmlId"></veera-ng-input>
+                    [htmlId]="htmlId"></cvi-ng-input>
   `,
 });
 
@@ -61,10 +61,10 @@ const FormTemplate: Story<InputComponent> = (args: InputComponent) => {
     },
     template: `
       <div [formGroup]="form">
-        <veera-ng-input formControlName="item"
+        <cvi-ng-input formControlName="item"
                         [placeholder]="placeholder"
                         [disabled]="disabled"
-                        [htmlId]="htmlId"></veera-ng-input>
+                        [htmlId]="htmlId"></cvi-ng-input>
         <div>Inserted value: {{selectedValue()}}</div>
       </div>
     `,
@@ -78,11 +78,11 @@ const CharacterCounterTemplate: Story<InputComponent> = (
 ) => ({
   props: args,
   template: `
-    <veera-ng-input [placeholder]="placeholder"
+    <cvi-ng-input [placeholder]="placeholder"
                     [disabled]="disabled"
                     [htmlId]="htmlId"
-                    veeraNgCharacterCounter
-                    [maxChars]="10"></veera-ng-input>
+                    cviNgCharacterCounter
+                    [maxChars]="10"></cvi-ng-input>
   `,
 });
 
@@ -91,12 +91,12 @@ export const WithCharacterCounter = CharacterCounterTemplate.bind({});
 const FormItemTemplate: Story<InputComponent> = (args: InputComponent) => ({
   props: args,
   template: `
-    <veera-ng-form-item label="Some label"
+    <cvi-ng-form-item label="Some label"
                         [htmlId]="htmlId">
-      <veera-ng-input [placeholder]="placeholder"
+      <cvi-ng-input [placeholder]="placeholder"
                       [disabled]="disabled"
-                      [htmlId]="htmlId"></veera-ng-input>
-    </veera-ng-form-item>
+                      [htmlId]="htmlId"></cvi-ng-input>
+    </cvi-ng-form-item>
   `,
 });
 

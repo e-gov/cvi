@@ -1,4 +1,4 @@
-@mixin veera-radio-group($base: &) {
+@mixin cvi-radio-group($base: &) {
   --comment: 'Radios that look like regular buttons';
 
   & {
@@ -30,16 +30,16 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: get-spacing('paldiski');
-      font-size: $veera-font-size-70;
-      line-height: $veera-line-height-100;
+      font-size: $cvi-font-size-70;
+      line-height: $cvi-line-height-100;
     }
     #{$base}__input {
-      @include veera-screenreader-text;
+      @include cvi-screenreader-text;
     }
     #{$base}__button {
       display: block;
       text-align: center;
-      border-radius: $veera-radius-pill;
+      border-radius: $cvi-radius-pill;
       padding-block: get-spacing('loksa');
       border: 1px solid get-color(black-coral-10);
 
@@ -51,7 +51,7 @@
       }
 
       #{$base}__input:focus-visible + & {
-        box-shadow: $veera-shadow-focus;
+        box-shadow: $cvi-shadow-focus;
       }
     }
   }

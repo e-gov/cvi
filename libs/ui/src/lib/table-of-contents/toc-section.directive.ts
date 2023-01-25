@@ -9,12 +9,12 @@ import {
 import { TableOfContentsService } from './table-of-contents.service';
 
 @Directive({
-  selector: '[veeraNgToCSection]',
-  exportAs: 'veeraNgToCSection',
+  selector: '[cviNgToCSection]',
+  exportAs: 'cviNgToCSection',
 })
 export class TableOfContentsSectionDirective implements OnInit, OnDestroy {
   /** Must be equal to a href prop value of a TableOfContentsItemComponent in order to have scroll tracking working */
-  @HostBinding('id') @Input('veeraNgToCSection') sectionId!: string;
+  @HostBinding('id') @Input('cviNgToCSection') sectionId!: string;
 
   private intersectionObservable!: IntersectionObserver;
   private elementToObserve!: Element;

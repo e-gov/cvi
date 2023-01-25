@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'veera-ng-storybook-icon-card',
+  selector: 'cvi-ng-storybook-icon-card',
   templateUrl: './storybook-icon-card.component.html',
   styleUrls: ['./storybook-icon-card.component.scss'],
 })

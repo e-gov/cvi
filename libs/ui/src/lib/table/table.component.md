@@ -2,7 +2,7 @@
 
 | Feature                    | Description       |
 |----------------------------|-------------------|
-| Selector                   | `veera-ng-table`  |
+| Selector                   | `cvi-ng-table`  |
 | Component name             | `TableComponent`  |
 | Permitted parent/ancestors | any               |
 | Permitted children         | -                 |

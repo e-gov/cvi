@@ -2,11 +2,11 @@ import { Component, HostBinding, Input } from '@angular/core';
 import { Gap } from './track';
 
 @Component({
-  selector: 'veera-ng-track',
+  selector: 'cvi-ng-track',
   templateUrl: './track.component.html',
 })
 export class TrackComponent {
-  /** Gap in multiples of --veera-spacing-unit */
+  /** Gap in multiples of --cvi-spacing-unit */
   @HostBinding('style.--gap')
   @Input()
   gap: Gap = 0;
@@ -63,12 +63,12 @@ export class TrackComponent {
   @Input() flexIsMultiline = false;
 
   @HostBinding('class') get hostClasses(): string {
-    return `veera-track veera-track--direction-${this.getHostDirection()}${
+    return `cvi-track cvi-track--direction-${this.getHostDirection()}${
       this.layout === 'grid'
-        ? ' veera-track--layout-grid'
-        : ' veera-track--layout-flex'
-    }${this.flexColumnsEqual ? ' veera-track--items-have-equal-width' : ''}${
-      this.gridRows ? ' veera-track--has-rows' : ''
+        ? ' cvi-track--layout-grid'
+        : ' cvi-track--layout-flex'
+    }${this.flexColumnsEqual ? ' cvi-track--items-have-equal-width' : ''}${
+      this.gridRows ? ' cvi-track--has-rows' : ''
     }`;
   }
 

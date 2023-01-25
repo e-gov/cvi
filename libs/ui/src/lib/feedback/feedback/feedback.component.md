@@ -2,7 +2,7 @@
 
 Feature | Description
 - | -
-  Selector | `veera-ng-feedback`
+  Selector | `cvi-ng-feedback`
 Corresponding Javascript component | `FeedbackComponent`
 Design system module | -
 Permitted parent/ancestors | any

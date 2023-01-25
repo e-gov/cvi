@@ -2,11 +2,11 @@
 
 | Feature                    | Description          |
 |----------------------------|----------------------|
-| Selector                   | `veera-ng-tab-group` |
+| Selector                   | `cvi-ng-tab-group` |
 | Component name             | `TabGroupComponent`  |
 | Content                    | yes                  |
 | Permitted parent/ancestors | any                  |
-| Permitted children         | `veera-ng-tab`       |
+| Permitted children         | `cvi-ng-tab`       |
 
 ## Where to use
 

@@ -3,17 +3,17 @@
 
 :host {
   display: block;
-  background-color: var(--veera-color-black-coral-1);
-  border: 1px solid var(--veera-color-black-coral-2);
+  background-color: var(--cvi-color-black-coral-1);
+  border: 1px solid var(--cvi-color-black-coral-2);
   margin-inline: 10%;
-  border-radius: $veera-radius-m;
-  padding: var(--veera-spacing-paldiski);
-  margin-bottom: var(--veera-spacing-viljandi);
+  border-radius: $cvi-radius-m;
+  padding: var(--cvi-spacing-paldiski);
+  margin-bottom: var(--cvi-spacing-viljandi);
 }
 
 .content {
   display: block;
-  color: var(--veera-color-black-coral-18);
-  font-size: $veera-font-size-80;
-  line-height: $veera-line-height-500;
+  color: var(--cvi-color-black-coral-18);
+  font-size: $cvi-font-size-80;
+  line-height: $cvi-line-height-500;
 }

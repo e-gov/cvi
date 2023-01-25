@@ -12,7 +12,7 @@ const Template: Story = (args) => ({
     <ng-template #modal>
       <p><b>Modal content</b></p>
     </ng-template>
-    <veera-ng-button [veeraNgModal]="modal">Open modal</veera-ng-button>
+    <cvi-ng-button [cviNgModal]="modal">Open modal</cvi-ng-button>
   `,
 });
 
@@ -24,7 +24,7 @@ const TemplateModalOpen: Story = (args) => ({
     <ng-template #modal>
       <p><b>Modal content</b></p>
     </ng-template>
-    <veera-ng-button [veeraNgModal]="modal" [open]="true">Open modal</veera-ng-button>
+    <cvi-ng-button [cviNgModal]="modal" [open]="true">Open modal</cvi-ng-button>
   `,
 });
 
@@ -36,7 +36,7 @@ const TemplateModalOpenWithoutButton: Story = (args) => ({
     <ng-template #modal>
       <p><b>Modal content</b></p>
     </ng-template>
-    <ng-container [veeraNgModal]="modal" [open]="true"></ng-container>
+    <ng-container [cviNgModal]="modal" [open]="true"></ng-container>
   `,
 });
 
