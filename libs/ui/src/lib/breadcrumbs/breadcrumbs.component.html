@@ -1,12 +1,12 @@
-<div class="cvi-breadcrumbs">
-  <div *ngIf="iconName" class="cvi-breadcrumbs__icon-wrapper">
-    <cvi-ng-icon [name]="iconName"
-                   svgClass="cvi-breadcrumbs__icon">
-    </cvi-ng-icon>
-  </div>
+<cvi-ng-track [gap]="2">
+  <cvi-ng-icon *ngIf="iconName"
+               [name]="iconName"
+               class="cvi-breadcrumbs__icon-wrapper"
+               svgClass="cvi-breadcrumbs__icon">
+  </cvi-ng-icon>
   <ul class="cvi-breadcrumbs__items">
     <li *ngFor="let label of breadcrumbLabels; index as index" class="cvi-breadcrumbs__item">
       <a class="cvi-breadcrumbs__item-link" (click)="breadcrumbChange.emit(index)">{{ label }}</a>
     </li>
   </ul>
-</div>
+</cvi-ng-track>

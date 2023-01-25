@@ -35,8 +35,12 @@ const TemplateWithIcon: Story<BreadcrumbsComponent> = (
   `,
 });
 
-export const WithIcon = TemplateWithIcon.bind({});
-WithIcon.args = {
-  breadcrumbLabels: ['Abiellumise ülevaade'],
+export const Mobile = TemplateWithIcon.bind({});
+Mobile.args = {
   iconName: 'arrow_a_left',
+};
+Mobile.parameters = {
+  viewport: {
+    defaultViewport: 'iphone12mini',
+  },
 };
