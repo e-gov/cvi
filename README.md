@@ -1,6 +1,6 @@
 # e-Gov Common Visual Identity (CVI) Component Library
 
-This repository includes a shared CSS library (preprocessed with Sass) and HTML examples based on it, as well as a UI kit in Angular and a typed (and tree-shakable!) icon library.
+This repository includes a shared CSS library (preprocessed with Sass) and HTML examples based on it, as well as a UI kit in Angular and a typed tree-shakable icons library.
 
 By design, the CSS has no dependency on a specific Javascript framework and since the styles and html is separated then interested contributors can easily add component libraries in other frameworks such as React or Vue.js.
 Also, the Angular UI library has no dependency to any design system/framework such as Bootstrap or Google's Material in order to reduce dependence on 3rd party vendors.
@@ -17,7 +17,7 @@ Styles were based on the initial Veera Design System:
 
 https://www.figma.com/file/nNCV5kRqdRkS8MOCK1ZbqU/Veera-Design-System
 
-**e-Gov CVI is not Veera.**
+But please take note that e-Gov CVI **is not Veera**
 
 ## Using the Components
 
