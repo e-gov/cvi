@@ -1,5 +1,4 @@
 @mixin cvi-breadcrumbs($base: &) {
-  display: flex;
 
   @at-root {
     #{$base}__items {
@@ -8,11 +7,22 @@
     }
 
     #{$base}__item {
-      & + &::before {
-        float: left;
-        padding-inline: get-spacing('rapla');
-        color: get-color(black-coral-12);
-        content: '/';
+      @include cvi-breakpoint-down(sm) {
+        /* stylelint-disable-next-line selector-pseudo-class-disallowed-list */
+        &:not(&:nth-last-child(2)) {
+          #{$base}__item-link {
+            display: none;
+            content: '';
+          }
+        }
+      }
+
+      @include cvi-breakpoint-up(sm) {
+        & + &::before {
+          padding-inline: get-spacing('rapla');
+          color: get-color(black-coral-12);
+          content: '/';
+        }
       }
 
       &:last-child:not(&:first-child) {
@@ -29,13 +39,16 @@
     }
 
     #{$base}__icon {
-      height: get-spacing('rapla');
+      @include cvi-breakpoint-down(sm) {
+        height: get-spacing('rapla');
+        fill: get-color(sapphire-blue-10);
+      }
     }
 
     #{$base}__icon-wrapper {
-      display: flex;
-      fill: get-color(sapphire-blue-10);
-      margin-right: get-spacing('rapla');
+      @include cvi-breakpoint-up(sm) {
+        display: none;
+      }
     }
   }
 }
