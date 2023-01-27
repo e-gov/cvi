@@ -60,4 +60,4 @@ export * from './lib/modal/modal.directive';
 export * from './lib/confirmation-modal/confirmation-modal.component';
 export * from './lib/reorderable-list/reorderable-list/reorderable-list.component';
 export * from './lib/reorderable-list/reorderable-list-item/reorderable-list-item.component';
-export * from './lib/services/message-bus.service';
+export * from './lib/message-bus/message-bus.service';
