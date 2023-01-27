@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [1.3.0](https://github.com/e-gov/cvi/compare/ui-1.2.0...ui-1.3.0) (2023-01-27)
+
+
+### Features
+
+* message bus service ([#12](https://github.com/e-gov/cvi/issues/12)) ([87734c7](https://github.com/e-gov/cvi/commit/87734c70d607ef55235b0decc52131d4acab9b05))
+
+
+
 # [1.2.0](https://github.com/e-gov/cvi/compare/ui-1.1.0...ui-1.2.0) (2023-01-25)
 
 
