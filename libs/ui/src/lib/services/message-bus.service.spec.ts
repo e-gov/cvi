@@ -33,6 +33,8 @@ describe('MessageBusService', () => {
       expect(message).toBe(messageTypeA);
     });
 
+    service.push(messageTypeB);
+
     service.message$('B').subscribe((message) => {
       expect(message).toBe(messageTypeB);
     });
