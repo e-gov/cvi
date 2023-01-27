@@ -14,12 +14,14 @@ describe('MessageBusService', () => {
     expect(service.getLast()).toEqual({} as Message);
   });
 
-  it('should push message', () => {
-    expect(service.getLast()).toEqual({} as Message);
+  it('should only return given type message', (done: any) => {
+    const messageTypeA = { type: 'A', data: 'Data A' as unknown } as Message;
 
-    const messageTypeA = { type: 'A' } as Message;
     service.push(messageTypeA);
 
-    expect(service.getLast()).toEqual(messageTypeA);
+    service.message$('A').subscribe((message) => {
+      expect(message).toBe(messageTypeA);
+      done();
+    });
   });
 });
