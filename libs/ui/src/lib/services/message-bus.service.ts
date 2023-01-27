@@ -1,18 +1,21 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, filter, Observable } from "rxjs";
+import { BehaviorSubject, filter, Observable } from 'rxjs';
 
 export interface Message {
-  type: string,
+  type: string;
   data?: never;
 }
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class MessageBusService {
+  private message = new BehaviorSubject<Message>({} as Message);
 
-  private messages = new BehaviorSubject<Message>({} as Message);
-  messages$ = (type: string): Observable<Message> => this.messages.pipe(filter(msg => msg.type === type));
+  message$ = (type: string): Observable<Message> =>
+    this.message.pipe(filter((msg) => msg.type === type));
 
-  push = (message: Message) => this.messages.next(message);
+  push = (message: Message) => this.message.next(message);
+
+  getLast = () => this.message.value;
 }
