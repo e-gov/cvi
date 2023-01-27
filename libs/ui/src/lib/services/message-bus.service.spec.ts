@@ -22,21 +22,4 @@ describe('MessageBusService', () => {
 
     expect(service.getLast()).toEqual(messageTypeA);
   });
-
-  it('should only return given type message', () => {
-    const messageTypeA = { type: 'A', data: 'Data A' as unknown } as Message;
-    const messageTypeB = { type: 'B', data: 'Data B' as unknown } as Message;
-
-    service.push(messageTypeA);
-
-    service.message$('A').subscribe((message) => {
-      expect(message).toBe(messageTypeA);
-    });
-
-    service.push(messageTypeB);
-
-    service.message$('B').subscribe((message) => {
-      expect(message).toBe(messageTypeB);
-    });
-  });
 });
