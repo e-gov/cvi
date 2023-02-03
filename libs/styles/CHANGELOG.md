@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.2.1](https://github.com/e-gov/cvi/compare/styles-1.2.0...styles-1.2.1) (2023-02-03)
+
+
+### Bug Fixes
+
+* select component styles ([#13](https://github.com/e-gov/cvi/issues/13)) ([c768720](https://github.com/e-gov/cvi/commit/c7687205db4e6f0233d9523ee900f049c5b8e729))
+
+
+
 # [1.2.0](https://github.com/e-gov/cvi/compare/styles-1.1.0...styles-1.2.0) (2023-01-25)
 
 
