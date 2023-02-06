@@ -17,7 +17,11 @@ Styles were based on the initial Veera Design System:
 
 https://www.figma.com/file/nNCV5kRqdRkS8MOCK1ZbqU/Veera-Design-System
 
-But please take note that e-Gov CVI **is not Veera**
+But please take note that e-Gov CVI **is not Veera**.
+
+### Installation
+
+Run `npm install` in the root folder.
 
 ## Using the Components
 
@@ -30,7 +34,7 @@ In addition, the storybook docker image is also published to the Koodivaramu rep
 https://koodivaramu.eesti.ee/e-gov/cvi/container_registry
 
 ## Contributing
-If you want to contribute to the Common Visual Identity Component Library, create a fork, make changes and create a pull-request back to this repository.  
+If you want to contribute to the Common Visual Identity Component Library, create a fork, make changes and create a pull-request back to this repository.
 Follow the [GitHub contribution guide](https://docs.github.com/en/get-started/quickstart/contributing-to-projects) for more detailed instructions.
 
 ### Adding/updating packages
