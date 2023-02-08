@@ -7,6 +7,7 @@ import {
   ViewChild,
 } from '@angular/core';
 import { CviIconName } from '@egov/cvi-icons';
+import { Gap } from '../../track/track';
 import { iconSizeDefault } from '../icon/icon';
 import { LabeledIconPosition } from './icon-position';
 import { LabeledIconVerticalAlignment } from './vertical-alignment';
@@ -29,6 +30,10 @@ export class LabeledIconComponent {
   /** Icon height in px */
   @Input()
   iconHeight?: number = iconSizeDefault;
+
+  /** Gap between icon and text */
+  @Input()
+  gap: Gap = 4;
 
   /** Additional classes for the cvi-ng-icon element */
   @Input() iconClass = 'cvi-labeled-icon__icon-wrapper';
