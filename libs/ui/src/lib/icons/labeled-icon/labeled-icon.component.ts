@@ -30,7 +30,7 @@ export class LabeledIconComponent {
   @Input()
   iconHeight?: number = iconSizeDefault;
 
-  /** Additional classes for the cvi-ng-icon element. You can set icon height here */
+  /** Additional classes for the cvi-ng-icon element */
   @Input() iconClass = 'cvi-labeled-icon__icon-wrapper';
 
   @Input() verticalAlignment: LabeledIconVerticalAlignment = 'normal';
