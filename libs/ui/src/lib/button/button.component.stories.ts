@@ -1,7 +1,6 @@
-import { Story, Meta, ArgTypes } from '@storybook/angular';
+import { Story, Meta } from '@storybook/angular';
 import notes from './button.component.md';
 import { ButtonComponent } from './button.component';
-import { iconSizeDefault } from '../icons/icon/icon';
 
 export default {
   title: 'Angular/Button',
@@ -61,27 +60,11 @@ const TemplateTextButtonWithIcon: Story<ButtonComponent> = (
   /* template */
   template: `
     <cvi-ng-button appearance="text">
-      <cvi-ng-labeled-icon name="add" iconPosition="before" alignment="center" [iconHeight]="iconHeight">
+      <cvi-ng-labeled-icon name="add" iconPosition="before" verticalAlignment="center" [iconHeight]="16">
         {{ content }}
       </cvi-ng-labeled-icon>
     </cvi-ng-button>
   `,
 });
 
-type TextButtonWithIconWithCustomArgs = ButtonComponent & {
-  iconHeight: number;
-};
-
 export const TextButtonWithIcon = TemplateTextButtonWithIcon.bind({});
-TextButtonWithIcon.argTypes = {
-  iconHeight: {
-    name: 'Icon height',
-    table: {
-      category: 'Playground',
-    },
-  },
-} as Partial<ArgTypes<TextButtonWithIconWithCustomArgs>>;
-TextButtonWithIcon.args = {
-  appearance: 'text',
-  iconHeight: iconSizeDefault,
-} as TextButtonWithIconWithCustomArgs;
