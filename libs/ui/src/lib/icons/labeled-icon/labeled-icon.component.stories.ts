@@ -21,12 +21,17 @@ export default {
       },
       control: { type: 'text' },
     },
+    gap: {
+      name: 'Gap',
+      control: { type: 'range', min: 0, max: 20, step: 1 },
+    },
     svgClass: { control: false },
     iconClass: { control: false },
   },
   args: {
     iconHeight: iconSizeDefault,
     name: 'call',
+    gap: 4,
     iconPosition: 'before',
     content: 'This is a labeled icon',
   },
@@ -36,7 +41,7 @@ const Template: Story<LabeledIconComponent> = (args: LabeledIconComponent) => ({
   props: args,
   /* template */
   template: `
-    <cvi-ng-labeled-icon [name]="name" [iconPosition]="iconPosition" [verticalAlignment]="verticalAlignment" [iconHeight]="iconHeight">
+    <cvi-ng-labeled-icon [name]="name" [iconPosition]="iconPosition" [verticalAlignment]="verticalAlignment" [iconHeight]="iconHeight" [gap]="gap">
       {{ content }}
     </cvi-ng-labeled-icon>
   `,
@@ -46,6 +51,9 @@ export const Default = Template.bind({});
 
 export const WithIconAfter = Template.bind({});
 WithIconAfter.args = { iconPosition: 'after' };
+
+export const WithCustomGap = Template.bind({});
+WithCustomGap.args = { gap: 2 };
 
 const TemplateInsideButton: Story<LabeledIconComponent> = (
   args: LabeledIconComponent
