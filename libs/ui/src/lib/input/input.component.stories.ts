@@ -46,11 +46,11 @@ WithSuffixIcon.args = {
 
 const FormTemplate: Story<InputComponent> = (args: InputComponent) => {
   const form = new FormGroup({
-    item: new FormControl(null),
+    item: new FormControl('initial value'),
   });
 
   function selectedValue() {
-    return form.getRawValue().item;
+    return form.controls.item.value;
   }
 
   return {
@@ -71,7 +71,7 @@ const FormTemplate: Story<InputComponent> = (args: InputComponent) => {
   };
 };
 export const WithFormGroup = FormTemplate.bind({});
-WithFormGroup.storyName = 'With formGroup';
+WithFormGroup.storyName = 'With FormGroup';
 
 const CharacterCounterTemplate: Story<InputComponent> = (
   args: InputComponent

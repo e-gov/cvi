@@ -1,23 +1,25 @@
 import {
   ChangeDetectorRef,
   Component,
+  EventEmitter,
   forwardRef,
   HostBinding,
   Input,
+  Output,
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { CviIconName } from '@egov/cvi-icons';
 
+export const inputComponentValueAccessor = {
+  provide: NG_VALUE_ACCESSOR,
+  useExisting: forwardRef(() => InputComponent),
+  multi: true,
+};
+
 @Component({
   selector: 'cvi-ng-input',
   templateUrl: './input.component.html',
-  providers: [
-    {
-      provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => InputComponent),
-      multi: true,
-    },
-  ],
+  providers: [inputComponentValueAccessor],
 })
 export class InputComponent implements ControlValueAccessor {
   /** HTML id passed from FormItem component */
@@ -32,11 +34,17 @@ export class InputComponent implements ControlValueAccessor {
   /** Icon added to the right */
   @Input() suffixIconName!: CviIconName;
 
-  private internalValue?: any;
+  /** Emit value on model change */
+  @Output() valueChange = new EventEmitter<any>();
+
+  internalValue?: any;
+
   // eslint-disable-next-line @typescript-eslint/no-empty-function
-  private onChanged: (value: unknown) => void = () => {};
+  private onChanged: (value: any) => void = () => {
+    this.valueChange.emit(this.internalValue);
+  };
   // eslint-disable-next-line @typescript-eslint/no-empty-function
-  private onTouched: () => unknown = () => {};
+  private onTouched: () => any = () => {};
 
   @HostBinding('class') get getHostClasses(): string {
     return `cvi-textfield cvi-textfield--type-single-line${
@@ -46,21 +54,15 @@ export class InputComponent implements ControlValueAccessor {
 
   constructor(private readonly cdRef: ChangeDetectorRef) {}
 
-  get value(): any {
-    return this.internalValue;
-  }
-
-  set value(val: any) {
-    this.internalValue = val;
-    this.onChanged(val);
+  setValue(value: any) {
+    this.internalValue = value;
+    this.onChanged(value);
     this.onTouched();
   }
 
   writeValue(obj: any): void {
-    if (obj !== this.internalValue) {
-      this.internalValue = obj;
-      this.cdRef.markForCheck();
-    }
+    this.internalValue = obj;
+    this.cdRef.markForCheck();
   }
 
   registerOnChange(fn: any): void {

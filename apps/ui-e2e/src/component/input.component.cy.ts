@@ -25,4 +25,15 @@ describe('InputComponent', () => {
       .shouldHaveClasses('input', 'cvi-textfield__text-control')
       .and('be.disabled');
   });
+
+  it('Displays inserted value correctly using FormGroup', () => {
+    cy.loadStory('Angular Form Input', 'With FormGroup')
+      .get('input')
+      .should('have.value', 'initial value')
+      .clear()
+      .should('have.value', '')
+      .type('some text')
+      .should('have.value', 'some text');
+    cy.get('div').contains('Inserted value: some text');
+  });
 });

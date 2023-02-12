@@ -141,6 +141,8 @@ const components = [
 
 const pipes = [SafeHtmlPipe, NotificationSeverityToHeaderIconPipe];
 
+const directives = [DataAttributeDirective];
+
 @NgModule({
   imports: [
     CommonModule,
@@ -150,7 +152,7 @@ const pipes = [SafeHtmlPipe, NotificationSeverityToHeaderIconPipe];
     A11yModule,
   ],
   declarations: [...components, ...pipes],
-  exports: [...components, ...pipes, TextFieldModule, DataAttributeDirective],
+  exports: [...components, ...pipes, ...directives],
   providers: [
     ...pipes,
     {
