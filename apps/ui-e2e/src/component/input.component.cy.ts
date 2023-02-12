@@ -26,7 +26,7 @@ describe('InputComponent', () => {
       .and('be.disabled');
   });
 
-  it('Displays inserted value correctly', () => {
+  it('Displays inserted value correctly using FormGroup', () => {
     cy.loadStory('Angular Form Input', 'With FormGroup')
       .get('input')
       .should('have.value', 'initial value')

@@ -18,7 +18,7 @@ describe('TextareaComponent', () => {
       .shouldHaveClasses('cvi-ng-textarea', ['cvi-textfield--no-resize']);
   });
 
-  it('Displays inserted value correctly using a form group', () => {
+  it('Displays inserted value correctly using FormGroup', () => {
     cy.loadStory('Angular Form Textarea', 'With FormGroup')
       .get('textarea')
       .should('have.value', 'initial value')
