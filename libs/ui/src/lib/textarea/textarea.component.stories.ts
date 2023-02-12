@@ -17,7 +17,7 @@ export default {
     placeholder: 'Placeholder',
     disabled: false,
     maxLength: 2000,
-    minRows: 3
+    minRows: 3,
   },
 } as Meta<TextareaComponent>;
 
@@ -58,7 +58,9 @@ WithFormItem.args = {
   htmlId: 'some-item',
 };
 
-const FormGroupTemplate: Story<TextareaComponent> = (args: TextareaComponent) => {
+const FormGroupTemplate: Story<TextareaComponent> = (
+  args: TextareaComponent
+) => {
   const form = new FormGroup({
     item: new FormControl('initial value'),
   });
