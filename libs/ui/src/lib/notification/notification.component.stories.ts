@@ -24,11 +24,11 @@ const Template: Story<NotificationComponent> = (
   /* template */
   template: `
     <cvi-ng-notification [severity]="severity"
-                           [size]="size"
-                           [showIcon]="showIcon"
-                           [showCloseButton]="showCloseButton"
-                           [title]="title"
-                           [iconName]="iconName"
+                         [size]="size"
+                         [showIcon]="showIcon"
+                         [showCloseButton]="showCloseButton"
+                         [title]="title"
+                         [iconName]="iconName"
     >
       {{content}}
     </cvi-ng-notification>
@@ -36,7 +36,6 @@ const Template: Story<NotificationComponent> = (
 });
 
 export const Default = Template.bind({});
-Default.args = {};
 
 export const Success = Template.bind({});
 Success.args = { severity: 'success' };
