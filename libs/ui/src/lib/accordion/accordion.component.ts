@@ -17,8 +17,7 @@ import {
 } from '@angular/core';
 import { AccordionItemDirective } from './directives/accordion-item.directive';
 import { BehaviorSubject, Subscription } from 'rxjs';
-
-let nextUniqueId = 0;
+import { v4 as uuidv4 } from 'uuid';
 
 @Component({
   selector: 'cvi-ng-accordion',
@@ -44,9 +43,8 @@ let nextUniqueId = 0;
 export class AccordionComponent implements AfterViewInit, OnDestroy {
   @Input() expandedItems: number[] = [];
   @Input() singleOpen = true;
-  // @Input() name = 'accordion';
 
-  uniqueId = nextUniqueId++;
+  accordionId = uuidv4();
 
   @ContentChildren(AccordionItemDirective)
   accordionItemDirectives!: QueryList<AccordionItemDirective>;
@@ -82,7 +80,7 @@ export class AccordionComponent implements AfterViewInit, OnDestroy {
       }
       this.expandedItems = [...this.expandedItems, index];
 
-      const itemToScrollTo = document.getElementById('accordion-' + this.uniqueId + '-item-' + index);
+      const itemToScrollTo = document.getElementById('accordion-' + this.accordionId + '-item-' + index);
       if (itemToScrollTo) {
         itemToScrollTo.scrollIntoView(true);
       }

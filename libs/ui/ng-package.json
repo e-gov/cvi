@@ -9,6 +9,7 @@
     "rxjs",
     "@egov/cvi-icons",
     "@ngx-translate/core",
-    "@ngx-translate/http-loader"
+    "@ngx-translate/http-loader",
+    "uuid"
   ]
 }
