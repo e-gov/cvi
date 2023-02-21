@@ -6,6 +6,7 @@
 
   &--label-position-top {
     flex-direction: column;
+    justify-content: flex-end;
     gap: get-spacing('paldiski');
   }
 
