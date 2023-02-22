@@ -21,12 +21,23 @@ export class SafeHtmlPipe implements PipeTransform {
       allowedTags: sanitizeHtml?.defaults?.allowedTags?.concat([
         'cvi-web-labeled-icon',
         'cvi-web-icon',
+        'cvi-web-track',
       ]),
       allowedAttributes: {
         ...sanitizeHtml?.defaults?.allowedAttributes,
         '*': ['class'],
         'cvi-web-labeled-icon': ['name'],
         'cvi-web-icon': ['name'],
+        'cvi-web-track': [
+          'gap',
+          'layout',
+          'flexColumnsEqual',
+          'gridRows',
+          'horizontalAlignment',
+          'verticalAlignment',
+          'flexDirection',
+          'flexIsMultiline',
+        ],
       },
     });
   }
