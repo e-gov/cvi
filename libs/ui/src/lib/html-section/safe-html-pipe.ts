@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { DomSanitizer } from '@angular/platform-browser';
 import sanitizeHtml from 'sanitize-html';
 
 @Pipe({
@@ -15,6 +15,9 @@ export class SafeHtmlPipe implements PipeTransform {
 
   private sanitize(dirty: string): string {
     return sanitizeHtml(dirty, {
+      parser: {
+        lowerCaseAttributeNames: false,
+      },
       allowedTags: sanitizeHtml?.defaults?.allowedTags?.concat([
         'cvi-web-labeled-icon',
         'cvi-web-icon',
