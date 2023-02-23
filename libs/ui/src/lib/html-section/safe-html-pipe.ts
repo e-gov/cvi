@@ -31,12 +31,12 @@ export class SafeHtmlPipe implements PipeTransform {
         'cvi-web-track': [
           'gap',
           'layout',
-          'flexColumnsEqual',
-          'gridRows',
-          'horizontalAlignment',
-          'verticalAlignment',
-          'flexDirection',
-          'flexIsMultiline',
+          'flex-columns-equal',
+          'grid-rows',
+          'horizontal-alignment',
+          'vertical-alignment',
+          'flex-direction',
+          'flex-is-multiline',
         ],
       },
     });
