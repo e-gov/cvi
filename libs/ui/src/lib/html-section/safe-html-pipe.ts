@@ -15,9 +15,6 @@ export class SafeHtmlPipe implements PipeTransform {
 
   private sanitize(dirty: string): string {
     return sanitizeHtml(dirty, {
-      parser: {
-        lowerCaseAttributeNames: false,
-      },
       allowedTags: sanitizeHtml?.defaults?.allowedTags?.concat([
         'cvi-web-labeled-icon',
         'cvi-web-icon',
