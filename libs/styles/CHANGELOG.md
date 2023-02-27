@@ -2,6 +2,16 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.2.2](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/styles-1.2.1...styles-1.2.2) (2023-02-27)
+
+
+### Bug Fixes
+
+* **ng:** form item with multiline label positioning EBS-562, STPA-246 ([#18](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/18)) ([ca449d0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/ca449d04ff562750501c4e75e0b7069a2d6c1378))
+* **ui:** moved icon height value from notification Sass component to iconHeight or height Angular prop or inline style on a svg tag ([#20](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/20)) ([f7fc2c9](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/f7fc2c9ba242ad246112c971d5d9b9015368b0e7))
+
+
+
 ## [1.2.1](https://github.com/e-gov/cvi/compare/styles-1.2.0...styles-1.2.1) (2023-02-03)
 
 
