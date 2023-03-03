@@ -8,6 +8,7 @@ import {
 import { createCustomElement } from '@angular/elements';
 import { IconComponent } from '../icons/icon/icon.component';
 import { LabeledIconComponent } from '../icons/labeled-icon/labeled-icon.component';
+import { TrackComponent } from '../track/track.component';
 
 @Component({
   selector: 'cvi-ng-html-section',
@@ -24,6 +25,7 @@ export class HtmlSectionComponent implements OnInit {
     this.createCustomElements([
       [LabeledIconComponent, 'cvi-web-labeled-icon'],
       [IconComponent, 'cvi-web-icon'],
+      [TrackComponent, 'cvi-web-track'],
     ]);
   }
 

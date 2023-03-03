@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { DomSanitizer } from '@angular/platform-browser';
 import sanitizeHtml from 'sanitize-html';
 
 @Pipe({
@@ -18,12 +18,23 @@ export class SafeHtmlPipe implements PipeTransform {
       allowedTags: sanitizeHtml?.defaults?.allowedTags?.concat([
         'cvi-web-labeled-icon',
         'cvi-web-icon',
+        'cvi-web-track',
       ]),
       allowedAttributes: {
         ...sanitizeHtml?.defaults?.allowedAttributes,
         '*': ['class'],
         'cvi-web-labeled-icon': ['name'],
         'cvi-web-icon': ['name'],
+        'cvi-web-track': [
+          'gap',
+          'layout',
+          'flex-columns-equal',
+          'grid-rows',
+          'horizontal-alignment',
+          'vertical-alignment',
+          'flex-direction',
+          'flex-is-multiline',
+        ],
       },
     });
   }

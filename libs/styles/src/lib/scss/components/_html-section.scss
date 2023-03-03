@@ -33,14 +33,6 @@
       &:first-child {
         margin-top: 0;
       }
-
-      & > * {
-        margin-bottom: get-spacing('haapsalu');
-      }
-
-      & > *:last-child {
-        margin-bottom: 0;
-      }
     }
   }
 

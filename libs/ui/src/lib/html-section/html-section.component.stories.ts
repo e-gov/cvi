@@ -15,10 +15,12 @@ export default {
           <p>Telefonikõnedele vastatakse E-R 9-17 ning kõnesid teenindatakse eesti, vene ja inglise keeles</p>
         </div>
         <div class="cvi-html-section__content-elements">
-          <cvi-web-labeled-icon name="call"><a href="tel:+3726123000">+372 612 3000</a></cvi-web-labeled-icon>
-          <cvi-web-labeled-icon name="email"><a href="mailto:ppa@politsei.ee">ppa@politsei.ee</a></cvi-web-labeled-icon>
-          <cvi-web-labeled-icon name="screen_share"><a href="https://politsei.ee" target="_blank">politsei.ee</a></cvi-web-labeled-icon>
-          <cvi-web-labeled-icon name="location">Pärnu mnt 139, 15060 Tallinn</cvi-web-labeled-icon>
+          <cvi-web-track gap="4" layout="flex" flex-direction="vertical">
+            <cvi-web-labeled-icon name="call"><a href="tel:+3726123000">+372 612 3000</a></cvi-web-labeled-icon>
+            <cvi-web-labeled-icon name="email"><a href="mailto:ppa@politsei.ee">ppa@politsei.ee</a></cvi-web-labeled-icon>
+            <cvi-web-labeled-icon name="screen_share"><a href="https://politsei.ee" target="_blank">politsei.ee</a></cvi-web-labeled-icon>
+            <cvi-web-labeled-icon name="location">Pärnu mnt 139, 15060 Tallinn</cvi-web-labeled-icon>
+          </cvi-web-track>
         </div>
       </div>
     `,
@@ -66,9 +68,11 @@ Contacts.args = {
         <p>Võta ühendust perekonnaseisuasutusega, kus soovid abielu sõlmida</p>
       </div>
       <div class="cvi-html-section__content-elements">
-        <cvi-web-labeled-icon name="screen_share"><a href="#" class="external-link">Maakonnakeskuste kohalikud omavalitsused</a></cvi-web-labeled-icon>
-        <cvi-web-labeled-icon name="screen_share"><a href="#">Notarid</a></cvi-web-labeled-icon>
-        <cvi-web-labeled-icon name="screen_share"><a href="#">Abielu sõlmimise õigust omavad vaimulikud</a></cvi-web-labeled-icon>
+        <cvi-web-track gap="4" layout="flex" flex-direction="vertical">
+          <cvi-web-labeled-icon name="screen_share"><a href="#" class="external-link">Maakonnakeskuste kohalikud omavalitsused</a></cvi-web-labeled-icon>
+          <cvi-web-labeled-icon name="screen_share"><a href="#">Notarid</a></cvi-web-labeled-icon>
+          <cvi-web-labeled-icon name="screen_share"><a href="#">Abielu sõlmimise õigust omavad vaimulikud</a></cvi-web-labeled-icon>
+        </cvi-web-track>
       </div>
     </div>
   `,
