@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [1.3.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/styles-1.2.2...styles-1.3.0) (2023-03-03)
+
+
+### Features
+
+* **ng:** allow wrapping html-section's content elements in track EBS-395 STPA-236 ([#19](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/19)) ([d05526b](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/d05526bd608f27af13976b96c2a0a292ff7df7ef))
+
+
+
 ## [1.2.2](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/styles-1.2.1...styles-1.2.2) (2023-02-27)
 
 
