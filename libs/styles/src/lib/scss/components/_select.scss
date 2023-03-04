@@ -28,6 +28,10 @@
       border: 1px solid var(--cvi-color-jasper-9);
     }
 
+    &.disabled #{$base}__container {
+      background-color: get-color(black-coral-0);
+    }
+
     #{$base}__container {
       display: flex;
       align-items: center;

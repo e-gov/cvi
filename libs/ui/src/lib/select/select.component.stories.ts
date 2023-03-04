@@ -113,6 +113,23 @@ ObjectsAsItems.args = {
     -1,
 };
 
+const DisabledTemplate: Story<SelectComponent> = (args: SelectComponent) => ({
+  props: {
+    ...args,
+  },
+  template: `
+      <div style="width: 200px">
+        <cvi-ng-select [items]="items"
+                       [disabled]="disabled" 
+                       [placeholder]="placeholder"></cvi-ng-select>
+      </div>
+  `,
+});
+export const Disabled = DisabledTemplate.bind({});
+Disabled.args = {
+  disabled: true
+}
+
 const FormTemplate: Story<SelectComponent> = (args: SelectComponent) => {
   const form = new FormGroup({
     item: new FormControl(null, Validators.required),
