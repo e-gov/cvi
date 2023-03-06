@@ -3,7 +3,8 @@
      [class.has-value]="hasValue"
      [class.open]="isOpen"
      [class.touched]="touched"
-     [class.invalid]="invalid">
+     [class.invalid]="invalid"
+     [class.disabled]="disabled">
   <div class="cvi-select__container"
        [class.background-disabled]="backgroundDisabled"
        (mousedown)="handleMousedown($event)">
@@ -26,10 +27,12 @@
              role="presentation"
              autocomplete="off"
              [value]="searchTerm ? searchTerm : ''"
+             [disabled]="disabled"
              (input)="filter(searchInput.value)"
              class="cvi-select__input"/>
     </div>
-    <span class="cvi-select__icon-wrapper"
+    <span *ngIf="!disabled"
+          class="cvi-select__icon-wrapper"
           (mousedown)="handleArrowClick($event)">
       <cvi-ng-icon *ngIf="!isOpen && (!hasValue || !backgroundDisabled)"
                      svgClass="cvi-select__icon-svg"

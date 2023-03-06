@@ -49,6 +49,7 @@ export class SelectComponent
   @Input() addItemFn: AddItemFn | undefined;
   @Input() minTermLength = 0;
   @Input() backgroundDisabled = false;
+  @Input() disabled = false;
 
   @Output() itemChanged = new EventEmitter();
 
@@ -179,8 +180,10 @@ export class SelectComponent
   }
 
   open() {
-    this.isOpen = true;
-    this.focus();
+    if (!this.disabled) {
+      this.isOpen = true;
+      this.focus();
+    }
   }
 
   close() {
@@ -207,7 +210,13 @@ export class SelectComponent
   }
 
   setDisabledState(isDisabled: boolean): void {
-    // empty
+    this.disabled = isDisabled;
+
+    if (this.disabled) {
+      this.close();
+    }
+
+    this.cd.markForCheck();
   }
 
   writeValue(obj: any): void {
