@@ -127,8 +127,8 @@ const DisabledTemplate: Story<SelectComponent> = (args: SelectComponent) => ({
 });
 export const Disabled = DisabledTemplate.bind({});
 Disabled.args = {
-  disabled: true
-}
+  disabled: true,
+};
 
 const FormTemplate: Story<SelectComponent> = (args: SelectComponent) => {
   const form = new FormGroup({
