@@ -1,0 +1,5 @@
+// Returns variable while printing a deprecation warning
+@function deprecate($var-value, $deprecated-var-name, $replacement-var-name) {
+  @warn '#{$deprecated-var-name} variable is deprecated, consider replacing it with #{$replacement-var-name} variable';
+  @return $var-value;
+}
