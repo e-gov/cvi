@@ -13,8 +13,8 @@
 
       &.active {
         background-color: get-color(white);
-        border-top-left-radius: $cvi-radius-s;
-        border-top-right-radius: $cvi-radius-s;
+        border-top-left-radius: var(--cvi-radius-s);
+        border-top-right-radius: var(--cvi-radius-s);
         color: get-color(sapphire-blue-10);
         border: 1px solid get-color(black-coral-2);
         border-bottom: none;
@@ -25,7 +25,7 @@
       background-color: get-color(white);
       padding: get-spacing('haapsalu');
       border: 1px solid get-color(black-coral-2);
-      border-radius: $cvi-radius-s;
+      border-radius: var(--cvi-radius-s);
     }
   }
 }

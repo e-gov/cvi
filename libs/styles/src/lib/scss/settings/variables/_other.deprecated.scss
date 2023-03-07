@@ -1,0 +1,24 @@
+// These variables are deprecated.
+// Add new values to _other.scss
+
+// Border radii
+$cvi-radius-pill: 999px;
+$cvi-radius-l: 8px;
+$cvi-radius-m: 6px;
+$cvi-radius-s: 4px;
+$cvi-radius-xs: 2px;
+
+// Border widths
+$cvi-border-width: 2px;
+
+// Shadows
+$cvi-shadow-beta-blur: 15px;
+
+$cvi-shadow-alpha: 0 1px 5px 0 rgba(var(--cvi-color-rgb-black) / 0.15);
+$cvi-shadow-beta: 0 4px $cvi-shadow-beta-blur 0 rgba(var(--cvi-color-rgb-black) / 0.15);
+$cvi-shadow-gamma: 0 0 20px 0 rgba(var(--cvi-color-rgb-sapphire-blue-16) / 0.1);
+$cvi-shadow-delta: inset 1px 0 0 var(--cvi-color-white),
+  inset -1px 0 0 var(--cvi-color-white), inset 0 1px 0 var(--cvi-color-white),
+  inset 0 -1px 0 var(--cvi-color-white);
+
+$cvi-shadow-focus: $cvi-shadow-delta;

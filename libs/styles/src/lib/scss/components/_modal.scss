@@ -35,7 +35,7 @@
         height: 100%;
       }
       @include cvi-breakpoint-up(sm) {
-        border-radius: $cvi-radius-m;
+        border-radius: var(--cvi-radius-m);
         position: relative;
         margin-block: get-spacing('narva');
         margin-inline: auto;

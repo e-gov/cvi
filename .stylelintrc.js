@@ -116,11 +116,11 @@ module.exports = {
           '/^get-color\\(/',
           '/^\\$color-/',
         ],
-        'box-shadow': ['/^\\$cvi-shadow-/', 'none'],
+        'box-shadow': ['/^var\\(--cvi-shadow-/', 'none'],
         '/border-([a-z]+-[a-z]+-)*radius/': [
           '/^var\\(/',
           '51%',
-          '/^\\$cvi-radius-/',
+          '/^var\\(--cvi-radius-/',
         ],
         'font-size': ['/^get-font-size\\(/', 'inherit'],
         'font-weight': ['/^get-font-weight\\(/'],

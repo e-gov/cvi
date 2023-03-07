@@ -46,9 +46,9 @@
 
     #{$base}__inner-wrapper {
       @include cvi-breakpoint-down(sm) {
-        border-radius: $cvi-radius-s;
+        border-radius: var(--cvi-radius-s);
         #{$base}:not(.is-any-step-selected) & {
-          box-shadow: $cvi-shadow-gamma;
+          box-shadow: var(--cvi-shadow-gamma);
           background-color: var(--cvi-color-white);
           padding: $inner-padding--mobile;
         }
@@ -98,8 +98,8 @@
       @include cvi-breakpoint-down(sm) {
         color: get-color(black-coral-15);
         font-weight: get-font-weight(beta);
-        border-top-left-radius: $cvi-radius-s;
-        border-top-right-radius: $cvi-radius-s;
+        border-top-left-radius: var(--cvi-radius-s);
+        border-top-right-radius: var(--cvi-radius-s);
         background-color: get-color(white);
         #{$base}.is-any-step-selected & {
           padding-inline: get-spacing('parnu');
@@ -114,7 +114,7 @@
         flex-grow: 1;
         flex-shrink: 1;
         flex-basis: 0;
-        border-radius: $cvi-radius-l;
+        border-radius: var(--cvi-radius-l);
         // TODO: in future we could try to move the filter code from HTML to CSS for better separation of concerns. However right now there's an issue in Safari where the filter is not applied
         // filter: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='round'%3E%3CfeGaussianBlur in='SourceGraphic' stdDeviation='3' result='blur' %2f%3E%3CfeColorMatrix in='blur' mode='matrix' values='1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 19 -9' result='goo' %2f%3E%3CfeComposite in='SourceGraphic' in2='goo' operator='atop'%2f%3E%3C%2ffilter%3E%3C%2fsvg%3E#round")
         filter: url('#round') drop-shadow(0 1px 5px rgba(var(--cvi-color-rgb-black) / .15));
@@ -143,7 +143,7 @@
           padding-left: get-spacing('paldiski');
           padding-right: get-spacing('haapsalu');
           background-color: get-color(sapphire-blue-0);
-          box-shadow: $cvi-shadow-alpha;
+          box-shadow: var(--cvi-shadow-alpha);
         }
         #{$base}.is-any-step-selected & {
           pointer-events: none;
@@ -281,7 +281,7 @@
     #{$base}__content-panel,
     #{$base}__directional-buttons {
       @include cvi-breakpoint-up(sm) {
-        box-shadow: $cvi-shadow-beta;
+        box-shadow: var(--cvi-shadow-beta);
       }
     }
 
@@ -293,16 +293,16 @@
         padding-inline: $inner-padding--mobile;
         padding-block: get-spacing('kuressaare');
         background-color: get-color(white);
-        box-shadow: $cvi-shadow-gamma;
-        border-bottom-left-radius: $cvi-radius-s;
-        border-bottom-right-radius: $cvi-radius-s;
+        box-shadow: var(--cvi-shadow-gamma);
+        border-bottom-left-radius: var(--cvi-radius-s);
+        border-bottom-right-radius: var(--cvi-radius-s);
       }
       @include cvi-breakpoint-up(sm) {
         padding-top: get-spacing('kuressaare');
         padding-bottom: get-spacing('parnu');
         padding-inline: get-spacing('viljandi');
-        border-top-left-radius: $cvi-radius-l;
-        border-top-right-radius: $cvi-radius-l;
+        border-top-left-radius: var(--cvi-radius-l);
+        border-top-right-radius: var(--cvi-radius-l);
       }
     }
 
@@ -349,8 +349,8 @@
 
         display: flex;
         justify-content: space-between;
-        border-bottom-left-radius: $cvi-radius-l;
-        border-bottom-right-radius: $cvi-radius-l;
+        border-bottom-left-radius: var(--cvi-radius-l);
+        border-bottom-right-radius: var(--cvi-radius-l);
         background-color: get-color(white);
         clip-path: inset(0 $cvi-shadow-beta-blur * -1 $cvi-shadow-beta-blur * -1);
         width: calc(var(--width) - var(--gap));

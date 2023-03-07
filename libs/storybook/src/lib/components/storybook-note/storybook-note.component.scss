@@ -6,7 +6,7 @@
   background-color: var(--cvi-color-black-coral-1);
   border: 1px solid var(--cvi-color-black-coral-2);
   margin-inline: 10%;
-  border-radius: $cvi-radius-m;
+  border-radius: var(--cvi-radius-m);
   padding: var(--cvi-spacing-paldiski);
   margin-bottom: var(--cvi-spacing-viljandi);
 }

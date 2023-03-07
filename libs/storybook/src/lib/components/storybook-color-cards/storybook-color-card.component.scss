@@ -2,7 +2,7 @@
 
 .swatch {
   aspect-ratio: 1;
-  border-radius: $cvi-radius-s;
+  border-radius: var(--cvi-radius-s);
   height: 140px;
   background-color: var(--color);
 }
