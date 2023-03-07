@@ -7,8 +7,6 @@ export default {
   args: {
     placeholder: 'Placeholder...',
     maxLength: 2000,
-    minRows: 3,
-    maxRows: 5,
   },
 } as Meta;
 
@@ -20,10 +18,6 @@ const Template: Story = (args) => ({
       <textarea class="cvi-textfield__text-control"
                 [placeholder]="placeholder"
                 [maxLength]="maxLength"
-                cdkTextareaAutosize
-                #autosize="cdkTextareaAutosize"
-                [cdkAutosizeMinRows]="minRows"
-                [cdkAutosizeMaxRows]="maxRows"
       ></textarea>
     </span>
   `,
@@ -40,10 +34,6 @@ const CharacterCounterTemplate: Story = (args) => ({
       <textarea class="cvi-textfield__text-control"
                 [placeholder]="placeholder"
                 [maxLength]="maxLength"
-                cdkTextareaAutosize
-                #autosize="cdkTextareaAutosize"
-                [cdkAutosizeMinRows]="minRows"
-                [cdkAutosizeMaxRows]="maxRows"
       ></textarea>
     </span>
     <div class="cvi-character-counter">0 / 2000</div>
