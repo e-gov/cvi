@@ -1,22 +1,22 @@
 // These variables are deprecated.
 // Use maps in typography.scss to add new values
 
-$cvi-font-size-50: deprecate(10px, '$cvi-font-size-50', '$cvi-font-sizes');
-$cvi-font-size-70: deprecate(12px, '$cvi-font-size-70', '$cvi-font-sizes');
-$cvi-font-size-80: deprecate(14px, '$cvi-font-size-80', '$cvi-font-sizes');
-$cvi-font-size-100: deprecate(16px, '$cvi-font-size-100', '$cvi-font-sizes');
-$cvi-font-size-200: deprecate(18px, '$cvi-font-size-200', '$cvi-font-sizes');
-$cvi-font-size-220: deprecate(20px, '$cvi-font-size-220', '$cvi-font-sizes');
-$cvi-font-size-250: deprecate(24px, '$cvi-font-size-250', '$cvi-font-sizes');
-$cvi-font-size-300: deprecate(28px, '$cvi-font-size-300', '$cvi-font-sizes');
-$cvi-font-size-350: deprecate(32px, '$cvi-font-size-350', '$cvi-font-sizes');
-$cvi-font-size-400: deprecate(36px, '$cvi-font-size-400', '$cvi-font-sizes');
-$cvi-font-size-500: deprecate(48px, '$cvi-font-size-500', '$cvi-font-sizes');
+$cvi-font-size-50: 10px;
+$cvi-font-size-70: 12px;
+$cvi-font-size-80: 14px;
+$cvi-font-size-100: 16px;
+$cvi-font-size-200: 18px;
+$cvi-font-size-220: 20px;
+$cvi-font-size-250: 24px;
+$cvi-font-size-300: 28px;
+$cvi-font-size-350: 32px;
+$cvi-font-size-400: 36px;
+$cvi-font-size-500: 48px;
 
-$cvi-line-height-100: deprecate(1, '$cvi-line-height-100', '$cvi-line-heights');
-$cvi-line-height-500: deprecate(1.5, '$cvi-line-height-500', '$cvi-line-heights');
+$cvi-line-height-100: 1;
+$cvi-line-height-500: 1.5;
 
-$cvi-font-weight-alpha: deprecate(300, '$cvi-font-weight-alpha', '$cvi-font-weights');
-$cvi-font-weight-beta: deprecate(400, '$cvi-font-weight-beta', '$cvi-font-weights');
-$cvi-font-weight-gamma: deprecate(500, '$cvi-font-weight-gamma', '$cvi-font-weights');
-$cvi-font-weight-delta: deprecate(700, '$cvi-font-weight-delta', '$cvi-font-weights');
+$cvi-font-weight-alpha: 300;
+$cvi-font-weight-beta: 400;
+$cvi-font-weight-gamma: 500;
+$cvi-font-weight-delta: 700;
