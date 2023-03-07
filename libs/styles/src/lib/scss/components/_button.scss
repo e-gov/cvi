@@ -9,8 +9,8 @@
       border-radius: $cvi-radius-pill;
       text-align: center;
       width: 100%;
-      font-size: $cvi-font-size-100;
-      line-height: $cvi-line-height-500;
+      font-size: get-font-size(100);
+      line-height: get-line-height(500);
 
       &:disabled {
         cursor: default;

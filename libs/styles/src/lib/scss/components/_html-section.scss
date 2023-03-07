@@ -23,7 +23,7 @@
   @at-root {
 
     #{$base}__title {
-      font-size: $cvi-font-size-220;
+      font-size: get-font-size(220);
       margin-bottom: get-spacing('elva');
     }
 

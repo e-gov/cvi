@@ -7,7 +7,7 @@
     #{$base}__tab-btn {
       border: none;
       padding: get-spacing('haapsalu');
-      font-size: $cvi-font-size-100;
+      font-size: get-font-size(100);
       color: get-color(sapphire-blue-20);
       cursor: pointer;
 

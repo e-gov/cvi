@@ -36,7 +36,7 @@
       margin-bottom: get-spacing('elva');
     }
     #{$base}__title {
-      line-height: $cvi-line-height-500;
+      line-height: get-line-height(500);
       color: get-color(black-coral-20);
     }
 
@@ -88,8 +88,8 @@
     #{$base}__content {
       display: block;
       color: get-color(black-coral-18);
-      font-size: $cvi-font-size-80;
-      line-height: $cvi-line-height-500;
+      font-size: get-font-size(80);
+      line-height: get-line-height(500);
     }
   }
 }

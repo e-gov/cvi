@@ -21,8 +21,8 @@
 
   @at-root {
     #{$base}__title {
-      font-size: $cvi-font-size-250;
-      line-height: $cvi-line-height-500;
+      font-size: get-font-size(250);
+      line-height: get-line-height(500);
       margin-bottom: get-spacing('paldiski');
     }
   }

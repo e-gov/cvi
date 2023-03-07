@@ -14,6 +14,6 @@
 .content {
   display: block;
   color: var(--cvi-color-black-coral-18);
-  font-size: $cvi-font-size-80;
-  line-height: $cvi-line-height-500;
+  font-size: get-font-size(80);
+  line-height: get-line-height(500);
 }

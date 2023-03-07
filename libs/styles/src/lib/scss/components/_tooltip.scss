@@ -15,7 +15,7 @@
       padding: var(--cvi-spacing-rapla) var(--cvi-spacing-elva);
       max-width: 400px;
       min-width: 125px;
-      font-size: $cvi-font-size-80;
+      font-size: get-font-size(80);
       z-index: var(--cvi-tooltip-zindex, #{get-z-index('tooltip', 'root')});
 
       @include cvi-breakpoint-down(sm) {

@@ -50,7 +50,7 @@
     }
 
     #{$base}__title {
-      font-size: $cvi-font-size-250;
+      font-size: get-font-size(250);
       padding-right: get-spacing('viljandi');
       padding-bottom: get-spacing('elva');
     }

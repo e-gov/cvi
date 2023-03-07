@@ -39,7 +39,7 @@
       padding-block: $header-padding-block;
       text-align: left;
       width: 100%;
-      font-size: $cvi-font-size-100;
+      font-size: get-font-size(100);
       color: get-color(black-coral-15);
 
       &.is-disabled {
@@ -90,13 +90,13 @@
       margin-bottom: $header-padding-block;
 
       @include cvi-breakpoint-down(sm) {
-        font-size: $cvi-font-size-70;
+        font-size: get-font-size(70);
         margin-left: $item-detail-margin;
         margin-right: $item-detail-margin;
         padding-left: get-spacing('valga');
       }
       @include cvi-breakpoint-up(sm) {
-        font-size: $cvi-font-size-80;
+        font-size: get-font-size(80);
       }
     }
   }

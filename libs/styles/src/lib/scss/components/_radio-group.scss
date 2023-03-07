@@ -30,8 +30,8 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: get-spacing('paldiski');
-      font-size: $cvi-font-size-70;
-      line-height: $cvi-line-height-100;
+      font-size: get-font-size(70);
+      line-height: get-line-height(100);
     }
     #{$base}__input {
       @include cvi-screenreader-text;

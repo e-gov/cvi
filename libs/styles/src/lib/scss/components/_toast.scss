@@ -69,7 +69,7 @@
     }
 
     #{$base}__title-text {
-      font-size: $cvi-font-size-200;
+      font-size: get-font-size(200);
       margin-left: 10px;
     }
 

@@ -30,17 +30,17 @@
     #{$base}__title {
       color: get-color(black-coral-10);
       margin-block: get-spacing('haapsalu');
-      font-size: $cvi-font-size-350;
-      font-weight: $cvi-font-weight-alpha;
+      font-size: get-font-size(350);
+      font-weight: get-font-weight(alpha);
 
       @include cvi-breakpoint-down(sm) {
-        line-height: $cvi-line-height-100;
+        line-height: get-line-height(100);
         #{$base}.is-any-step-selected & {
           padding-inline: get-spacing('valga');
         }
       }
       @include cvi-breakpoint-up(sm) {
-        line-height: $cvi-line-height-500;
+        line-height: get-line-height(500);
       }
     }
 
@@ -97,7 +97,7 @@
       counter-increment: numberedlist;
       @include cvi-breakpoint-down(sm) {
         color: get-color(black-coral-15);
-        font-weight: $cvi-font-weight-beta;
+        font-weight: get-font-weight(beta);
         border-top-left-radius: $cvi-radius-s;
         border-top-right-radius: $cvi-radius-s;
         background-color: get-color(white);
@@ -133,7 +133,7 @@
 
     #{$base}__list-item-button {
       position: relative;
-      font-size: $cvi-font-size-100;
+      font-size: get-font-size(100);
 
       @include cvi-breakpoint-down(sm) {
         display: flex;
@@ -195,7 +195,7 @@
           display: flex;
           justify-content: center;
           align-items: center;
-          font-weight: $cvi-font-weight-gamma;
+          font-weight: get-font-weight(gamma);
 
           #{$base}.is-any-step-selected & {
             --number-background-color: var(--cvi-color-white);
@@ -216,7 +216,7 @@
           border-radius: 51%;
           border: $number-border-width solid currentColor;
           color: currentColor;
-          font-size: $cvi-font-size-50;
+          font-size: get-font-size(50);
           line-height: 0;
           padding-inline: 8px;
           width: $number-size--desktop;
@@ -243,9 +243,9 @@
     #{$base}__list-item-title {
       @include cvi-breakpoint-down(sm) {
         flex-grow: 1;
-        font-weight: $cvi-font-weight-gamma;
+        font-weight: get-font-weight(gamma);
         #{$base}.is-any-step-selected & {
-          font-weight: $cvi-font-weight-delta;
+          font-weight: get-font-weight(delta);
           color: get-color(sapphire-blue-10);
         }
       }
@@ -311,8 +311,8 @@
         display: none;
       }
       @include cvi-breakpoint-up(sm) {
-        font-size: $cvi-font-size-250;
-        line-height: $cvi-line-height-500;
+        font-size: get-font-size(250);
+        line-height: get-line-height(500);
         margin-bottom: get-spacing('paldiski');
         display: flex;
         gap: get-spacing('paldiski');
@@ -323,7 +323,7 @@
           border-radius: 51%;
           color: get-color(white);
           background-color: get-color(sapphire-blue-13);
-          font-size: $cvi-font-size-50;
+          font-size: get-font-size(50);
           line-height: 0;
           padding-inline: 8px;
           width: $number-size--desktop;
@@ -332,7 +332,7 @@
           justify-content: center;
           align-items: center;
           position: relative;
-          top: math.div($number-size--desktop - $cvi-font-size-50, 2) * -1 + 1px;
+          top: math.div($number-size--desktop - get-font-size(50, true), 2) * -1 + 1px;
         }
       }
     }
@@ -379,7 +379,7 @@
         padding-inline: get-spacing('kuressaare');
         padding-block: get-spacing('haapsalu');
         color: get-color(sapphire-blue-10);
-        font-size: $cvi-font-size-100;
+        font-size: get-font-size(100);
         display: flex;
         gap: get-spacing('paldiski');
 

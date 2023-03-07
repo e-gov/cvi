@@ -43,7 +43,7 @@
       background-color: get-color(white);
       border: 1px solid get-color(black-coral-5);
       border-radius: $cvi-radius-s;
-      font-size: $cvi-font-size-100;
+      font-size: get-font-size(100);
       padding-inline-start: get-spacing('paldiski');
 
       &:focus {

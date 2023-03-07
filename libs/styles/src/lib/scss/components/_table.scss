@@ -13,7 +13,7 @@
     }
     #{$base}__table {
       width: 100%;
-      font-size: $cvi-font-size-80;
+      font-size: get-font-size(80);
 
       &:not(:first-child) {
         margin-top: get-spacing('kuressaare');
