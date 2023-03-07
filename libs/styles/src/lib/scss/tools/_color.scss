@@ -1,4 +1,12 @@
+@use 'sass:map';
+@use 'libs/styles/src/lib/scss/settings/variables/colors';
+
 // Returns variable as a CSS variable
 @function get-color($color-name) {
-  @return var(--cvi-color-#{'' + $color-name});
+  @if map.has-key(colors.$cvi-colors, $color-name) {
+    @return var(--cvi-color-#{'' + $color-name});
+  } @else {
+    @warn 'Value \'#{$color-name}\' not found in $cvi-colors map';
+    @return null;
+  }
 }
