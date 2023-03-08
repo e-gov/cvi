@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [1.4.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/styles-1.3.0...styles-1.4.0) (2023-03-08)
+
+
+### Features
+
+* **ng:** add disabled state to select component ([#21](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/21)) ([4e01aa0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/4e01aa0de49f1b1c578456bf01d88caf1e6269da))
+
+
+
 # [1.3.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/styles-1.2.2...styles-1.3.0) (2023-03-03)
 
 
