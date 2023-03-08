@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [1.2.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/storybook-1.1.0...storybook-1.2.0) (2023-03-08)
+
+
+### Features
+
+* **styles:** More design tokens available as custom properties EBS-544 STPA-236 ([#22](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/22)) ([5f1adfe](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/5f1adfed665a8099f43c5c1c90076b53ccf17bd4))
+
+
+
 # [1.1.0](https://github.com/e-gov/cvi/compare/storybook-1.0.1...storybook-1.1.0) (2023-01-25)
 
 
