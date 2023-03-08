@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.2.1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/storybook-1.2.0...storybook-1.2.1) (2023-03-08)
+
+
+### Bug Fixes
+
+* **ng:** dockerfile RUN command EBS-395 STPA-236 ([#23](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/23)) ([011814f](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/011814f4d0c67428bed2af0de2303f0000bf9415))
+
+
+
 # [1.2.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/storybook-1.1.0...storybook-1.2.0) (2023-03-08)
 
 
