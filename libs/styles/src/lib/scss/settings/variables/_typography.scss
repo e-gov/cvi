@@ -2,22 +2,42 @@
 $cvi-font-family-base: Roboto, Arial, Helvetica, sans-serif;
 
 // Font sizes
-$cvi-font-size-50: 10px;
-$cvi-font-size-70: 12px;
-$cvi-font-size-80: 14px;
-$cvi-font-size-100: 16px;
-$cvi-font-size-200: 18px;
-$cvi-font-size-220: 20px;
-$cvi-font-size-250: 24px;
-$cvi-font-size-300: 28px;
-$cvi-font-size-350: 32px;
-$cvi-font-size-400: 36px;
-$cvi-font-size-500: 48px;
+$cvi-font-sizes: (
+  50: 10px,
+  70: 12px,
+  80: 14px,
+  100: 16px,
+  200: 18px,
+  220: 20px,
+  250: 24px,
+  300: 28px,
+  350: 32px,
+  400: 36px,
+  500: 48px,
+);
 
-$cvi-line-height-100: 1;
-$cvi-line-height-500: 1.5;
+$cvi-line-heights: (
+  100: 1,
+  500: 1.5
+);
 
-$cvi-font-weight-alpha: 300;
-$cvi-font-weight-beta: 400;
-$cvi-font-weight-gamma: 500;
-$cvi-font-weight-delta: 700;
+$cvi-font-weights: (
+  alpha: 300,
+  beta: 400,
+  gamma: 500,
+  delta: 700,
+);
+
+:root {
+  --cvi-font-family-base: $cvi-font-family-base;
+
+  @each $name, $size in $cvi-font-sizes {
+    --cvi-font-size-#{'' + $name}: #{$size};
+  }
+  @each $name, $line-height in $cvi-line-heights {
+    --cvi-line-height-#{'' + $name}: #{$line-height};
+  }
+  @each $name, $font-weight in $cvi-font-weights {
+    --cvi-font-weight-#{'' + $name}: #{$font-weight};
+  }
+}

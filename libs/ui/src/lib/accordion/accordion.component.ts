@@ -80,7 +80,9 @@ export class AccordionComponent implements AfterViewInit, OnDestroy {
       }
       this.expandedItems = [...this.expandedItems, index];
 
-      const itemToScrollTo = document.getElementById('accordion-' + this.accordionId + '-item-' + index);
+      const itemToScrollTo = document.getElementById(
+        'accordion-' + this.accordionId + '-item-' + index
+      );
       if (itemToScrollTo) {
         itemToScrollTo.scrollIntoView(true);
       }

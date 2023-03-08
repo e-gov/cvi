@@ -1,4 +1,4 @@
 @mixin cvi-character-counter($base: &) {
   text-align: right;
-  font-size: $cvi-font-size-80;
+  font-size: get-font-size(80);
 }

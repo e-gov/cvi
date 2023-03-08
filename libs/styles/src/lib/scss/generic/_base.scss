@@ -9,7 +9,7 @@ html {
 
 body {
   font-family: $cvi-font-family-base;
-  font-size: $cvi-font-size-100;
+  font-size: get-font-size(100);
   line-height: 1.47;
   background-color: get-color(black-coral-0);
 }
@@ -40,6 +40,6 @@ button {
 }
 
 h2 {
-  font-size: $cvi-font-size-250;
+  font-size: get-font-size(250);
   margin-bottom: get-spacing('elva');
 }

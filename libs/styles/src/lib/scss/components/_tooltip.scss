@@ -8,14 +8,14 @@
       position: fixed;
     }
     #{$base}__content {
-      border-radius: $cvi-radius-s;
+      border-radius: var(--cvi-radius-s);
       background-color: get-color(white);
       color: get-color(black-coral-18);
-      box-shadow: $cvi-shadow-beta;
+      box-shadow: var(--cvi-shadow-beta);
       padding: var(--cvi-spacing-rapla) var(--cvi-spacing-elva);
       max-width: 400px;
       min-width: 125px;
-      font-size: $cvi-font-size-80;
+      font-size: get-font-size(80);
       z-index: var(--cvi-tooltip-zindex, #{get-z-index('tooltip', 'root')});
 
       @include cvi-breakpoint-down(sm) {

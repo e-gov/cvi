@@ -39,7 +39,7 @@
       padding: 0 get-spacing('paldiski');
       height: 38px;
       width: 100%;
-      border-radius: $cvi-radius-s;
+      border-radius: var(--cvi-radius-s);
       border: 1px solid get-color(black-coral-3);
       background-color: get-color(white);
     }
@@ -103,8 +103,8 @@
       position: absolute;
       width: 100%;
       background-color: get-color(white);
-      border-bottom-left-radius: $cvi-radius-s;
-      border-bottom-right-radius: $cvi-radius-s;
+      border-bottom-left-radius: var(--cvi-radius-s);
+      border-bottom-right-radius: var(--cvi-radius-s);
       border: 1px solid get-color(black-coral-3);
       z-index: get-z-index('select', '__dropdown');
       max-height: 300px;

@@ -1,24 +1,28 @@
+// Tools - Sass functions
+@import 'tools/color';
+@import 'tools/typography';
+@import 'tools/spacing';
+@import 'tools/z-index';
+@import 'tools/deprecate';
+
 // Settings - Sass variables and mixins
 @import 'settings/variables/colors';
 @import 'settings/variables/typography';
+@import 'settings/variables/typography.deprecated';
 @import 'settings/variables/breakpoints';
 @import 'settings/variables/spacing';
 @import 'settings/variables/z-indexes';
 @import 'settings/variables/other';
+@import 'settings/variables/other.deprecated';
 @import 'settings/mixins';
 @import 'settings/utility-classes';
-
-// Tools - Sass functions
-@import 'tools/color';
-@import 'tools/spacing';
-@import 'tools/z-index';
 
 // Generic - global CSS styling and CSS at-rules
 @import 'generic/reset';
 @import 'generic/fonts';
 @import 'generic/base';
 
-// Components
+// Sass components
 @import 'components/track';
 @import 'components/content-container';
 @import 'components/content-panel';

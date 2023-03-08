@@ -1,0 +1,29 @@
+@use 'sass:map';
+@use 'libs/styles/src/lib/scss/settings/variables/typography';
+
+@function get-font-size($font-size, $return-value: false) {
+  @if map.has-key(typography.$cvi-font-sizes, $font-size) {
+    @return if($return-value, map.get(typography.$cvi-font-sizes, $font-size), var(--cvi-font-size-#{'' + $font-size}));
+  } @else {
+    @warn 'Value \'#{$font-size}\' not found in $cvi-font-sizes map';
+    @return null;
+  }
+}
+
+@function get-line-height($line-height, $return-value: false) {
+  @if map.has-key(typography.$cvi-line-heights, $line-height) {
+    @return if($return-value, map.get(typography.$cvi-line-heights, $line-height), var(--cvi-line-height-#{'' + $line-height}));
+  } @else {
+    @warn 'Value \'#{$line-height}\' not found in $cvi-line-heights map';
+    @return null;
+  }
+}
+
+@function get-font-weight($font-weight, $return-value: false) {
+  @if map.has-key(typography.$cvi-font-weights, $font-weight) {
+    @return if($return-value, map.get(typography.$cvi-font-weights, $font-weight), var(--cvi-font-weight-#{'' + $font-weight}));
+  } @else {
+    @warn 'Value \'#{$font-weight}\' not found in $cvi-font-weights map';
+    @return null;
+  }
+}

@@ -35,7 +35,7 @@
     #{$base}__aside-title {
       text-transform: uppercase;
       color: get-color(black-coral-12);
-      font-size: $cvi-font-size-80;
+      font-size: get-font-size(80);
       padding-left: var(--aside-padding-left);
       padding-block: get-spacing('elva');
       margin: 0;
@@ -61,7 +61,7 @@
       }
 
       #{$base}__aside-list-item.is-current & {
-        font-weight: $cvi-font-weight-delta;
+        font-weight: get-font-weight(delta);
         color: get-color(black-coral-20);
         position: relative;
 

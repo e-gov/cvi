@@ -24,7 +24,7 @@
       position: relative;
       display: inline-flex;
       width: 100%;
-      border-radius: $cvi-radius-s;
+      border-radius: var(--cvi-radius-s);
       background-color: get-color(extra-light);
       border: 1px solid get-color(black-coral-2);
     }
@@ -40,7 +40,7 @@
     }
     #{$base}__order-nr {
       border: 1px solid get-color(black-coral-6);
-      border-radius: $cvi-radius-s;
+      border-radius: var(--cvi-radius-s);
       width: 25px;
       height: 24px;
       text-align: center;

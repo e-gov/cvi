@@ -30,8 +30,8 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: get-spacing('paldiski');
-      font-size: $cvi-font-size-70;
-      line-height: $cvi-line-height-100;
+      font-size: get-font-size(70);
+      line-height: get-line-height(100);
     }
     #{$base}__input {
       @include cvi-screenreader-text;
@@ -39,7 +39,7 @@
     #{$base}__button {
       display: block;
       text-align: center;
-      border-radius: $cvi-radius-pill;
+      border-radius: var(--cvi-radius-pill);
       padding-block: get-spacing('loksa');
       border: 1px solid get-color(black-coral-10);
 
@@ -51,7 +51,7 @@
       }
 
       #{$base}__input:focus-visible + & {
-        box-shadow: $cvi-shadow-focus;
+        box-shadow: var(--cvi-shadow-focus);
       }
     }
   }

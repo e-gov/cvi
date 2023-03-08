@@ -75,7 +75,7 @@ module.exports = {
       true,
       {
         message:
-          'Only use $cvi-color-* variables from _colors.scss file. If "%s" color is not there, add it as a new variable. Also consider using a similar color from an already existing variable',
+          'Only use colors from _colors.scss file. If "%s" color is not there, add it as a new variable. Also consider using a similar color which is already set',
       },
     ],
     'alpha-value-notation': null,
@@ -116,15 +116,15 @@ module.exports = {
           '/^get-color\\(/',
           '/^\\$color-/',
         ],
-        'box-shadow': ['/^\\$cvi-shadow-/', 'none'],
+        'box-shadow': ['/^var\\(--cvi-shadow-/', 'none'],
         '/border-([a-z]+-[a-z]+-)*radius/': [
           '/^var\\(/',
           '51%',
-          '/^\\$cvi-radius-/',
+          '/^var\\(--cvi-radius-/',
         ],
-        'font-size': ['/^\\$cvi-font-size-/', 'inherit'],
-        'font-weight': ['/^\\$cvi-font-weight-/'],
-        'line-height': ['/^\\$cvi-line-height-/', '0'],
+        'font-size': ['/^get-font-size\\(/', 'inherit'],
+        'font-weight': ['/^get-font-weight\\(/'],
+        'line-height': ['/^get-line-height\\(/', '0'],
         'z-index': ['/^get-z-index\\(/', '/^var\\(/', '-1'],
       },
     ],
@@ -198,7 +198,14 @@ module.exports = {
     {
       files: ['libs/styles/src/lib/scss/tools/*.scss'],
       rules: {
-        'at-rule-allowed-list': ['function', 'if', 'warn', 'return', 'use'],
+        'at-rule-allowed-list': [
+          'function',
+          'if',
+          'else',
+          'warn',
+          'return',
+          'use',
+        ],
       },
     },
     {

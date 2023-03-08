@@ -1,4 +1,4 @@
-@import 'libs/styles/src/lib/scss/settings/variables/typography';
+@import 'libs/styles/src/lib/scss/settings/variables/typography.deprecated';
 @import 'libs/styles/src/lib/scss/settings/variables/other';
 
 :host {
@@ -6,7 +6,7 @@
   background-color: var(--cvi-color-black-coral-1);
   border: 1px solid var(--cvi-color-black-coral-2);
   margin-inline: 10%;
-  border-radius: $cvi-radius-m;
+  border-radius: var(--cvi-radius-m);
   padding: var(--cvi-spacing-paldiski);
   margin-bottom: var(--cvi-spacing-viljandi);
 }
@@ -14,6 +14,6 @@
 .content {
   display: block;
   color: var(--cvi-color-black-coral-18);
-  font-size: $cvi-font-size-80;
-  line-height: $cvi-line-height-500;
+  font-size: get-font-size(80);
+  line-height: get-line-height(500);
 }

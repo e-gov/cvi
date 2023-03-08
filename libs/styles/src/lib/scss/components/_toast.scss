@@ -6,13 +6,13 @@
   overflow: hidden;
   padding: var(--cvi-spacing-haapsalu);
   margin-bottom: var(--cvi-spacing-paldiski);
-  border-radius: $cvi-radius-m;
+  border-radius: var(--cvi-radius-m);
   color: var(--cvi-color-black-coral-18);
   cursor: pointer;
   display: block;
 
   &:hover {
-    box-shadow: $cvi-shadow-alpha;
+    box-shadow: var(--cvi-shadow-alpha);
   }
 
   @at-root {
@@ -69,7 +69,7 @@
     }
 
     #{$base}__title-text {
-      font-size: $cvi-font-size-200;
+      font-size: get-font-size(200);
       margin-left: 10px;
     }
 

@@ -5,12 +5,12 @@
   padding-inline: get-spacing('elva');
   padding-block: calc(#{get-spacing('loksa')} - 1px);
   align-items: center;
-  font-weight: $cvi-font-weight-delta;
-  border: $cvi-border-width solid var(--border-color, var(--color));
+  font-weight: get-font-weight(delta);
+  border: var(--cvi-border-width) solid var(--border-color, var(--color));
   color: var(--color);
   background-color: var(--background-color);
-  border-radius: $cvi-radius-s;
-  font-size: $cvi-font-size-80;
-  line-height: $cvi-line-height-100;
+  border-radius: var(--cvi-radius-s);
+  font-size: get-font-size(80);
+  line-height: get-line-height(100);
   white-space: nowrap;
 }
