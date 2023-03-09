@@ -1,5 +1,5 @@
 @use 'sass:map';
-@use 'libs/styles/src/lib/scss/settings/variables/colors';
+@use '../settings/variables/colors';
 
 // Returns variable as a CSS variable
 @function get-color($color-name) {
