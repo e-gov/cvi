@@ -39,7 +39,7 @@ const Template: Story = (args) => ({
     <div
       class="cvi-button cvi-button--appearance-{{ appearance }} cvi-button--size-{{ size }}"
     >
-      <button type="button" class="cvi-button__button">{{ content }}</button>
+      <button type="button" class="cvi-button__button" disabled="{{ disabled ? true : null }}">{{ content }}</button>
     </div>
   `,
 });
