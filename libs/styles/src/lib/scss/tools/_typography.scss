@@ -1,5 +1,5 @@
 @use 'sass:map';
-@use 'libs/styles/src/lib/scss/settings/variables/typography';
+@use '../settings/variables/typography';
 
 @function get-font-size($font-size, $return-value: false) {
   @if map.has-key(typography.$cvi-font-sizes, $font-size) {
