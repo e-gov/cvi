@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.5.1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/styles-1.5.0...styles-1.5.1) (2023-03-09)
+
+
+### Bug Fixes
+
+* **styles:** fixed consumer app sass import error relative to project root ([#24](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/24)) ([1b75897](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/1b75897855ce36b909efceef27fcde5561ac5b7b))
+
+
+
 # [1.5.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/styles-1.4.0...styles-1.5.0) (2023-03-08)
 
 
