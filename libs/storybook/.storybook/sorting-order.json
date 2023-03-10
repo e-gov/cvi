@@ -39,14 +39,7 @@
       "Content container",
       "Content panel",
       "Form",
-      [
-        "Form item",
-        "Input",
-        "Radio button",
-        "Radio button group",
-        "Textarea",
-        "Select"
-      ],
+      ["Form item", "Input", "Radio button group", "Textarea", "Select"],
       "Button",
       "Table",
       "Status badge",
