@@ -12,7 +12,6 @@
         &:not(&:nth-last-child(2)) {
           #{$base}__item-link {
             display: none;
-            content: '';
           }
         }
       }
