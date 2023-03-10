@@ -32,7 +32,8 @@
       "Html section",
       "Tooltip",
       "Toast",
-      "Modal"
+      "Modal",
+      "Reorderable list"
     ],
     "Angular",
     [
