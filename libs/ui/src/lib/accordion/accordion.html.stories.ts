@@ -85,3 +85,14 @@ const Template: Story = (args) => ({
 
 export const Default = Template.bind({});
 Default.args = {};
+
+export const Mobile = Template.bind({});
+Mobile.parameters = {
+  layout: 'fullscreen',
+  backgrounds: {
+    default: 'light',
+  },
+  viewport: {
+    defaultViewport: 'iphone12mini',
+  },
+};
