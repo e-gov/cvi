@@ -30,8 +30,9 @@
       "Notification",
       "Tab group",
       "Html section",
-      "Modal",
-      "Tooltip"
+      "Tooltip",
+      "Toast",
+      "Modal"
     ],
     "Angular",
     [
