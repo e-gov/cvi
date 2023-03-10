@@ -17,7 +17,6 @@ export default {
     }),
   ],
   parameters: { notes },
-  argTypes: {},
   args: {
     items: ['valik 1', 'valik 2', 'valik 3'],
     placeholder: 'Otsi elementi',
@@ -28,16 +27,18 @@ const Template: Story<SelectComponent> = (args: SelectComponent) => ({
   props: {
     ...args,
   },
+  /* template */
   template: `
       <div style="width: 200px">
-        <cvi-ng-select [items]="items"
-                         [placeholder]="placeholder"></cvi-ng-select>
+        <cvi-ng-select [items]="items" [placeholder]="placeholder"></cvi-ng-select>
       </div>
   `,
 });
 export const Default = Template.bind({});
 
-const AddItemTemplate: Story<SelectComponent> = (args: SelectComponent) => {
+const UserCanAddItemsTemplate: Story<SelectComponent> = (
+  args: SelectComponent
+) => {
   function addItem(text: string) {
     return text;
   }
@@ -47,17 +48,18 @@ const AddItemTemplate: Story<SelectComponent> = (args: SelectComponent) => {
       ...args,
       addItemFn: addItem,
     },
+    /* template */
     template: `
       <div style="width: 200px">
         <cvi-ng-select [items]="items"
-                         [addItemFn]="addItemFn"
-                         [addItemLabel]="'Lisa element'"
-                         [placeholder]="placeholder"></cvi-ng-select>
+                       [addItemFn]="addItemFn"
+                       [addItemLabel]="'Lisa element'"
+                       [placeholder]="placeholder"></cvi-ng-select>
       </div>
   `,
   };
 };
-export const AddItem = AddItemTemplate.bind({});
+export const UserCanAddItems = UserCanAddItemsTemplate.bind({});
 
 const DisabledBackgroundTemplate: Story<SelectComponent> = (
   args: SelectComponent
@@ -65,11 +67,12 @@ const DisabledBackgroundTemplate: Story<SelectComponent> = (
   props: {
     ...args,
   },
+  /* template */
   template: `
       <div style="width: 200px">
         <cvi-ng-select [items]="items"
-                         [backgroundDisabled]="true"
-                         [placeholder]="placeholder"></cvi-ng-select>
+                       [backgroundDisabled]="true"
+                       [placeholder]="placeholder"></cvi-ng-select>
       </div>
   `,
 });
@@ -81,6 +84,7 @@ const ObjectsAsItemsTemplate: Story<SelectComponent> = (
   props: {
     ...args,
   },
+  /* template */
   template: `
       <div style="width: 200px">
         <cvi-ng-select [items]="items"
@@ -117,10 +121,11 @@ const DisabledTemplate: Story<SelectComponent> = (args: SelectComponent) => ({
   props: {
     ...args,
   },
+  /* template */
   template: `
       <div style="width: 200px">
         <cvi-ng-select [items]="items"
-                       [disabled]="disabled" 
+                       [disabled]="disabled"
                        [placeholder]="placeholder"></cvi-ng-select>
       </div>
   `,
@@ -145,12 +150,10 @@ const FormTemplate: Story<SelectComponent> = (args: SelectComponent) => {
       form: form,
       selectedValue: selectedValue,
     },
+    /* template */
     template: `
-      <div style="width: 200px"
-           [formGroup]="form">
-        <cvi-ng-select [items]="items"
-                         formControlName="item"
-                         [placeholder]="placeholder"></cvi-ng-select>
+      <div style="width: 200px" [formGroup]="form">
+        <cvi-ng-select [items]="items" formControlName="item" [placeholder]="placeholder"></cvi-ng-select>
         <div>Selected value: {{selectedValue()}}</div>
       </div>
   `,
