@@ -11,6 +11,7 @@ export default {
 
 const Template: Story = (args) => ({
   props: args,
+  /* template */
   template: `
     <div class="cvi-modal">
       <div class="cvi-modal__dialog" role="dialog" aria-labelledby="modal_title">
@@ -23,6 +24,16 @@ const Template: Story = (args) => ({
         <div class="cvi-modal__content">
           <p>I'm modal</p>
         </div>
+        <div class="cvi-modal__footer">
+          <div class="cvi-track cvi-track--direction-vertical-reversed-on-mobile cvi-track--layout-flex" style="--gap:2; --horizontal-alignment: flex-end;">
+            <div class="cvi-button cvi-button--appearance-secondary cvi-button--size-m">
+              <button type="button" class="cvi-button__button">Cancel</button>
+            </div>
+            <div class="cvi-button cvi-button--appearance-primary cvi-button--size-m">
+              <button type="button" class="cvi-button__button">Confirm</button>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="cvi-modal__backdrop"></div>
     </div>
@@ -30,4 +41,3 @@ const Template: Story = (args) => ({
 });
 
 export const Default = Template.bind({});
-Default.args = {};
