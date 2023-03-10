@@ -18,7 +18,12 @@ export default {
   ],
   parameters: { notes },
   args: {
-    items: ['valik 1', 'valik 2', 'valik 3'],
+    items: [
+      'valik 1',
+      'valik 2',
+      'valik 3',
+      'valik 4 ja palju sõnu millestega ei ole täiesti võimalik midagi seletada või kirjeldada',
+    ],
     placeholder: 'Otsi elementi',
   },
 } as Meta;
