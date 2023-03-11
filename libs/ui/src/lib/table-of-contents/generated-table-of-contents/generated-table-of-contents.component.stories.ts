@@ -8,16 +8,16 @@ import { concatMap, delay, from, of } from 'rxjs';
   selector: 'cvi-ng-storybook-toc-html-example',
   template: `
     <div>
-      <h2>An h2: pretty none change slept range afraid</h2>
+      <h2 dataAttribute="test-h2">An h2: pretty none change slept range afraid</h2>
       <div [cviNgStorybookRandomParagraphs]="10"></div>
     </div>
     <div>
-      <h3>An h3: explore single gain swam base farther courage</h3>
+      <h3 dataAttribute="test-h3">An h3: explore single gain swam base farther courage</h3>
       <div [cviNgStorybookRandomParagraphs]="10"></div>
     </div>
     <div>
       <div>
-        <h2>A nested h2 heading: string baby explore</h2>
+        <h2 dataAttribute="test-nested-h2">A nested h2 heading: string baby explore</h2>
       </div>
       <div [cviNgStorybookRandomParagraphs]="10"></div>
     </div>
