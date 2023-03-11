@@ -1,4 +1,5 @@
 <div class="cvi-select"
+     dataAttribute="test-select"
      [class.filtered]="!!searchTerm"
      [class.has-value]="hasValue"
      [class.open]="isOpen"
@@ -26,6 +27,7 @@
              type="text"
              role="presentation"
              autocomplete="off"
+             dataAttribute="test-input"
              [value]="searchTerm ? searchTerm : ''"
              [disabled]="disabled"
              (input)="filter(searchInput.value)"
@@ -50,10 +52,12 @@
     </span>
   </div>
   <div *ngIf="isOpen"
+       dataAttribute="test-popup"
        class="cvi-select__dropdown">
     <ul role="listbox">
       <li role="option"
           class="cvi-select__dropdown-item"
+          dataAttribute="test-option"
           *ngFor="let item of itemsList.filteredItems"
           (click)="selectItem(item)">
         <ng-template #defaultOptionTemplate>
