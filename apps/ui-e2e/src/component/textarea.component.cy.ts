@@ -28,4 +28,12 @@ describe('TextareaComponent', () => {
       .should('have.value', 'some text');
     cy.get('div').contains('Inserted value: some text');
   });
+
+  it('Correctly displays and updates character counter', () => {
+    cy.loadStory('Angular Form Textarea', 'With Character Counter')
+      .get('textarea')
+      .should('have.value', '')
+      .type('some text');
+    cy.get('cvi-ng-character-counter').contains('9 / 30');
+  });
 });
