@@ -36,4 +36,12 @@ describe('InputComponent', () => {
       .should('have.value', 'some text');
     cy.get('div').contains('Inserted value: some text');
   });
+
+  it('Correctly displays and updates character counter', () => {
+    cy.loadStory('Angular Form Input', 'With Character Counter')
+      .get('input')
+      .should('have.value', '')
+      .type('some text');
+    cy.get('cvi-ng-character-counter').contains('9 / 10');
+  });
 });
