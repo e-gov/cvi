@@ -21,6 +21,7 @@ export default {
   args: {
     items: ['valik 1', 'valik 2', 'valik 3'],
     placeholder: 'Otsi elementi',
+    disabled: false,
   },
 } as Meta;
 
@@ -31,7 +32,8 @@ const Template: Story<SelectComponent> = (args: SelectComponent) => ({
   template: `
       <div style="width: 200px">
         <cvi-ng-select [items]="items"
-                         [placeholder]="placeholder"></cvi-ng-select>
+                       [disabled]="disabled"
+                       [placeholder]="placeholder"></cvi-ng-select>
       </div>
   `,
 });
@@ -120,7 +122,7 @@ const DisabledTemplate: Story<SelectComponent> = (args: SelectComponent) => ({
   template: `
       <div style="width: 200px">
         <cvi-ng-select [items]="items"
-                       [disabled]="disabled" 
+                       [disabled]="disabled"
                        [placeholder]="placeholder"></cvi-ng-select>
       </div>
   `,
