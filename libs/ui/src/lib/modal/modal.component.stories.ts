@@ -10,9 +10,9 @@ const Template: Story<ModalComponent> = (args: ModalComponent) => ({
   props: args,
   template: `
     <ng-template #modal>
-      <p>Modal content</p>
+      <p dataAttribute="test-content">Modal content</p>
     </ng-template>
-    <cvi-ng-button [cviNgModal]="modal">Open modal</cvi-ng-button>
+    <cvi-ng-button [cviNgModal]="modal" dataAttribute="test-button">Open modal</cvi-ng-button>
   `,
 });
 
