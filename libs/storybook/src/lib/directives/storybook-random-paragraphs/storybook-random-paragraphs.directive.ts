@@ -4,6 +4,7 @@ import {
   Directive,
   AfterViewInit,
   Input,
+  HostBinding,
 } from '@angular/core';
 import { storybookRandomParagraphs } from './storybook-random-paragraphs';
 
@@ -12,6 +13,8 @@ import { storybookRandomParagraphs } from './storybook-random-paragraphs';
 })
 export class StorybookRandomParagraphsDirective implements AfterViewInit {
   @Input('cviNgStorybookRandomParagraphs') minParagraphs = 5;
+  // Ignore the generated DOM in Chromatic because it changes on every render and triggers a false visual change https://www.chromatic.com/docs/ignoring-elements#ignore-dom-elements
+  @HostBinding('attr.data-chromatic') chromaticIgnoreAttr = 'ignore';
 
   maxParagraphs = 20;
 

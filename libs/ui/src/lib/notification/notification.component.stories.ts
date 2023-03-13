@@ -49,14 +49,14 @@ Error.args = { severity: 'error' };
 export const Neutral = Template.bind({});
 Neutral.args = { severity: 'neutral' };
 
-export const Compact = Template.bind({});
-Compact.args = { severity: 'neutral', size: 'compact' };
+export const WithCompactSize = Template.bind({});
+WithCompactSize.args = { severity: 'neutral', size: 'compact' };
 
-export const CompactWithIcon = Template.bind({});
-CompactWithIcon.args = { severity: 'info', size: 'compact' };
+export const WithCompactSizeAndIcon = Template.bind({});
+WithCompactSizeAndIcon.args = { severity: 'info', size: 'compact' };
 
-export const CompactWithCustomIcon = Template.bind({});
-CompactWithCustomIcon.args = {
+export const WithCompactSizeAndCustomIcon = Template.bind({});
+WithCompactSizeAndCustomIcon.args = {
   severity: 'neutral',
   size: 'compact',
   iconName: 'check_circle_outline',

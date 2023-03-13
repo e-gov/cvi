@@ -25,10 +25,7 @@ describe('IconComponent', () => {
       name: 'ng-reflect-name',
       value: 'action',
     }).within(() => {
-      cy.shouldHaveStyle('svg', [
-        { name: 'fill', value: 'rgb(255, 0, 0)' },
-        { name: 'height', value: '50px' },
-      ]);
+      cy.shouldHaveStyle('svg', [{ name: 'fill', value: 'rgb(255, 0, 0)' }]);
     });
   });
 });

@@ -10,6 +10,17 @@ export default {
   args: {
     htmlId: 'fksd4kfds',
     label: 'Your email',
+    placeholder: 'Placeholder text...',
+    labelPosition: 'top',
+    isLabelHidden: false,
+    required: false,
+  },
+  argTypes: {
+    labelPosition: {
+      name: 'Label position',
+      options: ['top', 'side'],
+      control: { type: 'inline-radio' },
+    },
   },
 } as Meta;
 
@@ -17,14 +28,13 @@ const Template: Story = (args) => ({
   props: args,
   /* template */
   template: `
-    <div class="cvi-form-item cvi-form-item--label-position-top">
-      <label for="{{ htmlId }}" class="cvi-form-item__label">{{ label }}</label>
+    <div class="cvi-form-item cvi-form-item--label-position-{{ labelPosition }}{{ required ? ' cvi-form-item--is-required' : ''}}">
+      <label for="{{ htmlId }}" class="{{ isLabelHidden ? 'cvi-screenreader-text' : 'cvi-form-item__label' }}">{{ label }}{{ required ? ' *' : ''}}</label>
       <span class="cvi-textfield cvi-textfield--type-single-line">
-        <input type="text" class="cvi-textfield__text-control" id="{{ htmlId }}" />
+        <input type="text" placeholder="{{ placeholder }}" class="cvi-textfield__text-control" id="{{ htmlId }}" />
       </span>
     </div>
   `,
 });
 
 export const Default = Template.bind({});
-Default.args = {};

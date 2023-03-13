@@ -41,7 +41,7 @@ describe('AccordionComponent', () => {
   });
 
   it('Renders accordion with custom title', () => {
-    cy.loadStory('Angular Accordion', 'With Custom Title')
+    cy.loadStory('Angular Accordion', 'With Html In Title')
       .get('.cvi-accordion__item-toggle-button')
       .get('svg');
   });

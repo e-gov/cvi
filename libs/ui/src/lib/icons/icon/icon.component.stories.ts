@@ -1,7 +1,8 @@
-import { Meta, Story } from '@storybook/angular/';
+import { Meta, Story, componentWrapperDecorator } from '@storybook/angular';
 import { IconComponent } from './icon.component';
 import notes from './icon.component.md';
 import { storybookIconsNames } from '../storybook-icons';
+import { iconSizeDefault } from './icon';
 
 export default {
   title: 'Angular/Icon',
@@ -16,7 +17,7 @@ export default {
   },
   args: {
     name: 'action',
-    height: 40,
+    height: iconSizeDefault,
   },
 } as Meta;
 
@@ -31,32 +32,44 @@ const Template: Story<IconComponent> = (args: IconComponent) => ({
 
 export const Default = Template.bind({});
 
-const TemplateWithDefaultHeight: Story<IconComponent> = (
-  args: IconComponent
-) => ({
-  props: {
-    ...args,
-  },
-  template: `
-    <cvi-ng-icon [name]="name"></cvi-ng-icon>
-  `,
-});
-export const WithDefaultHeight = TemplateWithDefaultHeight.bind({});
+export const WithCustomSize = Template.bind({});
+WithCustomSize.args = {
+  height: 140,
+};
+WithCustomSize.parameters = {
+  layout: 'padded',
+};
+WithCustomSize.decorators = [
+  componentWrapperDecorator((story) => {
+    return `
+      <cvi-ng-storybook-note>
+        To change size of an icon (in both dimensions), set its <code>height</code> prop. The icon will be resized proportionally.
+      </cvi-ng-storybook-note>
+      ${story}
+    `;
+  }),
+];
 
 const TemplateWithStyling: Story<IconComponent> = (args: IconComponent) => ({
   props: {
     ...args,
   },
   template: `
-    <cvi-ng-icon [name]="name" [svgClass]="svgClass"></cvi-ng-icon>
+    <cvi-ng-storybook-note>
+      To change color of an icon, just add <code>fill</code> CSS property either to icon component selector itself or its ancestor. It is not required to apply <code>fill</code> to SVG node itself.
+    </cvi-ng-storybook-note>
+    <div class="wrapper-class">
+      <cvi-ng-icon [name]="name" [height]="height"></cvi-ng-icon>
+    </div>
   `,
   styles: [
-    `::ng-deep .red {
+    `.wrapper-class {
       fill: red;
-      height: 50px;
     }`,
   ],
 });
 
 export const WithStyling = TemplateWithStyling.bind({});
-WithStyling.args = { svgClass: 'red' };
+WithStyling.parameters = {
+  layout: 'padded',
+};

@@ -11,4 +11,4 @@ Permitted children | `RadioGroupComponent`
 
 ## Where to use
 
-A labelled wrapper for radios and radio buttons with labels that look like regular outlined buttons.
+A wrapper for radios (`cvi-ng-radio-button`) and buttons-as-radios (`cvi-ng-option-button`). Note that both `cvi-ng-radio-button` and `cvi-ng-option-button` cannot be used on their own.

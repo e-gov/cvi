@@ -79,7 +79,7 @@ Mobile.parameters = {
   },
 };
 
-const TemplateCustomTitle: Story = (args) => ({
+const TemplateHTMLInTitle: Story = (args) => ({
   props: args,
   /* template */
   template: `
@@ -103,8 +103,8 @@ const TemplateCustomTitle: Story = (args) => ({
   `,
 });
 
-export const WithCustomTitle = TemplateCustomTitle.bind({});
-WithCustomTitle.args = {};
+export const WithHTMLInTitle = TemplateHTMLInTitle.bind({});
+WithHTMLInTitle.args = {};
 
 const TemplateCustomHeader: Story = (args) => ({
   props: args,
