@@ -51,7 +51,7 @@ RUN if [ "$use_private_registry" = true ]; then \
     export CYPRESS_DOWNLOAD_MIRROR="$cypress_download_mirror" \
 ; fi
 
-RUN npm ci
+RUN npm ci --legacy-peer-deps
 COPY . .
 COPY --from=apk ./usr/component-library/styles-package.tmp.json ./libs/styles/package.json
 COPY --from=apk ./usr/component-library/ui-package.tmp.json ./libs/ui/package.json
