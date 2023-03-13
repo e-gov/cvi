@@ -100,7 +100,7 @@
     "jest-junit": "^14.0.1",
     "jest-preset-angular": "13.0.0",
     "ng-packagr": "14.2.0",
-    "nx": "15.8.6",
+    "nx": "15.9.0-beta.0",
     "prettier": "^2.6.2",
     "react": "17.0.2",
     "react-dom": "17.0.2",
