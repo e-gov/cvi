@@ -1,5 +1,6 @@
 {
   "name": "storybook",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/storybook/src",
   "projectType": "library",
   "targets": {
@@ -12,7 +13,7 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/storybook"],
+      "outputs": ["{workspaceRoot}/coverage/libs/storybook"],
       "options": {
         "jestConfig": "libs/storybook/jest.config.ts",
         "passWithNoTests": true

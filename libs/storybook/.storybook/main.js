@@ -10,7 +10,7 @@ module.exports = {
     '../../**/src/lib/**/*.stories.ts',
     '../../**/src/lib/**/*.stories.mdx',
   ],
-  addons: [...rootMain.addons],
+  addons: ['@storybook/addon-essentials', ...rootMain.addons],
   staticDirs: ['../src/assets'],
   webpackFinal: async (config, { configType }) => {
     // apply any global webpack configs that might have been specified in .storybook/main.js

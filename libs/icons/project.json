@@ -1,4 +1,5 @@
 {
+  "name": "icons",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/icons/src",
   "projectType": "library",
@@ -18,7 +19,7 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/icons"],
+      "outputs": ["{workspaceRoot}/coverage/libs/icons"],
       "options": {
         "jestConfig": "libs/icons/jest.config.ts",
         "passWithNoTests": true
