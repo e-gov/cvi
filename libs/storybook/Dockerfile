@@ -48,10 +48,10 @@ RUN echo "use_private_registry=${use_private_registry}"
 
 RUN if [ "$use_private_registry" = true ]; then \
     npm config set registry $private_npm_registry && \
-    export CYPRESS_DOWNLOAD_MIRROR="$cypress_download_mirror" ; \
-fi
+    export CYPRESS_DOWNLOAD_MIRROR="$cypress_download_mirror" \
+; fi
 
-RUN npm ci
+RUN npm i
 COPY . .
 COPY --from=apk ./usr/component-library/styles-package.tmp.json ./libs/styles/package.json
 COPY --from=apk ./usr/component-library/ui-package.tmp.json ./libs/ui/package.json
