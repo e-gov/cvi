@@ -47,7 +47,7 @@ ARG private_npm_registry
 RUN echo "use_private_registry=${use_private_registry}"
 
 RUN if [ "$use_private_registry" = true ]; then \
-    rm -rf /opt/jenkins/workspace/SUN-DEV/Build/sundmusteenused/e-gov-cvi-build/node_modules && \
+    rm -rf node_modules && \
     npm config set registry $private_npm_registry && \
     export CYPRESS_DOWNLOAD_MIRROR="$cypress_download_mirror" \
 ; fi
