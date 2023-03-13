@@ -47,7 +47,6 @@ ARG private_npm_registry
 RUN echo "use_private_registry=${use_private_registry}"
 
 RUN if [ "$use_private_registry" = true ]; then \
-    rm -rf node_modules && \
     npm config set registry $private_npm_registry && \
     export CYPRESS_DOWNLOAD_MIRROR="$cypress_download_mirror" \
 ; fi
