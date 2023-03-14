@@ -1,7 +1,7 @@
 ARG node_version=node:lts
 ARG nginx_version=nginx:1.23.1-alpine
 ARG alpine_version=alpine:3.14
-ARG cypress_download_mirror="https://registry.npmjs.org/@cypress/"
+ARG cypress_download_mirror="https://nexus.riaint.ee/repository/cypress-raw-proxy/"
 ARG use_private_registry=false
 ARG private_apk_registry=""
 ARG private_npm_registry=""
