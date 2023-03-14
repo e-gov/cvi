@@ -16,7 +16,7 @@ const Template: Story = (args) => ({
   /* template */
   template: `
     <div class="cvi-table-of-contents">
-      <div class="cvi-table-of-contents__main">
+      <div>
         <div id="section-one">
           <h1>Section One</h1>
           <p>
@@ -105,7 +105,7 @@ const Template: Story = (args) => ({
           <div role="navigation" aria-label="Sisukord" class="cvi-table-of-contents__aside-inner">
             <h2 class="cvi-table-of-contents__aside-title">Sisukord</h2>
             <ul class="cvi-table-of-contents__aside-list">
-              <li class="cvi-table-of-contents__aside-list-item">
+              <li class="cvi-table-of-contents__aside-list-item is-current">
                 <a class="cvi-table-of-contents__aside-list-item-link" href="#section-one">Section One with a very long label that spans many lines</a>
               </li>
               <li class="cvi-table-of-contents__aside-list-item">

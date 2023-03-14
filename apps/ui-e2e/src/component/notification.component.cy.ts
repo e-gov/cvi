@@ -54,26 +54,23 @@ describe('NotificationComponent', () => {
   });
 
   it('Renders compact notification and clicks close button', () => {
-    cy.loadStory('Angular Notification', 'Compact').runNotificationCommonTest(
-      'neutral',
-      'compact',
-      false,
-      false,
-      ''
-    );
+    cy.loadStory(
+      'Angular Notification',
+      'With Compact Size'
+    ).runNotificationCommonTest('neutral', 'compact', false, false, '');
   });
 
   it('Renders compact with icon notification and clicks close button', () => {
     cy.loadStory(
       'Angular Notification',
-      'Compact With Icon'
+      'With Compact Size And Icon'
     ).runNotificationCommonTest('info', 'compact', true, false, 'info');
   });
 
   it('Renders compact with custom icon notification and clicks close button', () => {
     cy.loadStory(
       'Angular Notification',
-      'Compact With Custom Icon'
+      'With Compact Size And Custom Icon'
     ).runNotificationCommonTest(
       'neutral',
       'compact',

@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.2.2](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/storybook-1.2.1...storybook-1.2.2) (2023-03-14)
+
+
+### Bug Fixes
+
+* package lock generation ([#28](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/28)) ([b5e9bdc](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/b5e9bdc08aa265146c1ca0835c5708d54e5d8adf))
+
+
+
 ## [1.2.1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/storybook-1.2.0...storybook-1.2.1) (2023-03-08)
 
 

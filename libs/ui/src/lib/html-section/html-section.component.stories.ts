@@ -39,7 +39,7 @@ const Template: Story<HtmlSectionComponent> = (args: HtmlSectionComponent) => ({
 export const Default = Template.bind({});
 Default.args = {};
 
-const TemplateWithWidth: Story<HtmlSectionComponent> = (
+const TemplateInContactsBlock: Story<HtmlSectionComponent> = (
   args: HtmlSectionComponent
 ) => ({
   props: {
@@ -59,8 +59,8 @@ const TemplateWithWidth: Story<HtmlSectionComponent> = (
   ],
 });
 
-export const Contacts = TemplateWithWidth.bind({});
-Contacts.args = {
+export const InContactsBlock = TemplateInContactsBlock.bind({});
+InContactsBlock.args = {
   html: `
     <h3 class="cvi-html-section__title">Kontaktid</h3>
     <div class="cvi-html-section__content">

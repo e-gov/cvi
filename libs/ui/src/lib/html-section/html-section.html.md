@@ -10,7 +10,7 @@ Feature | Description
 
 ## Where to use
 
-Utilise where there is a need to display html content
+Utilise where there is a need to display HTML longform article-like content with rich styling.
 
 ## How to use
 

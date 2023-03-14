@@ -18,12 +18,12 @@ const Template: Story<FormItemComponent> = (args: FormItemComponent) => ({
   /* template */
   template: `
     <cvi-ng-form-item [labelPosition]="labelPosition"
-                        [isLabelHidden]="isLabelHidden"
-                        [required]="required"
-                        [label]="label"
-                        [htmlId]="htmlId">
-      <cvi-ng-input [placeholder]="placeholder"
+                      [isLabelHidden]="isLabelHidden"
+                      [required]="required"
+                      [label]="label"
                       [htmlId]="htmlId">
+      <cvi-ng-input [placeholder]="placeholder"
+                    [htmlId]="htmlId">
       </cvi-ng-input>
     </cvi-ng-form-item>
   `,
@@ -38,12 +38,12 @@ const TextareaTemplate: Story<FormItemComponent> = (
   /* template */
   template: `
     <cvi-ng-form-item [labelPosition]="labelPosition"
-                        [isLabelHidden]="isLabelHidden"
-                        [required]="required"
-                        [label]="label"
-                        [htmlId]="htmlId">
+                      [isLabelHidden]="isLabelHidden"
+                      [required]="required"
+                      [label]="label"
+                      [htmlId]="htmlId">
       <cvi-ng-textarea [placeholder]="placeholder"
-                         [htmlId]="htmlId">
+                       [htmlId]="htmlId">
       </cvi-ng-textarea>
     </cvi-ng-form-item>
   `,

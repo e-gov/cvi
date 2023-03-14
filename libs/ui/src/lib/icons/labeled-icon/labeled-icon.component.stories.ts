@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/angular/';
+import { componentWrapperDecorator, Meta, Story } from '@storybook/angular';
 import { iconSizeDefault } from '../icon/icon';
 import { LabeledIconComponent } from './labeled-icon.component';
 import notes from './labeled-icon.component.md';
@@ -55,25 +55,20 @@ WithIconAfter.args = { iconPosition: 'after' };
 export const WithCustomGap = Template.bind({});
 WithCustomGap.args = { gap: 2 };
 
-const TemplateInsideButton: Story<LabeledIconComponent> = (
-  args: LabeledIconComponent
-) => ({
-  props: args,
-  /* template */
-  template: `
-  <cvi-ng-button appearance="secondary">
-    <cvi-ng-labeled-icon [name]="name" [iconPosition]="iconPosition" [verticalAlignment]="verticalAlignment" [iconHeight]="iconHeight">
-      {{ content }}
-    </cvi-ng-labeled-icon>
-  </cvi-ng-button>
-  `,
-});
-
-export const LabeledIconInsideButton = TemplateInsideButton.bind({});
+export const LabeledIconInsideButton = Template.bind({});
 LabeledIconInsideButton.args = {
   iconPosition: 'after',
   verticalAlignment: 'center',
 };
+LabeledIconInsideButton.decorators = [
+  componentWrapperDecorator((story) => {
+    return `
+      <cvi-ng-button appearance="secondary">
+        ${story}
+      </cvi-ng-button>
+    `;
+  }),
+];
 
 const TemplateWithCustomStyling: Story<LabeledIconComponent> = (
   args: LabeledIconComponent
@@ -82,11 +77,11 @@ const TemplateWithCustomStyling: Story<LabeledIconComponent> = (
   /* template */
   template: `
     <cvi-ng-labeled-icon [name]="name"
-                           [iconPosition]="iconPosition"
-                           [verticalAlignment]="verticalAlignment"
-                           [iconHeight]="iconHeight"
-                           iconClass="icon-wrapper-class"
-                           svgClass="svg-class">
+                         [iconPosition]="iconPosition"
+                         [verticalAlignment]="verticalAlignment"
+                         [iconHeight]="iconHeight"
+                         iconClass="icon-wrapper-class"
+                         svgClass="svg-class">
       {{ content }}
     </cvi-ng-labeled-icon>
   `,

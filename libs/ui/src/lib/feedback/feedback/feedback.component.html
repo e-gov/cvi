@@ -1,10 +1,10 @@
 <cvi-ng-radio-group [appearance]="appearance"
-                      [title]="title"
-                      [formControl]="radioButtonsControl">
-  <cvi-ng-icon *ngIf="showIcons" [name]="'sad_face'" svgClass="cvi-feedback__icon-svg" dataAttribute="sad_face"></cvi-ng-icon>
+                    [title]="title"
+                    [formControl]="radioButtonsControl">
+  <cvi-ng-icon *ngIf="showIcons" name="sad_face" dataAttribute="sad_face" [height]="21"></cvi-ng-icon>
   <cvi-ng-option-button *ngFor="let q of options"
-                          [label]="q.label"
-                          [value]="q.value"
+                        [label]="q.label"
+                        [value]="q.value"
   ></cvi-ng-option-button>
-  <cvi-ng-icon *ngIf="showIcons" [name]="'happy_face'" svgClass="cvi-feedback__icon-svg" dataAttribute="happy_face"></cvi-ng-icon>
+  <cvi-ng-icon *ngIf="showIcons" name="happy_face" dataAttribute="happy_face" [height]="21"></cvi-ng-icon>
 </cvi-ng-radio-group>

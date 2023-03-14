@@ -1,8 +1,0 @@
-@mixin cvi-feedback($base: &) {
-
-  @at-root {
-    #{$base}__icon-svg {
-      height: 21px;
-    }
-  }
-}
