@@ -25,6 +25,7 @@ export default {
       'valik 4 ja palju sõnu millestega ei ole täiesti võimalik midagi seletada või kirjeldada',
     ],
     placeholder: 'Otsi elementi',
+    disabled: false,
   },
 } as Meta;
 
@@ -35,7 +36,9 @@ const Template: Story<SelectComponent> = (args: SelectComponent) => ({
   /* template */
   template: `
       <div style="width: 200px">
-        <cvi-ng-select [items]="items" [placeholder]="placeholder"></cvi-ng-select>
+        <cvi-ng-select [items]="items"
+                       [disabled]="disabled"
+                       [placeholder]="placeholder"></cvi-ng-select>
       </div>
   `,
 });

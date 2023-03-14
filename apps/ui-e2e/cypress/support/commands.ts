@@ -59,6 +59,8 @@ declare global {
 
       shouldBeLastChild(lastElement: string): Cypress.Chainable;
 
+      shouldBeOnlyChild(lastElement: string): Cypress.Chainable;
+
       shouldHaveBefore(element: string, prevElement: string): Cypress.Chainable;
 
       shouldHaveAfter(element: string, nextElement: string): Cypress.Chainable;
@@ -179,6 +181,12 @@ Cypress.Commands.add('shouldBeFirstChild', (firstElement: string) => {
 Cypress.Commands.add('shouldBeLastChild', (lastElement: string) => {
   cy.get(lastElement).should(($el) => {
     expect($el.is(':last-child')).to.be.true;
+  });
+});
+
+Cypress.Commands.add('shouldBeOnlyChild', (lastElement: string) => {
+  cy.get(lastElement).should(($el) => {
+    expect($el.is(':only-child')).to.be.true;
   });
 });
 

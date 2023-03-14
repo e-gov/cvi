@@ -14,7 +14,7 @@ const Template: Story<TooltipDirective> = (args: TooltipDirective) => ({
     ...args,
   },
   template: `
-    <p [cviNgTooltip]="'This tooltip is displayed when hovering, if you move mouse out of the element then tooltip dissapears'">
+    <p [cviNgTooltip]="'This tooltip is displayed when hovering, if you move mouse out of the element then tooltip disappears'" dataAttribute="test-tooltip-source">
       Hover over this element to display tooltip
     </p>
   `,

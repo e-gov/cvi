@@ -7,7 +7,9 @@ import { Component } from '@angular/core';
   selector: 'cvi-ng-storybook-toast-wrapper',
   template: `
     <cvi-ng-track [gap]="4">
-      <cvi-ng-button (click)="openSuccessToast()"
+      <cvi-ng-button
+        (click)="openSuccessToast()"
+        dataAttribute="test-success-toast-button"
         >Open Success Toast</cvi-ng-button
       >
       <cvi-ng-button (click)="openInfoToast()">Open Info Toast</cvi-ng-button>

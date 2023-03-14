@@ -32,7 +32,7 @@ describe('FormItemComponent', () => {
       .should('have.class', 'cvi-textfield__text-control');
   });
 
-  it('Renders required Form item', () => {
+  it('Renders required form item', () => {
     cy.loadStory('Angular Form Form Item', 'Default')
       .changeArg('required', true)
       .get('cvi-ng-form-item')
