@@ -1,0 +1,28 @@
+import {Meta, Story} from '@storybook/addon-docs';
+import stylesPkg from '/libs/styles/package.json';
+
+# How to Install CVI Styles
+
+<Meta title="Styles/How to install" parameters={{viewMode: 'docs'}}/>
+
+<Story name="How to install">
+  {{
+    props: {stylesPkg},
+    template: `
+      Latest version: {{ stylesPkg.version }}
+    `,
+  }}
+</Story>
+
+The library styles are built using Sass (namely [Dart Sass](https://sass-lang.com/dart-sass)).
+
+1. Install the library
+    ```
+    npm i --save @egov/cvi-styles
+    ```
+2. Include styles to a Sass file in the project:
+    ```
+    @use '@egov/cvi-styles';
+    ```
+
+You can also `@use` or `@import` a specific Sass module from the library, eg. `@use '@egov/cvi-styles/settings/variables/typography';`.

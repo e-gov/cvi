@@ -1,0 +1,31 @@
+import { Meta, Story } from '@storybook/addon-docs';
+
+<Meta title="Styles/How to contribute" parameters={{ viewMode: 'docs', layout: 'fullscreen' }} />
+
+# How to contribute to the library styles
+
+Styles of the library are meant to be used in any environment and with any tech stack. Thus they are decoupled from any specific framework. That is also why the styles are global – you can add the styles to any kind of web development platform, be it Angular, React, or something else.
+
+To manage the complexity of global styles, it utilises the concept of **Sass components** that are independent from each other and are designed to be reusable. A Sass component can be used inside another. Although in CVI usually there is a Sass component designated for each Javascript component, one Javascript component could be styled by several Sass components. Also, multiple instances of the same Sass component could be employed in a codebase by providing a custom class name via `$base` Sass argument passed to each component mixin.
+
+## Adding a a new Sass component: quick start
+
+To add a new Sass component, follow these steps:
+
+1. Create a new Sass file in `lib/scss/components` folder. Provide a file name according to the component name, e.g. `button.scss`. Don't use arbitrary file names to avoid confusion.
+2. The file should have a mixin with a name `cvi-<component-name>`, e.g. `cvi-button`. CSS applying to host/root of a component should go to the top level inside the mixin. CSS applying to the component's children (regardless of actual DOM nesting level) should be nested under `@at-root` rule, with `#{base}__<child-class-name>` as a prefix (see below).
+3. Open `main.scss` file in `lib/scss` folder. Add a new import there under the `// Components` section.
+4. Also apply mixin in `apply.scss` file, usually to a class of the same name.
+
+## Classes and selectors
+
+1. CSS in CVI is global and therefore needs some convention to follow in order to avoid naming conflicts. We roughly follow [BEM naming convention](https://en.bem.info):
+
+    1. `__` (double space) for an element;
+    2. `--` (double hyphen) for a modifier.
+
+2. Classes of one Sass component should not be used in another Sass component. Eg. `.cvi-button` class should not appear inside of `.cvi-notification`. Use CSS variables to affect child's appearance from a parent or add a modifier class to the child.
+3. There are other BEM rules to follow that can be found in the [BEM documentation](https://en.bem.info/methodology/quick-start/).
+4. Don't use element selectors (eg `span`). Utilise classes exclusively for selectors. Add class attributes to all elements in the HTML that need to be styled.
+5. All classes should be prefixed with `#{base}` to allow reusing a Sass component as a mixin with a different base name.
+6. Avoid encapsulated styles in the Angular part of the library. Always use global classes. Encapsulation is perfectly fine to use in your project, though.
