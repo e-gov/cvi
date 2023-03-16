@@ -1,9 +1,11 @@
 import {
   Component,
+  ElementRef,
   EventEmitter,
   HostBinding,
   Input,
   Output,
+  ViewChild,
 } from '@angular/core';
 
 @Component({
@@ -29,7 +31,13 @@ export class ButtonComponent {
     }`;
   }
 
+  @ViewChild('buttonRef') buttonRef!: ElementRef<HTMLButtonElement>;
+
   onClick(): void {
     this.clickEvent.emit();
+  }
+
+  focus(): void {
+    this.buttonRef.nativeElement.focus();
   }
 }

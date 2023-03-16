@@ -6,7 +6,7 @@
 </div>
 <div class="cvi-modal__footer">
   <cvi-ng-track flexDirection="verticalReverseOnMobile" horizontalAlignment="right" [gap]="2">
-    <cvi-ng-button *ngIf="cancelButtonText" appearance="secondary" (click)="cancelled.emit()" dataAttribute="modal-cancel">
+    <cvi-ng-button *ngIf="cancelButtonText" appearance="secondary" (click)="cancelled.emit()" dataAttribute="modal-cancel" #cancelButtonRef>
       {{ cancelButtonText }}
     </cvi-ng-button>
     <cvi-ng-button *ngIf="confirmButtonText" (click)="confirmed.emit()" dataAttribute="modal-confirm">
