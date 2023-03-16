@@ -61,14 +61,14 @@
         fill: get-color(sapphire-blue-10);
         text-decoration: underline;
         border: var(--cvi-border-width) solid transparent;
+        border-radius: var(--cvi-radius-xs);
 
         &:hover {
           text-decoration: none;
         }
 
         &:focus {
-          border: var(--cvi-border-width) solid get-color(sapphire-blue-10);
-          border-radius: var(--cvi-radius-xs);
+          border: var(--cvi-border-width) solid get-color(sapphire-blue-10); 
         }
 
         &:disabled {
