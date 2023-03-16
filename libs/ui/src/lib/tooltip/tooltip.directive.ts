@@ -32,7 +32,7 @@ export class TooltipDirective {
       this.componentRef =
         this.viewContainerRef.createComponent(TooltipComponent);
       this.setTooltipComponentProperties();
-      const domElement = (this.componentRef.hostView as EmbeddedViewRef<any>)
+      const domElement = (this.componentRef.hostView as EmbeddedViewRef<never>)
         .rootNodes[0];
       this.document.body.appendChild(domElement);
       setTimeout(() => this.reposition(), 0);
@@ -113,6 +113,7 @@ export class TooltipDirective {
       this.componentRef.instance.top = tooltipPositionY;
       this.componentRef.instance.arrowLeft = tooltipArrowPositionX;
       this.componentRef.instance.arrowTop = tooltipArrowPositionY;
+      this.componentRef.changeDetectorRef.detectChanges();
     }
   }
 
