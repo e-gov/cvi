@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.5.1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.5.0...ui-1.5.1) (2023-03-16)
+
+
+### Bug Fixes
+
+* **ui:** tooltip positioning ([8786dab](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/8786dabe8da7cabfcc9cb76c9ee5c18f13208482))
+
+
+
 # [1.5.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.4.0...ui-1.5.0) (2023-03-08)
 
 
