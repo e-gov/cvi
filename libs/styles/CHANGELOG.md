@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.5.2](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/styles-1.5.1...styles-1.5.2) (2023-03-16)
+
+
+### Bug Fixes
+
+* **styles:** button styling + fix package scripts EBS-574 ([#39](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/39)) ([9bce370](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/9bce37046e62a2ca347d7cdc3d8719cedaf2b6ad))
+
+
+
 ## [1.5.1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/styles-1.5.0...styles-1.5.1) (2023-03-09)
 
 
