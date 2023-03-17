@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.2.4](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/storybook-1.2.3...storybook-1.2.4) (2023-03-17)
+
+
+### Bug Fixes
+
+* **styles:** a file name of a Sass partial containing a dot is impossible to [@use](https://bitbucket.ria.ee/use) without using an alias ([#38](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/38)) ([7d8f8a5](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/7d8f8a5ecdb0b92bfc7b17227223f08561e82196))
+
+
+
 ## [1.2.3](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/storybook-1.2.2...storybook-1.2.3) (2023-03-14)
 
 
