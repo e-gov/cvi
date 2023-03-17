@@ -1,0 +1,26 @@
+import {Meta, Story} from '@storybook/addon-docs';
+import iconsPkg from '/libs/icons/package.json'
+
+<Meta title="Icons/How to contribute" parameters={{viewMode: 'docs'}}/>
+
+# Adding icons to CVI
+
+Adding an icon to the library is simple.
+
+To add an icon with a file name of `my-icon-name.svg`:
+
+1. drop the icon file in SVG format into `/libs/icons/src/lib/svg` folder;
+2. run `npm run generate-icons`;
+3. (optional) import the icon to `ui.module.ts` as `cviMyIconName` if you intend to use it inside of this library.
+
+The new icon can be added to your app with `cvi-ng-icon` component using `name` prop in `my_icon_name` format.
+
+Make sure that the SVG code of the icon is cleaned and optimised for recoloring. Make sure the icon:
+
+1. doesn't contain internal CSS;
+2. doesn't contain any classes (a class added to the svg tag itself is allowed);
+3. doesn't have `fill`/`stroke` attributes (colors are expected to be set in CSS outside of the icon);
+4. doesn't have `width`/`height` attributes;
+5. ...is a proper icon and not a logo or an illustration.
+
+Icons are automatically linted with [SVGLint](https://www.npmjs.com/package/svglint).

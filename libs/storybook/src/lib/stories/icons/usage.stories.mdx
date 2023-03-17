@@ -1,0 +1,63 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Icons/How to use" parameters={{ viewMode: 'docs' }} />
+
+# Usage
+
+## Angular
+
+### Registering an icon
+
+The library supports tree shaking (if the icon library contains hundreds of icons but only one of them is used, only one ends up in the resulting bundle). This approach supports code splitting and lazy loading in a way that the icon only ends up in the chunk it is used.
+
+For these reasons, an icon registry should be used to register used icons in a module:
+
+```ts
+constructor(private registry: IconsRegistry) {
+    this.registry.registerIcons([
+      cviCall
+    ]);
+  }
+```
+
+### Using via component
+
+We provide a [reusable component for the icons (`IconComponent`)](?path=/story/angular-icon--default). It is a component that accepts an icon name in snake_case as an Input property and displays the icon.
+
+## Typescript
+
+```ts
+import {cviCall, CviIcon} from '@egov/cvi-icons';
+
+const container = document.getElementById('.container');
+
+function buildSVGElement(icon: CviIcon): SVGElement {
+    const div = document.createElement('DIV');
+    div.innerHTML = icon.data;
+    return (
+        div.querySelector('svg') ||
+        this.document.createElementNS('http://www.w3.org/2000/svg', 'path')
+    );
+}
+
+container.appendChild(buildSVGElement(icon));
+```
+
+## Vanilla JS
+
+```js
+import {cviCall} from '@egov/cvi-icons';
+
+const container = document.getElementById('.container');
+
+function buildSVGElement(icon) {
+    const div = document.createElement('DIV');
+    div.innerHTML = icon.data;
+    return (
+        div.querySelector('svg') ||
+        this.document.createElementNS('http://www.w3.org/2000/svg', 'path')
+    );
+}
+
+container.appendChild(buildSVGElement(icon);
+```

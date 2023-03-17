@@ -4,13 +4,14 @@
     "TODOS",
     "Styles",
     [
-      "Installation",
-      "Guidelines",
-      "Design tokens",
-      ["Colors", "Typography", "Spacing"]
+      "How to install",
+      "How to use",
+      "How to contribute",
+      "Available variables",
+      ["Overview", "Colors", "Typography", "Spacing"]
     ],
     "Icons",
-    ["Installation", "Usage", "List"],
+    ["How to install", "How to use", "How to contribute", "Available icons"],
     "HTML",
     [
       "Track",

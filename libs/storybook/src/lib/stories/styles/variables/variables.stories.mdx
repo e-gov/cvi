@@ -1,0 +1,47 @@
+import { Meta, Story } from '@storybook/addon-docs';
+
+<Meta title="Styles/Available variables/Overview" parameters={{ viewMode: 'docs', layout: 'fullscreen' }} />
+
+# Variables overview
+
+## Variables and functions
+
+CVI possesses a lot of ways to use design tokens of the design system in your codebase.
+
+Variables are available for a wide range of properties, including:
+
+   1. Type sizes (`font-size` CSS property);
+   2. Font weights (`font-weight`);
+   3. Line heights (`line-height`);
+   4. Border radii (`border-radius`);
+   5. Shadows (`box-shadow`);
+   6. Spacing (`margin`, `padding`);
+   7. Breakpoints (`@media` queries).
+
+You can use Sass functions (`get-property()`) or Sass variables (`$cvi-property`, deprecated), as well as CSS custom properties (prefixed with `--cvi`). This holds true for most of the design tokens.
+
+All `get-property()` functions retrieve a value from a Sass map containing a certain category of design tokens and use a key in that map as an argument. A `get-property()` function will return a CSS custom property by default. If you need a raw value to be returned (for example to be used in Sass calculations), with some of the `get-property()` Sass functions you can set the second argument to `true`. Or you can extract the value directly from a Sass map using native `map.get()` function.
+
+See the table for full variable reference.
+
+## Reference
+
+Design token | Use as CSS | Use as Sass | All values found in
+- | - | - | -
+Color | `--cvi-color-black-coral-0`, `--cvi-color-rgb-black-coral-0` | `get-color(black-coral-0)` | `$cvi-colors`
+Font size | `--cvi-font-size-50` | `get-font-size(50)` | `$cvi-font-sizes`
+Line height | `--cvi-line-height-100` | `get-line-height(100)` | `$cvi-line-heights`
+Font weight | `--cvi-font-weight-alpha` | `get-font-weight(alpha)` | `$cvi-font-weights`
+Size unit | `--cvi-spacing-unit` | `$cvi-spacing-unit` | -
+Margin/padding/gap | `--cvi-spacing-loksa` | `get-spacing(loksa)` | `$cvi-spacing-patterns`
+Border radius | `--cvi-radius-xs` | `map.get($cvi-radii, xs)` | `$cvi-radii`
+Shadow | `--cvi-shadow-alpha` | - | -
+Z-index | - | `get-z-index('modal', '__dialog')` | `$cvi-z-indexes`
+Breakpoint | - | `cvi-breakpoint-down(), cvi-breakpoint-up()` | `$cvi-grid-breakpoints`
+
+## Usage notes
+
+1. Note that usage of one-value Sass variables like `$cvi-font-size-50` for anything except breakpoints is being deprecated (with no due date for removal).
+2. Use `--cvi-color-rgb-<name>` to achieve translucent color, in this format: `rgba(var(--cvi-color-rgb-<name>) / <opacity>)`, for example `rgba(var(--cvi-color-rgb-dark-tangerine-2) / .15)`.
+3. Use `get-z-index()` Sass function and `$cvi-z-indexes` map to set `z-index`. This should prevent `z-index` conflicts and bugs and will help with managing multiple `z-index` values across Sass components. See `_z-indexes.scss` for more information.
+4. When using raw pixel-based values, round pixel values to the nearest even integer, preferably one that is divisible by 4 (eg `12px` is better than `13px`, but `14px` but is still OK). This rule applies even if a Figma design tells you otherwise.

@@ -1,0 +1,40 @@
+import { Meta, Story } from '@storybook/addon-docs';
+
+<Meta title="Styles/How to use" parameters={{ viewMode: 'docs', layout: 'fullscreen' }} />
+
+# Using the library styles
+
+The library offers Sass and CSS variables, Sass components, and utility classes and mixins. All of those should be easy to use in your project.
+
+Some of the components also provide an occasional CSS variable that allows to override its styles from outside.
+
+## Variables
+
+In the library you can find a huge range of Sass and CSS variables and presentational Sass functions that mirror design tokens of the design system. See [Variables Overview](?path=/docs/styles-variables-overview--page) page for more details.
+
+## Components
+
+All Sass components use the same structure and are found in [`src/lib/scss/components` folder](https://github.com/e-gov/cvi/tree/main/libs/styles/src/lib/scss/components). To employ a Sass component in your code, `include` a component mixin to a class of your choice:
+
+```scss
+.myapp-alert {
+  @include cvi-notification;
+}
+```
+
+Ensure that classes in your HTML correspond to the class names defined in the mixin (prefixed with `__` or `--`). A part before the prefix would use the name of your own class. Eg. an JSX example would look like this:
+
+```jsx
+<div class="myapp-alert myapp-alert--severity-warning">
+   <h2 class="myapp-alert__title">{title}</h2>
+   <h2 class="myapp-alert__content">{content}</h2>
+</div>
+```
+
+In your app you can assign classes prefixed with `--` to props of a Javascript component.
+
+You can also explore [code of Angular components](https://github.com/e-gov/cvi/tree/main/libs/ui/src/lib) published as a part of this library as an example.
+
+## Utility classes and mixins
+
+Some often-used utility classes and Sass mixins are also available in the library. See all [the mixins in `lib/scss/settings/_mixins.scss`](https://github.com/e-gov/cvi/blob/main/libs/styles/src/lib/scss/settings/_mixins.scss) and [the utility classes in `lib/scss/settings/_utility-classes.scss`](https://github.com/e-gov/cvi/blob/main/libs/styles/src/lib/scss/settings/_utility-classes.scss).
