@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.5.2](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.5.1...ui-1.5.2) (2023-03-17)
+
+
+### Bug Fixes
+
+* set focus on cancel button when confirmation modal opens ([#40](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/40)) ([09fc24d](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/09fc24d703ddda9cdc078f60f9233f1796e6fc3a))
+
+
+
 ## [1.5.1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.5.0...ui-1.5.1) (2023-03-16)
 
 
