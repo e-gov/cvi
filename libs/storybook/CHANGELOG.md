@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.2.5](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/storybook-1.2.4...storybook-1.2.5) (2023-03-18)
+
+
+### Bug Fixes
+
+* cypress mirror in dockerfile ([#41](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/41)) ([4e2d580](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/4e2d5808ee8738cc17a220d94d18bc7ec6f62207))
+
+
+
 ## [1.2.4](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/storybook-1.2.3...storybook-1.2.4) (2023-03-17)
 
 
