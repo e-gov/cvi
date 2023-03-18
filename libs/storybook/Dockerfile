@@ -44,14 +44,15 @@ ARG cypress_download_mirror
 ARG use_private_registry
 ARG private_npm_registry
 
-RUN echo "use_private_registry=${use_private_registry}"
-
-RUN if [ "$use_private_registry" = true ]; then \
+RUN if [ "$use_private_registry" != true ]; then \
     npm config set registry $private_npm_registry && \
-    echo "CYPRESS_DOWNLOAD_MIRROR=${cypress_download_mirror}" >> /etc/environment \
-; fi
+    export CYPRESS_DOWNLOAD_MIRROR=${cypress_download_mirror} && \
+    echo "CYPRESS_DOWNLOAD_MIRROR=${cypress_download_mirror}" && \
+    npm ci; \
+else \
+    npm ci; \
+fi
 
-RUN npm ci
 COPY . .
 COPY --from=apk ./usr/component-library/styles-package.tmp.json ./libs/styles/package.json
 COPY --from=apk ./usr/component-library/ui-package.tmp.json ./libs/ui/package.json
