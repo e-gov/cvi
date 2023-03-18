@@ -44,7 +44,7 @@ ARG cypress_download_mirror
 ARG use_private_registry
 ARG private_npm_registry
 
-RUN if [ "$use_private_registry" != true ]; then \
+RUN if [ "$use_private_registry" = true ]; then \
     npm config set registry $private_npm_registry && \
     export CYPRESS_DOWNLOAD_MIRROR=${cypress_download_mirror} && \
     echo "CYPRESS_DOWNLOAD_MIRROR=${cypress_download_mirror}" && \
