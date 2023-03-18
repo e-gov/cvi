@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.2.6](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/storybook-1.2.5...storybook-1.2.6) (2023-03-18)
+
+
+### Bug Fixes
+
+* dockerfile cypress conditional ([#42](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/42)) ([6763719](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/6763719605482ed3fdf6e5231cc298fa321505d9))
+
+
+
 ## [1.2.5](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/storybook-1.2.4...storybook-1.2.5) (2023-03-18)
 
 
