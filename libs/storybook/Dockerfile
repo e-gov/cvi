@@ -1,7 +1,6 @@
 ARG node_version=node:lts
 ARG nginx_version=nginx:1.23.1-alpine
 ARG alpine_version=alpine:3.14
-ARG cypress_download_mirror="https://nexus.riaint.ee/repository/cypress-raw-proxy/"
 ARG use_private_registry=false
 ARG private_apk_registry=""
 ARG private_npm_registry=""
@@ -46,8 +45,8 @@ ARG private_npm_registry
 
 RUN if [ "$use_private_registry" = true ]; then \
     npm config set registry $private_npm_registry && \
-    export CYPRESS_DOWNLOAD_MIRROR=${cypress_download_mirror} && \
-    echo "CYPRESS_DOWNLOAD_MIRROR=${cypress_download_mirror}" && \
+    export CYPRESS_INSTALL_BINARY=0 && \
+    echo "CYPRESS_INSTALL_BINARY=${CYPRESS_INSTALL_BINARY}" && \
     npm ci; \
 else \
     npm ci; \
