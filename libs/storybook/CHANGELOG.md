@@ -2,6 +2,16 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.2.7](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/storybook-1.2.6...storybook-1.2.7) (2023-03-18)
+
+
+### Bug Fixes
+
+* dockerfile private registry ([#43](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/43)) ([0b4c54e](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/0b4c54e3300e4362c9f84d4c426e7ba9ba20dd9d))
+* skip cypress binary install for build step ([#44](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/44)) ([b7d6b76](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/b7d6b764c6531c6b613ed30eec720796360c2946))
+
+
+
 ## [1.2.6](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/storybook-1.2.5...storybook-1.2.6) (2023-03-18)
 
 
