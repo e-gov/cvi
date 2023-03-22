@@ -8,6 +8,8 @@ export default {
   parameters: {
     layout: 'padded',
     notes,
+    // disabling Chromatic because random text will trigger changes on each run
+    chromatic: { disableSnapshot: true },
   },
   args: {
     label: 'Section One with a very long label that spans many lines',
