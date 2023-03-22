@@ -35,7 +35,7 @@ export default {
     ],
     placeholder: 'Otsi elementi',
     disabled: false,
-    containerWidth: 200,
+    containerWidth: 220,
   },
 } as Meta;
 
