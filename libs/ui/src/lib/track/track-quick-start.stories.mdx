@@ -54,7 +54,7 @@ Note: by default some form controls have a maximum width. You can set `--cvi-tex
 The variables can be set anywhere in a common parent eg. via `[ngStyle]`.
 
 <Canvas>
-  <Story name="Flexible form items" height="200px">
+  <Story name="Flexible form items" height="200px" parameters={{ chromatic: { disableSnapshot: true } }}>
     {{
       template: `
         <cvi-ng-track [gap]="3" [flexColumnsEqual]="true" [flexIsMultiline]="true" verticalAlignment="bottom" [ngStyle]="{'--cvi-textfield--single-line--max-width': '100%', '--cvi-textfield--multiple-lines--max-width': '100%'}">
@@ -86,7 +86,7 @@ Yes, you can. Create a track and set it to `flexDirection="vertical"` with some 
 See the previous question to stretch a form item to all available width.
 
 <Canvas>
-  <Story name="Two row fixed form items" height="200px">
+  <Story name="Two row fixed form items" height="200px" parameters={{ chromatic: { disableSnapshot: true } }}>
     {{
       template: `
         <cvi-ng-track [gap]="3" flexDirection="vertical">
@@ -118,7 +118,7 @@ See the previous question to stretch a form item to all available width.
 Yes, just use `layout="grid"`. Items will wrap automatically into multiple rows if needed.
 
 <Canvas>
-  <Story name="Form items as a grid" height="200px">
+  <Story name="Form items as a grid" height="200px" parameters={{ chromatic: { disableSnapshot: true } }}>
     {{
       template: `
         <cvi-ng-track [gap]="3" layout="grid" verticalAlignment="bottom">

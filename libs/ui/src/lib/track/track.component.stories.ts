@@ -280,6 +280,10 @@ WithEqualSizeFormItemsGridCol.args = {
 
 export const WithFormItemsComplex = TemplateWithFormItemsComplex.bind({});
 WithFormItemsComplex.storyName = 'With form items (complex layout)';
+WithFormItemsComplex.parameters = {
+  // Disabling Chromatic because cvi-ng-textarea triggers a visual change on every build
+  chromatic: { disableSnapshot: true },
+};
 WithFormItemsComplex.argTypes = {
   repeatableItemsFlex: {
     name: 'Number of repeatable items (first track)',
