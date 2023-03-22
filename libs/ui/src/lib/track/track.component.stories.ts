@@ -15,7 +15,7 @@ const categoryGrid = {
 };
 
 export default {
-  title: 'Angular/Track',
+  title: 'Angular/Track/Stories',
   component: TrackComponent,
   parameters: {
     notes,
