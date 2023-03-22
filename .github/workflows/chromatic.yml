@@ -22,4 +22,5 @@ jobs:
         uses: chromaui/action@v1
         with:
           projectToken: 23c52c9242eb
+          skip: '@(test-**|dependabot/**)'
           onlyChanged: true
