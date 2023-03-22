@@ -17,6 +17,15 @@ export default {
     }),
   ],
   parameters: { notes },
+  argTypes: {
+    containerWidth: {
+      name: 'Container width',
+      table: {
+        category: 'Playground',
+      },
+      control: { type: 'number' },
+    },
+  },
   args: {
     items: [
       'valik 1',
@@ -26,6 +35,7 @@ export default {
     ],
     placeholder: 'Otsi elementi',
     disabled: false,
+    containerWidth: 200,
   },
 } as Meta;
 
@@ -35,7 +45,7 @@ const Template: Story<SelectComponent> = (args: SelectComponent) => ({
   },
   /* template */
   template: `
-      <div style="width: 200px">
+      <div [ngStyle]="{'width.px': containerWidth}">
         <cvi-ng-select [items]="items"
                        [disabled]="disabled"
                        [placeholder]="placeholder"></cvi-ng-select>
@@ -58,7 +68,7 @@ const UserCanAddItemsTemplate: Story<SelectComponent> = (
     },
     /* template */
     template: `
-      <div style="width: 200px">
+      <div [ngStyle]="{'width.px': containerWidth}">
         <cvi-ng-select [items]="items"
                        [addItemFn]="addItemFn"
                        [addItemLabel]="'Lisa element'"
@@ -77,7 +87,7 @@ const DisabledBackgroundTemplate: Story<SelectComponent> = (
   },
   /* template */
   template: `
-      <div style="width: 200px">
+      <div [ngStyle]="{'width.px': containerWidth}">
         <cvi-ng-select [items]="items"
                        [backgroundDisabled]="true"
                        [placeholder]="placeholder"></cvi-ng-select>
@@ -94,7 +104,7 @@ const ObjectsAsItemsTemplate: Story<SelectComponent> = (
   },
   /* template */
   template: `
-      <div style="width: 200px">
+      <div [ngStyle]="{'width.px': containerWidth}">
         <cvi-ng-select [items]="items"
                          [placeholder]="placeholder"
                          [searchFn]="searchFn">
@@ -131,7 +141,7 @@ const DisabledTemplate: Story<SelectComponent> = (args: SelectComponent) => ({
   },
   /* template */
   template: `
-      <div style="width: 200px">
+      <div [ngStyle]="{'width.px': containerWidth}">
         <cvi-ng-select [items]="items"
                        [disabled]="disabled"
                        [placeholder]="placeholder"></cvi-ng-select>
@@ -160,7 +170,7 @@ const FormTemplate: Story<SelectComponent> = (args: SelectComponent) => {
     },
     /* template */
     template: `
-      <div style="width: 200px" [formGroup]="form">
+      <div [ngStyle]="{'width.px': containerWidth}" [formGroup]="form">
         <cvi-ng-select [items]="items" formControlName="item" [placeholder]="placeholder"></cvi-ng-select>
         <div>Selected value: {{selectedValue()}}</div>
       </div>
