@@ -8,11 +8,8 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Install dependencies
-        run: npm
-        # 👇 Adds Chromatic as a step in the workflow
+        run: npm ci
       - name: Publish to Chromatic
         uses: chromaui/action@v1
-        # Chromatic GitHub Action options
         with:
-          # 👇 Chromatic projectToken, refer to the manage page to obtain it.
           projectToken: 23c52c9242eb
