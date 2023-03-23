@@ -24,7 +24,7 @@ body:
       label: Does this feature request involve any updates to the reference design?
       description: Indicate whether your proposed changes conform to the existing design system or assume it needs to be modified too.
       options:
-        - 'None'
+        - 'No'
         - 'Yes'
         - 'Not applicable'
     validations:
