@@ -3,6 +3,8 @@ import notes from './steps.component.md';
 import { concatMap, delay, from, of } from 'rxjs';
 import { StepsComponent } from './steps.component';
 
+const withObservableTitlesDelay = 1000;
+
 export default {
   title: 'Angular/Steps/Steps',
   component: StepsComponent,
@@ -99,7 +101,7 @@ const TemplateObservableTitles: Story = (args) => ({
   props: {
     ...args,
     labels$: from([['First', 'Second', 'Third']]).pipe(
-      concatMap((item) => of(item).pipe(delay(1000)))
+      concatMap((item) => of(item).pipe(delay(withObservableTitlesDelay)))
     ),
   },
   /* template */
@@ -117,7 +119,9 @@ const TemplateObservableTitles: Story = (args) => ({
 });
 
 export const WithObservableTitles = TemplateObservableTitles.bind({});
-WithObservableTitles.args = {};
+WithObservableTitles.parameters = {
+  chromatic: { delay: withObservableTitlesDelay + 300 },
+};
 
 const TemplateWithTranslations: Story<StepsComponent> = (
   args: StepsComponent

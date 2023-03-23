@@ -25,7 +25,8 @@
     "publish:styles": "npm publish dist/libs/styles",
     "publish:ui": "npm publish dist/libs/ui",
     "publish:icons": "npm publish dist/libs/icons",
-    "cy:ui": "npx cypress open --project=apps/ui-e2e"
+    "cy:ui": "npx cypress open --project=apps/ui-e2e",
+    "chromatic": "chromatic --exit-zero-on-changes --project-token=23c52c9242eb"
   },
   "private": true,
   "dependencies": {
@@ -86,6 +87,7 @@
     "@typescript-eslint/eslint-plugin": "5.45.0",
     "@typescript-eslint/parser": "5.45.0",
     "@whitespace/storybook-addon-html": "^5.0.0",
+    "chromatic": "^6.17.2",
     "cpy-cli": "^4.2.0",
     "cypress": "10.8.0",
     "cypress-storybook": "^0.5.1",

@@ -4,7 +4,7 @@ describe('TrackComponent', () => {
   });
 
   it('Renders track with correct gap', () => {
-    cy.loadStory('Angular Track', 'Default')
+    cy.loadStory('Angular Track Stories', 'Default')
       .get('cvi-ng-track')
       .changeArg('gap', 2);
 
@@ -12,7 +12,7 @@ describe('TrackComponent', () => {
   });
 
   it('Renders track with correct horizontal alignment', () => {
-    cy.loadStory('Angular Track', 'Default')
+    cy.loadStory('Angular Track Stories', 'Default')
       .get('cvi-ng-track')
       .changeArg('horizontalAlignment', 'center');
 
@@ -20,7 +20,7 @@ describe('TrackComponent', () => {
   });
 
   it('Renders track with correct vertical alignment', () => {
-    cy.loadStory('Angular Track', 'Default')
+    cy.loadStory('Angular Track Stories', 'Default')
       .get('cvi-ng-track')
       .changeArg('verticalAlignment', 'bottom');
 
@@ -28,7 +28,7 @@ describe('TrackComponent', () => {
   });
 
   it('Renders track with correct multiline setting', () => {
-    cy.loadStory('Angular Track', 'Default')
+    cy.loadStory('Angular Track Stories', 'Default')
       .get('cvi-ng-track')
       .changeArg('flexIsMultiline', true);
 
@@ -36,7 +36,7 @@ describe('TrackComponent', () => {
   });
 
   it('Renders track with correct layout', () => {
-    cy.loadStory('Angular Track', 'Default')
+    cy.loadStory('Angular Track Stories', 'Default')
       .get('cvi-ng-track')
       .changeArg('layout', 'grid');
 

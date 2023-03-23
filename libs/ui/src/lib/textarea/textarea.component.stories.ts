@@ -7,7 +7,11 @@ import { UiModule } from '../ui.module';
 
 export default {
   title: 'Angular/Form/Textarea',
-  parameters: { notes },
+  parameters: {
+    notes,
+    // Disabling Chromatic because cvi-ng-textarea triggers a visual change on every build
+    chromatic: { disableSnapshot: true },
+  },
   decorators: [
     moduleMetadata({
       imports: [UiModule, ReactiveFormsModule],
@@ -24,6 +28,7 @@ export default {
 
 const Template: Story<TextareaComponent> = (args: TextareaComponent) => ({
   props: args,
+  /* template */
   template: `
     <cvi-ng-textarea [disabled]="disabled" [maxLength]="maxLength" [minRows]="minRows" [maxRows]="maxRows" [placeholder]="placeholder" [htmlId]="htmlId" [resizable]="resizable"></cvi-ng-textarea>
   `,

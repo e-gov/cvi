@@ -8,6 +8,8 @@ export default {
   parameters: {
     layout: 'padded',
     notes,
+    // disabling Chromatic because random text will trigger changes on each run
+    chromatic: { disableSnapshot: true },
   },
 } as Meta;
 
