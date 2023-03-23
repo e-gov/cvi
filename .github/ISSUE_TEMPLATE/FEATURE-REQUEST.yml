@@ -1,0 +1,43 @@
+name: Feature Request
+description: Create a new ticket for a new feature request.
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: "Summary"
+      description: Provide a brief explanation of the feature
+      placeholder: Describe in a few lines your feature request
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: "What alternatives have you tried?"
+      description: Describe what have you already tried in order to achieve similar effect
+      placeholder: "Eg. I tried using input with a placeholder, but it is not what I want"
+    validations:
+      required: false
+  - type: dropdown
+    id: design-system-conformance
+    attributes:
+      label: Does this feature request involve any updates to the reference design?
+      description: Indicate whether your proposed changes conform to the existing design system or assume it needs to be modified too.
+      options:
+        - 'None'
+        - 'Yes'
+        - 'Not applicable'
+    validations:
+      required: true
+  - type: textarea
+    id: implementation
+    attributes:
+      label: "Implementation details"
+      description: Describe how do you see this feature request should be resolved
+      placeholder: "Eg. adding a prop X to component Y, ..."
+    validations:
+      required: false
+  - type: markdown
+    attributes:
+      value: |
+        I confirm by submitting this issue that I have studied the [README file](https://github.com/e-gov/cvi/blob/main/README.md), read the [Storybook documentation](https://e-gov.github.io/cvi/?path=/story/intro--page) and looked through the existing library code, features, as well as [the reference design system](https://www.figma.com/file/nNCV5kRqdRkS8MOCK1ZbqU/Veera-Design-System). I also acknowledge that the feature cannot be achieved by existing functionality.
