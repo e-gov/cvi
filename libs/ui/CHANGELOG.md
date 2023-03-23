@@ -2,6 +2,17 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [1.6.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.5.2...ui-1.6.0) (2023-03-23)
+
+
+### Features
+
+* **storybook:** made first tab content for a TabGroupComponent story configurable via controls ([ce03b6d](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/ce03b6da5659ee6ec89ce20893976258b6ec1c62))
+* **storybook:** made wrapper width for SelectComponent stories configurable via controls ([40d67fc](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/40d67fc3cb7e693167986465fd307cf0580d18b3))
+* **storybook:** moved Quick start page for Track component to the beginning to increase its visibility ([081a379](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/081a37983aa4ba62f0e38ff78e3d5358fc13fb60))
+
+
+
 ## [1.5.2](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.5.1...ui-1.5.2) (2023-03-18)
 
 
