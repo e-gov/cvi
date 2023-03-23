@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [1.3.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/storybook-1.2.7...storybook-1.3.0) (2023-03-23)
+
+
+### Features
+
+* **storybook:** moved Quick start page for Track component to the beginning to increase its visibility ([081a379](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/081a37983aa4ba62f0e38ff78e3d5358fc13fb60))
+
+
+
 ## [1.2.7](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/storybook-1.2.6...storybook-1.2.7) (2023-03-18)
 
 
