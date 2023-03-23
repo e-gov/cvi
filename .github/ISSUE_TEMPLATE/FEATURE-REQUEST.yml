@@ -1,6 +1,5 @@
 name: Feature Request
 description: Create a new ticket for a new feature request.
-title: "[Feature request]: "
 labels: ["enhancement"]
 body:
   - type: textarea
