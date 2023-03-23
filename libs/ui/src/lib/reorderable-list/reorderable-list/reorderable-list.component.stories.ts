@@ -215,4 +215,7 @@ export const ReorderableListMultipleTracksAndFormItems =
   ReorderableListMultipleTracksAndFormItemsTemplate.bind({});
 ReorderableListMultipleTracksAndFormItems.storyName =
   'Multiple tracks with multiple form items, and a standalone form item';
-ReorderableListMultipleTracksAndFormItems.args = {};
+ReorderableListMultipleTracksAndFormItems.parameters = {
+  // Disabling Chromatic because cvi-ng-textarea triggers a visual change on every build
+  chromatic: { disableSnapshot: true },
+};

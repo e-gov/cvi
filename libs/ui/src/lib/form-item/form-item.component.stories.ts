@@ -31,7 +31,7 @@ const Template: Story<FormItemComponent> = (args: FormItemComponent) => ({
 
 export const Default = Template.bind({});
 
-const TextareaTemplate: Story<FormItemComponent> = (
+const WithTextareaTemplate: Story<FormItemComponent> = (
   args: FormItemComponent
 ) => ({
   props: args,
@@ -49,4 +49,7 @@ const TextareaTemplate: Story<FormItemComponent> = (
   `,
 });
 
-export const WithTextarea = TextareaTemplate.bind({});
+export const WithTextarea = WithTextareaTemplate.bind({});
+WithTextarea.parameters = {
+  chromatic: { disableSnapshot: true },
+};

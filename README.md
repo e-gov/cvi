@@ -82,3 +82,17 @@ Run `nx graph` to see a diagram of the dependencies of your projects.
 Storybook needs to be up and running as Cypress tests are using its Angular components in iFrame windows. Check previous chapter about 'Running the Storybook'.
 
 When storybook is up and running, run `npm run cy:ui` which opens up Cypress visual testing tool. Select E2E Testing, which presents you all components tests.
+
+## Running Chromatic tests
+
+The project uses automatic screenshot testing via Chromatic. Run `npm run chromatic`, open the resulting URL and go through the visual changes, accepting or denying them in the Chromatic UI.
+
+Chromatic CI also runs on every push. The action always passes (even when visual changes are detected) except for cases when a story is broken. Contributors and reviewers should check the results of the action (and accept or decline them in the Chromatic UI) by following a link in the build log.
+
+Publishing to Chromatic also gives a possibility to share a Storybook link for a specific branch (even unpushed, if the local npm command is used) in this format `https://<branch>--6373995e3f280e239470296d.chromatic.com`.
+
+## Thanks
+
+<a href="https://www.chromatic.com/"><img src="https://user-images.githubusercontent.com/321738/84662277-e3db4f80-af1b-11ea-88f5-91d67a5e59f6.png" width="153" height="30" alt="Chromatic" /></a>
+
+Thanks to [Chromatic](https://www.chromatic.com/) for providing the visual testing platform that helps us review UI changes and catch visual regressions.
