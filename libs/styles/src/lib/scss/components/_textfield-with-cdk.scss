@@ -1,0 +1,8 @@
+@use '@angular/cdk';
+
+@mixin cvi-textfield-with-cdk($base: &) {
+  --comment: 'A form text control with Angular Material CDK autosize styles';
+
+  @include cvi-textfield($base);
+  @include cdk.text-field-autosize;
+}
