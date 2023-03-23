@@ -1,6 +1,5 @@
 name: Feature Request
 description: Create a new ticket for a new feature request.
-title: "[Feature request]: "
 labels: ["enhancement"]
 body:
   - type: textarea
@@ -25,7 +24,7 @@ body:
       label: Does this feature request involve any updates to the reference design?
       description: Indicate whether your proposed changes conform to the existing design system or assume it needs to be modified too.
       options:
-        # default is 'None'
+        - 'None'
         - 'Yes'
         - 'Not applicable'
     validations:
