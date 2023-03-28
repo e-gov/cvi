@@ -1,5 +1,6 @@
 {
   "name": "ria",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "sourceRoot": "apps/ria/src",
   "prefix": "cvi-ng",
@@ -80,7 +81,7 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/ria"],
+      "outputs": ["{workspaceRoot}/coverage/apps/ria"],
       "options": {
         "jestConfig": "apps/ria/jest.config.ts",
         "passWithNoTests": true
