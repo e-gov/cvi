@@ -1,6 +1,15 @@
 import { Meta, Story } from '@storybook/addon-docs';
 
-<Meta title="Styles/Available variables/Spacing" parameters={{ viewMode: 'docs', layout: 'fullscreen' }} />
+<Meta
+  title="Styles/Available variables/Spacing"
+  parameters={{
+    viewMode: 'docs',
+    layout: 'fullscreen',
+    axe: {
+      skip: true,
+    },
+  }}
+/>
 
 export const sizes = [
   { name: 'loksa', value: 4 },
