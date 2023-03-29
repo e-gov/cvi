@@ -50,6 +50,8 @@ export class SelectComponent
   @Input() minTermLength = 0;
   @Input() backgroundDisabled = false;
   @Input() disabled = false;
+  /** HTML id passed from FormItem component */
+  @Input() htmlId!: string;
 
   @Output() itemChanged = new EventEmitter();
 

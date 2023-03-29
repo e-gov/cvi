@@ -20,11 +20,11 @@
       }
     }
 
-    .has-value #{$base}__input-container {
+    .has-value .background-disabled #{$base}__input-container {
       visibility: hidden;
     }
 
-    &.open.has-value #{$base}__input-container {
+    &.open.has-value .background-disabled #{$base}__input-container {
       visibility: visible;
     }
 
@@ -46,6 +46,7 @@
       border-radius: var(--cvi-radius-s);
       border: 1px solid get-color(black-coral-3);
       background-color: get-color(white);
+
       &:focus-within {
         border-color: transparent;
         outline: var(--cvi-border-focus);

@@ -38,7 +38,9 @@ export default {
     ],
     placeholder: 'Otsi elementi',
     disabled: false,
+    backgroundDisabled: false,
     containerWidth: 220,
+    htmlId: 'some-select',
   },
 } as Meta;
 
@@ -49,15 +51,14 @@ const Template: Story<SelectComponent> = (args: SelectComponent) => ({
   /* template */
   template: `
       <div [ngStyle]="{'width.px': containerWidth}">
-        <cvi-ng-select [items]="items"
-                       [disabled]="disabled"
-                       [placeholder]="placeholder"></cvi-ng-select>
+        <cvi-ng-form-item label="Some label" [htmlId]="htmlId">
+          <cvi-ng-select [items]="items"
+                         [disabled]="disabled"
+                         [backgroundDisabled]="backgroundDisabled"
+                         [placeholder]="placeholder"
+                         [htmlId]="htmlId"></cvi-ng-select>
+        </cvi-ng-form-item>
       </div>
-      <select name="d" id="">
-        <option value="d1">Option 1</option>
-        <option value="d2">Option 2</option>
-        <option value="d3">Option 3</option>
-      </select>
   `,
 });
 export const Default = Template.bind({});

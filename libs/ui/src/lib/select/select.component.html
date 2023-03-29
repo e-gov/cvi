@@ -27,6 +27,7 @@
              type="text"
              role="combobox"
              autocomplete="off"
+             [attr.id]="htmlId"
              dataAttribute="test-input"
              [attr.aria-expanded]="isOpen"
              [value]="searchTerm ? searchTerm : ''"
