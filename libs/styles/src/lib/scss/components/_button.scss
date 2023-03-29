@@ -47,7 +47,7 @@
         }
 
         &:focus {
-          border-color: get-color(sapphire-blue-10);
+          border-color: get-color(--cvi-color-focus);
         }
 
         &:disabled {
@@ -68,7 +68,7 @@
         }
 
         &:focus {
-          border: var(--cvi-border-width) solid get-color(sapphire-blue-10); 
+          border: var(--cvi-border-focus);
         }
 
         &:disabled {

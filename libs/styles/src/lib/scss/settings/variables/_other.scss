@@ -21,6 +21,7 @@ $cvi-radii: (
   --cvi-border-width: 2px;
 }
 
+
 // Shadows
 $cvi-shadow-beta-blur: 15px;
 
@@ -33,8 +34,12 @@ $cvi-shadow-beta-blur: 15px;
   --cvi-shadow-delta: inset 1px 0 0 var(--cvi-color-white),
     inset -1px 0 0 var(--cvi-color-white), inset 0 1px 0 var(--cvi-color-white),
     inset 0 -1px 0 var(--cvi-color-white);
-
-  --cvi-shadow-focus: var(--cvi-shadow-delta);
 }
 
+
+// Focus styles
+:root {
+  --cvi-border-focus: var(--cvi-border-width) solid var(--cvi-color-focus);
+  --cvi-shadow-focus: var(--cvi-shadow-delta);
+}
 /* stylelint-enable no-duplicate-selectors */
