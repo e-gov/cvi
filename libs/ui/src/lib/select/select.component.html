@@ -47,6 +47,7 @@
     </span>
     <button [ngClass]="{'cvi-hidden': disabled || (!backgroundDisabled || backgroundDisabled && !hasValue)}"
             class="cvi-select__icon-wrapper"
+            aria-label="Edit"
             #editButton
             (click)="handleArrowButtonClick($event)">
           <ng-container *ngTemplateOutlet="icon"></ng-container>
