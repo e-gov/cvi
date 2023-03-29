@@ -60,6 +60,7 @@
       <ul role="listbox" cviNgSelectNavigation [scrollableEl]="popup" [inputField]="searchInput" (closed)="close()">
         <li role="option"
             class="cvi-dropdown-popup__dropdown-item"
+            [attr.aria-selected]="item.value === selectedItem?.value"
             dataAttribute="test-option"
             *ngFor="let item of itemsList.filteredItems"
             (click)="selectItem(item)">
