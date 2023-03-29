@@ -2,6 +2,20 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [1.7.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.6.0...ui-1.7.0) (2023-03-29)
+
+
+### Bug Fixes
+
+* **ui:** fixed an issue where cvi-ng-textarea would not resize back to original height after clearing entered value ([22d645b](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/22d645bd48c02bca866a74c826f03070da75e4a5))
+
+
+### Features
+
+* **storybook:** added an example of switching textarea resizability in an HTML story for cvi-textfield Sass component ([4fb1bcd](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/4fb1bcd3a79620ca1dbbb1fc4fa83548a88e5bb9))
+
+
+
 # [1.6.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.5.2...ui-1.6.0) (2023-03-23)
 
 
