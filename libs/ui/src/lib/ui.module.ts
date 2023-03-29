@@ -55,6 +55,7 @@ import {
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
 import { SelectComponent } from './select/select.component';
+import { SelectNavigationDirective } from './select/select-navigation.directive';
 import {
   LabelTemplateDirective,
   OptionTemplateDirective,
@@ -117,6 +118,7 @@ const components = [
   NotificationComponent,
   BreadcrumbsComponent,
   SelectComponent,
+  SelectNavigationDirective,
   LabelTemplateDirective,
   OptionTemplateDirective,
   DataAttributeDirective,

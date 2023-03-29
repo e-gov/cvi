@@ -32,48 +32,51 @@
              [disabled]="disabled"
              (keyup.arrowdown)="handleOpeningFromKeyboard()"
              (input)="filter(searchInput.value)"
-             class="cvi-select__input"/>
+             class="cvi-select__input" />
     </div>
     <span *ngIf="!disabled"
           class="cvi-select__icon-wrapper"
           (mousedown)="handleArrowButtonClick($event)">
       <cvi-ng-icon *ngIf="!isOpen && (!hasValue || !backgroundDisabled)"
-                     svgClass="cvi-select__icon-svg"
-                     name="arrow_down">
+                   svgClass="cvi-select__icon-svg"
+                   name="arrow_down">
       </cvi-ng-icon>
       <cvi-ng-icon *ngIf="!isOpen && hasValue && backgroundDisabled"
-                     class="cvi-select__icon"
-                     svgClass="cvi-select__icon-edit-svg"
-                     name="edit_simple">
+                   class="cvi-select__icon"
+                   svgClass="cvi-select__icon-edit-svg"
+                   name="edit_simple">
       </cvi-ng-icon>
       <cvi-ng-icon *ngIf="isOpen"
-                     svgClass="cvi-select__icon-svg"
-                     name="arrow_up">
+                   svgClass="cvi-select__icon-svg"
+                   name="arrow_up">
       </cvi-ng-icon>
     </span>
   </div>
   <div *ngIf="isOpen"
        dataAttribute="test-popup"
-       class="cvi-dropdown-popup">
-    <ul role="listbox">
-      <li role="option"
-          class="cvi-dropdown-popup__dropdown-item"
-          dataAttribute="test-option"
-          *ngFor="let item of itemsList.filteredItems"
-          (click)="selectItem(item)">
-        <ng-template #defaultOptionTemplate>
-          <span class="cvi-dropdown-popup__item-label">{{ item.value }}</span>
-        </ng-template>
-        <ng-template
-            [ngTemplateOutlet]="optionTemplate || defaultOptionTemplate"
-            [ngTemplateOutletContext]="{ item: item.value }">
-        </ng-template>
-      </li>
-      <li *ngIf="showAddItem"
-          role="option"
-          class="cvi-dropdown-popup__dropdown-item" (click)="addItem()">
-        <span>{{addItemLabel}}</span> "{{searchTerm}}"
-      </li>
-    </ul>
+       class="cvi-dropdown-popup"
+       #popup>
+    <div class="cvi-dropdown-popup__inner">
+      <ul role="listbox" cviNgSelectNavigation [scrollableEl]="popup" [inputField]="searchInput" (closed)="close()">
+        <li role="option"
+            class="cvi-dropdown-popup__dropdown-item"
+            dataAttribute="test-option"
+            *ngFor="let item of itemsList.filteredItems"
+            (click)="selectItem(item)">
+          <ng-template #defaultOptionTemplate>
+            <span class="cvi-dropdown-popup__item-label">{{ item.value }}</span>
+          </ng-template>
+          <ng-template
+              [ngTemplateOutlet]="optionTemplate || defaultOptionTemplate"
+              [ngTemplateOutletContext]="{ item: item.value }">
+          </ng-template>
+        </li>
+        <li *ngIf="showAddItem"
+            role="option"
+            class="cvi-dropdown-popup__dropdown-item" (click)="addItem()">
+          <span>{{addItemLabel}}</span> "{{searchTerm}}"
+        </li>
+      </ul>
+    </div>
   </div>
 </div>

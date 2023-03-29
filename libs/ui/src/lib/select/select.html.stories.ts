@@ -48,26 +48,28 @@ const Template: Story = (args) => ({
             </span>
           </div>
           <div class="cvi-dropdown-popup">
-            <ul role="listbox">
-              <li role="option" class="cvi-dropdown-popup__dropdown-item">
-                <span class="cvi-dropdown-popup__item-label">Item 1 that is not that short but actually quite long</span>
-              </li>
-              <li role="option" class="cvi-dropdown-popup__dropdown-item is-current">
-                <span class="cvi-dropdown-popup__item-label">Current item 2</span>
-              </li>
-              <li role="option" class="cvi-dropdown-popup__dropdown-item is-focused">
-                <span class="cvi-dropdown-popup__item-label">Item selected from keyboard</span>
-              </li>
-              <li role="option" class="cvi-dropdown-popup__dropdown-item">
-                <span class="cvi-dropdown-popup__item-label">Item 4</span>
-              </li>
-              <li role="option" class="cvi-dropdown-popup__dropdown-item">
-                <span class="cvi-dropdown-popup__item-label">Item 5</span>
-              </li>
-              <li role="option" class="cvi-dropdown-popup__dropdown-item">
-                <span class="cvi-select__item-label">Item 6 with a very long text spanning many lines</span>
-              </li>
-            </ul>
+          <div class="cvi-dropdown-popup__inner">
+              <ul role="listbox">
+                <li role="option" class="cvi-dropdown-popup__dropdown-item">
+                  <span class="cvi-dropdown-popup__item-label">Item 1 that is not that short but actually quite long</span>
+                </li>
+                <li role="option" class="cvi-dropdown-popup__dropdown-item is-current">
+                  <span class="cvi-dropdown-popup__item-label">Current item 2</span>
+                </li>
+                <li role="option" class="cvi-dropdown-popup__dropdown-item is-focused">
+                  <span class="cvi-dropdown-popup__item-label">Item selected from keyboard</span>
+                </li>
+                <li role="option" class="cvi-dropdown-popup__dropdown-item">
+                  <span class="cvi-dropdown-popup__item-label">Item 4</span>
+                </li>
+                <li role="option" class="cvi-dropdown-popup__dropdown-item">
+                  <span class="cvi-dropdown-popup__item-label">Item 5</span>
+                </li>
+                <li role="option" class="cvi-dropdown-popup__dropdown-item">
+                  <span class="cvi-select__item-label">Item 6 with a very long text spanning many lines</span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
