@@ -52,6 +52,7 @@
   <div *ngIf="isOpen"
        dataAttribute="test-popup"
        class="cvi-dropdown-popup"
+       (document:keydown.escape)="close()"
        #popup>
     <div class="cvi-dropdown-popup__inner">
       <ul role="listbox" cviNgSelectNavigation [scrollableEl]="popup" [inputField]="searchInput" (closed)="close()">
