@@ -12,7 +12,7 @@
        (mousedown)="handleMousedown($event)">
     <div class="cvi-select__value-container">
       <div *ngIf="!hasValue && !searchTerm" class="cvi-select__placeholder">{{placeholder}}</div>
-      <div *ngIf="hasValue" class="cvi-select__value">
+      <div *ngIf="hasValue" class="cvi-select__value" aria-live="polite">
         <ng-template #defaultLabelTemplate>
           {{selectedItem?.label}}
         </ng-template>
