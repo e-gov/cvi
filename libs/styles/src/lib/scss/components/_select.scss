@@ -14,17 +14,17 @@
 
     .has-value #{$base}__container {
       background-color: get-color(white);
-
-      &.background-disabled {
-        background-color: get-color(black-coral-0);
-      }
     }
 
-    .has-value .background-disabled #{$base}__input-container {
+    .has-value.background-disabled #{$base}__container {
+      background-color: get-color(black-coral-0);
+    }
+
+    .has-value.background-disabled #{$base}__input-container {
       visibility: hidden;
     }
 
-    &.open.has-value .background-disabled #{$base}__input-container {
+    &.open.has-value.background-disabled #{$base}__input-container {
       visibility: visible;
     }
 

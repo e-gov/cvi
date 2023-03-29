@@ -5,9 +5,9 @@
      [class.open]="isOpen"
      [class.touched]="touched"
      [class.invalid]="invalid"
+     [class.background-disabled]="backgroundDisabled"
      [class.disabled]="disabled">
   <div class="cvi-select__container"
-       [class.background-disabled]="backgroundDisabled"
        (mousedown)="handleMousedown($event)">
     <div class="cvi-select__value-container">
       <div *ngIf="!hasValue && !searchTerm" class="cvi-select__placeholder">{{placeholder}}</div>
