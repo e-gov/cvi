@@ -1,6 +1,8 @@
 @use '../settings/mixins';
 
 @mixin cvi-select($base: &) {
+  --comment: 'A single choice combobox';
+
   position: relative;
   display: block;
   box-sizing: border-box;
@@ -105,28 +107,6 @@
     #{$base}__icon-edit-svg {
       height: 16px;
       fill: get-color(sapphire-blue-10);
-    }
-
-    #{$base}__dropdown {
-      position: absolute;
-      width: 100%;
-      background-color: get-color(white);
-      border-bottom-left-radius: var(--cvi-radius-s);
-      border-bottom-right-radius: var(--cvi-radius-s);
-      border: 1px solid get-color(black-coral-3);
-      z-index: get-z-index('select', '__dropdown');
-      max-height: 300px;
-      overflow-y: auto;
-    }
-
-    #{$base}__dropdown-item {
-      padding: get-spacing('rapla') get-spacing('elva');
-      cursor: pointer;
-      color: get-color(black-coral-18);
-
-      &:hover {
-        background-color: get-color(sapphire-blue-0);
-      }
     }
   }
 }

@@ -1,0 +1,25 @@
+@mixin cvi-dropdown-popup($base: &) {
+  --comment: 'A popup for an list-based dropdown';
+
+  position: absolute;
+  width: 100%;
+  background-color: get-color(white);
+  border-bottom-left-radius: var(--cvi-radius-s);
+  border-bottom-right-radius: var(--cvi-radius-s);
+  border: 1px solid get-color(black-coral-3);
+  z-index: get-z-index('dropdown-popup', 'dropdown');
+  max-height: 300px;
+  overflow-y: auto;
+
+  @at-root {
+    #{$base}__dropdown-item {
+      padding: get-spacing('rapla') get-spacing('elva');
+      cursor: pointer;
+      color: get-color(black-coral-18);
+
+      &:hover {
+        background-color: get-color(sapphire-blue-0);
+      }
+    }
+  }
+}
