@@ -112,13 +112,18 @@ const ObjectsAsItemsTemplate: Story<SelectComponent> = (
 ) => ({
   props: {
     ...args,
+    searchFn: (term: string, item: any) => {
+      console.log('custom searchFn works!');
+      return `${item.name} (${item.code})`.toLowerCase().indexOf(term.toLowerCase()) >
+      -1;
+    }
   },
   /* template */
   template: `
       <div [ngStyle]="{'width.px': containerWidth}">
         <cvi-ng-select [items]="items"
-                         [placeholder]="placeholder"
-                         [searchFn]="searchFn">
+                       [placeholder]="placeholder"
+                       [searchFn]="searchFn">
           <ng-template cviNgSelectOptionTemplate let-item="item">
             {{item.name}} ({{item.code}})
           </ng-template>
@@ -141,9 +146,6 @@ ObjectsAsItems.args = {
       name: 'Product',
     },
   ],
-  searchFn: (term: string, item: any) =>
-    `${item.name} (${item.code})`.toLowerCase().indexOf(term.toLowerCase()) >
-    -1,
 };
 
 const DisabledTemplate: Story<SelectComponent> = (args: SelectComponent) => ({
