@@ -54,15 +54,20 @@ const FormTemplate: Story<InputComponent> = (args: InputComponent) => {
     return form.controls.item.value;
   }
 
+  function onSubmit(formValue: any) {
+    console.log(formValue);
+  }
+
   return {
     props: {
       ...args,
-      form: form,
-      selectedValue: selectedValue,
+      form,
+      selectedValue,
+      onSubmit,
     },
     /* template */
     template: `
-      <div [formGroup]="form">
+      <form [formGroup]="form" (ngSubmit)="onSubmit(this.form.value)">
         <cvi-ng-form-item label="Some label"
                           [htmlId]="htmlId">
           <cvi-ng-input formControlName="item"
@@ -70,7 +75,7 @@ const FormTemplate: Story<InputComponent> = (args: InputComponent) => {
                         [disabled]="disabled"
                         [htmlId]="htmlId"></cvi-ng-input>
         </cvi-ng-form-item>
-      </div>
+      </form>
       <div>Inserted value: {{selectedValue()}}</div>
     `,
   };
