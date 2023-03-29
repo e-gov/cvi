@@ -78,7 +78,7 @@
     #{$base}__input {
       // TODO: consider moving these reset styles to _reset.scss
       box-sizing: content-box;
-      background: none;
+      background-color: transparent;
       border: none;
       box-shadow: none;
       outline: none;
