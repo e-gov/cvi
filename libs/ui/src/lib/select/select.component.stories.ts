@@ -115,9 +115,12 @@ const ObjectsAsItemsTemplate: Story<SelectComponent> = (
     ...args,
     searchFn: (term: string, item: any) => {
       console.log('custom searchFn works!');
-      return `${item.name} (${item.code})`.toLowerCase().indexOf(term.toLowerCase()) >
-      -1;
-    }
+      return (
+        `${item.name} (${item.code})`
+          .toLowerCase()
+          .indexOf(term.toLowerCase()) > -1
+      );
+    },
   },
   /* template */
   template: `
