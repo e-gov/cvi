@@ -36,7 +36,7 @@ const Template: Story = (args) => ({
             <div class="cvi-select__input-container">
               <input
                 type="text"
-                role="presentation"
+                role="combobox"
                 autocomplete="off"
                 class="cvi-select__input"
               />
