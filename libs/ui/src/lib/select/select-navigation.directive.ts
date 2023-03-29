@@ -5,12 +5,13 @@ import {
   Input,
   Output,
   ElementRef,
+  AfterViewInit,
 } from '@angular/core';
 
 @Directive({
   selector: '[cviNgSelectNavigation]',
 })
-export class SelectNavigationDirective {
+export class SelectNavigationDirective implements AfterViewInit {
   @Input() scrollableEl?: HTMLElement;
   @Input() inputField?: HTMLInputElement | ElementRef<HTMLInputElement>;
   @Output() closed: EventEmitter<any> = new EventEmitter();
@@ -45,6 +46,10 @@ export class SelectNavigationDirective {
 
   constructor(private readonly hostEl: ElementRef) {}
 
+  ngAfterViewInit(): void {
+    this.focusByIndex(0);
+  }
+
   private isEventOfKey(key: string, event: KeyboardEvent): boolean {
     return event.key === key;
   }
@@ -55,6 +60,12 @@ export class SelectNavigationDirective {
 
   private isArrowUp(event: KeyboardEvent): boolean {
     return this.isEventOfKey('ArrowUp', event);
+  }
+
+  private focusByIndex(i: number) {
+    this.focusedElement = this.hostEl.nativeElement.children[i];
+    this.focusedElement?.classList.add(this.focusedClass);
+    this.itemFocused.emit(i);
   }
 
   private onNavigation(event: KeyboardEvent): void {
