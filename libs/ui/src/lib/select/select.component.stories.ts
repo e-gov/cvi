@@ -30,7 +30,7 @@ export default {
     items: [
       'valik 1',
       'valik 2',
-      'valik 3',
+      'valik 3 (cy test)',
       'valik 4 ja palju sõnu millestega ei ole täiesti võimalik midagi seletada või kirjeldada',
     ],
     placeholder: 'Otsi elementi',
