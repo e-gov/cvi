@@ -7,8 +7,18 @@ export default {
     notes,
     options: { selectedPanel: 'html/panel' },
   },
+  argTypes: {
+    containerWidth: {
+      name: 'Container width',
+      table: {
+        category: 'Playground',
+      },
+      control: { type: 'number' },
+    },
+  },
   args: {
     placeholder: 'Otsi elementi või lisa uss 🐍',
+    containerWidth: 220,
   },
 } as Meta;
 
@@ -16,7 +26,7 @@ const Template: Story = (args) => ({
   props: args,
   /* template */
   template: `
-    <div style="width: 200px;">
+    <div style="width: {{ containerWidth }}px">
       <div>
         <div class="cvi-select">
           <div class="cvi-select__container">
