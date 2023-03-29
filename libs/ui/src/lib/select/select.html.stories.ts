@@ -52,11 +52,11 @@ const Template: Story = (args) => ({
               <li role="option" class="cvi-dropdown-popup__dropdown-item">
                 <span class="cvi-dropdown-popup__item-label">Item 1 that is not that short but actually quite long</span>
               </li>
-              <li role="option" class="cvi-dropdown-popup__dropdown-item">
-                <span class="cvi-dropdown-popup__item-label">Item 2</span>
+              <li role="option" class="cvi-dropdown-popup__dropdown-item is-current">
+                <span class="cvi-dropdown-popup__item-label">Current item 2</span>
               </li>
-              <li role="option" class="cvi-dropdown-popup__dropdown-item">
-                <span class="cvi-dropdown-popup__item-label">Item 3</span>
+              <li role="option" class="cvi-dropdown-popup__dropdown-item is-focused">
+                <span class="cvi-dropdown-popup__item-label">Item selected from keyboard</span>
               </li>
               <li role="option" class="cvi-dropdown-popup__dropdown-item">
                 <span class="cvi-dropdown-popup__item-label">Item 4</span>
