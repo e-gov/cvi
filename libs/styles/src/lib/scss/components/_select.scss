@@ -59,9 +59,12 @@
       min-width: 0;
     }
 
+    #{$base}__placeholder,
+    #{$base}__value {
+      @include mixins.cvi-truncate-single-line(100%);
+    }
     #{$base}__placeholder {
       color: get-color(black-coral-7);
-      @include mixins.cvi-truncate-single-line(100%);
     }
 
     #{$base}__input-container {
