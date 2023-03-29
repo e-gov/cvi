@@ -36,6 +36,11 @@
       background-color: get-color(black-coral-0);
     }
 
+    &.search-has-focus #{$base}__container {
+      border-color: transparent;
+      outline: var(--cvi-border-focus);
+    }
+
     #{$base}__container {
       display: flex;
       align-items: center;
@@ -46,11 +51,6 @@
       border-radius: var(--cvi-radius-s);
       border: 1px solid get-color(black-coral-3);
       background-color: get-color(white);
-
-      &:focus-within {
-        border-color: transparent;
-        outline: var(--cvi-border-focus);
-      }
     }
 
     #{$base}__value-container {

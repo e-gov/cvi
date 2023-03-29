@@ -6,7 +6,8 @@
      [class.touched]="touched"
      [class.invalid]="invalid"
      [class.background-disabled]="backgroundDisabled"
-     [class.disabled]="disabled">
+     [class.disabled]="disabled"
+     [class.search-has-focus]="searchInputFocused">
   <div class="cvi-select__container"
        (mousedown)="handleMousedown($event)">
     <div class="cvi-select__value-container">
@@ -33,6 +34,8 @@
              [value]="searchTerm ? searchTerm : ''"
              [disabled]="disabled"
              (keyup.arrowdown)="handleOpeningFromKeyboard()"
+             (focusin)="searchInputFocused = true"
+             (focusout)="searchInputFocused = false"
              (input)="handleOpeningFromKeyboard(); filter(searchInput.value)"
              class="cvi-select__input" />
     </div>

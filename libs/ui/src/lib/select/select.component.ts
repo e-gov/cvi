@@ -68,6 +68,7 @@ export class SelectComponent
   isOpen = false;
   searchTerm: string | null = null;
   itemsList: SelectItemsList;
+  searchInputFocused = false;
 
   private readonly destroy$ = new Subject<void>();
   private readonly select: HTMLElement;
