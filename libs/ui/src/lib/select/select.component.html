@@ -65,6 +65,7 @@
           [scrollableEl]="popup"
           [inputField]="searchInput"
           (closed)="close()"
+          [attr.aria-labelledby]="htmlId"
           [attr.id]="listboxHtmlId">
         <li role="option"
             class="cvi-dropdown-popup__dropdown-item"
