@@ -62,6 +62,8 @@ export class SelectComponent
 
   @ViewChild('searchInput', { static: true })
   searchInput?: ElementRef<HTMLInputElement>;
+  @ViewChild('editButton', { static: true })
+  editButton?: ElementRef<HTMLButtonElement>;
 
   isOpen = false;
   searchTerm: string | null = null;
@@ -148,6 +150,7 @@ export class SelectComponent
     }
 
     this.close();
+    this.restoreFocusAfterClosing();
   }
 
   focus() {
@@ -155,13 +158,32 @@ export class SelectComponent
     setTimeout(() => this.searchInput?.nativeElement.focus());
   }
 
+  focusEditButton() {
+    setTimeout(() => this.editButton?.nativeElement.focus());
+  }
+
   blur() {
     this.searchInput?.nativeElement.blur();
+  }
+
+  restoreFocusAfterClosing() {
+    if (this.backgroundDisabled && this.hasValue) {
+      this.focusEditButton();
+    } else {
+      this.focus();
+    }
   }
 
   handleOpeningFromKeyboard() {
     if (!this.isOpen) {
       this.open();
+    }
+  }
+
+  handleClosingFromKeyboard() {
+    if (this.isOpen) {
+      this.close();
+      this.restoreFocusAfterClosing();
     }
   }
 

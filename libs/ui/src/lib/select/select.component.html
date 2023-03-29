@@ -36,23 +36,23 @@
              (input)="handleOpeningFromKeyboard(); filter(searchInput.value)"
              class="cvi-select__input" />
     </div>
-    <ng-container *ngIf="!disabled">
-      <span *ngIf="!backgroundDisabled || backgroundDisabled && !hasValue"
+    <!-- We don't use ngIf here because it would be impossible to focus the button -->
+    <span [ngClass]="{'cvi-hidden': disabled || (backgroundDisabled && hasValue)}"
+          class="cvi-select__icon-wrapper"
+          (mousedown)="handleArrowButtonClick($event)">
+          <ng-container *ngTemplateOutlet="icon"></ng-container>
+    </span>
+    <button [ngClass]="{'cvi-hidden': disabled || (!backgroundDisabled || backgroundDisabled && !hasValue)}"
             class="cvi-select__icon-wrapper"
-            (mousedown)="handleArrowButtonClick($event)">
-            <ng-container *ngTemplateOutlet="icon"></ng-container>
-      </span>
-      <button *ngIf="backgroundDisabled && hasValue"
-            class="cvi-select__icon-wrapper"
+            #editButton
             (click)="handleArrowButtonClick($event)">
-            <ng-container *ngTemplateOutlet="icon"></ng-container>
-      </button>
-    </ng-container>
+          <ng-container *ngTemplateOutlet="icon"></ng-container>
+    </button>
   </div>
   <div *ngIf="isOpen"
        dataAttribute="test-popup"
        class="cvi-dropdown-popup"
-       (document:keydown.escape)="close()"
+       (document:keydown.escape)="handleClosingFromKeyboard()"
        #popup>
     <div class="cvi-dropdown-popup__inner">
       <ul role="listbox" cviNgSelectNavigation [scrollableEl]="popup" [inputField]="searchInput" (closed)="close()">
