@@ -15,7 +15,9 @@ describe('TextareaComponent', () => {
     cy.loadStory('Angular Form Textarea', 'Default')
       .get('cvi-ng-textarea')
       .changeArg('resizable', false)
-      .shouldHaveClasses('cvi-ng-textarea', ['cvi-textfield--no-resize']);
+      .shouldHaveClasses('cvi-ng-textarea', [
+        'cvi-textfield-with-cdk--no-resize',
+      ]);
   });
 
   it('Displays inserted value correctly using FormGroup', () => {

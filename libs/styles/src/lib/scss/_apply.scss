@@ -6,6 +6,10 @@
   @include cvi-textfield;
 }
 
+.cvi-textfield-with-cdk {
+  @include cvi-textfield-with-cdk;
+}
+
 .cvi-form-item {
   @include cvi-form-item;
 }
