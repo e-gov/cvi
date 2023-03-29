@@ -47,7 +47,7 @@
         }
 
         &:focus {
-          border-color: get-color(--cvi-color-focus);
+          border-color: var(--cvi-color-focus);
         }
 
         &:disabled {
