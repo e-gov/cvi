@@ -42,6 +42,10 @@
       border-radius: var(--cvi-radius-s);
       border: 1px solid get-color(black-coral-3);
       background-color: get-color(white);
+      &:focus-within {
+        border-color: transparent;
+        outline: var(--cvi-border-focus);
+      }
     }
 
     #{$base}__value-container {
