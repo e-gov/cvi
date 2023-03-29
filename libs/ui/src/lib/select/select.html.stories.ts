@@ -8,7 +8,7 @@ export default {
     options: { selectedPanel: 'html/panel' },
   },
   args: {
-    placeholder: 'Otsi elementi',
+    placeholder: 'Otsi elementi või lisa uss 🐍',
   },
 } as Meta;
 

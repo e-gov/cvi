@@ -78,6 +78,9 @@ const UserCanAddItemsTemplate: Story<SelectComponent> = (
   };
 };
 export const UserCanAddItems = UserCanAddItemsTemplate.bind({});
+UserCanAddItems.args = {
+  placeholder: 'Otsi elementi või lisa uus',
+};
 
 const DisabledBackgroundTemplate: Story<SelectComponent> = (
   args: SelectComponent

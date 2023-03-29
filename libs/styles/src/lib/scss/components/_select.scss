@@ -1,3 +1,5 @@
+@use '../settings/mixins';
+
 @mixin cvi-select($base: &) {
   position: relative;
   display: block;
@@ -52,10 +54,12 @@
       flex-grow: 1;
       flex-shrink: 1;
       flex-basis: 0;
+      min-width: 0;
     }
 
     #{$base}__placeholder {
       color: get-color(black-coral-7);
+      @include mixins.cvi-truncate-single-line(100%);
     }
 
     #{$base}__input-container {
