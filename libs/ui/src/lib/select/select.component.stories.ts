@@ -53,6 +53,11 @@ const Template: Story<SelectComponent> = (args: SelectComponent) => ({
                        [disabled]="disabled"
                        [placeholder]="placeholder"></cvi-ng-select>
       </div>
+      <select name="d" id="">
+        <option value="d1">Option 1</option>
+        <option value="d2">Option 2</option>
+        <option value="d3">Option 3</option>
+      </select>
   `,
 });
 export const Default = Template.bind({});
@@ -168,18 +173,23 @@ const FormTemplate: Story<SelectComponent> = (args: SelectComponent) => {
     return form.getRawValue().item;
   }
 
+  function onSubmit(formValue: any) {
+    console.log(formValue);
+  }
+
   return {
     props: {
       ...args,
       form: form,
       selectedValue: selectedValue,
+      onSubmit: onSubmit,
     },
     /* template */
     template: `
-      <div [ngStyle]="{'width.px': containerWidth}" [formGroup]="form">
+      <form [ngStyle]="{'width.px': containerWidth}" [formGroup]="form" (ngSubmit)="onSubmit(this.form.value)">
         <cvi-ng-select [items]="items" formControlName="item" [placeholder]="placeholder"></cvi-ng-select>
         <div>Selected value: {{selectedValue()}}</div>
-      </div>
+      </form>
   `,
   };
 };
