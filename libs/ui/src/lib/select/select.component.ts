@@ -157,6 +157,12 @@ export class SelectComponent
     this.searchInput?.nativeElement.blur();
   }
 
+  handleOpeningFromKeyboard() {
+    if (!this.isOpen) {
+      this.open();
+    }
+  }
+
   handleMousedown(event: MouseEvent) {
     if (!this.hasValue || !this.backgroundDisabled) {
       const target = event.target as HTMLElement;
@@ -168,7 +174,7 @@ export class SelectComponent
     }
   }
 
-  handleArrowClick(event: MouseEvent) {
+  handleArrowButtonClick(event: MouseEvent) {
     event.stopPropagation();
     event.preventDefault();
 

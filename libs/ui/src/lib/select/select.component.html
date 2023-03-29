@@ -29,12 +29,13 @@
              dataAttribute="test-input"
              [value]="searchTerm ? searchTerm : ''"
              [disabled]="disabled"
+             (keyup.arrowdown)="handleOpeningFromKeyboard()"
              (input)="filter(searchInput.value)"
              class="cvi-select__input"/>
     </div>
     <span *ngIf="!disabled"
           class="cvi-select__icon-wrapper"
-          (mousedown)="handleArrowClick($event)">
+          (mousedown)="handleArrowButtonClick($event)">
       <cvi-ng-icon *ngIf="!isOpen && (!hasValue || !backgroundDisabled)"
                      svgClass="cvi-select__icon-svg"
                      name="arrow_down">
