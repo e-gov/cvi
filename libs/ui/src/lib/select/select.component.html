@@ -28,6 +28,7 @@
              role="combobox"
              autocomplete="off"
              dataAttribute="test-input"
+             [attr.aria-expanded]="isOpen"
              [value]="searchTerm ? searchTerm : ''"
              [disabled]="disabled"
              (keyup.arrowdown)="handleOpeningFromKeyboard()"
