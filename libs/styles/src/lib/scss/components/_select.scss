@@ -93,10 +93,11 @@
       width: 30px;
       height: 30px;
       display: flex;
-      cursor: pointer;
       position: relative;
       justify-content: center;
       align-items: center;
+      // sometimes it is a button, sometimes it is not
+      cursor: pointer;
     }
 
     #{$base}__icon {

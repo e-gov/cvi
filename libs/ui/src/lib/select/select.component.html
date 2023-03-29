@@ -33,26 +33,21 @@
              [value]="searchTerm ? searchTerm : ''"
              [disabled]="disabled"
              (keyup.arrowdown)="handleOpeningFromKeyboard()"
-             (input)="filter(searchInput.value)"
+             (input)="handleOpeningFromKeyboard(); filter(searchInput.value)"
              class="cvi-select__input" />
     </div>
-    <span *ngIf="!disabled"
-          class="cvi-select__icon-wrapper"
-          (mousedown)="handleArrowButtonClick($event)">
-      <cvi-ng-icon *ngIf="!isOpen && (!hasValue || !backgroundDisabled)"
-                   svgClass="cvi-select__icon-svg"
-                   name="arrow_down">
-      </cvi-ng-icon>
-      <cvi-ng-icon *ngIf="!isOpen && hasValue && backgroundDisabled"
-                   class="cvi-select__icon"
-                   svgClass="cvi-select__icon-edit-svg"
-                   name="edit_simple">
-      </cvi-ng-icon>
-      <cvi-ng-icon *ngIf="isOpen"
-                   svgClass="cvi-select__icon-svg"
-                   name="arrow_up">
-      </cvi-ng-icon>
-    </span>
+    <ng-container *ngIf="!disabled">
+      <span *ngIf="!backgroundDisabled || backgroundDisabled && !hasValue"
+            class="cvi-select__icon-wrapper"
+            (mousedown)="handleArrowButtonClick($event)">
+            <ng-container *ngTemplateOutlet="icon"></ng-container>
+      </span>
+      <button *ngIf="backgroundDisabled && hasValue"
+            class="cvi-select__icon-wrapper"
+            (click)="handleArrowButtonClick($event)">
+            <ng-container *ngTemplateOutlet="icon"></ng-container>
+      </button>
+    </ng-container>
   </div>
   <div *ngIf="isOpen"
        dataAttribute="test-popup"
@@ -84,3 +79,19 @@
     </div>
   </div>
 </div>
+
+<ng-template #icon>
+  <cvi-ng-icon *ngIf="!isOpen && (!hasValue || !backgroundDisabled)"
+               svgClass="cvi-select__icon-svg"
+               name="arrow_down">
+  </cvi-ng-icon>
+  <cvi-ng-icon *ngIf="!isOpen && hasValue && backgroundDisabled"
+               class="cvi-select__icon"
+               svgClass="cvi-select__icon-edit-svg"
+               name="edit_simple">
+  </cvi-ng-icon>
+  <cvi-ng-icon *ngIf="isOpen"
+               svgClass="cvi-select__icon-svg"
+               name="arrow_up">
+  </cvi-ng-icon>
+</ng-template>
