@@ -114,6 +114,9 @@ export class SelectComponent
     return !!this.addItemFn;
   }
 
+  get listboxHtmlId() {
+    return this.htmlId + '-listbox';
+  }
   ngOnInit(): void {
     this.handleOutsideClick();
 

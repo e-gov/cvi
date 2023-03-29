@@ -28,6 +28,7 @@
              type="text"
              role="combobox"
              autocomplete="off"
+             [attr.aria-controls]="listboxHtmlId"
              [attr.id]="htmlId"
              dataAttribute="test-input"
              [attr.aria-expanded]="isOpen"
@@ -59,7 +60,12 @@
        (document:keydown.escape)="handleClosingFromKeyboard()"
        #popup>
     <div class="cvi-dropdown-popup__inner">
-      <ul role="listbox" cviNgSelectNavigation [scrollableEl]="popup" [inputField]="searchInput" (closed)="close()">
+      <ul role="listbox"
+          cviNgSelectNavigation
+          [scrollableEl]="popup"
+          [inputField]="searchInput"
+          (closed)="close()"
+          [attr.id]="listboxHtmlId">
         <li role="option"
             class="cvi-dropdown-popup__dropdown-item"
             [ngClass]="{'is-current': item.value === selectedItem?.value}"
