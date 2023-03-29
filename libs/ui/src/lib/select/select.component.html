@@ -75,6 +75,7 @@
             [attr.aria-selected]="item.value === selectedItem?.value"
             dataAttribute="test-option"
             *ngFor="let item of itemsList.filteredItems"
+            tabindex="0"
             (click)="selectItem(item)">
           <ng-template #defaultOptionTemplate>
             <span class="cvi-dropdown-popup__item-label">{{ item.value }}</span>
