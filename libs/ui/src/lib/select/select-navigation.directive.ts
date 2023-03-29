@@ -14,6 +14,7 @@ export class SelectNavigationDirective {
   @Input() scrollableEl?: HTMLElement;
   @Input() inputField?: HTMLInputElement | ElementRef<HTMLInputElement>;
   @Output() closed: EventEmitter<any> = new EventEmitter();
+  @Output() itemFocused: EventEmitter<number> = new EventEmitter();
 
   focusedElement?: HTMLElement;
   focusedClass = 'is-focused';
@@ -88,6 +89,8 @@ export class SelectNavigationDirective {
     }
 
     this.focusedElement.classList.add(this.focusedClass);
+    const elIndex = [...opts].indexOf(this.focusedElement);
+    this.itemFocused.emit(elIndex);
   }
 
   private scrollToFocusedElement(listEl: HTMLElement): void {

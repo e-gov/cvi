@@ -30,6 +30,7 @@
              autocomplete="off"
              aria-autocomplete="both"
              aria-haspopup="listbox"
+             [attr.aria-activedescendant]="focusedItemHtmlId"
              [attr.aria-controls]="listboxHtmlId"
              [attr.id]="htmlId"
              dataAttribute="test-input"
@@ -67,6 +68,7 @@
           [scrollableEl]="popup"
           [inputField]="searchInput"
           (closed)="close()"
+          (itemFocused)="updateFocusedItem($event)"
           [attr.aria-labelledby]="htmlId"
           [attr.id]="listboxHtmlId">
         <li role="option"
@@ -74,8 +76,9 @@
             [ngClass]="{'is-current': item.value === selectedItem?.value}"
             [attr.aria-selected]="item.value === selectedItem?.value"
             dataAttribute="test-option"
-            *ngFor="let item of itemsList.filteredItems"
             tabindex="0"
+            [attr.id]="htmlId + '-listbox-item-' + idx"
+            *ngFor="let item of itemsList.filteredItems; let idx = index"
             (click)="selectItem(item)">
           <ng-template #defaultOptionTemplate>
             <span class="cvi-dropdown-popup__item-label">{{ item.value }}</span>

@@ -69,6 +69,7 @@ export class SelectComponent
   searchTerm: string | null = null;
   itemsList: SelectItemsList;
   searchInputFocused = false;
+  focusedOptionIndex: number | null = null;
 
   private readonly destroy$ = new Subject<void>();
   private readonly select: HTMLElement;
@@ -117,6 +118,14 @@ export class SelectComponent
   get listboxHtmlId() {
     return this.htmlId + '-listbox';
   }
+
+  get focusedItemHtmlId() {
+    if (this.isOpen && this.focusedOptionIndex !== null) {
+      return this.htmlId + '-listbox-item-' + this.focusedOptionIndex;
+    }
+    return '';
+  }
+
   ngOnInit(): void {
     this.handleOutsideClick();
 
@@ -155,6 +164,10 @@ export class SelectComponent
 
     this.close();
     this.restoreFocusAfterClosing();
+  }
+
+  updateFocusedItem(index: number) {
+    this.focusedOptionIndex = index;
   }
 
   focus() {
@@ -228,6 +241,7 @@ export class SelectComponent
     this.isOpen = false;
     this.searchTerm = null;
     this.itemsList.resetFilteredItems();
+    this.focusedOptionIndex = null;
 
     if (typeof this.onTouched === 'function') {
       this.onTouched();
