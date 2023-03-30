@@ -25,7 +25,7 @@
     "publish:styles": "npm publish dist/libs/styles",
     "publish:ui": "npm publish dist/libs/ui",
     "publish:icons": "npm publish dist/libs/icons",
-    "cy:ui": "npx cypress open --project=apps/ui-e2e",
+    "cypress:ui": "npx nx e2e ui-e2e",
     "chromatic": "chromatic --exit-zero-on-changes --project-token=23c52c9242eb"
   },
   "private": true,
