@@ -52,6 +52,7 @@ else \
     npm ci; \
 fi
 
+ENV NX_DAEMON=false
 COPY . .
 COPY --from=apk ./usr/component-library/styles-package.tmp.json ./libs/styles/package.json
 COPY --from=apk ./usr/component-library/ui-package.tmp.json ./libs/ui/package.json
