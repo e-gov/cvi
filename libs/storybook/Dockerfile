@@ -47,7 +47,7 @@ RUN if [ "$use_private_registry" = true ]; then \
     npm config set registry $private_npm_registry && \
     export CYPRESS_INSTALL_BINARY=0 && \
     echo "CYPRESS_INSTALL_BINARY=${CYPRESS_INSTALL_BINARY}" && \
-    npm ci; \
+    npm i; \
 else \
     npm ci; \
 fi
