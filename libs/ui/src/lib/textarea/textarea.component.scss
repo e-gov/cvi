@@ -1,10 +1,10 @@
 @use '@angular/cdk';
-@use 'libs/styles/src/lib/scss/components/textfield';
+@use 'components/textfield' as cvi;
 
 /* stylelint-disable-next-line selector-class-pattern */
 .cvi-textfield-with-cdk {
   --comment: 'A form text control with Angular Material CDK autosize styles';
 
-  @include textfield.cvi-textfield(&);
+  @include cvi.cvi-textfield(&);
   @include cdk.text-field-autosize;
 }

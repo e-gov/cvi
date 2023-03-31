@@ -25,7 +25,10 @@
         "configDir": "libs/storybook/.storybook",
         "browserTarget": "storybook:build-storybook",
         "compodoc": false,
-        "styles": ["libs/styles/src/lib/scss/main.scss"]
+        "styles": ["libs/styles/src/lib/scss/main.scss"],
+        "stylePreprocessorOptions": {
+          "includePaths": ["libs/styles/src/lib/scss"]
+        }
       },
       "configurations": {
         "ci": {
