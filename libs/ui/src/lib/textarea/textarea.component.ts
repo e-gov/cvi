@@ -22,7 +22,7 @@ export const textareaComponentProvider = {
   templateUrl: './textarea.component.html',
   styleUrls: ['./textarea.component.scss'],
   providers: [textareaComponentProvider],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
 })
 export class TextareaComponent implements ControlValueAccessor {
   /** HTML id passed from FormItem component */
