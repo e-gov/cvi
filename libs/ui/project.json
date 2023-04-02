@@ -8,7 +8,10 @@
       "executor": "@nrwl/angular:package",
       "outputs": ["dist/libs/ui"],
       "options": {
-        "project": "libs/ui/ng-package.json"
+        "project": "libs/ui/ng-package.json",
+        "stylePreprocessorOptions": {
+          "includePaths": ["libs/styles/src/lib/scss"]
+        }
       },
       "configurations": {
         "production": {
