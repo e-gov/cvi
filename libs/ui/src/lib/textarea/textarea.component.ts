@@ -7,7 +7,6 @@ import {
   HostBinding,
   Input,
   Output,
-  ViewEncapsulation,
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
@@ -22,7 +21,6 @@ export const textareaComponentProvider = {
   templateUrl: './textarea.component.html',
   styleUrls: ['./textarea.component.scss'],
   providers: [textareaComponentProvider],
-  encapsulation: ViewEncapsulation.None,
 })
 export class TextareaComponent implements ControlValueAccessor {
   /** HTML id passed from FormItem component */
