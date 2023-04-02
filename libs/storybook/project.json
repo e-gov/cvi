@@ -25,10 +25,7 @@
         "configDir": "libs/storybook/.storybook",
         "browserTarget": "storybook:build-storybook",
         "compodoc": false,
-        "styles": ["libs/styles/src/lib/scss/main.scss"],
-        "stylePreprocessorOptions": {
-          "includePaths": ["libs/styles/src/lib/scss"]
-        }
+        "styles": ["libs/styles/src/lib/scss/main.scss"]
       },
       "configurations": {
         "ci": {
@@ -44,10 +41,7 @@
         "configDir": "libs/storybook/.storybook",
         "browserTarget": "storybook:build-storybook",
         "compodoc": false,
-        "styles": ["libs/styles/src/lib/scss/main.scss"],
-        "stylePreprocessorOptions": {
-          "includePaths": ["libs/styles/src/lib/scss"]
-        }
+        "styles": ["libs/styles/src/lib/scss/main.scss"]
       },
       "configurations": {
         "ci": {
