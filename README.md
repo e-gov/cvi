@@ -19,6 +19,8 @@ https://www.figma.com/file/nNCV5kRqdRkS8MOCK1ZbqU/Veera-Design-System
 
 But please take note that e-Gov CVI **is not Veera**.
 
+Feel free to reach out on the public [CVI Signal group](https://signal.group/#CjQKIII854RES5vfIQ8Oqw5fWmS2_FY8cJTEM1RSJI9fSsplEhC4dNwXGkcfqf34YmQJJDi_) to discuss any issues.
+
 ### Installation
 
 1. Add the public Koodivaramu registry to your project by following the instructions [here](https://koodivaramu.eesti.ee/e-gov/cvi/-/packages/385).
