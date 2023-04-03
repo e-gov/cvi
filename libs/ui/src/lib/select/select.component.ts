@@ -191,7 +191,14 @@ export class SelectComponent
     }
   }
 
-  handleOpeningFromKeyboard() {
+  handleOpeningWithArrowFromKeyboard() {
+    if (!this.isOpen) {
+      this.open();
+      this.updateFocusedItem(0);
+    }
+  }
+
+  handleOpeningWithTypingFromKeyboard() {
     if (!this.isOpen) {
       this.open();
     }

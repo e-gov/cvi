@@ -37,10 +37,10 @@
              [attr.aria-expanded]="isOpen"
              [value]="searchTerm ? searchTerm : ''"
              [disabled]="disabled"
-             (keyup.arrowdown)="handleOpeningFromKeyboard()"
+             (keyup.arrowdown)="handleOpeningWithArrowFromKeyboard()"
              (focusin)="searchInputFocused = true"
              (focusout)="searchInputFocused = false"
-             (input)="handleOpeningFromKeyboard(); filter(searchInput.value)"
+             (input)="handleOpeningWithTypingFromKeyboard(); filter(searchInput.value)"
              class="cvi-select__input" />
     </div>
     <!-- We don't use ngIf here because it would be impossible to focus the button -->
