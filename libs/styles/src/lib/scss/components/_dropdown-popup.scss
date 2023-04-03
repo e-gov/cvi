@@ -1,6 +1,9 @@
 @mixin cvi-dropdown-popup($base: &) {
   --comment: 'A popup for an list-based dropdown';
 
+  --bg-color-focused: #{get-color(sapphire-blue-8)};
+  --bg-color-current: #{get-color(sapphire-blue-10)};
+
   position: absolute;
   width: 100%;
   background-color: get-color(white);
@@ -18,18 +21,18 @@
       color: get-color(black-coral-18);
 
       &.is-current {
-        background-color: get-color(sapphire-blue-10);
+        background-color: var(--bg-color-current);
         color: get-color(white);
 
         &:hover {
-          background-color: get-color(sapphire-blue-8);
+          background-color: var(--bg-color-focused);
         }
       }
 
       // including being selected from keyboard
       &.is-focused,
       &.is-focused:hover {
-        background-color: get-color(sapphire-blue-8);
+        background-color: var(--bg-color-focused);
         color: get-color(white);
       }
 
