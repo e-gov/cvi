@@ -3,6 +3,8 @@
 @mixin cvi-select($base: &) {
   --comment: 'A single choice combobox';
 
+  --value-box-height: 30px;
+
   position: relative;
   display: block;
   box-sizing: border-box;
@@ -10,6 +12,19 @@
   @at-root {
     .filtered #{$base}__value {
       visibility: hidden;
+    }
+
+    &.is-input-hidden {
+      #{$base}__input {
+        color: transparent;
+      }
+    }
+
+    /* stylelint-disable-next-line selector-class-pattern */
+    &.search-has-focus {
+      #{$base}__value {
+        @include mixins.cvi-screenreader-text;
+      }
     }
 
     .has-value #{$base}__container {
@@ -58,6 +73,7 @@
       flex-shrink: 1;
       flex-basis: 0;
       min-width: 0;
+      line-height: var(--value-box-height);
     }
 
     #{$base}__placeholder,
@@ -71,7 +87,7 @@
     #{$base}__input-container {
       position: absolute;
       width: 100%;
-      left: 0;
+      left: 1px;
       padding-left: get-spacing('paldiski');
       padding-right: 40px;
     }
@@ -88,6 +104,8 @@
       width: 100%;
       font-size: inherit;
       font-family: inherit;
+      transition: none;
+      line-height: var(--value-box-height);
     }
 
     #{$base}__icon-wrapper {

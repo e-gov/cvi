@@ -45,6 +45,8 @@ export class SelectComponent
   @Input() placeholder = '';
   @Input() searchFn?: ((search: string, item: unknown) => boolean) | null =
     null;
+  /** This function is mandatory when objects as items are provided */
+  @Input() valueFormatFn?: ((item: unknown) => string) | null = null;
   @Input() addItemLabel: string | undefined;
   @Input() addItemFn: AddItemFn | undefined;
   @Input() minTermLength = 0;
@@ -93,6 +95,17 @@ export class SelectComponent
 
   get invalid(): boolean {
     return this.control ? !!this.control.invalid : false;
+  }
+
+  get inputValue(): string | undefined {
+    if (this.searchTerm) {
+      return this.searchTerm;
+    } else {
+      if (this.hasValue) {
+        return this.itemsList.selectedItemValue;
+      }
+    }
+    return '';
   }
 
   get touched(): boolean {

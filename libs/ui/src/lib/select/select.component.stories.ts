@@ -74,10 +74,10 @@ const WithCustomValueFormattingTemplate: Story<SelectComponent> = (
     <div [ngStyle]="{'width.px': containerWidth}">
       <cvi-ng-form-item label="Some label" [htmlId]="htmlId">
         <cvi-ng-select [items]="items"
-                        [placeholder]="placeholder"
+                       [placeholder]="placeholder"
                        [backgroundDisabled]="backgroundDisabled"
                        [disabled]="disabled"
-                        [htmlId]="htmlId">
+                       [htmlId]="htmlId">
           <ng-template cviNgSelectOptionTemplate let-item="item">
             <cvi-ng-track verticalAlignment="center" [gap]="4">
               <ng-container *ngTemplateOutlet="icon"></ng-container>
@@ -166,21 +166,28 @@ const ObjectsAsItemsTemplate: Story<SelectComponent> = (
           .indexOf(term.toLowerCase()) > -1
       );
     },
+    valueFormatFn: (item: any) => `${item.name} (${item.code})`,
   },
   /* template */
   template: `
-      <div [ngStyle]="{'width.px': containerWidth}">
-        <cvi-ng-select [items]="items"
-                       [placeholder]="placeholder"
-                       [searchFn]="searchFn">
-          <ng-template cviNgSelectOptionTemplate let-item="item">
-            {{item.name}} ({{item.code}})
-          </ng-template>
-          <ng-template cviNgSelectLabelTemplate let-item="item">
-            {{item.name}} ({{item.code}})
-          </ng-template>
-        </cvi-ng-select>
-      </div>
+    <cvi-ng-storybook-note>
+      Use this approach when you provide objects as items and need to mix and match different properties of an item object in an option template. In addition to templates, you need to supply <code>valueFormatFn</code> input as well, in order for the chosen value to appear correctly.
+    </cvi-ng-storybook-note>
+    <div [ngStyle]="{'width.px': containerWidth}">
+      <cvi-ng-select [items]="items"
+                     [placeholder]="placeholder"
+                     [disabled]="disabled"
+                     [backgroundDisabled]="backgroundDisabled"
+                     [valueFormatFn]="valueFormatFn"
+                     [searchFn]="searchFn">
+        <ng-template cviNgSelectOptionTemplate let-item="item">
+          {{item.name}} ({{item.code}})
+        </ng-template>
+        <ng-template cviNgSelectLabelTemplate let-item="item">
+          {{item.name}} ({{item.code}})
+        </ng-template>
+      </cvi-ng-select>
+    </div>
   `,
 });
 export const ObjectsAsItems = ObjectsAsItemsTemplate.bind({});
@@ -220,6 +227,9 @@ const WithBoundValuesTemplate: Story<SelectComponent> = (
     },
     /* template */
     template: `
+      <cvi-ng-storybook-note>
+        Use <code>bindValue</code> and <code>bindLabel</code> inputs if you need to use custom item object properties, but don't want to supply fancy templates for option or selected value.
+      </cvi-ng-storybook-note>
       <form [ngStyle]="{'width.px': containerWidth}" [formGroup]="form" (ngSubmit)="onSubmit(this.form.value)">
         <div [ngStyle]="{'width.px': containerWidth}">
           <cvi-ng-select [items]="items"
