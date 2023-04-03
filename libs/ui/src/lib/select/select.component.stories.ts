@@ -28,13 +28,13 @@ export default {
   },
   args: {
     items: [
-      'valik 1',
-      'valik 2',
+      'Sierra Nevada 1',
+      'Bilbao 2',
       'valik 3 (cy test)',
-      'valik 4 ja palju sõnu millestega ei ole täiesti võimalik midagi seletada või kirjeldada',
-      'valik 5',
-      'valik 6 with enough text to feed a saltwater crocodile',
-      'valik 7 with enough text to feed a prehistoric jaguar',
+      'Rest queen discovery stood far everything keep aside merely girl two making inch hard example remove steel right silent trunk central refused other 4',
+      'London 5',
+      'Option 6 with enough text to feed a saltwater crocodile',
+      'Option 7 with enough text to feed a prehistoric jaguar',
     ],
     placeholder: 'Otsi elementi',
     disabled: false,
@@ -62,6 +62,39 @@ const Template: Story<SelectComponent> = (args: SelectComponent) => ({
   `,
 });
 export const Default = Template.bind({});
+
+const WithCustomValueFormattingTemplate: Story<SelectComponent> = (args: SelectComponent) => ({
+  props: {
+    ...args,
+  },
+  /* template */
+  template: `
+    <div [ngStyle]="{'width.px': containerWidth}">
+      <cvi-ng-form-item label="Some label" [htmlId]="htmlId">
+        <cvi-ng-select [items]="items"
+                        [placeholder]="placeholder"
+                        [htmlId]="htmlId">
+          <ng-template cviNgSelectOptionTemplate let-item="item">
+            <cvi-ng-track verticalAlignment="center" [gap]="4">
+              <ng-container *ngTemplateOutlet="icon"></ng-container>
+              {{item}}
+            </cvi-ng-track>
+          </ng-template>
+          <ng-template cviNgSelectLabelTemplate let-item="item">
+            <cvi-ng-track verticalAlignment="center" [gap]="4">
+              <ng-container *ngTemplateOutlet="icon"></ng-container>
+              {{item}}
+            </cvi-ng-track>
+          </ng-template>
+        </cvi-ng-select>
+      </cvi-ng-form-item>
+    </div>
+    <ng-template #icon>
+      <svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" style="flex: 0 0 auto"><path fill="#0072CE" d="M0,0h9.3v5.9H0V0z"/><path d="M0,2h9.3v4H0V2z"/><path fill="#ffffff" d="M0,4h9.3v2H0V4z" /></svg>
+    </ng-template>
+  `,
+});
+export const WithCustomValueFormatting = WithCustomValueFormattingTemplate.bind({});
 
 const UserCanAddItemsTemplate: Story<SelectComponent> = (
   args: SelectComponent
