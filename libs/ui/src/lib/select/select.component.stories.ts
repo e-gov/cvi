@@ -75,6 +75,8 @@ const WithCustomValueFormattingTemplate: Story<SelectComponent> = (
       <cvi-ng-form-item label="Some label" [htmlId]="htmlId">
         <cvi-ng-select [items]="items"
                         [placeholder]="placeholder"
+                       [backgroundDisabled]="backgroundDisabled"
+                       [disabled]="disabled"
                         [htmlId]="htmlId">
           <ng-template cviNgSelectOptionTemplate let-item="item">
             <cvi-ng-track verticalAlignment="center" [gap]="4">
@@ -117,6 +119,8 @@ const UserCanAddItemsTemplate: Story<SelectComponent> = (
       <div [ngStyle]="{'width.px': containerWidth}">
         <cvi-ng-select [items]="items"
                        [addItemFn]="addItemFn"
+                       [disabled]="disabled"
+                       [backgroundDisabled]="backgroundDisabled"
                        [addItemLabel]="'Lisa element'"
                        [placeholder]="placeholder"></cvi-ng-select>
       </div>
@@ -138,6 +142,7 @@ const DisabledBackgroundTemplate: Story<SelectComponent> = (
   template: `
       <div [ngStyle]="{'width.px': containerWidth}">
         <cvi-ng-select [items]="items"
+                       [disabled]="disabled"
                        [backgroundDisabled]="backgroundDisabled"
                        [placeholder]="placeholder"></cvi-ng-select>
       </div>
@@ -145,8 +150,8 @@ const DisabledBackgroundTemplate: Story<SelectComponent> = (
 });
 export const DisabledBackground = DisabledBackgroundTemplate.bind({});
 DisabledBackground.args = {
-  backgroundDisabled: true
-}
+  backgroundDisabled: true,
+};
 
 const ObjectsAsItemsTemplate: Story<SelectComponent> = (
   args: SelectComponent
@@ -220,6 +225,7 @@ const WithBoundValuesTemplate: Story<SelectComponent> = (
           <cvi-ng-select [items]="items"
                          [placeholder]="placeholder"
                          [disabled]="disabled"
+                         [backgroundDisabled]="backgroundDisabled"
                          formControlName="item"
                          bindLabel="fancyLabel"
                          bindValue="rawValue">
@@ -228,7 +234,7 @@ const WithBoundValuesTemplate: Story<SelectComponent> = (
       </form>
       <div>Selected value: {{selectedValue()}}</div>
     `,
-  }
+  };
 };
 export const WithBoundValues = WithBoundValuesTemplate.bind({});
 WithBoundValues.args = {
@@ -253,6 +259,7 @@ const DisabledTemplate: Story<SelectComponent> = (args: SelectComponent) => ({
       <div [ngStyle]="{'width.px': containerWidth}">
         <cvi-ng-select [items]="items"
                        [disabled]="disabled"
+                       [backgroundDisabled]="backgroundDisabled"
                        [placeholder]="placeholder"></cvi-ng-select>
       </div>
   `,
@@ -285,7 +292,11 @@ const FormTemplate: Story<SelectComponent> = (args: SelectComponent) => {
     /* template */
     template: `
       <form [ngStyle]="{'width.px': containerWidth}" [formGroup]="form" (ngSubmit)="onSubmit(this.form.value)">
-        <cvi-ng-select [items]="items" formControlName="item" [placeholder]="placeholder"></cvi-ng-select>
+        <cvi-ng-select [items]="items"
+                       [backgroundDisabled]="backgroundDisabled"
+                       [disabled]="disabled"
+                       formControlName="item"
+                       [placeholder]="placeholder"></cvi-ng-select>
         <div>Selected value: {{selectedValue()}}</div>
       </form>
   `,
