@@ -192,6 +192,58 @@ ObjectsAsItems.args = {
   ],
 };
 
+const WithBoundValuesTemplate: Story<SelectComponent> = (
+  args: SelectComponent
+) => {
+  const form = new FormGroup({
+    item: new FormControl(null, Validators.required),
+  });
+
+  function selectedValue() {
+    return form.getRawValue().item;
+  }
+
+  function onSubmit(formValue: any) {
+    console.log(formValue);
+  }
+  return {
+    props: {
+      ...args,
+      form,
+      selectedValue: selectedValue,
+      onSubmit: onSubmit,
+    },
+    /* template */
+    template: `
+      <form [ngStyle]="{'width.px': containerWidth}" [formGroup]="form" (ngSubmit)="onSubmit(this.form.value)">
+        <div [ngStyle]="{'width.px': containerWidth}">
+          <cvi-ng-select [items]="items"
+                         [placeholder]="placeholder"
+                         [disabled]="disabled"
+                         formControlName="item"
+                         bindLabel="fancyLabel"
+                         bindValue="rawValue">
+          </cvi-ng-select>
+        </div>
+      </form>
+      <div>Selected value: {{selectedValue()}}</div>
+    `,
+  }
+};
+export const WithBoundValues = WithBoundValuesTemplate.bind({});
+WithBoundValues.args = {
+  items: [
+    {
+      fancyLabel: 'Scrooge McDuck',
+      rawValue: 'duck1',
+    },
+    {
+      fancyLabel: 'Donald Duck',
+      rawValue: 'duck2',
+    },
+  ],
+};
+
 const DisabledTemplate: Story<SelectComponent> = (args: SelectComponent) => ({
   props: {
     ...args,
