@@ -28,11 +28,11 @@ export default {
   },
   args: {
     items: [
-      'Sierra Nevada 1',
-      'Bilbao 2',
+      'City of Sierra Nevada 1',
+      'City of Bilbao 2',
       'valik 3 (cy test)',
       'Rest queen discovery stood far everything keep aside merely girl two making inch hard example remove steel right silent trunk central refused other 4',
-      'London 5',
+      'City of London 5',
       'Option 6 with enough text to feed a saltwater crocodile',
       'Option 7 with enough text to feed a prehistoric jaguar',
     ],
@@ -63,7 +63,9 @@ const Template: Story<SelectComponent> = (args: SelectComponent) => ({
 });
 export const Default = Template.bind({});
 
-const WithCustomValueFormattingTemplate: Story<SelectComponent> = (args: SelectComponent) => ({
+const WithCustomValueFormattingTemplate: Story<SelectComponent> = (
+  args: SelectComponent
+) => ({
   props: {
     ...args,
   },
@@ -94,7 +96,9 @@ const WithCustomValueFormattingTemplate: Story<SelectComponent> = (args: SelectC
     </ng-template>
   `,
 });
-export const WithCustomValueFormatting = WithCustomValueFormattingTemplate.bind({});
+export const WithCustomValueFormatting = WithCustomValueFormattingTemplate.bind(
+  {}
+);
 
 const UserCanAddItemsTemplate: Story<SelectComponent> = (
   args: SelectComponent
@@ -134,12 +138,15 @@ const DisabledBackgroundTemplate: Story<SelectComponent> = (
   template: `
       <div [ngStyle]="{'width.px': containerWidth}">
         <cvi-ng-select [items]="items"
-                       [backgroundDisabled]="true"
+                       [backgroundDisabled]="backgroundDisabled"
                        [placeholder]="placeholder"></cvi-ng-select>
       </div>
   `,
 });
 export const DisabledBackground = DisabledBackgroundTemplate.bind({});
+DisabledBackground.args = {
+  backgroundDisabled: true
+}
 
 const ObjectsAsItemsTemplate: Story<SelectComponent> = (
   args: SelectComponent
