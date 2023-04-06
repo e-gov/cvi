@@ -12,6 +12,17 @@ export class SelectItemsList {
     return this._selectedItem;
   }
 
+  get selectedItemValue(): string | undefined {
+    if (this._selectedItem) {
+      if (this._select.valueFormatFn) {
+        return this._select.valueFormatFn(this._selectedItem.label);
+      } else {
+        return this._selectedItem.label;
+      }
+    }
+    return undefined;
+  }
+
   get filteredItems(): SelectOption[] {
     return this._filteredItems;
   }

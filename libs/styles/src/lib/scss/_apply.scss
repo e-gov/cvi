@@ -46,6 +46,10 @@
   @include cvi-select;
 }
 
+.cvi-dropdown-popup {
+  @include cvi-dropdown-popup;
+}
+
 .cvi-tooltip {
   @include cvi-tooltip;
 }

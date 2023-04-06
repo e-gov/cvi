@@ -7,8 +7,18 @@ export default {
     notes,
     options: { selectedPanel: 'html/panel' },
   },
+  argTypes: {
+    containerWidth: {
+      name: 'Container width',
+      table: {
+        category: 'Playground',
+      },
+      control: { type: 'number' },
+    },
+  },
   args: {
-    placeholder: 'Otsi elementi',
+    placeholder: 'Otsi elementi või lisa uss 🐍',
+    containerWidth: 220,
   },
 } as Meta;
 
@@ -16,7 +26,7 @@ const Template: Story = (args) => ({
   props: args,
   /* template */
   template: `
-    <div style="width: 200px;">
+    <div style="width: {{ containerWidth }}px">
       <div>
         <div class="cvi-select">
           <div class="cvi-select__container">
@@ -26,7 +36,7 @@ const Template: Story = (args) => ({
             <div class="cvi-select__input-container">
               <input
                 type="text"
-                role="presentation"
+                role="combobox"
                 autocomplete="off"
                 class="cvi-select__input"
               />
@@ -37,27 +47,29 @@ const Template: Story = (args) => ({
               </svg>
             </span>
           </div>
-          <div class="cvi-select__dropdown">
-            <ul role="listbox">
-              <li role="option" class="cvi-select__dropdown-item">
-                <span class="cvi-select__item-label">Item 1 that is not that short but actually quite long</span>
-              </li>
-              <li role="option" class="cvi-select__dropdown-item">
-                <span class="cvi-select__item-label">Item 2</span>
-              </li>
-              <li role="option" class="cvi-select__dropdown-item">
-                <span class="cvi-select__item-label">Item 3</span>
-              </li>
-              <li role="option" class="cvi-select__dropdown-item">
-                <span class="cvi-select__item-label">Item 4</span>
-              </li>
-              <li role="option" class="cvi-select__dropdown-item">
-                <span class="cvi-select__item-label">Item 5</span>
-              </li>
-              <li role="option" class="cvi-select__dropdown-item">
-                <span class="cvi-select__item-label">Item 6 with a very long text spanning many lines</span>
-              </li>
-            </ul>
+          <div class="cvi-dropdown-popup">
+          <div class="cvi-dropdown-popup__inner">
+              <ul role="listbox">
+                <li role="option" class="cvi-dropdown-popup__dropdown-item">
+                  <span class="cvi-dropdown-popup__item-label">Item 1 that is not that short but actually quite long</span>
+                </li>
+                <li role="option" class="cvi-dropdown-popup__dropdown-item is-current">
+                  <span class="cvi-dropdown-popup__item-label">Current item 2</span>
+                </li>
+                <li role="option" class="cvi-dropdown-popup__dropdown-item is-focused">
+                  <span class="cvi-dropdown-popup__item-label">Item selected from keyboard</span>
+                </li>
+                <li role="option" class="cvi-dropdown-popup__dropdown-item">
+                  <span class="cvi-dropdown-popup__item-label">Item 4</span>
+                </li>
+                <li role="option" class="cvi-dropdown-popup__dropdown-item">
+                  <span class="cvi-dropdown-popup__item-label">Item 5</span>
+                </li>
+                <li role="option" class="cvi-dropdown-popup__dropdown-item">
+                  <span class="cvi-select__item-label">Item 6 with a very long text spanning many lines</span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>

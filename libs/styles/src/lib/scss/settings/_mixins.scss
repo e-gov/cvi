@@ -22,3 +22,12 @@
     @content;
   }
 }
+
+@mixin cvi-truncate-single-line($chars: 25ch) {
+  max-width: $chars;
+  white-space: nowrap;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  vertical-align: top;
+}
