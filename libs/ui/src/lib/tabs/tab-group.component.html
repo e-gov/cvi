@@ -1,16 +1,26 @@
-<ul class="cvi-tab-group" role="tabslist">
-  <li *ngFor="let tab of allTabs; let i = index" role="presentation">
-    <button dataAttribute="tab-button-{{i}}"
-            [ngClass]="{'active': activeIndex === i}"
-            (click)="makeActive(i)"
-            type="button"
-            role="tab"
-            aria-controls="tabpanel"
-            class="cvi-tab-group__tab-btn">
-      {{ tab.title }}
-    </button>
-  </li>
-</ul>
-<div dataAttribute="tab-content" class="cvi-tab-group__tab-content">
+<div class="cvi-tab-group__list" role="tablist">
+  <button *ngFor="let tab of allTabs; let i = index"
+          dataAttribute="tab-button-{{i}}"
+          [ngClass]="{'active': isTabSelected(i)}"
+          (click)="makeActive(i)"
+          type="button"
+          #tabButton
+          id="{{ baseId }}-tab-{{ i }}"
+          [attr.aria-selected]="isTabSelected(i)"
+          role="tab"
+          [attr.tabindex]="isTabSelected(i) ? null : '-1'"
+          (keyup.arrowleft)="makeActivePrev($event)"
+          (keyup.arrowright)="makeActiveNext($event)"
+          [attr.aria-controls]="baseId + '-tabpanel-' + i"
+          class="cvi-tab-group__tab-btn">
+    {{ tab.title }}
+  </button>
+</div>
+<div dataAttribute="tab-content"
+     class="cvi-tab-group__tab-content"
+     role="tabpanel"
+     [attr.aria-labelledby]="baseId + '-tab-' + activeIndex"
+     tabindex="0"
+     [attr.id]="baseId + '-tabpanel-' + activeIndex">
   <ng-container *ngTemplateOutlet="getActiveTabContent()"></ng-container>
 </div>
