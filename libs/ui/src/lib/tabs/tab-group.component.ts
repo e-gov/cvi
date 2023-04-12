@@ -43,6 +43,10 @@ export class TabGroupComponent implements AfterViewInit, OnDestroy {
     this.activeIndex = index;
   }
 
+  isTabSelected(tabIndex: number): boolean {
+    return this.activeIndex === tabIndex;
+  }
+
   getActiveTabContent() {
     const activeTab = this.allTabs.get(this.activeIndex);
     if (!activeTab) {
