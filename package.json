@@ -7,7 +7,7 @@
     "postinstall": "node ./decorate-angular-cli.js && ngcc --properties es2020 browser module main",
     "start": "nx serve",
     "build": "nx build",
-    "test": "nx test",
+    "test": "nx run ui:test",
     "lint:all": "nx workspace-lint && nx run-many --target=lint --all",
     "lint:css": "npx stylelint ./libs/styles/src/lib/scss/*.scss",
     "lint:svg": "svglint ./libs/icons/src/lib/svg/*.svg --ci",
