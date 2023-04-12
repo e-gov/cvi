@@ -1,9 +1,11 @@
 @mixin cvi-tab-group($base: &) {
-  list-style-type: none;
-  display: flex;
-  margin-bottom: -1px;
 
   @at-root {
+    #{$base}__list {
+      display: flex;
+      margin-bottom: -1px;
+      list-style-type: none;
+    }
     #{$base}__tab-btn {
       border: none;
       padding: get-spacing('haapsalu');

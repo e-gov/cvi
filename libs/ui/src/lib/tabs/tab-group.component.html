@@ -1,4 +1,4 @@
-<ul class="cvi-tab-group" role="tablist">
+<ul class="cvi-tab-group__list" role="tablist">
   <li *ngFor="let tab of allTabs; let i = index" role="presentation">
     <button dataAttribute="tab-button-{{i}}"
             [ngClass]="{'active': activeIndex === i}"

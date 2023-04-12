@@ -4,6 +4,7 @@ import {
   ChangeDetectorRef,
   Component,
   ContentChildren,
+  HostBinding,
   OnDestroy,
   QueryList,
 } from '@angular/core';
@@ -17,6 +18,9 @@ import { merge, Subscription } from 'rxjs';
 })
 export class TabGroupComponent implements AfterViewInit, OnDestroy {
   @ContentChildren(TabComponent) allTabs!: QueryList<TabComponent>;
+  @HostBinding('class') get hostClasses(): string {
+    return 'cvi-tab-group';
+  }
 
   activeIndex = 0;
 

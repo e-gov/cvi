@@ -13,7 +13,8 @@ const Template: Story = (args) => ({
   props: args,
   /* template */
   template: `
-      <ul role="tablist" class="cvi-tab-group">
+    <div class="cvi-tab-group">
+      <ul role="tablist" class="cvi-tab-group__list">
         <li role="presentation">
           <button type="button" role="tab" aria-controls="tabpanel" class="cvi-tab-group__tab-btn active">Tab 1</button>
         </li>
@@ -24,7 +25,7 @@ const Template: Story = (args) => ({
       <div class="cvi-tab-group__tab-content">
         First tab content
       </div>
-
+    </div>
   `,
 });
 
