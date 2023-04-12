@@ -4,12 +4,19 @@
           [ngClass]="{'active': isTabSelected(i)}"
           (click)="makeActive(i)"
           type="button"
+          id="{{ baseId }}-tab-{{ i }}"
+          [attr.aria-selected]="isTabSelected(i)"
           role="tab"
-          aria-controls="tabpanel"
+          [attr.aria-controls]="baseId + '-tabpanel-' + i"
           class="cvi-tab-group__tab-btn">
     {{ tab.title }}
   </button>
 </div>
-<div dataAttribute="tab-content" class="cvi-tab-group__tab-content">
+<div dataAttribute="tab-content"
+     class="cvi-tab-group__tab-content"
+     role="tabpanel"
+     [attr.aria-labelledby]="baseId + '-tab-' + activeIndex"
+     tabindex="0"
+     [attr.id]="baseId + '-tabpanel-' + activeIndex">
   <ng-container *ngTemplateOutlet="getActiveTabContent()"></ng-container>
 </div>

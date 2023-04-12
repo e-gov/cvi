@@ -10,6 +10,7 @@ import {
 } from '@angular/core';
 import { TabComponent } from './tab.component';
 import { merge, Subscription } from 'rxjs';
+import { v4 as uuidv4 } from 'uuid';
 
 @Component({
   selector: 'cvi-ng-tab-group',
@@ -23,6 +24,7 @@ export class TabGroupComponent implements AfterViewInit, OnDestroy {
   }
 
   activeIndex = 0;
+  baseId = 'tabgroup-' + uuidv4();
 
   /** @internal */
   private tabChangesSubscription = Subscription.EMPTY;
