@@ -4,9 +4,11 @@ import {
   ChangeDetectorRef,
   Component,
   ContentChildren,
+  ElementRef,
   HostBinding,
   OnDestroy,
   QueryList,
+  ViewChildren,
 } from '@angular/core';
 import { TabComponent } from './tab.component';
 import { merge, Subscription } from 'rxjs';
@@ -28,6 +30,9 @@ export class TabGroupComponent implements AfterViewInit, OnDestroy {
 
   /** @internal */
   private tabChangesSubscription = Subscription.EMPTY;
+  @ViewChildren('tabButton') tabButtons!: QueryList<
+    ElementRef<HTMLButtonElement>
+  >;
 
   constructor(private cd: ChangeDetectorRef) {}
 
@@ -43,6 +48,30 @@ export class TabGroupComponent implements AfterViewInit, OnDestroy {
 
   makeActive(index: number) {
     this.activeIndex = index;
+  }
+
+  updateButtonFocus(): void {
+    this.tabButtons.get(this.activeIndex)?.nativeElement.focus();
+  }
+
+  makeActivePrev(event: Event) {
+    event.preventDefault();
+    if (this.activeIndex > 0) {
+      this.activeIndex--;
+    } else {
+      this.activeIndex = this.allTabs.length - 1;
+    }
+    this.updateButtonFocus();
+  }
+
+  makeActiveNext(event: Event) {
+    event.preventDefault();
+    if (this.activeIndex < this.allTabs.length - 1) {
+      this.activeIndex++;
+    } else {
+      this.activeIndex = 0;
+    }
+    this.updateButtonFocus();
   }
 
   isTabSelected(tabIndex: number): boolean {

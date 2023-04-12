@@ -4,9 +4,13 @@
           [ngClass]="{'active': isTabSelected(i)}"
           (click)="makeActive(i)"
           type="button"
+          #tabButton
           id="{{ baseId }}-tab-{{ i }}"
           [attr.aria-selected]="isTabSelected(i)"
           role="tab"
+          [attr.tabindex]="isTabSelected(i) ? null : '-1'"
+          (keyup.arrowleft)="makeActivePrev($event)"
+          (keyup.arrowright)="makeActiveNext($event)"
           [attr.aria-controls]="baseId + '-tabpanel-' + i"
           class="cvi-tab-group__tab-btn">
     {{ tab.title }}
