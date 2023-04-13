@@ -153,4 +153,6 @@ $cvi-colors: (
   @each $name, $color in $cvi-colors {
     --cvi-color-rgb-#{'' + $name}: #{color.red($color) color.green($color) color.blue($color)};
   }
+
+  --cvi-color-focus: var(--cvi-color-sapphire-blue-10);
 }

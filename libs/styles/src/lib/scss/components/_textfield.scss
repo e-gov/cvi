@@ -47,7 +47,7 @@
       padding-inline-start: get-spacing('paldiski');
 
       &:focus {
-        outline: 2px solid get-color(sapphire-blue-10);
+        outline: var(--cvi-border-focus);
         border-color: transparent;
       }
 

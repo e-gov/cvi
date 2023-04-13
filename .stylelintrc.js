@@ -124,7 +124,7 @@ module.exports = {
         ],
         'font-size': ['/^get-font-size\\(/', 'inherit'],
         'font-weight': ['/^get-font-weight\\(/'],
-        'line-height': ['/^get-line-height\\(/', '0'],
+        'line-height': ['/^var\\(/', '/^get-line-height\\(/', '0'],
         'z-index': ['/^get-z-index\\(/', '/^var\\(/', '-1'],
       },
     ],

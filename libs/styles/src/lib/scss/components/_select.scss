@@ -1,4 +1,10 @@
+@use '../settings/mixins';
+
 @mixin cvi-select($base: &) {
+  --comment: 'A single choice combobox';
+
+  --value-box-height: 30px;
+
   position: relative;
   display: block;
   box-sizing: border-box;
@@ -8,19 +14,32 @@
       visibility: hidden;
     }
 
-    .has-value #{$base}__container {
-      background-color: get-color(white);
-
-      &.background-disabled {
-        background-color: get-color(black-coral-0);
+    &.is-input-hidden {
+      #{$base}__input {
+        color: transparent;
       }
     }
 
-    .has-value #{$base}__input-container {
+    /* stylelint-disable-next-line selector-class-pattern */
+    &.search-has-focus {
+      #{$base}__value {
+        @include mixins.cvi-screenreader-text;
+      }
+    }
+
+    .has-value #{$base}__container {
+      background-color: get-color(white);
+    }
+
+    .has-value.background-disabled #{$base}__container {
+      background-color: get-color(black-coral-0);
+    }
+
+    .has-value.background-disabled #{$base}__input-container {
       visibility: hidden;
     }
 
-    &.open.has-value #{$base}__input-container {
+    &.open.has-value.background-disabled #{$base}__input-container {
       visibility: visible;
     }
 
@@ -30,6 +49,11 @@
 
     &.disabled #{$base}__container {
       background-color: get-color(black-coral-0);
+    }
+
+    &.search-has-focus #{$base}__container {
+      border-color: transparent;
+      outline: var(--cvi-border-focus);
     }
 
     #{$base}__container {
@@ -48,8 +72,14 @@
       flex-grow: 1;
       flex-shrink: 1;
       flex-basis: 0;
+      min-width: 0;
+      line-height: var(--value-box-height);
     }
 
+    #{$base}__placeholder,
+    #{$base}__value {
+      @include mixins.cvi-truncate-single-line(100%);
+    }
     #{$base}__placeholder {
       color: get-color(black-coral-7);
     }
@@ -57,7 +87,7 @@
     #{$base}__input-container {
       position: absolute;
       width: 100%;
-      left: 0;
+      left: 1px;
       padding-left: get-spacing('paldiski');
       padding-right: 40px;
     }
@@ -65,7 +95,7 @@
     #{$base}__input {
       // TODO: consider moving these reset styles to _reset.scss
       box-sizing: content-box;
-      background: none;
+      background-color: transparent;
       border: none;
       box-shadow: none;
       outline: none;
@@ -73,16 +103,20 @@
       cursor: default;
       width: 100%;
       font-size: inherit;
+      font-family: inherit;
+      transition: none;
+      line-height: var(--value-box-height);
     }
 
     #{$base}__icon-wrapper {
       width: 30px;
       height: 30px;
       display: flex;
-      cursor: pointer;
       position: relative;
       justify-content: center;
       align-items: center;
+      // sometimes it is a button, sometimes it is not
+      cursor: pointer;
     }
 
     #{$base}__icon {
@@ -97,28 +131,6 @@
     #{$base}__icon-edit-svg {
       height: 16px;
       fill: get-color(sapphire-blue-10);
-    }
-
-    #{$base}__dropdown {
-      position: absolute;
-      width: 100%;
-      background-color: get-color(white);
-      border-bottom-left-radius: var(--cvi-radius-s);
-      border-bottom-right-radius: var(--cvi-radius-s);
-      border: 1px solid get-color(black-coral-3);
-      z-index: get-z-index('select', '__dropdown');
-      max-height: 300px;
-      overflow-y: auto;
-    }
-
-    #{$base}__dropdown-item {
-      padding: get-spacing('rapla') get-spacing('elva');
-      cursor: pointer;
-      color: get-color(black-coral-18);
-
-      &:hover {
-        background-color: get-color(sapphire-blue-0);
-      }
     }
   }
 }

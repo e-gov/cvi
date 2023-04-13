@@ -1,0 +1,44 @@
+@mixin cvi-dropdown-popup($base: &) {
+  --comment: 'A popup for an list-based dropdown';
+
+  --bg-color-focused: #{get-color(sapphire-blue-8)};
+  --bg-color-current: #{get-color(sapphire-blue-10)};
+
+  position: absolute;
+  width: 100%;
+  background-color: get-color(white);
+  border-bottom-left-radius: var(--cvi-radius-s);
+  border-bottom-right-radius: var(--cvi-radius-s);
+  border: 1px solid get-color(black-coral-3);
+  z-index: get-z-index('dropdown-popup', 'dropdown');
+  max-height: 300px;
+  overflow-y: auto;
+
+  @at-root {
+    #{$base}__dropdown-item {
+      padding: get-spacing('rapla') get-spacing('elva');
+      cursor: pointer;
+      color: get-color(black-coral-18);
+
+      &.is-current {
+        background-color: var(--bg-color-current);
+        color: get-color(white);
+
+        &:hover {
+          background-color: var(--bg-color-focused);
+        }
+      }
+
+      // including being selected from keyboard
+      &.is-focused,
+      &.is-focused:hover {
+        background-color: var(--bg-color-focused);
+        color: get-color(white);
+      }
+
+      &:hover {
+        background-color: get-color(sapphire-blue-0);
+      }
+    }
+  }
+}

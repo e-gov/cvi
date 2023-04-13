@@ -45,11 +45,15 @@ export class SelectComponent
   @Input() placeholder = '';
   @Input() searchFn?: ((search: string, item: unknown) => boolean) | null =
     null;
+  /** This function is mandatory when objects as items are provided */
+  @Input() valueFormatFn?: ((item: unknown) => string) | null = null;
   @Input() addItemLabel: string | undefined;
   @Input() addItemFn: AddItemFn | undefined;
   @Input() minTermLength = 0;
   @Input() backgroundDisabled = false;
   @Input() disabled = false;
+  /** HTML id passed from FormItem component */
+  @Input() htmlId!: string;
 
   @Output() itemChanged = new EventEmitter();
 
@@ -60,10 +64,14 @@ export class SelectComponent
 
   @ViewChild('searchInput', { static: true })
   searchInput?: ElementRef<HTMLInputElement>;
+  @ViewChild('editButton', { static: true })
+  editButton?: ElementRef<HTMLButtonElement>;
 
   isOpen = false;
   searchTerm: string | null = null;
   itemsList: SelectItemsList;
+  searchInputFocused = false;
+  focusedOptionIndex: number | null = null;
 
   private readonly destroy$ = new Subject<void>();
   private readonly select: HTMLElement;
@@ -89,6 +97,17 @@ export class SelectComponent
     return this.control ? !!this.control.invalid : false;
   }
 
+  get inputValue(): string | undefined {
+    if (this.searchTerm) {
+      return this.searchTerm;
+    } else {
+      if (this.hasValue) {
+        return this.itemsList.selectedItemValue;
+      }
+    }
+    return '';
+  }
+
   get touched(): boolean {
     return this.control ? !!this.control.touched : false;
   }
@@ -107,6 +126,17 @@ export class SelectComponent
     }
 
     return !!this.addItemFn;
+  }
+
+  get listboxHtmlId() {
+    return this.htmlId + '-listbox';
+  }
+
+  get focusedItemHtmlId() {
+    if (this.isOpen && this.focusedOptionIndex !== null) {
+      return this.htmlId + '-listbox-item-' + this.focusedOptionIndex;
+    }
+    return '';
   }
 
   ngOnInit(): void {
@@ -146,6 +176,11 @@ export class SelectComponent
     }
 
     this.close();
+    this.restoreFocusAfterClosing();
+  }
+
+  updateFocusedItem(index: number) {
+    this.focusedOptionIndex = index;
   }
 
   focus() {
@@ -153,8 +188,40 @@ export class SelectComponent
     setTimeout(() => this.searchInput?.nativeElement.focus());
   }
 
+  focusEditButton() {
+    setTimeout(() => this.editButton?.nativeElement.focus());
+  }
+
   blur() {
     this.searchInput?.nativeElement.blur();
+  }
+
+  restoreFocusAfterClosing() {
+    if (this.backgroundDisabled && this.hasValue) {
+      this.focusEditButton();
+    } else {
+      this.focus();
+    }
+  }
+
+  handleOpeningWithArrowFromKeyboard() {
+    if (!this.isOpen) {
+      this.open();
+      this.updateFocusedItem(0);
+    }
+  }
+
+  handleOpeningWithTypingFromKeyboard() {
+    if (!this.isOpen) {
+      this.open();
+    }
+  }
+
+  handleClosingFromKeyboard() {
+    if (this.isOpen) {
+      this.close();
+      this.restoreFocusAfterClosing();
+    }
   }
 
   handleMousedown(event: MouseEvent) {
@@ -168,7 +235,7 @@ export class SelectComponent
     }
   }
 
-  handleArrowClick(event: MouseEvent) {
+  handleArrowButtonClick(event: MouseEvent) {
     event.stopPropagation();
     event.preventDefault();
 
@@ -194,6 +261,7 @@ export class SelectComponent
     this.isOpen = false;
     this.searchTerm = null;
     this.itemsList.resetFilteredItems();
+    this.focusedOptionIndex = null;
 
     if (typeof this.onTouched === 'function') {
       this.onTouched();
