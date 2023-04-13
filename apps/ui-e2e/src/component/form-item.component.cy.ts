@@ -49,10 +49,10 @@ describe('FormItemComponent', () => {
 
     cy.get('cvi-ng-form-item')
       .shouldHaveClasses('cvi-ng-textarea', [
-        'cvi-textfield-with-cdk',
-        'cvi-textfield-with-cdk--type-multiple-lines',
+        'cvi-textfield',
+        'cvi-textfield--type-multiple-lines',
       ])
-      .shouldHaveClasses('textarea', 'cvi-textfield-with-cdk__text-control')
+      .shouldHaveClasses('textarea', 'cvi-textfield__text-control')
       .shouldHaveAttributes('textarea', [
         { name: 'id', value: 'fksd4kfds' },
         { name: 'placeholder', value: 'Placeholder text...' },
