@@ -110,6 +110,7 @@ module.exports = {
         '/color$/': [
           '/^var\\(/',
           'currentColor',
+          '/^color\\./',
           'transparent',
           'inherit',
           '/^rgba\\(/',
@@ -122,7 +123,7 @@ module.exports = {
           '51%',
           '/^var\\(--cvi-radius-/',
         ],
-        'font-size': ['/^get-font-size\\(/', 'inherit'],
+        'font-size': ['/^get-font-size\\(/', 'inherit', '/^typography\\./'],
         'font-weight': ['/^get-font-weight\\(/'],
         'line-height': ['/^var\\(/', '/^get-line-height\\(/', '0'],
         'z-index': ['/^get-z-index\\(/', '/^var\\(/', '-1'],

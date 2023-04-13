@@ -19,6 +19,7 @@ export const textareaComponentProvider = {
 @Component({
   selector: 'cvi-ng-textarea',
   templateUrl: './textarea.component.html',
+  styleUrls: ['./textarea.component.scss'],
   providers: [textareaComponentProvider],
 })
 export class TextareaComponent implements ControlValueAccessor {
@@ -56,7 +57,7 @@ export class TextareaComponent implements ControlValueAccessor {
   private onTouched: () => unknown = () => {};
 
   @HostBinding('class') get getHostClasses(): string {
-    const baseClass = 'cvi-textfield-with-cdk';
+    const baseClass = 'cvi-textfield';
     return `${baseClass} ${baseClass}--type-multiple-lines${
       this.disabled ? ` ${baseClass}--is-disabled` : ''
     }${this.resizable ? '' : ` ${baseClass}--no-resize`}`;
