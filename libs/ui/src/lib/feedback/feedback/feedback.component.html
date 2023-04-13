@@ -1,6 +1,7 @@
 <cvi-ng-radio-group [appearance]="appearance"
                     [title]="title"
-                    [formControl]="radioButtonsControl">
+                    [formControl]="radioButtonsControl"
+                    style="--radio-group-font-size: 12px">
   <cvi-ng-icon *ngIf="showIcons" name="sad_face" dataAttribute="sad_face" [height]="21"></cvi-ng-icon>
   <cvi-ng-option-button *ngFor="let q of options"
                         [label]="q.label"
