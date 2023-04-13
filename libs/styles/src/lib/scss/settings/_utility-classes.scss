@@ -1,3 +1,8 @@
 .cvi-screenreader-text {
   @include cvi-screenreader-text;
 }
+
+.cvi-hidden {
+  /* stylelint-disable-next-line declaration-no-important */
+  display: none !important;
+}

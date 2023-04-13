@@ -47,11 +47,12 @@ RUN if [ "$use_private_registry" = true ]; then \
     npm config set registry $private_npm_registry && \
     export CYPRESS_INSTALL_BINARY=0 && \
     echo "CYPRESS_INSTALL_BINARY=${CYPRESS_INSTALL_BINARY}" && \
-    npm ci; \
+    npm i; \
 else \
     npm ci; \
 fi
 
+ENV NX_DAEMON=false
 COPY . .
 COPY --from=apk ./usr/component-library/styles-package.tmp.json ./libs/styles/package.json
 COPY --from=apk ./usr/component-library/ui-package.tmp.json ./libs/ui/package.json

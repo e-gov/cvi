@@ -16,10 +16,12 @@ describe('SelectComponent', () => {
 
     cy.shouldExist('[dataAttribute="test-popup"]');
 
-    cy.get('[data-cy="test-input"]').should('have.value', '').type('valik 3');
+    cy.get('[data-cy="test-input"]')
+      .should('have.value', '')
+      .type('valik 3 (cy test)');
 
     cy.shouldBeOnlyChild('[data-cy="test-option"]');
-    cy.get('[data-cy="test-option"]').contains('valik 3').click();
+    cy.get('[data-cy="test-option"]').contains('valik 3 (cy test)').click();
   });
 
   it('Correctly sets disabled state', () => {
