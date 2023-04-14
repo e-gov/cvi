@@ -1,5 +1,4 @@
 # e-Gov Common Visual Identity (CVI) Component Library
-#
 
 This repository includes a shared CSS library (preprocessed with Sass) and HTML examples based on it, as well as a UI kit in Angular and a typed tree-shakable icons library.
 
