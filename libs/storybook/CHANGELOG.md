@@ -2,6 +2,22 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [1.4.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/storybook-1.3.0...storybook-1.4.0) (2023-04-14)
+
+
+### Bug Fixes
+
+* **docs:** fixed incorrect path for an initial import in the installation docs of cvi-styles ([abb5284](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/abb5284bd1423780046814c3975cae37c175f462))
+* private registry install ([#66](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/66)) ([5a04c8e](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/5a04c8e16a0fc83b70a7f57fa10b68bdbe355678))
+* storybook build and release ([#65](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/65)) ([5d8b074](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/5d8b07453461332fe0714c49a1ec72f5f5315e76))
+
+
+### Features
+
+* **ui:** accessibility improvements for cvi-ng-select ([#59](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/59)) ([feca6c6](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/feca6c6853cad1deb015bb64ad03dd9d747af88a))
+
+
+
 # [1.3.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/storybook-1.2.7...storybook-1.3.0) (2023-03-23)
 
 
