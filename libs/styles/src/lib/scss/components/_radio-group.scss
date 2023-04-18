@@ -30,7 +30,7 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: get-spacing('paldiski');
-      font-size: var(--radio-group-font-size);
+      font-size: var(--cvi-radio-group--list--font-size);
       line-height: get-line-height(100);
     }
     #{$base}__item-inner {
