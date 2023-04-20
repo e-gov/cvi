@@ -41,6 +41,7 @@ export default {
     backgroundDisabled: false,
     containerWidth: 220,
     htmlId: 'some-select',
+    loading: false
   },
 } as Meta;
 
@@ -313,3 +314,25 @@ const FormTemplate: Story<SelectComponent> = (args: SelectComponent) => {
   };
 };
 export const Form = FormTemplate.bind({});
+
+const LoadingStateTemplate: Story<SelectComponent> = (
+  args: SelectComponent
+) => ({
+  props: {
+    ...args,
+  },
+  /* template */
+  template: `
+      <div [ngStyle]="{'width.px': containerWidth}">
+        <cvi-ng-select [items]="items"
+                       [disabled]="disabled"
+                       [loading]="loading"
+                       [backgroundDisabled]="backgroundDisabled"
+                       [placeholder]="placeholder"></cvi-ng-select>
+      </div>
+  `,
+});
+export const LoadingState = LoadingStateTemplate.bind({});
+LoadingState.args = {
+  loading: true,
+};

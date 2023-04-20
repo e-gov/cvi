@@ -20,13 +20,6 @@
       }
     }
 
-    /* stylelint-disable-next-line selector-class-pattern */
-    &.search-has-focus {
-      #{$base}__value {
-        @include mixins.cvi-screenreader-text;
-      }
-    }
-
     .has-value #{$base}__container {
       background-color: get-color(white);
     }
@@ -131,6 +124,18 @@
     #{$base}__icon-edit-svg {
       height: 16px;
       fill: get-color(sapphire-blue-10);
+    }
+
+    #{$base}__loading-spinner {
+      margin-right: get-spacing('loksa');
+      vertical-align: middle;
+      width: 15px;
+      height: 15px;
+      animation: loading-spinner .75s linear infinite;
+      border: 2px solid get-color(sapphire-blue-10);
+      border-right-color: transparent;
+      border-radius: 50%;
+      display: inline-block;
     }
   }
 }
