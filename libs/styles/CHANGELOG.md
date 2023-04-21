@@ -2,6 +2,20 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [1.7.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/styles-1.6.0...styles-1.7.0) (2023-04-21)
+
+
+### Bug Fixes
+
+* radio group font size fix ([#78](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/78)) ([5911269](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/59112697afc5207bfdfa5065e64c893a8fcdbb5e))
+
+
+### Features
+
+* add loading state to select component ([959e209](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/959e2093366b3999f89895d438516b92e35d3a9f))
+
+
+
 # [1.6.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/styles-1.5.4...styles-1.6.0) (2023-04-14)
 
 
