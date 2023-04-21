@@ -65,7 +65,7 @@
        (document:keydown.escape)="handleClosingFromKeyboard()"
        #popup>
     <div class="cvi-dropdown-popup__inner">
-      <ul *ngIf="!loading"
+      <ul *ngIf="!loading; else dropdownPopupLoadingState"
           role="listbox"
           cviNgSelectNavigation
           [scrollableEl]="popup"
@@ -97,9 +97,11 @@
           <span>{{addItemLabel}}</span> "{{searchTerm}}"
         </li>
       </ul>
-      <div *ngIf="loading" class="cvi-dropdown-popup__dropdown-item">
-        {{ loadingLabel }}
-      </div>
+      <ng-template #dropdownPopupLoadingState>
+        <div class="cvi-dropdown-popup__dropdown-item">
+          {{ loadingLabel }}
+        </div>
+      </ng-template>
     </div>
   </div>
 </div>
