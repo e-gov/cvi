@@ -35,6 +35,10 @@ export class SelectItemsList {
     this._selectedItem = item;
   }
 
+  clearSelection() {
+    this._selectedItem = undefined;
+  }
+
   setItems(items: unknown[]) {
     this._items = items.map((item) => this.mapItem(item));
     this._filteredItems = [...this._items];

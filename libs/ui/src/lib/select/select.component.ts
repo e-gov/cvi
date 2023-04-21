@@ -54,6 +54,8 @@ export class SelectComponent
   @Input() disabled = false;
   /** HTML id passed from FormItem component */
   @Input() htmlId!: string;
+  @Input() loading: boolean = false;
+  @Input() loadingLabel: string = 'Laadimine ...';
 
   @Output() itemChanged = new EventEmitter();
 
@@ -100,11 +102,8 @@ export class SelectComponent
   get inputValue(): string | undefined {
     if (this.searchTerm) {
       return this.searchTerm;
-    } else {
-      if (this.hasValue) {
-        return this.itemsList.selectedItemValue;
-      }
     }
+
     return '';
   }
 
@@ -288,11 +287,14 @@ export class SelectComponent
   }
 
   writeValue(obj: any): void {
+    this.itemsList.clearSelection();
+
     const item = this.itemsList.findItem(obj);
     if (item) {
       this.itemsList.select(item);
-      this.cd.markForCheck();
     }
+
+    this.cd.markForCheck();
   }
 
   private handleOutsideClick() {
@@ -340,7 +342,7 @@ export class SelectComponent
         .then((result) => this.selectItem(this.itemsList.addItem(result)))
         // eslint-disable-next-line @typescript-eslint/no-empty-function
         .catch(() => {
-          /* empty */
+          this.close();
         });
     } else {
       this.selectItem(this.itemsList.addItem(item));

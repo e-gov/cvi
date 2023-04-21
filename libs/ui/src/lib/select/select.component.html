@@ -65,7 +65,8 @@
        (document:keydown.escape)="handleClosingFromKeyboard()"
        #popup>
     <div class="cvi-dropdown-popup__inner">
-      <ul role="listbox"
+      <ul *ngIf="!loading; else dropdownPopupLoadingState"
+          role="listbox"
           cviNgSelectNavigation
           [scrollableEl]="popup"
           [inputField]="searchInput"
@@ -96,25 +97,31 @@
           <span>{{addItemLabel}}</span> "{{searchTerm}}"
         </li>
       </ul>
+      <ng-template #dropdownPopupLoadingState>
+        <div class="cvi-dropdown-popup__dropdown-item">
+          {{ loadingLabel }}
+        </div>
+      </ng-template>
     </div>
   </div>
 </div>
 
 <ng-template #icon>
-  <cvi-ng-icon *ngIf="!isOpen && (!hasValue || !backgroundDisabled)"
+  <cvi-ng-icon *ngIf="!isOpen && (!hasValue || !backgroundDisabled) && !loading"
                svgClass="cvi-select__icon-svg"
                aria-hidden="true"
                name="arrow_down">
   </cvi-ng-icon>
-  <cvi-ng-icon *ngIf="!isOpen && hasValue && backgroundDisabled"
+  <cvi-ng-icon *ngIf="!isOpen && hasValue && backgroundDisabled && !loading"
                class="cvi-select__icon"
                aria-hidden="true"
                svgClass="cvi-select__icon-edit-svg"
                name="edit_simple">
   </cvi-ng-icon>
-  <cvi-ng-icon *ngIf="isOpen"
+  <cvi-ng-icon *ngIf="isOpen && !loading"
                svgClass="cvi-select__icon-svg"
                aria-hidden="true"
                name="arrow_up">
   </cvi-ng-icon>
+  <div *ngIf="loading" class="cvi-select__loading-spinner"></div>
 </ng-template>
