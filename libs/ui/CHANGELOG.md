@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.9.1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.9.0...ui-1.9.1) (2023-04-24)
+
+
+### Bug Fixes
+
+* **ng:** export SwapReorderableListItems interface EBS-348, STPA-247 [#93](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/93) ([33e491a](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/33e491ac91ac9e7902619b5e50fafb05a8363e04))
+
+
+
 # [1.9.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.8.0...ui-1.9.0) (2023-04-21)
 
 
