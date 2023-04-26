@@ -8,13 +8,11 @@ import {
   Inject,
   Input,
   NgZone,
-  OnChanges,
   OnDestroy,
   OnInit,
   Optional,
   Output,
   Self,
-  SimpleChanges,
   TemplateRef,
   ViewChild,
 } from '@angular/core';
@@ -37,11 +35,13 @@ export type AddItemFn = (term: string) => unknown | Promise<unknown>;
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SelectComponent
-  implements ControlValueAccessor, OnInit, OnDestroy, OnChanges
+  implements ControlValueAccessor, OnInit, OnDestroy
 {
   @Input() bindValue?: string;
   @Input() bindLabel?: string;
-  @Input() items?: unknown[];
+  @Input() set items(items: unknown[]) {
+    this.setItems(items);
+  }
   @Input() placeholder = '';
   @Input() searchFn?: ((search: string, item: unknown) => boolean) | null =
     null;
@@ -154,12 +154,6 @@ export class SelectComponent
     this.destroy$.next();
     this.destroy$.complete();
     this.destroy$.unsubscribe();
-  }
-
-  ngOnChanges(changes: SimpleChanges): void {
-    if (changes['items']) {
-      this.setItems(changes['items'].currentValue || []);
-    }
   }
 
   selectItem(item: SelectOption): void {
