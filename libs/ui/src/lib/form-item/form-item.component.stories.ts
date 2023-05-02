@@ -21,6 +21,7 @@ const Template: Story<FormItemComponent> = (args: FormItemComponent) => ({
                       [isLabelHidden]="isLabelHidden"
                       [required]="required"
                       [label]="label"
+                      [labelId]="labelId"
                       [htmlId]="htmlId">
       <cvi-ng-input [placeholder]="placeholder"
                     [htmlId]="htmlId">
@@ -41,6 +42,7 @@ const WithTextareaTemplate: Story<FormItemComponent> = (
                       [isLabelHidden]="isLabelHidden"
                       [required]="required"
                       [label]="label"
+                      [labelId]="labelId"
                       [htmlId]="htmlId">
       <cvi-ng-textarea [placeholder]="placeholder"
                        [htmlId]="htmlId">
