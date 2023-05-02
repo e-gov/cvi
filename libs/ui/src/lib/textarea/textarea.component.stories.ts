@@ -20,6 +20,7 @@ export default {
   args: {
     placeholder: 'Placeholder',
     disabled: false,
+    resizable: true,
     maxLength: 2000,
     minRows: 3,
   },

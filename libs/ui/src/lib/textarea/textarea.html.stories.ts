@@ -7,6 +7,7 @@ export default {
   args: {
     placeholder: 'Placeholder...',
     maxLength: 2000,
+    resizable: true,
   },
 } as Meta;
 
@@ -14,7 +15,7 @@ const Template: Story = (args) => ({
   props: args,
   /* template */
   template: `
-    <span class="cvi-textfield cvi-textfield--type-multiple-lines">
+    <span class="cvi-textfield cvi-textfield--type-multiple-lines {{ resizable ? '' : 'cvi-textfield--no-resize' }}">
       <textarea class="cvi-textfield__text-control"
                 [placeholder]="placeholder"
                 [maxLength]="maxLength"
@@ -30,7 +31,7 @@ const CharacterCounterTemplate: Story = (args) => ({
   props: args,
   /* template */
   template: `
-    <span class="cvi-textfield cvi-textfield--type-multiple-lines">
+    <span class="cvi-textfield cvi-textfield--type-multiple-lines {{ resizable ? '' : 'cvi-textfield--no-resize' }}">
       <textarea class="cvi-textfield__text-control"
                 [placeholder]="placeholder"
                 [maxLength]="maxLength"

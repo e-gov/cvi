@@ -30,8 +30,12 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: get-spacing('paldiski');
-      font-size: get-font-size(70);
+      font-size: var(--cvi-radio-group--list--font-size);
       line-height: get-line-height(100);
+    }
+    #{$base}__item-inner {
+      display: flex;
+      gap: get-spacing('loksa');
     }
     #{$base}__input {
       @include cvi-screenreader-text;

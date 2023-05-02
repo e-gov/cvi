@@ -5,13 +5,13 @@ This repository includes a shared CSS library (preprocessed with Sass) and HTML 
 By design, the CSS has no dependency on a specific Javascript framework and since the styles and html is separated then interested contributors can easily add component libraries in other frameworks such as React or Vue.js.
 Also, the Angular UI library has no dependency to any design system/framework such as Bootstrap or Google's Material in order to reduce dependence on 3rd party vendors.
 
-## Quick Start & Documentation
+## Quick Start & documentation
 
-The pattern library uses [Storybook](https://storybook.js.org)
+Both CSS framework and Angular component library use [Storybook](https://storybook.js.org).
 
-Documentation and Installation instructions can be found in the e-Gov CVI's Storybook:
+Documentation and installation instructions can be viewed in the e-Gov CVI's Storybook:
 
-[https://e-gov.github.io/cvi/](https://e-gov.github.io/cvi/)
+[https://e-gov.github.io/cvi/](https://e-gov.github.io/cvi/).
 
 Styles were based on the initial Veera Design System:
 
@@ -19,17 +19,24 @@ https://www.figma.com/file/nNCV5kRqdRkS8MOCK1ZbqU/Veera-Design-System
 
 But please take note that e-Gov CVI **is not Veera**.
 
+Feel free to reach out on the public [CVI Signal group](https://signal.group/#CjQKIII854RES5vfIQ8Oqw5fWmS2_FY8cJTEM1RSJI9fSsplEhC4dNwXGkcfqf34YmQJJDi_) to discuss any issues.
+
 ### Installation
 
-Run `npm install` in the root folder.
+1. Add the public Koodivaramu registry to your project by following the instructions [here](https://koodivaramu.eesti.ee/e-gov/cvi/-/packages/385).
+2. Install the necessary package to your project:
+   1. CSS framework: `npm i --save @egov/cvi-styles`
+   2. Angular components: `npm i --save @egov/cvi-ng`
+   3. Icons: `npm i --save @egov/cvi-icons`
+3. Import the dependencies to your project by following dedicated instructions in the docs for the [CSS framework](https://e-gov.github.io/cvi/?path=/docs/styles-how-to-install--how-to-install), [Angular components](https://e-gov.github.io/cvi/?path=/docs/angular-installation--installation), and [icons](https://e-gov.github.io/cvi/?path=/docs/icons-how-to-use--page).
 
-## Using the Components
+## Packages and artifacts repository
 
 The built packages are published to the public Koodivaramu repository, from where you can download and add them to your application:
 
 https://koodivaramu.eesti.ee/e-gov/cvi/-/packages
 
-In addition, the storybook docker image is also published to the Koodivaramu repository:
+In addition, the Storybook Docker image is also published to the Koodivaramu repository:
 
 https://koodivaramu.eesti.ee/e-gov/cvi/container_registry
 
@@ -58,12 +65,14 @@ For example, if you need to introduce a content selector that inserts custom con
 
 Run `npm run storybook` to build documentation and run the Storybook locally.
 
-### Running storybook locally in docker
+### Running Storybook locally in Docker
 
+```
 docker build -f ./libs/storybook/Dockerfile -t cvi-storybook .
 docker-compose up storybook
 docker-compose down
 url: http://localhost:3005/
+```
 
 ## Understand your workspace
 
@@ -81,7 +90,7 @@ Run `nx graph` to see a diagram of the dependencies of your projects.
 
 Storybook needs to be up and running as Cypress tests are using its Angular components in iFrame windows. Check previous chapter about 'Running the Storybook'.
 
-When storybook is up and running, run `npm run cy:ui` which opens up Cypress visual testing tool. Select E2E Testing, which presents you all components tests.
+When storybook is up and running, run `npm run cypress:ui` which opens up Cypress visual testing tool. Select E2E Testing, which presents you all components tests.
 
 ## Running Chromatic tests
 

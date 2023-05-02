@@ -16,6 +16,7 @@ import { Subject, takeUntil } from 'rxjs';
 @Component({
   selector: 'cvi-ng-feedback',
   templateUrl: './feedback.component.html',
+  styleUrls: ['./feedback.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [
     {

@@ -19,6 +19,7 @@ export const textareaComponentProvider = {
 @Component({
   selector: 'cvi-ng-textarea',
   templateUrl: './textarea.component.html',
+  styleUrls: ['./textarea.component.scss'],
   providers: [textareaComponentProvider],
 })
 export class TextareaComponent implements ControlValueAccessor {
@@ -40,7 +41,7 @@ export class TextareaComponent implements ControlValueAccessor {
   /** Input placeholder */
   @Input() placeholder = '';
 
-  /** Textarea is resizable */
+  /** Textarea is resizable. Does not do anything currently since CDK autoresize disables browser resize feature */
   @Input() resizable = true;
 
   /** Emit value on model change */
@@ -56,9 +57,10 @@ export class TextareaComponent implements ControlValueAccessor {
   private onTouched: () => unknown = () => {};
 
   @HostBinding('class') get getHostClasses(): string {
-    return `cvi-textfield cvi-textfield--type-multiple-lines${
-      this.disabled ? ' cvi-textfield--is-disabled' : ''
-    }${this.resizable ? '' : ' cvi-textfield--no-resize'}`;
+    const baseClass = 'cvi-textfield';
+    return `${baseClass} ${baseClass}--type-multiple-lines${
+      this.disabled ? ` ${baseClass}--is-disabled` : ''
+    }${this.resizable ? '' : ` ${baseClass}--no-resize`}`;
   }
 
   constructor(private readonly cdRef: ChangeDetectorRef) {}

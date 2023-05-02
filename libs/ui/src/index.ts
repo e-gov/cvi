@@ -43,6 +43,7 @@ export * from './lib/table-of-contents/generated-table-of-contents/generated-tab
 export * from './lib/directives/data-attribute.directive';
 export * from './lib/breadcrumbs/breadcrumbs.component';
 export * from './lib/select/select-templates.directive';
+export * from './lib/select/select-navigation.directive';
 export * from './lib/select/select.component';
 export * from './lib/tooltip/tooltip.component';
 export * from './lib/tooltip/tooltip.directive';
@@ -60,4 +61,5 @@ export * from './lib/modal/modal.directive';
 export * from './lib/confirmation-modal/confirmation-modal.component';
 export * from './lib/reorderable-list/reorderable-list/reorderable-list.component';
 export * from './lib/reorderable-list/reorderable-list-item/reorderable-list-item.component';
+export * from './lib/reorderable-list/swap-reorderable-list-items';
 export * from './lib/message-bus/message-bus.service';

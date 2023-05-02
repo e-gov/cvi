@@ -2,6 +2,59 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.9.1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.9.0...ui-1.9.1) (2023-04-24)
+
+
+### Bug Fixes
+
+* **ng:** export SwapReorderableListItems interface EBS-348, STPA-247 [#93](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/93) ([33e491a](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/33e491ac91ac9e7902619b5e50fafb05a8363e04))
+
+
+
+# [1.9.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.8.0...ui-1.9.0) (2023-04-21)
+
+
+### Bug Fixes
+
+* radio group font size fix ([#78](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/78)) ([5911269](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/59112697afc5207bfdfa5065e64c893a8fcdbb5e))
+
+
+### Features
+
+* add loading state to select component ([959e209](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/959e2093366b3999f89895d438516b92e35d3a9f))
+* use template and if else for loading state ([627582c](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/627582c3f129b269943b0cabf5295943654c547f))
+
+
+
+# [1.8.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.7.0...ui-1.8.0) (2023-04-14)
+
+
+### Bug Fixes
+
+* **styles:** fixed styles import error into a project without Angular CDK ([#68](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/68)) ([c5a40a6](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/c5a40a6be296f5544d8d58b6eca09a24d415973b))
+* **ui:** made tabs accessible ([#76](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/76)) ([899533e](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/899533ef4bc72cba97f3f8b303f37a955dc2cdd3))
+
+
+### Features
+
+* **ui:** accessibility improvements for cvi-ng-select ([#59](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/59)) ([feca6c6](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/feca6c6853cad1deb015bb64ad03dd9d747af88a))
+
+
+
+# [1.7.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.6.0...ui-1.7.0) (2023-03-29)
+
+
+### Bug Fixes
+
+* **ui:** fixed an issue where cvi-ng-textarea would not resize back to original height after clearing entered value ([22d645b](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/22d645bd48c02bca866a74c826f03070da75e4a5))
+
+
+### Features
+
+* **storybook:** added an example of switching textarea resizability in an HTML story for cvi-textfield Sass component ([4fb1bcd](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/4fb1bcd3a79620ca1dbbb1fc4fa83548a88e5bb9))
+
+
+
 # [1.6.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.5.2...ui-1.6.0) (2023-03-23)
 
 

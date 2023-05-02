@@ -1,0 +1,5 @@
+@use '@angular/cdk';
+
+:host {
+  @include cdk.text-field-autosize;
+}

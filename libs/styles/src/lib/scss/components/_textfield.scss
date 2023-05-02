@@ -1,8 +1,12 @@
+@use '../tools/spacing';
+@use '../tools/color';
+@use '../tools/typography';
+
 @mixin cvi-textfield($base: &) {
   $min-width: 200px;
   $single-line--max-width: 300px;
   $multiple-lines--max-width: 670px;
-  $text-control-padding-inline-end: get-spacing('elva');
+  $text-control-padding-inline-end: spacing.get-spacing('elva');
   $suffix-icon-width: 16px;
 
   --comment: 'A form text control';
@@ -26,7 +30,7 @@
       width: 100%;
       min-width: $min-width;
       max-width: var(--cvi-textfield--multiple-lines--max-width, #{$multiple-lines--max-width});
-      padding: get-spacing('paldiski');
+      padding: spacing.get-spacing('paldiski');
       resize: vertical;
     }
   }
@@ -40,20 +44,20 @@
 
   @at-root {
     #{$base}__text-control {
-      background-color: get-color(white);
-      border: 1px solid get-color(black-coral-5);
+      background-color: color.get-color(white);
+      border: 1px solid color.get-color(black-coral-5);
       border-radius: var(--cvi-radius-s);
-      font-size: get-font-size(100);
-      padding-inline-start: get-spacing('paldiski');
+      font-size: typography.get-font-size(100);
+      padding-inline-start: spacing.get-spacing('paldiski');
 
       &:focus {
-        outline: 2px solid get-color(sapphire-blue-10);
+        outline: var(--cvi-border-focus);
         border-color: transparent;
       }
 
       #{$base}--is-disabled & {
-        background-color: get-color(black-coral-0);
-        border: 1px solid get-color(black-coral-5);
+        background-color: color.get-color(black-coral-0);
+        border: 1px solid color.get-color(black-coral-5);
       }
 
       #{$base}--no-resize & {
@@ -69,7 +73,7 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      fill: get-color(sapphire-blue-10);
+      fill: color.get-color(sapphire-blue-10);
       pointer-events: none;
     }
   }

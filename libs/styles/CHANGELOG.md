@@ -2,6 +2,44 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [1.7.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/styles-1.6.0...styles-1.7.0) (2023-04-21)
+
+
+### Bug Fixes
+
+* radio group font size fix ([#78](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/78)) ([5911269](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/59112697afc5207bfdfa5065e64c893a8fcdbb5e))
+
+
+### Features
+
+* add loading state to select component ([959e209](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/959e2093366b3999f89895d438516b92e35d3a9f))
+
+
+
+# [1.6.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/styles-1.5.4...styles-1.6.0) (2023-04-14)
+
+
+### Bug Fixes
+
+* **styles:** fixed styles import error into a project without Angular CDK ([#68](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/68)) ([c5a40a6](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/c5a40a6be296f5544d8d58b6eca09a24d415973b))
+* **ui:** made tabs accessible ([#76](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/76)) ([899533e](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/899533ef4bc72cba97f3f8b303f37a955dc2cdd3))
+
+
+### Features
+
+* **ui:** accessibility improvements for cvi-ng-select ([#59](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/59)) ([feca6c6](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/feca6c6853cad1deb015bb64ad03dd9d747af88a))
+
+
+
+## [1.5.4](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/styles-1.5.3...styles-1.5.4) (2023-03-29)
+
+
+### Bug Fixes
+
+* **ui:** fixed an issue where cvi-ng-textarea would not resize back to original height after clearing entered value ([22d645b](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/22d645bd48c02bca866a74c826f03070da75e4a5))
+
+
+
 ## [1.5.3](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/styles-1.5.2...styles-1.5.3) (2023-03-17)
 
 
