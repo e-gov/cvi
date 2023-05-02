@@ -52,8 +52,12 @@ export class SelectComponent
   @Input() minTermLength = 0;
   @Input() backgroundDisabled = false;
   @Input() disabled = false;
+
   /** HTML id passed from FormItem component */
   @Input() htmlId!: string;
+
+  /** Label id passed from FormItem component */
+  @Input() labelId!: string;
   @Input() loading = false;
   @Input() loadingLabel = 'Laadimine ...';
 

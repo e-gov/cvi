@@ -41,6 +41,7 @@ export default {
     backgroundDisabled: false,
     containerWidth: 220,
     htmlId: 'some-select',
+    labelId: 'some-select-label',
     loading: false,
   },
 } as Meta;
@@ -52,9 +53,10 @@ const Template: Story<SelectComponent> = (args: SelectComponent) => ({
   /* template */
   template: `
       <div [ngStyle]="{'width.px': containerWidth}">
-        <cvi-ng-form-item label="Some label" [htmlId]="htmlId">
+        <cvi-ng-form-item label="Some label" [htmlId]="htmlId" [labelId]="labelId">
           <cvi-ng-select [items]="items"
                          [disabled]="disabled"
+                         [labelId]="labelId"
                          [backgroundDisabled]="backgroundDisabled"
                          [placeholder]="placeholder"
                          [htmlId]="htmlId"></cvi-ng-select>
@@ -73,12 +75,13 @@ const WithCustomValueFormattingTemplate: Story<SelectComponent> = (
   /* template */
   template: `
     <div [ngStyle]="{'width.px': containerWidth}">
-      <cvi-ng-form-item label="Some label" [htmlId]="htmlId">
+      <cvi-ng-form-item label="Some label" [htmlId]="htmlId" [labelId]="labelId">
         <cvi-ng-select [items]="items"
                        [placeholder]="placeholder"
                        [backgroundDisabled]="backgroundDisabled"
                        [disabled]="disabled"
-                       [htmlId]="htmlId">
+                       [htmlId]="htmlId"
+                       [labelId]="labelId">
           <ng-template cviNgSelectOptionTemplate let-item="item">
             <cvi-ng-track verticalAlignment="center" [gap]="4">
               <ng-container *ngTemplateOutlet="icon"></ng-container>
