@@ -140,7 +140,7 @@ describe('CharacterCounterDirective', () => {
     expect(des[0].nativeElement.nextSibling.textContent).toContain('4');
   });
 
-  it('should count characters with ngModelChange', () => {
+  it('should count characters with ngModelChange event', () => {
     des[0].nativeElement.children[0].value = '1235';
     des[0].nativeElement.dispatchEvent(
       new Event('ngModelChange', { bubbles: true })
