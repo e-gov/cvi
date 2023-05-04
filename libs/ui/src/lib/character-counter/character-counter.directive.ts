@@ -35,7 +35,7 @@ export class CharacterCounterDirective implements AfterViewInit {
   }
 
   @HostListener('ngModelChange', ['$event'])
-  onModelChange(event: any) {
+  onModelChange(event: string) {
     const length = String(event)?.length;
     if (this.componentRef && length !== undefined) {
       this.componentRef.instance.charsUsed = length;
