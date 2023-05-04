@@ -15,7 +15,7 @@ export class CharacterCounterComponent {
 
   constructor(private changeDetector: ChangeDetectorRef) {}
 
-  markForCheck() {
-    this.changeDetector.markForCheck();
+  detectChanges() {
+    this.changeDetector.detectChanges();
   }
 }

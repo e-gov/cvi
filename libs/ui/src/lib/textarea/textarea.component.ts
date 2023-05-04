@@ -1,13 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import {
-  ChangeDetectorRef,
-  Component,
-  EventEmitter,
-  forwardRef,
-  HostBinding,
-  Input,
-  Output,
-} from '@angular/core';
+import { Component, EventEmitter, forwardRef, HostBinding, Input, Output, } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 export const textareaComponentProvider = {
@@ -50,9 +42,7 @@ export class TextareaComponent implements ControlValueAccessor {
   internalValue?: any;
 
   // eslint-disable-next-line @typescript-eslint/no-empty-function
-  private onChanged: (value: unknown) => void = () => {
-    this.valueChange.emit(this.internalValue);
-  };
+  private onChanged: (value: unknown) => void = () => this.valueChange.emit(this.internalValue);
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   private onTouched: () => unknown = () => {};
 
@@ -63,17 +53,13 @@ export class TextareaComponent implements ControlValueAccessor {
     }${this.resizable ? '' : ` ${baseClass}--no-resize`}`;
   }
 
-  constructor(private readonly cdRef: ChangeDetectorRef) {}
-
   setValue(value: any) {
-    this.internalValue = value;
     this.onChanged(value);
     this.onTouched();
   }
 
-  writeValue(obj: any): void {
-    this.internalValue = obj;
-    this.cdRef.markForCheck();
+  writeValue(value: any): void {
+    this.internalValue = value;
   }
 
   registerOnChange(fn: any): void {
