@@ -8,9 +8,10 @@ import { FormBuilder } from '@angular/forms';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {
-
-  constructor(private translate: TranslateService,
-              private formBuilder: FormBuilder) {
+  constructor(
+    private translate: TranslateService,
+    private formBuilder: FormBuilder
+  ) {
     this.translate.setDefaultLang('et');
     this.translate.use('et');
   }

@@ -54,8 +54,8 @@ export class SelectComponent
   @Input() disabled = false;
   /** HTML id passed from FormItem component */
   @Input() htmlId!: string;
-  @Input() loading: boolean = false;
-  @Input() loadingLabel: string = 'Laadimine ...';
+  @Input() loading = false;
+  @Input() loadingLabel = 'Laadimine ...';
 
   @Output() itemChanged = new EventEmitter();
 

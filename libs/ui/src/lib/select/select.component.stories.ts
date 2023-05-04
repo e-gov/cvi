@@ -41,7 +41,7 @@ export default {
     backgroundDisabled: false,
     containerWidth: 220,
     htmlId: 'some-select',
-    loading: false
+    loading: false,
   },
 } as Meta;
 

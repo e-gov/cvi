@@ -31,7 +31,9 @@ export class TabGroupComponent implements AfterViewInit, OnDestroy {
 
   /** @internal */
   private tabChangesSubscription = Subscription.EMPTY;
-  @ViewChildren('tabButton') tabButtons!: QueryList<ElementRef<HTMLButtonElement>>;
+  @ViewChildren('tabButton') tabButtons!: QueryList<
+    ElementRef<HTMLButtonElement>
+  >;
 
   constructor(private cdRef: ChangeDetectorRef) {}
 

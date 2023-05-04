@@ -1,5 +1,12 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Component, EventEmitter, forwardRef, HostBinding, Input, Output, } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  forwardRef,
+  HostBinding,
+  Input,
+  Output,
+} from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 export const textareaComponentProvider = {
@@ -42,7 +49,8 @@ export class TextareaComponent implements ControlValueAccessor {
   internalValue?: any;
 
   // eslint-disable-next-line @typescript-eslint/no-empty-function
-  private onChanged: (value: unknown) => void = () => this.valueChange.emit(this.internalValue);
+  private onChanged: (value: unknown) => void = () =>
+    this.valueChange.emit(this.internalValue);
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   private onTouched: () => unknown = () => {};
 
