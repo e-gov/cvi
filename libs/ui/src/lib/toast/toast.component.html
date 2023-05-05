@@ -4,7 +4,7 @@
   <cvi-ng-icon *ngIf="isWarningToast" name="warning_amber" class="cvi-toast__icon-wrapper" svgClass="cvi-toast__icon"></cvi-ng-icon>
   <cvi-ng-icon *ngIf="isErrorToast" name="error_outline" class="cvi-toast__icon-wrapper" svgClass="cvi-toast__icon"></cvi-ng-icon>
   <div class="cvi-toast__title-text">{{ title }}</div>
-  <button class="cvi-toast__close-button" (click)="remove()">
+  <button class="cvi-toast__close-button" (click)="remove()" aria-label="Close">
     <cvi-ng-icon name="close" class="cvi-toast__close-button-inner" svgClass="cvi-toast__close-button-icon"></cvi-ng-icon>
   </button>
 </h1>
