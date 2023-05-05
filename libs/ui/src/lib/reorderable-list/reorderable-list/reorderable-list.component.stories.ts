@@ -39,6 +39,10 @@ class ReorderableListExampleBaseComponent {
   getOrderNr(item: any): number {
     return this.getIndex(item) + 1;
   }
+
+  getStepId(item: any, i: number): string {
+    return 'step-' + this.getOrderNr(item) + '-form-item' + i;
+  }
 }
 
 @Component({
