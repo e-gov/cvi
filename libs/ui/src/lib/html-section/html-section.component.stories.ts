@@ -53,7 +53,7 @@ const TemplateInContactsBlock: Story<HtmlSectionComponent> = (
   styles: [
     `.container {
       width: 400px;
-      background-color: #ccc;
+      background-color: var(--cvi-color-black-coral-2);
       padding: 20px;
     }`,
   ],
