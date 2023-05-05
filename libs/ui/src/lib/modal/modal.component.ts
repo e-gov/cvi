@@ -16,6 +16,8 @@ import {
 export class ModalComponent implements OnDestroy {
   templateRef!: TemplateRef<any>;
 
+  title!: string;
+
   @Output() closed = new EventEmitter();
 
   @HostBinding('class') get getHostClasses(): string {

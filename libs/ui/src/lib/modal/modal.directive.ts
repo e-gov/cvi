@@ -1,7 +1,6 @@
 import {
   ComponentRef,
   Directive,
-  ElementRef,
   EmbeddedViewRef,
   HostListener,
   Inject,
@@ -18,12 +17,12 @@ import { DOCUMENT } from '@angular/common';
 })
 export class ModalDirective implements OnInit {
   @Input() cviNgModal!: TemplateRef<any>;
+  @Input() modalTitle!: string;
   @Input() open = false;
 
   private componentRef: ComponentRef<ModalComponent> | null = null;
 
   constructor(
-    private elementRef: ElementRef,
     private viewContainerRef: ViewContainerRef,
     @Inject(DOCUMENT) private document: Document
   ) {}
@@ -47,6 +46,7 @@ export class ModalDirective implements OnInit {
   private createModal() {
     this.componentRef = this.viewContainerRef.createComponent(ModalComponent);
     this.componentRef.instance.templateRef = this.cviNgModal;
+    this.componentRef.instance.title = this.modalTitle;
     this.componentRef.instance.closed.subscribe(() => this.hideModal());
   }
 
