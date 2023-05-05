@@ -161,7 +161,6 @@ export class SelectComponent
 
       if (sortFn instanceof Function) {
         this.itemsList.sortItems(changes['sortItemsFn'].currentValue);
-        this.cd.markForCheck();
       }
     }
   }
