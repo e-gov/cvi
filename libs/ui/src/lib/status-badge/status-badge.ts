@@ -12,7 +12,7 @@ export const statusBadgeCustomPropertyGroups: StatusBadgeCustomPropertyGroup[] =
     {
       severity: 'success',
       customProperties: {
-        '--color': '--cvi-color-sea-green-10',
+        '--color': '--cvi-color-sea-green-11',
         '--background-color': '--cvi-color-sea-green-0',
       },
     },
