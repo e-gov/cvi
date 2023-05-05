@@ -11,10 +11,10 @@ describe('AccordionComponent', () => {
       .should('have.length', 6);
 
     // First accordion header
-    cy.shouldHaveClasses(
-      'header',
-      'cvi-accordion__item-header'
-    ).shouldHaveClasses('button', 'cvi-accordion__item-toggle-button');
+    cy.shouldHaveClasses('div', 'cvi-accordion__item-header').shouldHaveClasses(
+      'button',
+      'cvi-accordion__item-toggle-button'
+    );
 
     // Second accordion content
     cy.shouldHaveClasses(
