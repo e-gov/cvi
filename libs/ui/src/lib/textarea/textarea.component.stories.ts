@@ -23,6 +23,7 @@ export default {
     resizable: true,
     maxLength: 2000,
     minRows: 3,
+    htmlId: 'some-textarea',
   },
 } as Meta<TextareaComponent>;
 
@@ -30,7 +31,9 @@ const Template: Story<TextareaComponent> = (args: TextareaComponent) => ({
   props: args,
   /* template */
   template: `
-    <cvi-ng-textarea [disabled]="disabled" [maxLength]="maxLength" [minRows]="minRows" [maxRows]="maxRows" [placeholder]="placeholder" [htmlId]="htmlId" [resizable]="resizable"></cvi-ng-textarea>
+    <cvi-ng-form-item label="Some label" [htmlId]="htmlId">
+      <cvi-ng-textarea [disabled]="disabled" [maxLength]="maxLength" [minRows]="minRows" [maxRows]="maxRows" [placeholder]="placeholder" [htmlId]="htmlId" [resizable]="resizable"></cvi-ng-textarea>
+    </cvi-ng-form-item>
   `,
 });
 
@@ -40,29 +43,15 @@ const CharacterCounterTemplate: Story<TextareaComponent> = (
   args: TextareaComponent
 ) => ({
   props: args,
+  /* template */
   template: `
-    <cvi-ng-textarea cviNgCharacterCounter [maxChars]="30" [resizable]="resizable"></cvi-ng-textarea>
-  `,
-});
-
-export const WithCharacterCounter = CharacterCounterTemplate.bind({});
-
-const FormItemTemplate: Story<TextareaComponent> = (
-  args: TextareaComponent
-) => ({
-  props: args,
-  template: `
-    <cvi-ng-form-item label="Some label"
-                        [htmlId]="htmlId">
-      <cvi-ng-textarea [htmlId]="htmlId" [resizable]="resizable"></cvi-ng-textarea>
+    <cvi-ng-form-item label="Some label" [htmlId]="htmlId">
+      <cvi-ng-textarea cviNgCharacterCounter [maxChars]="30" [resizable]="resizable" [htmlId]="htmlId"></cvi-ng-textarea>
     </cvi-ng-form-item>
   `,
 });
 
-export const WithFormItem = FormItemTemplate.bind({});
-WithFormItem.args = {
-  htmlId: 'some-item',
-};
+export const WithCharacterCounter = CharacterCounterTemplate.bind({});
 
 const FormGroupTemplate: Story<TextareaComponent> = (
   args: TextareaComponent
@@ -82,17 +71,20 @@ const FormGroupTemplate: Story<TextareaComponent> = (
       minRows: 3,
       selectedValue: selectedValue,
     },
+    /* template */
     template: `
       <div [formGroup]="form">
-        <cvi-ng-textarea formControlName="item"
-                        [placeholder]="placeholder"
-                        [disabled]="disabled"
-                        [maxLength]="maxLength"
-                        [minRows]="minRows"
-                        [maxRows]="maxRows"
-                        [htmlId]="htmlId"
-                        [resizable]="resizable">
-        </cvi-ng-textarea>
+        <cvi-ng-form-item label="Some label" [htmlId]="htmlId">
+          <cvi-ng-textarea formControlName="item"
+                          [placeholder]="placeholder"
+                          [disabled]="disabled"
+                          [maxLength]="maxLength"
+                          [minRows]="minRows"
+                          [maxRows]="maxRows"
+                          [htmlId]="htmlId"
+                          [resizable]="resizable">
+          </cvi-ng-textarea>
+        </cvi-ng-form-item>
         <div>Inserted value: {{selectedValue()}}</div>
       </div>
     `,
