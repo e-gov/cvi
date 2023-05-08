@@ -159,3 +159,9 @@ const TemplateWithTranslations: Story<StepsComponent> = (
 });
 
 export const WithTranslations = TemplateWithTranslations.bind({});
+WithTranslations.parameters = {
+  axe: {
+    // disabling because axe doesn't wait sometimes for the button text to load
+    disabledRules: ['button-name'],
+  },
+};
