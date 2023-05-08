@@ -8,11 +8,13 @@ import {
   Inject,
   Input,
   NgZone,
+  OnChanges,
   OnDestroy,
   OnInit,
   Optional,
   Output,
   Self,
+  SimpleChanges,
   TemplateRef,
   ViewChild,
 } from '@angular/core';
@@ -35,13 +37,15 @@ export type AddItemFn = (term: string) => unknown | Promise<unknown>;
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SelectComponent
-  implements ControlValueAccessor, OnInit, OnDestroy
+  implements ControlValueAccessor, OnInit, OnDestroy, OnChanges
 {
   @Input() bindValue?: string;
   @Input() bindLabel?: string;
+
   @Input() set items(items: unknown[]) {
     this.setItems(items);
   }
+
   @Input() placeholder = '';
   @Input() searchFn?: ((search: string, item: unknown) => boolean) | null =
     null;
@@ -54,8 +58,9 @@ export class SelectComponent
   @Input() disabled = false;
   /** HTML id passed from FormItem component */
   @Input() htmlId!: string;
-  @Input() loading: boolean = false;
-  @Input() loadingLabel: string = 'Laadimine ...';
+  @Input() loading = false;
+  @Input() loadingLabel = 'Laadimine ...';
+  @Input() sortItemsFn: ((a: unknown, b: unknown) => number) | undefined;
 
   @Output() itemChanged = new EventEmitter();
 
@@ -147,6 +152,16 @@ export class SelectComponent
         originalMarkAsTouched.apply(this.control.control, [args]);
         this.cd.markForCheck();
       };
+    }
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['sortItemsFn']) {
+      const sortFn = changes['sortItemsFn'].currentValue;
+
+      if (sortFn instanceof Function) {
+        this.itemsList.sortItems(changes['sortItemsFn'].currentValue);
+      }
     }
   }
 
