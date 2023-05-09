@@ -38,7 +38,7 @@ export default {
       'There is a "Moments of Meditation" page, conducted by the Reverend Edwin T. Philpotts.',
     ],
   },
-} as Meta;
+} as Meta<StepsComponent>;
 
 const Template: Story<StepsComponent> = (args: StepsComponent) => {
   const form = new FormGroup({
