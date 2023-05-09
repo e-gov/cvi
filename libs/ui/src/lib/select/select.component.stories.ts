@@ -42,6 +42,7 @@ export default {
     containerWidth: 220,
     htmlId: 'some-select',
     loading: false,
+    sortItemsFn: undefined,
   },
 } as Meta;
 
@@ -335,4 +336,34 @@ const LoadingStateTemplate: Story<SelectComponent> = (
 export const LoadingState = LoadingStateTemplate.bind({});
 LoadingState.args = {
   loading: true,
+};
+
+const SortedItemsTemplate: Story<SelectComponent> = (args: SelectComponent) => {
+  function sortItemsFn(a: string, b: string): number {
+    return a.localeCompare(b, 'et');
+  }
+
+  return {
+    props: {
+      ...args,
+      sortItemsFn: sortItemsFn,
+    },
+    /* template */
+    template: `
+      <div [ngStyle]="{'width.px': containerWidth}">
+        <cvi-ng-form-item label="Some label" [htmlId]="htmlId">
+          <cvi-ng-select [items]="items"
+                         [disabled]="disabled"
+                         [backgroundDisabled]="backgroundDisabled"
+                         [placeholder]="placeholder"
+                         [sortItemsFn]="sortItemsFn"
+                         [htmlId]="htmlId"></cvi-ng-select>
+        </cvi-ng-form-item>
+      </div>
+  `,
+  };
+};
+export const SortedItems = SortedItemsTemplate.bind({});
+SortedItems.args = {
+  items: ['ÄÄÄ', 'DDD', 'CCC', 'AAA', 'BBB'],
 };

@@ -41,6 +41,15 @@ export class SelectItemsList {
 
   setItems(items: unknown[]) {
     this._items = items.map((item) => this.mapItem(item));
+
+    if (this._select.sortItemsFn instanceof Function) {
+      const sortFn = this._select.sortItemsFn;
+
+      this._items.sort((a, b) => {
+        return sortFn(a.value, b.value);
+      });
+    }
+
     this._filteredItems = [...this._items];
   }
 
@@ -48,6 +57,19 @@ export class SelectItemsList {
     const option = this.mapItem(item);
     this._items.push(option);
     this._filteredItems.push(option);
+
+    if (this._select.sortItemsFn instanceof Function) {
+      const sortFn = this._select.sortItemsFn;
+
+      this._items.sort((a, b) => {
+        return sortFn(a.value, b.value);
+      });
+
+      this._filteredItems.sort((a, b) => {
+        return sortFn(a.value, b.value);
+      });
+    }
+
     return option;
   }
 
@@ -87,6 +109,16 @@ export class SelectItemsList {
     }
 
     this._filteredItems = [...this._items];
+  }
+
+  sortItems(sortFn: (a: unknown, b: unknown) => number) {
+    this._items.sort((a, b) => {
+      return sortFn(a.value, b.value);
+    });
+
+    this._filteredItems.sort((a, b) => {
+      return sortFn(a.value, b.value);
+    });
   }
 
   private defaultSearchFn(search: string, option: SelectOption) {
