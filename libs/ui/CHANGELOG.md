@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [1.10.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.9.2...ui-1.10.0) (2023-05-09)
+
+
+### Features
+
+* **ui:** add sorting to select component ([#97](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/97)) ([f3360e4](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/f3360e43157ee3f91310b35c2c13e9a9ce43eb4d))
+
+
+
 ## [1.9.2](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.9.1...ui-1.9.2) (2023-05-04)
 
 
