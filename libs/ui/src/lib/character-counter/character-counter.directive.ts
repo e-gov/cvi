@@ -30,7 +30,16 @@ export class CharacterCounterDirective implements AfterViewInit {
   onInputChange() {
     if (this.componentRef && this.inputRef !== null) {
       this.componentRef.instance.charsUsed = this.inputRef.value.length;
-      this.componentRef.instance.markForCheck();
+      this.componentRef.instance.detectChanges();
+    }
+  }
+
+  @HostListener('ngModelChange', ['$event'])
+  onModelChange(event: string) {
+    const length = String(event)?.length;
+    if (this.componentRef && length !== undefined) {
+      this.componentRef.instance.charsUsed = length;
+      this.componentRef.instance.detectChanges();
     }
   }
 

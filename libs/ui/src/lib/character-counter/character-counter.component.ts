@@ -13,9 +13,10 @@ export class CharacterCounterComponent {
   charsMax = 0;
   charsUsed = 0;
 
-  constructor(private changeDetector: ChangeDetectorRef) {}
+  constructor(private cdRef: ChangeDetectorRef) {}
 
-  markForCheck() {
-    this.changeDetector.markForCheck();
+  detectChanges() {
+    this.cdRef.markForCheck();
+    this.cdRef.detectChanges();
   }
 }

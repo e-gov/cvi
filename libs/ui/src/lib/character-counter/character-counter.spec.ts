@@ -1,11 +1,8 @@
 import { ChangeDetectorRef, Component, DebugElement } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-
-import {
-  CharacterCounterComponent,
-  CharacterCounterDirective,
-} from '@egov/cvi-ng';
+import { CharacterCounterDirective } from './character-counter.directive';
+import { CharacterCounterComponent } from './character-counter.component';
 
 @Component({
   selector: 'cvi-ng-test-textarea',
@@ -34,12 +31,12 @@ class TestRandomComponent {}
 @Component({
   template: ` <cvi-ng-test-textarea
       cviNgCharacterCounter
-      [maxChars]="10"
+      maxChars="10"
     ></cvi-ng-test-textarea>
     <cvi-ng-test-textarea cviNgCharacterCounter></cvi-ng-test-textarea>
     <cvi-ng-test-text-input
       cviNgCharacterCounter
-      [maxChars]="10"
+      maxChars="10"
     ></cvi-ng-test-text-input>
     <cvi-ng-test-text-input cviNgCharacterCounter></cvi-ng-test-text-input>
     <cvi-ng-test-button cviNgCharacterCounter></cvi-ng-test-button>
@@ -136,9 +133,18 @@ describe('CharacterCounterDirective', () => {
     expect(des[5].nativeElement.nextSibling.tagName).toBe(undefined);
   });
 
-  it('should count characters', () => {
+  it('should count characters with input event', () => {
     des[0].nativeElement.children[0].value = '1235';
     des[0].nativeElement.dispatchEvent(new Event('input'));
+    runOnPushChangeDetection(fixture);
+    expect(des[0].nativeElement.nextSibling.textContent).toContain('4');
+  });
+
+  it('should count characters with ngModelChange event', () => {
+    des[0].nativeElement.children[0].value = '1235';
+    des[0].nativeElement.dispatchEvent(
+      new Event('ngModelChange', { bubbles: true })
+    );
     runOnPushChangeDetection(fixture);
     expect(des[0].nativeElement.nextSibling.textContent).toContain('4');
   });

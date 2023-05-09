@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import {
-  ChangeDetectorRef,
   Component,
   EventEmitter,
   forwardRef,
@@ -50,9 +49,8 @@ export class TextareaComponent implements ControlValueAccessor {
   internalValue?: any;
 
   // eslint-disable-next-line @typescript-eslint/no-empty-function
-  private onChanged: (value: unknown) => void = () => {
+  private onChanged: (value: unknown) => void = () =>
     this.valueChange.emit(this.internalValue);
-  };
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   private onTouched: () => unknown = () => {};
 
@@ -63,17 +61,13 @@ export class TextareaComponent implements ControlValueAccessor {
     }${this.resizable ? '' : ` ${baseClass}--no-resize`}`;
   }
 
-  constructor(private readonly cdRef: ChangeDetectorRef) {}
-
   setValue(value: any) {
-    this.internalValue = value;
     this.onChanged(value);
     this.onTouched();
   }
 
-  writeValue(obj: any): void {
-    this.internalValue = obj;
-    this.cdRef.markForCheck();
+  writeValue(value: any): void {
+    this.internalValue = value;
   }
 
   registerOnChange(fn: any): void {
