@@ -2,16 +2,23 @@ import { Meta, Story } from '@storybook/angular/';
 import notes from './steps.component.md';
 import { concatMap, delay, from, of } from 'rxjs';
 import { StepsComponent } from './steps.component';
+import { moduleMetadata } from '@storybook/angular';
+import { UiModule } from '../../ui.module';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 const withObservableTitlesDelay = 1000;
 
 export default {
   title: 'Angular/Steps/Steps',
-  component: StepsComponent,
   parameters: {
     layout: 'padded',
     notes,
   },
+  decorators: [
+    moduleMetadata({
+      imports: [UiModule, ReactiveFormsModule],
+    }),
+  ],
   argTypes: {
     stepsContent: {
       controls: false,
@@ -33,38 +40,53 @@ export default {
   },
 } as Meta;
 
-const Template: Story<StepsComponent> = (args: StepsComponent) => ({
-  component: StepsComponent,
-  props: {
-    ...args,
-  },
-  /* template */
-  template: `
-    <cvi-ng-steps [title]="title" [currentStepIndex]="currentStepIndex" [hasTableOfContents]="hasTableOfContents">
-      <p cvi-steps="after-title" dataAttribute="steps-description">You can now add custom content before steps</p>
-      <cvi-ng-step dataAttribute="step_1">
-        <cvi-ng-step-panel [title]="title">
-          <cvi-ng-html-section html="{{ stepsContent[0] }}"></cvi-ng-html-section>
-        </cvi-ng-step-panel>
-      </cvi-ng-step>
-      <cvi-ng-step dataAttribute="step_2">
-        <cvi-ng-step-panel title="Second">
-          {{ stepsContent[1] }}
-        </cvi-ng-step-panel>
-      </cvi-ng-step>
-      <cvi-ng-step dataAttribute="step_3">
-        <cvi-ng-step-panel title="Third">
-          {{ stepsContent[2] }}
-        </cvi-ng-step-panel>
-      </cvi-ng-step>
-      <cvi-ng-step dataAttribute="step_4">
-        <cvi-ng-step-panel title="Fourth">
-          {{ stepsContent[3] }}
-        </cvi-ng-step-panel>
-      </cvi-ng-step>
-    </cvi-ng-steps>
-  `,
-});
+const Template: Story<StepsComponent> = (args: StepsComponent) => {
+  const form = new FormGroup({
+    text: new FormControl('Some text'),
+  });
+  return ({
+    component: StepsComponent,
+    props: {
+      ...args,
+      form: form,
+      minRows: 5,
+      htmlId: 'fk123sd4kfds',
+      label: 'Label'
+    },
+    /* template */
+    template: `
+      <cvi-ng-steps [title]="title" [currentStepIndex]="currentStepIndex" [hasTableOfContents]="hasTableOfContents">
+        <p cvi-steps="after-title" dataAttribute="steps-description">You can now add custom content before steps</p>
+        <cvi-ng-step dataAttribute="step_1">
+          <cvi-ng-step-panel [title]="title">
+            <cvi-ng-html-section html="{{ stepsContent[0] }}"></cvi-ng-html-section>
+          </cvi-ng-step-panel>
+        </cvi-ng-step>
+        <cvi-ng-step dataAttribute="step_2">
+          <cvi-ng-step-panel title="Second">
+            {{ stepsContent[1] }}
+          </cvi-ng-step-panel>
+        </cvi-ng-step>
+        <cvi-ng-step dataAttribute="step_3">
+          <cvi-ng-step-panel title="Third">
+            <div [formGroup]="form">
+                <cvi-ng-form-item
+                        [label]="label"
+                        [htmlId]="htmlId">
+                    <cvi-ng-textarea formControlName="text" cviNgCharacterCounter [maxChars]="30" [minRows]="minRows"></cvi-ng-textarea>
+                </cvi-ng-form-item>
+            </div>
+          </cvi-ng-step-panel>
+        </cvi-ng-step>
+        <cvi-ng-step dataAttribute="step_4">
+          <cvi-ng-step-panel title="Fourth">
+            {{ stepsContent[3] }}
+          </cvi-ng-step-panel>
+        </cvi-ng-step>
+      </cvi-ng-steps>
+    `,
+  });
+};
 
 export const Default = Template.bind({});
 export const DefaultWithSelectedStep = Template.bind({});
