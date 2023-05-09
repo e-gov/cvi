@@ -26,9 +26,7 @@ export default {
   },
 } as Meta<TabGroupComponent>;
 
-const Template: Story<TabGroupComponent> = (
-  args: TabGroupComponent
-) => {
+const Template: Story<TabGroupComponent> = (args: TabGroupComponent) => {
   const form = new FormGroup({
     text: new FormControl('Some text'),
   });
@@ -39,7 +37,7 @@ const Template: Story<TabGroupComponent> = (
       form: form,
       minRows: 5,
       htmlId: 'fk123sd4kfds',
-      label: 'Label'
+      label: 'Label',
     },
     /* template */
     template: `

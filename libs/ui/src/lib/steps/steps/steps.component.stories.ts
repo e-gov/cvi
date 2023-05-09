@@ -44,14 +44,14 @@ const Template: Story<StepsComponent> = (args: StepsComponent) => {
   const form = new FormGroup({
     text: new FormControl('Some text'),
   });
-  return ({
+  return {
     component: StepsComponent,
     props: {
       ...args,
       form: form,
       minRows: 5,
       htmlId: 'fk123sd4kfds',
-      label: 'Label'
+      label: 'Label',
     },
     /* template */
     template: `
@@ -85,7 +85,7 @@ const Template: Story<StepsComponent> = (args: StepsComponent) => {
         </cvi-ng-step>
       </cvi-ng-steps>
     `,
-  });
+  };
 };
 
 export const Default = Template.bind({});
