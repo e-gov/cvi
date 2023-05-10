@@ -2,20 +2,20 @@
   "name": "@egov/cvi-ng",
   "version": "1.11.0",
   "peerDependencies": {
-    "@angular/animations": "^14.1.0",
-    "@angular/cdk": "^14.1.0",
-    "@angular/common": "^14.1.0",
-    "@angular/core": "^14.1.0",
-    "@angular/elements": "^14.1.0",
-    "@angular/forms": "^14.1.0",
-    "@angular/platform-browser": "^14.1.0",
-    "@angular/platform-browser-dynamic": "^14.1.0"
+    "@angular/animations": ">=14.1.0",
+    "@angular/cdk": ">=14.1.0",
+    "@angular/common": ">=14.1.0",
+    "@angular/core": ">=14.1.0",
+    "@angular/elements": ">=14.1.0",
+    "@angular/forms": ">=14.1.0",
+    "@angular/platform-browser": ">=14.1.0",
+    "@angular/platform-browser-dynamic": ">=14.1.0"
   },
   "dependencies": {
     "tslib": "^2.3.0",
     "sanitize-html": "2.7.1",
     "rxjs": "~7.5.6",
-    "@egov/cvi-icons": "^1.0.1"
+    "@egov/cvi-icons": "^1.1.0"
   },
   "publishConfig": {
     "registry": "https://koodivaramu.eesti.ee/api/v4/projects/433/packages/npm/"
