@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [1.5.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/storybook-1.4.0...storybook-1.5.0) (2023-05-10)
+
+
+### Features
+
+* **all:** added automated accessibility testing on local and CI integration ([#61](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/61)) ([0b26f40](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/0b26f40edb51fac4277423a7cd02350167afe68c))
+
+
+
 # [1.4.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/storybook-1.3.0...storybook-1.4.0) (2023-04-14)
 
 
