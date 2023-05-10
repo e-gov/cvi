@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [1.11.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.10.1...ui-1.11.0) (2023-05-10)
+
+
+### Features
+
+* **all:** added automated accessibility testing on local and CI integration ([#61](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/61)) ([0b26f40](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/0b26f40edb51fac4277423a7cd02350167afe68c))
+
+
+
 ## [1.10.1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.10.0...ui-1.10.1) (2023-05-09)
 
 
