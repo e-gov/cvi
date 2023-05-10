@@ -1,4 +1,4 @@
-# 📚 e-Gov Common Visual Identity (CVI) Component Library
+# 📚 e-Gov Common Visual Identity (CVI)
 
 This repository includes a shared CSS library, preprocessed with Sass, along with HTML examples based on it. It also houses a user interface (UI) kit in Angular and a typed, tree-shakable icon library.
 
@@ -133,7 +133,7 @@ To run Cypress tests against Storybook, make sure that Storybook is up and runni
 
 This will open up the Cypress visual testing tool. Select E2E Testing to view all component tests. Note that Cypress tests use Angular components in iFrame windows, which is why Storybook needs to be up and running.
 
-# 🚀 Running Chromatic tests
+## 🚀 Running Chromatic tests
 
 The project uses automatic screenshot testing via Chromatic.
 
@@ -146,8 +146,8 @@ Publishing to Chromatic also gives a possibility to share a Storybook link for a
 
 `https://<branch>--6373995e3f280e239470296d.chromatic.com`
 
-# 🙏 Thanks
-
-Thanks to [Chromatic](https://www.chromatic.com/) for providing the visual testing platform that helps us review UI changes and catch visual regressions. 🎉
-
+## 🙏 Thanks
 <a href="https://www.chromatic.com/"><img src="https://user-images.githubusercontent.com/321738/84662277-e3db4f80-af1b-11ea-88f5-91d67a5e59f6.png" width="153" height="30" alt="Chromatic" /></a>
+
+
+Thanks to [Chromatic](https://www.chromatic.com/) for providing the visual testing platform that helps us review UI changes and catch visual regressions 🎉. 
