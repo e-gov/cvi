@@ -1,57 +1,81 @@
-# e-Gov Common Visual Identity (CVI) Component Library
+# 📚 e-Gov Common Visual Identity (CVI) Component Library
 
-This repository includes a shared CSS library (preprocessed with Sass) and HTML examples based on it, as well as a UI kit in Angular and a typed tree-shakable icons library.
+This repository includes a shared CSS library, preprocessed with Sass, along with HTML examples based on it. It also houses a user interface (UI) kit in Angular and a typed, tree-shakable icon library.
 
-By design, the CSS has no dependency on a specific Javascript framework and since the styles and html is separated then interested contributors can easily add component libraries in other frameworks such as React or Vue.js.
-Also, the Angular UI library has no dependency to any design system/framework such as Bootstrap or Google's Material in order to reduce dependence on 3rd party vendors.
+The CSS has been architectured to be independent of any specific Javascript framework. This makes it possible for contributors to easily integrate component libraries from other frameworks such as React or Vue.js. The Angular UI library has also been constructed free of any dependencies on design systems/frameworks like Bootstrap or Google's Material. This ensures a reduction in dependence on third-party vendors 🛠️.
 
-## Quick Start & documentation
+## 🚀 Quick Start & Documentation
 
-Both CSS framework and Angular component library use [Storybook](https://storybook.js.org).
+The CSS framework and Angular component library utilize [Storybook](https://storybook.js.org) for comprehensive documentation and seamless usage.
 
-Documentation and installation instructions can be viewed in the e-Gov CVI's Storybook:
+To get started, you can access the installation instructions and documentation on e-Gov CVI's Storybook:
 
-[https://e-gov.github.io/cvi/](https://e-gov.github.io/cvi/).
+[📌 https://e-gov.github.io/cvi/](https://e-gov.github.io/cvi/)
 
-Styles were based on the initial Veera Design System:
+The styles in this repository take inspiration from the initial Veera Design System, which you can find here:
 
-https://www.figma.com/file/nNCV5kRqdRkS8MOCK1ZbqU/Veera-Design-System
+🔗 https://www.figma.com/file/nNCV5kRqdRkS8MOCK1ZbqU/Veera-Design-System
 
-But please take note that e-Gov CVI **is not Veera**.
+Please note, e-Gov CVI **is not Veera**. We've taken inspiration from their work, but our approach and implementation are unique 💡.
 
-Feel free to reach out on the public [CVI Signal group](https://signal.group/#CjQKIII854RES5vfIQ8Oqw5fWmS2_FY8cJTEM1RSJI9fSsplEhC4dNwXGkcfqf34YmQJJDi_) to discuss any issues.
+To discuss any issues, suggestions or questions, join our public [CVI Signal group](https://signal.group/#CjQKIII854RES5vfIQ8Oqw5fWmS2_FY8cJTEM1RSJI9fSsplEhC4dNwXGkcfqf34YmQJJDi_).
 
-### Installation
+### 🛠️ Installation Instructions
 
-1. Add the public Koodivaramu registry to your project by following the instructions [here](https://koodivaramu.eesti.ee/e-gov/cvi/-/packages/385).
-2. Install the necessary package to your project:
-   1. CSS framework: `npm i --save @egov/cvi-styles`
-   2. Angular components: `npm i --save @egov/cvi-ng`
-   3. Icons: `npm i --save @egov/cvi-icons`
-3. Import the dependencies to your project by following dedicated instructions in the docs for the [CSS framework](https://e-gov.github.io/cvi/?path=/docs/styles-how-to-install--how-to-install), [Angular components](https://e-gov.github.io/cvi/?path=/docs/angular-installation--installation), and [icons](https://e-gov.github.io/cvi/?path=/docs/icons-how-to-use--page).
+Follow these steps to install and integrate our library:
 
-## Packages and artifacts repository
+1. 📥 Add the public Koodivaramu registry to your project by following the instructions provided [here](https://koodivaramu.eesti.ee/e-gov/cvi/-/packages/385).
 
-The built packages are published to the public Koodivaramu repository, from where you can download and add them to your application:
+2. 📦 Install the necessary package to your project:
+  - CSS framework: Use the command `npm i --save @egov/cvi-styles`
+  - Angular components: Use the command `npm i --save @egov/cvi-ng`
+  - Icons: Use the command `npm i --save @egov/cvi-icons`
 
-https://koodivaramu.eesti.ee/e-gov/cvi/-/packages
+3. 🏁 After installation, import the dependencies into your project. You'll find dedicated instructions for this in the documentation for the [CSS framework](https://e-gov.github.io/cvi/?path=/docs/styles-how-to-install--how-to-install), [Angular components](https://e-gov.github.io/cvi/?path=/docs/angular-installation--installation), and [icons](https://e-gov.github.io/cvi/?path=/docs/icons-how-to-use--page).
+
+
+## 📦 Packages and Artifacts Repository
+
+The built packages are published to the public Koodivaramu repository, from where you can download and add them to your application. You can access it via the following link:
+
+[🔗 Koodivaramu Repository](https://koodivaramu.eesti.ee/e-gov/cvi/-/packages)
 
 In addition, the Storybook Docker image is also published to the Koodivaramu repository:
 
-https://koodivaramu.eesti.ee/e-gov/cvi/container_registry
+[🔗 Storybook Docker Image](https://koodivaramu.eesti.ee/e-gov/cvi/container_registry)
 
-## Contributing
-If you want to contribute to the Common Visual Identity Component Library, create a fork, make changes and create a pull-request back to this repository.
-Follow the [GitHub contribution guide](https://docs.github.com/en/get-started/quickstart/contributing-to-projects) for more detailed instructions.
+---
 
-### Adding/updating packages
-When adding/upgrading peer dependencies then make sure that they are also updated in `libs/LIB-NAME/package.json` in case of peerDependencies and in `libs/LIB-NAME/ng-package.json` for dependencies to be packaged with the library.
+## 🤝 Contributing
 
-### Commit message format
-The project follows the [conventional commit format](https://www.conventionalcommits.org) convention and uses the [semver nx plugin](https://github.com/jscutlery/semver) for versioning.
-Make sure to use the appropriate commit messages.
+If you want to contribute to the Common Visual Identity Component Library, follow these steps:
 
-### Code style
+1. Create a fork of the repository.
+2. Make changes in your own fork.
+3. Create a pull-request back to this repository.
+
+For more detailed instructions, follow the link below:
+
+🔗 [GitHub Contribution Guide](https://docs.github.com/en/get-started/quickstart/contributing-to-projects)
+
+---
+
+### 🔄 Adding/Updating Packages
+
+When adding/upgrading peer dependencies, ensure that they are also updated in the following files:
+
+- `libs/LIB-NAME/package.json` for peerDependencies.
+- `libs/LIB-NAME/ng-package.json` for dependencies to be packaged with the library.
+
+---
+
+### 📝 Commit Message Format
+
+The project follows the [conventional commit format](https://www.conventionalcommits.org) convention and uses the [semver nx plugin](https://github.com/jscutlery/semver) for versioning. Ensure to use the appropriate commit messages.
+
+---
+
+### 🧑‍💻 Code Style
 
 #### Angular
 
@@ -59,49 +83,71 @@ Make sure to use the appropriate commit messages.
 
 Use `[cvi-component-selector=local-selector-name]` naming convention for [content projection selectors](https://angular.io/guide/content-projection).
 
-For example, if you need to introduce a content selector that inserts custom content before a title in a panel (eg. fictional `PanelComponent/<cvi-ng-panel>` component), an appropriate code would be `<ng-content select="[cvi-ng-panel=before-title]"></ng-content>`.
+For example, to introduce a content selector that inserts custom content before a title in a panel (eg. fictional `PanelComponent/<cvi-ng-panel>` component), an appropriate code would be `<ng-content select="[cvi-ng-panel=before-title]"></ng-content>`.
 
-## Running the Storybook
+---
 
-Run `npm run storybook` to build documentation and run the Storybook locally.
+## 🚀 Running the Storybook
 
-### Running Storybook locally in Docker
+Run the following command to build documentation and start the Storybook locally: 
 
-```
-docker build -f ./libs/storybook/Dockerfile -t cvi-storybook .
-docker-compose up storybook
-docker-compose down
-url: http://localhost:3005/
-```
+`npm run storybook`
 
-## Understand your workspace
+### 🐳 Running Storybook locally in Docker
 
-Run `nx graph` to see a diagram of the dependencies of your projects.
+To run Storybook locally using Docker, follow these steps:
 
-## Using the Nx build system
+1. Build the Docker image with the following command: 
 
-[Nx Documentation](https://nx.dev/angular)
+`docker build -f ./libs/storybook/Dockerfile -t cvi-storybook .`
 
-[Getting Started With Nx](https://nx.dev/getting-started/intro)
+2. Start the Storybook container with the following command:
 
-[Concepts](https://nx.dev/concepts)
+`docker-compose up storybook`
 
-## Running Cypress tests against Storybook
+3. Stop the container with the following command:
 
-Storybook needs to be up and running as Cypress tests are using its Angular components in iFrame windows. Check previous chapter about 'Running the Storybook'.
+`docker-compose down`
 
-When storybook is up and running, run `npm run cypress:ui` which opens up Cypress visual testing tool. Select E2E Testing, which presents you all components tests.
+4. the Storybook interface at `http://localhost:3005/` in your web browser.
 
-## Running Chromatic tests
+## 🔎 Understand your workspace
 
-The project uses automatic screenshot testing via Chromatic. Run `npm run chromatic`, open the resulting URL and go through the visual changes, accepting or denying them in the Chromatic UI.
+To see a diagram of the dependencies of your projects, run the following command:
 
-Chromatic CI also runs on every push. The action always passes (even when visual changes are detected) except for cases when a story is broken. Contributors and reviewers should check the results of the action (and accept or decline them in the Chromatic UI) by following a link in the build log.
+`nx graph`
 
-Publishing to Chromatic also gives a possibility to share a Storybook link for a specific branch (even unpushed, if the local npm command is used) in this format `https://<branch>--6373995e3f280e239470296d.chromatic.com`.
+This will provide you with an overview of your workspace and how the different projects and libraries are interconnected.
 
-## Thanks
+## 🔨 Using the Nx build system
+
+To learn more about the Nx build system, check out the following resources:
+
+- [🔗 Nx Documentation](https://nx.dev)
+- [🔗 Getting Started With Nx](https://nx.dev/getting-started/intro)
+- [🔗 Concepts](https://nx.dev/concepts)
+
+## 🚀 Running Cypress tests against Storybook
+
+To run Cypress tests against Storybook, make sure that Storybook is up and running (see the previous section). Then, run the following command: `npm run cypress:ui`
+
+This will open up the Cypress visual testing tool. Select E2E Testing to view all component tests. Note that Cypress tests use Angular components in iFrame windows, which is why Storybook needs to be up and running.
+
+# 🚀 Running Chromatic tests
+
+The project uses automatic screenshot testing via Chromatic.
+
+1. To run the tests, use the following command in your terminal: `npm run chromatic`
+2. Open the resulting URL and review the visual changes, accepting or denying them in the Chromatic UI.
+   
+💡 Chromatic CI also runs on every push. The action always passes (even when visual changes are detected) except for cases when a story is broken. Contributors and reviewers should check the results of the action (and accept or decline them in the Chromatic UI) by following a link in the build log. 💡
+
+Publishing to Chromatic also gives a possibility to share a Storybook link for a specific branch (even non-pushed, if the local npm command is used) in this format: 
+
+`https://<branch>--6373995e3f280e239470296d.chromatic.com`
+
+# 🙏 Thanks
+
+Thanks to [Chromatic](https://www.chromatic.com/) for providing the visual testing platform that helps us review UI changes and catch visual regressions. 🎉
 
 <a href="https://www.chromatic.com/"><img src="https://user-images.githubusercontent.com/321738/84662277-e3db4f80-af1b-11ea-88f5-91d67a5e59f6.png" width="153" height="30" alt="Chromatic" /></a>
-
-Thanks to [Chromatic](https://www.chromatic.com/) for providing the visual testing platform that helps us review UI changes and catch visual regressions.
