@@ -41,6 +41,7 @@ export default {
     backgroundDisabled: false,
     containerWidth: 220,
     htmlId: 'some-select',
+    labelId: 'some-select-label',
     loading: false,
     sortItemsFn: undefined,
   },
@@ -53,9 +54,10 @@ const Template: Story<SelectComponent> = (args: SelectComponent) => ({
   /* template */
   template: `
       <div [ngStyle]="{'width.px': containerWidth}">
-        <cvi-ng-form-item label="Some label" [htmlId]="htmlId">
+        <cvi-ng-form-item label="Some label" [htmlId]="htmlId" [labelId]="labelId">
           <cvi-ng-select [items]="items"
                          [disabled]="disabled"
+                         [labelId]="labelId"
                          [backgroundDisabled]="backgroundDisabled"
                          [placeholder]="placeholder"
                          [htmlId]="htmlId"></cvi-ng-select>
@@ -74,12 +76,13 @@ const WithCustomValueFormattingTemplate: Story<SelectComponent> = (
   /* template */
   template: `
     <div [ngStyle]="{'width.px': containerWidth}">
-      <cvi-ng-form-item label="Some label" [htmlId]="htmlId">
+      <cvi-ng-form-item label="Some label" [htmlId]="htmlId" [labelId]="labelId">
         <cvi-ng-select [items]="items"
                        [placeholder]="placeholder"
                        [backgroundDisabled]="backgroundDisabled"
                        [disabled]="disabled"
-                       [htmlId]="htmlId">
+                       [htmlId]="htmlId"
+                       [labelId]="labelId">
           <ng-template cviNgSelectOptionTemplate let-item="item">
             <cvi-ng-track verticalAlignment="center" [gap]="4">
               <ng-container *ngTemplateOutlet="icon"></ng-container>
@@ -119,12 +122,16 @@ const UserCanAddItemsTemplate: Story<SelectComponent> = (
     /* template */
     template: `
       <div [ngStyle]="{'width.px': containerWidth}">
-        <cvi-ng-select [items]="items"
-                       [addItemFn]="addItemFn"
-                       [disabled]="disabled"
-                       [backgroundDisabled]="backgroundDisabled"
-                       [addItemLabel]="'Lisa element'"
-                       [placeholder]="placeholder"></cvi-ng-select>
+        <cvi-ng-form-item label="Some label" [htmlId]="htmlId" [labelId]="labelId">
+          <cvi-ng-select [items]="items"
+                         [addItemFn]="addItemFn"
+                         [disabled]="disabled"
+                         [backgroundDisabled]="backgroundDisabled"
+                         [htmlId]="htmlId"
+                         [labelId]="labelId"
+                         [placeholder]="placeholder"
+                         addItemLabel="Lisa element"></cvi-ng-select>
+        </cvi-ng-form-item>
       </div>
   `,
   };
@@ -143,10 +150,14 @@ const DisabledBackgroundTemplate: Story<SelectComponent> = (
   /* template */
   template: `
       <div [ngStyle]="{'width.px': containerWidth}">
-        <cvi-ng-select [items]="items"
-                       [disabled]="disabled"
-                       [backgroundDisabled]="backgroundDisabled"
-                       [placeholder]="placeholder"></cvi-ng-select>
+        <cvi-ng-form-item label="Some label" [htmlId]="htmlId" [labelId]="labelId">
+          <cvi-ng-select [items]="items"
+                         [disabled]="disabled"
+                         [htmlId]="htmlId"
+                         [labelId]="labelId"
+                         [backgroundDisabled]="backgroundDisabled"
+                         [placeholder]="placeholder"></cvi-ng-select>
+        </cvi-ng-form-item>
       </div>
   `,
 });
@@ -176,19 +187,23 @@ const ObjectsAsItemsTemplate: Story<SelectComponent> = (
       Use this approach when you provide objects as items and need to mix and match different properties of an item object in an option template. In addition to templates, you need to supply <code>valueFormatFn</code> input as well, in order for the chosen value to appear correctly.
     </cvi-ng-storybook-note>
     <div [ngStyle]="{'width.px': containerWidth}">
-      <cvi-ng-select [items]="items"
-                     [placeholder]="placeholder"
-                     [disabled]="disabled"
-                     [backgroundDisabled]="backgroundDisabled"
-                     [valueFormatFn]="valueFormatFn"
-                     [searchFn]="searchFn">
-        <ng-template cviNgSelectOptionTemplate let-item="item">
-          {{item.name}} ({{item.code}})
-        </ng-template>
-        <ng-template cviNgSelectLabelTemplate let-item="item">
-          {{item.name}} ({{item.code}})
-        </ng-template>
-      </cvi-ng-select>
+      <cvi-ng-form-item label="Some label" [htmlId]="htmlId" [labelId]="labelId">
+        <cvi-ng-select [items]="items"
+                       [placeholder]="placeholder"
+                       [disabled]="disabled"
+                       [htmlId]="htmlId"
+                       [labelId]="labelId"
+                       [backgroundDisabled]="backgroundDisabled"
+                       [valueFormatFn]="valueFormatFn"
+                       [searchFn]="searchFn">
+          <ng-template cviNgSelectOptionTemplate let-item="item">
+            {{item.name}} ({{item.code}})
+          </ng-template>
+          <ng-template cviNgSelectLabelTemplate let-item="item">
+            {{item.name}} ({{item.code}})
+          </ng-template>
+        </cvi-ng-select>
+      </cvi-ng-form-item>
     </div>
   `,
 });
@@ -234,14 +249,18 @@ const WithBoundValuesTemplate: Story<SelectComponent> = (
       </cvi-ng-storybook-note>
       <form [ngStyle]="{'width.px': containerWidth}" [formGroup]="form" (ngSubmit)="onSubmit(this.form.value)">
         <div [ngStyle]="{'width.px': containerWidth}">
-          <cvi-ng-select [items]="items"
-                         [placeholder]="placeholder"
-                         [disabled]="disabled"
-                         [backgroundDisabled]="backgroundDisabled"
-                         formControlName="item"
-                         bindLabel="fancyLabel"
-                         bindValue="rawValue">
-          </cvi-ng-select>
+          <cvi-ng-form-item label="Some label" [htmlId]="htmlId" [labelId]="labelId">
+            <cvi-ng-select [items]="items"
+                           [placeholder]="placeholder"
+                           [disabled]="disabled"
+                           [htmlId]="htmlId"
+                           [labelId]="labelId"
+                           [backgroundDisabled]="backgroundDisabled"
+                           formControlName="item"
+                           bindLabel="fancyLabel"
+                           bindValue="rawValue">
+            </cvi-ng-select>
+          </cvi-ng-form-item>
         </div>
       </form>
       <div>Selected value: {{selectedValue()}}</div>
@@ -269,10 +288,14 @@ const DisabledTemplate: Story<SelectComponent> = (args: SelectComponent) => ({
   /* template */
   template: `
       <div [ngStyle]="{'width.px': containerWidth}">
-        <cvi-ng-select [items]="items"
-                       [disabled]="disabled"
-                       [backgroundDisabled]="backgroundDisabled"
-                       [placeholder]="placeholder"></cvi-ng-select>
+        <cvi-ng-form-item label="Some label" [htmlId]="htmlId" [labelId]="labelId">
+          <cvi-ng-select [items]="items"
+                         [disabled]="disabled"
+                         [htmlId]="htmlId"
+                         [labelId]="labelId"
+                         [backgroundDisabled]="backgroundDisabled"
+                         [placeholder]="placeholder"></cvi-ng-select>
+        </cvi-ng-form-item>
       </div>
   `,
 });
@@ -304,11 +327,15 @@ const FormTemplate: Story<SelectComponent> = (args: SelectComponent) => {
     /* template */
     template: `
       <form [ngStyle]="{'width.px': containerWidth}" [formGroup]="form" (ngSubmit)="onSubmit(this.form.value)">
-        <cvi-ng-select [items]="items"
-                       [backgroundDisabled]="backgroundDisabled"
-                       [disabled]="disabled"
-                       formControlName="item"
-                       [placeholder]="placeholder"></cvi-ng-select>
+        <cvi-ng-form-item label="Some label" [htmlId]="htmlId" [labelId]="labelId">
+          <cvi-ng-select [items]="items"
+                         [backgroundDisabled]="backgroundDisabled"
+                         [disabled]="disabled"
+                         [htmlId]="htmlId"
+                         [labelId]="labelId"
+                         formControlName="item"
+                         [placeholder]="placeholder"></cvi-ng-select>
+        </cvi-ng-form-item>
         <div>Selected value: {{selectedValue()}}</div>
       </form>
   `,
@@ -325,11 +352,15 @@ const LoadingStateTemplate: Story<SelectComponent> = (
   /* template */
   template: `
       <div [ngStyle]="{'width.px': containerWidth}">
-        <cvi-ng-select [items]="items"
-                       [disabled]="disabled"
-                       [loading]="loading"
-                       [backgroundDisabled]="backgroundDisabled"
-                       [placeholder]="placeholder"></cvi-ng-select>
+        <cvi-ng-form-item label="Some label" [htmlId]="htmlId" [labelId]="labelId">
+          <cvi-ng-select [items]="items"
+                         [disabled]="disabled"
+                         [htmlId]="htmlId"
+                         [labelId]="labelId"
+                         [loading]="loading"
+                         [backgroundDisabled]="backgroundDisabled"
+                         [placeholder]="placeholder"></cvi-ng-select>
+        </cvi-ng-form-item>
       </div>
   `,
 });

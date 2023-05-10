@@ -20,6 +20,9 @@ export class FormItemComponent {
   /** Label is visually hidden */
   @Input() required = false;
 
+  /** HTML label ID. Use in aria-labelledby attribute in non-native form widgets */
+  @Input() labelId!: string;
+
   @HostBinding('class') get getHostClasses(): string {
     return `cvi-form-item cvi-form-item--label-position-${this.labelPosition}${
       this.required ? ' cvi-form-item--is-required' : ''

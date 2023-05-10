@@ -21,39 +21,24 @@
       [setAsPreviousStepButtonVisible]="isNotFirstItem(item)"
     >
       <cvi-ng-track gap="4" layout="grid" gridRows="2">
-        <cvi-ng-form-item [htmlId]="'step-' + getOrderNr(item) + '-form-item'"
-                            [label]="'Field 1'">
-          <cvi-ng-input [(ngModel)]="item.field1"
-                          [dataAttribute]="'step-' + getOrderNr(item) + '-name'"
-                          [htmlId]="'step-' + getOrderNr(item) + '-form-item'">
+        <cvi-ng-form-item [htmlId]="getStepId(item, 1)" [label]="'Field 1'">
+          <cvi-ng-input [(ngModel)]="item.field1" [dataAttribute]="'step-' + getOrderNr(item) + '-name'" [htmlId]="getStepId(item, 1)">
           </cvi-ng-input>
         </cvi-ng-form-item>
-        <cvi-ng-form-item [htmlId]="'step-' + getOrderNr(item) + '-form-item'"
-                            [label]="'Field 2'">
-          <cvi-ng-input [(ngModel)]="item.field2"
-                          [dataAttribute]="'step-' + getOrderNr(item) + '-name'"
-                          [htmlId]="'step-' + getOrderNr(item) + '-form-item'">
+        <cvi-ng-form-item [htmlId]="getStepId(item, 2)" [label]="'Field 2'">
+          <cvi-ng-input [(ngModel)]="item.field2" [dataAttribute]="'step-' + getOrderNr(item) + '-name'" [htmlId]="getStepId(item, 2)">
           </cvi-ng-input>
         </cvi-ng-form-item>
-        <cvi-ng-form-item [htmlId]="'step-' + getOrderNr(item) + '-form-item'"
-                            [label]="'Field 3'">
-          <cvi-ng-input [(ngModel)]="item.field3"
-                          [dataAttribute]="'step-' + getOrderNr(item) + '-name'"
-                          [htmlId]="'step-' + getOrderNr(item) + '-form-item'">
+        <cvi-ng-form-item [htmlId]="getStepId(item, 3)" [label]="'Field 3'">
+          <cvi-ng-input [(ngModel)]="item.field3" [dataAttribute]="'step-' + getOrderNr(item) + '-name'" [htmlId]="getStepId(item, 3)">
           </cvi-ng-input>
         </cvi-ng-form-item>
-        <cvi-ng-form-item [htmlId]="'step-' + getOrderNr(item) + '-form-item'"
-                            [label]="'Field 4'">
-          <cvi-ng-input [(ngModel)]="item.field4"
-                          [dataAttribute]="'step-' + getOrderNr(item) + '-name'"
-                          [htmlId]="'step-' + getOrderNr(item) + '-form-item'">
+        <cvi-ng-form-item [htmlId]="getStepId(item, 4)" [label]="'Field 4'">
+          <cvi-ng-input [(ngModel)]="item.field4" [dataAttribute]="'step-' + getOrderNr(item) + '-name'" [htmlId]="getStepId(item, 4)">
           </cvi-ng-input>
         </cvi-ng-form-item>
-        <cvi-ng-form-item [htmlId]="'step-' + getOrderNr(item) + '-form-item'"
-                            [label]="'Field 5'">
-          <cvi-ng-input [(ngModel)]="item.field5"
-                          [dataAttribute]="'step-' + getOrderNr(item) + '-name'"
-                          [htmlId]="'step-' + getOrderNr(item) + '-form-item'">
+        <cvi-ng-form-item [htmlId]="getStepId(item, 5)" [label]="'Field 5'">
+          <cvi-ng-input [(ngModel)]="item.field5" [dataAttribute]="'step-' + getOrderNr(item) + '-name'" [htmlId]="getStepId(item, 5)">
           </cvi-ng-input>
         </cvi-ng-form-item>
       </cvi-ng-track>

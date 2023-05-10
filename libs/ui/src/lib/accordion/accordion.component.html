@@ -17,7 +17,7 @@
 </ul>
 
 <ng-template #defaultHeader let-item let-index="index">
-  <header class="cvi-accordion__item-header">
+  <div class="cvi-accordion__item-header">
     <button class="cvi-accordion__item-toggle-button" [class.is-disabled]="item.disabled" [disabled]="item.disabled"
             (click)="item.disabled ? {} : toggle(index)">
       <svg
@@ -28,7 +28,7 @@
       </svg>
       <ng-container *ngTemplateOutlet="item?.customTitle?.templateRef || defaultTitle"></ng-container>
     </button>
-  </header>
+  </div>
   <ng-template #defaultTitle>
     <h3 class="cvi-accordion__item-title">{{item?.title}}</h3>
   </ng-template>

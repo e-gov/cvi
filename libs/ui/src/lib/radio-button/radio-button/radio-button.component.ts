@@ -3,6 +3,7 @@ import {
   ChangeDetectorRef,
   Component,
   EventEmitter,
+  HostBinding,
   Input,
   Output,
 } from '@angular/core';
@@ -27,6 +28,8 @@ export class RadioButtonComponent {
   @Input() disabled = false;
 
   @Output() inputInteraction: EventEmitter<string> = new EventEmitter<string>();
+
+  @HostBinding('attr.role') roleAttr = 'listitem';
 
   constructor(private changeDetector: ChangeDetectorRef) {}
 

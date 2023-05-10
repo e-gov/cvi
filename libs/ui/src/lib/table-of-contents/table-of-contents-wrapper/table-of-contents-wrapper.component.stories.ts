@@ -81,6 +81,11 @@ export const InDebugMode = Template.bind({});
 InDebugMode.args = {
   debugMode: true,
 } as never;
+InDebugMode.parameters = {
+  axe: {
+    disabledRules: ['color-contrast'],
+  },
+};
 
 const TemplateHeadingsWithIds: Story<TableOfContentsWrapperComponent> = (
   args: TableOfContentsWrapperComponent

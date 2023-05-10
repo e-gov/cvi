@@ -6,7 +6,7 @@
   $toggle-icon-width: 24px;
   $content-padding-left: $toggle-icon-width +
     map.get($cvi-spacing-patterns, 'kuressaare') * 2;
-  $color-disabled: get-color(black-coral-2);
+  $color-disabled: get-color(black-coral-9);
   $item-detail-margin: calc(get-spacing('haapsalu') * -1);
 
   @at-root {

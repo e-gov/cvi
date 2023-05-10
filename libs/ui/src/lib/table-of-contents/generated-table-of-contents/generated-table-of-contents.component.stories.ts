@@ -109,10 +109,22 @@ const Template: Story<GeneratedTableOfContentsComponent> = (
 });
 
 export const Default = Template.bind({});
+Default.parameters = {
+  axe: {
+    // disabling because of a false trigger when axe-storybook is run as a Github action
+    disabledRules: ['scrollable-region-focusable'],
+  },
+};
 
 export const WithCustomHeadingLevels = Template.bind({});
 WithCustomHeadingLevels.args = {
   headingSelector: 'h1, h2',
+};
+WithCustomHeadingLevels.parameters = {
+  axe: {
+    // disabling because of a false trigger when axe-storybook is run as a Github action
+    disabledRules: ['scrollable-region-focusable'],
+  },
 };
 
 const TemplateWithSteps: Story<GeneratedTableOfContentsComponent> = (

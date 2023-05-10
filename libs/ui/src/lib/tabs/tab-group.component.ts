@@ -27,6 +27,8 @@ export class TabGroupComponent implements AfterViewInit, OnDestroy {
   }
 
   activeIndex = 0;
+
+  /** @internal */
   baseId = 'tabgroup-' + uuidv4();
 
   /** @internal */

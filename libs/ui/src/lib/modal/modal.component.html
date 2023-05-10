@@ -1,7 +1,7 @@
-<div class="cvi-modal__dialog" role="dialog" aria-labelledby="modal_title" cdkTrapFocus>
-  <button class="cvi-modal__close" (click)="closeModal()" dataAttribute="close-modal-button">
+<div class="cvi-modal__dialog" role="dialog" [attr.aria-label]="title" cdkTrapFocus>
+  <button class="cvi-modal__close" (click)="closeModal()" dataAttribute="close-modal-button" aria-label="Close">
     <cvi-ng-icon [name]="'close'" [height]="14"></cvi-ng-icon>
   </button>
-  <ng-template [ngTemplateOutlet]="templateRef" [ngTemplateOutletContext]="{ $implicit: this }"></ng-template>
+  <ng-template [ngTemplateOutlet]="templateRef" [ngTemplateOutletContext]="{ $implicit: this, title }"></ng-template>
 </div>
 <div class="cvi-modal__backdrop" dataAttribute="modal-backdrop" (click)="closeModal()"></div>

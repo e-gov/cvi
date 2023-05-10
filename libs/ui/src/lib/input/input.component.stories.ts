@@ -31,10 +31,12 @@ const Template: Story<InputComponent> = (args: InputComponent) => ({
   props: args,
   /* template */
   template: `
-    <cvi-ng-input [placeholder]="placeholder"
-                  [disabled]="disabled"
-                  [suffixIconName]="suffixIconName"
-                  [htmlId]="htmlId"></cvi-ng-input>
+    <cvi-ng-form-item label="Some label" [htmlId]="htmlId">
+      <cvi-ng-input [placeholder]="placeholder"
+                    [disabled]="disabled"
+                    [suffixIconName]="suffixIconName"
+                    [htmlId]="htmlId"></cvi-ng-input>
+    </cvi-ng-form-item>
   `,
 });
 
@@ -89,30 +91,14 @@ const CharacterCounterTemplate: Story<InputComponent> = (
   props: args,
   /* template */
   template: `
-    <cvi-ng-input [placeholder]="placeholder"
-                  [disabled]="disabled"
-                  [htmlId]="htmlId"
-                  cviNgCharacterCounter
-                  [maxChars]="10"></cvi-ng-input>
-  `,
-});
-
-export const WithCharacterCounter = CharacterCounterTemplate.bind({});
-
-const FormItemTemplate: Story<InputComponent> = (args: InputComponent) => ({
-  props: args,
-  /* template */
-  template: `
-    <cvi-ng-form-item label="Some label"
-                      [htmlId]="htmlId">
+    <cvi-ng-form-item label="Some label" [htmlId]="htmlId">
       <cvi-ng-input [placeholder]="placeholder"
                     [disabled]="disabled"
-                    [htmlId]="htmlId"></cvi-ng-input>
+                    [htmlId]="htmlId"
+                    cviNgCharacterCounter
+                    [maxChars]="10"></cvi-ng-input>
     </cvi-ng-form-item>
   `,
 });
 
-export const WithFormItem = FormItemTemplate.bind({});
-WithFormItem.args = {
-  htmlId: 'some-item',
-};
+export const WithCharacterCounter = CharacterCounterTemplate.bind({});

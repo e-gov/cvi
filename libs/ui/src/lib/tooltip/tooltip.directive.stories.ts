@@ -13,6 +13,7 @@ const Template: Story<TooltipDirective> = (args: TooltipDirective) => ({
   props: {
     ...args,
   },
+  /* template */
   template: `
     <p [cviNgTooltip]="'This tooltip is displayed when hovering, if you move mouse out of the element then tooltip disappears'" dataAttribute="test-tooltip-source">
       Hover over this element to display tooltip
@@ -20,10 +21,13 @@ const Template: Story<TooltipDirective> = (args: TooltipDirective) => ({
   `,
 });
 
+export const Default = Template.bind({});
+
 const TemplateOnButton: Story<TooltipDirective> = (args: TooltipDirective) => ({
   props: {
     ...args,
   },
+  /* template */
   template: `
     <cvi-ng-notification [showIcon]="false" [showCloseButton]="false" [size]="'compact'">
       <p>When hovering on the questionmark, a tooltip appears.</p>
@@ -47,10 +51,13 @@ const TemplateOnButton: Story<TooltipDirective> = (args: TooltipDirective) => ({
   `,
 });
 
+export const TooltipOnButton = TemplateOnButton.bind({});
+
 const TemplateEdgeTest: Story<TooltipDirective> = (args: TooltipDirective) => ({
   props: {
     ...args,
   },
+  /* template */
   template: `
     <cvi-ng-track [horizontalAlignment]="'center'">
       <cvi-ng-notification [showIcon]="false" [showCloseButton]="false" [size]="'compact'">
@@ -62,6 +69,7 @@ const TemplateEdgeTest: Story<TooltipDirective> = (args: TooltipDirective) => ({
 
     <div style="width: 95vw">
       <cvi-ng-button appearance="secondary" style="float: left">
+        <cvi-ng-screenreader-text label="Button label"></cvi-ng-screenreader-text>
         <cvi-ng-icon [name]="'info'" [height]="'16'" [cviNgTooltip]=
         "'This tooltip is displayed when hovering, if you move mouse out of element then tooltip dissapears'">
         </cvi-ng-icon>
@@ -77,15 +85,19 @@ const TemplateEdgeTest: Story<TooltipDirective> = (args: TooltipDirective) => ({
   `,
 });
 
+export const TooltipNearSideEdge = TemplateEdgeTest.bind({});
+
 const TemplateHeaderTest: Story<TooltipDirective> = (
   args: TooltipDirective
 ) => ({
   props: {
     ...args,
   },
+  /* template */
   template: `
     <div style="position: fixed; text-align: center; top: 20px; left: 45%">
       <cvi-ng-button appearance="secondary">
+        <cvi-ng-screenreader-text label="Button label"></cvi-ng-screenreader-text>
         <cvi-ng-icon [name]="'info'" [height]="'16'" [cviNgTooltip]=
         "'This tooltip is displayed when hovering, if you move mouse out of element then tooltip dissapears'">
         </cvi-ng-icon>
@@ -99,10 +111,7 @@ const TemplateHeaderTest: Story<TooltipDirective> = (
         <p>tooltip should not be placed to the top of the window.</p>
       </cvi-ng-notification>
     </cvi-ng-track>
-    `,
+  `,
 });
 
-export const Default = Template.bind({});
-export const TooltipOnButton = TemplateOnButton.bind({});
-export const TooltipNearSideEdge = TemplateEdgeTest.bind({});
 export const TooltipNearTopEdge = TemplateHeaderTest.bind({});

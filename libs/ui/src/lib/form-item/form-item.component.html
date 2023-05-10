@@ -1,2 +1,2 @@
-<label [ngClass]="{'cvi-form-item__label': !isLabelHidden, 'cvi-screenreader-text': isLabelHidden}" [attr.for]="htmlId">{{ label }}{{ required ? ' *' : ''}}</label>
+<label [ngClass]="{'cvi-form-item__label': !isLabelHidden, 'cvi-screenreader-text': isLabelHidden}" [attr.for]="htmlId" [attr.id]="labelId">{{ label }}{{ required ? ' *' : ''}}</label>
 <ng-content></ng-content>

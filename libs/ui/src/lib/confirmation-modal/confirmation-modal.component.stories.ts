@@ -5,7 +5,7 @@ export default {
   title: 'Angular/Modal/Confirmation modal',
   component: ConfirmationModalComponent,
   args: {
-    title: 'Attention!!',
+    modalTitle: 'Attention!!',
     confirmButtonText: 'Confirm',
     cancelButtonText: 'Cancel',
   },
@@ -16,17 +16,17 @@ const Template: Story<ConfirmationModalComponent> = (
 ) => ({
   props: args,
   template: `
-    <ng-template #modal let-modal>
+    <ng-template #modal let-modal let-title="title">
       <cvi-ng-confirmation-modal [title]="title"
-                                   [confirmButtonText]="confirmButtonText"
-                                   [cancelButtonText]="cancelButtonText"
-                                   (cancelled)="modal.closeModal()"
-                                   (confirmed)="modal.closeModal()">
+                                 [confirmButtonText]="confirmButtonText"
+                                 [cancelButtonText]="cancelButtonText"
+                                 (cancelled)="modal.closeModal()"
+                                 (confirmed)="modal.closeModal()">
         <p>Are you sure about changes?</p>
         <br><p>All will be lost!!!</p>
       </cvi-ng-confirmation-modal>
     </ng-template>
-    <cvi-ng-button [cviNgModal]="modal" dataAttribute="test-button">Open modal</cvi-ng-button>
+    <cvi-ng-button [cviNgModal]="modal" [modalTitle]="modalTitle" dataAttribute="test-button">Open modal</cvi-ng-button>
   `,
 });
 
@@ -44,17 +44,17 @@ const TemplateModalOpen: Story<ConfirmationModalComponent> = (
 ) => ({
   props: args,
   template: `
-    <ng-template #modal let-modal>
+    <ng-template #modal let-modal let-title="title">
       <cvi-ng-confirmation-modal [title]="title"
-                                   [confirmButtonText]="confirmButtonText"
-                                   [cancelButtonText]="cancelButtonText"
-                                   (cancelled)="modal.closeModal()"
-                                   (confirmed)="modal.closeModal()">
+                                 [confirmButtonText]="confirmButtonText"
+                                 [cancelButtonText]="cancelButtonText"
+                                 (cancelled)="modal.closeModal()"
+                                 (confirmed)="modal.closeModal()">
         <p>Are you sure about changes?</p>
         <br><p>All will be lost!!!</p>
       </cvi-ng-confirmation-modal>
     </ng-template>
-    <cvi-ng-button [cviNgModal]="modal" [open]="true" dataAttribute="test-button">Open modal</cvi-ng-button>
+    <cvi-ng-button [cviNgModal]="modal" [modalTitle]="modalTitle" [open]="true" dataAttribute="test-button">Open modal</cvi-ng-button>
   `,
 });
 

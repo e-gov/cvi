@@ -12,7 +12,7 @@ describe('StatusBadgeComponent', () => {
     cy.loadStory('Angular Status Badge', 'Default')
       .get('cvi-ng-status-badge')
       .changeArg('severity', 'success');
-    cy.shouldHaveCSSVar('cvi-ng-status-badge', '--color', '#308653');
+    cy.shouldHaveCSSVar('cvi-ng-status-badge', '--color', '#2c7a4c');
   });
 
   it('Renders status badge with warning severity', () => {
