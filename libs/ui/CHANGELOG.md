@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.11.1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.11.0...ui-1.11.1) (2023-05-10)
+
+
+### Bug Fixes
+
+* enforce minimum peer dependency versions EBS-699 ([#99](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/99)) ([ca33d32](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/ca33d321f2b66b53f4740ef64da17697d70da463))
+
+
+
 # [1.11.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.10.1...ui-1.11.0) (2023-05-10)
 
 
