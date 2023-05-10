@@ -43,6 +43,7 @@ ARG cypress_download_mirror
 ARG use_private_registry
 ARG private_npm_registry
 
+ENV PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1
 RUN if [ "$use_private_registry" = true ]; then \
     npm config set registry $private_npm_registry && \
     export CYPRESS_INSTALL_BINARY=0 && \
