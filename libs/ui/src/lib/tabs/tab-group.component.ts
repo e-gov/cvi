@@ -21,6 +21,7 @@ import { v4 as uuidv4 } from 'uuid';
 })
 export class TabGroupComponent implements AfterViewInit, OnDestroy {
   @ContentChildren(TabComponent) allTabs!: QueryList<TabComponent>;
+
   @HostBinding('class') get hostClasses(): string {
     return 'cvi-tab-group';
   }
@@ -36,12 +37,12 @@ export class TabGroupComponent implements AfterViewInit, OnDestroy {
     ElementRef<HTMLButtonElement>
   >;
 
-  constructor(private cd: ChangeDetectorRef) {}
+  constructor(private cdRef: ChangeDetectorRef) {}
 
   ngAfterViewInit() {
     this.tabChangesSubscription = merge(
       ...this.allTabs.map((tab) => tab._stateChanges)
-    ).subscribe(() => this.cd.markForCheck());
+    ).subscribe(() => this.cdRef.markForCheck());
   }
 
   ngOnDestroy() {
@@ -50,6 +51,7 @@ export class TabGroupComponent implements AfterViewInit, OnDestroy {
 
   makeActive(index: number) {
     this.activeIndex = index;
+    this.cdRef.detectChanges();
   }
 
   updateButtonFocus(): void {
