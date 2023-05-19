@@ -1,0 +1,35 @@
+<div class="cvi-datepicker__calendar" tabindex="-1" id="datePickerCalendar">
+  <div class="cvi-datepicker__calendar-header">
+    <div class="cvi-datepicker__calendar-header-chevron">
+      <button (click)="previousMonth()">
+        <svg
+          class="cvi-datepicker__header-chevron-icon"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24" width="24" height="24">
+          <path d="M14.83 2.83L12 0L0 12L12 24L14.83 21.17L5.66 12L14.83 2.83Z" fill="white"/>
+        </svg>
+      </button>
+    </div>
+    <div class="cvi-datepicker__calendar-header-month">{{ monthLabels[displayMonth-1] }} {{ displayYear }}</div>
+    <div class="cvi-datepicker__calendar-header-chevron">
+      <button (click)="nextMonth()">
+        <svg
+          class="cvi-datepicker__header-chevron-icon"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24" width="24" height="24">
+          <path d="M2.99992 0L0.169922 2.83L9.33992 12L0.169922 21.17L2.99992 24L14.9999 12L2.99992 0Z" fill="white"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div class="cvi-datepicker__calendar-grid">
+    <div class="cvi-datepicker__calendar-daylabels">
+      <div class="cvi-datepicker__calendar-daylabel" *ngFor="let label of dayShorthandLabels">{{ label }}</div>
+    </div>
+    <div class="cvi-datepicker__calendar-weekrow" *ngFor="let _ of [].constructor(calendarArray.length); let i = index">
+      <div class="cvi-datepicker__calendar-daynumber" *ngFor="let day of calendarArray[i]">
+        <button class="cvi-datepicker__calendar-button" *ngIf="day !== 0" [ngClass]="getDateClass(day)" (click)="handleClick(day)">{{ day }}</button>
+      </div>
+    </div>
+  </div>
+</div>

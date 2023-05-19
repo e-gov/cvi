@@ -1,0 +1,133 @@
+@mixin cvi-datepicker($base: &) {
+  --comment: 'A datepicker';
+
+  @at-root {
+    #{$base}__input {
+      &-container {
+        border: 1px solid #9799A4;
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        width: 125px;
+        height: 40px;
+
+        &-focused {
+          border: 1px solid get-color(sapphire-blue-10);
+        }
+      }
+
+      &-field {
+        font-size: 16px;
+        border-left: 1px;
+        border-radius: 4px;
+        padding: 8px;
+        width: 96px;
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+      &-icon-wrapper {
+        width: 29px;
+        padding-top: 6px;
+      }
+
+      #{$base}--is-disabled & {
+        background-color: get-color(black-coral-0);
+        border: 1px solid get-color(black-coral-5);
+      }
+    }
+
+    #{$base}__calendar {
+      box-sizing: border-box;
+      position: absolute;
+      background: get-color(white);
+
+      border: 1.25px solid get-color(black-coral-6);
+      border-radius: 4px;
+
+      width: 392px;
+      height: 351px;
+      padding: 0;
+
+      color: #34394C;
+
+      &-header {
+        box-sizing: border-box;
+
+        width: 100%;
+        height: 48px;
+
+        background: get-color(sapphire-blue-10);
+
+        border: 1px solid get-color(black-coral-6);
+
+        display: flex;
+        justify-content: space-between;
+
+        margin: 0;
+
+        &-chevron {
+          width: 48px;
+          padding: 10px 15px;
+        }
+
+        &-chevron-icon {
+          fill: get-color(sapphire-blue-10);
+          flex-shrink: 0;
+        }
+
+        &-month {
+          vertical-align: middle;
+          font-size: 18px;
+          color: get-color(white);
+          padding-top: 10px;
+        }
+      }
+
+      &-daylabels, &-weekrow {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        height: 34px;
+        align-items: center;
+        margin-top: 4px;
+        color: #34394C;
+      }
+
+      &-daylabel {
+        font-weight: 700;
+        font-size: 14px;
+      }
+
+      &-daynumber {
+        font-size: 14px;
+        width: 34px;
+        height: 34px;
+      }
+
+      &-button {
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        color: #34394C;
+        border-radius: 100%;
+
+        &-selected {
+          font-weight: 700;
+          color: get-color(white);
+          background-color: get-color(sapphire-blue-10);
+        }
+
+        &-today {
+          background-color: get-color(black-coral-2);
+        }
+
+        &-disabled {
+          color: get-color(black-coral-2);
+        }
+      }
+    }
+  }
+}
