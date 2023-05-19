@@ -30,7 +30,9 @@ export class DatepickerComponent implements ControlValueAccessor {
   @Input() disabled = false;
   /** Placeholder */
   @Input() placeholder = '';
-  @ViewChild('datePickerCalendar') calendarComponent: ElementRef<HTMLElement> | undefined;
+  @ViewChild('datePickerCalendar') calendarComponent:
+    | ElementRef<HTMLElement>
+    | undefined;
 
   private internalValue?: any;
 
@@ -65,7 +67,10 @@ export class DatepickerComponent implements ControlValueAccessor {
     }`;
   }
 
-  constructor(private readonly cdRef: ChangeDetectorRef, elementRef: ElementRef) {
+  constructor(
+    private readonly cdRef: ChangeDetectorRef,
+    elementRef: ElementRef
+  ) {
     this.select = elementRef.nativeElement;
   }
 
@@ -109,15 +114,22 @@ export class DatepickerComponent implements ControlValueAccessor {
   }
 
   validateValue(val: string) {
-    if (!/^([1-9]|0[1-9]|1[0-9]|2[0-9]|3[0-1])\.([1-9]|0[1-9]|1[1-2])\.[1-2][0-9]{3}$/.test(val)) {
+    if (
+      !/^([1-9]|0[1-9]|1[0-9]|2[0-9]|3[0-1])\.([1-9]|0[1-9]|1[1-2])\.[1-2][0-9]{3}$/.test(
+        val
+      )
+    ) {
       return false;
     }
     const parts = val.split('.').map(Number);
     if (parts.length === 3) {
       const newDate = new Date(parts[2], parts[1] - 1, parts[0]);
-      return newDate.getDate() === parts[0] && newDate.getMonth() === parts[1] - 1 && newDate.getFullYear() === parts[2];
+      return (
+        newDate.getDate() === parts[0] &&
+        newDate.getMonth() === parts[1] - 1 &&
+        newDate.getFullYear() === parts[2]
+      );
     }
     return false;
   }
-
 }

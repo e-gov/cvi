@@ -1,4 +1,11 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnChanges, Output, } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  Input,
+  OnChanges,
+  Output,
+} from '@angular/core';
 
 @Component({
   selector: 'cvi-ng-datepicker-calendar',
@@ -20,7 +27,7 @@ export class DatepickerCalendarComponent implements OnChanges {
     'September',
     'Oktoober',
     'November',
-    'Detsember'
+    'Detsember',
   ];
 
   @Output() dateChanged = new EventEmitter<string>();
@@ -36,11 +43,12 @@ export class DatepickerCalendarComponent implements OnChanges {
   currentDate = new Date('2022-12-14');
 
   getCalendarArray(month: number, year: number) {
-    const firstDay = (new Date(year, month - 1, 1)).getDay();
-    const numberOfDays = (new Date(year, month, 0)).getDate();
+    const firstDay = new Date(year, month - 1, 1).getDay();
+    const numberOfDays = new Date(year, month, 0).getDate();
 
     const lastMonthDaysInFirstWeek = firstDay === 0 ? 6 : firstDay - 1;
-    const numberOfDaysWithLastMonthDays = lastMonthDaysInFirstWeek + numberOfDays;
+    const numberOfDaysWithLastMonthDays =
+      lastMonthDaysInFirstWeek + numberOfDays;
 
     const numberOfWeeks = Math.ceil(numberOfDaysWithLastMonthDays / 7);
 
@@ -49,14 +57,16 @@ export class DatepickerCalendarComponent implements OnChanges {
     for (let i = 0; i < numberOfWeeks; i++) {
       const arr = [];
       if (i === 0) {
-        new Array(lastMonthDaysInFirstWeek).fill(0).forEach(zero => arr.push(zero));
+        new Array(lastMonthDaysInFirstWeek)
+          .fill(0)
+          .forEach((zero) => arr.push(zero));
       }
       while (arr.length < 7 && dayCounter <= numberOfDays) {
         arr.push(dayCounter);
         dayCounter++;
       }
       if (i === numberOfWeeks - 1) {
-        new Array(7 - arr.length).fill(0).forEach(zero => arr.push(zero));
+        new Array(7 - arr.length).fill(0).forEach((zero) => arr.push(zero));
       }
       calendarArray.push(arr);
     }
@@ -65,10 +75,18 @@ export class DatepickerCalendarComponent implements OnChanges {
   }
 
   getDateClass(day: number): string {
-    if (this.selectedDay === day && this.displayMonth === this.month && this.displayYear === this.year) {
+    if (
+      this.selectedDay === day &&
+      this.displayMonth === this.month &&
+      this.displayYear === this.year
+    ) {
       return 'cvi-datepicker__calendar-button-selected';
     }
-    if (this.today.getDate() === day && this.today.getMonth() + 1 === this.displayMonth && this.today.getFullYear() === this.displayYear) {
+    if (
+      this.today.getDate() === day &&
+      this.today.getMonth() + 1 === this.displayMonth &&
+      this.today.getFullYear() === this.displayYear
+    ) {
       return 'cvi-datepicker__calendar-button-today';
     }
     return '';
@@ -78,7 +96,12 @@ export class DatepickerCalendarComponent implements OnChanges {
     this.selectedDay = day;
     this.month = this.displayMonth;
     this.year = this.displayYear;
-    const dateToEmit = (day < 10 ? ('0' + day) : day) + '.' + (this.month < 10 ? ('0' + this.month) : this.month) + '.' + this.year;
+    const dateToEmit =
+      (day < 10 ? '0' + day : day) +
+      '.' +
+      (this.month < 10 ? '0' + this.month : this.month) +
+      '.' +
+      this.year;
     this.dateChanged.emit(dateToEmit);
   }
 
@@ -89,7 +112,10 @@ export class DatepickerCalendarComponent implements OnChanges {
     } else {
       this.displayMonth -= 1;
     }
-    this.calendarArray = this.getCalendarArray(this.displayMonth, this.displayYear);
+    this.calendarArray = this.getCalendarArray(
+      this.displayMonth,
+      this.displayYear
+    );
   }
 
   nextMonth() {
@@ -99,7 +125,10 @@ export class DatepickerCalendarComponent implements OnChanges {
     } else {
       this.displayMonth += 1;
     }
-    this.calendarArray = this.getCalendarArray(this.displayMonth, this.displayYear);
+    this.calendarArray = this.getCalendarArray(
+      this.displayMonth,
+      this.displayYear
+    );
   }
 
   ngOnChanges() {
@@ -121,5 +150,4 @@ export class DatepickerCalendarComponent implements OnChanges {
 
     this.calendarArray = this.getCalendarArray(this.month, this.year);
   }
-
 }
