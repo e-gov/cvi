@@ -3,6 +3,9 @@
   "version": 2,
   "projects": {
     "icons": "libs/icons",
+    "react-sandbox": "apps/react-sandbox",
+    "react-sandbox-e2e": "apps/react-sandbox-e2e",
+    "react-ui": "libs/react-ui",
     "ria": "apps/ria",
     "ria-e2e": "apps/ria-e2e",
     "storybook": "libs/storybook",
