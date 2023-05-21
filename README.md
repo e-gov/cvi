@@ -29,6 +29,7 @@ Follow these steps to install and integrate our library:
 2. 📦 Install the necessary package to your project:
   - CSS framework: Use the command `npm i --save @egov/cvi-styles`
   - Angular components: Use the command `npm i --save @egov/cvi-ng`
+  - React components: Use the command `npm i --save @egov/cvi-react`
   - Icons: Use the command `npm i --save @egov/cvi-icons`
 
 3. 🏁 After installation, import the dependencies into your project. You'll find dedicated instructions for this in the documentation for the [CSS framework](https://e-gov.github.io/cvi/?path=/docs/styles-how-to-install--how-to-install), [Angular components](https://e-gov.github.io/cvi/?path=/docs/angular-installation--installation), and [icons](https://e-gov.github.io/cvi/?path=/docs/icons-how-to-use--page).

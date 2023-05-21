@@ -2,6 +2,7 @@ import {Meta} from '@storybook/addon-docs';
 import stylesPkg from '/libs/styles/package.json';
 import iconsPkg from '/libs/icons/package.json'
 import uiPkg from '/libs/ui/package.json'
+import reactPkg from '/libs/react-ui/package.json'
 
 <Meta title="Intro" parameters={{
   viewMode: 'docs',
@@ -12,7 +13,7 @@ import uiPkg from '/libs/ui/package.json'
 
 These Storybook docs contain detailed information on how to install and use CVI.
 
-The implementations include a shared CSS library (preprocessed with Sass) and HTML examples based on it, as well a UI kit in Angular and a typed icon library.
+The implementations include a shared CSS library (preprocessed with Sass) and HTML examples based on it, as well a UI kit in Angular, a UI kit in React and a typed icon library.
 
 Please choose an item you need in the sidebar to the left (press `S` if you don't see it).
 
@@ -26,4 +27,5 @@ The project source code is located [here](https://github.com/e-gov/cvi).
   <p>Styles: {stylesPkg.version}</p>
   <p>Icons: {iconsPkg.version}</p>
   <p>Angular UI kit: {uiPkg.version}</p>
+  <p>React UI kit: {reactPkg.version}</p>
 </b>

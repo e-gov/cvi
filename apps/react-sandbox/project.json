@@ -20,7 +20,10 @@
           "apps/react-sandbox/src/favicon.ico",
           "apps/react-sandbox/src/assets"
         ],
-        "styles": ["apps/react-sandbox/src/styles.scss"],
+        "styles": [
+          "apps/react-sandbox/src/styles.scss",
+          "libs/styles/src/lib/scss/main.scss"
+        ],
         "scripts": [],
         "webpackConfig": "@nrwl/react/plugins/webpack"
       },

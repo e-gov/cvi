@@ -1,21 +1,20 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import styles from './app.module.scss';
-import NxWelcome from './nx-welcome';
+import { ButtonComponent } from '@egov/cvi-react';
 
-import { Route, Routes, Link } from 'react-router-dom';
+import { Link, Route, Routes } from 'react-router-dom';
 
 export function App() {
   return (
     <>
-      <NxWelcome title="react-sandbox" />
-      <div />
+      <ButtonComponent appearance={ 'primary'} size={'s'}>Click me</ButtonComponent>
+      <div/>
 
       {/* START: routes */}
       {/* These routes and navigation have been generated for you */}
       {/* Feel free to move and update them to fit your needs */}
-      <br />
-      <hr />
-      <br />
+      <br/>
+      <hr/>
+      <br/>
       <div role="navigation">
         <ul>
           <li>
