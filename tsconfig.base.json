@@ -19,7 +19,8 @@
     "paths": {
       "@egov/cvi-icons": ["dist/libs/icons/index"],
       "@egov/cvi-ng": ["libs/ui/src/index.ts"],
-      "@egov/cvi-styles": ["libs/styles/src/index.ts"]
+      "@egov/cvi-styles": ["libs/styles/src/index.ts"],
+      "@ria/react-ui": ["libs/react-ui/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

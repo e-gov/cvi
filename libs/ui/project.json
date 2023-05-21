@@ -1,6 +1,8 @@
 {
   "name": "ui",
   "projectType": "library",
+  "tags": ["scope:cvi-ng"],
+  "implicitDependencies": ["icons"],
   "sourceRoot": "libs/ui/src",
   "prefix": "cvi-ng",
   "targets": {
@@ -45,7 +47,5 @@
         "skipCommitTypes": ["chore", "ci", "docs", "style", "test", "format"]
       }
     }
-  },
-  "tags": ["scope:cvi-ng"],
-  "implicitDependencies": ["icons"]
+  }
 }
