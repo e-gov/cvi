@@ -2,6 +2,10 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.1.1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/react-ui-0.1.0...react-ui-0.1.1) (2023-05-22)
+
+
+
 # 0.1.0 (2023-05-22)
 
 
