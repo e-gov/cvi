@@ -1,9 +1,9 @@
-$base-border-color: #9799A4;
-$base-border-radius: 4px;
-$base-font-size: 16px;
-$base-width: 125px;
-$base-height: 40px;
-$base-color: #34394C;
+$datepicker-border-color: #9799A4;
+$datepicker-border-radius: 4px;
+$datepicker-font-size: 16px;
+$datepicker-width: 125px;
+$datepicker-height: 40px;
+$datepicker-color: #34394C;
 
 @mixin cvi-datepicker($base: &) {
   --comment: 'A datepicker';
@@ -11,12 +11,12 @@ $base-color: #34394C;
   @at-root {
     #{$base}__input {
       &-container {
-        border: 1px solid $base-border-color;
-        border-radius: $base-border-radius;
+        border: 1px solid $datepicker-border-color;
+        border-radius: $datepicker-border-radius;
         display: flex;
         align-items: center;
-        width: $base-width;
-        height: $base-height;
+        width: $datepicker-width;
+        height: $datepicker-height;
 
         &-focused {
           border-color: get-color(sapphire-blue-10);
@@ -24,9 +24,9 @@ $base-color: #34394C;
       }
 
       &-field {
-        font-size: $base-font-size;
+        font-size: $datepicker-font-size;
         border-left: 1px;
-        border-radius: $base-border-radius;
+        border-radius: $datepicker-border-radius;
         padding: 8px;
         width: 96px;
 
@@ -51,10 +51,10 @@ $base-color: #34394C;
       position: absolute;
       background: get-color(white);
       border: 1.25px solid get-color(black-coral-6);
-      border-radius: $base-border-radius;
+      border-radius: $datepicker-border-radius;
       width: 392px;
       height: 351px;
-      color: $base-color;
+      color: $datepicker-color;
 
       &-header {
         box-sizing: border-box;
@@ -89,7 +89,7 @@ $base-color: #34394C;
         justify-content: space-around;
         height: 34px;
         align-items: center;
-        color: $base-color;
+        color: $datepicker-color;
       }
 
       &-daylabel {
@@ -107,7 +107,7 @@ $base-color: #34394C;
         width: 100%;
         height: 100%;
         text-align: center;
-        color: $base-color;
+        color: $datepicker-color;
         border-radius: 100%;
 
         &-selected {
