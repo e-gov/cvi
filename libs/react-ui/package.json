@@ -1,0 +1,15 @@
+{
+  "name": "@egov/cvi-react",
+  "version": "0.1.1",
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "require": "./index.js"
+    }
+  },
+  "publishConfig": {
+    "registry": "https://koodivaramu.eesti.ee/api/v4/projects/433/packages/npm/"
+  }
+}
