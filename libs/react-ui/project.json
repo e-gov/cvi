@@ -17,15 +17,17 @@
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
-        "project": "libs/ui/ng-package.json",
+        "project": "libs/react-ui/ng-package.json",
         "outputPath": "dist/libs/react-ui"
       },
       "configurations": {
         "production": {
-          "tsConfig": "libs/react-ui/tsconfig.lib.prod.json"
+          "tsConfig": "libs/react-ui/tsconfig.lib.prod.json",
+          "mode": "production"
         },
         "development": {
-          "tsConfig": "libs/react-ui/tsconfig.lib.json"
+          "tsConfig": "libs/react-ui/tsconfig.lib.json",
+          "mode": "development"
         }
       }
     },
