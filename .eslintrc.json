@@ -23,6 +23,10 @@
               {
                 "sourceTag": "scope:cvi-ng",
                 "onlyDependOnLibsWithTags": [""]
+              },
+              {
+                "sourceTag": "scope:cvi-react",
+                "onlyDependOnLibsWithTags": [""]
               }
             ]
           }
