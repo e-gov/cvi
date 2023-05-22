@@ -41,8 +41,6 @@ export class DatepickerComponent implements ControlValueAccessor {
 
   inputContainerClass = {};
 
-  private lifeCycleTicks = 0;
-  private checks = 0;
   private readonly select: HTMLElement;
 
   // eslint-disable-next-line @typescript-eslint/no-empty-function
