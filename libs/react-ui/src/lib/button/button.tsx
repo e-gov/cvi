@@ -42,16 +42,15 @@ class ButtonComponent extends React.Component<ButtonComponentProps> {
   }
 
   getHostClasses() {
-    return `cvi-button cvi-button--appearance-${this.props.appearance} cvi-button--size-${this.props.size}${this.props.disabled ? ' cvi-button--is-disabled' : ''}`;
+    const appearance = this.props.appearance ?? ButtonAppearance.PRIMARY;
+    const size = this.props.size ?? ButtonSize.S;
+    return `cvi-button cvi-button--appearance-${appearance} cvi-button--size-${size}${this.props.disabled ? ' cvi-button--is-disabled' : ''}`;
   }
 
   render() {
     const {
       disabled = false,
-      children,
-      appearance = ButtonAppearance.PRIMARY,
-      size = ButtonSize.M,
-      onClick = null
+      children
     } = this.props;
 
     return (
