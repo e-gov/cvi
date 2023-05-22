@@ -25,6 +25,6 @@ export class ConfirmationModalComponent implements AfterViewInit {
   @ViewChild('cancelButtonRef') cancelButtonRef!: ButtonComponent;
 
   ngAfterViewInit() {
-    this.cancelButtonRef.focus();
+    this.cancelButtonRef?.focus();
   }
 }
