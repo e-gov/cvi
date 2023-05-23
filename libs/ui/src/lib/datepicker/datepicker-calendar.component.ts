@@ -53,15 +53,32 @@ export class DatepickerCalendarComponent implements OnChanges {
 
   getCalendarArray(date: Date): number[][] {
     const firstDay = new Date(date.getFullYear(), date.getMonth(), 1).getDay();
+    const adjustedFirstDay = firstDay === 0 ? 7 : firstDay; // adjust for week starting on Monday
     const numberOfDays = new Date(
       date.getFullYear(),
       date.getMonth() + 1,
       0
     ).getDate();
 
-    const weeks = [];
-    for (let day = 1 - (firstDay || 7); day <= numberOfDays; day += 7) {
-      const week = new Array(7).fill(0).map((_, i) => day + i);
+    const weeks: number[][] = [];
+    let day = 1;
+    let week: number[] = [];
+
+    // Adjust the first week
+    for (let i = 1; i <= 7; i++) {
+      if (i < adjustedFirstDay) {
+        week.push(0);
+      } else {
+        week.push(day++);
+      }
+    }
+    weeks.push(week);
+
+    // Add the rest of the weeks
+    while (day <= numberOfDays) {
+      week = new Array(7)
+        .fill(0)
+        .map((_, i) => (day <= numberOfDays ? day++ : 0));
       weeks.push(week);
     }
 
