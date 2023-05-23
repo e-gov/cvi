@@ -14,6 +14,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 @Component({
   selector: 'cvi-ng-datepicker',
   templateUrl: './datepicker.component.html',
+  styleUrls: ['./datepicker.component.scss'],
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
