@@ -96,12 +96,14 @@ export class DatepickerCalendarComponent implements OnChanges, OnInit {
   getDateClass(day: number, index: number): string {
     let classes = '';
 
-    const isSelectedDate = this.selectedDate &&
+    const isSelectedDate =
+      this.selectedDate &&
       day === this.selectedDate.getDate() &&
       this.displayDate.getMonth() === this.selectedDate.getMonth() &&
       this.displayDate.getFullYear() === this.selectedDate.getFullYear();
 
-    const isToday = day === this.today.getDate() &&
+    const isToday =
+      day === this.today.getDate() &&
       this.displayDate.getMonth() === this.today.getMonth() &&
       this.displayDate.getFullYear() === this.today.getFullYear();
 
