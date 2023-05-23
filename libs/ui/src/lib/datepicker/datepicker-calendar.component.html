@@ -27,11 +27,11 @@
       <div class="cvi-datepicker__calendar-daylabel" *ngFor="let label of dayShorthandLabels">{{ label }}</div>
     </div>
     <div class="cvi-datepicker__calendar-weekrow" *ngFor="let _ of [].constructor(calendarArray.length); let i = index">
-      <div class="cvi-datepicker__calendar-daynumber" *ngFor="let day of calendarArray[i]">
+      <div class="cvi-datepicker__calendar-daynumber" *ngFor="let day of calendarArray[i]; let j = index">
         <button
           class="cvi-datepicker__calendar-button"
           *ngIf="day !== 0"
-          [ngClass]="getDateClass(day)"
+          [ngClass]="getDateClass(day, j)"
           (click)="handleClick(day)"
           [attr.aria-selected]="day === selectedDate.getDay()"
           [attr.aria-current]="day === today.getDay()"

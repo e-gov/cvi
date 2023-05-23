@@ -56,6 +56,18 @@ $datepicker-color: #34394C;
       height: 280px;
       color: $datepicker-color;
 
+      &-weekend {
+        color: grey !important;
+      }
+
+      &-visually-hidden {
+        position: absolute;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        width: 1px;
+        overflow: hidden;
+      }
+
       &-header {
         box-sizing: border-box;
         width: 100%;

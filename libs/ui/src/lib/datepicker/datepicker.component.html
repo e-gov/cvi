@@ -5,7 +5,7 @@
   (focus)="setFocus(true)"
   [attr.aria-expanded]="focus"
 >
-  <label [attr.for]="htmlId" class="visually-hidden">Select Date</label>
+  <label [attr.for]="htmlId" class="cvi-datepicker__calendar-visually-hidden">Select Date</label>
   <input
     type="text"
     tabindex="-1"
@@ -27,7 +27,7 @@
     </svg>
   </span>
 </div>
-<div aria-live="polite" class="visually-hidden">{{ value }}</div>
+<div aria-live="polite" class="cvi-datepicker__calendar-visually-hidden">{{ value }}</div>
 <cvi-ng-datepicker-calendar
   *ngIf="focus"
   [date]="valueValidated"

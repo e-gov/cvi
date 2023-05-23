@@ -85,22 +85,27 @@ export class DatepickerCalendarComponent implements OnChanges {
     return weeks;
   }
 
-  getDateClass(day: number): string {
+  getDateClass(day: number, index: number): string {
+    let classes = '';
+
     if (
       day === this.selectedDate.getDate() &&
       this.displayDate.getMonth() === this.selectedDate.getMonth() &&
       this.displayDate.getFullYear() === this.selectedDate.getFullYear()
     ) {
-      return 'cvi-datepicker__calendar-button-selected';
+      classes += ' cvi-datepicker__calendar-button-selected';
     }
     if (
       day === this.today.getDate() &&
       this.displayDate.getMonth() === this.today.getMonth() &&
       this.displayDate.getFullYear() === this.today.getFullYear()
     ) {
-      return 'cvi-datepicker__calendar-button-today';
+      classes += ' cvi-datepicker__calendar-button-today';
     }
-    return '';
+    if (index === 5 || index === 6) {
+      classes += ' cvi-datepicker__calendar-weekend';
+    }
+    return classes.trim();
   }
 
   handleClick(day: number) {
