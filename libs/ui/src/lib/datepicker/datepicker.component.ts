@@ -11,92 +11,76 @@ import {
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
-const datepickerComponentValueAccessor = {
-  provide: NG_VALUE_ACCESSOR,
-  useExisting: forwardRef(() => DatepickerComponent),
-  multi: true,
-};
-
 @Component({
   selector: 'cvi-ng-datepicker',
   templateUrl: './datepicker.component.html',
-  providers: [datepickerComponentValueAccessor],
+  providers: [
+    {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: forwardRef(() => DatepickerComponent),
+      multi: true,
+    },
+  ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DatepickerComponent implements ControlValueAccessor {
-  /** HTML id passed from FormItem component */
   @Input() htmlId!: string;
-  /** Input is disabled */
   @Input() disabled = false;
-  /** Placeholder */
   @Input() placeholder = '';
-  @ViewChild('datePickerCalendar') calendarComponent:
-    | ElementRef<HTMLElement>
-    | undefined;
+  @ViewChild('datePickerCalendar') calendarComponent: ElementRef<HTMLElement> | undefined;
 
-  private internalValue?: any;
+  private internalValue?: string;
 
   focus = false;
   valueValidated = '';
 
-  inputContainerClass = {};
-
   private readonly select: HTMLElement;
 
+  // eslint-disable-next-line @typescript-eslint/no-empty-function,@typescript-eslint/no-unused-vars
+  private onChanged = (_: string) => {};
   // eslint-disable-next-line @typescript-eslint/no-empty-function
-  private onChanged: (value: unknown) => void = () => {};
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
-  private onTouched: () => unknown = () => {};
+  private onTouched = () => {};
 
   @HostListener('document:click', ['$event'])
   handleClickOutside(event: Event) {
-    if (!this.disabled) {
-      if (this.select.contains(event.target as any)) {
-        return;
-      }
-
+    if (!this.disabled && !this.select.contains(event.target as never)) {
       this.setFocus(false);
     }
   }
 
   @HostBinding('class') get getHostClasses(): string {
-    return `cvi-textfield${
-      this.disabled ? ' cvi-datepicker--is-disabled' : ''
-    }`;
+    return `cvi-textfield${this.disabled ? ' cvi-datepicker--is-disabled' : ''}`;
   }
 
-  constructor(
-    private readonly cdRef: ChangeDetectorRef,
-    elementRef: ElementRef
-  ) {
+  constructor(private readonly cdRef: ChangeDetectorRef, private readonly elementRef: ElementRef) {
     this.select = elementRef.nativeElement;
   }
 
-  get value(): any {
+  get value(): string | undefined {
     return this.internalValue;
   }
 
-  set value(val: any) {
+  set value(val: string | undefined) {
     this.internalValue = val;
-    this.onChanged(val);
+    this.onChanged(val ?? '');
     this.onTouched();
-    if (this.validateValue(val)) {
-      this.valueValidated = val;
+    if (this.validateValue(val ?? '')) {
+      this.valueValidated = val ?? '';
     }
   }
 
-  writeValue(obj: any): void {
-    if (obj !== this.internalValue) {
-      this.internalValue = obj;
+  writeValue(value: string | undefined): void {
+    if (value !== this.internalValue) {
+      this.internalValue = value;
       this.cdRef.markForCheck();
     }
   }
 
-  registerOnChange(fn: any): void {
+  registerOnChange(fn: (value: string) => void): void {
     this.onChanged = fn;
   }
 
-  registerOnTouched(fn: any): void {
+  registerOnTouched(fn: () => void): void {
     this.onTouched = fn;
   }
 
@@ -106,28 +90,19 @@ export class DatepickerComponent implements ControlValueAccessor {
     }
   }
 
-  handleDateSelect(event: string) {
-    this.value = event;
+  handleDateSelect(value: string): void {
+    this.value = value;
     this.setFocus(false);
   }
 
-  validateValue(val: string) {
-    if (
-      !/^([1-9]|0[1-9]|1[0-9]|2[0-9]|3[0-1])\.([1-9]|0[1-9]|1[1-2])\.[1-2][0-9]{3}$/.test(
-        val
-      )
-    ) {
+  validateValue(value: string): boolean {
+    const regex = /^([1-9]|0[1-9]|1[0-9]|2[0-9]|3[0-1])\.([1-9]|0[1-9]|1[1-2])\.[1-2][0-9]{3}$/;
+    if (!regex.test(value)) {
       return false;
     }
-    const parts = val.split('.').map(Number);
-    if (parts.length === 3) {
-      const newDate = new Date(parts[2], parts[1] - 1, parts[0]);
-      return (
-        newDate.getDate() === parts[0] &&
-        newDate.getMonth() === parts[1] - 1 &&
-        newDate.getFullYear() === parts[2]
-      );
-    }
-    return false;
+
+    const [day, month, year] = value.split('.').map(Number);
+    const date = new Date(year, month - 1, day);
+    return date.getDate() === day && date.getMonth() === month - 1 && date.getFullYear() === year;
   }
 }
