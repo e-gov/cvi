@@ -27,7 +27,9 @@ export class DatepickerComponent implements ControlValueAccessor {
   @Input() htmlId!: string;
   @Input() disabled = false;
   @Input() placeholder = '';
-  @ViewChild('datePickerCalendar') calendarComponent: ElementRef<HTMLElement> | undefined;
+  @ViewChild('datePickerCalendar') calendarComponent:
+    | ElementRef<HTMLElement>
+    | undefined;
 
   private internalValue?: string;
 
@@ -49,10 +51,15 @@ export class DatepickerComponent implements ControlValueAccessor {
   }
 
   @HostBinding('class') get getHostClasses(): string {
-    return `cvi-textfield${this.disabled ? ' cvi-datepicker--is-disabled' : ''}`;
+    return `cvi-textfield${
+      this.disabled ? ' cvi-datepicker--is-disabled' : ''
+    }`;
   }
 
-  constructor(private readonly cdRef: ChangeDetectorRef, private readonly elementRef: ElementRef) {
+  constructor(
+    private readonly cdRef: ChangeDetectorRef,
+    private readonly elementRef: ElementRef
+  ) {
     this.select = elementRef.nativeElement;
   }
 
@@ -96,13 +103,18 @@ export class DatepickerComponent implements ControlValueAccessor {
   }
 
   validateValue(value: string): boolean {
-    const regex = /^([1-9]|0[1-9]|1[0-9]|2[0-9]|3[0-1])\.([1-9]|0[1-9]|1[1-2])\.[1-2][0-9]{3}$/;
+    const regex =
+      /^([1-9]|0[1-9]|1[0-9]|2[0-9]|3[0-1])\.([1-9]|0[1-9]|1[1-2])\.[1-2][0-9]{3}$/;
     if (!regex.test(value)) {
       return false;
     }
 
     const [day, month, year] = value.split('.').map(Number);
     const date = new Date(year, month - 1, day);
-    return date.getDate() === day && date.getMonth() === month - 1 && date.getFullYear() === year;
+    return (
+      date.getDate() === day &&
+      date.getMonth() === month - 1 &&
+      date.getFullYear() === year
+    );
   }
 }
