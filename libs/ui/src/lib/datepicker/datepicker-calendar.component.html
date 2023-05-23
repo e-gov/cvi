@@ -10,7 +10,9 @@
         </svg>
       </button>
     </div>
-    <div id="monthYearLabel" class="cvi-datepicker__calendar-header-month">{{ monthLabels[displayDate.getMonth()] }} {{ displayDate.getDate() }}</div>
+    <div *ngIf="this.displayDate"
+         id="monthYearLabel"
+         class="cvi-datepicker__calendar-header-month">{{ monthLabels[displayDate.getMonth()] }} {{ displayDate.getDate() }}</div>
     <div class="cvi-datepicker__calendar-header-chevron">
       <button aria-label="Next month" (click)="nextMonth()">
         <svg
@@ -33,7 +35,7 @@
           *ngIf="day !== 0"
           [ngClass]="getDateClass(day, j)"
           (click)="handleClick(day)"
-          [attr.aria-selected]="day === selectedDate.getDay()"
+          [attr.aria-selected]="day === selectedDate?.getDay()"
           [attr.aria-current]="day === today.getDay()"
         >
           {{ day }}

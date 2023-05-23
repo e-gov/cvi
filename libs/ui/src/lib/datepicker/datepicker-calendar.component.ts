@@ -4,7 +4,9 @@ import {
   EventEmitter,
   Input,
   OnChanges,
+  OnInit,
   Output,
+  SimpleChanges,
 } from '@angular/core';
 
 @Component({
@@ -12,7 +14,7 @@ import {
   templateUrl: './datepicker-calendar.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class DatepickerCalendarComponent implements OnChanges {
+export class DatepickerCalendarComponent implements OnChanges, OnInit {
   @Input() date?: string;
   @Input() dayShorthandLabels = ['E', 'T', 'K', 'N', 'R', 'L', 'P'];
   @Input() monthLabels = [
@@ -37,13 +39,19 @@ export class DatepickerCalendarComponent implements OnChanges {
   displayDate!: Date;
   calendarArray: number[][] = [];
 
-  ngOnChanges() {
-    this.selectedDate = this.date
-      ? this.parseDate(this.date)
-      : new Date(this.today);
-    this.displayDate = new Date(this.selectedDate);
+  ngOnInit(): void {
+    if (this.calendarArray.length === 0) {
+      this.displayDate = new Date();
+      this.calendarArray = this.getCalendarArray(this.displayDate);
+    }
+  }
 
-    this.calendarArray = this.getCalendarArray(this.displayDate);
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes['date'] && this.date) {
+      this.selectedDate = this.parseDate(this.date);
+      this.displayDate = new Date(this.selectedDate);
+      this.calendarArray = this.getCalendarArray(this.displayDate);
+    }
   }
 
   parseDate(date: string): Date {
@@ -88,18 +96,19 @@ export class DatepickerCalendarComponent implements OnChanges {
   getDateClass(day: number, index: number): string {
     let classes = '';
 
-    if (
+    const isSelectedDate = this.selectedDate &&
       day === this.selectedDate.getDate() &&
       this.displayDate.getMonth() === this.selectedDate.getMonth() &&
-      this.displayDate.getFullYear() === this.selectedDate.getFullYear()
-    ) {
+      this.displayDate.getFullYear() === this.selectedDate.getFullYear();
+
+    const isToday = day === this.today.getDate() &&
+      this.displayDate.getMonth() === this.today.getMonth() &&
+      this.displayDate.getFullYear() === this.today.getFullYear();
+
+    if (isSelectedDate) {
       classes += ' cvi-datepicker__calendar-button-selected';
     }
-    if (
-      day === this.today.getDate() &&
-      this.displayDate.getMonth() === this.today.getMonth() &&
-      this.displayDate.getFullYear() === this.today.getFullYear()
-    ) {
+    if (isToday && !isSelectedDate) {
       classes += ' cvi-datepicker__calendar-button-today';
     }
     if (index === 5 || index === 6) {
