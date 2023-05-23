@@ -32,60 +32,54 @@ export class DatepickerCalendarComponent implements OnChanges {
 
   @Output() dateChanged = new EventEmitter<string>();
 
-  year = 2022;
-  month = 12;
-  selectedDay = 10;
-  displayMonth = 12;
-  displayYear = 2022;
-  calendarArray: number[][] = [];
   today = new Date();
+  selectedDate!: Date;
+  displayDate!: Date;
+  calendarArray: number[][] = [];
 
-  currentDate = new Date('2022-12-14');
+  ngOnChanges() {
+    this.selectedDate = this.date
+      ? this.parseDate(this.date)
+      : new Date(this.today);
+    this.displayDate = new Date(this.selectedDate);
 
-  getCalendarArray(month: number, year: number) {
-    const firstDay = new Date(year, month - 1, 1).getDay();
-    const numberOfDays = new Date(year, month, 0).getDate();
+    this.calendarArray = this.getCalendarArray(this.displayDate);
+  }
 
-    const lastMonthDaysInFirstWeek = firstDay === 0 ? 6 : firstDay - 1;
-    const numberOfDaysWithLastMonthDays =
-      lastMonthDaysInFirstWeek + numberOfDays;
+  parseDate(date: string): Date {
+    const [day, month, year] = date.split('.').map(Number);
+    return new Date(year, month - 1, day);
+  }
 
-    const numberOfWeeks = Math.ceil(numberOfDaysWithLastMonthDays / 7);
+  getCalendarArray(date: Date): number[][] {
+    const firstDay = new Date(date.getFullYear(), date.getMonth(), 1).getDay();
+    const numberOfDays = new Date(
+      date.getFullYear(),
+      date.getMonth() + 1,
+      0
+    ).getDate();
 
-    const calendarArray = [];
-    let dayCounter = 1;
-    for (let i = 0; i < numberOfWeeks; i++) {
-      const arr = [];
-      if (i === 0) {
-        new Array(lastMonthDaysInFirstWeek)
-          .fill(0)
-          .forEach((zero) => arr.push(zero));
-      }
-      while (arr.length < 7 && dayCounter <= numberOfDays) {
-        arr.push(dayCounter);
-        dayCounter++;
-      }
-      if (i === numberOfWeeks - 1) {
-        new Array(7 - arr.length).fill(0).forEach((zero) => arr.push(zero));
-      }
-      calendarArray.push(arr);
+    const weeks = [];
+    for (let day = 1 - (firstDay || 7); day <= numberOfDays; day += 7) {
+      const week = new Array(7).fill(0).map((_, i) => day + i);
+      weeks.push(week);
     }
 
-    return calendarArray;
+    return weeks;
   }
 
   getDateClass(day: number): string {
     if (
-      this.selectedDay === day &&
-      this.displayMonth === this.month &&
-      this.displayYear === this.year
+      day === this.selectedDate.getDate() &&
+      this.displayDate.getMonth() === this.selectedDate.getMonth() &&
+      this.displayDate.getFullYear() === this.selectedDate.getFullYear()
     ) {
       return 'cvi-datepicker__calendar-button-selected';
     }
     if (
-      this.today.getDate() === day &&
-      this.today.getMonth() + 1 === this.displayMonth &&
-      this.today.getFullYear() === this.displayYear
+      day === this.today.getDate() &&
+      this.displayDate.getMonth() === this.today.getMonth() &&
+      this.displayDate.getFullYear() === this.today.getFullYear()
     ) {
       return 'cvi-datepicker__calendar-button-today';
     }
@@ -93,61 +87,31 @@ export class DatepickerCalendarComponent implements OnChanges {
   }
 
   handleClick(day: number) {
-    this.selectedDay = day;
-    this.month = this.displayMonth;
-    this.year = this.displayYear;
-    const dateToEmit =
-      (day < 10 ? '0' + day : day) +
-      '.' +
-      (this.month < 10 ? '0' + this.month : this.month) +
-      '.' +
-      this.year;
-    this.dateChanged.emit(dateToEmit);
+    this.selectedDate = new Date(
+      this.displayDate.getFullYear(),
+      this.displayDate.getMonth(),
+      day
+    );
+    this.dateChanged.emit(this.formatDate(this.selectedDate));
   }
 
   previousMonth() {
-    if (this.displayMonth === 1) {
-      this.displayMonth = 12;
-      this.displayYear -= 1;
-    } else {
-      this.displayMonth -= 1;
-    }
-    this.calendarArray = this.getCalendarArray(
-      this.displayMonth,
-      this.displayYear
-    );
+    this.displayDate.setMonth(this.displayDate.getMonth() - 1);
+    this.calendarArray = this.getCalendarArray(this.displayDate);
   }
 
   nextMonth() {
-    if (this.displayMonth === 12) {
-      this.displayMonth = 1;
-      this.displayYear += 1;
-    } else {
-      this.displayMonth += 1;
-    }
-    this.calendarArray = this.getCalendarArray(
-      this.displayMonth,
-      this.displayYear
-    );
+    this.displayDate.setMonth(this.displayDate.getMonth() + 1);
+    this.calendarArray = this.getCalendarArray(this.displayDate);
   }
 
-  ngOnChanges() {
-    if (!this.date || this.date === '') {
-      this.selectedDay = this.today.getDate();
-      this.month = this.today.getMonth() + 1;
-      this.year = this.today.getFullYear();
-    }
+  private formatDate(date: Date): string {
+    return `${this.pad(date.getDate())}.${this.pad(
+      date.getMonth() + 1
+    )}.${date.getFullYear()}`;
+  }
 
-    if (this.date) {
-      const dateAsArray = this.date.split('.').map(Number);
-      this.selectedDay = dateAsArray[0];
-      this.month = dateAsArray[1];
-      this.year = dateAsArray[2];
-    }
-
-    this.displayMonth = this.month;
-    this.displayYear = this.year;
-
-    this.calendarArray = this.getCalendarArray(this.month, this.year);
+  private pad(n: number): string {
+    return n < 10 ? '0' + n : '' + n;
   }
 }
