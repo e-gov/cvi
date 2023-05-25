@@ -11,7 +11,7 @@
     tabindex="-1"
     [attr.id]="htmlId"
     class="cvi-datepicker__input-field"
-    [placeholder]="placeholder"
+    [placeholder]="placeholder??''"
     [attr.disabled]="disabled ? disabled : null"
     [(ngModel)]="value"
     (focus)="setFocus(true)"
