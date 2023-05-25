@@ -33,7 +33,9 @@ export const DatepickerDefault = Template.bind({});
 DatepickerDefault.storyName = 'Default';
 DatepickerDefault.args = {};
 
-const FormTemplate: Story<DatepickerComponent> = (args: DatepickerComponent) => {
+const FormTemplate: Story<DatepickerComponent> = (
+  args: DatepickerComponent
+) => {
   const form = new FormGroup({
     date: new FormControl('04.05.2023'),
   });
@@ -73,14 +75,13 @@ export const DatepickerFormGroup = FormTemplate.bind({});
 DatepickerFormGroup.storyName = 'FormGroup';
 
 export const DatepickerCustomPlaceholder = Template.bind({});
-DatepickerCustomPlaceholder.storyName = 'Custom placeholder'
+DatepickerCustomPlaceholder.storyName = 'Custom placeholder';
 DatepickerCustomPlaceholder.args = {
   placeholder: 'dd.mm.yyyy',
 };
 
 export const DatepickerDisabled = Template.bind({});
-DatepickerDisabled.storyName = 'Disabled'
+DatepickerDisabled.storyName = 'Disabled';
 DatepickerDisabled.args = {
   disabled: true,
 };
-
