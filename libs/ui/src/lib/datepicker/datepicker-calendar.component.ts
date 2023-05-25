@@ -138,7 +138,7 @@ export class DatepickerCalendarComponent implements OnChanges, OnInit {
     this.calendarArray = this.getCalendarArray(this.displayDate);
   }
 
-  private formatDate(date: Date): string {
+  formatDate(date: Date): string {
     return `${this.pad(date.getDate())}.${this.pad(
       date.getMonth() + 1
     )}.${date.getFullYear()}`;

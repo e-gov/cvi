@@ -1,6 +1,5 @@
 import {
   ChangeDetectionStrategy,
-  ChangeDetectorRef,
   Component,
   ElementRef,
   forwardRef,
@@ -56,10 +55,7 @@ export class DatepickerComponent implements ControlValueAccessor {
     }`;
   }
 
-  constructor(
-    private readonly cdRef: ChangeDetectorRef,
-    private readonly elementRef: ElementRef
-  ) {
+  constructor(private readonly elementRef: ElementRef) {
     this.select = elementRef.nativeElement;
   }
 
@@ -77,10 +73,7 @@ export class DatepickerComponent implements ControlValueAccessor {
   }
 
   writeValue(value: string | undefined): void {
-    if (value !== this.internalValue) {
-      this.internalValue = value;
-      this.cdRef.markForCheck();
-    }
+    this.internalValue = value;
   }
 
   registerOnChange(fn: (value: string) => void): void {
