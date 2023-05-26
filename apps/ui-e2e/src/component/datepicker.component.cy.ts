@@ -9,7 +9,8 @@ describe('DatepickerComponent', () => {
       .shouldHaveClasses('input', 'cvi-datepicker__input-field')
       .changeArg('htmlId', 'Qwerty123')
       .shouldHaveAttributes('input', [
-        { name: 'id', value: 'Qwerty123' }, { name: 'placeholder', value: 'pp.kk.aaaa' },
+        { name: 'id', value: 'Qwerty123' },
+        { name: 'placeholder', value: 'pp.kk.aaaa' },
       ])
       .and('not.be.disabled');
   });
@@ -23,9 +24,7 @@ describe('DatepickerComponent', () => {
       'cvi-textfield',
       'cvi-datepicker--is-disabled',
     ])
-      .shouldHaveAttributes('input', [
-        { name: 'id', value: 'Qwerty123' },
-      ])
+      .shouldHaveAttributes('input', [{ name: 'id', value: 'Qwerty123' }])
       .and('be.disabled');
 
     cy.get('cvi-ng-datepicker')
@@ -39,7 +38,9 @@ describe('DatepickerComponent', () => {
     cy.loadStory('Angular Form Datepicker', 'Default')
       .get('cvi-ng-datepicker')
       .click()
-      .shouldHaveClasses('cvi-ng-datepicker-calendar div', ['cvi-datepicker__calendar'])
+      .shouldHaveClasses('cvi-ng-datepicker-calendar div', [
+        'cvi-datepicker__calendar',
+      ])
       .get('button.cvi-datepicker__calendar-button')
       .first()
       .click()
@@ -54,9 +55,13 @@ describe('DatepickerComponent', () => {
       .should('have.value', '')
       .type('28.02.2023')
       .click()
-      .shouldHaveClasses('cvi-ng-datepicker-calendar div', ['cvi-datepicker__calendar'])
+      .shouldHaveClasses('cvi-ng-datepicker-calendar div', [
+        'cvi-datepicker__calendar',
+      ])
       .get('button.cvi-datepicker__calendar-button')
       .last()
-      .shouldHaveClasses('button.cvi-datepicker__calendar-button', ['cvi-datepicker__calendar-button cvi-datepicker__calendar-button-selected']);
+      .shouldHaveClasses('button.cvi-datepicker__calendar-button', [
+        'cvi-datepicker__calendar-button cvi-datepicker__calendar-button-selected',
+      ]);
   });
 });
