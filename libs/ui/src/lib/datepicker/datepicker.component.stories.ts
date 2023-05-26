@@ -29,9 +29,9 @@ const Template: Story<DatepickerComponent> = (args: DatepickerComponent) => ({
   `,
 });
 
-export const DatepickerDefault = Template.bind({});
-DatepickerDefault.storyName = 'Default';
-DatepickerDefault.args = {};
+export const Default = Template.bind({});
+Default.storyName = 'Default';
+Default.args = {};
 
 const FormTemplate: Story<DatepickerComponent> = (
   args: DatepickerComponent
@@ -71,17 +71,14 @@ const FormTemplate: Story<DatepickerComponent> = (
     `,
   };
 };
-export const DatepickerFormGroup = FormTemplate.bind({});
-DatepickerFormGroup.storyName = 'FormGroup';
+export const WithFormGroup = FormTemplate.bind({});
 
-export const DatepickerCustomPlaceholder = Template.bind({});
-DatepickerCustomPlaceholder.storyName = 'Custom placeholder';
-DatepickerCustomPlaceholder.args = {
+export const WithCustomPlaceholder = Template.bind({});
+WithCustomPlaceholder.args = {
   placeholder: 'dd.mm.yyyy',
 };
 
-export const DatepickerDisabled = Template.bind({});
-DatepickerDisabled.storyName = 'Disabled';
-DatepickerDisabled.args = {
+export const WithDisabled = Template.bind({});
+WithDisabled.args = {
   disabled: true,
 };
