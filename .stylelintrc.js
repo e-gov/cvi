@@ -120,7 +120,9 @@ module.exports = {
         'box-shadow': ['/^var\\(--cvi-shadow-/', 'none'],
         '/border-([a-z]+-[a-z]+-)*radius/': [
           '/^var\\(/',
+          '50%',
           '51%',
+          '100%',
           '/^var\\(--cvi-radius-/',
           '/^map\\.get\\(\\$cvi-radii/',
         ],
