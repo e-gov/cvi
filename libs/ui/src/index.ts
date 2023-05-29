@@ -64,3 +64,4 @@ export * from './lib/reorderable-list/reorderable-list-item/reorderable-list-ite
 export * from './lib/reorderable-list/swap-reorderable-list-items';
 export * from './lib/message-bus/message-bus.service';
 export * from './lib/datepicker/datepicker.component';
+export * from './lib/datepicker/datepicker-calendar.component';
