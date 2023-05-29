@@ -261,5 +261,11 @@ module.exports = {
         'at-rule-allowed-list': ['import'],
       },
     },
+    {
+      files: ['libs/styles/src/lib/scss/generic/_animations.scss'],
+      rules: {
+        'at-rule-allowed-list': ['keyframes'],
+      },
+    },
   ],
 };
