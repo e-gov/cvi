@@ -1,3 +1,5 @@
+@use 'sass:map';
+
 @mixin cvi-table($base: &) {
   --comment: 'A simple table using HTML tables';
 
@@ -8,7 +10,7 @@
       padding: get-spacing('viljandi');
       background-color: var(--cvi-color-white);
       border: 1px solid get-color(black-coral-2);
-      border-radius: $cvi-radius-l;
+      border-radius: map.get($cvi-radii, l);
       overflow-x: auto;
     }
     #{$base}__table {
