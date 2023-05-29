@@ -122,6 +122,7 @@ module.exports = {
           '/^var\\(/',
           '51%',
           '/^var\\(--cvi-radius-/',
+          '/^map\\.get\\(\\$cvi-radii/',
         ],
         'font-size': [
           '/^var\\(/',
