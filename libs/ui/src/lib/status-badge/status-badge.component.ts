@@ -19,6 +19,8 @@ import {
 export class StatusBadgeComponent {
   @Input() severity: StatusBadgeSeverity = 'info';
   @Input() label = '';
+  @Input() withTooltip = false;
+  @Input() tooltipText? = '';
 
   @HostBinding('class') get hostClasses(): string {
     return `cvi-status-badge`;
