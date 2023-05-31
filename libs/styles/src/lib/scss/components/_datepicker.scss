@@ -17,7 +17,7 @@ $datepicker-color: #34394C;
         width: $datepicker-width;
         height: $datepicker-height;
 
-        &-focused {
+        &--focused {
           border-color: get-color(sapphire-blue-10);
         }
       }
