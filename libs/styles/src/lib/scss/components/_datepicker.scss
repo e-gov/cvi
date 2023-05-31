@@ -1,4 +1,3 @@
-$datepicker-border-color: #9799A4;
 $datepicker-border-radius: 4px;
 $datepicker-font-size: 16px;
 $datepicker-width: 125px;
@@ -11,7 +10,7 @@ $datepicker-color: #34394C;
   @at-root {
     #{$base}__input {
       &-container {
-        border: 1px solid $datepicker-border-color;
+        border: 1px solid get-color(black-coral-6);
         border-radius: $datepicker-border-radius;
         display: flex;
         align-items: center;
