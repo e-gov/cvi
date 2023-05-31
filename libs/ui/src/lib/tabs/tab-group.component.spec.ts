@@ -38,18 +38,21 @@ describe('TabGroupComponent', () => {
     const emitSpy = jest.spyOn(component.activeTabChange, 'emit');
     component.makeActive(1);
     expect(mockChangeDetectorRef.detectChanges).toHaveBeenCalled();
+    expect(component.activeIndex).toEqual(1);
     expect(emitSpy).toHaveBeenCalledWith(1);
   });
 
   it('should activate the previous tab', () => {
     const emitSpy = jest.spyOn(component.activeTabChange, 'emit');
     component.makeActivePrev({ preventDefault: jest.fn() } as any);
+    expect(component.activeIndex).toEqual(1);
     expect(emitSpy).toHaveBeenCalledWith(1);
   });
 
   it('should activate the next tab', () => {
     const emitSpy = jest.spyOn(component.activeTabChange, 'emit');
     component.makeActiveNext({ preventDefault: jest.fn() } as any);
+    expect(component.activeIndex).toEqual(1);
     expect(emitSpy).toHaveBeenCalledWith(1);
   });
 
