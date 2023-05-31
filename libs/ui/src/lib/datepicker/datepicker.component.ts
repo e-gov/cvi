@@ -49,6 +49,13 @@ export class DatepickerComponent implements ControlValueAccessor {
     }
   }
 
+  @HostListener('document:keydown', ['$event'])
+  handleKeyboardEvent(event: KeyboardEvent) {
+    if (event.key === 'Escape') {
+      this.setFocus(false);
+    }
+  }
+
   @HostBinding('class') get getHostClasses(): string {
     return `cvi-textfield${
       this.disabled ? ' cvi-datepicker--is-disabled' : ''

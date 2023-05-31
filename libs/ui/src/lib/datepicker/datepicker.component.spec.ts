@@ -90,6 +90,13 @@ describe('DatepickerComponent', () => {
     expect(component.focus).toBe(false);
   });
 
+  it('should close calendar when user presses ESC', () => {
+    const event = new KeyboardEvent('keydown', { key: 'Escape' });
+    component.setFocus(true);
+    component.handleKeyboardEvent(event);
+    expect(component.focus).toBe(false);
+  });
+
   it('should not handle outside click when disabled', () => {
     const event = new Event('click');
     component.disabled = true;
