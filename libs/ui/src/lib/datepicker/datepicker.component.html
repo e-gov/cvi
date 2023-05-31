@@ -3,7 +3,6 @@
   tabindex="0"
   [ngClass]="{ 'cvi-datepicker__input-container-focused': focus }"
   (focus)="setFocus(true)"
-  [attr.aria-expanded]="focus"
 >
   <label [attr.for]="htmlId" class="cvi-datepicker__calendar-visually-hidden">Select Date</label>
   <input
