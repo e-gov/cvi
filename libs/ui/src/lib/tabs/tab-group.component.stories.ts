@@ -40,7 +40,7 @@ const Template: Story<TabGroupComponent> = (args: TabGroupComponent) => {
       formMinRows: 5,
       formHtmlId: 'fk123sd4kfds',
       formLabel: 'Label',
-      log: log
+      log: log,
     },
     /* template */
     template: `

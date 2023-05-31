@@ -4,9 +4,11 @@ import {
   ChangeDetectorRef,
   Component,
   ContentChildren,
-  ElementRef, EventEmitter,
+  ElementRef,
+  EventEmitter,
   HostBinding,
-  OnDestroy, Output,
+  OnDestroy,
+  Output,
   QueryList,
   ViewChildren,
 } from '@angular/core';

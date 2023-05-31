@@ -55,6 +55,8 @@ describe('TabGroupComponent', () => {
 
   it('should throw an error if there is no active tab', () => {
     component.allTabs.get = jest.fn().mockReturnValue(null);
-    expect(() => component.getActiveTabContent()).toThrow(`no tab exists with index ${component.activeIndex}`);
+    expect(() => component.getActiveTabContent()).toThrow(
+      `no tab exists with index ${component.activeIndex}`
+    );
   });
 });
