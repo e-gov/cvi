@@ -17,6 +17,7 @@ export default {
     label: 'Pending review',
     withTooltip: true,
     tooltipText: 'some tooltip text',
+    tooltipIcon: 'info',
   },
 } as Meta<StatusBadgeComponent>;
 
