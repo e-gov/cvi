@@ -4,9 +4,11 @@
   [ngClass]="{ 'cvi-datepicker__input-container-focused': focus }"
   (focus)="setFocus(true)"
 >
-  <label [attr.for]="htmlId" class="cvi-datepicker__calendar-visually-hidden">Select Date</label>
+  <label id="datePickerLabel" [attr.for]="htmlId" class="cvi-datepicker__calendar-visually-hidden">Select Date</label>
   <input
     type="text"
+    role="textbox"
+    aria-haspopup="true"
     tabindex="-1"
     [attr.id]="htmlId"
     class="cvi-datepicker__input-field"
@@ -14,7 +16,9 @@
     [attr.disabled]="disabled ? disabled : null"
     [(ngModel)]="value"
     (focus)="setFocus(true)"
+    aria-labelledby="datePickerLabel"
   />
+
   <span class="cvi-datepicker__input-icon-wrapper">
     <svg
       class="cvi-datepicker__input-calendar-icon"
