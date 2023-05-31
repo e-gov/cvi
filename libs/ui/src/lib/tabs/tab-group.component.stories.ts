@@ -31,6 +31,8 @@ const Template: Story<TabGroupComponent> = (args: TabGroupComponent) => {
     text: new FormControl('Some text'),
   });
 
+  const log = (index: number) => console.log(index);
+
   return {
     props: {
       ...args,
@@ -38,10 +40,11 @@ const Template: Story<TabGroupComponent> = (args: TabGroupComponent) => {
       formMinRows: 5,
       formHtmlId: 'fk123sd4kfds',
       formLabel: 'Label',
+      log: log
     },
     /* template */
     template: `
-      <cvi-ng-tab-group>
+      <cvi-ng-tab-group (activeTabChange)="log($event)">
         <cvi-ng-tab title="Tab 1">{{ content }}</cvi-ng-tab>
         <cvi-ng-tab title="Tab 2, with a form">
           <div [formGroup]="form">
