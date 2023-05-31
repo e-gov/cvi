@@ -5,6 +5,8 @@
   (focus)="setFocus(true)"
 >
   <label id="datePickerLabel" [attr.for]="htmlId" class="cvi-datepicker__calendar-visually-hidden">Select Date</label>
+  <span id="dateDescription" class="cvi-datepicker__calendar-visually-hidden">Required date format: dd.MM.yyyy</span>
+
   <input
     type="text"
     role="textbox"
@@ -17,6 +19,7 @@
     [(ngModel)]="value"
     (focus)="setFocus(true)"
     aria-labelledby="datePickerLabel"
+    aria-describedby="dateDescription"
   />
 
   <span class="cvi-datepicker__input-icon-wrapper">
