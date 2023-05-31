@@ -56,7 +56,9 @@ $datepicker-color: #34394C;
       color: $datepicker-color;
 
       &-weekend {
-        color: grey !important;
+        &[class] {
+          color: grey;
+        }
       }
 
       &-visually-hidden {
