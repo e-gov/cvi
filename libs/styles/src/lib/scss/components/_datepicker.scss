@@ -1,4 +1,4 @@
-$datepicker-border-radius: 4px;
+$datepicker-border-radius: map-get($cvi-radii, s);
 $datepicker-font-size: 16px;
 $datepicker-width: 125px;
 $datepicker-height: 40px;
