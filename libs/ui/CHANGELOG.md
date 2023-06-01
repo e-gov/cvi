@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.13.1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.13.0...ui-1.13.1) (2023-06-01)
+
+
+### Bug Fixes
+
+* **ng:** force a resize once view has been init EBS-729 ([#112](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/112)) ([7bfaf04](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/7bfaf04a1062b5081369923444d79f072f47c79b))
+
+
+
 # [1.13.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.12.1...ui-1.13.0) (2023-06-01)
 
 
