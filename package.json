@@ -9,7 +9,7 @@
     "build": "nx build",
     "test": "nx run ui:test",
     "lint:all": "nx workspace-lint && nx run-many --target=lint --all",
-    "lint:css": "npx stylelint ./libs/styles/src/lib/scss/*.scss",
+    "lint:css": "npx stylelint \"./libs/styles/src/lib/scss/**/*.scss\"",
     "lint:svg": "svglint ./libs/icons/src/lib/svg/*.svg --ci",
     "affected:lint": "nx affected:lint --fix --parallel --uncommitted",
     "workspace-lint": "nx workspace-lint --uncommitted",

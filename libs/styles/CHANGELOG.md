@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.8.2](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/styles-1.8.1...styles-1.8.2) (2023-05-29)
+
+
+### Bug Fixes
+
+* **styles:** fixed an issue where running npm run lint:css would not yield any results   ([#109](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/109)) ([6e568b9](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/6e568b953f16177113f315a1b25d15218fe0e871))
+
+
+
 ## [1.8.1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/styles-1.8.0...styles-1.8.1) (2023-05-22)
 
 

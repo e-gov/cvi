@@ -120,8 +120,11 @@ module.exports = {
         'box-shadow': ['/^var\\(--cvi-shadow-/', 'none'],
         '/border-([a-z]+-[a-z]+-)*radius/': [
           '/^var\\(/',
+          '50%',
           '51%',
+          '100%',
           '/^var\\(--cvi-radius-/',
+          '/^map\\.get\\(\\$cvi-radii/',
         ],
         'font-size': [
           '/^var\\(/',
@@ -256,6 +259,12 @@ module.exports = {
       files: ['libs/styles/src/lib/scss/main.scss'],
       rules: {
         'at-rule-allowed-list': ['import'],
+      },
+    },
+    {
+      files: ['libs/styles/src/lib/scss/generic/_animations.scss'],
+      rules: {
+        'at-rule-allowed-list': ['keyframes'],
       },
     },
   ],
