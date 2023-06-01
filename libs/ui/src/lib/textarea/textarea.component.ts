@@ -90,6 +90,6 @@ export class TextareaComponent implements ControlValueAccessor, AfterViewInit {
   }
 
   resize(): void {
-    setTimeout(() => this.autosize?.resizeToFitContent(true), 1); // setTimeout to ensure this runs on the next tick
+    setTimeout(() => this.autosize?.resizeToFitContent(true));
   }
 }
