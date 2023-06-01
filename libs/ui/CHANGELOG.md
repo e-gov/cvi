@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [1.13.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.12.1...ui-1.13.0) (2023-06-01)
+
+
+### Features
+
+* **ng:** provide an emitter for active tab changes EBS-729 ([#111](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/111)) ([cff654a](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/cff654ae2e055398141480c21d23e6045b5c5fa6))
+
+
+
 ## [1.12.1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.12.0...ui-1.12.1) (2023-05-22)
 
 
