@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [1.9.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/styles-1.8.2...styles-1.9.0) (2023-06-02)
+
+
+### Features
+
+* **ng:** add optional tooltip attribute to status badge component EST-44 ([#110](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/110)) ([7902cc9](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/7902cc958e973e049a6132c43a0e901f9bb689ea))
+
+
+
 ## [1.8.2](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/styles-1.8.1...styles-1.8.2) (2023-05-29)
 
 
