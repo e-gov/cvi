@@ -74,7 +74,7 @@ const Template: Story = (args) => ({
       </button>
     </div>
   </div>
-  <div role="grid" aria-labelledby="monthYearLabel" class="cvi-datepicker__calendar-grid">
+  <div role="grid" aria-labelledby="monthYearLabel" class="cvi-datepicker__calendar-grid" aria-busy="true">
     <div class="cvi-datepicker__calendar-daylabels">
       <div class="cvi-datepicker__calendar-daylabel">E</div>
       <div class="cvi-datepicker__calendar-daylabel">T</div>

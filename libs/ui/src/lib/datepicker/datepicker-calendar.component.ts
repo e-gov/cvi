@@ -113,7 +113,7 @@ export class DatepickerCalendarComponent implements OnChanges, OnInit {
     if (isToday && !isSelectedDate) {
       classes += ' cvi-datepicker__calendar-button-today';
     }
-    if (index === 5 || index === 6) {
+    if (!isSelectedDate && (index === 5 || index === 6)) {
       classes += ' cvi-datepicker__calendar-weekend';
     }
     return classes.trim();

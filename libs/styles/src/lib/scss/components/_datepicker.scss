@@ -1,8 +1,4 @@
-$datepicker-border-radius: map-get($cvi-radii, s);
-$datepicker-font-size: 16px;
-$datepicker-width: 125px;
-$datepicker-height: 40px;
-$datepicker-color: #34394C;
+@use 'sass:map';
 
 @mixin cvi-datepicker($base: &) {
   --comment: 'A datepicker';
@@ -11,11 +7,11 @@ $datepicker-color: #34394C;
     #{$base}__input {
       &-container {
         border: 1px solid get-color(black-coral-6);
-        border-radius: $datepicker-border-radius;
+        border-radius: map.get($cvi-radii, s);
         display: flex;
         align-items: center;
-        width: $datepicker-width;
-        height: $datepicker-height;
+        width: 125px;
+        height: 40px;
 
         &--focused {
           border-color: get-color(sapphire-blue-10);
@@ -23,9 +19,9 @@ $datepicker-color: #34394C;
       }
 
       &-field {
-        font-size: $datepicker-font-size;
+        font-size: get-font-size(100);
         border-left: 1px;
-        border-radius: $datepicker-border-radius;
+        border-radius: map.get($cvi-radii, s);
         padding: 8px;
         width: 96px;
 
@@ -48,17 +44,15 @@ $datepicker-color: #34394C;
     #{$base}__calendar {
       box-sizing: border-box;
       position: absolute;
-      background: get-color(white);
-      border: 1.25px solid get-color(black-coral-6);
-      border-radius: $datepicker-border-radius;
+      background-color: get-color(white);
+      border: 1px solid get-color(black-coral-6);
+      border-radius: map.get($cvi-radii, s);
       width: 392px;
       height: 280px;
-      color: $datepicker-color;
+      color: get-color(black-coral-15);
 
-      &-weekend {
-        &[class] {
-          color: grey;
-        }
+      div &-weekend {
+        color: get-color(black-coral-9);
       }
 
       &-visually-hidden {
@@ -73,7 +67,7 @@ $datepicker-color: #34394C;
         box-sizing: border-box;
         width: 100%;
         height: 48px;
-        background: get-color(sapphire-blue-10);
+        background-color: get-color(sapphire-blue-10);
         border-color: get-color(black-coral-6);
         display: flex;
         justify-content: space-between;
@@ -90,7 +84,7 @@ $datepicker-color: #34394C;
 
         &-month {
           vertical-align: middle;
-          font-size: 18px;
+          font-size: get-font-size(200);
           color: get-color(white);
           padding-top: 10px;
         }
@@ -102,16 +96,16 @@ $datepicker-color: #34394C;
         justify-content: space-around;
         height: 34px;
         align-items: center;
-        color: $datepicker-color;
+        color: get-color(black-coral-15);
       }
 
       &-daylabel {
-        font-weight: 700;
-        font-size: 14px;
+        font-weight: get-font-weight(beta);
+        font-size: get-font-size(80);
       }
 
       &-daynumber {
-        font-size: 14px;
+        font-size: get-font-size(80);
         width: 34px;
         height: 34px;
       }
@@ -120,11 +114,11 @@ $datepicker-color: #34394C;
         width: 100%;
         height: 100%;
         text-align: center;
-        color: $datepicker-color;
+        color: get-color(black-coral-15);
         border-radius: 100%;
 
         &-selected {
-          font-weight: 700;
+          font-weight: get-font-weight(beta);
           color: get-color(white);
           background-color: get-color(sapphire-blue-10);
         }
