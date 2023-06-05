@@ -61,7 +61,7 @@ describe('DatepickerComponent', () => {
       .get('button.cvi-datepicker__calendar-button')
       .last()
       .shouldHaveClasses('button.cvi-datepicker__calendar-button', [
-        'cvi-datepicker__calendar-button cvi-datepicker__calendar-button-selected',
+        'cvi-datepicker__calendar-button cvi-datepicker__calendar-button--selected',
       ]);
   });
 });

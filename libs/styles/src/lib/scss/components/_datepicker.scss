@@ -30,8 +30,13 @@
       }
 
       &-icon-wrapper {
-        width: 29px;
+        fill: get-color(black-coral-10);
+        display: block;
         padding-top: 6px;
+      }
+
+      &-icon {
+        width: 18px;
       }
 
       #{$base}--is-disabled & {

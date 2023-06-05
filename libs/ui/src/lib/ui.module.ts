@@ -51,6 +51,7 @@ import {
   cviScreenShare,
   cviSuccess,
   cviWarningAmber,
+  cviCalendar
 } from '@egov/cvi-icons';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
@@ -192,6 +193,7 @@ export class UiModule {
       cviEditSimple,
       cviArrowUpAlt,
       cviArrowDownAlt,
+      cviCalendar
     ]);
   }
 }

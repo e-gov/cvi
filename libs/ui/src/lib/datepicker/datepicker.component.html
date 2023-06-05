@@ -21,17 +21,11 @@
     aria-labelledby="datePickerLabel"
     aria-describedby="dateDescription"
   />
-
-  <span class="cvi-datepicker__input-icon-wrapper">
-    <svg
-      class="cvi-datepicker__input-calendar-icon"
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 18 20" width="18" height="20"
-      aria-hidden="true"
-    >
-      <path d="M16 2.00049H15V0.000488281H13V2.00049H5V0.000488281H3V2.00049H2C0.895 2.00049 0.00999999 2.89549 0.00999999 4.00049L0 18.0005C0 19.1055 0.895 20.0005 2 20.0005H16C17.105 20.0005 18 19.1055 18 18.0005V4.00049C18 2.89549 17.105 2.00049 16 2.00049ZM16 18.0005H2V7.00049H16V18.0005ZM4 9.00049H9V14.0005H4V9.00049Z" fill="#5D6071"/>
-    </svg>
-  </span>
+  <cvi-ng-icon class="cvi-datepicker__input-icon-wrapper"
+               [name]="'calendar'"
+               [svgClass]="'cvi-datepicker__input-icon'"
+               [height]="20">
+  </cvi-ng-icon>
 </div>
 <div aria-live="polite" class="cvi-screenreader-text">{{ value }}</div>
 <cvi-ng-datepicker-calendar
