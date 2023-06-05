@@ -104,4 +104,10 @@ describe('DatepickerComponent', () => {
     component.handleClickOutside(event);
     expect(component.focus).toBe(false);
   });
+
+  it('should toggle focus', () => {
+    component.focus = true;
+    component.toggleFocus();
+    expect(component.focus).toBe(false);
+  });
 });

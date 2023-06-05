@@ -44,7 +44,13 @@ export class DatepickerComponent implements ControlValueAccessor {
 
   @HostListener('document:click', ['$event'])
   handleClickOutside(event: Event) {
-    if (!this.disabled && !this.select.contains(event.target as never)) {
+    const targetElement = event.target as HTMLElement;
+
+    if (
+      !this.disabled &&
+      !this.select.contains(event.target as never) &&
+      !targetElement.classList.contains('cvi-datepicker__input-icon-wrapper')
+    ) {
       this.setFocus(false);
     }
   }
@@ -116,5 +122,10 @@ export class DatepickerComponent implements ControlValueAccessor {
       date.getMonth() === month - 1 &&
       date.getFullYear() === year
     );
+  }
+
+  toggleFocus(): void {
+    const focus = !this.focus;
+    this.setFocus(focus);
   }
 }

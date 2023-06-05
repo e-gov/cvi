@@ -65,11 +65,11 @@
         &-chevron {
           width: 48px;
           padding: 10px 15px;
+          fill: get-color(white);
         }
 
         &-chevron-icon {
-          fill: get-color(sapphire-blue-10);
-          flex-shrink: 0;
+          width: 24px;
         }
 
         &-month {

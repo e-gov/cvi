@@ -1,8 +1,6 @@
 <div
   class="cvi-datepicker__input-container"
-  tabindex="0"
   [ngClass]="{ 'cvi-datepicker__input-container--focused': focus }"
-  (focus)="setFocus(true)"
 >
   <label id="datePickerLabel" [attr.for]="htmlId" class="cvi-screenreader-text">Select Date</label>
   <span id="dateDescription" class="cvi-screenreader-text">Required date format: dd.MM.yyyy</span>
@@ -11,20 +9,20 @@
     type="text"
     role="textbox"
     aria-haspopup="true"
-    tabindex="-1"
     [attr.id]="htmlId"
     class="cvi-datepicker__input-field"
     [placeholder]="placeholder??''"
     [attr.disabled]="disabled ? disabled : null"
     [(ngModel)]="value"
-    (focus)="setFocus(true)"
     aria-labelledby="datePickerLabel"
     aria-describedby="dateDescription"
+    (focus)="setFocus(true)"
   />
   <cvi-ng-icon class="cvi-datepicker__input-icon-wrapper"
                [name]="'calendar'"
                [svgClass]="'cvi-datepicker__input-icon'"
-               [height]="20">
+               [height]="20"
+               (click)="toggleFocus(); $event.stopPropagation()">
   </cvi-ng-icon>
 </div>
 <div aria-live="polite" class="cvi-screenreader-text">{{ value }}</div>

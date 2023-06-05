@@ -6,12 +6,9 @@
   <div class="cvi-datepicker__calendar-header">
     <div class="cvi-datepicker__calendar-header-chevron">
       <button aria-label="Previous month" (click)="previousMonth()">
-        <svg
-          class="cvi-datepicker__header-chevron-icon"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24" width="24" height="24">
-          <path d="M14.83 2.83L12 0L0 12L12 24L14.83 21.17L5.66 12L14.83 2.83Z" fill="white"/>
-        </svg>
+        <cvi-ng-icon [name]="'arrow_a_left'"
+                     [svgClass]="'cvi-datepicker__header-chevron-icon'">
+        </cvi-ng-icon>
       </button>
     </div>
     <div *ngIf="this.displayDate"
@@ -20,12 +17,10 @@
          class="cvi-datepicker__calendar-header-month">{{ monthLabels[displayDate.getMonth()] }} {{ displayDate.getFullYear() }}</div>
     <div class="cvi-datepicker__calendar-header-chevron">
       <button aria-label="Next month" (click)="nextMonth()">
-        <svg
-          class="cvi-datepicker__header-chevron-icon"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24" width="24" height="24">
-          <path d="M2.99992 0L0.169922 2.83L9.33992 12L0.169922 21.17L2.99992 24L14.9999 12L2.99992 0Z" fill="white"/>
-        </svg>
+        <cvi-ng-icon class=""
+                     [name]="'arrow_a_right'"
+                     [svgClass]="'cvi-datepicker__header-chevron-icon'">
+        </cvi-ng-icon>
       </button>
     </div>
   </div>
