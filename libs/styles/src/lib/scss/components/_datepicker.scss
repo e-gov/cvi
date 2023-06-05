@@ -20,7 +20,7 @@
 
       &-field {
         font-size: get-font-size(100);
-        border-left: 1px;
+        border-left: 1px solid;
         border-radius: map.get($cvi-radii, s);
         padding: 8px;
         width: 96px;
