@@ -49,14 +49,6 @@
       height: 280px;
       color: get-color(black-coral-15);
 
-      &-visually-hidden {
-        position: absolute;
-        clip: rect(0 0 0 0);
-        height: 1px;
-        width: 1px;
-        overflow: hidden;
-      }
-
       &-header {
         width: 100%;
         height: 48px;
