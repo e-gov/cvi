@@ -17,7 +17,15 @@ import {
 export class DatepickerCalendarComponent implements OnChanges, OnInit {
   @Input() date?: string;
   @Input() dayShorthandLabels = ['E', 'T', 'K', 'N', 'R', 'L', 'P'];
-  @Input() dayFullLabels = ['Esmaspäev', 'Teisipäev', 'Kolmapäev', 'Neljapäev', 'Reede', 'Laupäev', 'Pühapäev'];
+  @Input() dayFullLabels = [
+    'Esmaspäev',
+    'Teisipäev',
+    'Kolmapäev',
+    'Neljapäev',
+    'Reede',
+    'Laupäev',
+    'Pühapäev',
+  ];
   @Input() monthLabels = [
     'Jaanuar',
     'Veebruar',
