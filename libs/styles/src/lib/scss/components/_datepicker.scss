@@ -49,10 +49,6 @@
       height: 280px;
       color: get-color(black-coral-15);
 
-      div &--weekend {
-        color: get-color(black-coral-9);
-      }
-
       &-visually-hidden {
         position: absolute;
         clip: rect(0 0 0 0);
@@ -125,6 +121,10 @@
 
         &--disabled {
           color: get-color(black-coral-2);
+        }
+
+        &--weekend {
+          color: get-color(black-coral-9);
         }
       }
     }
