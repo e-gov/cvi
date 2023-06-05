@@ -16,6 +16,7 @@
     </div>
     <div *ngIf="this.displayDate"
          id="monthYearLabel"
+         aria-live="polite"
          class="cvi-datepicker__calendar-header-month">{{ monthLabels[displayDate.getMonth()] }} {{ displayDate.getFullYear() }}</div>
     <div class="cvi-datepicker__calendar-header-chevron">
       <button aria-label="Next month" (click)="nextMonth()">
