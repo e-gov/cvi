@@ -108,13 +108,13 @@ export class DatepickerCalendarComponent implements OnChanges, OnInit {
       this.displayDate.getFullYear() === this.today.getFullYear();
 
     if (isSelectedDate) {
-      classes += ' cvi-datepicker__calendar-button-selected';
+      classes += ' cvi-datepicker__calendar-button--selected';
     }
     if (isToday && !isSelectedDate) {
-      classes += ' cvi-datepicker__calendar-button-today';
+      classes += ' cvi-datepicker__calendar-button--today';
     }
     if (!isSelectedDate && (index === 5 || index === 6)) {
-      classes += ' cvi-datepicker__calendar-weekend';
+      classes += ' cvi-datepicker__calendar--weekend';
     }
     return classes.trim();
   }

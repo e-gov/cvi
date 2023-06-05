@@ -51,7 +51,7 @@
       height: 280px;
       color: get-color(black-coral-15);
 
-      div &-weekend {
+      div &--weekend {
         color: get-color(black-coral-9);
       }
 
@@ -117,17 +117,17 @@
         color: get-color(black-coral-15);
         border-radius: 100%;
 
-        &-selected {
+        &--selected {
           font-weight: get-font-weight(beta);
           color: get-color(white);
           background-color: get-color(sapphire-blue-10);
         }
 
-        &-today {
+        &--today {
           background-color: get-color(black-coral-2);
         }
 
-        &-disabled {
+        &--disabled {
           color: get-color(black-coral-2);
         }
       }
