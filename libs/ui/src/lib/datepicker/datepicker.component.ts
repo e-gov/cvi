@@ -5,10 +5,13 @@ import {
   forwardRef,
   HostBinding,
   HostListener,
+  Inject,
   Input,
   ViewChild,
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { DATEPICKER_LABEL_CONFIG } from './datepicker-label-config.token';
+import { DatepickerLabelConfig } from './datepicker-label.config';
 
 @Component({
   selector: 'cvi-ng-datepicker',
@@ -31,6 +34,12 @@ export class DatepickerComponent implements ControlValueAccessor {
     | undefined;
 
   private internalValue?: string;
+
+  dayShorthandLabels$ = this.labelConfig.getDayShorthandLabels();
+  dayFullLabels$ = this.labelConfig.getDayFullLabels();
+  monthLabels$ = this.labelConfig.getMonthLabels();
+  screenreaderLabel$ = this.labelConfig.getScreenReaderLabel();
+  screenreaderDescription$ = this.labelConfig.getScreenReaderDescription();
 
   focus = false;
   valueValidated = '';
@@ -68,7 +77,8 @@ export class DatepickerComponent implements ControlValueAccessor {
     }`;
   }
 
-  constructor(private readonly elementRef: ElementRef) {
+  constructor(@Inject(DATEPICKER_LABEL_CONFIG) private labelConfig: DatepickerLabelConfig,
+              private readonly elementRef: ElementRef) {
     this.select = elementRef.nativeElement;
   }
 

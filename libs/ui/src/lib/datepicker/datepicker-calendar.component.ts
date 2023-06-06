@@ -16,30 +16,9 @@ import {
 })
 export class DatepickerCalendarComponent implements OnChanges, OnInit {
   @Input() date?: string;
-  @Input() dayShorthandLabels = ['E', 'T', 'K', 'N', 'R', 'L', 'P'];
-  @Input() dayFullLabels = [
-    'Esmaspäev',
-    'Teisipäev',
-    'Kolmapäev',
-    'Neljapäev',
-    'Reede',
-    'Laupäev',
-    'Pühapäev',
-  ];
-  @Input() monthLabels = [
-    'Jaanuar',
-    'Veebruar',
-    'Märts',
-    'Aprill',
-    'Mai',
-    'Juuni',
-    'Juuli',
-    'August',
-    'September',
-    'Oktoober',
-    'November',
-    'Detsember',
-  ];
+  @Input() dayShorthandLabels!: string[];
+  @Input() dayFullLabels!: string[];
+  @Input() monthLabels!: string[];
 
   @Output() dateChanged = new EventEmitter<string>();
 

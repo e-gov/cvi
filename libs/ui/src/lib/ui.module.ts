@@ -37,6 +37,7 @@ import {
   cviArrowDownAlt,
   cviArrowUp,
   cviArrowUpAlt,
+  cviCalendar,
   cviCall,
   cviCheckCircleOutline,
   cviClose,
@@ -51,16 +52,12 @@ import {
   cviScreenShare,
   cviSuccess,
   cviWarningAmber,
-  cviCalendar,
 } from '@egov/cvi-icons';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
 import { SelectComponent } from './select/select.component';
 import { SelectNavigationDirective } from './select/select-navigation.directive';
-import {
-  LabelTemplateDirective,
-  OptionTemplateDirective,
-} from './select/select-templates.directive';
+import { LabelTemplateDirective, OptionTemplateDirective, } from './select/select-templates.directive';
 import { DataAttributeDirective } from './directives/data-attribute.directive';
 import { TooltipComponent } from './tooltip/tooltip.component';
 import { TooltipDirective } from './tooltip/tooltip.directive';
@@ -72,10 +69,16 @@ import { ToastContainerComponent } from './toast/toast-container.component';
 import { CharacterCounterComponent } from './character-counter/character-counter.component';
 import { CharacterCounterDirective } from './character-counter/character-counter.directive';
 import { TableOfContentsSectionDirective } from './table-of-contents/toc-section.directive';
-import { GeneratedTableOfContentsComponent } from './table-of-contents/generated-table-of-contents/generated-table-of-contents.component';
-import { TableOfContentsWrapperComponent } from './table-of-contents/table-of-contents-wrapper/table-of-contents-wrapper.component';
+import {
+  GeneratedTableOfContentsComponent
+} from './table-of-contents/generated-table-of-contents/generated-table-of-contents.component';
+import {
+  TableOfContentsWrapperComponent
+} from './table-of-contents/table-of-contents-wrapper/table-of-contents-wrapper.component';
 import { TableOfContentsComponent } from './table-of-contents/table-of-contents/table-of-contents.component';
-import { TableOfContentsItemComponent } from './table-of-contents/table-of-contents-item/table-of-contents-item.component';
+import {
+  TableOfContentsItemComponent
+} from './table-of-contents/table-of-contents-item/table-of-contents-item.component';
 import { ModalComponent } from './modal/modal.component';
 import { ModalDirective } from './modal/modal.directive';
 import { ConfirmationModalComponent } from './confirmation-modal/confirmation-modal.component';
@@ -88,6 +91,8 @@ import { HeaderCellComponent } from './table/header-cell/header-cell.component';
 import { ScreenreaderTextComponent } from './screenreader-text/screenreader-text.component';
 import { DatepickerComponent } from './datepicker/datepicker.component';
 import { DatepickerCalendarComponent } from './datepicker/datepicker-calendar.component';
+import { DATEPICKER_LABEL_CONFIG } from './datepicker/datepicker-label-config.token';
+import { DefaultDatepickerLabelConfig } from './datepicker/default-datepicker-label.config';
 
 const components = [
   TrackComponent,
@@ -168,6 +173,7 @@ const directives = [DataAttributeDirective];
         default: DefaultToastConfig,
       },
     },
+    { provide: DATEPICKER_LABEL_CONFIG, useValue: new DefaultDatepickerLabelConfig() },
   ],
 })
 export class UiModule {

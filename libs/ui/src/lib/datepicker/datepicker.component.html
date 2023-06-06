@@ -2,8 +2,8 @@
   class="cvi-datepicker__input-container"
   [ngClass]="{ 'cvi-datepicker__input-container--focused': focus }"
 >
-  <label id="datePickerLabel" [attr.for]="htmlId" class="cvi-screenreader-text">Select Date</label>
-  <span id="dateDescription" class="cvi-screenreader-text">Required date format: dd.MM.yyyy</span>
+  <label id="datePickerLabel" [attr.for]="htmlId" class="cvi-screenreader-text">{{screenreaderLabel$ | async}}</label>
+  <span id="dateDescription" class="cvi-screenreader-text">{{screenreaderDescription$ | async}}</span>
 
   <input
     type="text"
@@ -29,6 +29,9 @@
 <cvi-ng-datepicker-calendar
   *ngIf="focus"
   [date]="valueValidated"
+  [dayFullLabels]="dayFullLabels$ | async"
+  [dayShorthandLabels]="dayShorthandLabels$ | async"
+  [monthLabels]="monthLabels$ | async"
   (dateChanged)="handleDateSelect($event)"
   #datePickerCalendar
 ></cvi-ng-datepicker-calendar>
