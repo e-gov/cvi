@@ -77,8 +77,10 @@ export class DatepickerComponent implements ControlValueAccessor {
     }`;
   }
 
-  constructor(@Inject(DATEPICKER_LABEL_CONFIG) private labelConfig: DatepickerLabelConfig,
-              private readonly elementRef: ElementRef) {
+  constructor(
+    @Inject(DATEPICKER_LABEL_CONFIG) private labelConfig: DatepickerLabelConfig,
+    private readonly elementRef: ElementRef
+  ) {
     this.select = elementRef.nativeElement;
   }
 
