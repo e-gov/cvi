@@ -11,6 +11,7 @@ import {
   ContentPanelComponent,
   ScreenreaderTextComponent,
   StatusBadgeComponent,
+  AccordionComponent,
 } from '@egov/cvi-react';
 import { Link, Route, Routes } from 'react-router-dom';
 
@@ -112,6 +113,22 @@ export function App() {
         content="waiting"
         severityStyle="info"
       ></StatusBadgeComponent>
+
+      <AccordionComponent
+        singleOpen={true}
+        items={[
+          {
+            title: 'Super Simple Accordion',
+            body: 'Some content here.',
+          },
+          {
+            title:
+              'Yet another item, but this time disabled with a very long text',
+            body: 'Disabled Content',
+            disabled: true,
+          },
+        ]}
+      ></AccordionComponent>
 
       {/* START: routes */}
       {/* These routes and navigation have been generated for you */}

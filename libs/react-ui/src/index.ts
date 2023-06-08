@@ -23,3 +23,5 @@ export { default as ContentPanelComponent } from './lib/content-panel/content-pa
 export { default as ScreenreaderTextComponent } from './lib/screenreader-text/screenreader-text';
 
 export { default as StatusBadgeComponent } from './lib/status-badge/status-badge';
+
+export { default as AccordionComponent } from './lib/accordion/accordion';
