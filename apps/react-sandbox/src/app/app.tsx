@@ -9,6 +9,7 @@ import {
   HtmlSectionComponent,
   ContentContainerComponent,
   ContentPanelComponent,
+  ScreenreaderTextComponent,
 } from '@egov/cvi-react';
 import { Link, Route, Routes } from 'react-router-dom';
 
@@ -103,6 +104,8 @@ export function App() {
         shut whistle breathe sweet limited while indicate gulf labor stream plan
         southern green produce break for place concerned discussion.
       </ContentPanelComponent>
+
+      <ScreenreaderTextComponent label="Some text that should only be visible to a screen reader."></ScreenreaderTextComponent>
 
       {/* START: routes */}
       {/* These routes and navigation have been generated for you */}

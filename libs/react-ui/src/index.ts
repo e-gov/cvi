@@ -19,3 +19,5 @@ export { default as HtmlSectionComponent } from './lib/section/section';
 export { default as ContentContainerComponent } from './lib/content-container/content-container';
 
 export { default as ContentPanelComponent } from './lib/content-panel/content-panel';
+
+export { default as ScreenreaderTextComponent } from './lib/screenreader-text/screenreader-text';
