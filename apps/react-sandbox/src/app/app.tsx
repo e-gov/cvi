@@ -5,6 +5,7 @@ import {
   IconComponent,
   LabeledIconComponent,
   TextareaComponent,
+  FormItem,
 } from '@egov/cvi-react';
 import { Link, Route, Routes } from 'react-router-dom';
 
@@ -21,6 +22,24 @@ export function App() {
         <ButtonComponent>Button 2</ButtonComponent>
       </TrackComponent>
 
+      <div>
+        <TextareaComponent
+          placeholder="Enter Your Name"
+          maxLength={30}
+          showMaxLength={false}
+          resizable={true}
+        ></TextareaComponent>
+      </div>
+
+      <FormItem
+        label={'Your email'}
+        placeholder="placeholder..."
+        labelPosition="side"
+        isLabelHidden={false}
+        required={false}
+        htmlId="id"
+      ></FormItem>
+
       <IconComponent
         icon={undefined}
         label={'close'}
@@ -36,19 +55,6 @@ export function App() {
         gap={10}
         insideButton={true}
       ></LabeledIconComponent>
-      <div>
-        <TextareaComponent
-          placeholder="Enter Your Name"
-          maxLength={30}
-          showMaxLength={false}
-          resizable={true}
-        ></TextareaComponent>
-      </div>
-
-      <TrackComponent layout="grid" isMultiline={true} justify="center">
-        <ButtonComponent>Button 1</ButtonComponent>
-        <ButtonComponent>Button 2</ButtonComponent>
-      </TrackComponent>
 
       {/* START: routes */}
       {/* These routes and navigation have been generated for you */}
