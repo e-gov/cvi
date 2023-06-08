@@ -20,6 +20,7 @@ export default {
       },
       control: { type: 'text' },
     },
+    activeTabChange: { action: 'Tab switched!' },
   },
   args: {
     content: 'First tab content with some more text that might overflow',
@@ -41,7 +42,7 @@ const Template: Story<TabGroupComponent> = (args: TabGroupComponent) => {
     },
     /* template */
     template: `
-      <cvi-ng-tab-group>
+      <cvi-ng-tab-group (activeTabChange)="activeTabChange($event)">
         <cvi-ng-tab title="Tab 1">{{ content }}</cvi-ng-tab>
         <cvi-ng-tab title="Tab 2, with a form">
           <div [formGroup]="form">

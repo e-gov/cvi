@@ -1,13 +1,16 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import {
+  AfterViewInit,
   Component,
   EventEmitter,
   forwardRef,
   HostBinding,
   Input,
   Output,
+  ViewChild,
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { CdkTextareaAutosize } from '@angular/cdk/text-field';
 
 export const textareaComponentProvider = {
   provide: NG_VALUE_ACCESSOR,
@@ -21,7 +24,9 @@ export const textareaComponentProvider = {
   styleUrls: ['./textarea.component.scss'],
   providers: [textareaComponentProvider],
 })
-export class TextareaComponent implements ControlValueAccessor {
+export class TextareaComponent implements ControlValueAccessor, AfterViewInit {
+  @ViewChild(CdkTextareaAutosize) autosize?: CdkTextareaAutosize;
+
   /** HTML id passed from FormItem component */
   @Input() htmlId!: string;
 
@@ -61,6 +66,12 @@ export class TextareaComponent implements ControlValueAccessor {
     }${this.resizable ? '' : ` ${baseClass}--no-resize`}`;
   }
 
+  ngAfterViewInit(): void {
+    if (this.autosize) {
+      this.resize();
+    }
+  }
+
   setValue(value: any) {
     this.onChanged(value);
     this.onTouched();
@@ -76,5 +87,9 @@ export class TextareaComponent implements ControlValueAccessor {
 
   registerOnTouched(fn: any): void {
     this.onTouched = fn;
+  }
+
+  resize(): void {
+    setTimeout(() => this.autosize?.resizeToFitContent(true));
   }
 }

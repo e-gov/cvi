@@ -2,6 +2,33 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [1.14.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.13.1...ui-1.14.0) (2023-06-02)
+
+
+### Features
+
+* **ng:** add optional tooltip attribute to status badge component EST-44 ([#110](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/110)) ([7902cc9](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/7902cc958e973e049a6132c43a0e901f9bb689ea))
+
+
+
+## [1.13.1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.13.0...ui-1.13.1) (2023-06-01)
+
+
+### Bug Fixes
+
+* **ng:** force a resize once view has been init EBS-729 ([#112](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/112)) ([7bfaf04](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/7bfaf04a1062b5081369923444d79f072f47c79b))
+
+
+
+# [1.13.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.12.1...ui-1.13.0) (2023-06-01)
+
+
+### Features
+
+* **ng:** provide an emitter for active tab changes EBS-729 ([#111](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/111)) ([cff654a](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/cff654ae2e055398141480c21d23e6045b5c5fa6))
+
+
+
 ## [1.12.1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.12.0...ui-1.12.1) (2023-05-22)
 
 

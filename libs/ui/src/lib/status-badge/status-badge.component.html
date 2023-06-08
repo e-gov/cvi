@@ -1,1 +1,11 @@
-{{ label }}
+<div>
+  {{ label }}
+  <cvi-ng-icon
+    *ngIf="withTooltip"
+    svgClass="badge-icon"
+    [name]="tooltipIcon"
+    [cviNgTooltip]="tooltipText ? tooltipText : ''"
+    dataAttribute="test-tooltip-source"
+    [height]="16"
+  ></cvi-ng-icon>
+</div>

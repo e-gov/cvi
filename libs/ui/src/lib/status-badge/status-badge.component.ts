@@ -4,6 +4,7 @@ import {
   HostBinding,
   Input,
 } from '@angular/core';
+import { CviIconName } from '@egov/cvi-icons';
 import {
   StatusBadgeSeverity,
   StatusBadgeCustomPropertyGroup,
@@ -19,6 +20,9 @@ import {
 export class StatusBadgeComponent {
   @Input() severity: StatusBadgeSeverity = 'info';
   @Input() label = '';
+  @Input() withTooltip = false;
+  @Input() tooltipText? = '';
+  @Input() tooltipIcon?: CviIconName = 'info';
 
   @HostBinding('class') get hostClasses(): string {
     return `cvi-status-badge`;

@@ -15,13 +15,17 @@ export default {
   args: {
     severity: 'info',
     label: 'Pending review',
+    withTooltip: true,
+    tooltipText: 'some tooltip text',
+    tooltipIcon: 'info',
   },
 } as Meta<StatusBadgeComponent>;
 
 const Template: Story<StatusBadgeComponent> = (args: StatusBadgeComponent) => ({
   props: args,
   template: `
-    <cvi-ng-status-badge [severity]="severity" [label]="label"></cvi-ng-status-badge>
+    <cvi-ng-status-badge [severity]="severity" [label]="label" [withTooltip]="withTooltip" [tooltipText]="tooltipText">
+    </cvi-ng-status-badge>
   `,
 });
 

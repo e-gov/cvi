@@ -1,6 +1,6 @@
 {
   "name": "@egov/cvi-ng",
-  "version": "1.12.1",
+  "version": "1.14.0",
   "peerDependencies": {
     "@angular/animations": ">=14.1.0",
     "@angular/cdk": ">=14.1.0",
