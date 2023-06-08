@@ -15,3 +15,5 @@ export { default as LabeledIconComponent } from './lib/icons/labeled-icon/labele
 export { default as FormItem } from './lib/form-item/form-item';
 
 export { default as HtmlSectionComponent } from './lib/section/section';
+
+export { default as ContentContainerComponent } from './lib/content-container/content-container';
