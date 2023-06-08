@@ -1,10 +1,11 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import {
   ButtonComponent,
-  TextareaComponent,
   TrackComponent,
+  IconComponent,
+  LabeledIconComponent,
+  TextareaComponent,
 } from '@egov/cvi-react';
-
 import { Link, Route, Routes } from 'react-router-dom';
 
 export function App() {
@@ -15,6 +16,26 @@ export function App() {
       </ButtonComponent>
       <div />
 
+      <TrackComponent layout="grid" isMultiline={true} justify="center">
+        <ButtonComponent>Button 1</ButtonComponent>
+        <ButtonComponent>Button 2</ButtonComponent>
+      </TrackComponent>
+
+      <IconComponent
+        icon={undefined}
+        label={'close'}
+        size="medium"
+      ></IconComponent>
+
+      <LabeledIconComponent
+        icon={undefined}
+        label={'close'}
+        size="medium"
+        iconPosition="before"
+        iconLabel={'Test Label'}
+        gap={10}
+        insideButton={true}
+      ></LabeledIconComponent>
       <div>
         <TextareaComponent
           placeholder="Enter Your Name"

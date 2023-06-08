@@ -1,0 +1,17 @@
+@import '../../../../styles/src/lib/scss/tools/spacing';
+
+.icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    &--small {
+        width: get-spacing(haapsalu);
+        height: get-spacing(haapsalu);
+    }
+
+    &--medium {
+        width: get-spacing(kuressaare);
+        height: get-spacing(kuressaare);
+    }
+}
