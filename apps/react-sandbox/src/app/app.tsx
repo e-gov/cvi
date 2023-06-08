@@ -12,6 +12,7 @@ import {
   ScreenreaderTextComponent,
   StatusBadgeComponent,
   AccordionComponent,
+  InputComponent,
 } from '@egov/cvi-react';
 import { Link, Route, Routes } from 'react-router-dom';
 
@@ -129,6 +130,17 @@ export function App() {
           },
         ]}
       ></AccordionComponent>
+
+      <div>
+        <InputComponent
+          label="Your Name"
+          placeholder="Name..."
+          showMaxLength={false}
+          maxLength={40}
+          disabled={false}
+          icon={undefined}
+        ></InputComponent>
+      </div>
 
       {/* START: routes */}
       {/* These routes and navigation have been generated for you */}
