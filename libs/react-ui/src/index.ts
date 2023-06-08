@@ -21,3 +21,5 @@ export { default as ContentContainerComponent } from './lib/content-container/co
 export { default as ContentPanelComponent } from './lib/content-panel/content-panel';
 
 export { default as ScreenreaderTextComponent } from './lib/screenreader-text/screenreader-text';
+
+export { default as StatusBadgeComponent } from './lib/status-badge/status-badge';

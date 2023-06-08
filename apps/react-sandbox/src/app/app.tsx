@@ -10,6 +10,7 @@ import {
   ContentContainerComponent,
   ContentPanelComponent,
   ScreenreaderTextComponent,
+  StatusBadgeComponent,
 } from '@egov/cvi-react';
 import { Link, Route, Routes } from 'react-router-dom';
 
@@ -106,6 +107,11 @@ export function App() {
       </ContentPanelComponent>
 
       <ScreenreaderTextComponent label="Some text that should only be visible to a screen reader."></ScreenreaderTextComponent>
+
+      <StatusBadgeComponent
+        content="waiting"
+        severityStyle="info"
+      ></StatusBadgeComponent>
 
       {/* START: routes */}
       {/* These routes and navigation have been generated for you */}

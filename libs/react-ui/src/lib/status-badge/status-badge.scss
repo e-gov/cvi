@@ -1,0 +1,42 @@
+@import '../../../../styles/src/lib/scss/tools/color';
+@import '../../../../styles/src/lib/scss/tools/spacing';
+@import '../../../../styles/src/lib/scss/tools/typography';
+
+.status-badge {
+    display: inline-flex;
+    padding-inline: get-spacing('elva');
+    padding-block: calc(#{get-spacing('loksa')} - 1px);
+    align-items: center;
+    font-weight: get-font-weight(delta);
+    border: var(--cvi-border-width) solid var(--border-color, var(--color));
+    color: var(--color);
+    background-color: var(--background-color);
+    border-radius: var(--cvi-radius-s);
+    font-size: get-font-size(80);
+    line-height: get-line-height(100);
+    white-space: nowrap;
+
+    &__info {
+        color: get-color(sapphire-blue-10);
+        background-color: get-color(sapphire-blue-0);
+        border-width: 2px;
+        border-style: solid;
+        border-color: get-color(sapphire-blue-10);
+    }
+
+    &__success {
+        color: get-color(sea-green-11);
+        background-color: get-color(sea-green-0);
+        border-width: 2px;
+        border-style: solid;
+        border-color: get-color(sea-green-11);
+    }
+
+    &__warning {
+        color: get-color(dark-tangerine-15);
+        background-color: get-color(dark-tangerine-1);
+        border-width: 2px;
+        border-style: solid;
+        border-color: get-color(dark-tangerine-10);
+    }
+}
