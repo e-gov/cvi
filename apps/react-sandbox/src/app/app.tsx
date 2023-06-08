@@ -13,6 +13,7 @@ import {
   StatusBadgeComponent,
   AccordionComponent,
   InputComponent,
+  ReorderableListComponent,
 } from '@egov/cvi-react';
 import { Link, Route, Routes } from 'react-router-dom';
 
@@ -141,6 +142,14 @@ export function App() {
           icon={undefined}
         ></InputComponent>
       </div>
+
+      <ReorderableListComponent
+        items={[
+          { index: 0, value: 'Me as well' },
+          { index: 1, value: 'And so am I' },
+          { index: 2, value: 'I am a reorderable item' },
+        ]}
+      ></ReorderableListComponent>
 
       {/* START: routes */}
       {/* These routes and navigation have been generated for you */}

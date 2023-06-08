@@ -27,3 +27,5 @@ export { default as StatusBadgeComponent } from './lib/status-badge/status-badge
 export { default as AccordionComponent } from './lib/accordion/accordion';
 
 export { default as InputComponent } from './lib/input/input';
+
+export { default as ReorderableListComponent } from './lib/reorderable-list/reorderable-list';
