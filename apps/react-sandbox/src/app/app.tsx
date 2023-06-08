@@ -6,6 +6,7 @@ import {
   LabeledIconComponent,
   TextareaComponent,
   FormItem,
+  HtmlSectionComponent,
 } from '@egov/cvi-react';
 import { Link, Route, Routes } from 'react-router-dom';
 
@@ -16,6 +17,17 @@ export function App() {
         Click me
       </ButtonComponent>
       <div />
+
+      <HtmlSectionComponent>
+        <label>CVI </label>
+        <label>Testing </label>
+        <label>Section </label>
+        <HtmlSectionComponent>
+          <label>CVI </label>
+          <label>Testing </label>
+          <label>Section </label>
+        </HtmlSectionComponent>
+      </HtmlSectionComponent>
 
       <TrackComponent layout="grid" isMultiline={true} justify="center">
         <ButtonComponent>Button 1</ButtonComponent>

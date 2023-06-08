@@ -13,3 +13,5 @@ export { default as IconComponent } from './lib/icons/icon/icon';
 export { default as LabeledIconComponent } from './lib/icons/labeled-icon/labeled-icon';
 
 export { default as FormItem } from './lib/form-item/form-item';
+
+export { default as HtmlSectionComponent } from './lib/section/section';
