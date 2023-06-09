@@ -27,6 +27,7 @@ import {
   TableComponent,
   TableHeaderCellComponent,
   useToast,
+  Tooltip,
 } from '@egov/cvi-react';
 import { Link, Route, Routes } from 'react-router-dom';
 
@@ -304,6 +305,10 @@ export function App() {
         <ButtonComponent appearance={'primary'} size={'s'} onClick={() => showToast('error')}>Show Error Toast</ButtonComponent>
         <ButtonComponent appearance={'primary'} size={'s'} onClick={() => showToast('warning')}>Show Warning Toast</ButtonComponent>
       </div>
+
+      <Tooltip content='This is a tooltip'>
+        <span>Hover to see tooltip</span>
+      </Tooltip>
 
       {/* START: routes */}
       {/* These routes and navigation have been generated for you */}

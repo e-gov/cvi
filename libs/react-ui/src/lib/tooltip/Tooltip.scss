@@ -1,0 +1,16 @@
+@import '../../../../styles/src/lib/scss/tools/spacing';
+@import '../../../../styles/src/lib/scss/tools/color';
+@import '../../../../styles/src/lib/scss/settings/variables/typography';
+
+.tooltip {
+  background-color: get-color(white);
+  padding: 4px;
+  border-radius: 4px;
+  filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.25));
+  font-size: --cvi-font-size-80;
+  max-width: 50vw;
+
+  &__arrow {
+    fill: get-color(white);
+  }
+}

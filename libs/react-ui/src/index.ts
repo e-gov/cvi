@@ -63,3 +63,5 @@ export { default as Toast } from './lib/toast';
 export * from './lib/context';
 
 export * from './lib/hooks';
+
+export { default as Tooltip } from './lib/tooltip';
