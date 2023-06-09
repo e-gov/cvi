@@ -54,16 +54,19 @@ export { default as TableComponent } from './lib/table/table';
 
 export { default as TableHeaderCellComponent } from './lib/table/table-header-cell/table-header-cell';
 
-export { default as Toast } from './lib/toast';
+export { default as Toast } from './lib/toast/toast';
 
-export * from './lib/context';
+export * from './lib/context/context';
 
-export * from './lib/hooks';
+export * from './lib/hooks/hooks';
 
-export { default as Tooltip } from './lib/tooltip';
+export { default as Tooltip } from './lib/tooltip/tooltip';
 
-export { default as Modal } from './lib/modal';
+export { default as Modal } from './lib/modal/modal';
 
-export { default as Steps } from './lib/steps';
+export { default as Steps } from './lib/steps/steps';
 
-export { default as Notification, NotificationType } from './lib/notification';
+export {
+  default as Notification,
+  NotificationType,
+} from './lib/notification/notification';

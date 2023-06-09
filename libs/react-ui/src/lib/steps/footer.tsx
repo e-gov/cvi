@@ -1,6 +1,6 @@
-import React, { FC } from "react";
-import { Step } from "./type";
-import './Steps.scss';
+import React, { FC } from 'react';
+import { Step } from './type';
+import './steps.scss';
 
 interface FooterProps {
   steps: Step[];
@@ -8,13 +8,12 @@ interface FooterProps {
   select: (index: number) => void;
 }
 
-const Footer: FC<FooterProps> = ({
-  steps,
-  select,
-  activeStepIndex,
-}) => {
-
-  if (activeStepIndex === undefined || activeStepIndex === null || steps.length <= 1) {
+const Footer: FC<FooterProps> = ({ steps, select, activeStepIndex }) => {
+  if (
+    activeStepIndex === undefined ||
+    activeStepIndex === null ||
+    steps.length <= 1
+  ) {
     return <></>;
   }
 
@@ -27,7 +26,9 @@ const Footer: FC<FooterProps> = ({
           title={steps[activeStepIndex - 1].title}
         >
           <span className="cvi-steps__directional-button-icon">◀</span>
-          <span className="cvi-steps__directional-button-label">{steps[activeStepIndex - 1].title}</span>
+          <span className="cvi-steps__directional-button-label">
+            {steps[activeStepIndex - 1].title}
+          </span>
         </button>
       )}
       {activeStepIndex < steps.length - 1 && (
@@ -36,12 +37,14 @@ const Footer: FC<FooterProps> = ({
           onClick={() => select(activeStepIndex + 1)}
           title={steps[activeStepIndex + 1].title}
         >
-          <span className="cvi-steps__directional-button-label">{steps[activeStepIndex + 1].title}</span>
+          <span className="cvi-steps__directional-button-label">
+            {steps[activeStepIndex + 1].title}
+          </span>
           <span className="cvi-steps__directional-button-icon">▶</span>
         </button>
       )}
     </div>
   );
-}
+};
 
 export default Footer;
