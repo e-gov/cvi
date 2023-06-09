@@ -17,6 +17,7 @@ import {
   StatusBadgeComponent,
   AccordionComponent,
   InputComponent,
+  RadioButtonGroupComponent,
   ReorderableListComponent,
 } from '@egov/cvi-react';
 import { Link, Route, Routes } from 'react-router-dom';
@@ -181,6 +182,37 @@ export function App() {
       <BreadcrumbsComponent
         labels={['Avaleht', 'Abiellumine', 'Avalduse esitamine']}
       />
+
+      <RadioButtonGroupComponent
+        label={'Default radio buttons example'}
+        name={''}
+        items={[
+          { value: '1', label: 1, },
+          { value: '2', label: 2 },
+        ]}
+        onChange={(selectedValue) => console.log(selectedValue)}
+      />
+      <RadioButtonGroupComponent
+        apperance='regular'
+        label={'Regular radio buttons example'}
+        name={''}
+        items={[
+          { value: '1', label: 1 },
+          { value: '2', label: 2 },
+        ]}
+        onChange={(selectedValue) => console.log(selectedValue)}
+      />
+      <RadioButtonGroupComponent
+        apperance='compact'
+        label={'Compact radio buttons example'}
+        name={''}
+        items={[
+          { value: '1', label: 1 },
+          { value: '2', label: 2 },
+        ]}
+        onChange={(selectedValue) => console.log(selectedValue)}
+      />
+
       {/* START: routes */}
       {/* These routes and navigation have been generated for you */}
       {/* Feel free to move and update them to fit your needs */}

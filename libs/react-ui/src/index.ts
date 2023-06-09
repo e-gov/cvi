@@ -36,4 +36,6 @@ export { default as AccordionComponent } from './lib/accordion/accordion';
 
 export { default as InputComponent } from './lib/input/input';
 
+export { default as RadioButtonGroupComponent } from './lib/radio-button-group/radio-button-group';
+
 export { default as ReorderableListComponent } from './lib/reorderable-list/reorderable-list';
