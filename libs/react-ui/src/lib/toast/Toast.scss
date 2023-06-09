@@ -1,0 +1,110 @@
+@import '../../../../styles/src/lib/scss/tools/spacing';
+@import '../../../../styles/src/lib/scss/tools/color';
+@import '../../../../styles/src/lib/scss/settings/variables/other';
+@import '../../../../styles/src/lib/scss/settings/variables/typography';
+
+.toast {
+  padding: 16px;
+  border-radius: 5px;
+  border: 1px solid;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+  transition: opacity 0.25s ease-out;
+
+  &__title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-right: 25px;
+  }
+
+  &__list {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 8px;
+    width: 408px;
+    max-width: 100vw;
+    z-index: 9999;
+    list-style: none;
+  }
+
+  &__content {
+    font-size: --cvi-font-sizes-80;
+
+    a {
+      display: inline;
+      color: get-color(sapphire-blue-10);
+      text-decoration: underline;
+    }
+  }
+
+  &__close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    font-size: 20px;
+  }
+
+  &--success {
+    border-color: get-color(sea-green-10);
+    background-color: get-color(sea-green-0);
+  }
+
+  &--info {
+    border-color: get-color(sapphire-blue-10);
+    background-color: get-color(sapphire-blue-1);
+  }
+
+  &--error {
+    border-color: get-color(jasper-10);
+    background-color: #FCEEEE;
+  }
+
+  &--warning {
+    border-color: get-color(dark-tangerine-10);
+    background-color: get-color(dark-tangerine-1);
+  }
+
+  &__progress-bar {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    opacity: 0.4;
+    height: 5px;
+    width: 100%;
+    transform-origin: left;
+    animation: toast_progressbar_animation linear 1 forwards;
+
+    &--success {
+      background-color: get-color(sea-green-10);
+    }
+
+    &--info {
+      background-color: get-color(sapphire-blue-10);
+    }
+
+    &--error {
+      background-color: get-color(jasper-10);
+    }
+
+    &--warning {
+      background-color: get-color(dark-tangerine-11);
+    }
+  }
+}
+
+@keyframes toast_progressbar_animation {
+  0% {
+    transform: scaleX(1);
+  }
+
+  100% {
+    transform: scaleX(0);
+  }
+}

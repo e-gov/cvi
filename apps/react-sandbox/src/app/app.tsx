@@ -26,10 +26,20 @@ import {
   TableBodyRowComponent,
   TableComponent,
   TableHeaderCellComponent,
+  useToast,
 } from '@egov/cvi-react';
 import { Link, Route, Routes } from 'react-router-dom';
 
 export function App() {
+  const toast = useToast()
+
+  const showToast = (type: 'info' | 'success' | 'error' | 'warning') => toast.open({
+    type,
+    title: 'Toast Title',
+    message: 'Toast Message',
+    timeout: 2000,
+  })
+
   const initialTable = {
     header: ['Event', 'Status', 'Last changed'],
     body: [
@@ -287,6 +297,13 @@ export function App() {
           )
         }
       />
+
+      <div style={{ display: 'flex', flexDirection: 'row' }}>
+        <ButtonComponent appearance={'primary'} size={'s'} onClick={() => showToast('success')}>Show Success Toast</ButtonComponent>
+        <ButtonComponent appearance={'primary'} size={'s'} onClick={() => showToast('info')}>Show Info Toast</ButtonComponent>
+        <ButtonComponent appearance={'primary'} size={'s'} onClick={() => showToast('error')}>Show Error Toast</ButtonComponent>
+        <ButtonComponent appearance={'primary'} size={'s'} onClick={() => showToast('warning')}>Show Warning Toast</ButtonComponent>
+      </div>
 
       {/* START: routes */}
       {/* These routes and navigation have been generated for you */}
