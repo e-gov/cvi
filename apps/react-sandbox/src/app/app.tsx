@@ -1,4 +1,6 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
+import { useState } from 'react';
+import { Link, Route, Routes } from 'react-router-dom';
 import {
   ButtonComponent,
   BreadcrumbsComponent,
@@ -28,11 +30,15 @@ import {
   TableHeaderCellComponent,
   useToast,
   Tooltip,
+  Modal,
 } from '@egov/cvi-react';
-import { Link, Route, Routes } from 'react-router-dom';
+
 
 export function App() {
+
   const toast = useToast()
+
+  const [showModal, setShowModal] = useState(false);
 
   const showToast = (type: 'info' | 'success' | 'error' | 'warning') => toast.open({
     type,
@@ -309,6 +315,16 @@ export function App() {
       <Tooltip content='This is a tooltip'>
         <span>Hover to see tooltip</span>
       </Tooltip>
+
+      <ButtonComponent appearance={'primary'} size={'s'} onClick={() => setShowModal(true)}>Show Modal</ButtonComponent>
+      {showModal && (
+        <Modal
+          title='Some Title'
+          onClose={() => setShowModal(false)}
+        >
+          <p>Some modal content</p>
+        </Modal>
+      )}
 
       {/* START: routes */}
       {/* These routes and navigation have been generated for you */}

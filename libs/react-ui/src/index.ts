@@ -40,13 +40,9 @@ export { default as RadioButtonGroupComponent } from './lib/radio-button-group/r
 
 export { default as ReorderableListComponent } from './lib/reorderable-list/reorderable-list';
 
-export {
-  default as TableOfContentsWrapperComponent
-} from './lib/table-of-contents/table-of-contents-wrapper/table-of-contents-wrapper';
+export { default as TableOfContentsWrapperComponent } from './lib/table-of-contents/table-of-contents-wrapper/table-of-contents-wrapper';
 
-export {
-  default as TableOfContentsItemComponent
-} from './lib/table-of-contents/table-of-contents-item/table-of-contents-item';
+export { default as TableOfContentsItemComponent } from './lib/table-of-contents/table-of-contents-item/table-of-contents-item';
 
 export { default as TableOfContentsComponent } from './lib/table-of-contents/table-of-contents';
 
@@ -65,3 +61,5 @@ export * from './lib/context';
 export * from './lib/hooks';
 
 export { default as Tooltip } from './lib/tooltip';
+
+export { default as Modal } from './lib/modal';
