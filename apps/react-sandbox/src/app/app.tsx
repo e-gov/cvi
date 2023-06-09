@@ -13,6 +13,7 @@ import {
   ContentContainerComponent,
   ContentPanelComponent,
   ScreenreaderTextComponent,
+  SelectComponent,
   StatusBadgeComponent,
   AccordionComponent,
   InputComponent,
@@ -27,6 +28,25 @@ export function App() {
         Click me
       </ButtonComponent>
       <div />
+      <SelectComponent
+        style={{ width: 250 }}
+        label={'Some label'}
+        placeholder={'Otsi elementi või lisa uss 🐍'}
+        options={[
+          {
+            label: 'Item 1 that is not that short but actually quite long',
+            value: 'first',
+          },
+          { label: 'item 2', value: 'second' },
+          { label: 'Item that can be selected from keyboard', value: 'third' },
+          { label: 'Item 4', value: 'fourth' },
+          { label: 'Item 5', value: 'fifth' },
+          {
+            label: 'Item 6 with a very long text spanning many lines',
+            value: 'sixth',
+          },
+        ]}
+      ></SelectComponent>
       <TabGroupComponent>
         <TabElement title="Tab 1">First tab content</TabElement>
         <TabElement title="Tab 2">Second tab content</TabElement>

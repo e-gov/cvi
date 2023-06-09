@@ -4,6 +4,8 @@ export {
   ButtonSize,
 } from './lib/button/button';
 
+export { default as SelectComponent } from './lib/select/select';
+
 export { default as BreadcrumbsComponent } from './lib/breadcrumbs/breadcrumbs';
 
 export { default as TabGroupComponent } from './lib/tabs/tab-group/tab-group';
