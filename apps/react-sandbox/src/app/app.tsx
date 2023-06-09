@@ -1,6 +1,7 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import {
   ButtonComponent,
+  BreadcrumbsComponent,
   TabElement,
   TabGroupComponent,
   TrackComponent,
@@ -157,6 +158,9 @@ export function App() {
         ]}
       ></ReorderableListComponent>
 
+      <BreadcrumbsComponent
+        labels={['Avaleht', 'Abiellumine', 'Avalduse esitamine']}
+      />
       {/* START: routes */}
       {/* These routes and navigation have been generated for you */}
       {/* Feel free to move and update them to fit your needs */}
