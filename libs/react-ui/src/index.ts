@@ -64,6 +64,6 @@ export { default as Tooltip } from './lib/tooltip';
 
 export { default as Modal } from './lib/modal';
 
-export { default as Steps } from './lib/Steps';
+export { default as Steps } from './lib/steps';
 
 export { default as Notification, NotificationType } from './lib/notification';

@@ -1,6 +1,5 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { useState } from 'react';
-
 import { Link, Route, Routes } from 'react-router-dom';
 import {
   ButtonComponent,
@@ -41,7 +40,7 @@ export function App() {
 
   const toast = useToast()
   const [showModal, setShowModal] = useState(false);
-  const [step, setStep] = useState(0)
+  const [step, setStep] = useState<number | undefined>(undefined)
 
   const showToast = (type: 'info' | 'success' | 'error' | 'warning') => toast.open({
     type,
@@ -355,6 +354,18 @@ export function App() {
         select={setStep}
       />
 
+      <Steps
+        title='Steps Example'
+        description='Some Description'
+        steps={[
+          { title: 'Step A', content: 'Step a content' },
+          { title: 'Step B', content: 'Step b content' },
+          { title: 'Step C', content: 'Step c content' },
+          { title: 'Step D', content: 'Step d content' },
+        ]}
+        activeStepIndex={step}
+        select={setStep}
+      />
       {/* START: routes */}
       {/* These routes and navigation have been generated for you */}
       {/* Feel free to move and update them to fit your needs */}
