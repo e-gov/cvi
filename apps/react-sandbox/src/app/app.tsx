@@ -1,6 +1,8 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import {
   ButtonComponent,
+  TabElement,
+  TabGroupComponent,
   TrackComponent,
   IconComponent,
   LabeledIconComponent,
@@ -24,6 +26,10 @@ export function App() {
         Click me
       </ButtonComponent>
       <div />
+      <TabGroupComponent>
+        <TabElement title="Tab 1">First tab content</TabElement>
+        <TabElement title="Tab 2">Second tab content</TabElement>
+      </TabGroupComponent>
 
       <HtmlSectionComponent>
         <label>CVI </label>

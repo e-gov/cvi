@@ -4,6 +4,10 @@ export {
   ButtonSize,
 } from './lib/button/button';
 
+export { default as TabGroupComponent } from './lib/tabs/tab-group/tab-group';
+
+export { default as TabElement } from './lib/tabs/tab-element/tab-element';
+
 export { default as TrackComponent } from './lib/track/track';
 
 export { default as TextareaComponent } from './lib/textarea/textarea';
