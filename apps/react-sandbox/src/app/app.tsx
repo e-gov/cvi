@@ -31,6 +31,7 @@ import {
   useToast,
   Tooltip,
   Modal,
+  Notification,
 } from '@egov/cvi-react';
 
 
@@ -325,6 +326,19 @@ export function App() {
           <p>Some modal content</p>
         </Modal>
       )}
+
+      <Notification
+        title='Title'
+        content='This is a notification'
+        type='info'
+        size='compact'
+      />
+
+      <Notification
+        title='Title'
+        content='This is a notification too'
+        type='success'
+      />
 
       {/* START: routes */}
       {/* These routes and navigation have been generated for you */}

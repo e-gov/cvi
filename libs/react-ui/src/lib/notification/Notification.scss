@@ -1,0 +1,64 @@
+@import '../../../../styles/src/lib/scss/tools/spacing';
+@import '../../../../styles/src/lib/scss/tools/color';
+@import '../../../../styles/src/lib/scss/settings/variables/other';
+@import '../../../../styles/src/lib/scss/settings/variables/typography';
+
+.notification {
+  padding: 16px;
+  border-radius: 5px;
+  border: 1px solid;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+  transition: opacity 0.25s ease-out;
+
+  &__title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-right: 25px;
+  }
+
+  &__content {
+    font-size: --cvi-font-size-80;
+
+    a {
+      display: inline;
+      color: get-color(sapphire-blue-10);
+      text-decoration: underline;
+    }
+  }
+
+  &__close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    font-size: 20px;
+  }
+
+  &--success {
+    border-color: get-color(sea-green-10);
+    background-color: get-color(sea-green-0);
+  }
+
+  &--info {
+    border-color: get-color(sapphire-blue-10);
+    background-color: get-color(sapphire-blue-1);
+  }
+
+  &--error {
+    border-color: get-color(jasper-10);
+    background-color: #FCEEEE;
+  }
+
+  &--warning {
+    border-color: get-color(dark-tangerine-10);
+    background-color: get-color(dark-tangerine-1);
+  }
+
+  &--neutral {
+    background-color: var(--cvi-color-black-coral-1);
+    border: 1px solid var(--cvi-color-black-coral-2);
+  }
+}
