@@ -4,6 +4,11 @@
   --comment: 'A datepicker';
 
   @at-root {
+    #{$base}--is-disabled & {
+      background-color: get-color(black-coral-0);
+      border-color: get-color(black-coral-5);
+    }
+
     #{$base}__input {
       &-container {
         border: 1px solid get-color(black-coral-6);
@@ -15,6 +20,11 @@
 
         &--focused {
           border-color: get-color(sapphire-blue-10);
+        }
+
+        &--is-disabled & {
+          background-color: get-color(black-coral-0);
+          border-color: get-color(black-coral-5);
         }
       }
 
@@ -37,11 +47,6 @@
 
       &-icon {
         width: 18px;
-      }
-
-      #{$base}--is-disabled & {
-        background-color: get-color(black-coral-0);
-        border-color: get-color(black-coral-5);
       }
     }
 

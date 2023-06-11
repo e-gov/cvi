@@ -22,7 +22,7 @@ describe('DatepickerComponent', () => {
 
     cy.shouldHaveClasses('cvi-ng-datepicker', [
       'cvi-textfield',
-      'cvi-datepicker--is-disabled',
+      'cvi-datepicker__input-container--is-disabled',
     ])
       .shouldHaveAttributes('input', [{ name: 'id', value: 'Qwerty123' }])
       .and('be.disabled');
@@ -30,7 +30,7 @@ describe('DatepickerComponent', () => {
     cy.get('cvi-ng-datepicker')
       .changeArg('disabled', false)
       .shouldNotHaveClasses('cvi-ng-datepicker', [
-        'cvi-datepicker--is-disabled',
+        'cvi-datepicker__input-container--is-disabled',
       ]);
   });
 
