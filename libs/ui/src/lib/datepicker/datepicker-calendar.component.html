@@ -1,6 +1,6 @@
 <div class="cvi-datepicker__calendar"
      tabindex="-1"
-     id="datePickerCalendar"
+     id="datePickerCalendar-{{baseId}}"
      role="dialog"
      aria-modal="true">
   <div class="cvi-datepicker__calendar-header">
@@ -12,7 +12,7 @@
       </button>
     </div>
     <div *ngIf="this.displayDate"
-         id="monthYearLabel"
+         id="monthYearLabel-{{baseId}}"
          aria-live="polite"
          class="cvi-datepicker__calendar-header-month">{{ monthLabels[displayDate.getMonth()] }} {{ displayDate.getFullYear() }}</div>
     <div class="cvi-datepicker__calendar-header-chevron">
@@ -24,7 +24,7 @@
       </button>
     </div>
   </div>
-  <div role="grid" aria-labelledby="monthYearLabel" class="cvi-datepicker__calendar-grid">
+  <div role="grid" aria-labelledby="monthYearLabel-{{baseId}}" class="cvi-datepicker__calendar-grid">
     <div class="cvi-datepicker__calendar-daylabels">
       <div class="cvi-datepicker__calendar-daylabel" *ngFor="let label of dayShorthandLabels">{{ label }}</div>
     </div>

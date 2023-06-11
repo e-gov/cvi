@@ -12,6 +12,7 @@ import {
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { DATEPICKER_LABEL_CONFIG } from './datepicker-label-config.token';
 import { DatepickerLabelConfig } from './datepicker-label.config';
+import { v4 as uuidv4 } from 'uuid';
 
 @Component({
   selector: 'cvi-ng-datepicker',
@@ -43,6 +44,9 @@ export class DatepickerComponent implements ControlValueAccessor {
 
   focus = false;
   valueValidated = '';
+
+  /** @internal */
+  baseId = 'datepicker-' + uuidv4();
 
   private readonly select: HTMLElement;
 

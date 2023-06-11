@@ -19,6 +19,7 @@ export class DatepickerCalendarComponent implements OnChanges, OnInit {
   @Input() dayShorthandLabels!: string[];
   @Input() dayFullLabels!: string[];
   @Input() monthLabels!: string[];
+  @Input() baseId!: string;
 
   @Output() dateChanged = new EventEmitter<string>();
 
