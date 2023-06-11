@@ -24,7 +24,7 @@
       </button>
     </div>
   </div>
-  <div role="grid" aria-labelledby="monthYearLabel-{{baseId}}" class="cvi-datepicker__calendar-grid">
+  <div role="grid" [attr.aria-labelledby]="'monthYearLabel-' + baseId" class="cvi-datepicker__calendar-grid">
     <div class="cvi-datepicker__calendar-daylabels">
       <div class="cvi-datepicker__calendar-daylabel" *ngFor="let label of dayShorthandLabels">{{ label }}</div>
     </div>

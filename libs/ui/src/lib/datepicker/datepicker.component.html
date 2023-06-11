@@ -16,8 +16,8 @@
     [placeholder]="placeholder??''"
     [attr.disabled]="disabled ? disabled : null"
     [(ngModel)]="value"
-    aria-labelledby="datePickerLabel-{{baseId}}"
-    aria-describedby="dateDescription-{{baseId}}"
+    [attr.aria-labelledby]="'datePickerLabel-' + baseId"
+    [attr.aria-describedby]="'dateDescription-' + baseId"
     (focus)="setFocus(true)"
   />
   <cvi-ng-icon class="cvi-datepicker__input-icon-wrapper"
