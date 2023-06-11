@@ -33,6 +33,8 @@ import { IconsRegistry } from './icons/icons-registry.service';
 import {
   cviArrowALeft,
   cviArrowARight,
+  cviArrowBLeft,
+  cviArrowBRight,
   cviArrowDown,
   cviArrowDownAlt,
   cviArrowUp,
@@ -188,6 +190,8 @@ export class UiModule {
       cviLoupe,
       cviArrowALeft,
       cviArrowARight,
+      cviArrowBLeft,
+      cviArrowBRight,
       cviSadFace,
       cviHappyFace,
       cviScreenShare,

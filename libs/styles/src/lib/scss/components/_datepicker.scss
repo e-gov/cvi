@@ -4,11 +4,6 @@
   --comment: 'A datepicker';
 
   @at-root {
-    #{$base}--is-disabled & {
-      background-color: get-color(black-coral-0);
-      border-color: get-color(black-coral-5);
-    }
-
     #{$base}__input {
       &-container {
         border: 1px solid get-color(black-coral-6);
