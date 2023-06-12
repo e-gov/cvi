@@ -60,102 +60,102 @@ const Template: Story = (args) => ({
               <div class="cvi-datepicker__calendar-daynumber">
               </div>
               <div class="cvi-datepicker__calendar-daynumber">
-                <button class="cvi-datepicker__calendar-button"  aria-label="Neljapäev" aria-selected="false">1</button>
+                <button class="cvi-datepicker__calendar-button"  aria-label="Neljapäev">1</button>
               </div>
               <div class="cvi-datepicker__calendar-daynumber">
                 <button class="cvi-datepicker__calendar-button"  aria-label="Reede" aria-selected="true">2</button>
               </div>
               <div class="cvi-datepicker__calendar-daynumber">
-                <button class="cvi-datepicker__calendar-button cvi-datepicker__calendar-button--weekend" aria-label="Laupäev" aria-selected="false">3</button>
+                <button class="cvi-datepicker__calendar-button cvi-datepicker__calendar-button--weekend" aria-label="Laupäev">3</button>
               </div>
               <div class="cvi-datepicker__calendar-daynumber">
-                <button class="cvi-datepicker__calendar-button cvi-datepicker__calendar-button--weekend" aria-label="Pühapäev" aria-selected="false">4</button>
-              </div>
-            </div>
-            <div class="cvi-datepicker__calendar-weekrow">
-              <div class="cvi-datepicker__calendar-daynumber">
-                <button class="cvi-datepicker__calendar-button"  aria-label="Esmaspäev" aria-selected="false">5</button>
-              </div>
-              <div class="cvi-datepicker__calendar-daynumber">
-                <button class="cvi-datepicker__calendar-button cvi-datepicker__calendar-button--selected" aria-label="Teisipäev" aria-selected="false">6</button>
-              </div>
-              <div class="cvi-datepicker__calendar-daynumber">
-                <button class="cvi-datepicker__calendar-button"  aria-label="Kolmapäev" aria-selected="false">7</button>
-              </div>
-              <div class="cvi-datepicker__calendar-daynumber">
-                <button class="cvi-datepicker__calendar-button"  aria-label="Neljapäev" aria-selected="false">8</button>
-              </div>
-              <div class="cvi-datepicker__calendar-daynumber">
-                <button class="cvi-datepicker__calendar-button"  aria-label="Reede" aria-selected="false">9</button>
-              </div>
-              <div class="cvi-datepicker__calendar-daynumber">
-                <button class="cvi-datepicker__calendar-button cvi-datepicker__calendar-button--weekend" aria-label="Laupäev" aria-selected="false">10</button>
-              </div>
-              <div class="cvi-datepicker__calendar-daynumber">
-                <button class="cvi-datepicker__calendar-button cvi-datepicker__calendar-button--weekend" aria-label="Pühapäev" aria-selected="false">11</button>
+                <button class="cvi-datepicker__calendar-button cvi-datepicker__calendar-button--weekend" aria-label="Pühapäev">4</button>
               </div>
             </div>
             <div class="cvi-datepicker__calendar-weekrow">
               <div class="cvi-datepicker__calendar-daynumber">
-                <button class="cvi-datepicker__calendar-button cvi-datepicker__calendar-button--today" aria-label="Esmaspäev" aria-selected="false" aria-current="date">12</button>
+                <button class="cvi-datepicker__calendar-button"  aria-label="Esmaspäev">5</button>
               </div>
               <div class="cvi-datepicker__calendar-daynumber">
-                <button class="cvi-datepicker__calendar-button"  aria-label="Teisipäev" aria-selected="false">13</button>
+                <button class="cvi-datepicker__calendar-button cvi-datepicker__calendar-button--selected" aria-label="Teisipäev">6</button>
               </div>
               <div class="cvi-datepicker__calendar-daynumber">
-                <button class="cvi-datepicker__calendar-button"  aria-label="Kolmapäev" aria-selected="false">14</button>
+                <button class="cvi-datepicker__calendar-button"  aria-label="Kolmapäev">7</button>
               </div>
               <div class="cvi-datepicker__calendar-daynumber">
-                <button class="cvi-datepicker__calendar-button"  aria-label="Neljapäev" aria-selected="false">15</button>
+                <button class="cvi-datepicker__calendar-button"  aria-label="Neljapäev">8</button>
               </div>
               <div class="cvi-datepicker__calendar-daynumber">
-                <button class="cvi-datepicker__calendar-button"  aria-label="Reede" aria-selected="false">16</button>
+                <button class="cvi-datepicker__calendar-button"  aria-label="Reede">9</button>
               </div>
               <div class="cvi-datepicker__calendar-daynumber">
-                <button class="cvi-datepicker__calendar-button cvi-datepicker__calendar-button--weekend" aria-label="Laupäev" aria-selected="false">17</button>
+                <button class="cvi-datepicker__calendar-button cvi-datepicker__calendar-button--weekend" aria-label="Laupäev">10</button>
               </div>
               <div class="cvi-datepicker__calendar-daynumber">
-                <button class="cvi-datepicker__calendar-button cvi-datepicker__calendar-button--weekend" aria-label="Pühapäev" aria-selected="false">18</button>
-              </div>
-            </div>
-            <div class="cvi-datepicker__calendar-weekrow">
-              <div class="cvi-datepicker__calendar-daynumber">
-                <button class="cvi-datepicker__calendar-button"  aria-label="Esmaspäev" aria-selected="false">19</button>
-              </div>
-              <div class="cvi-datepicker__calendar-daynumber">
-                <button class="cvi-datepicker__calendar-button"  aria-label="Teisipäev" aria-selected="false">20</button>
-              </div>
-              <div class="cvi-datepicker__calendar-daynumber">
-                <button class="cvi-datepicker__calendar-button"  aria-label="Kolmapäev" aria-selected="false">21</button>
-              </div>
-              <div class="cvi-datepicker__calendar-daynumber">
-                <button class="cvi-datepicker__calendar-button"  aria-label="Neljapäev" aria-selected="false">22</button>
-              </div>
-              <div class="cvi-datepicker__calendar-daynumber">
-                <button class="cvi-datepicker__calendar-button"  aria-label="Reede" aria-selected="false">23</button>
-              </div>
-              <div class="cvi-datepicker__calendar-daynumber">
-                <button class="cvi-datepicker__calendar-button cvi-datepicker__calendar-button--weekend" aria-label="Laupäev" aria-selected="false">24</button>
-              </div>
-              <div class="cvi-datepicker__calendar-daynumber">
-                <button class="cvi-datepicker__calendar-button cvi-datepicker__calendar-button--weekend" aria-label="Pühapäev" aria-selected="false">25</button>
+                <button class="cvi-datepicker__calendar-button cvi-datepicker__calendar-button--weekend" aria-label="Pühapäev">11</button>
               </div>
             </div>
             <div class="cvi-datepicker__calendar-weekrow">
               <div class="cvi-datepicker__calendar-daynumber">
-                <button class="cvi-datepicker__calendar-button"  aria-label="Esmaspäev" aria-selected="false">26</button>
+                <button class="cvi-datepicker__calendar-button cvi-datepicker__calendar-button--today" aria-label="Esmaspäev" aria-current="date">12</button>
               </div>
               <div class="cvi-datepicker__calendar-daynumber">
-                <button class="cvi-datepicker__calendar-button"  aria-label="Teisipäev" aria-selected="false">27</button>
+                <button class="cvi-datepicker__calendar-button"  aria-label="Teisipäev">13</button>
               </div>
               <div class="cvi-datepicker__calendar-daynumber">
-                <button class="cvi-datepicker__calendar-button"  aria-label="Kolmapäev" aria-selected="false">28</button>
+                <button class="cvi-datepicker__calendar-button"  aria-label="Kolmapäev">14</button>
               </div>
               <div class="cvi-datepicker__calendar-daynumber">
-                <button class="cvi-datepicker__calendar-button"  aria-label="Neljapäev" aria-selected="false">29</button>
+                <button class="cvi-datepicker__calendar-button"  aria-label="Neljapäev">15</button>
               </div>
               <div class="cvi-datepicker__calendar-daynumber">
-                <button class="cvi-datepicker__calendar-button"  aria-label="Reede" aria-selected="false">30</button>
+                <button class="cvi-datepicker__calendar-button"  aria-label="Reede">16</button>
+              </div>
+              <div class="cvi-datepicker__calendar-daynumber">
+                <button class="cvi-datepicker__calendar-button cvi-datepicker__calendar-button--weekend" aria-label="Laupäev">17</button>
+              </div>
+              <div class="cvi-datepicker__calendar-daynumber">
+                <button class="cvi-datepicker__calendar-button cvi-datepicker__calendar-button--weekend" aria-label="Pühapäev">18</button>
+              </div>
+            </div>
+            <div class="cvi-datepicker__calendar-weekrow">
+              <div class="cvi-datepicker__calendar-daynumber">
+                <button class="cvi-datepicker__calendar-button"  aria-label="Esmaspäev">19</button>
+              </div>
+              <div class="cvi-datepicker__calendar-daynumber">
+                <button class="cvi-datepicker__calendar-button"  aria-label="Teisipäev">20</button>
+              </div>
+              <div class="cvi-datepicker__calendar-daynumber">
+                <button class="cvi-datepicker__calendar-button"  aria-label="Kolmapäev">21</button>
+              </div>
+              <div class="cvi-datepicker__calendar-daynumber">
+                <button class="cvi-datepicker__calendar-button"  aria-label="Neljapäev">22</button>
+              </div>
+              <div class="cvi-datepicker__calendar-daynumber">
+                <button class="cvi-datepicker__calendar-button"  aria-label="Reede">23</button>
+              </div>
+              <div class="cvi-datepicker__calendar-daynumber">
+                <button class="cvi-datepicker__calendar-button cvi-datepicker__calendar-button--weekend" aria-label="Laupäev">24</button>
+              </div>
+              <div class="cvi-datepicker__calendar-daynumber">
+                <button class="cvi-datepicker__calendar-button cvi-datepicker__calendar-button--weekend" aria-label="Pühapäev">25</button>
+              </div>
+            </div>
+            <div class="cvi-datepicker__calendar-weekrow">
+              <div class="cvi-datepicker__calendar-daynumber">
+                <button class="cvi-datepicker__calendar-button"  aria-label="Esmaspäev">26</button>
+              </div>
+              <div class="cvi-datepicker__calendar-daynumber">
+                <button class="cvi-datepicker__calendar-button"  aria-label="Teisipäev">27</button>
+              </div>
+              <div class="cvi-datepicker__calendar-daynumber">
+                <button class="cvi-datepicker__calendar-button"  aria-label="Kolmapäev">28</button>
+              </div>
+              <div class="cvi-datepicker__calendar-daynumber">
+                <button class="cvi-datepicker__calendar-button"  aria-label="Neljapäev">29</button>
+              </div>
+              <div class="cvi-datepicker__calendar-daynumber">
+                <button class="cvi-datepicker__calendar-button"  aria-label="Reede">30</button>
               </div>
               <div class="cvi-datepicker__calendar-daynumber">
               </div>

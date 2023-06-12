@@ -17,8 +17,7 @@
          class="cvi-datepicker__calendar-header-month">{{ monthLabels[displayDate.getMonth()] }} {{ displayDate.getFullYear() }}</div>
     <div class="cvi-datepicker__calendar-header-chevron">
       <button aria-label="Next month" (click)="nextMonth()">
-        <cvi-ng-icon class=""
-                     [name]="'arrow_b_right'"
+        <cvi-ng-icon [name]="'arrow_b_right'"
                      [svgClass]="'cvi-datepicker__header-chevron-icon'">
         </cvi-ng-icon>
       </button>
