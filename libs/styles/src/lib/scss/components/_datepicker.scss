@@ -1,0 +1,129 @@
+@use 'sass:map';
+
+@mixin cvi-datepicker($base: &) {
+  --comment: 'A datepicker';
+
+  @at-root {
+    #{$base}__input {
+      &-container {
+        border: 1px solid get-color(black-coral-6);
+        border-radius: map.get($cvi-radii, s);
+        display: flex;
+        align-items: center;
+        width: 125px;
+        height: 40px;
+
+        &--focused {
+          border-color: get-color(sapphire-blue-10);
+        }
+
+        &--is-disabled & {
+          background-color: get-color(black-coral-0);
+          border-color: get-color(black-coral-5);
+        }
+      }
+
+      &-field {
+        font-size: get-font-size(100);
+        border-radius: map.get($cvi-radii, s);
+        padding: 8px;
+        width: 96px;
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+      &-icon-wrapper {
+        fill: get-color(black-coral-10);
+        display: block;
+        padding-top: 6px;
+      }
+
+      &-icon {
+        width: 18px;
+      }
+    }
+
+    #{$base}__calendar {
+      position: absolute;
+      background-color: get-color(white);
+      border: 1px solid get-color(black-coral-6);
+      border-radius: map.get($cvi-radii, s);
+      width: 392px;
+      height: 280px;
+      color: get-color(black-coral-15);
+
+      &-header {
+        width: 100%;
+        height: 48px;
+        background-color: get-color(sapphire-blue-10);
+        border-color: get-color(black-coral-6);
+        display: flex;
+        justify-content: space-between;
+
+        &-chevron {
+          width: 48px;
+          padding: 10px 15px;
+          fill: get-color(white);
+        }
+
+        &-chevron-icon {
+          width: 24px;
+        }
+
+        &-month {
+          font-size: get-font-size(200);
+          color: get-color(white);
+          padding-top: 10px;
+        }
+      }
+
+      &-daylabels, &-weekrow {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        height: 34px;
+        align-items: center;
+        color: get-color(black-coral-15);
+      }
+
+      &-daylabel {
+        font-weight: get-font-weight(beta);
+        font-size: get-font-size(80);
+      }
+
+      &-daynumber {
+        font-size: get-font-size(80);
+        width: 34px;
+        height: 34px;
+      }
+
+      &-button {
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        color: get-color(black-coral-15);
+        border-radius: 100%;
+
+        &--selected {
+          font-weight: get-font-weight(beta);
+          color: get-color(white);
+          background-color: get-color(sapphire-blue-10);
+        }
+
+        &--today {
+          background-color: get-color(black-coral-2);
+        }
+
+        &--disabled {
+          color: get-color(black-coral-2);
+        }
+
+        &--weekend {
+          color: get-color(black-coral-9);
+        }
+      }
+    }
+  }
+}

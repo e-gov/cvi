@@ -1,0 +1,40 @@
+<div
+  class="cvi-datepicker__input-container"
+  [ngClass]="{ 'cvi-datepicker__input-container--focused': focus }"
+>
+  <label id="datePickerLabel-{{baseId}}" [attr.for]="htmlId" class="cvi-screenreader-text"
+         *ngIf="screenreaderLabel$ | async as label">{{label}}</label>
+  <span id="dateDescription-{{baseId}}" class="cvi-screenreader-text"
+        *ngIf="screenreaderDescription$ | async as description">{{description}}</span>
+
+  <input
+    type="text"
+    role="textbox"
+    aria-haspopup="true"
+    [attr.id]="htmlId"
+    class="cvi-datepicker__input-field"
+    [placeholder]="placeholder??''"
+    [attr.disabled]="disabled ? disabled : null"
+    [(ngModel)]="value"
+    [attr.aria-labelledby]="'datePickerLabel-' + baseId"
+    [attr.aria-describedby]="'dateDescription-' + baseId"
+    (focus)="setFocus(true)"
+  />
+  <cvi-ng-icon class="cvi-datepicker__input-icon-wrapper"
+               [name]="'calendar'"
+               [svgClass]="'cvi-datepicker__input-icon'"
+               [height]="20"
+               (click)="toggleFocus(); $event.stopPropagation()">
+  </cvi-ng-icon>
+</div>
+<div aria-live="polite" class="cvi-screenreader-text">{{ value }}</div>
+<cvi-ng-datepicker-calendar
+  *ngIf="focus"
+  [baseId]="baseId"
+  [date]="valueValidated"
+  [dayFullLabels]="(dayFullLabels$ | async)??[]"
+  [dayShorthandLabels]="(dayShorthandLabels$ | async)??[]"
+  [monthLabels]="(monthLabels$ | async)??[]"
+  (dateChanged)="handleDateSelect($event)"
+  #datePickerCalendar
+></cvi-ng-datepicker-calendar>
