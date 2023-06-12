@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [1.15.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.14.0...ui-1.15.0) (2023-06-12)
+
+
+### Features
+
+* **ng:** datepicker EBS-116 ([#107](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/107)) ([4d6c2c4](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/4d6c2c4353b144d31f5ea724a6cd724afeb5c484))
+
+
+
 # [1.14.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.13.1...ui-1.14.0) (2023-06-02)
 
 
