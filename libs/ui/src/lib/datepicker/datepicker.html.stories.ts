@@ -24,7 +24,7 @@ const Template: Story = (args) => ({
       </div>
       <div aria-live="polite" class="cvi-screenreader-text">06.06.2023</div>
       <div>
-        <div tabindex="-1" role="dialog" aria-modal="true" class="cvi-datepicker__calendar" id="datePickerCalendar-datepicker-e5fbfa48-a30e-4edf-aa76-a1e84c2657c7">
+        <div tabindex="-1" role="dialog" aria-modal="true" class="cvi-datepicker__calendar" title="Calendar" id="datePickerCalendar-datepicker-e5fbfa48-a30e-4edf-aa76-a1e84c2657c7">
           <div class="cvi-datepicker__calendar-header">
             <div class="cvi-datepicker__calendar-header-chevron">
               <button aria-label="Previous month">
