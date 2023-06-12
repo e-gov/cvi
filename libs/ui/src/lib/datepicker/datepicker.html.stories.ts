@@ -63,7 +63,7 @@ const Template: Story = (args) => ({
                 <button class="cvi-datepicker__calendar-button"  aria-label="Neljapäev">1</button>
               </div>
               <div class="cvi-datepicker__calendar-daynumber">
-                <button class="cvi-datepicker__calendar-button"  aria-label="Reede" aria-selected="true">2</button>
+                <button class="cvi-datepicker__calendar-button"  aria-label="Reede">2</button>
               </div>
               <div class="cvi-datepicker__calendar-daynumber">
                 <button class="cvi-datepicker__calendar-button cvi-datepicker__calendar-button--weekend" aria-label="Laupäev">3</button>
