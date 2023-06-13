@@ -1,31 +1,41 @@
 import React, { FC, useState } from 'react';
 
 type TextareaProps = {
+  id: string;
   placeholder: string;
   maxLength?: number;
-  showMaxLength?: boolean;
+  showCharacterCount?: boolean;
+  disabled?: boolean;
   resizable?: boolean;
 };
 
 const TextareaComponent: FC<TextareaProps> = ({
+  id,
   placeholder,
   maxLength = 2000,
-  showMaxLength = false,
+  showCharacterCount = false,
   resizable = true,
+  disabled = false,
 }) => {
   const [currentLength, setCurrentLength] = useState(0);
+
   return (
-    <span className="cvi-textfield cvi-textfield--type-multiple-lines">
+    <span
+      className={`cvi-textfield cvi-textfield--type-multiple-lines ${
+        disabled ? 'cvi-textfield--is-disabled' : ''
+      } ${!resizable ? 'cvi-textfield--no-resize' : ''}`}
+    >
       <textarea
         className="cvi-textfield__text-control"
+        id={id}
         placeholder={placeholder}
         maxLength={maxLength}
-        style={{ resize: resizable ? undefined : 'none' }}
         onChange={(e) => {
-          if (showMaxLength) setCurrentLength(e.target.value.length);
+          if (showCharacterCount) setCurrentLength(e.target.value.length);
         }}
+        disabled={disabled}
       ></textarea>
-      {showMaxLength && (
+      {showCharacterCount && (
         <div className="cvi-character-counter">
           {currentLength}/{maxLength}
         </div>
@@ -35,3 +45,4 @@ const TextareaComponent: FC<TextareaProps> = ({
 };
 
 export default TextareaComponent;
+

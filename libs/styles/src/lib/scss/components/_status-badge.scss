@@ -14,7 +14,7 @@
   line-height: get-line-height(100);
   white-space: nowrap;
 
-  .badge-icon {
+  #{$base}.badge-icon {
     position: absolute;
     background-color: var(--background-color);
     fill: var(--color);

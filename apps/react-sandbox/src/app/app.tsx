@@ -1,23 +1,23 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { ButtonComponent, TextareaComponent } from '@egov/cvi-react';
+import { Button, Textarea } from '@egov/cvi-react';
 
 import { Link, Route, Routes } from 'react-router-dom';
 
 export function App() {
   return (
     <>
-      <ButtonComponent appearance={'primary'} size={'s'} disabled={false}>
+      <Button appearance={'primary'} size={'s'} disabled={false}>
         Click me
-      </ButtonComponent>
+      </Button>
       <div />
 
       <div>
-        <TextareaComponent
+        <Textarea
           placeholder="Enter Your Name"
           maxLength={30}
           showMaxLength={false}
           resizable={true}
-        ></TextareaComponent>
+        ></Textarea>
       </div>
 
       {/* START: routes */}

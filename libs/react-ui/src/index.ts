@@ -1,7 +1,7 @@
 export {
-  default as ButtonComponent,
+  default as Button,
   ButtonAppearance,
   ButtonSize,
 } from './lib/button/button';
 
-export { default as TextareaComponent } from './lib/textarea/textarea';
+export { default as Textarea } from './lib/textarea/textarea';
