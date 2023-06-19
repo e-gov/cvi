@@ -39,5 +39,5 @@ export const Default = Template.bind({});
 
 export const WithTooltip = Template.bind({});
 WithTooltip.args = {
-  withTooltip: true
+  withTooltip: true,
 };
