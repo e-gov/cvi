@@ -1,6 +1,7 @@
 import { Story, Meta } from '@storybook/angular';
 import notes from './status-badge.component.md';
 import { StatusBadgeComponent } from './status-badge.component';
+import { storybookIconsNames } from '../icons/storybook-icons';
 
 export default {
   title: 'Angular/Status badge',
@@ -15,6 +16,8 @@ export default {
       if: { arg: 'withTooltip', eq: true },
     },
     tooltipIcon: {
+      options: storybookIconsNames,
+      control: { type: 'select' },
       if: { arg: 'withTooltip', eq: true },
     },
   },
@@ -30,7 +33,7 @@ export default {
 const Template: Story<StatusBadgeComponent> = (args: StatusBadgeComponent) => ({
   props: args,
   template: `
-    <cvi-ng-status-badge [severity]="severity" [label]="label" [withTooltip]="withTooltip" [tooltipText]="tooltipText">
+    <cvi-ng-status-badge [severity]="severity" [label]="label" [withTooltip]="withTooltip" [tooltipText]="tooltipText" [tooltipIcon]="tooltipIcon">
     </cvi-ng-status-badge>
   `,
 });
