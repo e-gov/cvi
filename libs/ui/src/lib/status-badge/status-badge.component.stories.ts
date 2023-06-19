@@ -21,7 +21,7 @@ export default {
   args: {
     severity: 'info',
     label: 'Pending review',
-    withTooltip: true,
+    withTooltip: false,
     tooltipText: 'some tooltip text',
     tooltipIcon: 'info',
   },
@@ -36,3 +36,8 @@ const Template: Story<StatusBadgeComponent> = (args: StatusBadgeComponent) => ({
 });
 
 export const Default = Template.bind({});
+
+export const WithTooltip = Template.bind({});
+WithTooltip.args = {
+  withTooltip: true
+};
