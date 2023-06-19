@@ -6,7 +6,7 @@ export default {
   parameters: {
     notes,
     options: { selectedPanel: 'html/panel' },
-    layout: 'padded',
+    layout: 'centered',
   },
   argTypes: {
     content: {

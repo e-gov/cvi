@@ -4,7 +4,7 @@ import { StatusBadgeComponent } from './status-badge.component';
 
 export default {
   title: 'Angular/Status badge',
-  parameters: { notes, layout: 'padded' },
+  parameters: { notes, layout: 'centered' },
   argTypes: {
     severity: {
       name: 'Severity style',
