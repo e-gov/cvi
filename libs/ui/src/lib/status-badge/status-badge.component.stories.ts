@@ -11,6 +11,12 @@ export default {
       options: ['info', 'success', 'warning'],
       control: { type: 'select' },
     },
+    tooltipText: {
+      if: { arg: 'withTooltip', eq: true },
+    },
+    tooltipIcon: {
+      if: { arg: 'withTooltip', eq: true },
+    },
   },
   args: {
     severity: 'info',
