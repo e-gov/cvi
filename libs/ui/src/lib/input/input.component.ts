@@ -1,12 +1,10 @@
 import {
   Component,
-  ElementRef,
   EventEmitter,
   forwardRef,
   HostBinding,
   Input,
   Output,
-  ViewChild,
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { CviIconName } from '@egov/cvi-icons';
@@ -44,8 +42,6 @@ export class InputComponent implements ControlValueAccessor {
 
   /** Emit value on model change */
   @Output() valueChange = new EventEmitter<any>();
-
-  @ViewChild('inputRef') inputRef: ElementRef | undefined;
 
   /** Internal */
   _internalValue?: any;

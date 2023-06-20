@@ -1,5 +1,4 @@
-<input #inputRef
-       [ngModel]="_internalValue"
+<input [ngModel]="_internalValue"
        (ngModelChange)="setValue($event)"
        [disabled]="disabled"
        [attr.id]="htmlId"
