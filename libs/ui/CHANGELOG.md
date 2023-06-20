@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.15.2](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.15.1...ui-1.15.2) (2023-06-20)
+
+
+### Bug Fixes
+
+* **ng:** input disabled state for reactive forms EBS-670 ([#119](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/119)) ([d6ccde8](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/d6ccde8847567d0d40715fb4ae73268e6a755f28))
+
+
+
 ## [1.15.1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.15.0...ui-1.15.1) (2023-06-20)
 
 
