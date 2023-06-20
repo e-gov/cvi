@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.15.1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.15.0...ui-1.15.1) (2023-06-20)
+
+
+### Bug Fixes
+
+* **ng:** status badge class format, clarify a stylelint linting error message ([#118](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/118)) ([3bbf870](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/3bbf87074dbf30e5b28f5386e9ba58c8c35803ef))
+
+
+
 # [1.15.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.14.0...ui-1.15.0) (2023-06-12)
 
 
