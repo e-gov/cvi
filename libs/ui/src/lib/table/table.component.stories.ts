@@ -1,5 +1,5 @@
 import { FormControl, FormGroup } from '@angular/forms';
-import { Meta, moduleMetadata, Story } from '@storybook/angular';
+import { Meta, moduleMetadata, StoryFn } from '@storybook/angular';
 import { UiModule } from '../ui.module';
 import { TableComponent } from './table.component';
 import notes from './table.component.md';
@@ -60,7 +60,7 @@ export default {
   ],
 } as Meta<TableComponent>;
 
-const Template: Story<TableComponent> = (args: TableComponent) => ({
+const Template: StoryFn<TableComponent> = (args: TableComponent) => ({
   props: {
     ...args,
     getStatusBadgeLabelBySeverity,
@@ -95,16 +95,21 @@ const Template: Story<TableComponent> = (args: TableComponent) => ({
   `,
 });
 
-export const Default = Template.bind({});
+export const Default = {
+  render: Template,
+};
 
-export const Mobile = Template.bind({});
-Mobile.parameters = {
-  viewport: {
-    defaultViewport: 'iphone12mini',
+export const Mobile = {
+  render: Template,
+
+  parameters: {
+    viewport: {
+      defaultViewport: 'iphone12mini',
+    },
   },
 };
 
-const TemplateWithToolbar: Story<TableComponent> = (args: TableComponent) => {
+const TemplateWithToolbar: StoryFn<TableComponent> = (args: TableComponent) => {
   const form = new FormGroup({
     item: new FormControl(null),
   });
@@ -156,4 +161,6 @@ const TemplateWithToolbar: Story<TableComponent> = (args: TableComponent) => {
   };
 };
 
-export const WithToolbar = TemplateWithToolbar.bind({});
+export const WithToolbar = {
+  render: TemplateWithToolbar,
+};

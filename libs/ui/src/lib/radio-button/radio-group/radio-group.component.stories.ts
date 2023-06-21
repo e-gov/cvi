@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/angular';
+import { Meta, StoryFn } from '@storybook/angular';
 import notes from './radio-group.component.md';
 import { RadioGroupComponent } from './radio-group.component';
 import { RadioGroupAppearance } from './radio-group';
@@ -13,7 +13,7 @@ export default {
   },
 } as Meta<RadioGroupComponent>;
 
-const Template: Story<RadioGroupComponent> = (args: RadioGroupComponent) => ({
+const Template: StoryFn<RadioGroupComponent> = (args: RadioGroupComponent) => ({
   props: args,
   /* template */
   template: `
@@ -25,10 +25,12 @@ const Template: Story<RadioGroupComponent> = (args: RadioGroupComponent) => ({
   `,
 });
 
-export const Default = Template.bind({});
-Default.args = {};
+export const Default = {
+  render: Template,
+  args: {},
+};
 
-const OptionButtonTemplate: Story<RadioGroupComponent> = (
+const OptionButtonTemplate: StoryFn<RadioGroupComponent> = (
   args: RadioGroupComponent
 ) => ({
   props: args,
@@ -42,10 +44,12 @@ const OptionButtonTemplate: Story<RadioGroupComponent> = (
   `,
 });
 
-export const OptionButton = OptionButtonTemplate.bind({});
-OptionButton.args = {};
+export const OptionButton = {
+  render: OptionButtonTemplate,
+  args: {},
+};
 
-const OptionButtonCompactTemplate: Story<RadioGroupComponent> = (
+const OptionButtonCompactTemplate: StoryFn<RadioGroupComponent> = (
   args: RadioGroupComponent
 ) => ({
   props: args,
@@ -59,7 +63,10 @@ const OptionButtonCompactTemplate: Story<RadioGroupComponent> = (
   `,
 });
 
-export const OptionButtonCompact = OptionButtonCompactTemplate.bind({});
-OptionButtonCompact.args = {
-  appearance: RadioGroupAppearance.COMPACT,
+export const OptionButtonCompact = {
+  render: OptionButtonCompactTemplate,
+
+  args: {
+    appearance: RadioGroupAppearance.COMPACT,
+  },
 };

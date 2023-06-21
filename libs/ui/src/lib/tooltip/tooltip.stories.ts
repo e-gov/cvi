@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/angular';
+import { Meta, StoryFn } from '@storybook/angular';
 import notes from './tooltip.directive.md';
 import { TooltipComponent } from './tooltip.component';
 
@@ -24,7 +24,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<TooltipComponentWithCustomArgs> = (
+const Template: StoryFn<TooltipComponentWithCustomArgs> = (
   args: TooltipComponentWithCustomArgs
 ) => ({
   props: {
@@ -39,10 +39,15 @@ const Template: Story<TooltipComponentWithCustomArgs> = (
   `,
 });
 
-export const Tooltip = Template.bind({});
+export const Tooltip = {
+  render: Template,
+};
 
-export const TooltipWithCustomZIndex = Template.bind({});
-TooltipWithCustomZIndex.storyName = 'Tooltip with custom z-index';
-TooltipWithCustomZIndex.args = {
-  configurableZIndexCSSVar: '1002',
+export const TooltipWithCustomZIndex = {
+  render: Template,
+  name: 'Tooltip with custom z-index',
+
+  args: {
+    configurableZIndexCSSVar: '1002',
+  },
 };

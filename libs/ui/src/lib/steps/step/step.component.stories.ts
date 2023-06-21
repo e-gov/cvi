@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/angular';
+import { Meta, StoryFn } from '@storybook/angular';
 import notes from './step.component.md';
 import { StepComponent } from './step.component';
 
@@ -11,7 +11,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<StepComponent> = (args: StepComponent) => ({
+const Template: StoryFn<StepComponent> = (args: StepComponent) => ({
   component: StepComponent,
   props: {
     ...args,
@@ -33,4 +33,6 @@ const Template: Story<StepComponent> = (args: StepComponent) => ({
   `,
 });
 
-export const Default = Template.bind({});
+export const Default = {
+  render: Template,
+};

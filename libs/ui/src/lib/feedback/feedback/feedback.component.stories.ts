@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/angular';
+import { Meta, StoryFn } from '@storybook/angular';
 import notes from './feedback.component.md';
 import { FeedbackComponent } from './feedback.component';
 
@@ -15,26 +15,32 @@ const options = [
   { value: 'YES', label: 'Yes' },
 ];
 
-const Template: Story<FeedbackComponent> = (args: FeedbackComponent) => ({
+const Template: StoryFn<FeedbackComponent> = (args: FeedbackComponent) => ({
   props: args,
 });
 
-export const Default = Template.bind({});
-Default.args = {
-  title,
-  options,
-  showIcons: false,
+export const Default = {
+  render: Template,
+
+  args: {
+    title,
+    options,
+    showIcons: false,
+  },
 };
 
-const WithIconsTemplate: Story<FeedbackComponent> = (
+const WithIconsTemplate: StoryFn<FeedbackComponent> = (
   args: FeedbackComponent
 ) => ({
   props: args,
 });
 
-export const WithIcons = WithIconsTemplate.bind({});
-WithIcons.args = {
-  title,
-  options,
-  showIcons: true,
+export const WithIcons = {
+  render: WithIconsTemplate,
+
+  args: {
+    title,
+    options,
+    showIcons: true,
+  },
 };

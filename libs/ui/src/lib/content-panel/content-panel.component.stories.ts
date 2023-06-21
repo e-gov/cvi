@@ -1,4 +1,4 @@
-import { Story, Meta } from '@storybook/angular';
+import { StoryFn, Meta } from '@storybook/angular';
 import notes from './content-panel.component.md';
 import { ContentPanelComponent } from './content-panel.component';
 
@@ -20,7 +20,7 @@ export default {
   },
 } as Meta<ContentPanelComponent>;
 
-const Template: Story<ContentPanelComponent> = (
+const Template: StoryFn<ContentPanelComponent> = (
   args: ContentPanelComponent
 ) => ({
   props: args,
@@ -29,9 +29,14 @@ const Template: Story<ContentPanelComponent> = (
   `,
 });
 
-export const Default = Template.bind({});
+export const Default = {
+  render: Template,
+};
 
-export const WithNoTitle = Template.bind({});
-WithNoTitle.args = {
-  title: '',
+export const WithNoTitle = {
+  render: Template,
+
+  args: {
+    title: '',
+  },
 };

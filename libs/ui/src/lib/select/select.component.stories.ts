@@ -1,6 +1,6 @@
 import { SelectComponent } from './select.component';
 import notes from './select.component.md';
-import { Meta, moduleMetadata, Story } from '@storybook/angular';
+import { Meta, moduleMetadata, StoryFn } from '@storybook/angular';
 import {
   FormControl,
   FormGroup,
@@ -47,7 +47,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<SelectComponent> = (args: SelectComponent) => ({
+const Template: StoryFn<SelectComponent> = (args: SelectComponent) => ({
   props: {
     ...args,
   },
@@ -65,9 +65,12 @@ const Template: Story<SelectComponent> = (args: SelectComponent) => ({
       </div>
   `,
 });
-export const Default = Template.bind({});
 
-const WithCustomValueFormattingTemplate: Story<SelectComponent> = (
+export const Default = {
+  render: Template,
+};
+
+const WithCustomValueFormattingTemplate: StoryFn<SelectComponent> = (
   args: SelectComponent
 ) => ({
   props: {
@@ -103,11 +106,12 @@ const WithCustomValueFormattingTemplate: Story<SelectComponent> = (
     </ng-template>
   `,
 });
-export const WithCustomValueFormatting = WithCustomValueFormattingTemplate.bind(
-  {}
-);
 
-const UserCanAddItemsTemplate: Story<SelectComponent> = (
+export const WithCustomValueFormatting = {
+  render: WithCustomValueFormattingTemplate,
+};
+
+const UserCanAddItemsTemplate: StoryFn<SelectComponent> = (
   args: SelectComponent
 ) => {
   function addItem(text: string) {
@@ -136,12 +140,16 @@ const UserCanAddItemsTemplate: Story<SelectComponent> = (
   `,
   };
 };
-export const UserCanAddItems = UserCanAddItemsTemplate.bind({});
-UserCanAddItems.args = {
-  placeholder: 'Otsi elementi või lisa uus',
+
+export const UserCanAddItems = {
+  render: UserCanAddItemsTemplate,
+
+  args: {
+    placeholder: 'Otsi elementi või lisa uus',
+  },
 };
 
-const DisabledBackgroundTemplate: Story<SelectComponent> = (
+const DisabledBackgroundTemplate: StoryFn<SelectComponent> = (
   args: SelectComponent
 ) => ({
   props: {
@@ -161,12 +169,16 @@ const DisabledBackgroundTemplate: Story<SelectComponent> = (
       </div>
   `,
 });
-export const DisabledBackground = DisabledBackgroundTemplate.bind({});
-DisabledBackground.args = {
-  backgroundDisabled: true,
+
+export const DisabledBackground = {
+  render: DisabledBackgroundTemplate,
+
+  args: {
+    backgroundDisabled: true,
+  },
 };
 
-const ObjectsAsItemsTemplate: Story<SelectComponent> = (
+const ObjectsAsItemsTemplate: StoryFn<SelectComponent> = (
   args: SelectComponent
 ) => ({
   props: {
@@ -207,21 +219,25 @@ const ObjectsAsItemsTemplate: Story<SelectComponent> = (
     </div>
   `,
 });
-export const ObjectsAsItems = ObjectsAsItemsTemplate.bind({});
-ObjectsAsItems.args = {
-  items: [
-    {
-      code: '123',
-      name: 'Product',
-    },
-    {
-      code: '222',
-      name: 'Product',
-    },
-  ],
+
+export const ObjectsAsItems = {
+  render: ObjectsAsItemsTemplate,
+
+  args: {
+    items: [
+      {
+        code: '123',
+        name: 'Product',
+      },
+      {
+        code: '222',
+        name: 'Product',
+      },
+    ],
+  },
 };
 
-const WithBoundValuesTemplate: Story<SelectComponent> = (
+const WithBoundValuesTemplate: StoryFn<SelectComponent> = (
   args: SelectComponent
 ) => {
   const form = new FormGroup({
@@ -267,21 +283,25 @@ const WithBoundValuesTemplate: Story<SelectComponent> = (
     `,
   };
 };
-export const WithBoundValues = WithBoundValuesTemplate.bind({});
-WithBoundValues.args = {
-  items: [
-    {
-      fancyLabel: 'Scrooge McDuck',
-      rawValue: 'duck1',
-    },
-    {
-      fancyLabel: 'Donald Duck',
-      rawValue: 'duck2',
-    },
-  ],
+
+export const WithBoundValues = {
+  render: WithBoundValuesTemplate,
+
+  args: {
+    items: [
+      {
+        fancyLabel: 'Scrooge McDuck',
+        rawValue: 'duck1',
+      },
+      {
+        fancyLabel: 'Donald Duck',
+        rawValue: 'duck2',
+      },
+    ],
+  },
 };
 
-const DisabledTemplate: Story<SelectComponent> = (args: SelectComponent) => ({
+const DisabledTemplate: StoryFn<SelectComponent> = (args: SelectComponent) => ({
   props: {
     ...args,
   },
@@ -299,12 +319,16 @@ const DisabledTemplate: Story<SelectComponent> = (args: SelectComponent) => ({
       </div>
   `,
 });
-export const Disabled = DisabledTemplate.bind({});
-Disabled.args = {
-  disabled: true,
+
+export const Disabled = {
+  render: DisabledTemplate,
+
+  args: {
+    disabled: true,
+  },
 };
 
-const FormTemplate: Story<SelectComponent> = (args: SelectComponent) => {
+const FormTemplate: StoryFn<SelectComponent> = (args: SelectComponent) => {
   const form = new FormGroup({
     item: new FormControl(null, Validators.required),
   });
@@ -341,9 +365,12 @@ const FormTemplate: Story<SelectComponent> = (args: SelectComponent) => {
   `,
   };
 };
-export const Form = FormTemplate.bind({});
 
-const LoadingStateTemplate: Story<SelectComponent> = (
+export const Form = {
+  render: FormTemplate,
+};
+
+const LoadingStateTemplate: StoryFn<SelectComponent> = (
   args: SelectComponent
 ) => ({
   props: {
@@ -364,12 +391,18 @@ const LoadingStateTemplate: Story<SelectComponent> = (
       </div>
   `,
 });
-export const LoadingState = LoadingStateTemplate.bind({});
-LoadingState.args = {
-  loading: true,
+
+export const LoadingState = {
+  render: LoadingStateTemplate,
+
+  args: {
+    loading: true,
+  },
 };
 
-const SortedItemsTemplate: Story<SelectComponent> = (args: SelectComponent) => {
+const SortedItemsTemplate: StoryFn<SelectComponent> = (
+  args: SelectComponent
+) => {
   function sortItemsFn(a: string, b: string): number {
     return a.localeCompare(b, 'et');
   }
@@ -394,7 +427,11 @@ const SortedItemsTemplate: Story<SelectComponent> = (args: SelectComponent) => {
   `,
   };
 };
-export const SortedItems = SortedItemsTemplate.bind({});
-SortedItems.args = {
-  items: ['ÄÄÄ', 'DDD', 'CCC', 'AAA', 'BBB'],
+
+export const SortedItems = {
+  render: SortedItemsTemplate,
+
+  args: {
+    items: ['ÄÄÄ', 'DDD', 'CCC', 'AAA', 'BBB'],
+  },
 };

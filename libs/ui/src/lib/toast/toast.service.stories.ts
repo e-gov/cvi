@@ -1,4 +1,4 @@
-import { Meta, moduleMetadata, Story } from '@storybook/angular';
+import { Meta, moduleMetadata, StoryFn } from '@storybook/angular';
 import { ToastService } from './toast.service';
 import notes from './toast.service.md';
 import { Component } from '@angular/core';
@@ -52,7 +52,7 @@ export default {
   argTypes: {},
 } as Meta;
 
-const Template: Story = (args) => ({
+const Template: StoryFn = (args) => ({
   props: {
     ...args,
   },
@@ -60,4 +60,6 @@ const Template: Story = (args) => ({
     <cvi-ng-storybook-toast-wrapper></cvi-ng-storybook-toast-wrapper>
   `,
 });
-export const Default = Template.bind({});
+export const Default = {
+  render: Template,
+};

@@ -1,4 +1,4 @@
-import { Story, Meta } from '@storybook/angular';
+import { StoryFn, Meta } from '@storybook/angular';
 import notes from './input.html.md';
 
 export default {
@@ -9,7 +9,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story = (args) => ({
+const Template: StoryFn = (args) => ({
   props: args,
   /* template */
   template: `
@@ -22,9 +22,11 @@ const Template: Story = (args) => ({
   `,
 });
 
-export const Default = Template.bind({});
+export const Default = {
+  render: Template,
+};
 
-const CharacterCounterTemplate: Story = (args) => ({
+const CharacterCounterTemplate: StoryFn = (args) => ({
   props: args,
   /* template */
   template: `
@@ -38,9 +40,11 @@ const CharacterCounterTemplate: Story = (args) => ({
   `,
 });
 
-export const WithCharacterCounter = CharacterCounterTemplate.bind({});
+export const WithCharacterCounter = {
+  render: CharacterCounterTemplate,
+};
 
-const TemplateWithSuffixIcon: Story = (args) => ({
+const TemplateWithSuffixIcon: StoryFn = (args) => ({
   props: args,
   /* template */
   template: `
@@ -59,4 +63,6 @@ const TemplateWithSuffixIcon: Story = (args) => ({
   `,
 });
 
-export const WithSuffixIcon = TemplateWithSuffixIcon.bind({});
+export const WithSuffixIcon = {
+  render: TemplateWithSuffixIcon,
+};

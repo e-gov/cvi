@@ -1,4 +1,4 @@
-import { Story, Meta } from '@storybook/angular';
+import { StoryFn, Meta } from '@storybook/angular';
 import { ConfirmationModalComponent } from './confirmation-modal.component';
 
 export default {
@@ -11,7 +11,7 @@ export default {
   },
 } as Meta<ConfirmationModalComponent>;
 
-const Template: Story<ConfirmationModalComponent> = (
+const Template: StoryFn<ConfirmationModalComponent> = (
   args: ConfirmationModalComponent
 ) => ({
   props: args,
@@ -30,16 +30,21 @@ const Template: Story<ConfirmationModalComponent> = (
   `,
 });
 
-export const Default = Template.bind({});
+export const Default = {
+  render: Template,
+};
 
-export const Mobile = Template.bind({});
-Mobile.parameters = {
-  viewport: {
-    defaultViewport: 'iphone12mini',
+export const Mobile = {
+  render: Template,
+
+  parameters: {
+    viewport: {
+      defaultViewport: 'iphone12mini',
+    },
   },
 };
 
-const TemplateModalOpen: Story<ConfirmationModalComponent> = (
+const TemplateModalOpen: StoryFn<ConfirmationModalComponent> = (
   args: ConfirmationModalComponent
 ) => ({
   props: args,
@@ -58,4 +63,6 @@ const TemplateModalOpen: Story<ConfirmationModalComponent> = (
   `,
 });
 
-export const ModalOpen = TemplateModalOpen.bind({});
+export const ModalOpen = {
+  render: TemplateModalOpen,
+};

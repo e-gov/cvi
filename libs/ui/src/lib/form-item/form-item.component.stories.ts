@@ -1,4 +1,4 @@
-import { Story, Meta } from '@storybook/angular';
+import { StoryFn, Meta } from '@storybook/angular';
 import notes from './form-item.component.md';
 import { FormItemComponent } from './form-item.component';
 
@@ -13,7 +13,7 @@ export default {
   },
 } as Meta<FormItemComponent>;
 
-const Template: Story<FormItemComponent> = (args: FormItemComponent) => ({
+const Template: StoryFn<FormItemComponent> = (args: FormItemComponent) => ({
   props: args,
   /* template */
   template: `
@@ -30,9 +30,11 @@ const Template: Story<FormItemComponent> = (args: FormItemComponent) => ({
   `,
 });
 
-export const Default = Template.bind({});
+export const Default = {
+  render: Template,
+};
 
-const WithTextareaTemplate: Story<FormItemComponent> = (
+const WithTextareaTemplate: StoryFn<FormItemComponent> = (
   args: FormItemComponent
 ) => ({
   props: args,
@@ -51,7 +53,10 @@ const WithTextareaTemplate: Story<FormItemComponent> = (
   `,
 });
 
-export const WithTextarea = WithTextareaTemplate.bind({});
-WithTextarea.parameters = {
-  chromatic: { disableSnapshot: true },
+export const WithTextarea = {
+  render: WithTextareaTemplate,
+
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
 };

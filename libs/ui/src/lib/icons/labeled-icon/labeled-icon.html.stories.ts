@@ -1,4 +1,4 @@
-import { componentWrapperDecorator, Meta, Story } from '@storybook/angular';
+import { componentWrapperDecorator, Meta, StoryFn } from '@storybook/angular';
 import notes from './labeled-icon.html.md';
 
 export default {
@@ -26,7 +26,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story = (args) => ({
+const Template: StoryFn = (args) => ({
   props: args,
   /* template */
   template: `
@@ -43,18 +43,23 @@ const Template: Story = (args) => ({
   `,
 });
 
-export const Default = Template.bind({});
+export const Default = {
+  render: Template,
+};
 
-export const LabeledIconInsideButton = Template.bind({});
-LabeledIconInsideButton.decorators = [
-  componentWrapperDecorator((story) => {
-    /* template */
-    return `
-      <div class="cvi-button cvi-button--appearance-secondary cvi-button--size-m">
-        <button type="button" class="cvi-button__button">
-          ${story}
-        </button>
-      </div>
-    `;
-  }),
-];
+export const LabeledIconInsideButton = {
+  render: Template,
+
+  decorators: [
+    componentWrapperDecorator((story) => {
+      /* template */
+      return `
+        <div class="cvi-button cvi-button--appearance-secondary cvi-button--size-m">
+          <button type="button" class="cvi-button__button">
+            ${story}
+          </button>
+        </div>
+      `;
+    }),
+  ],
+};

@@ -1,4 +1,4 @@
-import { Story, Meta } from '@storybook/angular';
+import { StoryFn, Meta } from '@storybook/angular';
 import notes from './content-container.component.md';
 import { ContentContainerComponent } from './content-container.component';
 
@@ -19,7 +19,7 @@ export default {
   },
 } as Meta<ContentContainerComponent>;
 
-const Template: Story<ContentContainerComponent> = (
+const Template: StoryFn<ContentContainerComponent> = (
   args: ContentContainerComponent
 ) => ({
   props: args,
@@ -28,4 +28,6 @@ const Template: Story<ContentContainerComponent> = (
   `,
 });
 
-export const Default = Template.bind({});
+export const Default = {
+  render: Template,
+};

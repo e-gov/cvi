@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/angular';
+import { Meta, StoryFn } from '@storybook/angular';
 import notes from './radio-group.html.md';
 
 export default {
@@ -21,7 +21,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story = (args) => ({
+const Template: StoryFn = (args) => ({
   props: args,
   /* template */
   template: `
@@ -59,12 +59,15 @@ const Template: Story = (args) => ({
   `,
 });
 
-export const Default = Template.bind({});
-Default.args = {
-  title: 'Default radio buttons example',
+export const Default = {
+  render: Template,
+
+  args: {
+    title: 'Default radio buttons example',
+  },
 };
 
-const OptionButtonTemplate: Story = (args) => ({
+const OptionButtonTemplate: StoryFn = (args) => ({
   props: args,
   /* template */
   template: `
@@ -100,13 +103,16 @@ const OptionButtonTemplate: Story = (args) => ({
   `,
 });
 
-export const OptionButton = OptionButtonTemplate.bind({});
-OptionButton.args = {
-  title: 'Radio buttons with labels that look like buttons',
-  appearance: 'regular',
+export const OptionButton = {
+  render: OptionButtonTemplate,
+
+  args: {
+    title: 'Radio buttons with labels that look like buttons',
+    appearance: 'regular',
+  },
 };
 
-const OptionButtonCompactTemplate: Story = (args) => ({
+const OptionButtonCompactTemplate: StoryFn = (args) => ({
   props: args,
   /* template */
   template: `
@@ -142,8 +148,11 @@ const OptionButtonCompactTemplate: Story = (args) => ({
   `,
 });
 
-export const OptionButtonCompact = OptionButtonCompactTemplate.bind({});
-OptionButtonCompact.args = {
-  title: 'Radio buttons with labels that look like compact buttons',
-  appearance: 'compact',
+export const OptionButtonCompact = {
+  render: OptionButtonCompactTemplate,
+
+  args: {
+    title: 'Radio buttons with labels that look like compact buttons',
+    appearance: 'compact',
+  },
 };

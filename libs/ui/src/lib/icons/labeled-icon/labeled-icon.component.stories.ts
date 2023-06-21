@@ -1,4 +1,4 @@
-import { componentWrapperDecorator, Meta, Story } from '@storybook/angular';
+import { componentWrapperDecorator, Meta, StoryFn } from '@storybook/angular';
 import { iconSizeDefault } from '../icon/icon';
 import { LabeledIconComponent } from './labeled-icon.component';
 import notes from './labeled-icon.component.md';
@@ -37,7 +37,9 @@ export default {
   },
 } as Meta<any>;
 
-const Template: Story<LabeledIconComponent> = (args: LabeledIconComponent) => ({
+const Template: StoryFn<LabeledIconComponent> = (
+  args: LabeledIconComponent
+) => ({
   props: args,
   /* template */
   template: `
@@ -47,30 +49,40 @@ const Template: Story<LabeledIconComponent> = (args: LabeledIconComponent) => ({
   `,
 });
 
-export const Default = Template.bind({});
-
-export const WithIconAfter = Template.bind({});
-WithIconAfter.args = { iconPosition: 'after' };
-
-export const WithCustomGap = Template.bind({});
-WithCustomGap.args = { gap: 2 };
-
-export const LabeledIconInsideButton = Template.bind({});
-LabeledIconInsideButton.args = {
-  iconPosition: 'after',
-  verticalAlignment: 'center',
+export const Default = {
+  render: Template,
 };
-LabeledIconInsideButton.decorators = [
-  componentWrapperDecorator((story) => {
-    return `
-      <cvi-ng-button appearance="secondary">
-        ${story}
-      </cvi-ng-button>
-    `;
-  }),
-];
 
-const TemplateWithCustomStyling: Story<LabeledIconComponent> = (
+export const WithIconAfter = {
+  render: Template,
+  args: { iconPosition: 'after' },
+};
+
+export const WithCustomGap = {
+  render: Template,
+  args: { gap: 2 },
+};
+
+export const LabeledIconInsideButton = {
+  render: Template,
+
+  args: {
+    iconPosition: 'after',
+    verticalAlignment: 'center',
+  },
+
+  decorators: [
+    componentWrapperDecorator((story) => {
+      return `
+        <cvi-ng-button appearance="secondary">
+          ${story}
+        </cvi-ng-button>
+      `;
+    }),
+  ],
+};
+
+const TemplateWithCustomStyling: StoryFn<LabeledIconComponent> = (
   args: LabeledIconComponent
 ) => ({
   props: args,
@@ -99,8 +111,12 @@ const TemplateWithCustomStyling: Story<LabeledIconComponent> = (
     `,
   ],
 });
-export const WithCustomStyling = TemplateWithCustomStyling.bind({});
-WithCustomStyling.args = {
-  iconHeight: 40,
-  verticalAlignment: 'center',
+
+export const WithCustomStyling = {
+  render: TemplateWithCustomStyling,
+
+  args: {
+    iconHeight: 40,
+    verticalAlignment: 'center',
+  },
 };

@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/angular';
+import { Meta, StoryFn } from '@storybook/angular';
 import notes from './step-panel.component.md';
 import { StepPanelComponent } from './step-panel.component';
 
@@ -23,7 +23,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<StepPanelComponent> = (args: StepPanelComponent) => ({
+const Template: StoryFn<StepPanelComponent> = (args: StepPanelComponent) => ({
   component: StepPanelComponent,
   props: {
     ...args,
@@ -45,4 +45,6 @@ const Template: Story<StepPanelComponent> = (args: StepPanelComponent) => ({
   `,
 });
 
-export const Default = Template.bind({});
+export const Default = {
+  render: Template,
+};

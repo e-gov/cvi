@@ -1,4 +1,4 @@
-import { Story, Meta } from '@storybook/angular';
+import { StoryFn, Meta } from '@storybook/angular';
 import { ModalComponent } from './modal.component';
 
 export default {
@@ -6,7 +6,7 @@ export default {
   component: ModalComponent,
 } as Meta<ModalComponent>;
 
-const Template: Story<ModalComponent> = (args: ModalComponent) => ({
+const Template: StoryFn<ModalComponent> = (args: ModalComponent) => ({
   props: args,
   template: `
     <ng-template #modal let-testModalTitle="title">
@@ -17,16 +17,21 @@ const Template: Story<ModalComponent> = (args: ModalComponent) => ({
   `,
 });
 
-export const Default = Template.bind({});
+export const Default = {
+  render: Template,
+};
 
-export const Mobile = Template.bind({});
-Mobile.parameters = {
-  viewport: {
-    defaultViewport: 'iphone12mini',
+export const Mobile = {
+  render: Template,
+
+  parameters: {
+    viewport: {
+      defaultViewport: 'iphone12mini',
+    },
   },
 };
 
-const TemplateWithModalInsideModal: Story<ModalComponent> = (
+const TemplateWithModalInsideModal: StoryFn<ModalComponent> = (
   args: ModalComponent
 ) => ({
   props: args,
@@ -43,4 +48,6 @@ const TemplateWithModalInsideModal: Story<ModalComponent> = (
   `,
 });
 
-export const WithModalInsideModal = TemplateWithModalInsideModal.bind({});
+export const WithModalInsideModal = {
+  render: TemplateWithModalInsideModal,
+};

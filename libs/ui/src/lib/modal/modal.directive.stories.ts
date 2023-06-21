@@ -1,4 +1,4 @@
-import { Story, Meta } from '@storybook/angular';
+import { StoryFn, Meta } from '@storybook/angular';
 import notes from './modal.directive.md';
 
 export default {
@@ -9,7 +9,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story = (args) => ({
+const Template: StoryFn = (args) => ({
   props: args,
   template: `
     <ng-template #modal let-title="title">
@@ -20,9 +20,11 @@ const Template: Story = (args) => ({
   `,
 });
 
-export const Default = Template.bind({});
+export const Default = {
+  render: Template,
+};
 
-const TemplateModalOpen: Story = (args) => ({
+const TemplateModalOpen: StoryFn = (args) => ({
   props: args,
   template: `
     <ng-template #modal>
@@ -32,9 +34,11 @@ const TemplateModalOpen: Story = (args) => ({
   `,
 });
 
-export const ModalOpen = TemplateModalOpen.bind({});
+export const ModalOpen = {
+  render: TemplateModalOpen,
+};
 
-const TemplateWithoutTitle: Story = (args) => ({
+const TemplateWithoutTitle: StoryFn = (args) => ({
   props: args,
   template: `
     <ng-template #modal>
@@ -44,17 +48,21 @@ const TemplateWithoutTitle: Story = (args) => ({
   `,
 });
 
-export const WithoutTitle = TemplateWithoutTitle.bind({});
-WithoutTitle.argTypes = {
-  modalTitle: { control: false },
-};
-WithoutTitle.parameters = {
-  axe: {
-    disabledRules: ['aria-dialog-name'],
+export const WithoutTitle = {
+  render: TemplateWithoutTitle,
+
+  argTypes: {
+    modalTitle: { control: false },
+  },
+
+  parameters: {
+    axe: {
+      disabledRules: ['aria-dialog-name'],
+    },
   },
 };
 
-const TemplateModalOpenWithoutButton: Story = (args) => ({
+const TemplateModalOpenWithoutButton: StoryFn = (args) => ({
   props: args,
   template: `
     <ng-template #modal>
@@ -64,4 +72,6 @@ const TemplateModalOpenWithoutButton: Story = (args) => ({
   `,
 });
 
-export const ModalOpenWithoutButton = TemplateModalOpenWithoutButton.bind({});
+export const ModalOpenWithoutButton = {
+  render: TemplateModalOpenWithoutButton,
+};

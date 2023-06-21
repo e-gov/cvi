@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/angular';
+import { Meta, StoryFn } from '@storybook/angular';
 import { TooltipDirective } from './tooltip.directive';
 import notes from './tooltip.directive.md';
 
@@ -9,7 +9,7 @@ export default {
   argTypes: {},
 } as Meta;
 
-const Template: Story<TooltipDirective> = (args: TooltipDirective) => ({
+const Template: StoryFn<TooltipDirective> = (args: TooltipDirective) => ({
   props: {
     ...args,
   },
@@ -21,9 +21,13 @@ const Template: Story<TooltipDirective> = (args: TooltipDirective) => ({
   `,
 });
 
-export const Default = Template.bind({});
+export const Default = {
+  render: Template,
+};
 
-const TemplateOnButton: Story<TooltipDirective> = (args: TooltipDirective) => ({
+const TemplateOnButton: StoryFn<TooltipDirective> = (
+  args: TooltipDirective
+) => ({
   props: {
     ...args,
   },
@@ -51,9 +55,13 @@ const TemplateOnButton: Story<TooltipDirective> = (args: TooltipDirective) => ({
   `,
 });
 
-export const TooltipOnButton = TemplateOnButton.bind({});
+export const TooltipOnButton = {
+  render: TemplateOnButton,
+};
 
-const TemplateEdgeTest: Story<TooltipDirective> = (args: TooltipDirective) => ({
+const TemplateEdgeTest: StoryFn<TooltipDirective> = (
+  args: TooltipDirective
+) => ({
   props: {
     ...args,
   },
@@ -85,9 +93,11 @@ const TemplateEdgeTest: Story<TooltipDirective> = (args: TooltipDirective) => ({
   `,
 });
 
-export const TooltipNearSideEdge = TemplateEdgeTest.bind({});
+export const TooltipNearSideEdge = {
+  render: TemplateEdgeTest,
+};
 
-const TemplateHeaderTest: Story<TooltipDirective> = (
+const TemplateHeaderTest: StoryFn<TooltipDirective> = (
   args: TooltipDirective
 ) => ({
   props: {
@@ -114,4 +124,6 @@ const TemplateHeaderTest: Story<TooltipDirective> = (
   `,
 });
 
-export const TooltipNearTopEdge = TemplateHeaderTest.bind({});
+export const TooltipNearTopEdge = {
+  render: TemplateHeaderTest,
+};

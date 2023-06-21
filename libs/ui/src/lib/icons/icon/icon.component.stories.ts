@@ -1,4 +1,4 @@
-import { Meta, Story, componentWrapperDecorator } from '@storybook/angular';
+import { Meta, StoryFn, componentWrapperDecorator } from '@storybook/angular';
 import { IconComponent } from './icon.component';
 import notes from './icon.component.md';
 import { storybookIconsNames } from '../storybook-icons';
@@ -21,7 +21,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<IconComponent> = (args: IconComponent) => ({
+const Template: StoryFn<IconComponent> = (args: IconComponent) => ({
   props: {
     ...args,
   },
@@ -30,27 +30,34 @@ const Template: Story<IconComponent> = (args: IconComponent) => ({
   `,
 });
 
-export const Default = Template.bind({});
-
-export const WithCustomSize = Template.bind({});
-WithCustomSize.args = {
-  height: 140,
+export const Default = {
+  render: Template,
 };
-WithCustomSize.parameters = {
-  layout: 'padded',
-};
-WithCustomSize.decorators = [
-  componentWrapperDecorator((story) => {
-    return `
-      <cvi-ng-storybook-note>
-        To change size of an icon (in both dimensions), set its <code>height</code> prop. The icon will be resized proportionally.
-      </cvi-ng-storybook-note>
-      ${story}
-    `;
-  }),
-];
 
-const TemplateWithStyling: Story<IconComponent> = (args: IconComponent) => ({
+export const WithCustomSize = {
+  render: Template,
+
+  args: {
+    height: 140,
+  },
+
+  parameters: {
+    layout: 'padded',
+  },
+
+  decorators: [
+    componentWrapperDecorator((story) => {
+      return `
+        <cvi-ng-storybook-note>
+          To change size of an icon (in both dimensions), set its <code>height</code> prop. The icon will be resized proportionally.
+        </cvi-ng-storybook-note>
+        ${story}
+      `;
+    }),
+  ],
+};
+
+const TemplateWithStyling: StoryFn<IconComponent> = (args: IconComponent) => ({
   props: {
     ...args,
   },
@@ -69,7 +76,10 @@ const TemplateWithStyling: Story<IconComponent> = (args: IconComponent) => ({
   ],
 });
 
-export const WithStyling = TemplateWithStyling.bind({});
-WithStyling.parameters = {
-  layout: 'padded',
+export const WithStyling = {
+  render: TemplateWithStyling,
+
+  parameters: {
+    layout: 'padded',
+  },
 };

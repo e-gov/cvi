@@ -1,4 +1,4 @@
-import { Story, Meta } from '@storybook/angular';
+import { StoryFn, Meta } from '@storybook/angular';
 import notes from './breadcrumbs.component.md';
 import { BreadcrumbsComponent } from './breadcrumbs.component';
 
@@ -11,7 +11,9 @@ export default {
   },
 } as Meta<BreadcrumbsComponent>;
 
-const Template: Story<BreadcrumbsComponent> = (args: BreadcrumbsComponent) => ({
+const Template: StoryFn<BreadcrumbsComponent> = (
+  args: BreadcrumbsComponent
+) => ({
   props: args,
   /* template */
   template: `
@@ -19,10 +21,12 @@ const Template: Story<BreadcrumbsComponent> = (args: BreadcrumbsComponent) => ({
   `,
 });
 
-export const Default = Template.bind({});
-Default.args = {};
+export const Default = {
+  render: Template,
+  args: {},
+};
 
-const TemplateWithIcon: Story<BreadcrumbsComponent> = (
+const TemplateWithIcon: StoryFn<BreadcrumbsComponent> = (
   args: BreadcrumbsComponent
 ) => ({
   props: args,
@@ -35,12 +39,16 @@ const TemplateWithIcon: Story<BreadcrumbsComponent> = (
   `,
 });
 
-export const Mobile = TemplateWithIcon.bind({});
-Mobile.args = {
-  iconName: 'arrow_a_left',
-};
-Mobile.parameters = {
-  viewport: {
-    defaultViewport: 'iphone12mini',
+export const Mobile = {
+  render: TemplateWithIcon,
+
+  args: {
+    iconName: 'arrow_a_left',
+  },
+
+  parameters: {
+    viewport: {
+      defaultViewport: 'iphone12mini',
+    },
   },
 };

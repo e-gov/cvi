@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/angular/';
+import { Meta, StoryFn } from '@storybook/angular/';
 import notes from './steps.component.md';
 import { concatMap, delay, from, of } from 'rxjs';
 import { StepsComponent } from './steps.component';
@@ -40,7 +40,7 @@ export default {
   },
 } as Meta<StepsComponent>;
 
-const Template: Story<StepsComponent> = (args: StepsComponent) => {
+const Template: StoryFn<StepsComponent> = (args: StepsComponent) => {
   const form = new FormGroup({
     text: new FormControl('Some text'),
   });
@@ -92,38 +92,51 @@ const Template: Story<StepsComponent> = (args: StepsComponent) => {
   };
 };
 
-export const Default = Template.bind({});
-export const DefaultWithSelectedStep = Template.bind({});
-DefaultWithSelectedStep.args = {
-  currentStepIndex: 0,
+export const Default = {
+  render: Template,
 };
 
-export const Mobile = Template.bind({});
-Mobile.parameters = {
-  layout: 'fullscreen',
-  backgrounds: {
-    default: 'light',
-  },
-  viewport: {
-    defaultViewport: 'iphone12mini',
+export const DefaultWithSelectedStep = {
+  render: Template,
+
+  args: {
+    currentStepIndex: 0,
   },
 };
 
-export const MobileWithSelectedStep = Template.bind({});
-MobileWithSelectedStep.args = {
-  currentStepIndex: 0,
-};
-MobileWithSelectedStep.parameters = {
-  layout: 'fullscreen',
-  backgrounds: {
-    default: 'light',
-  },
-  viewport: {
-    defaultViewport: 'iphone12mini',
+export const Mobile = {
+  render: Template,
+
+  parameters: {
+    layout: 'fullscreen',
+    backgrounds: {
+      default: 'light',
+    },
+    viewport: {
+      defaultViewport: 'iphone12mini',
+    },
   },
 };
 
-const TemplateObservableTitles: Story = (args) => ({
+export const MobileWithSelectedStep = {
+  render: Template,
+
+  args: {
+    currentStepIndex: 0,
+  },
+
+  parameters: {
+    layout: 'fullscreen',
+    backgrounds: {
+      default: 'light',
+    },
+    viewport: {
+      defaultViewport: 'iphone12mini',
+    },
+  },
+};
+
+const TemplateObservableTitles: StoryFn = (args) => ({
   props: {
     ...args,
     labels$: from([['First', 'Second', 'Third']]).pipe(
@@ -144,12 +157,15 @@ const TemplateObservableTitles: Story = (args) => ({
   `,
 });
 
-export const WithObservableTitles = TemplateObservableTitles.bind({});
-WithObservableTitles.parameters = {
-  chromatic: { delay: withObservableTitlesDelay + 300 },
+export const WithObservableTitles = {
+  render: TemplateObservableTitles,
+
+  parameters: {
+    chromatic: { delay: withObservableTitlesDelay + 300 },
+  },
 };
 
-const TemplateWithTranslations: Story<StepsComponent> = (
+const TemplateWithTranslations: StoryFn<StepsComponent> = (
   args: StepsComponent
 ) => ({
   component: StepsComponent,
@@ -184,10 +200,13 @@ const TemplateWithTranslations: Story<StepsComponent> = (
   `,
 });
 
-export const WithTranslations = TemplateWithTranslations.bind({});
-WithTranslations.parameters = {
-  axe: {
-    // disabling because axe doesn't wait sometimes for the button text to load
-    disabledRules: ['button-name'],
+export const WithTranslations = {
+  render: TemplateWithTranslations,
+
+  parameters: {
+    axe: {
+      // disabling because axe doesn't wait sometimes for the button text to load
+      disabledRules: ['button-name'],
+    },
   },
 };

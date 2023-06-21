@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/angular';
+import { Meta, StoryFn } from '@storybook/angular';
 import notes from './notification.html.md';
 
 export default {
@@ -6,7 +6,7 @@ export default {
   parameters: { notes },
 } as Meta;
 
-const Template: Story = (args) => ({
+const Template: StoryFn = (args) => ({
   props: args,
   /* template */
   template: `
@@ -37,4 +37,6 @@ const Template: Story = (args) => ({
   `,
 });
 
-export const Default = Template.bind({});
+export const Default = {
+  render: Template,
+};

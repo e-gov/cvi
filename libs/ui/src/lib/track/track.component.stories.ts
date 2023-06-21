@@ -1,4 +1,4 @@
-import { Story, Meta, ArgTypes } from '@storybook/angular';
+import { StoryFn, Meta, ArgTypes } from '@storybook/angular';
 import notes from './track.component.md';
 import { TrackComponent } from './track.component';
 
@@ -83,7 +83,7 @@ export default {
   },
 } as Meta<TrackComponent>;
 
-const Template: Story<TrackComponent> = (args: TrackComponent) => ({
+const Template: StoryFn<TrackComponent> = (args: TrackComponent) => ({
   props: args,
   /* template */
   template: `
@@ -94,7 +94,7 @@ const Template: Story<TrackComponent> = (args: TrackComponent) => ({
   `,
 });
 
-const TemplateManyItems: Story<TrackComponent> = (args: TrackComponent) => ({
+const TemplateManyItems: StoryFn<TrackComponent> = (args: TrackComponent) => ({
   props: args,
   /* template */
   template: `
@@ -112,7 +112,7 @@ const TemplateManyItems: Story<TrackComponent> = (args: TrackComponent) => ({
   `,
 });
 
-const TemplateWithFormItems: Story<TrackComponent> = (
+const TemplateWithFormItems: StoryFn<TrackComponent> = (
   args: TrackComponent
 ) => ({
   props: args,
@@ -135,7 +135,7 @@ const TemplateWithFormItems: Story<TrackComponent> = (
   `,
 });
 
-const TemplateWithFormItemsComplex: Story<TrackComponent> = (
+const TemplateWithFormItemsComplex: StoryFn<TrackComponent> = (
   args: TrackComponent
 ) => ({
   props: args,
@@ -183,126 +183,173 @@ const TemplateWithFormItemsComplex: Story<TrackComponent> = (
   `,
 });
 
-export const Default = Template.bind({});
-
-export const WithCustomGap = Template.bind({});
-WithCustomGap.args = {
-  gap: 4,
+export const Default = {
+  render: Template,
 };
 
-export const ItemsCenteredHorizontally = Template.bind({});
-ItemsCenteredHorizontally.args = {
-  horizontalAlignment: 'center',
-};
+export const WithCustomGap = {
+  render: Template,
 
-export const ItemsCenteredVertically = Template.bind({});
-ItemsCenteredVertically.args = {
-  verticalAlignment: 'center',
-};
-
-export const Vertical = Template.bind({});
-Vertical.args = {
-  flexDirection: 'vertical',
-};
-
-export const VerticalMobileOnly = Template.bind({});
-VerticalMobileOnly.storyName = 'Vertical only on mobile (desktop)';
-VerticalMobileOnly.args = {
-  flexDirection: 'verticalOnMobile',
-};
-
-export const VerticalMobileOnlyMobile = Template.bind({});
-VerticalMobileOnlyMobile.storyName = 'Vertical only on mobile (mobile)';
-VerticalMobileOnlyMobile.args = {
-  flexDirection: 'verticalOnMobile',
-};
-VerticalMobileOnlyMobile.parameters = {
-  viewport: {
-    defaultViewport: 'iphone12mini',
+  args: {
+    gap: 4,
   },
 };
 
-export const VerticalReverseMobileOnly = Template.bind({});
-VerticalReverseMobileOnly.storyName =
-  'Vertical reversed only on mobile (desktop)';
-VerticalReverseMobileOnly.args = {
-  flexDirection: 'verticalReverseOnMobile',
-};
+export const ItemsCenteredHorizontally = {
+  render: Template,
 
-export const VerticalReverseMobileOnlyMobile = Template.bind({});
-VerticalReverseMobileOnlyMobile.storyName =
-  'Vertical reversed only on mobile (mobile)';
-VerticalReverseMobileOnlyMobile.args = {
-  flexDirection: 'verticalReverseOnMobile',
-};
-VerticalReverseMobileOnlyMobile.parameters = {
-  viewport: {
-    defaultViewport: 'iphone12mini',
+  args: {
+    horizontalAlignment: 'center',
   },
 };
 
-export const Multiline = TemplateManyItems.bind({});
-Multiline.args = {
-  flexIsMultiline: true,
+export const ItemsCenteredVertically = {
+  render: Template,
+
+  args: {
+    verticalAlignment: 'center',
+  },
 };
 
-export const WithFlexLayout = TemplateWithFormItems.bind({});
-WithFlexLayout.args = {
-  flexIsMultiline: true,
+export const Vertical = {
+  render: Template,
+
+  args: {
+    flexDirection: 'vertical',
+  },
 };
 
-export const WithGridLayout = TemplateManyItems.bind({});
-WithGridLayout.args = {
-  layout: 'grid',
+export const VerticalMobileOnly = {
+  render: Template,
+  name: 'Vertical only on mobile (desktop)',
+
+  args: {
+    flexDirection: 'verticalOnMobile',
+  },
 };
 
-export const WithEqualSizeFormItemsFlexRow = TemplateWithFormItems.bind({});
-WithEqualSizeFormItemsFlexRow.storyName = 'With equally sized flex items';
-WithEqualSizeFormItemsFlexRow.args = {
-  flexColumnsEqual: true,
-  flexIsMultiline: true,
-};
+export const VerticalMobileOnlyMobile = {
+  render: Template,
+  name: 'Vertical only on mobile (mobile)',
 
-export const WithEqualSizeFormItemsGridRow = TemplateWithFormItems.bind({});
-WithEqualSizeFormItemsGridRow.storyName =
-  'With equally sized grid items (row by row)';
-WithEqualSizeFormItemsGridRow.args = {
-  layout: 'grid',
-};
+  args: {
+    flexDirection: 'verticalOnMobile',
+  },
 
-export const WithEqualSizeFormItemsGridCol = TemplateWithFormItems.bind({});
-WithEqualSizeFormItemsGridCol.storyName =
-  'With equally sized grid items (column by column)';
-WithEqualSizeFormItemsGridCol.args = {
-  layout: 'grid',
-  gridRows: 2,
-};
-
-export const WithFormItemsComplex = TemplateWithFormItemsComplex.bind({});
-WithFormItemsComplex.storyName = 'With form items (complex layout)';
-WithFormItemsComplex.parameters = {
-  // Disabling Chromatic because cvi-ng-textarea triggers a visual change on every build
-  chromatic: { disableSnapshot: true },
-};
-WithFormItemsComplex.argTypes = {
-  repeatableItemsFlex: {
-    name: 'Number of repeatable items (first track)',
-    table: {
-      category: 'Playground',
+  parameters: {
+    viewport: {
+      defaultViewport: 'iphone12mini',
     },
   },
-  repeatableItemsGrid: {
-    name: 'Number of repeatable items (second track)',
-    table: {
-      category: 'Playground',
+};
+
+export const VerticalReverseMobileOnly = {
+  render: Template,
+  name: 'Vertical reversed only on mobile (desktop)',
+
+  args: {
+    flexDirection: 'verticalReverseOnMobile',
+  },
+};
+
+export const VerticalReverseMobileOnlyMobile = {
+  render: Template,
+  name: 'Vertical reversed only on mobile (mobile)',
+
+  args: {
+    flexDirection: 'verticalReverseOnMobile',
+  },
+
+  parameters: {
+    viewport: {
+      defaultViewport: 'iphone12mini',
     },
   },
-} as Partial<ArgTypes<ArgsWithRepeatableFormItems>>;
-WithFormItemsComplex.args = {
-  flexColumnsEqual: true,
-  repeatableItemsFlex: 1,
-  repeatableItemsGrid: 1,
-} as ArgsWithRepeatableFormItems;
+};
+
+export const Multiline = {
+  render: TemplateManyItems,
+
+  args: {
+    flexIsMultiline: true,
+  },
+};
+
+export const WithFlexLayout = {
+  render: TemplateWithFormItems,
+
+  args: {
+    flexIsMultiline: true,
+  },
+};
+
+export const WithGridLayout = {
+  render: TemplateManyItems,
+
+  args: {
+    layout: 'grid',
+  },
+};
+
+export const WithEqualSizeFormItemsFlexRow = {
+  render: TemplateWithFormItems,
+  name: 'With equally sized flex items',
+
+  args: {
+    flexColumnsEqual: true,
+    flexIsMultiline: true,
+  },
+};
+
+export const WithEqualSizeFormItemsGridRow = {
+  render: TemplateWithFormItems,
+  name: 'With equally sized grid items (row by row)',
+
+  args: {
+    layout: 'grid',
+  },
+};
+
+export const WithEqualSizeFormItemsGridCol = {
+  render: TemplateWithFormItems,
+  name: 'With equally sized grid items (column by column)',
+
+  args: {
+    layout: 'grid',
+    gridRows: 2,
+  },
+};
+
+export const WithFormItemsComplex = {
+  render: TemplateWithFormItemsComplex,
+  name: 'With form items (complex layout)',
+
+  parameters: {
+    // Disabling Chromatic because cvi-ng-textarea triggers a visual change on every build
+    chromatic: { disableSnapshot: true },
+  },
+
+  argTypes: {
+    repeatableItemsFlex: {
+      name: 'Number of repeatable items (first track)',
+      table: {
+        category: 'Playground',
+      },
+    },
+    repeatableItemsGrid: {
+      name: 'Number of repeatable items (second track)',
+      table: {
+        category: 'Playground',
+      },
+    },
+  } as Partial<ArgTypes<ArgsWithRepeatableFormItems>>,
+
+  args: {
+    flexColumnsEqual: true,
+    repeatableItemsFlex: 1,
+    repeatableItemsGrid: 1,
+  } as ArgsWithRepeatableFormItems,
+};
 
 type ArgsWithRepeatableFormItems = TrackComponent & {
   repeatableItemsFlex: number;

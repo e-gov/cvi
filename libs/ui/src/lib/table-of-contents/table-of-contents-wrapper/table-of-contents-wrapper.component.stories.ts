@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/angular/';
+import { Meta, StoryFn } from '@storybook/angular/';
 import notes from './table-of-contents-wrapper.component.md';
 import { TableOfContentsWrapperComponent } from './table-of-contents-wrapper.component';
 
@@ -13,7 +13,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<TableOfContentsWrapperComponent> = (
+const Template: StoryFn<TableOfContentsWrapperComponent> = (
   args: TableOfContentsWrapperComponent
 ) => ({
   component: TableOfContentsWrapperComponent,
@@ -62,32 +62,39 @@ const Template: Story<TableOfContentsWrapperComponent> = (
   `,
 });
 
-export const Default = Template.bind({});
-Default.argTypes = {
-  debugMode: {
-    name: 'Debug mode',
-    control: { type: 'boolean' },
-    table: {
-      category: 'Playground',
+export const Default = {
+  render: Template,
+
+  argTypes: {
+    debugMode: {
+      name: 'Debug mode',
+      control: { type: 'boolean' },
+      table: {
+        category: 'Playground',
+      },
     },
-  },
-} as never;
+  } as never,
 
-Default.args = {
-  debugMode: false,
-} as never;
+  args: {
+    debugMode: false,
+  } as never,
+};
 
-export const InDebugMode = Template.bind({});
-InDebugMode.args = {
-  debugMode: true,
-} as never;
-InDebugMode.parameters = {
-  axe: {
-    disabledRules: ['color-contrast'],
+export const InDebugMode = {
+  render: Template,
+
+  args: {
+    debugMode: true,
+  } as never,
+
+  parameters: {
+    axe: {
+      disabledRules: ['color-contrast'],
+    },
   },
 };
 
-const TemplateHeadingsWithIds: Story<TableOfContentsWrapperComponent> = (
+const TemplateHeadingsWithIds: StoryFn<TableOfContentsWrapperComponent> = (
   args: TableOfContentsWrapperComponent
 ) => ({
   component: TableOfContentsWrapperComponent,
@@ -135,10 +142,12 @@ const TemplateHeadingsWithIds: Story<TableOfContentsWrapperComponent> = (
   `,
 });
 
-export const HeadingsWithIds = TemplateHeadingsWithIds.bind({});
-HeadingsWithIds.storyName = 'With ids on headings';
+export const HeadingsWithIds = {
+  render: TemplateHeadingsWithIds,
+  name: 'With ids on headings',
+};
 
-const TemplateWithSteps: Story<TableOfContentsWrapperComponent> = (
+const TemplateWithSteps: StoryFn<TableOfContentsWrapperComponent> = (
   args: TableOfContentsWrapperComponent
 ) => ({
   component: TableOfContentsWrapperComponent,
@@ -305,18 +314,23 @@ const TemplateWithSteps: Story<TableOfContentsWrapperComponent> = (
   `,
 });
 
-export const WithSteps = TemplateWithSteps.bind({});
-WithSteps.storyName = 'With steps (ids on heading container)';
+export const WithSteps = {
+  render: TemplateWithSteps,
+  name: 'With steps (ids on heading container)',
+};
 
-export const WithStepsMobile = TemplateWithSteps.bind({});
-WithStepsMobile.storyName = 'With steps (ids on heading container, mobile)';
-WithStepsMobile.parameters = {
-  viewport: {
-    defaultViewport: 'iphone12mini',
+export const WithStepsMobile = {
+  render: TemplateWithSteps,
+  name: 'With steps (ids on heading container, mobile)',
+
+  parameters: {
+    viewport: {
+      defaultViewport: 'iphone12mini',
+    },
   },
 };
 
-const TemplateWithStepsAndHeadingsWithIds: Story<
+const TemplateWithStepsAndHeadingsWithIds: StoryFn<
   TableOfContentsWrapperComponent
 > = (args: TableOfContentsWrapperComponent) => ({
   component: TableOfContentsWrapperComponent,
@@ -483,6 +497,7 @@ const TemplateWithStepsAndHeadingsWithIds: Story<
   `,
 });
 
-export const WithStepsAndHeadingsWithIds =
-  TemplateWithStepsAndHeadingsWithIds.bind({});
-WithStepsAndHeadingsWithIds.storyName = 'With steps (ids on headings)';
+export const WithStepsAndHeadingsWithIds = {
+  render: TemplateWithStepsAndHeadingsWithIds,
+  name: 'With steps (ids on headings)',
+};

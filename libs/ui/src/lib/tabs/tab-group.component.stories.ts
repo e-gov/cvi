@@ -1,5 +1,5 @@
 import notes from './tab-group.component.md';
-import { Meta, moduleMetadata, Story } from '@storybook/angular';
+import { Meta, moduleMetadata, StoryFn } from '@storybook/angular';
 import { TabGroupComponent } from './tab-group.component';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { UiModule } from '../ui.module';
@@ -27,7 +27,7 @@ export default {
   },
 } as Meta<TabGroupComponent>;
 
-const Template: Story<TabGroupComponent> = (args: TabGroupComponent) => {
+const Template: StoryFn<TabGroupComponent> = (args: TabGroupComponent) => {
   const form = new FormGroup({
     text: new FormControl('Some text'),
   });
@@ -57,4 +57,6 @@ const Template: Story<TabGroupComponent> = (args: TabGroupComponent) => {
     `,
   };
 };
-export const Default = Template.bind({});
+export const Default = {
+  render: Template,
+};

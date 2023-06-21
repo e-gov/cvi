@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/angular';
+import { Meta, StoryFn } from '@storybook/angular';
 import { NotificationComponent } from './notification.component';
 import notes from './notification.component.md';
 
@@ -17,7 +17,7 @@ export default {
   },
 } as Meta<NotificationComponent>;
 
-const Template: Story<NotificationComponent> = (
+const Template: StoryFn<NotificationComponent> = (
   args: NotificationComponent
 ) => ({
   props: args,
@@ -35,29 +35,46 @@ const Template: Story<NotificationComponent> = (
   `,
 });
 
-export const Default = Template.bind({});
+export const Default = {
+  render: Template,
+};
 
-export const Success = Template.bind({});
-Success.args = { severity: 'success' };
+export const Success = {
+  render: Template,
+  args: { severity: 'success' },
+};
 
-export const Warning = Template.bind({});
-Warning.args = { severity: 'warning' };
+export const Warning = {
+  render: Template,
+  args: { severity: 'warning' },
+};
 
-export const Error = Template.bind({});
-Error.args = { severity: 'error' };
+export const Error = {
+  render: Template,
+  args: { severity: 'error' },
+};
 
-export const Neutral = Template.bind({});
-Neutral.args = { severity: 'neutral' };
+export const Neutral = {
+  render: Template,
+  args: { severity: 'neutral' },
+};
 
-export const WithCompactSize = Template.bind({});
-WithCompactSize.args = { severity: 'neutral', size: 'compact' };
+export const WithCompactSize = {
+  render: Template,
+  args: { severity: 'neutral', size: 'compact' },
+};
 
-export const WithCompactSizeAndIcon = Template.bind({});
-WithCompactSizeAndIcon.args = { severity: 'info', size: 'compact' };
+export const WithCompactSizeAndIcon = {
+  render: Template,
+  args: { severity: 'info', size: 'compact' },
+};
 
-export const WithCompactSizeAndCustomIcon = Template.bind({});
-WithCompactSizeAndCustomIcon.args = {
-  severity: 'neutral',
-  size: 'compact',
-  iconName: 'check_circle_outline',
+export const WithCompactSizeAndCustomIcon = {
+  render: Template,
+
+  args: {
+    severity: 'neutral',
+    size: 'compact',
+    iconName: 'check_circle_outline',
+  },
 };

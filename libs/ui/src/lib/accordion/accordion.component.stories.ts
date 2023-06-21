@@ -1,4 +1,4 @@
-import { Meta, moduleMetadata, Story } from '@storybook/angular';
+import { Meta, moduleMetadata, StoryFn } from '@storybook/angular';
 import { concatMap, delay, from, of } from 'rxjs';
 import notes from './accordion.component.md';
 import { AccordionComponent } from './accordion.component';
@@ -29,7 +29,7 @@ export default {
   ],
 } as Meta<AccordionComponent>;
 
-const Template: Story<AccordionComponent> = (args: AccordionComponent) => ({
+const Template: StoryFn<AccordionComponent> = (args: AccordionComponent) => ({
   props: args,
   /* template */
   template: `
@@ -65,21 +65,26 @@ const Template: Story<AccordionComponent> = (args: AccordionComponent) => ({
   `,
 });
 
-export const Default = Template.bind({});
-Default.args = {};
+export const Default = {
+  render: Template,
+  args: {},
+};
 
-export const Mobile = Template.bind({});
-Mobile.parameters = {
-  layout: 'fullscreen',
-  backgrounds: {
-    default: 'light',
-  },
-  viewport: {
-    defaultViewport: 'iphone12mini',
+export const Mobile = {
+  render: Template,
+
+  parameters: {
+    layout: 'fullscreen',
+    backgrounds: {
+      default: 'light',
+    },
+    viewport: {
+      defaultViewport: 'iphone12mini',
+    },
   },
 };
 
-const TemplateHTMLInTitle: Story = (args) => ({
+const TemplateHTMLInTitle: StoryFn = (args) => ({
   props: args,
   /* template */
   template: `
@@ -103,10 +108,12 @@ const TemplateHTMLInTitle: Story = (args) => ({
   `,
 });
 
-export const WithHTMLInTitle = TemplateHTMLInTitle.bind({});
-WithHTMLInTitle.args = {};
+export const WithHTMLInTitle = {
+  render: TemplateHTMLInTitle,
+  args: {},
+};
 
-const TemplateCustomHeader: Story = (args) => ({
+const TemplateCustomHeader: StoryFn = (args) => ({
   props: args,
   /* template */
   template: `
@@ -124,5 +131,7 @@ const TemplateCustomHeader: Story = (args) => ({
   `,
 });
 
-export const WithCustomHeader = TemplateCustomHeader.bind({});
-WithCustomHeader.args = {};
+export const WithCustomHeader = {
+  render: TemplateCustomHeader,
+  args: {},
+};

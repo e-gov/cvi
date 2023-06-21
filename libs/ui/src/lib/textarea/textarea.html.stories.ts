@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/angular';
+import { Meta, StoryFn } from '@storybook/angular';
 import notes from './textarea.html.md';
 
 export default {
@@ -11,7 +11,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story = (args) => ({
+const Template: StoryFn = (args) => ({
   props: args,
   /* template */
   template: `
@@ -24,10 +24,12 @@ const Template: Story = (args) => ({
   `,
 });
 
-export const Default = Template.bind({});
-Default.args = {};
+export const Default = {
+  render: Template,
+  args: {},
+};
 
-const CharacterCounterTemplate: Story = (args) => ({
+const CharacterCounterTemplate: StoryFn = (args) => ({
   props: args,
   /* template */
   template: `
@@ -41,4 +43,6 @@ const CharacterCounterTemplate: Story = (args) => ({
   `,
 });
 
-export const WithCharacterCounter = CharacterCounterTemplate.bind({});
+export const WithCharacterCounter = {
+  render: CharacterCounterTemplate,
+};

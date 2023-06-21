@@ -1,4 +1,4 @@
-import { Meta, moduleMetadata, Story } from '@storybook/angular';
+import { Meta, moduleMetadata, StoryFn } from '@storybook/angular';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { UiModule } from '../ui.module';
 import notes from './datepicker.component.md';
@@ -19,7 +19,7 @@ export default {
   },
 } as Meta<DatepickerComponent>;
 
-const Template: Story<DatepickerComponent> = (args: DatepickerComponent) => ({
+const Template: StoryFn<DatepickerComponent> = (args: DatepickerComponent) => ({
   props: args,
   template: `
     <cvi-ng-datepicker  [placeholder]="placeholder"
@@ -29,11 +29,13 @@ const Template: Story<DatepickerComponent> = (args: DatepickerComponent) => ({
   `,
 });
 
-export const Default = Template.bind({});
-Default.storyName = 'Default';
-Default.args = {};
+export const Default = {
+  render: Template,
+  name: 'Default',
+  args: {},
+};
 
-const FormTemplate: Story<DatepickerComponent> = (
+const FormTemplate: StoryFn<DatepickerComponent> = (
   args: DatepickerComponent
 ) => {
   const form = new FormGroup({
@@ -71,14 +73,23 @@ const FormTemplate: Story<DatepickerComponent> = (
     `,
   };
 };
-export const WithFormGroup = FormTemplate.bind({});
 
-export const WithCustomPlaceholder = Template.bind({});
-WithCustomPlaceholder.args = {
-  placeholder: 'dd.mm.yyyy',
+export const WithFormGroup = {
+  render: FormTemplate,
 };
 
-export const WithDisabled = Template.bind({});
-WithDisabled.args = {
-  disabled: true,
+export const WithCustomPlaceholder = {
+  render: Template,
+
+  args: {
+    placeholder: 'dd.mm.yyyy',
+  },
+};
+
+export const WithDisabled = {
+  render: Template,
+
+  args: {
+    disabled: true,
+  },
 };

@@ -1,4 +1,4 @@
-import { Meta, moduleMetadata, Story } from '@storybook/angular';
+import { Meta, moduleMetadata, StoryFn } from '@storybook/angular';
 import notes from './generated-table-of-contents.component.md';
 import { GeneratedTableOfContentsComponent } from './generated-table-of-contents.component';
 import { Component, Input } from '@angular/core';
@@ -93,7 +93,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<GeneratedTableOfContentsComponent> = (
+const Template: StoryFn<GeneratedTableOfContentsComponent> = (
   args: GeneratedTableOfContentsComponent
 ) => ({
   component: GeneratedTableOfContentsComponent,
@@ -108,26 +108,33 @@ const Template: Story<GeneratedTableOfContentsComponent> = (
   `,
 });
 
-export const Default = Template.bind({});
-Default.parameters = {
-  axe: {
-    // disabling because of a false trigger when axe-storybook is run as a Github action
-    disabledRules: ['scrollable-region-focusable'],
+export const Default = {
+  render: Template,
+
+  parameters: {
+    axe: {
+      // disabling because of a false trigger when axe-storybook is run as a Github action
+      disabledRules: ['scrollable-region-focusable'],
+    },
   },
 };
 
-export const WithCustomHeadingLevels = Template.bind({});
-WithCustomHeadingLevels.args = {
-  headingSelector: 'h1, h2',
-};
-WithCustomHeadingLevels.parameters = {
-  axe: {
-    // disabling because of a false trigger when axe-storybook is run as a Github action
-    disabledRules: ['scrollable-region-focusable'],
+export const WithCustomHeadingLevels = {
+  render: Template,
+
+  args: {
+    headingSelector: 'h1, h2',
+  },
+
+  parameters: {
+    axe: {
+      // disabling because of a false trigger when axe-storybook is run as a Github action
+      disabledRules: ['scrollable-region-focusable'],
+    },
   },
 };
 
-const TemplateWithSteps: Story<GeneratedTableOfContentsComponent> = (
+const TemplateWithSteps: StoryFn<GeneratedTableOfContentsComponent> = (
   args: GeneratedTableOfContentsComponent
 ) => ({
   component: GeneratedTableOfContentsComponent,
@@ -184,13 +191,18 @@ const TemplateWithSteps: Story<GeneratedTableOfContentsComponent> = (
   `,
 });
 
-export const WithSteps = TemplateWithSteps.bind({});
-WithSteps.storyName = 'With steps';
+export const WithSteps = {
+  render: TemplateWithSteps,
+  name: 'With steps',
+};
 
-export const WithStepsMobile = TemplateWithSteps.bind({});
-WithStepsMobile.storyName = 'With steps (mobile)';
-WithStepsMobile.parameters = {
-  viewport: {
-    defaultViewport: 'iphone12mini',
+export const WithStepsMobile = {
+  render: TemplateWithSteps,
+  name: 'With steps (mobile)',
+
+  parameters: {
+    viewport: {
+      defaultViewport: 'iphone12mini',
+    },
   },
 };

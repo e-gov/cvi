@@ -1,4 +1,4 @@
-import { Story, Meta } from '@storybook/angular';
+import { StoryFn, Meta } from '@storybook/angular';
 import notes from './screenreader-text.component.md';
 import { ScreenreaderTextComponent } from './screenreader-text.component';
 
@@ -14,7 +14,7 @@ export default {
   },
 } as Meta<ScreenreaderTextComponent>;
 
-const Template: Story<ScreenreaderTextComponent> = (
+const Template: StoryFn<ScreenreaderTextComponent> = (
   args: ScreenreaderTextComponent
 ) => ({
   props: args,
@@ -27,4 +27,6 @@ const Template: Story<ScreenreaderTextComponent> = (
   `,
 });
 
-export const Default = Template.bind({});
+export const Default = {
+  render: Template,
+};

@@ -1,4 +1,4 @@
-import { Story, Meta } from '@storybook/angular';
+import { StoryFn, Meta } from '@storybook/angular';
 import notes from './status-badge.component.md';
 import { StatusBadgeComponent } from './status-badge.component';
 import { storybookIconsNames } from '../icons/storybook-icons';
@@ -30,7 +30,9 @@ export default {
   },
 } as Meta<StatusBadgeComponent>;
 
-const Template: Story<StatusBadgeComponent> = (args: StatusBadgeComponent) => ({
+const Template: StoryFn<StatusBadgeComponent> = (
+  args: StatusBadgeComponent
+) => ({
   props: args,
   template: `
     <cvi-ng-status-badge [severity]="severity" [label]="label" [withTooltip]="withTooltip" [tooltipText]="tooltipText" [tooltipIcon]="tooltipIcon">
@@ -38,9 +40,14 @@ const Template: Story<StatusBadgeComponent> = (args: StatusBadgeComponent) => ({
   `,
 });
 
-export const Default = Template.bind({});
+export const Default = {
+  render: Template,
+};
 
-export const WithTooltip = Template.bind({});
-WithTooltip.args = {
-  withTooltip: true,
+export const WithTooltip = {
+  render: Template,
+
+  args: {
+    withTooltip: true,
+  },
 };

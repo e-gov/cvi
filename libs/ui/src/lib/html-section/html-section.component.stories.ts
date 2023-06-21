@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/angular/';
+import { Meta, StoryFn } from '@storybook/angular/';
 import { HtmlSectionComponent } from './html-section.component';
 import notes from './html-section.component.md';
 
@@ -27,7 +27,9 @@ export default {
   },
 } as Meta;
 
-const Template: Story<HtmlSectionComponent> = (args: HtmlSectionComponent) => ({
+const Template: StoryFn<HtmlSectionComponent> = (
+  args: HtmlSectionComponent
+) => ({
   props: {
     ...args,
   },
@@ -36,10 +38,12 @@ const Template: Story<HtmlSectionComponent> = (args: HtmlSectionComponent) => ({
   `,
 });
 
-export const Default = Template.bind({});
-Default.args = {};
+export const Default = {
+  render: Template,
+  args: {},
+};
 
-const TemplateInContactsBlock: Story<HtmlSectionComponent> = (
+const TemplateInContactsBlock: StoryFn<HtmlSectionComponent> = (
   args: HtmlSectionComponent
 ) => ({
   props: {
@@ -59,41 +63,47 @@ const TemplateInContactsBlock: Story<HtmlSectionComponent> = (
   ],
 });
 
-export const InContactsBlock = TemplateInContactsBlock.bind({});
-InContactsBlock.args = {
-  html: `
-    <h3 class="cvi-html-section__title">Kontaktid</h3>
-    <div class="cvi-html-section__content">
-      <div class="cvi-html-section__content-elements">
-        <p>Võta ühendust perekonnaseisuasutusega, kus soovid abielu sõlmida</p>
+export const InContactsBlock = {
+  render: TemplateInContactsBlock,
+
+  args: {
+    html: `
+      <h3 class="cvi-html-section__title">Kontaktid</h3>
+      <div class="cvi-html-section__content">
+        <div class="cvi-html-section__content-elements">
+          <p>Võta ühendust perekonnaseisuasutusega, kus soovid abielu sõlmida</p>
+        </div>
+        <div class="cvi-html-section__content-elements">
+          <cvi-web-track gap="4" layout="flex" flex-direction="vertical">
+            <cvi-web-labeled-icon name="screen_share"><a href="#" class="external-link">Maakonnakeskuste kohalikud omavalitsused</a></cvi-web-labeled-icon>
+            <cvi-web-labeled-icon name="screen_share"><a href="#">Notarid</a></cvi-web-labeled-icon>
+            <cvi-web-labeled-icon name="screen_share"><a href="#">Abielu sõlmimise õigust omavad vaimulikud</a></cvi-web-labeled-icon>
+          </cvi-web-track>
+        </div>
       </div>
-      <div class="cvi-html-section__content-elements">
-        <cvi-web-track gap="4" layout="flex" flex-direction="vertical">
-          <cvi-web-labeled-icon name="screen_share"><a href="#" class="external-link">Maakonnakeskuste kohalikud omavalitsused</a></cvi-web-labeled-icon>
-          <cvi-web-labeled-icon name="screen_share"><a href="#">Notarid</a></cvi-web-labeled-icon>
-          <cvi-web-labeled-icon name="screen_share"><a href="#">Abielu sõlmimise õigust omavad vaimulikud</a></cvi-web-labeled-icon>
-        </cvi-web-track>
-      </div>
-    </div>
-  `,
-  sanitize: true,
+    `,
+    sanitize: true,
+  },
 };
 
-export const List = Template.bind({});
-List.args = {
-  html: `
-    <p>Ordered <b>list</b></p>
-    <ol>
-      <li>Item 1</li>
-      <li>Item 2</li>
-    </ol>
-    <br>
-    <p>Unordered <i>list</i></p>
-    <ul>
-      <li><a href="#" target="_blank" class="external-link">Item 1</a></li>
-      <li>Item 2</li>
-      <li>Item 3</li>
-    </ul>
-  `,
-  sanitize: true,
+export const List = {
+  render: Template,
+
+  args: {
+    html: `
+      <p>Ordered <b>list</b></p>
+      <ol>
+        <li>Item 1</li>
+        <li>Item 2</li>
+      </ol>
+      <br>
+      <p>Unordered <i>list</i></p>
+      <ul>
+        <li><a href="#" target="_blank" class="external-link">Item 1</a></li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+      </ul>
+    `,
+    sanitize: true,
+  },
 };

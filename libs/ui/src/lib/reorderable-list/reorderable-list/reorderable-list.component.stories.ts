@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Meta, moduleMetadata, Story } from '@storybook/angular';
+import { Meta, moduleMetadata, StoryFn } from '@storybook/angular';
 import { ReorderableListComponent } from './reorderable-list.component';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { SwapReorderableListItems } from '../swap-reorderable-list-items';
@@ -162,7 +162,7 @@ export default {
   ],
 } as Meta<ReorderableListComponent>;
 
-const Template: Story<ReorderableListExampleComponent> = (
+const Template: StoryFn<ReorderableListExampleComponent> = (
   args: ReorderableListExampleComponent
 ) => ({
   props: args,
@@ -172,10 +172,12 @@ const Template: Story<ReorderableListExampleComponent> = (
   `,
 });
 
-export const Default = Template.bind({});
-Default.args = {};
+export const Default = {
+  render: Template,
+  args: {},
+};
 
-const ReorderableListSingleFormItemTemplate: Story<
+const ReorderableListSingleFormItemTemplate: StoryFn<
   ReorderableListSingleFormItemComponent
 > = (args: ReorderableListSingleFormItemComponent) => ({
   props: args,
@@ -185,12 +187,13 @@ const ReorderableListSingleFormItemTemplate: Story<
   `,
 });
 
-export const ReorderableListSingleFormItem =
-  ReorderableListSingleFormItemTemplate.bind({});
-ReorderableListSingleFormItem.storyName = 'Single form item';
-ReorderableListSingleFormItem.args = {};
+export const ReorderableListSingleFormItem = {
+  render: ReorderableListSingleFormItemTemplate,
+  name: 'Single form item',
+  args: {},
+};
 
-const ReorderableListMultipleFormItemsTemplate: Story<
+const ReorderableListMultipleFormItemsTemplate: StoryFn<
   ReorderableListMultipleFormItemsComponent
 > = (args: ReorderableListMultipleFormItemsComponent) => ({
   props: args,
@@ -200,12 +203,13 @@ const ReorderableListMultipleFormItemsTemplate: Story<
   `,
 });
 
-export const ReorderableListMultipleFormItems =
-  ReorderableListMultipleFormItemsTemplate.bind({});
-ReorderableListMultipleFormItems.storyName = 'A track with multiple form items';
-ReorderableListMultipleFormItems.args = {};
+export const ReorderableListMultipleFormItems = {
+  render: ReorderableListMultipleFormItemsTemplate,
+  name: 'A track with multiple form items',
+  args: {},
+};
 
-const ReorderableListMultipleTracksAndFormItemsTemplate: Story<
+const ReorderableListMultipleTracksAndFormItemsTemplate: StoryFn<
   ReorderableListMultipleTracksAndFormItemsComponent
 > = (args: ReorderableListMultipleTracksAndFormItemsComponent) => ({
   props: args,
@@ -215,11 +219,12 @@ const ReorderableListMultipleTracksAndFormItemsTemplate: Story<
   `,
 });
 
-export const ReorderableListMultipleTracksAndFormItems =
-  ReorderableListMultipleTracksAndFormItemsTemplate.bind({});
-ReorderableListMultipleTracksAndFormItems.storyName =
-  'Multiple tracks with multiple form items, and a standalone form item';
-ReorderableListMultipleTracksAndFormItems.parameters = {
-  // Disabling Chromatic because cvi-ng-textarea triggers a visual change on every build
-  chromatic: { disableSnapshot: true },
+export const ReorderableListMultipleTracksAndFormItems = {
+  render: ReorderableListMultipleTracksAndFormItemsTemplate,
+  name: 'Multiple tracks with multiple form items, and a standalone form item',
+
+  parameters: {
+    // Disabling Chromatic because cvi-ng-textarea triggers a visual change on every build
+    chromatic: { disableSnapshot: true },
+  },
 };

@@ -1,4 +1,4 @@
-import { Story, Meta, moduleMetadata } from '@storybook/angular';
+import { StoryFn, Meta, moduleMetadata } from '@storybook/angular';
 import notes from './input.component.md';
 import { InputComponent } from './input.component';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
@@ -27,7 +27,7 @@ export default {
   },
 } as Meta<InputComponent>;
 
-const Template: Story<InputComponent> = (args: InputComponent) => ({
+const Template: StoryFn<InputComponent> = (args: InputComponent) => ({
   props: args,
   /* template */
   template: `
@@ -40,14 +40,19 @@ const Template: Story<InputComponent> = (args: InputComponent) => ({
   `,
 });
 
-export const Default = Template.bind({});
-
-export const WithSuffixIcon = Template.bind({});
-WithSuffixIcon.args = {
-  suffixIconName: 'loupe',
+export const Default = {
+  render: Template,
 };
 
-const FormTemplate: Story<InputComponent> = (args: InputComponent) => {
+export const WithSuffixIcon = {
+  render: Template,
+
+  args: {
+    suffixIconName: 'loupe',
+  },
+};
+
+const FormTemplate: StoryFn<InputComponent> = (args: InputComponent) => {
   const form = new FormGroup({
     item: new FormControl('initial value'),
   });
@@ -97,10 +102,13 @@ const FormTemplate: Story<InputComponent> = (args: InputComponent) => {
     `,
   };
 };
-export const WithFormGroup = FormTemplate.bind({});
-WithFormGroup.storyName = 'With FormGroup';
 
-const CharacterCounterTemplate: Story<InputComponent> = (
+export const WithFormGroup = {
+  render: FormTemplate,
+  name: 'With FormGroup',
+};
+
+const CharacterCounterTemplate: StoryFn<InputComponent> = (
   args: InputComponent
 ) => ({
   props: args,
@@ -116,4 +124,6 @@ const CharacterCounterTemplate: Story<InputComponent> = (
   `,
 });
 
-export const WithCharacterCounter = CharacterCounterTemplate.bind({});
+export const WithCharacterCounter = {
+  render: CharacterCounterTemplate,
+};

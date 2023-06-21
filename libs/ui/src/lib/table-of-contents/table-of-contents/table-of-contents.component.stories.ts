@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/angular/';
+import { Meta, StoryFn } from '@storybook/angular/';
 import notes from './table-of-contents.component.md';
 import { TableOfContentsComponent } from './table-of-contents.component';
 
@@ -14,7 +14,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<TableOfContentsComponent> = (
+const Template: StoryFn<TableOfContentsComponent> = (
   args: TableOfContentsComponent
 ) => ({
   component: TableOfContentsComponent,
@@ -166,9 +166,11 @@ const Template: Story<TableOfContentsComponent> = (
   `,
 });
 
-export const Default = Template.bind({});
+export const Default = {
+  render: Template,
+};
 
-const TemplateWithRandomText: Story<TableOfContentsComponent> = (
+const TemplateWithRandomText: StoryFn<TableOfContentsComponent> = (
   args: TableOfContentsComponent
 ) => ({
   component: TableOfContentsComponent,
@@ -217,8 +219,11 @@ const TemplateWithRandomText: Story<TableOfContentsComponent> = (
   `,
 });
 
-export const WithRandomText = TemplateWithRandomText.bind({});
-WithRandomText.parameters = {
-  // disabling Chromatic because random text will trigger changes on each run
-  chromatic: { disableSnapshot: true },
+export const WithRandomText = {
+  render: TemplateWithRandomText,
+
+  parameters: {
+    // disabling Chromatic because random text will trigger changes on each run
+    chromatic: { disableSnapshot: true },
+  },
 };

@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/angular';
+import { Meta, StoryFn } from '@storybook/angular';
 import notes from './button.html.md';
 import { ButtonAppearance, ButtonSize } from './button';
 
@@ -32,7 +32,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story = (args) => ({
+const Template: StoryFn = (args) => ({
   props: args,
   /* template */
   template: `
@@ -44,20 +44,31 @@ const Template: Story = (args) => ({
   `,
 });
 
-export const Default = Template.bind({});
-Default.args = {};
-
-export const Secondary = Template.bind({});
-Secondary.args = {
-  appearance: ButtonAppearance.SECONDARY,
+export const Default = {
+  render: Template,
+  args: {},
 };
 
-export const Small = Template.bind({});
-Small.args = {
-  size: ButtonSize.S,
+export const Secondary = {
+  render: Template,
+
+  args: {
+    appearance: ButtonAppearance.SECONDARY,
+  },
 };
 
-export const Text = Template.bind({});
-Text.args = {
-  appearance: ButtonAppearance.TEXT,
+export const Small = {
+  render: Template,
+
+  args: {
+    size: ButtonSize.S,
+  },
+};
+
+export const Text = {
+  render: Template,
+
+  args: {
+    appearance: ButtonAppearance.TEXT,
+  },
 };

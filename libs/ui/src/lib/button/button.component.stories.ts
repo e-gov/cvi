@@ -1,4 +1,4 @@
-import { Story, Meta } from '@storybook/angular';
+import { StoryFn, Meta } from '@storybook/angular';
 import notes from './button.component.md';
 import { ButtonComponent } from './button.component';
 
@@ -27,7 +27,7 @@ export default {
   },
 } as Meta<ButtonComponent>;
 
-const Template: Story<ButtonComponent> = (args: ButtonComponent) => ({
+const Template: StoryFn<ButtonComponent> = (args: ButtonComponent) => ({
   props: args,
   /* template */
   template: `
@@ -35,25 +35,36 @@ const Template: Story<ButtonComponent> = (args: ButtonComponent) => ({
   `,
 });
 
-export const Default = Template.bind({});
-Default.args = {};
-
-export const Secondary = Template.bind({});
-Secondary.args = {
-  appearance: 'secondary',
+export const Default = {
+  render: Template,
+  args: {},
 };
 
-export const Small = Template.bind({});
-Small.args = {
-  size: 's',
+export const Secondary = {
+  render: Template,
+
+  args: {
+    appearance: 'secondary',
+  },
 };
 
-export const Text = Template.bind({});
-Text.args = {
-  appearance: 'text',
+export const Small = {
+  render: Template,
+
+  args: {
+    size: 's',
+  },
 };
 
-const TemplateTextButtonWithIcon: Story<ButtonComponent> = (
+export const Text = {
+  render: Template,
+
+  args: {
+    appearance: 'text',
+  },
+};
+
+const TemplateTextButtonWithIcon: StoryFn<ButtonComponent> = (
   args: ButtonComponent
 ) => ({
   props: args,
@@ -67,4 +78,6 @@ const TemplateTextButtonWithIcon: Story<ButtonComponent> = (
   `,
 });
 
-export const TextButtonWithIcon = TemplateTextButtonWithIcon.bind({});
+export const TextButtonWithIcon = {
+  render: TemplateTextButtonWithIcon,
+};

@@ -1,4 +1,4 @@
-import { Story, Meta } from '@storybook/angular';
+import { StoryFn, Meta } from '@storybook/angular';
 import notes from './status-badge.html.md';
 
 export default {
@@ -21,7 +21,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story = (args) => ({
+const Template: StoryFn = (args) => ({
   props: args,
   /* template */
   template: `
@@ -29,9 +29,11 @@ const Template: Story = (args) => ({
   `,
 });
 
-export const Default = Template.bind({});
+export const Default = {
+  render: Template,
+};
 
-const TemplateWithIcon: Story = (args) => ({
+const TemplateWithIcon: StoryFn = (args) => ({
   props: args,
   /* template */
   template: `
@@ -46,4 +48,6 @@ const TemplateWithIcon: Story = (args) => ({
   `,
 });
 
-export const WithIcon = TemplateWithIcon.bind({});
+export const WithIcon = {
+  render: TemplateWithIcon,
+};

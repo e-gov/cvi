@@ -1,4 +1,4 @@
-import { Meta, moduleMetadata, Story } from '@storybook/angular';
+import { Meta, moduleMetadata, StoryFn } from '@storybook/angular';
 import notes from './textarea.component.md';
 
 import { TextareaComponent } from './textarea.component';
@@ -27,7 +27,7 @@ export default {
   },
 } as Meta<TextareaComponent>;
 
-const Template: Story<TextareaComponent> = (args: TextareaComponent) => ({
+const Template: StoryFn<TextareaComponent> = (args: TextareaComponent) => ({
   props: args,
   /* template */
   template: `
@@ -37,9 +37,11 @@ const Template: Story<TextareaComponent> = (args: TextareaComponent) => ({
   `,
 });
 
-export const Default = Template.bind({});
+export const Default = {
+  render: Template,
+};
 
-const CharacterCounterTemplate: Story<TextareaComponent> = (
+const CharacterCounterTemplate: StoryFn<TextareaComponent> = (
   args: TextareaComponent
 ) => ({
   props: args,
@@ -51,9 +53,11 @@ const CharacterCounterTemplate: Story<TextareaComponent> = (
   `,
 });
 
-export const WithCharacterCounter = CharacterCounterTemplate.bind({});
+export const WithCharacterCounter = {
+  render: CharacterCounterTemplate,
+};
 
-const FormGroupTemplate: Story<TextareaComponent> = (
+const FormGroupTemplate: StoryFn<TextareaComponent> = (
   args: TextareaComponent
 ) => {
   const form = new FormGroup({
@@ -90,5 +94,8 @@ const FormGroupTemplate: Story<TextareaComponent> = (
     `,
   };
 };
-export const WithFormGroup = FormGroupTemplate.bind({});
-WithFormGroup.storyName = 'With FormGroup';
+
+export const WithFormGroup = {
+  render: FormGroupTemplate,
+  name: 'With FormGroup',
+};
