@@ -35,8 +35,7 @@ export const Default = {
 };
 
 export const Mobile = {
-  render: Template,
-
+  ...Default,
   parameters: {
     viewport: {
       defaultViewport: 'iphone12mini',
