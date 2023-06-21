@@ -1,6 +1,12 @@
-import { StoryFn, Meta } from '@storybook/angular';
+import { Meta, componentWrapperDecorator } from '@storybook/angular';
 import notes from './content-container.component.md';
 import { ContentContainerComponent } from './content-container.component';
+
+const wrapperDecorators = [
+  componentWrapperDecorator(ContentContainerComponent, ({ args }) => {
+    return args;
+  }),
+];
 
 export default {
   title: 'Angular/Content container',
@@ -19,15 +25,10 @@ export default {
   },
 } as Meta<ContentContainerComponent>;
 
-const Template: StoryFn<ContentContainerComponent> = (
-  args: ContentContainerComponent
-) => ({
-  props: args,
-  template: `
-    <cvi-ng-content-container>{{ content }}</cvi-ng-content-container>
-  `,
-});
-
 export const Default = {
-  render: Template,
+  render: (args: ContentContainerComponent) => ({
+    props: args,
+    template: `{{ content }}`,
+  }),
+  decorators: wrapperDecorators,
 };
