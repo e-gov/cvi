@@ -17,34 +17,24 @@ export default {
   },
   args: {
     name: 'action',
-    height: iconSizeDefault,
+    height: iconSizeDefault
   },
 } as Meta;
 
-const Template: StoryFn<IconComponent> = (args: IconComponent) => ({
-  props: {
-    ...args,
-  },
-  template: `
-    <cvi-ng-icon [name]="name" [height]="height"></cvi-ng-icon>
-  `,
-});
-
 export const Default = {
-  render: Template,
+  render: (args: IconComponent) => ({
+    props: args,
+  }),
 };
 
 export const WithCustomSize = {
-  render: Template,
-
+  ...Default,
   args: {
     height: 140,
   },
-
   parameters: {
     layout: 'padded',
   },
-
   decorators: [
     componentWrapperDecorator((story) => {
       return `
@@ -57,28 +47,27 @@ export const WithCustomSize = {
   ],
 };
 
-const TemplateWithStyling: StoryFn<IconComponent> = (args: IconComponent) => ({
-  props: {
-    ...args,
-  },
-  template: `
-    <cvi-ng-storybook-note>
-      To change color of an icon, just add <code>fill</code> CSS property either to icon component selector itself or its ancestor. It is not required to apply <code>fill</code> to SVG node itself.
-    </cvi-ng-storybook-note>
-    <div class="wrapper-class">
-      <cvi-ng-icon [name]="name" [height]="height"></cvi-ng-icon>
-    </div>
-  `,
-  styles: [
-    `.wrapper-class {
-      fill: red;
-    }`,
-  ],
-});
-
 export const WithStyling = {
-  render: TemplateWithStyling,
-
+  render: (args: IconComponent) => ({
+    props: args,
+    styles: [
+      `.wrapper-class {
+        fill: red;
+      }`,
+    ],
+  }),
+  decorators: [
+    componentWrapperDecorator((story) => {
+      return `
+        <cvi-ng-storybook-note>
+          To change color of an icon, just add <code>fill</code> CSS property either to icon component selector itself or its ancestor. It is not required to apply <code>fill</code> to SVG node itself.
+        </cvi-ng-storybook-note>
+        <div class="wrapper-class">
+          ${story}
+        </div>
+      `;
+    }),
+  ],
   parameters: {
     layout: 'padded',
   },
