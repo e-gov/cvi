@@ -33,6 +33,7 @@ export class FeedbackComponent
   @Input() title = 'Did you find what you were looking for?';
 
   /** Feedback options */
+  /** @internal */
   @Input() options: { value: any; label: string }[] = [
     { value: 'NO', label: 'No' },
     { value: 'PARTIALLY', label: 'Partially' },
