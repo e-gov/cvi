@@ -1,6 +1,12 @@
-import { StoryFn, Meta } from '@storybook/angular';
+import { StoryFn, Meta, componentWrapperDecorator } from '@storybook/angular';
 import notes from './content-panel.component.md';
 import { ContentPanelComponent } from './content-panel.component';
+
+const wrapperDecorators = [
+  componentWrapperDecorator(ContentPanelComponent, ({ args }) => {
+    return args;
+  }),
+];
 
 export default {
   title: 'Angular/Content panel',
@@ -20,22 +26,16 @@ export default {
   },
 } as Meta<ContentPanelComponent>;
 
-const Template: StoryFn<ContentPanelComponent> = (
-  args: ContentPanelComponent
-) => ({
-  props: args,
-  template: `
-    <cvi-ng-content-panel [title]="title">{{ content }}</cvi-ng-content-panel>
-  `,
-});
-
 export const Default = {
-  render: Template,
+  render: (args: ContentPanelComponent) => ({
+    props: args,
+    template: `{{ content }}`,
+  }),
+  decorators: wrapperDecorators,
 };
 
 export const WithNoTitle = {
-  render: Template,
-
+  ...Default,
   args: {
     title: '',
   },
