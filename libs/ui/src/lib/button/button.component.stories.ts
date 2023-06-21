@@ -1,6 +1,12 @@
-import { StoryFn, Meta } from '@storybook/angular';
+import { StoryFn, Meta, componentWrapperDecorator } from '@storybook/angular';
 import notes from './button.component.md';
 import { ButtonComponent } from './button.component';
+
+const wrapperDecorators = [
+  componentWrapperDecorator(ButtonComponent, ({ args }) => {
+    return args;
+  }),
+];
 
 export default {
   title: 'Angular/Button',
@@ -8,8 +14,6 @@ export default {
   parameters: { notes },
   argTypes: {
     appearance: {
-      name: 'Appearance',
-      options: ['primary', 'secondary', 'text'],
       control: { type: 'inline-radio' },
     },
     content: {
@@ -22,43 +26,33 @@ export default {
   },
   args: {
     content: 'Button label',
-    appearance: 'primary',
-    disabled: false,
   },
 } as Meta<ButtonComponent>;
 
-const Template: StoryFn<ButtonComponent> = (args: ButtonComponent) => ({
-  props: args,
-  /* template */
-  template: `
-    <cvi-ng-button [disabled]="disabled" [size]="size" [appearance]="appearance">{{ content }}</cvi-ng-button>
-  `,
-});
-
 export const Default = {
-  render: Template,
-  args: {},
+  render: (args: ButtonComponent) => ({
+    props: args,
+    template: `{{ content }}`,
+  }),
+  decorators: wrapperDecorators,
 };
 
 export const Secondary = {
-  render: Template,
-
+  ...Default,
   args: {
     appearance: 'secondary',
   },
 };
 
 export const Small = {
-  render: Template,
-
+  ...Default,
   args: {
     size: 's',
   },
 };
 
 export const Text = {
-  render: Template,
-
+  ...Default,
   args: {
     appearance: 'text',
   },
