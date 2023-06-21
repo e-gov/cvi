@@ -1,6 +1,5 @@
 import { Meta, moduleMetadata, StoryFn } from '@storybook/angular';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { UiModule } from '../ui.module';
 import notes from './datepicker.component.md';
 import { DatepickerComponent } from './datepicker.component';
 
@@ -8,7 +7,7 @@ export default {
   title: 'Angular/Form/Datepicker',
   decorators: [
     moduleMetadata({
-      imports: [UiModule, ReactiveFormsModule],
+      imports: [ReactiveFormsModule],
     }),
   ],
   parameters: { notes },
@@ -19,20 +18,31 @@ export default {
   },
 } as Meta<DatepickerComponent>;
 
-const Template: StoryFn<DatepickerComponent> = (args: DatepickerComponent) => ({
-  props: args,
-  template: `
-    <cvi-ng-datepicker  [placeholder]="placeholder"
-                        [disabled]="disabled"
-                        [htmlId]="htmlId">
-    </cvi-ng-datepicker>
-  `,
-});
-
 export const Default = {
-  render: Template,
-  name: 'Default',
-  args: {},
+  render: (args: DatepickerComponent) => ({
+    props: args,
+    /* template */
+    template: `
+      <cvi-ng-datepicker [placeholder]="placeholder"
+                         [disabled]="disabled"
+                         [htmlId]="htmlId">
+      </cvi-ng-datepicker>
+    `,
+  }),
+};
+
+export const WithCustomPlaceholder = {
+  ...Default,
+  args: {
+    placeholder: 'dd.mm.yyyy',
+  },
+};
+
+export const WithDisabled = {
+  ...Default,
+  args: {
+    disabled: true,
+  },
 };
 
 const FormTemplate: StoryFn<DatepickerComponent> = (
@@ -60,13 +70,12 @@ const FormTemplate: StoryFn<DatepickerComponent> = (
     /* template */
     template: `
       <form [formGroup]="form" (ngSubmit)="onSubmit(this.form.value)">
-        <cvi-ng-form-item label="Some label"
-                          [htmlId]="htmlId">
-            <cvi-ng-datepicker  formControlName="date"
-                                [placeholder]="placeholder"
-                                [disabled]="disabled"
-                                [htmlId]="htmlId">
-            </cvi-ng-datepicker>
+        <cvi-ng-form-item label="Some label" [htmlId]="htmlId">
+          <cvi-ng-datepicker formControlName="date"
+                             [placeholder]="placeholder"
+                             [disabled]="disabled"
+                             [htmlId]="htmlId">
+          </cvi-ng-datepicker>
         </cvi-ng-form-item>
       </form>
       <div>Inserted value: {{selectedValue()}}</div>
@@ -76,20 +85,4 @@ const FormTemplate: StoryFn<DatepickerComponent> = (
 
 export const WithFormGroup = {
   render: FormTemplate,
-};
-
-export const WithCustomPlaceholder = {
-  render: Template,
-
-  args: {
-    placeholder: 'dd.mm.yyyy',
-  },
-};
-
-export const WithDisabled = {
-  render: Template,
-
-  args: {
-    disabled: true,
-  },
 };
