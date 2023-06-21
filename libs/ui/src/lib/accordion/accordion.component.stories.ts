@@ -67,12 +67,10 @@ const Template: StoryFn<AccordionComponent> = (args: AccordionComponent) => ({
 
 export const Default = {
   render: Template,
-  args: {},
 };
 
 export const Mobile = {
-  render: Template,
-
+  ...Default,
   parameters: {
     layout: 'fullscreen',
     backgrounds: {
@@ -110,7 +108,6 @@ const TemplateHTMLInTitle: StoryFn = (args) => ({
 
 export const WithHTMLInTitle = {
   render: TemplateHTMLInTitle,
-  args: {},
 };
 
 const TemplateCustomHeader: StoryFn = (args) => ({
@@ -133,5 +130,4 @@ const TemplateCustomHeader: StoryFn = (args) => ({
 
 export const WithCustomHeader = {
   render: TemplateCustomHeader,
-  args: {},
 };

@@ -85,12 +85,10 @@ const Template: StoryFn = (args) => ({
 
 export const Default = {
   render: Template,
-  args: {},
 };
 
 export const Mobile = {
-  render: Template,
-
+  ...Default,
   parameters: {
     layout: 'fullscreen',
     backgrounds: {
