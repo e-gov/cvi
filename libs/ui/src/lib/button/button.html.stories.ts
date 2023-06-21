@@ -20,7 +20,7 @@ export default {
     },
     size: {
       name: 'Size',
-      options: [ButtonSize.S, ButtonSize.M],
+      options: [ButtonSize.M, ButtonSize.S],
       control: { type: 'inline-radio' },
     },
   },
@@ -46,28 +46,24 @@ const Template: StoryFn = (args) => ({
 
 export const Default = {
   render: Template,
-  args: {},
 };
 
 export const Secondary = {
-  render: Template,
-
+  ...Default,
   args: {
     appearance: ButtonAppearance.SECONDARY,
   },
 };
 
 export const Small = {
-  render: Template,
-
+  ...Default,
   args: {
     size: ButtonSize.S,
   },
 };
 
 export const Text = {
-  render: Template,
-
+  ...Default,
   args: {
     appearance: ButtonAppearance.TEXT,
   },
