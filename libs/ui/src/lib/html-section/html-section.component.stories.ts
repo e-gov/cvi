@@ -1,4 +1,4 @@
-import { Meta, StoryFn } from '@storybook/angular/';
+import { Meta, componentWrapperDecorator } from '@storybook/angular/';
 import { HtmlSectionComponent } from './html-section.component';
 import notes from './html-section.component.md';
 
@@ -27,45 +27,32 @@ export default {
   },
 } as Meta;
 
-const Template: StoryFn<HtmlSectionComponent> = (
-  args: HtmlSectionComponent
-) => ({
-  props: {
-    ...args,
-  },
-  template: `
-    <cvi-ng-html-section [html]="html" [sanitize]="sanitize"></cvi-ng-html-section>
-  `,
-});
-
 export const Default = {
-  render: Template,
-  args: {},
+  render: (args: HtmlSectionComponent) => ({
+    props: args,
+  }),
 };
 
-const TemplateInContactsBlock: StoryFn<HtmlSectionComponent> = (
-  args: HtmlSectionComponent
-) => ({
-  props: {
-    ...args,
-  },
-  template: `
-    <div class="container">
-      <cvi-ng-html-section [html]="html" [sanitize]="sanitize"></cvi-ng-html-section>
-    </div>
-  `,
-  styles: [
-    `.container {
-      width: 400px;
-      background-color: var(--cvi-color-black-coral-2);
-      padding: 20px;
-    }`,
-  ],
-});
-
 export const InContactsBlock = {
-  render: TemplateInContactsBlock,
-
+  render: (args: HtmlSectionComponent) => ({
+    props: args,
+    styles: [
+      `.container {
+        width: 400px;
+        background-color: var(--cvi-color-black-coral-2);
+        padding: 20px;
+      }`,
+    ],
+  }),
+  decorators: [
+    componentWrapperDecorator((story) => {
+      return `
+        <div class="container">
+          ${story}
+        </div>
+      `;
+    }),
+  ],
   args: {
     html: `
       <h3 class="cvi-html-section__title">Kontaktid</h3>
@@ -82,13 +69,11 @@ export const InContactsBlock = {
         </div>
       </div>
     `,
-    sanitize: true,
   },
 };
 
 export const List = {
-  render: Template,
-
+  ...Default,
   args: {
     html: `
       <p>Ordered <b>list</b></p>
@@ -104,6 +89,5 @@ export const List = {
         <li>Item 3</li>
       </ul>
     `,
-    sanitize: true,
   },
 };
