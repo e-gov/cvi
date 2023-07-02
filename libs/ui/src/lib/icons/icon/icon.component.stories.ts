@@ -17,7 +17,7 @@ export default {
   },
   args: {
     name: 'action',
-    height: iconSizeDefault
+    height: iconSizeDefault,
   },
 } as Meta;
 
