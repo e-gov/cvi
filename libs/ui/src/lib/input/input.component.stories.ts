@@ -7,6 +7,7 @@ import { UiModule } from '../ui.module';
 
 export default {
   title: 'Angular/Form/Input',
+  component: InputComponent,
   decorators: [
     moduleMetadata({
       imports: [UiModule, ReactiveFormsModule],
