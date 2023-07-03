@@ -1,0 +1,46 @@
+<div class="cvi-datepicker__calendar"
+     tabindex="-1"
+     id="datePickerCalendar-{{baseId}}"
+     role="dialog"
+     aria-modal="true">
+  <div class="cvi-datepicker__calendar-header">
+    <div class="cvi-datepicker__calendar-header-chevron">
+      <button aria-label="Previous month" (click)="previousMonth()">
+        <cvi-ng-icon [name]="'arrow_b_left'"
+                     [svgClass]="'cvi-datepicker__header-chevron-icon'">
+        </cvi-ng-icon>
+      </button>
+    </div>
+    <div *ngIf="this.displayDate"
+         id="monthYearLabel-{{baseId}}"
+         aria-live="polite"
+         class="cvi-datepicker__calendar-header-month">{{ monthLabels[displayDate.getMonth()] }} {{ displayDate.getFullYear() }}</div>
+    <div class="cvi-datepicker__calendar-header-chevron">
+      <button aria-label="Next month" (click)="nextMonth()">
+        <cvi-ng-icon [name]="'arrow_b_right'"
+                     [svgClass]="'cvi-datepicker__header-chevron-icon'">
+        </cvi-ng-icon>
+      </button>
+    </div>
+  </div>
+  <div role="grid" [attr.aria-labelledby]="'monthYearLabel-' + baseId" class="cvi-datepicker__calendar-grid">
+    <div class="cvi-datepicker__calendar-daylabels">
+      <div class="cvi-datepicker__calendar-daylabel" *ngFor="let label of dayShorthandLabels">{{ label }}</div>
+    </div>
+    <div class="cvi-datepicker__calendar-weekrow" *ngFor="let _ of [].constructor(calendarArray.length); let i = index">
+      <div class="cvi-datepicker__calendar-daynumber" *ngFor="let day of calendarArray[i]; let j = index">
+        <button
+          class="cvi-datepicker__calendar-button"
+          *ngIf="day !== 0"
+          [ngClass]="getDateClass(day, j)"
+          (click)="handleClick(day)"
+          [attr.aria-label]="dayFullLabels[j]"
+          [attr.aria-selected]="day === selectedDate?.getDay()"
+          [attr.aria-current]="day === today.getDate() ? 'date' : null"
+        >
+          {{ day }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

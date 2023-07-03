@@ -60,12 +60,22 @@ const FormTemplate: Story<InputComponent> = (args: InputComponent) => {
     console.log(formValue);
   }
 
+  function disableInput() {
+    form.controls.item.disable();
+  }
+
+  function enableInput() {
+    form.controls.item.enable();
+  }
+
   return {
     props: {
       ...args,
       form,
       selectedValue,
       onSubmit,
+      disableInput,
+      enableInput,
     },
     /* template */
     template: `
@@ -74,9 +84,14 @@ const FormTemplate: Story<InputComponent> = (args: InputComponent) => {
                           [htmlId]="htmlId">
           <cvi-ng-input formControlName="item"
                         [placeholder]="placeholder"
-                        [disabled]="disabled"
                         [htmlId]="htmlId"></cvi-ng-input>
         </cvi-ng-form-item>
+        <cvi-ng-track layout="flex" horizontalAlignment="justify" gap="3">
+            <cvi-ng-button data-cy="disable-button" (click)="disableInput()">Disable input</cvi-ng-button>
+            <cvi-ng-button data-cy="enable-button" (click)="enableInput()">Enable input</cvi-ng-button>
+        </cvi-ng-track>
+        <div></div>
+
       </form>
       <div>Inserted value: {{selectedValue()}}</div>
     `,
