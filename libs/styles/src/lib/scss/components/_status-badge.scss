@@ -14,12 +14,14 @@
   line-height: get-line-height(100);
   white-space: nowrap;
 
-  #{$base}.badge-icon {
-    position: absolute;
-    background-color: var(--background-color);
-    fill: var(--color);
-    stroke: var(--color);
-    border-radius: var(--cvi-radius-s);
-    margin-left: 5px;
+  @at-root {
+    #{$base}__badge-icon {
+      position: absolute;
+      background-color: var(--background-color);
+      fill: var(--color);
+      stroke: var(--color);
+      border-radius: var(--cvi-radius-s);
+      margin-left: 5px;
+    }
   }
 }

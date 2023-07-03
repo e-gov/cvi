@@ -2,6 +2,24 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.10.1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/styles-1.10.0...styles-1.10.1) (2023-06-20)
+
+
+### Bug Fixes
+
+* **ng:** status badge class format, clarify a stylelint linting error message ([#118](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/118)) ([3bbf870](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/3bbf87074dbf30e5b28f5386e9ba58c8c35803ef))
+
+
+
+# [1.10.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/styles-1.9.0...styles-1.10.0) (2023-06-12)
+
+
+### Features
+
+* **ng:** datepicker EBS-116 ([#107](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/107)) ([4d6c2c4](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/4d6c2c4353b144d31f5ea724a6cd724afeb5c484))
+
+
+
 # [1.9.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/styles-1.8.2...styles-1.9.0) (2023-06-02)
 
 

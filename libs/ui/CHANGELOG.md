@@ -2,6 +2,33 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.15.2](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.15.1...ui-1.15.2) (2023-06-20)
+
+
+### Bug Fixes
+
+* **ng:** input disabled state for reactive forms EBS-670 ([#119](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/119)) ([d6ccde8](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/d6ccde8847567d0d40715fb4ae73268e6a755f28))
+
+
+
+## [1.15.1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.15.0...ui-1.15.1) (2023-06-20)
+
+
+### Bug Fixes
+
+* **ng:** status badge class format, clarify a stylelint linting error message ([#118](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/118)) ([3bbf870](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/3bbf87074dbf30e5b28f5386e9ba58c8c35803ef))
+
+
+
+# [1.15.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.14.0...ui-1.15.0) (2023-06-12)
+
+
+### Features
+
+* **ng:** datepicker EBS-116 ([#107](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/107)) ([4d6c2c4](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/4d6c2c4353b144d31f5ea724a6cd724afeb5c484))
+
+
+
 # [1.14.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.13.1...ui-1.14.0) (2023-06-02)
 
 
