@@ -53,6 +53,24 @@ Text.args = {
   appearance: 'text',
 };
 
+const TemplateWithCustomColor: Story<ButtonComponent> = (
+  args: ButtonComponent
+) => ({
+  props: args,
+  styles: [
+    `:host {
+      --cvi-button-color: var(--cvi-color-jasper-10);
+      --cvi-button-color--hover: var(--cvi-color-jasper-12);
+    }`,
+  ],
+  /* template */
+  template: `
+    <cvi-ng-button [disabled]="disabled" [size]="size" [appearance]="appearance">{{ content }}</cvi-ng-button>
+  `,
+});
+
+export const WithCustomColor = TemplateWithCustomColor.bind({});
+
 const TemplateTextButtonWithIcon: Story<ButtonComponent> = (
   args: ButtonComponent
 ) => ({
