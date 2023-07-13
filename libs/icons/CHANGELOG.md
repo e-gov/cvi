@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [1.3.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/icons-1.2.0...icons-1.3.0) (2023-07-13)
+
+
+### Features
+
+* **icons:** added logout icon to icon library ([#123](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/123)) ([361c5f6](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/361c5f6c7b1bafd656a402de3eaccb0bb85e7c1f))
+
+
+
 # [1.2.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/icons-1.1.1...icons-1.2.0) (2023-06-12)
 
 
