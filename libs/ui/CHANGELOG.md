@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [1.16.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.15.2...ui-1.16.0) (2023-07-13)
+
+
+### Features
+
+* **styles:** added an ability to customise cvi-button color with appearance-primary modifier ([#122](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/122)) ([a63d96f](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/a63d96fad200a04e78d1286d432ad095e85845a6))
+
+
+
 ## [1.15.2](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.15.1...ui-1.15.2) (2023-06-20)
 
 
