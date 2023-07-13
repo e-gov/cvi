@@ -1,4 +1,4 @@
-import { Meta, StoryFn, componentWrapperDecorator } from '@storybook/angular';
+import { Meta, componentWrapperDecorator } from '@storybook/angular';
 import { IconComponent } from './icon.component';
 import notes from './icon.component.md';
 import { storybookIconsNames } from '../storybook-icons';

@@ -1,16 +1,20 @@
-import { StoryFn, Meta, moduleMetadata } from '@storybook/angular';
+import {
+  StoryFn,
+  Meta,
+  moduleMetadata,
+  componentWrapperDecorator,
+} from '@storybook/angular';
 import notes from './input.component.md';
 import { InputComponent } from './input.component';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { storybookIconsNames } from '../icons/storybook-icons';
-import { UiModule } from '../ui.module';
 
 export default {
   title: 'Angular/Form/Input',
   component: InputComponent,
   decorators: [
     moduleMetadata({
-      imports: [UiModule, ReactiveFormsModule],
+      imports: [ReactiveFormsModule],
     }),
   ],
   parameters: { notes },
@@ -23,31 +27,39 @@ export default {
   },
   args: {
     placeholder: 'Username',
-    disabled: false,
+    suffixIconName: '',
     htmlId: 'some-input',
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
+    onChanged: () => {},
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
+    onTouched: () => {},
   },
-} as Meta<InputComponent>;
-
-const Template: StoryFn<InputComponent> = (args: InputComponent) => ({
-  props: args,
-  /* template */
-  template: `
-    <cvi-ng-form-item label="Some label" [htmlId]="htmlId">
-      <cvi-ng-input [placeholder]="placeholder"
-                    [disabled]="disabled"
-                    [suffixIconName]="suffixIconName"
-                    [htmlId]="htmlId"></cvi-ng-input>
-    </cvi-ng-form-item>
-  `,
-});
+} as Meta;
 
 export const Default = {
-  render: Template,
+  render: (args: InputComponent) => ({
+    props: args,
+  }),
+  decorators: [
+    componentWrapperDecorator((story) => {
+      return `
+          <cvi-ng-form-item label="Some label" [htmlId]="htmlId">
+            ${story}
+          </cvi-ng-form-item>
+        `;
+    }),
+  ],
+};
+
+export const Disabled = {
+  ...Default,
+  args: {
+    disabled: true,
+  },
 };
 
 export const WithSuffixIcon = {
-  render: Template,
-
+  ...Default,
   args: {
     suffixIconName: 'loupe',
   },
@@ -89,16 +101,16 @@ const FormTemplate: StoryFn<InputComponent> = (args: InputComponent) => {
         <cvi-ng-form-item label="Some label"
                           [htmlId]="htmlId">
           <cvi-ng-input formControlName="item"
+                        [suffixIconName]="suffixIconName"
+                        [disabled]="disabled"
                         [placeholder]="placeholder"
                         [htmlId]="htmlId"></cvi-ng-input>
         </cvi-ng-form-item>
-        <cvi-ng-track layout="flex" horizontalAlignment="justify" gap="3">
-            <cvi-ng-button data-cy="disable-button" (click)="disableInput()">Disable input</cvi-ng-button>
-            <cvi-ng-button data-cy="enable-button" (click)="enableInput()">Enable input</cvi-ng-button>
-        </cvi-ng-track>
-        <div></div>
-
       </form>
+      <cvi-ng-track layout="flex" gap="3">
+        <cvi-ng-button data-cy="disable-button" (click)="disableInput()">Disable input</cvi-ng-button>
+        <cvi-ng-button data-cy="enable-button" (click)="enableInput()">Enable input</cvi-ng-button>
+      </cvi-ng-track>
       <div>Inserted value: {{selectedValue()}}</div>
     `,
   };
@@ -107,24 +119,26 @@ const FormTemplate: StoryFn<InputComponent> = (args: InputComponent) => {
 export const WithFormGroup = {
   render: FormTemplate,
   name: 'With FormGroup',
+  argTypes: {
+    disabled: {
+      control: false,
+    },
+  },
 };
 
-const CharacterCounterTemplate: StoryFn<InputComponent> = (
-  args: InputComponent
-) => ({
-  props: args,
-  /* template */
-  template: `
-    <cvi-ng-form-item label="Some label" [htmlId]="htmlId">
-      <cvi-ng-input [placeholder]="placeholder"
-                    [disabled]="disabled"
-                    [htmlId]="htmlId"
-                    cviNgCharacterCounter
-                    [maxChars]="10"></cvi-ng-input>
-    </cvi-ng-form-item>
-  `,
-});
-
 export const WithCharacterCounter = {
-  render: CharacterCounterTemplate,
+  render: (args: InputComponent) => ({
+    props: args,
+    /* template */
+    template: `
+      <cvi-ng-form-item label="Some label" [htmlId]="htmlId">
+        <cvi-ng-input [placeholder]="placeholder"
+                      [disabled]="disabled"
+                      [suffixIconName]="suffixIconName"
+                      [htmlId]="htmlId"
+                      cviNgCharacterCounter
+                      [maxChars]="10"></cvi-ng-input>
+      </cvi-ng-form-item>
+    `,
+  }),
 };
