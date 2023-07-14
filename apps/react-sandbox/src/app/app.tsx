@@ -14,10 +14,10 @@ export function App() {
       <div>
         <Textarea
           placeholder="Enter Your Name"
+          id={''}
           maxLength={30}
           showCharacterCount={false}
           resizable={true}
-          id={''}
         ></Textarea>
       </div>
 
