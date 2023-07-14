@@ -14,3 +14,5 @@ Styled button.
 ## How to use
 
 Add directly to HTML using `.cvi-button*` classes or `@include` mixin `@cvi-button` in your Sass code. When including the mixin, you can change the base class with `$base` parameter.
+
+You can use `--cvi-button-color` and `--cvi-button-color--hover` CSS variables to customise the background color of the button with `--appearance-primary` modifier class.
