@@ -25,7 +25,14 @@ export class InputComponent implements ControlValueAccessor {
   @Input() htmlId!: string;
 
   /** Input is disabled */
-  @Input() disabled = false;
+  @Input()
+  set disabled(value: boolean) {
+    this._disabled = value;
+  }
+
+  get disabled(): boolean {
+    return this._disabled;
+  }
 
   /** Placeholder */
   @Input() placeholder = '';
@@ -36,13 +43,19 @@ export class InputComponent implements ControlValueAccessor {
   /** Emit value on model change */
   @Output() valueChange = new EventEmitter<any>();
 
-  internalValue?: any;
+  /** Internal */
+  _internalValue?: any;
+
+  /** Internal */
+  _disabled = false;
 
   // eslint-disable-next-line @typescript-eslint/no-empty-function
-  private onChanged: (value: any) => void = () =>
-    this.valueChange.emit(this.internalValue);
+  private onChanged: (_: any) => void = () =>
+    this.valueChange.emit(this._internalValue);
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   private onTouched: () => any = () => {};
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  private propagateDisabled = (_: any) => {};
 
   @HostBinding('class') get getHostClasses(): string {
     return `cvi-textfield cvi-textfield--type-single-line${
@@ -56,7 +69,7 @@ export class InputComponent implements ControlValueAccessor {
   }
 
   writeValue(value: any): void {
-    this.internalValue = value;
+    this._internalValue = value;
   }
 
   registerOnChange(fn: any): void {
@@ -65,5 +78,13 @@ export class InputComponent implements ControlValueAccessor {
 
   registerOnTouched(fn: any): void {
     this.onTouched = fn;
+  }
+
+  registerOnDisabledChange(fn: (isDisabled: boolean) => void): void {
+    this.propagateDisabled = fn;
+  }
+
+  setDisabledState(isDisabled: boolean): void {
+    this.disabled = isDisabled;
   }
 }

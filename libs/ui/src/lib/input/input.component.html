@@ -1,7 +1,8 @@
-<input [ngModel]="internalValue"
+<input [ngModel]="_internalValue"
        (ngModelChange)="setValue($event)"
-       [attr.disabled]="disabled ? disabled : null"
+       [disabled]="disabled"
        [attr.id]="htmlId"
+       [attr.aria-disabled]="disabled"
        [placeholder]="placeholder"
        class="cvi-textfield__text-control"
        type="text"/>
