@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [1.4.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/icons-1.3.0...icons-1.4.0) (2023-07-17)
+
+
+### Features
+
+* add svg, fix status-badge classname ([#124](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/124)) ([d04ac7d](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/d04ac7d7b4f93cca5e31a20509ae0bc114d5a089))
+
+
+
 # [1.3.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/icons-1.2.0...icons-1.3.0) (2023-07-13)
 
 
