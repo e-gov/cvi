@@ -28,7 +28,21 @@ export class StepsComponent
 {
   @Input() title!: string;
 
-  @Input() currentStepIndex: number | null = null;
+  /** Internal */
+  private _currentStepIndex: number | null = null;
+
+  @Output() currentStepIndexChange: EventEmitter<number | null> =
+    new EventEmitter<number | null>();
+
+  @Input()
+  get currentStepIndex(): number | null {
+    return this._currentStepIndex;
+  }
+  set currentStepIndex(value) {
+    this._currentStepIndex = value;
+    this.currentStepIndexChange.emit(value);
+  }
+
   @Input() hasTableOfContents = false;
 
   /** Index of a step, used to initiate step change from a parent component */
