@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [1.17.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.16.0...ui-1.17.0) (2023-07-24)
+
+
+### Features
+
+* **ng:** add two-way binding supporrt to ng-steps currentStepIndex ([#128](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/128)) EBS-738 ([93412ce](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/93412cef82da92bcd960c63d0f848eb78cd5c35e))
+
+
+
 # [1.16.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.15.2...ui-1.16.0) (2023-07-13)
 
 
