@@ -35,6 +35,7 @@ export class GeneratedTableOfContentsComponent
   timeout!: NodeJS.Timeout;
   scrollingTimeout!: NodeJS.Timeout;
   private isBottom = false;
+
   /** @internal */
   private readonly destroy$ = new Subject<void>();
 
@@ -63,7 +64,7 @@ export class GeneratedTableOfContentsComponent
     }
   }
 
-  /** For more complex cases, we have to observe the entire element */
+  /** For more complex cases we have to observe the entire element */
   ngAfterViewInit(): void {
     this.domMutations = new MutationObserver(() => this.buildToc());
     this.domMutations.observe(this.content.nativeElement, {
