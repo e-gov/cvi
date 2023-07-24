@@ -34,7 +34,7 @@ export class GeneratedTableOfContentsComponent
   domMutations!: MutationObserver;
   timeout!: NodeJS.Timeout;
   scrollingTimeout!: NodeJS.Timeout;
-
+  private isBottom = false;
   /** @internal */
   private readonly destroy$ = new Subject<void>();
 
@@ -52,17 +52,7 @@ export class GeneratedTableOfContentsComponent
     fromEvent(window, 'scroll')
       .pipe(takeUntil(this.destroy$))
       .subscribe(() => {
-        if (this.scrollingTimeout) {
-          clearTimeout(this.scrollingTimeout);
-        }
-        this.scrollingTimeout = setTimeout(() => {
-          if (this.tocService.toCItemToHighlight) {
-            this.tocService.setCurrentToCSection(
-              this.tocService.toCItemToHighlight
-            );
-            this.tocService.toCItemToHighlight = undefined;
-          }
-        }, 100);
+        this.onScroll();
       });
   }
 
@@ -73,10 +63,9 @@ export class GeneratedTableOfContentsComponent
     }
   }
 
-  /** For more complex cases we have to observe the entire element */
+  /** For more complex cases, we have to observe the entire element */
   ngAfterViewInit(): void {
     this.domMutations = new MutationObserver(() => this.buildToc());
-
     this.domMutations.observe(this.content.nativeElement, {
       childList: true,
       subtree: true,
@@ -92,6 +81,27 @@ export class GeneratedTableOfContentsComponent
     this.destroy$.next();
     this.destroy$.complete();
     this.destroy$.unsubscribe();
+  }
+
+  private onScroll(): void {
+    this.isBottom =
+      window.innerHeight + window.scrollY + 100 >= document.body.offsetHeight;
+    if (this.scrollingTimeout) {
+      clearTimeout(this.scrollingTimeout);
+    }
+    this.scrollingTimeout = setTimeout(() => {
+      if (this.isBottom && this.tocItems.length > 0) {
+        const lastHeading = this.tocItems[this.tocItems.length - 1];
+        this.tocService.setCurrentToCSection(lastHeading.href);
+        console.log(lastHeading.label);
+        console.log(this.isBottom);
+      } else if (this.tocService.toCItemToHighlight) {
+        this.tocService.setCurrentToCSection(
+          this.tocService.toCItemToHighlight
+        );
+        this.tocService.toCItemToHighlight = undefined;
+      }
+    }, 100);
   }
 
   buildToc(): void {
