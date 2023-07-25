@@ -85,7 +85,6 @@
       background-color: var(--cvi-color-white);
       border-radius: var(--cvi-radius-s);
       z-index: get-z-index('dropdown-popup', 'dropdown');
-      max-height: 300px;
       overflow-y: auto;
       border: 1px solid var(--cvi-color-black-coral-3);
     }
