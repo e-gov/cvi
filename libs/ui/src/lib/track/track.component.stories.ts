@@ -94,6 +94,21 @@ const Template: Story<TrackComponent> = (args: TrackComponent) => ({
   `,
 });
 
+const TemplateNestedTracks: Story<TrackComponent> = (args: TrackComponent) => ({
+  props: args,
+  /* template */
+  template: `
+    <cvi-ng-storybook-note>This story is to verify a bug where a nested track  with <code>horizontalAlignment=left</code> can't override the same prop of an ancestor track.<br>Here, the parent track is set to <code>right</code> and nested track to <code>left</code>. However, due to the bug the nested track still aligns to right.</cvi-ng-storybook-note>
+    <cvi-ng-track [gap]="gap" [horizontalAlignment]="horizontalAlignment" [verticalAlignment]="verticalAlignment" [flexDirection]="flexDirection" [flexIsMultiline]="flexIsMultiline" [layout]="layout">
+      <div>Item 1</div>
+      <cvi-ng-track [gap]="2" horizontalAlignment="left">
+        <div>Nested track with <code>horizontalAlignment="left"</code>: Item 2.1<br>And some filler easy view fifty tell string park its easier large read help ship younger rising gate hundred silk policeman dear hidden powerful table further mission</div>
+        <div>Nested track: Item 2.2</div>
+      </cvi-ng-track>
+    </cvi-ng-track>
+  `,
+});
+
 const TemplateManyItems: Story<TrackComponent> = (args: TrackComponent) => ({
   props: args,
   /* template */
@@ -239,6 +254,12 @@ VerticalReverseMobileOnlyMobile.parameters = {
   viewport: {
     defaultViewport: 'iphone12mini',
   },
+};
+
+export const NestedTracks = TemplateNestedTracks.bind({});
+NestedTracks.args = {
+  horizontalAlignment: 'right',
+  flexIsMultiline: true,
 };
 
 export const Multiline = TemplateManyItems.bind({});
