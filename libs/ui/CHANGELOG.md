@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.17.1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.17.0...ui-1.17.1) (2023-07-25)
+
+
+### Bug Fixes
+
+* **ng:** highlight last heading when at the bottom of the page ([#126](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/126)) ([b72772a](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/b72772aaa2031594f98f12e47e36ee015f3d255d))
+
+
+
 # [1.17.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.16.0...ui-1.17.0) (2023-07-24)
 
 
