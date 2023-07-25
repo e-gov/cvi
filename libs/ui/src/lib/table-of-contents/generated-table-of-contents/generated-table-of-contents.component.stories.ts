@@ -27,6 +27,18 @@ import { concatMap, delay, from, of } from 'rxjs';
       </div>
       <div [cviNgStorybookRandomParagraphs]="10"></div>
     </div>
+    <div>
+      <div>
+        <h2>A lone heading at the near end</h2>
+      </div>
+      <div>
+        <p>
+          Compound teeth fully there habit actually primitive young movement
+          pretty him including per program firm disease school butter various
+          say social unless ice hello
+        </p>
+      </div>
+    </div>
   `,
 })
 class StorybookToCHTMLExampleComponent {}
