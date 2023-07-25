@@ -32,6 +32,7 @@ export * from './lib/textarea/textarea.component';
 export * from './lib/html-section/safe-html-pipe';
 export * from './lib/tabs/tab-group.component';
 export * from './lib/tabs/tab.component';
+export * from './lib/tabs/cvi-tabs.component';
 export * from './lib/table/body-cell/body-cell.component';
 export * from './lib/table/header-cell/header-cell.component';
 export * from './lib/table/table.component';
