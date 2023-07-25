@@ -43,12 +43,7 @@
   #popup
 >
   <div class="cvi-tabs__dropdown">
-    <ul
-      role="listbox"
-      class="cvi-tabs__dropdown-container"
-      [scrollableEl]="popup"
-      (closed)="close()"
-    >
+    <ul role="listbox" class="cvi-tabs__dropdown-container" (closed)="close()">
       <li
         *ngFor="let tab of allTabs; let i = index"
         class="cvi-tabs__dropdown-item"
