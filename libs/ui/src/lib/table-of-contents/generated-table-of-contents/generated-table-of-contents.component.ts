@@ -107,7 +107,7 @@ export class GeneratedTableOfContentsComponent
       headingEls.forEach((headingEl: HTMLHeadingElement, i: number) => {
         if (headingEl.textContent) {
           const anchorId = `toc-${i}`;
-          const lastAnchorId = `toc-${headingEls.length -1}`;
+          const lastAnchorId = `toc-${headingEls.length - 1}`;
           this.renderer.setProperty(headingEl, 'id', anchorId);
           this.tocItems.push({
             label: headingEl.textContent,
@@ -125,32 +125,38 @@ export class GeneratedTableOfContentsComponent
   }
 
   createItemIntersectionObserver(
-  headingEl: HTMLHeadingElement,
-  anchorId: string,
-  lastAnchorId: string
-): IntersectionObserver {
-  const intersectionObservable = new IntersectionObserver(
-    (entries: IntersectionObserverEntry[]) => {
-      const isBottom = isBottomOfPage();
-      const isTop = isTopOfPage();
-      if (isBottom && !isTop) {
-        this.tocService.setCurrentToCSection(lastAnchorId, entries[entries.length - 1].time);
-        this.cdRef.detectChanges();
-        return;
-      }
-      entries.forEach((entry) => {
-        if (entry.isIntersecting && entry.intersectionRatio === 1 && !this.tocService.toCItemToHighlight) {
-          this.tocService.setCurrentToCSection(anchorId, entry.time);
+    headingEl: HTMLHeadingElement,
+    anchorId: string,
+    lastAnchorId: string
+  ): IntersectionObserver {
+    const intersectionObservable = new IntersectionObserver(
+      (entries: IntersectionObserverEntry[]) => {
+        const isBottom = isBottomOfPage();
+        const isTop = isTopOfPage();
+        if (isBottom && !isTop) {
+          this.tocService.setCurrentToCSection(
+            lastAnchorId,
+            entries[entries.length - 1].time
+          );
           this.cdRef.detectChanges();
+          return;
         }
-      });
-    },
-    { rootMargin: '5px 0px 5px 0px', threshold: 1 }
-  );
-  intersectionObservable.observe(headingEl);
-  return intersectionObservable;
-}
-
+        entries.forEach((entry) => {
+          if (
+            entry.isIntersecting &&
+            entry.intersectionRatio === 1 &&
+            !this.tocService.toCItemToHighlight
+          ) {
+            this.tocService.setCurrentToCSection(anchorId, entry.time);
+            this.cdRef.detectChanges();
+          }
+        });
+      },
+      { rootMargin: '5px 0px 5px 0px', threshold: 1 }
+    );
+    intersectionObservable.observe(headingEl);
+    return intersectionObservable;
+  }
 
   private removeToc() {
     if (this.tocItems?.length > 0) {
@@ -167,7 +173,6 @@ function isBottomOfPage() {
 }
 
 function isTopOfPage() {
-
   return window.scrollY === 0;
 }
 
