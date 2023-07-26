@@ -5,7 +5,7 @@ export default {
   title: 'HTML/Screenreader text',
   parameters: {
     notes,
-    options: { selectedPanel: 'html/panel' },
+    options: { selectedPanel: 'storybook/html/panel' },
     layout: 'padded',
   },
   args: {
