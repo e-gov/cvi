@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [1.8.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/storybook-1.7.1...storybook-1.8.0) (2023-07-26)
+
+
+### Features
+
+* **storybook:** expand story source code in the Docs tab by default ([#139](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/139)) ([f62d017](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/f62d017d7cfc19d7b99c0220e34af5eeb787bb69))
+
+
+
 ## [1.7.1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/storybook-1.7.0...storybook-1.7.1) (2023-07-26)
 
 
