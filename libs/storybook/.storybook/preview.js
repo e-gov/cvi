@@ -20,6 +20,9 @@ export const parameters = {
       }
       return null;
     },
+    source: {
+      state: 'open',
+    },
   },
   options: {
     // stories inside one file will be sorted in alphabetical order because of this bug https://github.com/storybookjs/storybook/issues/18659
