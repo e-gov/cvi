@@ -11,3 +11,5 @@
 ## Where to use
 
 Displays a regular svg icon.
+
+Please remember to register the icon via `IconsRegistry` in your app.
