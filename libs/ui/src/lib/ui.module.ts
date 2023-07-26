@@ -93,6 +93,7 @@ import { DatepickerComponent } from './datepicker/datepicker.component';
 import { DatepickerCalendarComponent } from './datepicker/datepicker-calendar.component';
 import { DATEPICKER_LABEL_CONFIG } from './datepicker/datepicker-label-config.token';
 import { DefaultDatepickerLabelConfig } from './datepicker/default-datepicker-label.config';
+import { MultiSelectComponent } from './multiselect/multiselect.component';
 
 const components = [
   TrackComponent,
@@ -150,6 +151,7 @@ const components = [
   HeaderCellComponent,
   DatepickerComponent,
   DatepickerCalendarComponent,
+  MultiSelectComponent,
 ];
 
 const pipes = [SafeHtmlPipe, NotificationSeverityToHeaderIconPipe];

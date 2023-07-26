@@ -1,0 +1,165 @@
+<div
+  class="cvi-multiselect"
+  dataAttribute="test-multiselect"
+  [class.filtered]="!!searchTerm"
+  [class.has-value]="hasValue"
+  [class.open]="isOpen"
+  [class.is-input-hidden]="
+    !isOpen && !searchInputFocused && (!hasValue || !backgroundDisabled)
+  "
+  [class.touched]="touched"
+  [class.invalid]="invalid"
+  [class.background-disabled]="backgroundDisabled"
+  [class.disabled]="disabled"
+  [class.search-has-focus]="searchInputFocused"
+>
+  <div class="cvi-multiselect__container" (mousedown)="handleMousedown($event)">
+    <div class="cvi-multiselect__value-container">
+      <div
+        *ngIf="!hasValue && !searchTerm"
+        class="cvi-multiselect__placeholder"
+      >
+        {{ placeholder }}
+      </div>
+      <div *ngIf="hasValue" class="cvi-multiselect__value" aria-live="polite">
+        <ng-template #defaultLabelTemplate>
+          {{ multiselectedItem?.label }}
+        </ng-template>
+
+        <ng-template
+          [ngTemplateOutlet]="labelTemplate || defaultLabelTemplate"
+          [ngTemplateOutletContext]="{ item: multiselectedItem?.value }"
+        >
+        </ng-template>
+      </div>
+    </div>
+    <div class="cvi-multiselect__input-container">
+      <input
+        #searchInput
+        type="text"
+        role="combobox"
+        autocomplete="off"
+        aria-autocomplete="both"
+        aria-haspopup="listbox"
+        [attr.aria-activedescendant]="focusedItemHtmlId"
+        [attr.aria-controls]="listboxHtmlId"
+        [attr.aria-owns]="listboxHtmlId"
+        [attr.id]="htmlId"
+        dataAttribute="test-input"
+        [attr.aria-expanded]="isOpen"
+        [value]="inputValue"
+        [disabled]="disabled"
+        (keyup.arrowdown)="handleOpeningWithArrowFromKeyboard()"
+        (focusin)="searchInputFocused = true"
+        (focusout)="searchInputFocused = false"
+        (input)="
+          handleOpeningWithTypingFromKeyboard(); filter(searchInput.value)
+        "
+        class="cvi-multiselect__input"
+      />
+    </div>
+    <!-- We don't use ngIf here because it would be impossible to focus the button -->
+    <span
+      [ngClass]="{ 'cvi-hidden': disabled || (backgroundDisabled && hasValue) }"
+      class="cvi-multiselect__icon-wrapper"
+      (mousedown)="handleArrowButtonClick($event)"
+    >
+      <ng-container *ngTemplateOutlet="icon"></ng-container>
+    </span>
+    <button
+      [ngClass]="{
+        'cvi-hidden':
+          disabled || !backgroundDisabled || (backgroundDisabled && !hasValue)
+      }"
+      class="cvi-multiselect__icon-wrapper"
+      aria-label="Edit"
+      #editButton
+      (click)="handleArrowButtonClick($event)"
+    >
+      <ng-container *ngTemplateOutlet="icon"></ng-container>
+    </button>
+  </div>
+  <div
+    *ngIf="isOpen"
+    dataAttribute="test-popup"
+    class="cvi-dropdown-popup"
+    (document:keydown.escape)="handleClosingFromKeyboard()"
+    #popup
+  >
+    <div class="cvi-dropdown-popup__inner">
+      <ul
+        *ngIf="!loading; else dropdownPopupLoadingState"
+        role="listbox"
+        cviNgmultiselectNavigation
+        [scrollableEl]="popup"
+        [inputField]="searchInput"
+        (closed)="close()"
+        (itemFocused)="updateFocusedItem($event)"
+        [attr.aria-labelledby]="labelId"
+        [attr.id]="listboxHtmlId"
+      >
+        <li
+          role="option"
+          class="cvi-dropdown-popup__dropdown-item"
+          [ngClass]="{ 'is-current': item.value === multiselectedItem?.value }"
+          [attr.aria-multiselected]="item.value === multiselectedItem?.value"
+          dataAttribute="test-option"
+          tabindex="0"
+          [attr.id]="htmlId + '-listbox-item-' + idx"
+          *ngFor="let item of itemsList.filteredItems; let idx = index"
+          (click)="multiselectItem(item)"
+        >
+          <ng-template #defaultOptionTemplate>
+            <span class="cvi-dropdown-popup__item-label">{{
+              bindLabel ? item.value[bindLabel] : item.value
+            }}</span>
+          </ng-template>
+          <ng-template
+            [ngTemplateOutlet]="optionTemplate || defaultOptionTemplate"
+            [ngTemplateOutletContext]="{ item: item.value }"
+          >
+          </ng-template>
+        </li>
+        <li
+          *ngIf="showAddItem"
+          role="option"
+          class="cvi-dropdown-popup__dropdown-item"
+          (click)="addItem()"
+        >
+          <span>{{ addItemLabel }}</span> "{{ searchTerm }}"
+        </li>
+      </ul>
+      <ng-template #dropdownPopupLoadingState>
+        <div class="cvi-dropdown-popup__dropdown-item">
+          {{ loadingLabel }}
+        </div>
+      </ng-template>
+    </div>
+  </div>
+</div>
+
+<ng-template #icon>
+  <cvi-ng-icon
+    *ngIf="!isOpen && (!hasValue || !backgroundDisabled) && !loading"
+    svgClass="cvi-multiselect__icon-svg"
+    aria-hidden="true"
+    name="arrow_down"
+  >
+  </cvi-ng-icon>
+  <cvi-ng-icon
+    *ngIf="!isOpen && hasValue && backgroundDisabled && !loading"
+    class="cvi-multiselect__icon"
+    aria-hidden="true"
+    svgClass="cvi-multiselect__icon-edit-svg"
+    name="edit_simple"
+  >
+  </cvi-ng-icon>
+  <cvi-ng-icon
+    *ngIf="isOpen && !loading"
+    svgClass="cvi-multiselect__icon-svg"
+    aria-hidden="true"
+    name="arrow_up"
+  >
+  </cvi-ng-icon>
+  <div *ngIf="loading" class="cvi-multiselect__loading-spinner"></div>
+</ng-template>
