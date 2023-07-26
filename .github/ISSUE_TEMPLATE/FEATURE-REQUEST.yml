@@ -40,4 +40,4 @@ body:
   - type: markdown
     attributes:
       value: |
-        I confirm by submitting this issue that I have studied the [README file](https://github.com/e-gov/cvi/blob/main/README.md), read the [Storybook documentation](https://e-gov.github.io/cvi/?path=/story/intro--page) and looked through the existing library code, features, as well as [the reference design system](https://www.figma.com/file/nNCV5kRqdRkS8MOCK1ZbqU/Veera-Design-System). I also acknowledge that the feature cannot be achieved by existing functionality.
+        I confirm by submitting this issue that I have studied the [README file](https://github.com/e-gov/cvi/blob/main/README.md), read the [Storybook documentation](https://e-gov.github.io/cvi/?path=/story/intro--page) and looked through the existing library code, features, as well as the reference design system. I also acknowledge that the feature cannot be achieved by existing functionality.
