@@ -12,6 +12,20 @@ setCompodocJson(docJson);
 export const parameters = {
   html: {
     root: '[ng-version]',
+    prettier: {
+      htmlWhitespaceSensitivity: 'ignore',
+      bracketSameLine: true,
+      singleAttributePerLine: false,
+      printWidth: 140,
+    },
+    removeComments: true,
+    transform: (code) => {
+      // Remove attributes `_nghost` and `ng-reflect` injected by Angular:
+      return code.replace(
+        /(?:_nghost|ng-reflect|_ngcontent|data-cy|dataattribute|cving|data-chromatic).*?="[\S\s]*?"/g,
+        ''
+      );
+    },
   },
   docs: {
     extractComponentDescription: (_, { notes }) => {
