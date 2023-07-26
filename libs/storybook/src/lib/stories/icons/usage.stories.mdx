@@ -10,7 +10,7 @@ import { Meta } from '@storybook/addon-docs';
 
 The library supports tree shaking (if the icon library contains hundreds of icons but only one of them is used, only one ends up in the resulting bundle). This approach supports code splitting and lazy loading in a way that the icon only ends up in the chunk it is used.
 
-For these reasons, an icon registry should be used to register used icons in a module:
+For these reasons, an icon registry available via `@egov/cvi-ng` should be used to register the icons you use in a module of your app:
 
 ```ts
 constructor(private registry: IconsRegistry) {
