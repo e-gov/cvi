@@ -25,8 +25,9 @@ export class TrackComponent {
   /** Equivalent of justify-content in CSS */
   @HostBinding('style.--horizontal-alignment')
   get hostCSSPropHorizontalAlignment(): string | null {
-    return this.horizontalAlignment !== 'left'
+    return this.horizontalAlignment
       ? `
+      ${this.horizontalAlignment === 'left' ? 'flex-start' : ''}
       ${this.horizontalAlignment === 'right' ? 'flex-end' : ''}
       ${this.horizontalAlignment === 'center' ? 'center' : ''}
       ${this.horizontalAlignment === 'justify' ? 'space-between' : ''}
