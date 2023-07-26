@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.18.1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.18.0...ui-1.18.1) (2023-07-26)
+
+
+### Bug Fixes
+
+* **storybook:** added clarifications about the necessity of registering an icon when using @egov/cvi-icons with Angular ([#141](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/141)) ([c2ab36d](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/c2ab36d862baeaaea564ad8279cdf9d8b0f65cdf))
+
+
+
 # [1.18.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.17.1...ui-1.18.0) (2023-07-26)
 
 
