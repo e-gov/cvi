@@ -27,6 +27,7 @@ export class TrackComponent {
   get hostCSSPropHorizontalAlignment(): string | null {
     return this.horizontalAlignment
       ? `
+      ${this.horizontalAlignment === 'normal' ? 'normal' : ''}
       ${this.horizontalAlignment === 'left' ? 'flex-start' : ''}
       ${this.horizontalAlignment === 'right' ? 'flex-end' : ''}
       ${this.horizontalAlignment === 'center' ? 'center' : ''}
@@ -34,8 +35,12 @@ export class TrackComponent {
     `
       : null;
   }
-  @Input() horizontalAlignment: 'left' | 'center' | 'right' | 'justify' =
-    'left';
+  @Input() horizontalAlignment:
+    | 'normal'
+    | 'left'
+    | 'center'
+    | 'right'
+    | 'justify' = 'normal';
 
   /** Equivalent of align-items in CSS */
   @HostBinding('style.--vertical-alignment')

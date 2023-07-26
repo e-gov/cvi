@@ -28,7 +28,7 @@ export default {
     },
     horizontalAlignment: {
       name: 'Horizontal alignment',
-      options: ['left', 'center', 'right', 'justify'],
+      options: ['normal', 'left', 'center', 'right', 'justify'],
       control: { type: 'inline-radio' },
       if: { arg: 'flexDirection', eq: 'horizontal' },
     },
@@ -73,7 +73,7 @@ export default {
   },
   args: {
     gap: 1,
-    horizontalAlignment: 'left',
+    horizontalAlignment: 'normal',
     verticalAlignment: 'normal',
     flexDirection: 'horizontal',
     layout: 'flex',
