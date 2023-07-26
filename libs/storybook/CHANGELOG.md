@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.9.1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/storybook-1.9.0...storybook-1.9.1) (2023-07-26)
+
+
+### Bug Fixes
+
+* **storybook:** added clarifications about the necessity of registering an icon when using @egov/cvi-icons with Angular ([#141](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/141)) ([c2ab36d](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/c2ab36d862baeaaea564ad8279cdf9d8b0f65cdf))
+
+
+
 # [1.9.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/storybook-1.8.0...storybook-1.9.0) (2023-07-26)
 
 
