@@ -18,6 +18,7 @@ import { StorybookTypeTesterComponent } from './components/storybook-type-tester
 import { StorybookNoteComponent } from './components/storybook-note/storybook-note.component';
 import { StorybookRandomParagraphsDirective } from './directives/storybook-random-paragraphs/storybook-random-paragraphs.directive';
 import { StorybookCurrentComponentDirective } from './directives/storybook-current-component/storybook-current-component.directive';
+import { StorybookInputDirective } from './directives/storybook-input/storybook-input.directive';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // eslint-disable-next-line @nrwl/nx/enforce-module-boundaries
 import { storybookIcons } from '../../../ui/src/lib/icons/storybook-icons';
@@ -40,6 +41,7 @@ const components = [
   StorybookSpacingSpecimenItemComponent,
   StorybookRandomParagraphsDirective,
   StorybookCurrentComponentDirective,
+  StorybookInputDirective,
 ];
 
 @NgModule({
