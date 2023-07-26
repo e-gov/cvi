@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.7.1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/storybook-1.7.0...storybook-1.7.1) (2023-07-26)
+
+
+### Bug Fixes
+
+* **storybook:** fix icon cards layout issues ([#136](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/136)) ([135dd84](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/135dd842014ec169cdd765a1e11215a7df36e003))
+
+
+
 # [1.7.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/storybook-1.6.1...storybook-1.7.0) (2023-07-25)
 
 
