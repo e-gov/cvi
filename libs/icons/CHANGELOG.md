@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [1.5.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/icons-1.4.0...icons-1.5.0) (2023-07-25)
+
+
+### Features
+
+* **icons:** add content-copy icon EBS-360 ([#127](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/127)) ([3d56101](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/3d5610169c73b883cdb42db001c9a6723a1ecd20))
+
+
+
 # [1.4.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/icons-1.3.0...icons-1.4.0) (2023-07-17)
 
 

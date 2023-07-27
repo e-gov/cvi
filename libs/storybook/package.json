@@ -1,6 +1,6 @@
 {
   "name": "storybook",
-  "version": "1.6.1",
+  "version": "1.10.0",
   "description": "CVI storybook",
   "homepage": "https://e-gov.github.io/cvi/",
   "peerDependencies": {

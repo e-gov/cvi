@@ -2,6 +2,51 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [1.19.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.18.1...ui-1.19.0) (2023-07-27)
+
+
+### Features
+
+* **storybook:** various tweaks to HTML panel to improve DX ([#140](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/140)) ([deff522](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/deff52245ad96642a93c184ac6a98f73c3bce498))
+
+
+
+## [1.18.1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.18.0...ui-1.18.1) (2023-07-26)
+
+
+### Bug Fixes
+
+* **storybook:** added clarifications about the necessity of registering an icon when using @egov/cvi-icons with Angular ([#141](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/141)) ([c2ab36d](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/c2ab36d862baeaaea564ad8279cdf9d8b0f65cdf))
+
+
+
+# [1.18.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.17.1...ui-1.18.0) (2023-07-26)
+
+
+### Features
+
+* **storybook:** add search in the icons list ([#135](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/135)) ([29e54cf](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/29e54cf15a6066bb54f0173a1b41527bdb1fb0a1))
+
+
+
+## [1.17.1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.17.0...ui-1.17.1) (2023-07-25)
+
+
+### Bug Fixes
+
+* **ng:** highlight last heading when at the bottom of the page ([#126](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/126)) ([b72772a](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/b72772aaa2031594f98f12e47e36ee015f3d255d))
+
+
+
+# [1.17.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.16.0...ui-1.17.0) (2023-07-24)
+
+
+### Features
+
+* **ng:** add two-way binding supporrt to ng-steps currentStepIndex ([#128](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/128)) EBS-738 ([93412ce](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/93412cef82da92bcd960c63d0f848eb78cd5c35e))
+
+
+
 # [1.16.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.15.2...ui-1.16.0) (2023-07-13)
 
 

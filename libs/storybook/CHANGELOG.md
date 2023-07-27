@@ -2,6 +2,60 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [1.10.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/storybook-1.9.1...storybook-1.10.0) (2023-07-27)
+
+
+### Features
+
+* **storybook:** various tweaks to HTML panel to improve DX ([#140](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/140)) ([deff522](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/deff52245ad96642a93c184ac6a98f73c3bce498))
+
+
+
+## [1.9.1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/storybook-1.9.0...storybook-1.9.1) (2023-07-26)
+
+
+### Bug Fixes
+
+* **storybook:** added clarifications about the necessity of registering an icon when using @egov/cvi-icons with Angular ([#141](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/141)) ([c2ab36d](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/c2ab36d862baeaaea564ad8279cdf9d8b0f65cdf))
+
+
+
+# [1.9.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/storybook-1.8.0...storybook-1.9.0) (2023-07-26)
+
+
+### Features
+
+* **storybook:** add search in the icons list ([#135](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/135)) ([29e54cf](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/29e54cf15a6066bb54f0173a1b41527bdb1fb0a1))
+
+
+
+# [1.8.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/storybook-1.7.1...storybook-1.8.0) (2023-07-26)
+
+
+### Features
+
+* **storybook:** expand story source code in the Docs tab by default ([#139](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/139)) ([f62d017](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/f62d017d7cfc19d7b99c0220e34af5eeb787bb69))
+
+
+
+## [1.7.1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/storybook-1.7.0...storybook-1.7.1) (2023-07-26)
+
+
+### Bug Fixes
+
+* **storybook:** fix icon cards layout issues ([#136](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/136)) ([135dd84](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/135dd842014ec169cdd765a1e11215a7df36e003))
+
+
+
+# [1.7.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/storybook-1.6.1...storybook-1.7.0) (2023-07-25)
+
+
+### Features
+
+* **icons:** add content-copy icon EBS-360 ([#127](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/127)) ([3d56101](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/3d5610169c73b883cdb42db001c9a6723a1ecd20))
+
+
+
 ## [1.6.1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/storybook-1.6.0...storybook-1.6.1) (2023-05-22)
 
 
