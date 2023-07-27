@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [1.20.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.19.0...ui-1.20.0) (2023-07-27)
+
+
+### Features
+
+* **ui:** added a new default value to horizontalAlignment prop of cvi-ng-track ([#142](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/142)) ([8699f74](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/8699f7418f9877a6b980584071e5cac6dd8d8b64))
+
+
+
 # [1.19.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.18.1...ui-1.19.0) (2023-07-27)
 
 
