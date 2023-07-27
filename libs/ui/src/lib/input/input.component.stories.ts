@@ -1,3 +1,4 @@
+
 import { Story, Meta, moduleMetadata } from '@storybook/angular';
 import notes from './input.component.md';
 import { InputComponent } from './input.component';
@@ -24,6 +25,7 @@ export default {
     placeholder: 'Username',
     disabled: false,
     htmlId: 'some-input',
+    numbersOnly: false,
   },
 } as Meta<InputComponent>;
 
@@ -35,7 +37,8 @@ const Template: Story<InputComponent> = (args: InputComponent) => ({
       <cvi-ng-input [placeholder]="placeholder"
                     [disabled]="disabled"
                     [suffixIconName]="suffixIconName"
-                    [htmlId]="htmlId"></cvi-ng-input>
+                    [htmlId]="htmlId"
+                    [numbersOnly]="numbersOnly"></cvi-ng-input>
     </cvi-ng-form-item>
   `,
 });
@@ -84,7 +87,8 @@ const FormTemplate: Story<InputComponent> = (args: InputComponent) => {
                           [htmlId]="htmlId">
           <cvi-ng-input formControlName="item"
                         [placeholder]="placeholder"
-                        [htmlId]="htmlId"></cvi-ng-input>
+                        [htmlId]="htmlId"
+                        [numbersOnly]="numbersOnly"></cvi-ng-input>
         </cvi-ng-form-item>
         <cvi-ng-track layout="flex" horizontalAlignment="justify" gap="3">
             <cvi-ng-button data-cy="disable-button" (click)="disableInput()">Disable input</cvi-ng-button>
@@ -110,6 +114,7 @@ const CharacterCounterTemplate: Story<InputComponent> = (
       <cvi-ng-input [placeholder]="placeholder"
                     [disabled]="disabled"
                     [htmlId]="htmlId"
+                    [numbersOnly]="numbersOnly"
                     cviNgCharacterCounter
                     [maxChars]="10"></cvi-ng-input>
     </cvi-ng-form-item>

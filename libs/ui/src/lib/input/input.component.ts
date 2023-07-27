@@ -1,3 +1,4 @@
+
 import {
   Component,
   EventEmitter,
@@ -39,6 +40,9 @@ export class InputComponent implements ControlValueAccessor {
 
   /** Icon added to the right */
   @Input() suffixIconName!: CviIconName;
+
+  /** Input allows only numbers */
+  @Input() numbersOnly = false;
 
   /** Emit value on model change */
   @Output() valueChange = new EventEmitter<any>();

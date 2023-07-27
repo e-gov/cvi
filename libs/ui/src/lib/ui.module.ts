@@ -92,6 +92,7 @@ import { DatepickerComponent } from './datepicker/datepicker.component';
 import { DatepickerCalendarComponent } from './datepicker/datepicker-calendar.component';
 import { DATEPICKER_LABEL_CONFIG } from './datepicker/datepicker-label-config.token';
 import { DefaultDatepickerLabelConfig } from './datepicker/default-datepicker-label.config';
+import { AllowOnlyNumbersDirective } from './input/numbers-only.directive';
 
 const components = [
   TrackComponent,
@@ -162,7 +163,7 @@ const directives = [DataAttributeDirective];
     FormsModule,
     A11yModule,
   ],
-  declarations: [...components, ...pipes],
+  declarations: [ ...components, ...pipes, AllowOnlyNumbersDirective ],
   exports: [...components, ...pipes, ...directives],
   providers: [
     ...pipes,
