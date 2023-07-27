@@ -22,9 +22,9 @@ export default {
 const Template: Story<DatepickerComponent> = (args: DatepickerComponent) => ({
   props: args,
   template: `
-    <cvi-ng-datepicker  [placeholder]="placeholder"
-                        [disabled]="disabled"
-                        [htmlId]="htmlId">
+    <cvi-ng-datepicker [placeholder]="placeholder"
+                       [disabled]="disabled"
+                       [htmlId]="htmlId">
     </cvi-ng-datepicker>
   `,
 });
