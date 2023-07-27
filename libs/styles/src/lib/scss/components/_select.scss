@@ -57,7 +57,7 @@
       height: var(--cvi-form-inline-input-height);
       width: 100%;
       border-radius: var(--cvi-radius-s);
-      border: 1px solid get-color(black-coral-3);
+      border: 1px solid var(--cvi-form-input-border-color);
       background-color: get-color(white);
     }
 
