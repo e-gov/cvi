@@ -14,7 +14,8 @@
         height: var(--cvi-form-inline-input-height);
 
         &--focused {
-          border-color: get-color(sapphire-blue-10);
+          border-color: transparent;
+          outline: var(--cvi-border-focus);
         }
 
         &--is-disabled & {
