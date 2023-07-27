@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [1.19.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.18.1...ui-1.19.0) (2023-07-27)
+
+
+### Features
+
+* **storybook:** various tweaks to HTML panel to improve DX ([#140](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/140)) ([deff522](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/deff52245ad96642a93c184ac6a98f73c3bce498))
+
+
+
 ## [1.18.1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.18.0...ui-1.18.1) (2023-07-26)
 
 
