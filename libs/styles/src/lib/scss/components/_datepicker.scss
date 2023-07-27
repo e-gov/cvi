@@ -7,6 +7,7 @@
     #{$base}__input {
       &-container {
         border: 1px solid get-color(black-coral-6);
+        background-color: get-color(white);
         border-radius: map.get($cvi-radii, s);
         display: flex;
         align-items: center;
