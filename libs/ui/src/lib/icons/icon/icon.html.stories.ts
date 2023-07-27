@@ -3,7 +3,7 @@ import { Meta, Story } from '@storybook/angular';
 export default {
   title: 'HTML/Icon',
   parameters: {
-    options: { selectedPanel: 'html/panel' },
+    options: { selectedPanel: 'storybook/html/panel' },
   },
 } as Meta;
 
