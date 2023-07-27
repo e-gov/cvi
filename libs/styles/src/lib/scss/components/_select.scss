@@ -54,7 +54,7 @@
       align-items: center;
       color: get-color(black-coral-18);
       padding: 0 get-spacing('paldiski');
-      height: 40px;
+      height: var(--cvi-form-inline-input-height);
       width: 100%;
       border-radius: var(--cvi-radius-s);
       border: 1px solid get-color(black-coral-3);

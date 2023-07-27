@@ -11,7 +11,7 @@
         display: flex;
         align-items: center;
         width: 125px;
-        height: 40px;
+        height: var(--cvi-form-inline-input-height);
 
         &--focused {
           border-color: get-color(sapphire-blue-10);
