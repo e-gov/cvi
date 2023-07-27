@@ -1,4 +1,3 @@
-
 import { Story, Meta, moduleMetadata } from '@storybook/angular';
 import notes from './input.component.md';
 import { InputComponent } from './input.component';
