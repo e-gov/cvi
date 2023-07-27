@@ -54,7 +54,7 @@
       align-items: center;
       color: get-color(black-coral-18);
       padding: 0 get-spacing('paldiski');
-      height: 38px;
+      height: 40px;
       width: 100%;
       border-radius: var(--cvi-radius-s);
       border: 1px solid get-color(black-coral-3);
@@ -131,7 +131,7 @@
       vertical-align: middle;
       width: 15px;
       height: 15px;
-      animation: cvi-loading-spinner .75s linear infinite;
+      animation: cvi-loading-spinner 0.75s linear infinite;
       border: 2px solid get-color(sapphire-blue-10);
       border-right-color: transparent;
       border-radius: 50%;
