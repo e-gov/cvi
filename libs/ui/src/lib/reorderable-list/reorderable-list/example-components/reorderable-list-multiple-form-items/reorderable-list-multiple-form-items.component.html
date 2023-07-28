@@ -1,7 +1,7 @@
 <cvi-ng-track horizontalAlignment="right">
   <cvi-ng-button (click)="addNewItem()" [appearance]="'text'">
     <cvi-ng-labeled-icon
-      [alignment]="'center'"
+      [verticalAlignment]="'center'"
       [iconPosition]="'before'"
       [name]="'add'"
     >
@@ -20,7 +20,7 @@
       [setAsNextStepButtonVisible]="isNotLastItem(item)"
       [setAsPreviousStepButtonVisible]="isNotFirstItem(item)"
     >
-      <cvi-ng-track gap="4" layout="grid" gridRows="2">
+      <cvi-ng-track [gap]="4" layout="grid" [gridRows]="2">
         <cvi-ng-form-item [htmlId]="getStepId(item, 1)" [label]="'Field 1'">
           <cvi-ng-input [(ngModel)]="item.field1" [dataAttribute]="'step-' + getOrderNr(item) + '-name'" [htmlId]="getStepId(item, 1)">
           </cvi-ng-input>
