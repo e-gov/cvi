@@ -23,10 +23,7 @@ export const Default = {
     props: args,
     /* template */
     template: `
-      <cvi-ng-datepicker [placeholder]="placeholder"
-                         [disabled]="disabled"
-                         [htmlId]="htmlId">
-      </cvi-ng-datepicker>
+      <cvi-ng-datepicker [placeholder]="placeholder" [disabled]="disabled" [htmlId]="htmlId"></cvi-ng-datepicker>
     `,
   }),
 };
