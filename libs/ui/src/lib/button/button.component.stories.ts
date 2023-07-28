@@ -70,9 +70,6 @@ export const WithCustomColor = {
     template: `{{ content }}`,
   }),
   decorators: wrapperDecorators,
-  args: {
-    appearance: 'text',
-  },
 };
 
 const TemplateTextButtonWithIcon: StoryFn<ButtonComponent> = (

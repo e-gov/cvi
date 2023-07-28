@@ -32,18 +32,16 @@ export default {
   },
 } as Meta;
 
-const Template: StoryFn = (args) => ({
-  props: args,
-  /* template */
-  template: `
-    <div class="cvi-button cvi-button--appearance-{{ appearance }} cvi-button--size-{{ size }}">
-      <button type="button" class="cvi-button__button" disabled="{{ disabled ? true : null }}">{{ content }}</button>
-    </div>
-  `,
-});
-
 export const Default = {
-  render: Template,
+  render: (args: unknown) => ({
+    props: args,
+    /* template */
+    template: `
+      <div class="cvi-button cvi-button--appearance-{{ appearance }} cvi-button--size-{{ size }}">
+        <button type="button" class="cvi-button__button" disabled="{{ disabled ? true : null }}">{{ content }}</button>
+      </div>
+    `,
+  }),
 };
 
 export const Secondary = {
@@ -67,20 +65,14 @@ export const Text = {
   },
 };
 
-const TemplateWithCustomColor: StoryFn = (args) => ({
-  props: args,
-  styles: [
-    `:host {
-      --cvi-button-color: var(--cvi-color-jasper-10);
-      --cvi-button-color--hover: var(--cvi-color-jasper-12);
-    }`,
-  ],
-  /* template */
-  template: `
-    <div class="cvi-button cvi-button--appearance-{{ appearance }} cvi-button--size-{{ size }}">
-      <button type="button" class="cvi-button__button" disabled="{{ disabled ? true : null }}">{{ content }}</button>
-    </div>
-  `,
-});
-
-export const WithCustomColor = TemplateWithCustomColor.bind({});
+export const WithCustomColor = {
+  render: (args: unknown) => ({
+    props: args,
+    /* template */
+    template: `
+      <div class="cvi-button cvi-button--appearance-{{ appearance }} cvi-button--size-{{ size }}" style="--cvi-button-color: var(--cvi-color-jasper-10); --cvi-button-color--hover: var(--cvi-color-jasper-12);">
+        <button type="button" class="cvi-button__button" disabled="{{ disabled ? true : null }}">{{ content }}</button>
+      </div>
+    `,
+  }),
+};
