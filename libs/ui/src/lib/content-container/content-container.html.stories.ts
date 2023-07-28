@@ -1,4 +1,4 @@
-import { StoryFn, Meta } from '@storybook/angular';
+import { Meta } from '@storybook/angular';
 import notes from './content-container.html.md';
 
 export default {
@@ -22,16 +22,14 @@ export default {
   },
 } as Meta;
 
-const Template: StoryFn = (args) => ({
-  props: args,
-  /* template */
-  template: `
-    <div class="cvi-content-container">
-      {{ content }}
-    </div>
-  `,
-});
-
 export const Default = {
-  render: Template,
+  render: (args: unknown) => ({
+    props: args,
+    /* template */
+    template: `
+      <div class="cvi-content-container">
+        {{ content }}
+      </div>
+    `,
+  }),
 };
