@@ -41,7 +41,7 @@ export class InputComponent implements ControlValueAccessor {
   @Input() suffixIconName!: CviIconName;
 
   /** Input allows only numbers */
-  @Input() numbersOnly = false;
+  @Input() cviNgNumbersOnly = false;
 
   /** Emit value on model change */
   @Output() valueChange = new EventEmitter<any>();

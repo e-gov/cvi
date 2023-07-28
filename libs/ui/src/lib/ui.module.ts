@@ -163,7 +163,7 @@ const directives = [DataAttributeDirective];
     FormsModule,
     A11yModule,
   ],
-  declarations: [ ...components, ...pipes, NumbersOnlyDirective ],
+  declarations: [...components, ...pipes, NumbersOnlyDirective],
   exports: [...components, ...pipes, ...directives],
   providers: [
     ...pipes,
