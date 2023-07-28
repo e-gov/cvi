@@ -28,7 +28,7 @@ export class StepsComponent
 {
   @Input() title!: string;
 
-  /** Internal */
+  /** @internal */
   private _currentStepIndex: number | null = null;
 
   @Output() currentStepIndexChange: EventEmitter<number | null> =
