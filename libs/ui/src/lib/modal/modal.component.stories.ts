@@ -1,4 +1,4 @@
-import { StoryFn, Meta } from '@storybook/angular';
+import { Meta } from '@storybook/angular';
 import { ModalComponent } from './modal.component';
 
 export default {
@@ -6,23 +6,22 @@ export default {
   component: ModalComponent,
 } as Meta<ModalComponent>;
 
-const Template: StoryFn<ModalComponent> = (args: ModalComponent) => ({
-  props: args,
-  template: `
-    <ng-template #modal let-testModalTitle="title">
-      <h1>{{ testModalTitle }}</h1>
-      <p dataAttribute="test-content">Modal content</p>
-    </ng-template>
-    <cvi-ng-button [cviNgModal]="modal" modalTitle="Some title" dataAttribute="test-button">Open modal</cvi-ng-button>
-  `,
-});
-
 export const Default = {
-  render: Template,
+  render: (args: ModalComponent) => ({
+    props: args,
+    /* template */
+    template: `
+      <ng-template #modal let-testModalTitle="title">
+        <h1>{{ testModalTitle }}</h1>
+        <p dataAttribute="test-content">Modal content</p>
+      </ng-template>
+      <cvi-ng-button [cviNgModal]="modal" modalTitle="Some title" dataAttribute="test-button">Open modal</cvi-ng-button>
+    `,
+  }),
 };
 
 export const Mobile = {
-  render: Template,
+  ...Default,
 
   parameters: {
     viewport: {
@@ -31,23 +30,20 @@ export const Mobile = {
   },
 };
 
-const TemplateWithModalInsideModal: StoryFn<ModalComponent> = (
-  args: ModalComponent
-) => ({
-  props: args,
-  template: `
-    <ng-template #modal1>
-      <p>Modal 1 content</p>
-      <ng-template #modal2 let-testModalTitle="title">
-        <h1>{{ testModalTitle }}</h1>
-        <p>Modal 2 content</p>
-      </ng-template>
-      <cvi-ng-button [cviNgModal]="modal2" modalTitle="Some title for the inner modal">Open modal 2 inside modal 1</cvi-ng-button>
-    </ng-template>
-    <cvi-ng-button [cviNgModal]="modal1">Open modal</cvi-ng-button>
-  `,
-});
-
 export const WithModalInsideModal = {
-  render: TemplateWithModalInsideModal,
+  render: (args: ModalComponent) => ({
+    props: args,
+    /* template */
+    template: `
+      <ng-template #modal1>
+        <p>Modal 1 content</p>
+        <ng-template #modal2 let-testModalTitle="title">
+          <h1>{{ testModalTitle }}</h1>
+          <p>Modal 2 content</p>
+        </ng-template>
+        <cvi-ng-button [cviNgModal]="modal2" modalTitle="Some title for the inner modal">Open modal 2 inside modal 1</cvi-ng-button>
+      </ng-template>
+      <cvi-ng-button [cviNgModal]="modal1">Open modal</cvi-ng-button>
+    `,
+  }),
 };
