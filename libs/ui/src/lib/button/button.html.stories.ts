@@ -67,7 +67,7 @@ export const Text = {
   },
 };
 
-const TemplateWithCustomColor: Story = (args) => ({
+const TemplateWithCustomColor: StoryFn = (args) => ({
   props: args,
   styles: [
     `:host {

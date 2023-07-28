@@ -211,7 +211,6 @@ export const ItemsCenteredVertically = {
   },
 };
 
-
 export const Vertical = {
   render: Template,
 
@@ -352,7 +351,9 @@ export const WithFormItemsComplex = {
   } as ArgsWithRepeatableFormItems,
 };
 
-const TemplateNestedTracks: Story<TrackComponent> = (args: TrackComponent) => ({
+const TemplateNestedTracks: StoryFn<TrackComponent> = (
+  args: TrackComponent
+) => ({
   props: args,
   /* template */
   template: `
