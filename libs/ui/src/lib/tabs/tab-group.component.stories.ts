@@ -27,7 +27,9 @@ export default {
   },
 } as Meta<TabGroupComponent>;
 
-const Template: StoryFn<TabGroupComponent> = (args: TabGroupComponent) => {
+const DefaultTemplate: StoryFn<TabGroupComponent> = (
+  args: TabGroupComponent
+) => {
   const form = new FormGroup({
     text: new FormControl('Some text'),
   });
@@ -58,5 +60,5 @@ const Template: StoryFn<TabGroupComponent> = (args: TabGroupComponent) => {
   };
 };
 export const Default = {
-  render: Template,
+  render: DefaultTemplate,
 };
