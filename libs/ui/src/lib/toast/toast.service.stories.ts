@@ -56,9 +56,7 @@ export default {
 } as Meta;
 
 const Template: StoryFn = (args) => ({
-  props: {
-    ...args,
-  },
+  props: args,
   template: `
     <cvi-ng-storybook-toast-wrapper></cvi-ng-storybook-toast-wrapper>
   `,

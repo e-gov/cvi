@@ -1,4 +1,4 @@
-import { Meta } from '@storybook/angular/';
+import { Meta } from '@storybook/angular';
 import notes from './table-of-contents.component.md';
 import { TableOfContentsComponent } from './table-of-contents.component';
 

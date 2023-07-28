@@ -10,9 +10,7 @@ export default {
 } as Meta;
 
 const Template: StoryFn<TooltipDirective> = (args: TooltipDirective) => ({
-  props: {
-    ...args,
-  },
+  props: args,
   /* template */
   template: `
     <p [cviNgTooltip]="'This tooltip is displayed when hovering, if you move mouse out of the element then tooltip disappears'" dataAttribute="test-tooltip-source">
@@ -28,9 +26,7 @@ export const Default = {
 const TemplateOnButton: StoryFn<TooltipDirective> = (
   args: TooltipDirective
 ) => ({
-  props: {
-    ...args,
-  },
+  props: args,
   /* template */
   template: `
     <cvi-ng-notification [showIcon]="false" [showCloseButton]="false" [size]="'compact'">
@@ -62,9 +58,7 @@ export const TooltipOnButton = {
 const TemplateEdgeTest: StoryFn<TooltipDirective> = (
   args: TooltipDirective
 ) => ({
-  props: {
-    ...args,
-  },
+  props: args,
   /* template */
   template: `
     <cvi-ng-track [horizontalAlignment]="'center'">
@@ -100,9 +94,7 @@ export const TooltipNearSideEdge = {
 const TemplateHeaderTest: StoryFn<TooltipDirective> = (
   args: TooltipDirective
 ) => ({
-  props: {
-    ...args,
-  },
+  props: args,
   /* template */
   template: `
     <div style="position: fixed; text-align: center; top: 20px; left: 45%">

@@ -120,9 +120,6 @@ export const MobileWithSelectedStep = {
   },
   parameters: {
     layout: 'fullscreen',
-    backgrounds: {
-      default: 'light',
-    },
     viewport: {
       defaultViewport: 'iphone12mini',
     },
