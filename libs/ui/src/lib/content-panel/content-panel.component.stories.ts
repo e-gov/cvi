@@ -1,4 +1,4 @@
-import { StoryFn, Meta, componentWrapperDecorator } from '@storybook/angular';
+import { Meta, componentWrapperDecorator } from '@storybook/angular';
 import notes from './content-panel.component.md';
 import { ContentPanelComponent } from './content-panel.component';
 
