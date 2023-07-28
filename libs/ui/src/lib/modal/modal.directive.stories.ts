@@ -1,60 +1,48 @@
-import { StoryFn, Meta } from '@storybook/angular';
+import { Meta } from '@storybook/angular';
 import notes from './modal.directive.md';
 
 export default {
   title: 'Angular/Modal/Modal directive',
   parameters: { notes },
+  argTypes: {
+    modalOpen: {
+      table: {
+        disable: true,
+      },
+    },
+  },
   args: {
     modalTitle: 'Hey, I am Modal, how are you?',
+    modalOpen: false,
   },
 } as Meta;
 
-const Template: StoryFn = (args) => ({
-  props: args,
-  template: `
-    <ng-template #modal let-title="title">
-      <h2>{{ title }}</h2>
-      <p><b>Modal content</b></p>
-    </ng-template>
-    <cvi-ng-button [cviNgModal]="modal" [modalTitle]="modalTitle">Open modal</cvi-ng-button>
-  `,
-});
-
 export const Default = {
-  render: Template,
+  render: (args: unknown) => ({
+    props: args,
+    /* template */
+    template: `
+      <ng-template #modal let-testModalTitle="title">
+        <h2 *ngIf="testModalTitle">{{ testModalTitle }}</h2>
+        <p>Modal content</p>
+      </ng-template>
+      <cvi-ng-button [cviNgModal]="modal" [modalTitle]="modalTitle" [open]="modalOpen">Open modal</cvi-ng-button>
+    `,
+  }),
 };
-
-const TemplateModalOpen: StoryFn = (args) => ({
-  props: args,
-  template: `
-    <ng-template #modal>
-      <p><b>Modal content</b></p>
-    </ng-template>
-    <cvi-ng-button [cviNgModal]="modal" [modalTitle]="modalTitle" [open]="true">Open modal</cvi-ng-button>
-  `,
-});
 
 export const ModalOpen = {
-  render: TemplateModalOpen,
+  ...Default,
+  args: {
+    modalOpen: true,
+  },
 };
 
-const TemplateWithoutTitle: StoryFn = (args) => ({
-  props: args,
-  template: `
-    <ng-template #modal>
-      <p><b>Modal content</b></p>
-    </ng-template>
-    <cvi-ng-button [cviNgModal]="modal" [open]="true">Open modal</cvi-ng-button>
-  `,
-});
-
 export const WithoutTitle = {
-  render: TemplateWithoutTitle,
-
-  argTypes: {
-    modalTitle: { control: false },
+  ...Default,
+  args: {
+    modalTitle: '',
   },
-
   parameters: {
     axe: {
       disabledRules: ['aria-dialog-name'],
@@ -62,16 +50,15 @@ export const WithoutTitle = {
   },
 };
 
-const TemplateModalOpenWithoutButton: StoryFn = (args) => ({
-  props: args,
-  template: `
-    <ng-template #modal>
-      <p><b>Modal content</b></p>
-    </ng-template>
-    <ng-container [cviNgModal]="modal" [modalTitle]="modalTitle" [open]="true"></ng-container>
-  `,
-});
-
 export const ModalOpenWithoutButton = {
-  render: TemplateModalOpenWithoutButton,
+  render: (args: unknown) => ({
+    props: args,
+    /* template */
+    template: `
+      <ng-template #modal>
+        <p>Modal content</p>
+      </ng-template>
+      <ng-container [cviNgModal]="modal" [open]="true"></ng-container>
+    `,
+  }),
 };
