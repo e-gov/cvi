@@ -1,22 +1,22 @@
 import { Meta, StoryFn } from '@storybook/angular/';
-import notes from './steps.component.md';
 import { concatMap, delay, from, of } from 'rxjs';
 import { StepsComponent } from './steps.component';
 import { moduleMetadata } from '@storybook/angular';
-import { UiModule } from '../../ui.module';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import notes from './steps.component.md';
 
 const withObservableTitlesDelay = 1000;
 
 export default {
   title: 'Angular/Steps/Steps',
+  component: StepsComponent,
   parameters: {
     layout: 'padded',
     notes,
   },
   decorators: [
     moduleMetadata({
-      imports: [UiModule, ReactiveFormsModule],
+      imports: [ReactiveFormsModule],
     }),
   ],
   argTypes: {
@@ -40,12 +40,12 @@ export default {
   },
 } as Meta<StepsComponent>;
 
-const Template: StoryFn<StepsComponent> = (args: StepsComponent) => {
+const DefaultTemplate: StoryFn<StepsComponent> = (args: StepsComponent) => {
   const form = new FormGroup({
     text: new FormControl('Some text'),
   });
+
   return {
-    component: StepsComponent,
     props: {
       ...args,
       form: form,
@@ -93,25 +93,20 @@ const Template: StoryFn<StepsComponent> = (args: StepsComponent) => {
 };
 
 export const Default = {
-  render: Template,
+  render: DefaultTemplate,
 };
 
 export const DefaultWithSelectedStep = {
-  render: Template,
-
+  ...Default,
   args: {
-    currentStepIndex: 0,
+    currentStepIndex: 1,
   },
 };
 
 export const Mobile = {
-  render: Template,
-
+  ...Default,
   parameters: {
     layout: 'fullscreen',
-    backgrounds: {
-      default: 'light',
-    },
     viewport: {
       defaultViewport: 'iphone12mini',
     },
@@ -119,12 +114,10 @@ export const Mobile = {
 };
 
 export const MobileWithSelectedStep = {
-  render: Template,
-
+  ...Default,
   args: {
     currentStepIndex: 0,
   },
-
   parameters: {
     layout: 'fullscreen',
     backgrounds: {
@@ -136,72 +129,62 @@ export const MobileWithSelectedStep = {
   },
 };
 
-const TemplateObservableTitles: StoryFn = (args) => ({
-  props: {
-    ...args,
-    labels$: from([['First', 'Second', 'Third']]).pipe(
-      concatMap((item) => of(item).pipe(delay(withObservableTitlesDelay)))
-    ),
-  },
-  /* template */
-  template: `
-    <cvi-ng-steps [title]="title" [currentStepIndex]="currentStepIndex" [hasTableOfContents]="hasTableOfContents">
-      <ng-container *ngFor="let label of labels$ | async">
-        <cvi-ng-step dataAttribute="step_1">
-          <cvi-ng-step-panel [title]="label">
-            {{ label }}
-          </cvi-ng-step-panel>
-        </cvi-ng-step>
-      </ng-container>
-    </cvi-ng-steps>
-  `,
-});
-
 export const WithObservableTitles = {
-  render: TemplateObservableTitles,
-
+  render: (args: StepsComponent) => ({
+    props: {
+      ...args,
+      labels$: from([['First', 'Second', 'Third']]).pipe(
+        concatMap((item) => of(item).pipe(delay(withObservableTitlesDelay)))
+      ),
+    },
+    /* template */
+    template: `
+      <cvi-ng-steps [title]="title" [currentStepIndex]="currentStepIndex" [hasTableOfContents]="hasTableOfContents">
+        <ng-container *ngFor="let label of labels$ | async">
+          <cvi-ng-step dataAttribute="step_1">
+            <cvi-ng-step-panel [title]="label">
+              {{ label }}
+            </cvi-ng-step-panel>
+          </cvi-ng-step>
+        </ng-container>
+      </cvi-ng-steps>
+    `,
+  }),
   parameters: {
     chromatic: { delay: withObservableTitlesDelay + 300 },
   },
 };
 
-const TemplateWithTranslations: StoryFn<StepsComponent> = (
-  args: StepsComponent
-) => ({
-  component: StepsComponent,
-  props: {
-    ...args,
-  },
-  /* template */
-  template: `
-    <cvi-ng-steps [title]="'common.steps.title' | translate" [currentStepIndex]="currentStepIndex" [hasTableOfContents]="hasTableOfContents">
-      <p cvi-steps="after-title" dataAttribute="steps-description">You can now add custom content before steps</p>
-      <cvi-ng-step dataAttribute="step_1">
-        <cvi-ng-step-panel [title]="'common.steps.step1' | translate">
-          <cvi-ng-html-section html="{{ stepsContent[0] }}"></cvi-ng-html-section>
-        </cvi-ng-step-panel>
-      </cvi-ng-step>
-      <cvi-ng-step dataAttribute="step_2">
-        <cvi-ng-step-panel [title]="'common.steps.step2' | translate">
-          {{ stepsContent[1] }}
-        </cvi-ng-step-panel>
-      </cvi-ng-step>
-      <cvi-ng-step dataAttribute="step_3">
-        <cvi-ng-step-panel title="Third">
-          {{ stepsContent[2] }}
-        </cvi-ng-step-panel>
-      </cvi-ng-step>
-      <cvi-ng-step dataAttribute="step_4">
-        <cvi-ng-step-panel title="Fourth">
-          {{ stepsContent[3] }}
-        </cvi-ng-step-panel>
-      </cvi-ng-step>
-    </cvi-ng-steps>
-  `,
-});
-
 export const WithTranslations = {
-  render: TemplateWithTranslations,
+  render: (args: StepsComponent) => ({
+    props: args,
+    /* template */
+    template: `
+      <cvi-ng-steps [title]="'common.steps.title' | translate" [currentStepIndex]="currentStepIndex" [hasTableOfContents]="hasTableOfContents">
+        <p cvi-steps="after-title" dataAttribute="steps-description">You can now add custom content before steps</p>
+        <cvi-ng-step dataAttribute="step_1">
+          <cvi-ng-step-panel [title]="'common.steps.step1' | translate">
+            <cvi-ng-html-section html="{{ stepsContent[0] }}"></cvi-ng-html-section>
+          </cvi-ng-step-panel>
+        </cvi-ng-step>
+        <cvi-ng-step dataAttribute="step_2">
+          <cvi-ng-step-panel [title]="'common.steps.step2' | translate">
+            {{ stepsContent[1] }}
+          </cvi-ng-step-panel>
+        </cvi-ng-step>
+        <cvi-ng-step dataAttribute="step_3">
+          <cvi-ng-step-panel title="Third">
+            {{ stepsContent[2] }}
+          </cvi-ng-step-panel>
+        </cvi-ng-step>
+        <cvi-ng-step dataAttribute="step_4">
+          <cvi-ng-step-panel title="Fourth">
+            {{ stepsContent[3] }}
+          </cvi-ng-step-panel>
+        </cvi-ng-step>
+      </cvi-ng-steps>
+    `,
+  }),
 
   parameters: {
     axe: {
