@@ -6,16 +6,17 @@
   @at-root {
     #{$base}__input {
       &-container {
-        border: 1px solid get-color(black-coral-6);
         background-color: get-color(white);
+        border: 1px solid var(--cvi-form-input-border-color);
         border-radius: map.get($cvi-radii, s);
         display: flex;
         align-items: center;
         width: 125px;
-        height: 40px;
+        height: var(--cvi-form-inline-input-height);
 
         &--focused {
-          border-color: get-color(sapphire-blue-10);
+          border-color: transparent;
+          outline: var(--cvi-border-focus);
         }
 
         &--is-disabled & {

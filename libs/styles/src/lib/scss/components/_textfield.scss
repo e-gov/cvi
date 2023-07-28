@@ -18,7 +18,7 @@
       min-width: var(--cvi-textfield--single-line--min-width, #{$min-width});
       max-width: var(--cvi-textfield--single-line--max-width, #{$single-line--max-width});
       width: 100%;
-      height: 40px;
+      height: var(--cvi-form-inline-input-height);
     }
   }
 
@@ -45,7 +45,7 @@
   @at-root {
     #{$base}__text-control {
       background-color: color.get-color(white);
-      border: 1px solid color.get-color(black-coral-5);
+      border: 1px solid var(--cvi-form-input-border-color);
       border-radius: var(--cvi-radius-s);
       font-size: typography.get-font-size(100);
       padding-inline-start: spacing.get-spacing('paldiski');
