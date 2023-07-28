@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.20.1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.20.0...ui-1.20.1) (2023-07-28)
+
+
+### Bug Fixes
+
+* **styles:** made styles of inline form elements consistent ([#147](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/147)) ([c7c724a](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/c7c724ab871e778d607e2fb3c81ee5c42bb863b1))
+
+
+
 # [1.20.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.19.0...ui-1.20.0) (2023-07-27)
 
 
