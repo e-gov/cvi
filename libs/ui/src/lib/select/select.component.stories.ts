@@ -18,6 +18,7 @@ export default {
   ],
   parameters: { notes },
   argTypes: {
+    itemChanged: { action: 'Item changed!' },
     containerWidth: {
       name: 'Container width',
       table: {
@@ -39,11 +40,19 @@ export default {
     placeholder: 'Otsi elementi',
     disabled: false,
     backgroundDisabled: false,
-    containerWidth: 220,
+    minTermLength: 0,
     htmlId: 'some-select',
     labelId: 'some-select-label',
     loading: false,
     sortItemsFn: undefined,
+    valueFormatFn: null,
+    addItemFn: undefined,
+    addItemLabel: '',
+    searchFn: null,
+    bindLabel: '',
+    bindValue: '',
+    loadingLabel: 'Loading...',
+    containerWidth: 220,
   },
 } as Meta;
 
@@ -55,9 +64,19 @@ export const Default = {
       <div [ngStyle]="{'width.px': containerWidth}">
         <cvi-ng-form-item label="Some label" [htmlId]="htmlId" [labelId]="labelId">
           <cvi-ng-select [items]="items"
+                         (itemChanged)="itemChanged($event)"
                          [disabled]="disabled"
+                         [sortItemsFn]="sortItemsFn"
+                         [searchFn]="searchFn"
+                         [addItemLabel]="addItemLabel"
+                         [addItemFn]="addItemFn"
+                         [valueFormatFn]="valueFormatFn"
+                         [minTermLength]="minTermLength"
+                         [bindLabel]="bindLabel"
+                         [bindValue]="bindValue"
                          [labelId]="labelId"
                          [loading]="loading"
+                         [loadingLabel]="loadingLabel"
                          [backgroundDisabled]="backgroundDisabled"
                          [placeholder]="placeholder"
                          [htmlId]="htmlId"></cvi-ng-select>
@@ -96,21 +115,32 @@ export const WithCustomValueFormatting = {
       <div [ngStyle]="{'width.px': containerWidth}">
         <cvi-ng-form-item label="Some label" [htmlId]="htmlId" [labelId]="labelId">
           <cvi-ng-select [items]="items"
-                         [placeholder]="placeholder"
-                         [backgroundDisabled]="backgroundDisabled"
+                         (itemChanged)="itemChanged($event)"
                          [disabled]="disabled"
-                         [htmlId]="htmlId"
-                         [labelId]="labelId">
+                         [addItemLabel]="addItemLabel"
+                         [sortItemsFn]="sortItemsFn"
+                         [addItemFn]="addItemFn"
+                         [searchFn]="searchFn"
+                         [valueFormatFn]="valueFormatFn"
+                         [minTermLength]="minTermLength"
+                         [bindLabel]="bindLabel"
+                         [bindValue]="bindValue"
+                         [labelId]="labelId"
+                         [loading]="loading"
+                         [loadingLabel]="loadingLabel"
+                         [backgroundDisabled]="backgroundDisabled"
+                         [placeholder]="placeholder"
+                         [htmlId]="htmlId">
             <ng-template cviNgSelectOptionTemplate let-item="item">
               <cvi-ng-track verticalAlignment="center" [gap]="4">
                 <ng-container *ngTemplateOutlet="icon"></ng-container>
-                {{item}}
+                {{ item }}
               </cvi-ng-track>
             </ng-template>
             <ng-template cviNgSelectLabelTemplate let-item="item">
               <cvi-ng-track verticalAlignment="center" [gap]="4">
                 <ng-container *ngTemplateOutlet="icon"></ng-container>
-                {{item}}
+                {{ item }}
               </cvi-ng-track>
             </ng-template>
           </cvi-ng-select>
@@ -136,19 +166,29 @@ export const UserCanAddItems = {
       <div [ngStyle]="{'width.px': containerWidth}">
         <cvi-ng-form-item label="Some label" [htmlId]="htmlId" [labelId]="labelId">
           <cvi-ng-select [items]="items"
-                         [addItemFn]="addItemFn"
+                         (itemChanged)="itemChanged($event)"
                          [disabled]="disabled"
-                         [backgroundDisabled]="backgroundDisabled"
-                         [htmlId]="htmlId"
+                         [addItemLabel]="addItemLabel"
+                         [sortItemsFn]="sortItemsFn"
+                         [addItemFn]="addItemFn"
+                         [searchFn]="searchFn"
+                         [valueFormatFn]="valueFormatFn"
+                         [minTermLength]="minTermLength"
+                         [bindLabel]="bindLabel"
+                         [bindValue]="bindValue"
                          [labelId]="labelId"
+                         [loading]="loading"
+                         [loadingLabel]="loadingLabel"
+                         [backgroundDisabled]="backgroundDisabled"
                          [placeholder]="placeholder"
-                         addItemLabel="Lisa element"></cvi-ng-select>
+                         [htmlId]="htmlId"></cvi-ng-select>
         </cvi-ng-form-item>
       </div>
     `,
   }),
   args: {
     placeholder: 'Otsi elementi või lisa uus',
+    addItemLabel: 'Lisa element',
   },
 };
 
@@ -175,13 +215,22 @@ export const ObjectsAsItems = {
       <div [ngStyle]="{'width.px': containerWidth}">
         <cvi-ng-form-item label="Some label" [htmlId]="htmlId" [labelId]="labelId">
           <cvi-ng-select [items]="items"
-                         [placeholder]="placeholder"
+                         (itemChanged)="itemChanged($event)"
                          [disabled]="disabled"
-                         [htmlId]="htmlId"
-                         [labelId]="labelId"
-                         [backgroundDisabled]="backgroundDisabled"
+                         [addItemLabel]="addItemLabel"
+                         [sortItemsFn]="sortItemsFn"
+                         [addItemFn]="addItemFn"
+                         [searchFn]="searchFn"
                          [valueFormatFn]="valueFormatFn"
-                         [searchFn]="searchFn">
+                         [minTermLength]="minTermLength"
+                         [bindLabel]="bindLabel"
+                         [bindValue]="bindValue"
+                         [labelId]="labelId"
+                         [loading]="loading"
+                         [loadingLabel]="loadingLabel"
+                         [backgroundDisabled]="backgroundDisabled"
+                         [placeholder]="placeholder"
+                         [htmlId]="htmlId">
             <ng-template cviNgSelectOptionTemplate let-item="item">
               {{ item.name }} ({{ item.code }})
             </ng-template>
@@ -238,10 +287,8 @@ const WithBoundValuesTemplate: StoryFn<SelectComponent> = (
           <cvi-ng-form-item label="Some label" [htmlId]="htmlId" [labelId]="labelId">
             <cvi-ng-select [items]="items"
                            [placeholder]="placeholder"
-                           [disabled]="disabled"
                            [htmlId]="htmlId"
                            [labelId]="labelId"
-                           [backgroundDisabled]="backgroundDisabled"
                            formControlName="item"
                            bindLabel="fancyLabel"
                            bindValue="rawValue">
@@ -279,7 +326,7 @@ const FormTemplate: StoryFn<SelectComponent> = (args: SelectComponent) => {
     return form.getRawValue().item;
   }
 
-  function onSubmit(formValue: any) {
+  function onSubmit(formValue: unknown) {
     console.log(formValue);
   }
 
@@ -295,12 +342,23 @@ const FormTemplate: StoryFn<SelectComponent> = (args: SelectComponent) => {
       <form [ngStyle]="{'width.px': containerWidth}" [formGroup]="form" (ngSubmit)="onSubmit(this.form.value)">
         <cvi-ng-form-item label="Some label" [htmlId]="htmlId" [labelId]="labelId">
           <cvi-ng-select [items]="items"
-                         [backgroundDisabled]="backgroundDisabled"
+                         (itemChanged)="itemChanged($event)"
                          [disabled]="disabled"
-                         [htmlId]="htmlId"
+                         [addItemLabel]="addItemLabel"
+                         [sortItemsFn]="sortItemsFn"
+                         [addItemFn]="addItemFn"
+                         [searchFn]="searchFn"
+                         [valueFormatFn]="valueFormatFn"
+                         [minTermLength]="minTermLength"
+                         [bindLabel]="bindLabel"
+                         [bindValue]="bindValue"
                          [labelId]="labelId"
-                         formControlName="item"
-                         [placeholder]="placeholder"></cvi-ng-select>
+                         [loading]="loading"
+                         [loadingLabel]="loadingLabel"
+                         [backgroundDisabled]="backgroundDisabled"
+                         [placeholder]="placeholder"
+                         [htmlId]="htmlId"
+                         formControlName="item"></cvi-ng-select>
         </cvi-ng-form-item>
         <div>Selected value: {{selectedValue()}}</div>
       </form>
@@ -325,10 +383,21 @@ export const SortedItems = {
       <div [ngStyle]="{'width.px': containerWidth}">
         <cvi-ng-form-item label="Some label" [htmlId]="htmlId">
           <cvi-ng-select [items]="items"
+                         (itemChanged)="itemChanged($event)"
                          [disabled]="disabled"
+                         [addItemLabel]="addItemLabel"
+                         [sortItemsFn]="sortItemsFn"
+                         [addItemFn]="addItemFn"
+                         [searchFn]="searchFn"
+                         [valueFormatFn]="valueFormatFn"
+                         [minTermLength]="minTermLength"
+                         [bindLabel]="bindLabel"
+                         [bindValue]="bindValue"
+                         [labelId]="labelId"
+                         [loading]="loading"
+                         [loadingLabel]="loadingLabel"
                          [backgroundDisabled]="backgroundDisabled"
                          [placeholder]="placeholder"
-                         [sortItemsFn]="sortItemsFn"
                          [htmlId]="htmlId"></cvi-ng-select>
         </cvi-ng-form-item>
       </div>
