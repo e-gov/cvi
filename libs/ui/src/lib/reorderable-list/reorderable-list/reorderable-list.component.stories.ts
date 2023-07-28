@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Meta, moduleMetadata, StoryFn } from '@storybook/angular';
+import { Meta, moduleMetadata } from '@storybook/angular';
 import { ReorderableListComponent } from './reorderable-list.component';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { SwapReorderableListItems } from '../swap-reorderable-list-items';
@@ -162,65 +162,46 @@ export default {
   ],
 } as Meta<ReorderableListComponent>;
 
-const Template: StoryFn<ReorderableListExampleComponent> = (
-  args: ReorderableListExampleComponent
-) => ({
-  props: args,
-  template: `
-    <cvi-ng-reorderable-list-example>
-    </cvi-ng-reorderable-list-example>
-  `,
-});
-
 export const Default = {
-  render: Template,
-  args: {},
+  render: (args: ReorderableListExampleComponent) => ({
+    props: args,
+    template: `
+      <cvi-ng-reorderable-list-example>
+      </cvi-ng-reorderable-list-example>
+    `,
+  }),
 };
-
-const ReorderableListSingleFormItemTemplate: StoryFn<
-  ReorderableListSingleFormItemComponent
-> = (args: ReorderableListSingleFormItemComponent) => ({
-  props: args,
-  template: `
-    <cvi-ng-reorderable-list-single-form-item-example>
-    </cvi-ng-reorderable-list-single-form-item-example>
-  `,
-});
 
 export const ReorderableListSingleFormItem = {
-  render: ReorderableListSingleFormItemTemplate,
+  render: (args: ReorderableListSingleFormItemComponent) => ({
+    props: args,
+    template: `
+      <cvi-ng-reorderable-list-single-form-item-example>
+      </cvi-ng-reorderable-list-single-form-item-example>
+    `,
+  }),
   name: 'Single form item',
-  args: {},
 };
-
-const ReorderableListMultipleFormItemsTemplate: StoryFn<
-  ReorderableListMultipleFormItemsComponent
-> = (args: ReorderableListMultipleFormItemsComponent) => ({
-  props: args,
-  template: `
-    <cvi-ng-reorderable-list-multiple-form-items-example>
-    </cvi-ng-reorderable-list-multiple-form-items-example>
-  `,
-});
 
 export const ReorderableListMultipleFormItems = {
-  render: ReorderableListMultipleFormItemsTemplate,
+  render: (args: ReorderableListMultipleFormItemsComponent) => ({
+    props: args,
+    template: `
+      <cvi-ng-reorderable-list-multiple-form-items-example>
+      </cvi-ng-reorderable-list-multiple-form-items-example>
+    `,
+  }),
   name: 'A track with multiple form items',
-  args: {},
 };
 
-const ReorderableListMultipleTracksAndFormItemsTemplate: StoryFn<
-  ReorderableListMultipleTracksAndFormItemsComponent
-> = (args: ReorderableListMultipleTracksAndFormItemsComponent) => ({
-  props: args,
-  template: `
-    <cvi-ng-reorderable-list-multiple-tracks-and-form-items-example>
-    </cvi-ng-reorderable-list-multiple-tracks-and-form-items-example>
-  `,
-});
-
 export const ReorderableListMultipleTracksAndFormItems = {
-  render: ReorderableListMultipleTracksAndFormItemsTemplate,
+  render: (args: ReorderableListMultipleTracksAndFormItemsComponent) => ({
+    props: args,
+    template: `
+      <cvi-ng-reorderable-list-multiple-tracks-and-form-items-example>
+      </cvi-ng-reorderable-list-multiple-tracks-and-form-items-example>
+    `,
+  }),
   name: 'Multiple tracks with multiple form items, and a standalone form item',
 
   parameters: {
