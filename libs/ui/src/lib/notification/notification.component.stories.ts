@@ -1,4 +1,4 @@
-import { Meta, StoryFn } from '@storybook/angular';
+import { Meta } from '@storybook/angular';
 import { NotificationComponent } from './notification.component';
 import notes from './notification.component.md';
 
@@ -17,61 +17,56 @@ export default {
   },
 } as Meta<NotificationComponent>;
 
-const Template: StoryFn<NotificationComponent> = (
-  args: NotificationComponent
-) => ({
-  props: args,
-  /* template */
-  template: `
-    <cvi-ng-notification [severity]="severity"
-                         [size]="size"
-                         [showIcon]="showIcon"
-                         [showCloseButton]="showCloseButton"
-                         [title]="title"
-                         [iconName]="iconName"
-    >
-      {{content}}
-    </cvi-ng-notification>
-  `,
-});
-
 export const Default = {
-  render: Template,
+  render: (args: NotificationComponent) => ({
+    props: args,
+    /* template */
+    template: `
+      <cvi-ng-notification [severity]="severity"
+                           [size]="size"
+                           [showIcon]="showIcon"
+                           [showCloseButton]="showCloseButton"
+                           [title]="title"
+                           [iconName]="iconName"
+      >
+        {{content}}
+      </cvi-ng-notification>
+    `,
+  }),
 };
 
 export const Success = {
-  render: Template,
+  ...Default,
   args: { severity: 'success' },
 };
 
 export const Warning = {
-  render: Template,
+  ...Default,
   args: { severity: 'warning' },
 };
 
 export const Error = {
-  render: Template,
+  ...Default,
   args: { severity: 'error' },
 };
 
 export const Neutral = {
-  render: Template,
+  ...Default,
   args: { severity: 'neutral' },
 };
 
 export const WithCompactSize = {
-  render: Template,
+  ...Default,
   args: { severity: 'neutral', size: 'compact' },
 };
 
 export const WithCompactSizeAndIcon = {
-  render: Template,
+  ...Default,
   args: { severity: 'info', size: 'compact' },
 };
 
 export const WithCompactSizeAndCustomIcon = {
-  render: Template,
-
+  ...Default,
   args: {
     severity: 'neutral',
     size: 'compact',
