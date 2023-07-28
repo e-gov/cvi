@@ -1,4 +1,4 @@
-import { Meta, moduleMetadata, StoryFn } from '@storybook/angular';
+import { Meta, moduleMetadata } from '@storybook/angular';
 import notes from './generated-table-of-contents.component.md';
 import { GeneratedTableOfContentsComponent } from './generated-table-of-contents.component';
 import { Component, Input } from '@angular/core';
