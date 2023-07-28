@@ -14,7 +14,7 @@ export const Default = {
     props: args,
     /* template */
     template: `
-      <div class="cvi-textfield">
+      <div class="cvi-datepicker">
         <div class="cvi-datepicker__input-container cvi-datepicker__input-container--focused">
           <label class="cvi-screenreader-text" id="datePickerLabel-datepicker-e5fbfa48-a30e-4edf-aa76-a1e84c2657c7" for="datepicker-html-id">Vali kuupäev</label>
           <span class="cvi-screenreader-text" id="dateDescription-datepicker-e5fbfa48-a30e-4edf-aa76-a1e84c2657c7">Nõutud kuupäeva formaat: dd.MM.yyyy</span>

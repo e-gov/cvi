@@ -77,7 +77,7 @@ export class DatepickerComponent implements ControlValueAccessor {
 
   @HostBinding('class') get getHostClasses(): string {
     const baseClass = 'cvi-datepicker';
-    return `cvi-textfield${
+    return `${baseClass}${
       this.disabled ? ` ${baseClass}__input-container--is-disabled` : ''
     }`;
   }
