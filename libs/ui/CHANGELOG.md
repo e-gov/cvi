@@ -2,6 +2,78 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.20.1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.20.0...ui-1.20.1) (2023-07-28)
+
+
+### Bug Fixes
+
+* **styles:** made styles of inline form elements consistent ([#147](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/147)) ([c7c724a](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/c7c724ab871e778d607e2fb3c81ee5c42bb863b1))
+
+
+
+# [1.20.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.19.0...ui-1.20.0) (2023-07-27)
+
+
+### Features
+
+* **ui:** added a new default value to horizontalAlignment prop of cvi-ng-track ([#142](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/142)) ([8699f74](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/8699f7418f9877a6b980584071e5cac6dd8d8b64))
+
+
+
+# [1.19.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.18.1...ui-1.19.0) (2023-07-27)
+
+
+### Features
+
+* **storybook:** various tweaks to HTML panel to improve DX ([#140](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/140)) ([deff522](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/deff52245ad96642a93c184ac6a98f73c3bce498))
+
+
+
+## [1.18.1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.18.0...ui-1.18.1) (2023-07-26)
+
+
+### Bug Fixes
+
+* **storybook:** added clarifications about the necessity of registering an icon when using @egov/cvi-icons with Angular ([#141](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/141)) ([c2ab36d](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/c2ab36d862baeaaea564ad8279cdf9d8b0f65cdf))
+
+
+
+# [1.18.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.17.1...ui-1.18.0) (2023-07-26)
+
+
+### Features
+
+* **storybook:** add search in the icons list ([#135](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/135)) ([29e54cf](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/29e54cf15a6066bb54f0173a1b41527bdb1fb0a1))
+
+
+
+## [1.17.1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.17.0...ui-1.17.1) (2023-07-25)
+
+
+### Bug Fixes
+
+* **ng:** highlight last heading when at the bottom of the page ([#126](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/126)) ([b72772a](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/b72772aaa2031594f98f12e47e36ee015f3d255d))
+
+
+
+# [1.17.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.16.0...ui-1.17.0) (2023-07-24)
+
+
+### Features
+
+* **ng:** add two-way binding supporrt to ng-steps currentStepIndex ([#128](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/128)) EBS-738 ([93412ce](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/93412cef82da92bcd960c63d0f848eb78cd5c35e))
+
+
+
+# [1.16.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.15.2...ui-1.16.0) (2023-07-13)
+
+
+### Features
+
+* **styles:** added an ability to customise cvi-button color with appearance-primary modifier ([#122](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/122)) ([a63d96f](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/a63d96fad200a04e78d1286d432ad095e85845a6))
+
+
+
 ## [1.15.2](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.15.1...ui-1.15.2) (2023-06-20)
 
 

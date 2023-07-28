@@ -58,6 +58,23 @@ export const Text = {
   },
 };
 
+export const WithCustomColor = {
+  render: (args: ButtonComponent) => ({
+    props: args,
+    styles: [
+      `:host {
+        --cvi-button-color: var(--cvi-color-jasper-10);
+        --cvi-button-color--hover: var(--cvi-color-jasper-12);
+      }`,
+    ],
+    template: `{{ content }}`,
+  }),
+  decorators: wrapperDecorators,
+  args: {
+    appearance: 'text',
+  },
+};
+
 const TemplateTextButtonWithIcon: StoryFn<ButtonComponent> = (
   args: ButtonComponent
 ) => ({

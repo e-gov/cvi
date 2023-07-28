@@ -5,7 +5,7 @@ export default {
   title: 'HTML/Form/Select',
   parameters: {
     notes,
-    options: { selectedPanel: 'html/panel' },
+    options: { selectedPanel: 'storybook/html/panel' },
   },
   argTypes: {
     containerWidth: {

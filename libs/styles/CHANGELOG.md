@@ -2,6 +2,33 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.12.1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/styles-1.12.0...styles-1.12.1) (2023-07-28)
+
+
+### Bug Fixes
+
+* **styles:** made styles of inline form elements consistent ([#147](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/147)) ([c7c724a](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/c7c724ab871e778d607e2fb3c81ee5c42bb863b1))
+
+
+
+# [1.12.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/styles-1.11.0...styles-1.12.0) (2023-07-26)
+
+
+### Features
+
+* **storybook:** add search in the icons list ([#135](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/135)) ([29e54cf](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/29e54cf15a6066bb54f0173a1b41527bdb1fb0a1))
+
+
+
+# [1.11.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/styles-1.10.1...styles-1.11.0) (2023-07-13)
+
+
+### Features
+
+* **styles:** added an ability to customise cvi-button color with appearance-primary modifier ([#122](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/122)) ([a63d96f](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/a63d96fad200a04e78d1286d432ad095e85845a6))
+
+
+
 ## [1.10.1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/styles-1.10.0...styles-1.10.1) (2023-06-20)
 
 

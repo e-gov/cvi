@@ -6,7 +6,7 @@ export default {
   parameters: {
     notes,
     layout: 'padded',
-    options: { selectedPanel: 'html/panel' },
+    options: { selectedPanel: 'storybook/html/panel' },
   },
 } as Meta;
 
