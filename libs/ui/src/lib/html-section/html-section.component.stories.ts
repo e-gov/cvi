@@ -27,11 +27,7 @@ export default {
   },
 } as Meta;
 
-export const Default = {
-  render: (args: HtmlSectionComponent) => ({
-    props: args,
-  }),
-};
+export const Default = {};
 
 export const InContactsBlock = {
   render: (args: HtmlSectionComponent) => ({

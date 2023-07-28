@@ -8,11 +8,7 @@ export default {
   component: FeedbackComponent,
 } as Meta<FeedbackComponent>;
 
-export const Default = {
-  render: (args: FeedbackComponent) => ({
-    props: args,
-  }),
-};
+export const Default = {};
 
 export const WithIcons = {
   ...Default,

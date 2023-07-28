@@ -12,11 +12,7 @@ export default {
   },
 } as Meta<BreadcrumbsComponent>;
 
-export const Default = {
-  render: (args: BreadcrumbsComponent) => ({
-    props: args,
-  }),
-};
+export const Default = {};
 
 export const Mobile = {
   ...Default,

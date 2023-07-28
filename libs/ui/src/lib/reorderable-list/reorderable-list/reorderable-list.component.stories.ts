@@ -32,32 +32,20 @@ export default {
 } as Meta<ReorderableListComponent>;
 
 export const Default = {
-  render: (args: ReorderableListExampleComponent) => ({
-    props: args,
-  }),
   decorators: [renderComponent(ReorderableListExampleComponent)],
 };
 
 export const ReorderableListSingleFormItem = {
-  render: (args: ReorderableListSingleFormItemComponent) => ({
-    props: args,
-  }),
   decorators: [renderComponent(ReorderableListSingleFormItemComponent)],
   name: 'Single form item',
 };
 
 export const ReorderableListMultipleFormItems = {
-  render: (args: ReorderableListMultipleFormItemsComponent) => ({
-    props: args,
-  }),
   decorators: [renderComponent(ReorderableListMultipleFormItemsComponent)],
   name: 'A track with multiple form items',
 };
 
 export const ReorderableListMultipleTracksAndFormItems = {
-  render: (args: ReorderableListMultipleTracksAndFormItemsComponent) => ({
-    props: args,
-  }),
   decorators: [
     renderComponent(ReorderableListMultipleTracksAndFormItemsComponent),
   ],

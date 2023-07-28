@@ -21,11 +21,7 @@ export default {
   },
 } as Meta;
 
-export const Default = {
-  render: (args: IconComponent) => ({
-    props: args,
-  }),
-};
+export const Default = {};
 
 export const WithCustomSize = {
   ...Default,

@@ -37,16 +37,13 @@ export default {
 } as Meta;
 
 export const Default = {
-  render: (args: InputComponent) => ({
-    props: args,
-  }),
   decorators: [
     componentWrapperDecorator((story) => {
       return `
-          <cvi-ng-form-item label="Some label" [htmlId]="htmlId">
-            ${story}
-          </cvi-ng-form-item>
-        `;
+        <cvi-ng-form-item label="Some label" [htmlId]="htmlId">
+          ${story}
+        </cvi-ng-form-item>
+      `;
     }),
   ],
 };
