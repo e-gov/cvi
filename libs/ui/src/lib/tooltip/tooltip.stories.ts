@@ -42,6 +42,15 @@ export const Default = {
 
 export const TooltipWithCustomZIndex = {
   ...Default,
+  decorators: [
+    componentWrapperDecorator((story) => {
+      /* template */
+      return `
+        <div [ngStyle]="{'z-index': 1000, 'width.px': 100, 'height.px': 100, 'background': 'red', 'position': 'relative', 'top.px': -150}"></div>
+        ${story}
+      `;
+    }),
+  ],
   name: 'Tooltip with custom z-index',
   args: {
     configurableZIndexCSSVar: '1002',
