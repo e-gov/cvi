@@ -2,6 +2,12 @@ import { Meta, componentWrapperDecorator } from '@storybook/angular';
 import notes from './form-item.component.md';
 import { FormItemComponent } from './form-item.component';
 
+const wrapperDecorators = [
+  componentWrapperDecorator(FormItemComponent, ({ args }) => {
+    return args;
+  }),
+];
+
 export default {
   title: 'Angular/Form/Form item',
   component: FormItemComponent,
@@ -11,11 +17,6 @@ export default {
     label: 'Example label',
     placeholder: 'Placeholder text...',
   },
-  decorators: [
-    componentWrapperDecorator(FormItemComponent, ({ args }) => {
-      return args;
-    }),
-  ],
 } as Meta<FormItemComponent>;
 
 export const Default = {
@@ -26,6 +27,7 @@ export const Default = {
       <cvi-ng-input [placeholder]="placeholder" [htmlId]="htmlId"></cvi-ng-input>
     `,
   }),
+  decorators: wrapperDecorators,
 };
 
 export const WithTextarea = {
@@ -36,6 +38,7 @@ export const WithTextarea = {
       <cvi-ng-textarea [placeholder]="placeholder" [htmlId]="htmlId"></cvi-ng-textarea>
     `,
   }),
+  decorators: wrapperDecorators,
   parameters: {
     chromatic: { disableSnapshot: true },
   },
