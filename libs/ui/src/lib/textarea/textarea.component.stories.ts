@@ -72,9 +72,15 @@ const FormGroupTemplate: StoryFn<TextareaComponent> = (
 
   return {
     props: {
-      ...args,
-      form: form,
+      // unwrapping args manually, because otherwise selectedValue() won't be updated - https://github.com/storybookjs/storybook/issues/14627#issuecomment-821291541
+      placeholder: args.placeholder,
+      disabled: args.disabled,
+      maxLength: args.maxLength,
+      maxRows: args.maxRows,
+      htmlId: args.htmlId,
+      resizable: args.resizable,
       minRows: 3,
+      form: form,
       selectedValue: selectedValue,
     },
     /* template */
