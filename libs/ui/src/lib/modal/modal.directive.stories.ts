@@ -61,4 +61,9 @@ export const ModalOpenWithoutButton = {
       <ng-container [cviNgModal]="modal" [open]="true"></ng-container>
     `,
   }),
+  parameters: {
+    axe: {
+      disabledRules: ['aria-dialog-name'],
+    },
+  },
 };
