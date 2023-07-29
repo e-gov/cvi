@@ -85,7 +85,12 @@ const FormTemplate: StoryFn<InputComponent> = (args: InputComponent) => {
 
   return {
     props: {
-      ...args,
+      // unwrapping args manually, because otherwise selectedValue() won't be updated - https://github.com/storybookjs/storybook/issues/14627#issuecomment-821291541
+      htmlId: args.htmlId,
+      suffixIconName: args.suffixIconName,
+      disabled: args.disabled,
+      placeholder: args.placeholder,
+
       form,
       selectedValue,
       onSubmit,
