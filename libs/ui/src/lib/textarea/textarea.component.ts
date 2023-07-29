@@ -51,6 +51,7 @@ export class TextareaComponent implements ControlValueAccessor, AfterViewInit {
   /** Emit value on model change */
   @Output() valueChange = new EventEmitter<any>();
 
+  /** @internal */
   internalValue?: any;
 
   // eslint-disable-next-line @typescript-eslint/no-empty-function
