@@ -7,7 +7,7 @@ describe('BreadcrumbsComponent', () => {
     cy.loadStory('Angular Breadcrumbs', 'Default')
       .get('cvi-ng-breadcrumbs')
       .shouldExist('cvi-ng-track')
-      .shouldNotExist('cvi-ng-icon')
+      .shouldNotBeVisible('cvi-ng-icon')
       .shouldHaveClasses('ul', 'cvi-breadcrumbs__items')
       .shouldHaveClasses('li', 'cvi-breadcrumbs__item')
       .shouldHaveClasses('a', 'cvi-breadcrumbs__item-link');
