@@ -86,3 +86,19 @@ const TemplateTextButtonWithIcon: Story<ButtonComponent> = (
 });
 
 export const TextButtonWithIcon = TemplateTextButtonWithIcon.bind({});
+
+const TemplateSmallButtonWithIcon: Story<ButtonComponent> = (
+  args: ButtonComponent
+) => ({
+  props: args,
+  /* template */
+  template: `
+    <cvi-ng-button [size]="size">
+      <cvi-ng-labeled-icon name="exit_to_app" svgClass="cvi-button__white-icon" appearance="secondary" iconPosition="after" verticalAlignment="center" [iconHeight]="24">
+        {{ content }}
+      </cvi-ng-labeled-icon>
+    </cvi-ng-button>
+  `,
+});
+
+export const smallButtonWithIcon = TemplateSmallButtonWithIcon.bind({});

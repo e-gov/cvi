@@ -12,18 +12,35 @@
       font-size: get-font-size(100);
       line-height: get-line-height(500);
 
+      & #{$base}__white-icon {
+        fill: get-color(white);
+        & path {
+          fill: get-color(white);
+        }
+      }
+
       &:disabled {
         cursor: default;
       }
 
       #{$base}--appearance-primary & {
         color: get-color(white);
-        background-color: var(--cvi-button-color, #{get-color(sapphire-blue-10)});
-        border: var(--cvi-border-width) solid var(--cvi-button-color, #{get-color(sapphire-blue-10)});
+        background-color: var(
+          --cvi-button-color,
+          #{get-color(sapphire-blue-10)}
+        );
+        border: var(--cvi-border-width) solid
+          var(--cvi-button-color, #{get-color(sapphire-blue-10)});
 
         &:hover {
-          background-color: var(--cvi-button-color--hover, #{get-color(sapphire-blue-13)});
-          border-color: var(--cvi-button-color--hover, #{get-color(sapphire-blue-13)});
+          background-color: var(
+            --cvi-button-color--hover,
+            #{get-color(sapphire-blue-13)}
+          );
+          border-color: var(
+            --cvi-button-color--hover,
+            #{get-color(sapphire-blue-13)}
+          );
         }
 
         &:focus {
