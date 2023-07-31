@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.12.2](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/styles-1.12.1...styles-1.12.2) (2023-07-31)
+
+
+### Bug Fixes
+
+* **styles:** fixed broken appearance of cvi-datepicker when on non-white background ([#144](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/144)) ([41a473f](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/41a473ff0c855330f8fdb3f9680ef0b513117243))
+
+
+
 ## [1.12.1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/styles-1.12.0...styles-1.12.1) (2023-07-28)
 
 
