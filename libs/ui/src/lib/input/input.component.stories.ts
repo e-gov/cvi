@@ -1,6 +1,6 @@
 import { Story, Meta, moduleMetadata } from '@storybook/angular';
 import notes from './input.component.md';
-import { InputComponent} from './input.component';
+import { InputComponent } from './input.component';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { storybookIconsNames } from '../icons/storybook-icons';
 import { UiModule } from '../ui.module';
@@ -19,17 +19,16 @@ export default {
       options: storybookIconsNames,
       control: { type: 'select' },
     },
-    type: {
-      name:"Type",
-      options: ['', 'positiveNumbers', 'estonianNameLetters'],
+    validationType: {
+      name: 'ValidationType',
+      options: [null, 'positiveNumbers'],
       control: { type: 'select' },
-    }
+    },
   },
   args: {
     placeholder: 'Username',
     disabled: false,
     htmlId: 'some-input',
-
   },
 } as Meta<InputComponent>;
 
@@ -42,7 +41,7 @@ const Template: Story<InputComponent> = (args: InputComponent) => ({
                     [disabled]="disabled"
                     [suffixIconName]="suffixIconName"
                     [htmlId]="htmlId"
-                    [type]=type></cvi-ng-input>
+                    [validationType]="validationType"></cvi-ng-input>
     </cvi-ng-form-item>
   `,
 });
@@ -92,7 +91,7 @@ const FormTemplate: Story<InputComponent> = (args: InputComponent) => {
           <cvi-ng-input formControlName="item"
                         [placeholder]="placeholder"
                         [htmlId]="htmlId"
-                        [type]=type></cvi-ng-input>
+                        [validationType]="validationType"></cvi-ng-input>
         </cvi-ng-form-item>
         <cvi-ng-track layout="flex" horizontalAlignment="justify" gap="3">
             <cvi-ng-button data-cy="disable-button" (click)="disableInput()">Disable input</cvi-ng-button>
@@ -120,7 +119,7 @@ const CharacterCounterTemplate: Story<InputComponent> = (
                     [htmlId]="htmlId"
                     cviNgCharacterCounter
                     [maxChars]="10"
-                    [type]=type></cvi-ng-input>
+                    [validationType]="validationType"></cvi-ng-input>
     </cvi-ng-form-item>
   `,
 });

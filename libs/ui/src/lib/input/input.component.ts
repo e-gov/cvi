@@ -2,7 +2,8 @@ import {
   Component,
   EventEmitter,
   forwardRef,
-  HostBinding, HostListener,
+  HostBinding,
+  HostListener,
   Input,
   Output,
 } from '@angular/core';
@@ -15,11 +16,10 @@ export const inputComponentValueAccessor = {
   multi: true,
 };
 
-type InputType = '' | 'positiveNumbers' | 'estonianNameLetters';
+type ValidationType = null | 'positiveNumbers' ;
 
-const InputRegex: { [key: string]: RegExp }= {
+const inputRegex: { [key: string]: RegExp } = {
   positiveNumbers: /\D/g,
-  estonianNameLetters: /[^A-Za-zÄÜÖÕäüöõ\s-]+/
 };
 
 const patterns: { [key: string]: string } = {
@@ -57,13 +57,13 @@ export class InputComponent implements ControlValueAccessor {
 
   /** Only allow certain characters */
   @Input()
-    set type(value: InputType) {
-      this._type = value;
-    }
+  set validationType(value: ValidationType) {
+    this._validationType = value;
+  }
 
-   get type(): InputType {
-     return this._type;
-   }
+  get validationType(): ValidationType {
+    return this._validationType;
+  }
   /** Emit value on model change */
   @Output() valueChange = new EventEmitter<any>();
 
@@ -73,7 +73,7 @@ export class InputComponent implements ControlValueAccessor {
   /** Internal */
   _disabled = false;
 
-  _type: InputType = '';
+  _validationType: ValidationType = null;
 
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   private onChanged: (_: any) => void = () =>
@@ -90,24 +90,24 @@ export class InputComponent implements ControlValueAccessor {
   }
 
   @HostListener('input', ['$event'])
-    onInput(event: InputEvent) {
-      const inputElement = event.target as HTMLInputElement;
-      inputElement.value = this.handleValue(inputElement.value)
-    }
+  onInput(event: InputEvent) {
+    const inputElement = event.target as HTMLInputElement;
+    inputElement.value = this.handleValue(inputElement.value);
+  }
 
   handleValue(value: string): string {
-    if (this.type !== ''){
-      value = value.replace(InputRegex[this.type], '');
+    if (this.validationType !== null) {
+      value = value.replace(inputRegex[this.validationType], '');
     }
     return value;
   }
 
   get pattern(): string | null {
-    return this.type in patterns ? patterns[this.type] : null;
+    return this.validationType !== null && this.validationType in patterns ? patterns[this.validationType] : null;
   }
 
   get inputMode(): string | null {
-    return this.type in inputModes ? inputModes[this.type] : null;
+    return this.validationType !== null && this.validationType in inputModes ? inputModes[this.validationType] : null;
   }
 
   setValue(value: any) {
