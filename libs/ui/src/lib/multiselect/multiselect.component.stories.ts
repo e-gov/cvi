@@ -50,12 +50,12 @@ const Template: Story<MultiSelectComponent> = (args: MultiSelectComponent) => ({
   template: `
       <div [ngStyle]="{'width.px': containerWidth}">
         <cvi-ng-form-item label="Some label" [htmlId]="htmlId" [labelId]="labelId">
-          <cvi-ng-select [items]="items"
+          <cvi-ng-multiselect [items]="items"
                          [disabled]="disabled"
                          [labelId]="labelId"
                          [backgroundDisabled]="backgroundDisabled"
                          [placeholder]="placeholder"
-                         [htmlId]="htmlId"></cvi-ng-select>
+                         [htmlId]="htmlId"></cvi-ng-multiselect>
         </cvi-ng-form-item>
       </div>
   `,
@@ -72,7 +72,7 @@ const WithCustomValueFormattingTemplate: Story<MultiSelectComponent> = (
   template: `
     <div [ngStyle]="{'width.px': containerWidth}">
       <cvi-ng-form-item label="Some label" [htmlId]="htmlId" [labelId]="labelId">
-        <cvi-ng-select [items]="items"
+        <cvi-ng-multiselect [items]="items"
                        [placeholder]="placeholder"
                        [backgroundDisabled]="backgroundDisabled"
                        [disabled]="disabled"
@@ -90,7 +90,7 @@ const WithCustomValueFormattingTemplate: Story<MultiSelectComponent> = (
               {{item}}
             </cvi-ng-track>
           </ng-template>
-        </cvi-ng-select>
+        </cvi-ng-multiselect>
       </cvi-ng-form-item>
     </div>
     <ng-template #icon>

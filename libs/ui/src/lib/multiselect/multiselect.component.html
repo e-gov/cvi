@@ -110,9 +110,10 @@
           (click)="multiselectItem(item)"
         >
           <ng-template #defaultOptionTemplate>
-            <span class="cvi-dropdown-popup__item-label">{{
-              bindLabel ? item.value[bindLabel] : item.value
-            }}</span>
+            <span class="cvi-dropdown-popup__item-label">
+              <input type="checkbox" [checked]="{{selectedItem()}}" />
+              {{ bindLabel ? item.value[bindLabel] : item.value }}</span
+            >
           </ng-template>
           <ng-template
             [ngTemplateOutlet]="optionTemplate || defaultOptionTemplate"
