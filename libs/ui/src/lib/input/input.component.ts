@@ -2,7 +2,7 @@ import {
   Component,
   EventEmitter,
   forwardRef,
-  HostBinding,
+  HostBinding, HostListener,
   Input,
   Output,
 } from '@angular/core';
@@ -13,6 +13,21 @@ export const inputComponentValueAccessor = {
   provide: NG_VALUE_ACCESSOR,
   useExisting: forwardRef(() => InputComponent),
   multi: true,
+};
+
+type InputType = '' | 'positiveNumbers' | 'estonianNameLetters';
+
+const InputRegex: { [key: string]: RegExp }= {
+  positiveNumbers: /\D/g,
+  estonianNameLetters: /[^A-Za-zÄÜÖÕäüöõ\s-]+/
+};
+
+const patterns: { [key: string]: string } = {
+  positiveNumbers: '[0-9]*',
+};
+
+const inputModes: { [key: string]: string } = {
+  positiveNumbers: 'numeric',
 };
 
 @Component({
@@ -40,9 +55,15 @@ export class InputComponent implements ControlValueAccessor {
   /** Icon added to the right */
   @Input() suffixIconName!: CviIconName;
 
-  /** Input allows only numbers */
-  @Input() cviNgNumbersOnly = false;
+  /** Only allow certain characters */
+  @Input()
+    set type(value: InputType) {
+      this._type = value;
+    }
 
+   get type(): InputType {
+     return this._type;
+   }
   /** Emit value on model change */
   @Output() valueChange = new EventEmitter<any>();
 
@@ -51,6 +72,8 @@ export class InputComponent implements ControlValueAccessor {
 
   /** Internal */
   _disabled = false;
+
+  _type: InputType = '';
 
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   private onChanged: (_: any) => void = () =>
@@ -66,8 +89,29 @@ export class InputComponent implements ControlValueAccessor {
     }${this.suffixIconName ? ' cvi-textfield--has-suffix-icon' : ''}`;
   }
 
+  @HostListener('input', ['$event'])
+    onInput(event: InputEvent) {
+      const inputElement = event.target as HTMLInputElement;
+      inputElement.value = this.handleValue(inputElement.value)
+    }
+
+  handleValue(value: string): string {
+    if (this.type !== ''){
+      value = value.replace(InputRegex[this.type], '');
+    }
+    return value;
+  }
+
+  get pattern(): string | null {
+    return this.type in patterns ? patterns[this.type] : null;
+  }
+
+  get inputMode(): string | null {
+    return this.type in inputModes ? inputModes[this.type] : null;
+  }
+
   setValue(value: any) {
-    this.onChanged(value);
+    this.onChanged(this.handleValue(value));
     this.onTouched();
   }
 

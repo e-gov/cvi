@@ -64,4 +64,25 @@ describe('InputComponent', () => {
 
     expect(component.disabled).toBe(true);
   });
+  it('should handle "positiveNumbers" type properly', () => {
+    component.type = 'positiveNumbers';
+    const result = component.handleValue('abc123');
+
+    expect(result).toBe('123');
+  });
+
+  it('should handle "estonianLetters" type properly', () => {
+    component.type = 'estonianNameLetters';
+    const result = component.handleValue('abcäöü-123 ');
+
+    expect(result).toBe('abcäöü- ');
+
+  });
+
+  it('should handle empty "type" properly', () => {
+    component.type = '';
+    const result = component.handleValue('abc123');
+
+    expect(result).toBe('abc123');
+  });
 });
