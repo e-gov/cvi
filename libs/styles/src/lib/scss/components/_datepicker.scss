@@ -6,6 +6,7 @@
   @at-root {
     #{$base}__input {
       &-container {
+        background-color: get-color(white);
         border: 1px solid var(--cvi-form-input-border-color);
         border-radius: map.get($cvi-radii, s);
         display: flex;

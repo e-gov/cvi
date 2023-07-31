@@ -78,6 +78,13 @@ WithCustomPlaceholder.args = {
   placeholder: 'dd.mm.yyyy',
 };
 
+export const OnNonWhiteBackground = Template.bind({});
+OnNonWhiteBackground.parameters = {
+  backgrounds: {
+    default: 'Gray',
+  },
+};
+
 export const WithDisabled = Template.bind({});
 WithDisabled.args = {
   disabled: true,

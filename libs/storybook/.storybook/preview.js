@@ -38,6 +38,23 @@ export const parameters = {
       state: 'open',
     },
   },
+  backgrounds: {
+    default: 'Default',
+    values: [
+      {
+        name: 'Default',
+        value: '#ffffff',
+      },
+      {
+        name: 'Dark',
+        value: '#13100d',
+      },
+      {
+        name: 'Gray',
+        value: '#f0f0f2',
+      },
+    ],
+  },
   options: {
     // stories inside one file will be sorted in alphabetical order because of this bug https://github.com/storybookjs/storybook/issues/18659
     storySort: {
