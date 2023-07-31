@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.10.1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/storybook-1.10.0...storybook-1.10.1) (2023-07-31)
+
+
+### Bug Fixes
+
+* **styles:** fixed broken appearance of cvi-datepicker when on non-white background ([#144](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/144)) ([41a473f](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/41a473ff0c855330f8fdb3f9680ef0b513117243))
+
+
+
 # [1.10.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/storybook-1.9.1...storybook-1.10.0) (2023-07-27)
 
 
