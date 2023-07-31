@@ -16,7 +16,7 @@ export const inputComponentValueAccessor = {
   multi: true,
 };
 
-type ValidationType = null | 'positiveNumbers' ;
+type ValidationType = null | 'positiveNumbers';
 
 const inputRegex: { [key: string]: RegExp } = {
   positiveNumbers: /\D/g,
@@ -103,11 +103,15 @@ export class InputComponent implements ControlValueAccessor {
   }
 
   get pattern(): string | null {
-    return this.validationType !== null && this.validationType in patterns ? patterns[this.validationType] : null;
+    return this.validationType !== null && this.validationType in patterns
+      ? patterns[this.validationType]
+      : null;
   }
 
   get inputMode(): string | null {
-    return this.validationType !== null && this.validationType in inputModes ? inputModes[this.validationType] : null;
+    return this.validationType !== null && this.validationType in inputModes
+      ? inputModes[this.validationType]
+      : null;
   }
 
   setValue(value: any) {
