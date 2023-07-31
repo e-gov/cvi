@@ -1,5 +1,5 @@
 import { Story, Meta } from '@storybook/angular';
-import notes from './cvi-tabs.html.md';
+import notes from './tabs.html.md';
 
 export default {
   title: 'HTML/Tab group/CVI tabs',

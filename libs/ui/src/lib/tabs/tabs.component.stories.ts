@@ -1,6 +1,6 @@
-import notes from './cvi-tabs.component.md';
+import notes from './tabs.component.md';
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
-import { CviTabsComponent } from './cvi-tabs.component';
+import { CviTabsComponent } from './tabs.component';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { UiModule } from '../ui.module';
 

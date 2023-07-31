@@ -8,7 +8,6 @@ import {
   EventEmitter,
   HostBinding,
   OnDestroy,
-  OnInit,
   Output,
   QueryList,
   ViewChildren,
@@ -21,15 +20,14 @@ import { v4 as uuidv4 } from 'uuid';
 
 @Component({
   selector: 'cvi-ng-tabs',
-  templateUrl: './cvi-tabs.component.html',
+  templateUrl: './tabs.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class CviTabsComponent implements AfterViewInit, OnDestroy, OnInit {
+export class CviTabsComponent implements AfterViewInit, OnDestroy {
   @Input() bindValue?: string;
   @Input() bindLabel?: string;
   @ContentChildren(TabComponent) allTabs!: QueryList<TabComponent>;
 
-  /** Emitter for notifying of the active tab changes */
   @Output() activeTabChange = new EventEmitter<number>();
 
   @HostBinding('class') get hostClasses(): string {
@@ -37,24 +35,20 @@ export class CviTabsComponent implements AfterViewInit, OnDestroy, OnInit {
   }
 
   activeIndex = 0;
+  focusIndex = 0;
 
   /** @internal */
   baseId = 'tabgroup-' + uuidv4();
 
   /** @internal */
   private tabChangesSubscription = Subscription.EMPTY;
-  public currentWindowWidth = 820;
   isOpen = false;
 
-  @ViewChildren('tabButton') tabButtons!: QueryList<
+  @ViewChildren('menuButton') tabButtons!: QueryList<
     ElementRef<HTMLButtonElement>
   >;
 
   constructor(private cdRef: ChangeDetectorRef) {}
-
-  ngOnInit(): void {
-    this.currentWindowWidth = window.innerWidth;
-  }
 
   ngAfterViewInit() {
     this.tabChangesSubscription = merge(
@@ -71,38 +65,11 @@ export class CviTabsComponent implements AfterViewInit, OnDestroy, OnInit {
   makeActive(index: number) {
     if (this.activeIndex !== index) {
       this.activeIndex = index;
+      this.focusIndex = index;
       this.activeTabChange.emit(this.activeIndex);
       this.cdRef.detectChanges();
       this.close();
     }
-  }
-
-  updateButtonFocus(): void {
-    this.tabButtons.get(this.activeIndex)?.nativeElement.focus();
-  }
-
-  makeActivePrev(event: Event) {
-    event.preventDefault();
-    if (this.activeIndex > 0) {
-      this.activeIndex--;
-    } else {
-      this.activeIndex = this.allTabs.length - 1;
-    }
-    this.activeTabChange.emit(this.activeIndex);
-
-    this.updateButtonFocus();
-  }
-
-  makeActiveNext(event: Event) {
-    event.preventDefault();
-    if (this.activeIndex < this.allTabs.length - 1) {
-      this.activeIndex++;
-    } else {
-      this.activeIndex = 0;
-    }
-    this.activeTabChange.emit(this.activeIndex);
-
-    this.updateButtonFocus();
   }
 
   isTabSelected(tabIndex: number): boolean {
@@ -153,5 +120,34 @@ export class CviTabsComponent implements AfterViewInit, OnDestroy, OnInit {
   @HostListener('document:click', ['$event'])
   handleClickOutside() {
     this.close();
+  }
+
+  @HostListener('keydown', ['$event'])
+  handleKeyboardEvent(event: KeyboardEvent) {
+    if (event.key === 'ArrowDown') {
+      this.tabButtons.get(this.focusIndex)?.nativeElement.focus();
+      event.preventDefault();
+      this.focusPreviousButton();
+    } else if (event.key === 'ArrowUp') {
+      event.preventDefault();
+      this.focusNextButton();
+      this.tabButtons.get(this.focusIndex)?.nativeElement.focus();
+    }
+  }
+
+  focusNextButton() {
+    if (this.focusIndex < this.tabButtons.length - 1) {
+      this.focusIndex++;
+    } else {
+      this.focusIndex = 0;
+    }
+  }
+
+  focusPreviousButton() {
+    if (this.focusIndex > 0) {
+      this.focusIndex--;
+    } else {
+      this.focusIndex = this.tabButtons.length - 1;
+    }
   }
 }

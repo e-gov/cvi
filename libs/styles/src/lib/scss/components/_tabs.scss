@@ -5,7 +5,18 @@
       display: flex;
       margin-bottom: -1px;
       list-style-type: none;
+      @include cvi-breakpoint-down(md) {
+        display: none;
+      }
     }
+
+    #{$base}__list-mobile {
+      display: none;
+      @include cvi-breakpoint-down(md) {
+        display: flex;
+      }
+    }
+
     #{$base}__tab-btn {
       padding: get-spacing('haapsalu');
       font-size: get-font-size(100);
@@ -18,13 +29,8 @@
         border-top-left-radius: var(--cvi-radius-s);
         border-top-right-radius: var(--cvi-radius-s);
         color: get-color(sapphire-blue-10);
-        border-color: get-color(black-coral-2);
-        border-bottom-color: transparent;
-
-        &.underlined {
-          border-bottom: 4px solid var(--cvi-color-sapphire-blue-10);
-          box-shadow: var(--cvi-shadow-beta);
-        }
+        border-bottom: 4px solid var(--cvi-color-sapphire-blue-10);
+        box-shadow: var(--cvi-shadow-beta);
       }
     }
 
@@ -63,6 +69,7 @@
 
     #{$base}__dropdown {
       #{$base}__dropdown-item {
+        width: 100%;
         background-color: var(--cvi-color-white);
         padding: var(--cvi-spacing-paldiski) var(--cvi-spacing-haapsalu);
         cursor: pointer;

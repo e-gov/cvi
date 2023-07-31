@@ -1,4 +1,4 @@
-<div class="cvi-tabs__list" role="tablist" *ngIf="currentWindowWidth >= 992">
+<div class="cvi-tabs__list" role="tablist">
   <button
     *ngFor="let tab of allTabs; let i = index"
     dataAttribute="tab-button-{{ i }}"
@@ -10,20 +10,18 @@
     [attr.aria-selected]="isTabSelected(i)"
     role="tab"
     [attr.tabindex]="isTabSelected(i) ? null : '-1'"
-    (keyup.arrowleft)="makeActivePrev($event)"
-    (keyup.arrowright)="makeActiveNext($event)"
     [attr.aria-controls]="baseId + '-tabpanel-' + i"
     class="cvi-tabs__tab-btn"
   >
     {{ tab.title }}
   </button>
 </div>
-<div class="cvi-tabs__list" role="tablist" *ngIf="currentWindowWidth < 992">
+<div class="cvi-tabs__list-mobile" role="menu">
   <button
+    role="button"
     class="cvi-tabs__mobile-button"
     type="button"
-    id="dropdownMenuButton"
-    data-mdb-toggle="dropdown"
+    id="{{ baseId }}-tab-button}"
     aria-expanded="false"
     (click)="handleArrowButtonClick($event)"
   >
@@ -43,31 +41,35 @@
   #popup
 >
   <div class="cvi-tabs__dropdown">
-    <ul role="listbox" class="cvi-tabs__dropdown-container" (closed)="close()">
-      <li
+    <ul
+      role="listbox"
+      class="cvi-tabs__dropdown-container"
+      (closed)="close()"
+      role="menu"
+      (keydown)="handleKeyboardEvent($event)"
+    >
+      <button
         *ngFor="let tab of allTabs; let i = index"
         class="cvi-tabs__dropdown-item"
         dataAttribute="tab-button-{{ i }}"
-        tabindex="0"
         (click)="makeActive(i)"
         id="{{ baseId }}-tab-{{ i }}"
         [attr.aria-selected]="isTabSelected(i)"
-        role="tab"
-        (keyup.arrowleft)="makeActivePrev($event)"
-        (keyup.arrowright)="makeActiveNext($event)"
-        [attr.aria-controls]="baseId + '-tabpanel-' + i"
+        role="menuitem"
+        [attr.aria-controls]="baseId + '-menuitem-' + i"
+        #menuButton
       >
         {{ tab.title }}
-      </li>
+      </button>
     </ul>
   </div>
 </div>
 <div
   dataAttribute="tab-content"
   class="cvi-tabs__tab-content"
-  role="tabpanel"
   [attr.aria-labelledby]="baseId + '-tab-' + activeIndex"
   tabindex="0"
+  role="tabpanel"
   [attr.id]="baseId + '-tabpanel-' + activeIndex"
 >
   <ng-container *ngTemplateOutlet="getActiveTabContent()"></ng-container>
