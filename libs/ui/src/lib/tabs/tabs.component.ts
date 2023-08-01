@@ -27,7 +27,7 @@ import { v4 as uuidv4 } from 'uuid';
 export class TabsComponent implements AfterViewInit, OnDestroy {
   @Input() bindValue?: string;
   @Input() bindLabel?: string;
-  @ContentChildren(TabComponent) allTabs!: QueryList<TabComponent>;
+  @ContentChildren(TabComponent) allItems!: QueryList<TabComponent>;
 
   @Output() activeTabChange = new EventEmitter<number>();
 
@@ -43,12 +43,12 @@ export class TabsComponent implements AfterViewInit, OnDestroy {
 
   /** @internal */
   private tabChangesSubscription = Subscription.EMPTY;
-  isOpen = false;
+  isDropdownOpen = false;
 
   @ViewChild('dropdownButton', { static: true })
   dropdownButton?: ElementRef<HTMLInputElement>;
 
-  @ViewChildren('menuButton') dropdownItemButtons!: QueryList<
+  @ViewChildren('dropdownItemButton') dropdownItemButtons!: QueryList<
     ElementRef<HTMLButtonElement>
   >;
 
@@ -60,7 +60,7 @@ export class TabsComponent implements AfterViewInit, OnDestroy {
 
   ngAfterViewInit() {
     this.tabChangesSubscription = merge(
-      ...this.allTabs.map((tab) => tab._stateChanges)
+      ...this.allItems.map((tab) => tab._stateChanges)
     ).subscribe(() => this.cdRef.markForCheck());
 
     this.activeTabChange.emit(this.activeIndex);
@@ -82,7 +82,7 @@ export class TabsComponent implements AfterViewInit, OnDestroy {
   }
 
   makeActivePrev(currentIndex: number) {
-    let newIndex = this.allTabs.length - 1;
+    let newIndex = this.allItems.length - 1;
     if (this.activeIndex > 0) {
       newIndex = currentIndex - 1;
     }
@@ -91,7 +91,7 @@ export class TabsComponent implements AfterViewInit, OnDestroy {
 
   makeActiveNext(currentIndex: number) {
     let newIndex = 0;
-    if (this.activeIndex < this.allTabs.length - 1) {
+    if (this.activeIndex < this.allItems.length - 1) {
       newIndex = currentIndex + 1;
     }
     this.makeActive(newIndex);
@@ -106,7 +106,7 @@ export class TabsComponent implements AfterViewInit, OnDestroy {
   }
 
   getActiveTabTitle() {
-    const activeTab = this.allTabs.get(this.activeIndex);
+    const activeTab = this.allItems.get(this.activeIndex);
     if (!activeTab) {
       throw new Error(`no tab exists with index ${this.activeIndex}`);
     }
@@ -115,7 +115,7 @@ export class TabsComponent implements AfterViewInit, OnDestroy {
   }
 
   getActiveTabContent() {
-    const activeTab = this.allTabs.get(this.activeIndex);
+    const activeTab = this.allItems.get(this.activeIndex);
     if (!activeTab) {
       throw new Error(`no tab exists with index ${this.activeIndex}`);
     }
@@ -124,22 +124,22 @@ export class TabsComponent implements AfterViewInit, OnDestroy {
   }
 
   open() {
-    this.isOpen = true;
+    this.isDropdownOpen = true;
   }
 
   close() {
-    if (!this.isOpen) {
+    if (!this.isDropdownOpen) {
       return;
     }
 
-    this.isOpen = false;
+    this.isDropdownOpen = false;
   }
 
   handleArrowButtonClick(event: MouseEvent) {
     event.stopPropagation();
     event.preventDefault();
 
-    if (this.isOpen) {
+    if (this.isDropdownOpen) {
       this.close();
     } else {
       this.open();
@@ -156,13 +156,13 @@ export class TabsComponent implements AfterViewInit, OnDestroy {
     if (event.key === 'ArrowDown') {
       this.dropdownItemButtons.get(this.focusIndex)?.nativeElement.focus();
       event.preventDefault();
-      this.focusPreviousButton();
+      this.focusPreviousDropdownButton();
     } else if (event.key === 'ArrowUp') {
       event.preventDefault();
-      this.focusNextButton();
+      this.focusNextDropdownButton();
       this.dropdownItemButtons.get(this.focusIndex)?.nativeElement.focus();
     } else if (event.key === 'Escape') {
-      if (this.isOpen) {
+      if (this.isDropdownOpen) {
         event.preventDefault();
         this.close();
         this.dropdownButton?.nativeElement.focus();
@@ -170,7 +170,7 @@ export class TabsComponent implements AfterViewInit, OnDestroy {
     }
   }
 
-  focusNextButton() {
+  focusNextDropdownButton() {
     if (this.focusIndex < this.dropdownItemButtons.length - 1) {
       this.focusIndex++;
     } else {
@@ -178,7 +178,7 @@ export class TabsComponent implements AfterViewInit, OnDestroy {
     }
   }
 
-  focusPreviousButton() {
+  focusPreviousDropdownButton() {
     if (this.focusIndex > 0) {
       this.focusIndex--;
     } else {
