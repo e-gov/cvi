@@ -1,0 +1,80 @@
+<div class="cvi-tabs__list" role="tablist">
+  <button
+    *ngFor="let tab of allTabs; let i = index"
+    dataAttribute="tab-button-{{ i }}"
+    [ngClass]="{ active: isTabSelected(i) }"
+    (click)="makeActive(i)"
+    type="button"
+    #tabButton
+    id="{{ baseId }}-tab-{{ i }}"
+    [attr.aria-selected]="isTabSelected(i)"
+    role="tab"
+    [attr.tabindex]="isTabSelected(i) ? null : '-1'"
+    [attr.aria-controls]="baseId + '-tabpanel-' + i"
+    class="cvi-tabs__tab-btn"
+  >
+    {{ tab.title }}
+  </button>
+</div>
+<div class="cvi-tabs__list-mobile" role="menu">
+  <button
+    role="button"
+    class="cvi-tabs__mobile-button"
+    type="button"
+    id="{{ baseId }}-tab-button"
+    aria-expanded="false"
+    (click)="handleArrowButtonClick($event)"
+  >
+    {{ getActiveTabTitle() }}
+    <cvi-ng-icon
+      [class]="'cvi-tabs__icon'"
+      [name]="isOpen ? 'arrow_up_alt' : 'arrow_down_alt'"
+      [svgClass]="'cvi-tabs__arrow-icon'"
+    >
+    </cvi-ng-icon>
+  </button>
+</div>
+<div
+  *ngIf="isOpen"
+  dataAttribute="tabs-popup"
+  class="cvi-tabs__dropdown-popup"
+  #popup
+>
+  <div
+    class="cvi-tabs__dropdown-container"
+    (closed)="close()"
+    role="menu"
+    (keydown)="handleKeyboardEvent($event)"
+  >
+    <button
+      *ngFor="let tab of allTabs; let i = index"
+      class="cvi-tabs__dropdown-item"
+      dataAttribute="tab-button-{{ i }}"
+      (click)="makeActive(i)"
+      id="{{ baseId }}-dropdown-button-{{ i }}"
+      role="menuitem"
+      [attr.aria-controls]="baseId + '-tabpanel-' + i"
+      #menuButton
+    >
+      {{ tab.title }}
+    </button>
+  </div>
+</div>
+<div
+  dataAttribute="tab-content"
+  class="cvi-tabs__tab-content"
+  [attr.aria-labelledby]="
+    baseId +
+    '-tab-' +
+    activeIndex +
+    ' ' +
+    baseId +
+    '-dropdown-button-' +
+    activeIndex
+  "
+  tabindex="0"
+  role="tabpanel"
+  [attr.id]="baseId + '-tabpanel-' + activeIndex"
+>
+  <ng-container *ngTemplateOutlet="getActiveTabContent()"></ng-container>
+</div>

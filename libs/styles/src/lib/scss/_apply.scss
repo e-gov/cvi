@@ -54,6 +54,10 @@
   @include cvi-tab-group;
 }
 
+.cvi-tabs {
+  @include cvi-tabs;
+}
+
 .cvi-toast {
   @include cvi-toast;
 }
