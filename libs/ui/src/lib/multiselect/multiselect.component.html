@@ -15,23 +15,26 @@
 >
   <div class="cvi-multiselect__container" (mousedown)="handleMousedown($event)">
     <div class="cvi-multiselect__value-container">
-      <div
+      <ng-container>
+        <div
+          *ngFor="let item of selectedItems"
+          class="cvi-multiselect__selected-item"
+        >
+          {{ item }}
+          <span
+            class="cvi-multiselect__selected-item-remove"
+            (click)="removeSelectedItem(item)"
+            >&times;</span
+          >
+        </div>
+      </ng-container>
+
+      <!--       <div
         *ngIf="!hasValue && !searchTerm"
         class="cvi-multiselect__placeholder"
       >
         {{ placeholder }}
-      </div>
-      <div *ngIf="hasValue" class="cvi-multiselect__value" aria-live="polite">
-        <ng-template #defaultLabelTemplate>
-          {{ multiselectedItem?.label }}
-        </ng-template>
-
-        <ng-template
-          [ngTemplateOutlet]="labelTemplate || defaultLabelTemplate"
-          [ngTemplateOutletContext]="{ item: multiselectedItem?.value }"
-        >
-        </ng-template>
-      </div>
+      </div> -->
     </div>
     <div class="cvi-multiselect__input-container">
       <input
@@ -101,19 +104,26 @@
         <li
           role="option"
           class="cvi-dropdown-popup__dropdown-item"
-          [ngClass]="{ 'is-current': item.value === multiselectedItem?.value }"
-          [attr.aria-multiselected]="item.value === multiselectedItem?.value"
+          [ngClass]="{ 'multiselect-is-current': isSelected(item.value) }"
+          [attr.aria-multiselected]="isSelected(item.value)"
           dataAttribute="test-option"
           tabindex="0"
           [attr.id]="htmlId + '-listbox-item-' + idx"
           *ngFor="let item of itemsList.filteredItems; let idx = index"
-          (click)="multiselectItem(item)"
+          (click)="multiselectItem(item.value)"
         >
+          <input
+            [ngClass]="{
+              'cvi-dropdown-popup__item-checkbox': true,
+              checked: isSelected(item.value)
+            }"
+            type="checkbox"
+            [checked]="isSelected(item.value)"
+          />
           <ng-template #defaultOptionTemplate>
             <span class="cvi-dropdown-popup__item-label">
-              <input type="checkbox" [checked]="{{selectedItem()}}" />
-              {{ bindLabel ? item.value[bindLabel] : item.value }}</span
-            >
+              {{ bindLabel ? item.value[bindLabel] : item.value }}
+            </span>
           </ng-template>
           <ng-template
             [ngTemplateOutlet]="optionTemplate || defaultOptionTemplate"

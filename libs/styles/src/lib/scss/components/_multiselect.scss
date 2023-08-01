@@ -138,4 +138,12 @@
       display: inline-block;
     }
   }
+
+  #{$base}__selected-item {
+    display: flex;
+  }
+
+  #{$base}__selected-item-remove {
+    cursor: pointer;
+  }
 }

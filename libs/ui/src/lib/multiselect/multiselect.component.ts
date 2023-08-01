@@ -31,6 +31,12 @@ import { MultiSelectItemsList } from './multiselect-items-list';
 
 export type AddMultiselectItemFn = (term: string) => unknown | Promise<unknown>;
 
+export interface MultiSelectOption {
+  id: number;
+  name: string;
+  // ... other properties ...
+}
+
 @Component({
   selector: 'cvi-ng-multiselect',
   templateUrl: './multiselect.component.html',
@@ -83,6 +89,7 @@ export class MultiSelectComponent
   itemsList: MultiSelectItemsList;
   searchInputFocused = false;
   focusedOptionIndex: number | null = null;
+  selectedItems: SelectOption[] = [];
 
   private readonly destroy$ = new Subject<void>();
   private readonly select: HTMLElement;
@@ -102,6 +109,23 @@ export class MultiSelectComponent
     this.control && (this.control.valueAccessor = this);
     this.select = elementRef.nativeElement;
     this.itemsList = new MultiSelectItemsList(this);
+  }
+
+  isSelected(item: SelectOption): boolean {
+    return this.selectedItems.includes(item);
+  }
+
+  toggleCheckbox(item: SelectOption): void {
+    const index = this.selectedItems.indexOf(item);
+    if (index > -1) {
+      this.selectedItems.splice(index, 1);
+    } else {
+      this.selectedItems.push(item);
+    }
+  }
+
+  multiselectItem(item: SelectOption): void {
+    this.toggleCheckbox(item);
   }
 
   get invalid(): boolean {
@@ -167,6 +191,8 @@ export class MultiSelectComponent
         this.itemsList.sortItems(changes['sortItemsFn'].currentValue);
       }
     }
+
+    console.log(this.selectedItems);
   }
 
   ngOnDestroy() {
@@ -176,7 +202,17 @@ export class MultiSelectComponent
   }
 
   selectItem(item: SelectOption): void {
+    this.toggleCheckbox(item);
     this.itemsList.select(item);
+
+    if (this.isSelected(item)) {
+      this.selectedItems.push(item);
+    } else {
+      const index = this.selectedItems.indexOf(item);
+      if (index > -1) {
+        this.selectedItems.splice(index, 1);
+      }
+    }
 
     const selectedValue = this.bindValue
       ? this.itemsList.selectedItem?.value[this.bindValue]
@@ -365,5 +401,18 @@ export class MultiSelectComponent
   private get validTerm() {
     const term = this.searchTerm && this.searchTerm.trim();
     return term && term.length >= this.minTermLength;
+  }
+
+  removeSelectedItem(item: any): void {
+    const index = this.selectedItems.indexOf(item);
+    if (index > -1) {
+      this.selectedItems.splice(index, 1);
+      this.onTouched(); // Mark the control as touched
+      this.cd.markForCheck(); // Trigger change detection
+    }
+  }
+
+  getSelectedItemsDisplay() {
+    return this.selectedItems.map((item, i) => item).join(', ');
   }
 }
