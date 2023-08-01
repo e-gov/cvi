@@ -2,7 +2,7 @@ import { Story, Meta } from '@storybook/angular';
 import notes from './tab-group.html.md';
 
 export default {
-  title: 'HTML/Tab group',
+  title: 'HTML/Tabs/Tab group',
   parameters: {
     notes,
     options: { selectedPanel: 'storybook/html/panel' },
