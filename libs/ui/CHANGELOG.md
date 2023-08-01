@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [1.23.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.22.0...ui-1.23.0) (2023-08-01)
+
+
+### Features
+
+* **ng:** add new cvi tabs component ([#129](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/129)) ([0db25d7](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/0db25d791144c5bb827b776825ca9f543857c906))
+
+
+
 # [1.22.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.21.0...ui-1.22.0) (2023-08-01)
 
 
