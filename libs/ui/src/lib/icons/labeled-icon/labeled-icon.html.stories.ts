@@ -5,7 +5,7 @@ export default {
   title: 'HTML/Labeled icon',
   parameters: {
     notes,
-    options: { selectedPanel: 'html/panel' },
+    options: { selectedPanel: 'storybook/html/panel' },
   },
   argTypes: {
     content: {

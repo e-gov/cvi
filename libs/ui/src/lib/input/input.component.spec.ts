@@ -64,4 +64,18 @@ describe('InputComponent', () => {
 
     expect(component.disabled).toBe(true);
   });
+
+  it('should handle "positiveNumbers" validationType properly', () => {
+    component.validationType = 'positiveNumbers';
+    const result = component.handleValue('abc123');
+
+    expect(result).toBe('123');
+  });
+
+  it('should handle null validationType properly', () => {
+    component.validationType = null;
+    const result = component.handleValue('abc123');
+
+    expect(result).toBe('abc123');
+  });
 });

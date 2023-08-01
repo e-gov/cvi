@@ -5,7 +5,7 @@ export default {
   title: 'HTML/Content panel',
   parameters: {
     notes,
-    options: { selectedPanel: 'html/panel' },
+    options: { selectedPanel: 'storybook/html/panel' },
     layout: 'padded',
   },
   argTypes: {

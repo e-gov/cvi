@@ -2,6 +2,51 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [1.13.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/styles-1.12.3...styles-1.13.0) (2023-08-01)
+
+
+### Features
+
+* **ng:** add new cvi tabs component ([#129](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/129)) ([0db25d7](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/0db25d791144c5bb827b776825ca9f543857c906))
+
+
+
+## [1.12.3](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/styles-1.12.2...styles-1.12.3) (2023-08-01)
+
+
+### Bug Fixes
+
+* **styles): fix(styles:** fixed cvi-table body cell not wrapping strings that are too long and forcing the table to become too wide ([#153](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/153)) ([076b486](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/076b4861003e9910e1b916103db4d434afe2099b))
+
+
+
+## [1.12.2](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/styles-1.12.1...styles-1.12.2) (2023-07-31)
+
+
+### Bug Fixes
+
+* **styles:** fixed broken appearance of cvi-datepicker when on non-white background ([#144](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/144)) ([41a473f](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/41a473ff0c855330f8fdb3f9680ef0b513117243))
+
+
+
+## [1.12.1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/styles-1.12.0...styles-1.12.1) (2023-07-28)
+
+
+### Bug Fixes
+
+* **styles:** made styles of inline form elements consistent ([#147](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/147)) ([c7c724a](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/c7c724ab871e778d607e2fb3c81ee5c42bb863b1))
+
+
+
+# [1.12.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/styles-1.11.0...styles-1.12.0) (2023-07-26)
+
+
+### Features
+
+* **storybook:** add search in the icons list ([#135](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/135)) ([29e54cf](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/29e54cf15a6066bb54f0173a1b41527bdb1fb0a1))
+
+
+
 # [1.11.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/styles-1.10.1...styles-1.11.0) (2023-07-13)
 
 

@@ -1,10 +1,10 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-import { CviTabsComponent } from './tabs.component';
+import { TabsComponent } from './tabs.component';
 
 describe('CviTabComponent', () => {
-  let component: CviTabsComponent;
-  let fixture: ComponentFixture<CviTabsComponent>;
+  let component: TabsComponent;
+  let fixture: ComponentFixture<TabsComponent>;
 
   const debugTest = fixture.debugElement.queryAll(
     By.css('.cvi-tabs__list-mobile')
@@ -13,10 +13,10 @@ describe('CviTabComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [CviTabsComponent],
+      declarations: [TabsComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(CviTabsComponent);
+    fixture = TestBed.createComponent(TabsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -9,10 +9,10 @@ import {
   AfterViewInit,
   ChangeDetectionStrategy,
   Component,
-  ContentChildren,
+  ContentChildren, EventEmitter,
   HostBinding,
   Input,
-  OnDestroy,
+  OnDestroy, Output,
   QueryList,
 } from '@angular/core';
 import { AccordionItemDirective } from './directives/accordion-item.directive';
@@ -43,6 +43,7 @@ import { v4 as uuidv4 } from 'uuid';
 export class AccordionComponent implements AfterViewInit, OnDestroy {
   @Input() expandedItems: number[] = [];
   @Input() singleOpen = true;
+  @Output() toggled = new EventEmitter<number>();
 
   accordionId = uuidv4();
 
@@ -87,6 +88,7 @@ export class AccordionComponent implements AfterViewInit, OnDestroy {
         itemToScrollTo.scrollIntoView(true);
       }
     }
+    this.toggled.emit(index);
   }
 
   ngOnDestroy(): void {

@@ -23,7 +23,7 @@ import { v4 as uuidv4 } from 'uuid';
   templateUrl: './tabs.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class CviTabsComponent implements AfterViewInit, OnDestroy {
+export class TabsComponent implements AfterViewInit, OnDestroy {
   @Input() bindValue?: string;
   @Input() bindLabel?: string;
   @ContentChildren(TabComponent) allTabs!: QueryList<TabComponent>;

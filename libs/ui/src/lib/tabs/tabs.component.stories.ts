@@ -1,11 +1,11 @@
 import notes from './tabs.component.md';
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
-import { CviTabsComponent } from './tabs.component';
+import { TabsComponent } from './tabs.component';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { UiModule } from '../ui.module';
 
 export default {
-  title: 'Angular/Tab group/CVI tabs',
+  title: 'Angular/Tab group/Tabs',
   parameters: { notes },
   decorators: [
     moduleMetadata({
@@ -25,9 +25,9 @@ export default {
   args: {
     content: 'First tab content with some more text that might overflow',
   },
-} as Meta<CviTabsComponent>;
+} as Meta<TabsComponent>;
 
-const Template: Story<CviTabsComponent> = (args: CviTabsComponent) => {
+const Template: Story<TabsComponent> = (args: TabsComponent) => {
   const form = new FormGroup({
     text: new FormControl('Some text'),
   });

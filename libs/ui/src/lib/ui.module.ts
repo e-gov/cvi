@@ -68,7 +68,7 @@ import { TooltipComponent } from './tooltip/tooltip.component';
 import { TooltipDirective } from './tooltip/tooltip.directive';
 import { TabComponent } from './tabs/tab.component';
 import { TabGroupComponent } from './tabs/tab-group.component';
-import { CviTabsComponent } from './tabs/tabs.component';
+import { TabsComponent } from './tabs/tabs.component';
 import { DefaultToastConfig, TOAST_CONFIG } from './toast/toast-config';
 import { ToastComponent } from './toast/toast.component';
 import { ToastContainerComponent } from './toast/toast-container.component';
@@ -134,7 +134,7 @@ const components = [
   TooltipDirective,
   TabComponent,
   TabGroupComponent,
-  CviTabsComponent,
+  TabsComponent,
   ToastComponent,
   ToastContainerComponent,
   CharacterCounterComponent,

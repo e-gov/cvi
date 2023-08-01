@@ -26,11 +26,12 @@ export default {
   title: 'Angular/Table',
   parameters: { notes },
   args: {
-    headerLabels: ['Sündmusteenus', 'Staatus', 'Viimati muudetud'],
+    headerLabels: ['Sündmusteenus', 'Staatus', 'Email', 'Viimati muudetud'],
     data: [
       {
         event: 'Abiellumine',
         statusSeverity: 'warning',
+        email: 'doagwelcometotheteamoftwenty@cochol.eu',
         lastChanged: '2021-07-15',
         icons: [
           { iconName: 'edit_simple', actionLabel: 'Edit' },
@@ -38,14 +39,16 @@ export default {
         ],
       },
       {
-        event: 'Abiellumine',
+        event: 'Meteoroloogiateenistus',
         statusSeverity: 'success',
+        email: 'utpa@pi.ca',
         lastChanged: '2018-07-17',
         icons: [{ iconName: 'add', actionLabel: 'Add' }],
       },
       {
-        event: 'Abiellumine',
+        event: 'Geoloogilise luure teenistus',
         statusSeverity: 'info',
+        email: 'boole@dok.ky',
         lastChanged: '2016-07-05',
         icons: [{ iconName: 'edit_simple', actionLabel: 'Edit' }],
       },
@@ -78,6 +81,7 @@ const Template: Story<TableComponent> = (args: TableComponent) => ({
       <td cvi-ng-body-cell>
         <cvi-ng-status-badge [severity]="row.statusSeverity" [label]="getStatusBadgeLabelBySeverity(row.statusSeverity)"></cvi-ng-status-badge>
       </td>
+      <td cvi-ng-body-cell>{{ row.email }}</td>
       <td cvi-ng-body-cell>{{ row.lastChanged }}</td>
       <td cvi-ng-body-cell>
         <cvi-ng-track [gap]="rowIconGap">
@@ -101,6 +105,13 @@ export const Mobile = Template.bind({});
 Mobile.parameters = {
   viewport: {
     defaultViewport: 'iphone12mini',
+  },
+};
+
+export const Tablet = Template.bind({});
+Tablet.parameters = {
+  viewport: {
+    defaultViewport: 'ipad',
   },
 };
 
