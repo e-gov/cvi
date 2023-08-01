@@ -40,3 +40,10 @@ const Template: Story = (args) => ({
 });
 
 export const Default = Template.bind({});
+
+export const Mobile = Template.bind({});
+Mobile.parameters = {
+  viewport: {
+    defaultViewport: 'iphone12mini',
+  },
+};
