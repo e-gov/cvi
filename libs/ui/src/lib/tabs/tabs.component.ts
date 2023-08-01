@@ -13,6 +13,7 @@ import {
   ViewChildren,
   Input,
   HostListener,
+  ViewChild,
 } from '@angular/core';
 import { TabComponent } from './tab.component';
 import { merge, Subscription } from 'rxjs';
@@ -43,6 +44,9 @@ export class TabsComponent implements AfterViewInit, OnDestroy {
   /** @internal */
   private tabChangesSubscription = Subscription.EMPTY;
   isOpen = false;
+
+  @ViewChild('dropdownButton', { static: true })
+  dropdownButton?: ElementRef<HTMLInputElement>;
 
   @ViewChildren('menuButton') tabButtons!: QueryList<
     ElementRef<HTMLButtonElement>
@@ -132,6 +136,12 @@ export class TabsComponent implements AfterViewInit, OnDestroy {
       event.preventDefault();
       this.focusNextButton();
       this.tabButtons.get(this.focusIndex)?.nativeElement.focus();
+    } else if (event.key === 'Escape') {
+      if (this.isOpen) {
+        event.preventDefault();
+        this.close();
+        this.dropdownButton?.nativeElement.focus();
+      }
     }
   }
 
