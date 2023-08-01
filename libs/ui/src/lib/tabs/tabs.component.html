@@ -10,6 +10,8 @@
     [attr.aria-selected]="isTabSelected(i)"
     role="tab"
     [attr.tabindex]="isTabSelected(i) ? null : '-1'"
+    (keyup.arrowleft)="makeActivePrev(i)"
+    (keyup.arrowright)="makeActiveNext(i)"
     [attr.aria-controls]="baseId + '-tabpanel-' + i"
     class="cvi-tabs__tab-btn"
   >

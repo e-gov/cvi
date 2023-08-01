@@ -48,7 +48,11 @@ export class TabsComponent implements AfterViewInit, OnDestroy {
   @ViewChild('dropdownButton', { static: true })
   dropdownButton?: ElementRef<HTMLInputElement>;
 
-  @ViewChildren('menuButton') tabButtons!: QueryList<
+  @ViewChildren('menuButton') dropdownItemButtons!: QueryList<
+    ElementRef<HTMLButtonElement>
+  >;
+
+  @ViewChildren('tabButton') tabButtons!: QueryList<
     ElementRef<HTMLButtonElement>
   >;
 
@@ -73,7 +77,28 @@ export class TabsComponent implements AfterViewInit, OnDestroy {
       this.activeTabChange.emit(this.activeIndex);
       this.cdRef.detectChanges();
       this.close();
+      this.updateTabButtonFocus();
     }
+  }
+
+  makeActivePrev(currentIndex: number) {
+    let newIndex = this.allTabs.length - 1;
+    if (this.activeIndex > 0) {
+      newIndex = currentIndex - 1;
+    }
+    this.makeActive(newIndex);
+  }
+
+  makeActiveNext(currentIndex: number) {
+    let newIndex = 0;
+    if (this.activeIndex < this.allTabs.length - 1) {
+      newIndex = currentIndex + 1;
+    }
+    this.makeActive(newIndex);
+  }
+
+  updateTabButtonFocus(): void {
+    this.tabButtons.get(this.activeIndex)?.nativeElement.focus();
   }
 
   isTabSelected(tabIndex: number): boolean {
@@ -129,13 +154,13 @@ export class TabsComponent implements AfterViewInit, OnDestroy {
   @HostListener('keydown', ['$event'])
   handleKeyboardEvent(event: KeyboardEvent) {
     if (event.key === 'ArrowDown') {
-      this.tabButtons.get(this.focusIndex)?.nativeElement.focus();
+      this.dropdownItemButtons.get(this.focusIndex)?.nativeElement.focus();
       event.preventDefault();
       this.focusPreviousButton();
     } else if (event.key === 'ArrowUp') {
       event.preventDefault();
       this.focusNextButton();
-      this.tabButtons.get(this.focusIndex)?.nativeElement.focus();
+      this.dropdownItemButtons.get(this.focusIndex)?.nativeElement.focus();
     } else if (event.key === 'Escape') {
       if (this.isOpen) {
         event.preventDefault();
@@ -146,7 +171,7 @@ export class TabsComponent implements AfterViewInit, OnDestroy {
   }
 
   focusNextButton() {
-    if (this.focusIndex < this.tabButtons.length - 1) {
+    if (this.focusIndex < this.dropdownItemButtons.length - 1) {
       this.focusIndex++;
     } else {
       this.focusIndex = 0;
@@ -157,7 +182,7 @@ export class TabsComponent implements AfterViewInit, OnDestroy {
     if (this.focusIndex > 0) {
       this.focusIndex--;
     } else {
-      this.focusIndex = this.tabButtons.length - 1;
+      this.focusIndex = this.dropdownItemButtons.length - 1;
     }
   }
 }
