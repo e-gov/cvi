@@ -12,11 +12,8 @@
       font-size: get-font-size(100);
       line-height: get-line-height(500);
 
-      & #{$base}__white-icon {
+      & #{$base}__white-icon path {
         fill: get-color(white);
-        & path {
-          fill: get-color(white);
-        }
       }
 
       &:disabled {
