@@ -126,6 +126,7 @@ const TemplateWithToolbar: Story<TableComponent> = (args: TableComponent) => {
   return {
     props: {
       ...args,
+      getStatusBadgeLabelBySeverity,
       form: form,
     },
     /* template */
@@ -155,7 +156,10 @@ const TemplateWithToolbar: Story<TableComponent> = (args: TableComponent) => {
 
       <ng-template #rows let-row>
         <td cvi-ng-body-cell>{{ row.event }}</td>
-        <td cvi-ng-body-cell>{{ row.status }}</td>
+        <td cvi-ng-body-cell>
+          <cvi-ng-status-badge [severity]="row.statusSeverity" [label]="getStatusBadgeLabelBySeverity(row.statusSeverity)"></cvi-ng-status-badge>
+        </td>
+        <td cvi-ng-body-cell>{{ row.email }}</td>
         <td cvi-ng-body-cell>{{ row.lastChanged }}</td>
         <td cvi-ng-body-cell>
           <cvi-ng-track [gap]="rowIconGap">
