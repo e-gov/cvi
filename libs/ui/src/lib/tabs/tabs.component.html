@@ -49,6 +49,7 @@
     <button
       *ngFor="let tab of allTabs; let i = index"
       class="cvi-tabs__dropdown-item"
+      [ngClass]="{ active: isTabSelected(i) }"
       dataAttribute="tab-button-{{ i }}"
       (click)="makeActive(i)"
       id="{{ baseId }}-dropdown-button-{{ i }}"
