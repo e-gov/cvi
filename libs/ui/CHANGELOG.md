@@ -2,6 +2,20 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [1.21.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.20.2...ui-1.21.0) (2023-08-01)
+
+
+### Bug Fixes
+
+* **styles): fix(styles:** fixed cvi-table body cell not wrapping strings that are too long and forcing the table to become too wide ([#153](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/153)) ([076b486](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/076b4861003e9910e1b916103db4d434afe2099b))
+
+
+### Features
+
+* **ng:** add numbers only input feature ([#146](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/146)) ([745ed86](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/745ed868dbb07a4c5f515b26670d3f0c40729ef1))
+
+
+
 ## [1.20.2](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.20.1...ui-1.20.2) (2023-07-31)
 
 
