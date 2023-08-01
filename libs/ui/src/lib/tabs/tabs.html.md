@@ -1,11 +1,11 @@
 ## General description
 
-| Feature                               | Description        |
-| ------------------------------------- | ------------------ |
-| Sass component                        | `cvi-tabs`         |
-| Corresponding Javascript component    | `CviTabsComponent` |
-| Permitted parent/ancestors            | any                |
-| Permitted Sass components as children | -                  |
+| Feature                               | Description     |
+| ------------------------------------- | --------------- |
+| Sass component                        | `cvi-tabs`      |
+| Corresponding Javascript component    | `TabsComponent` |
+| Permitted parent/ancestors            | any             |
+| Permitted Sass components as children | -               |
 
 ## Where to use
 

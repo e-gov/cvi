@@ -2,7 +2,7 @@
   <button
     *ngFor="let tab of allTabs; let i = index"
     dataAttribute="tab-button-{{ i }}"
-    [ngClass]="{ active: isTabSelected(i), underlined: isTabSelected(i) }"
+    [ngClass]="{ active: isTabSelected(i) }"
     (click)="makeActive(i)"
     type="button"
     #tabButton
@@ -21,7 +21,7 @@
     role="button"
     class="cvi-tabs__mobile-button"
     type="button"
-    id="{{ baseId }}-tab-button}"
+    id="{{ baseId }}-tab-button"
     aria-expanded="false"
     (click)="handleArrowButtonClick($event)"
   >
@@ -40,34 +40,38 @@
   class="cvi-tabs__dropdown-popup"
   #popup
 >
-  <div class="cvi-tabs__dropdown">
-    <ul
-      role="listbox"
-      class="cvi-tabs__dropdown-container"
-      (closed)="close()"
-      role="menu"
-      (keydown)="handleKeyboardEvent($event)"
+  <div
+    class="cvi-tabs__dropdown-container"
+    (closed)="close()"
+    role="menu"
+    (keydown)="handleKeyboardEvent($event)"
+  >
+    <button
+      *ngFor="let tab of allTabs; let i = index"
+      class="cvi-tabs__dropdown-item"
+      dataAttribute="tab-button-{{ i }}"
+      (click)="makeActive(i)"
+      id="{{ baseId }}-dropdown-button-{{ i }}"
+      role="menuitem"
+      [attr.aria-controls]="baseId + '-tabpanel-' + i"
+      #menuButton
     >
-      <button
-        *ngFor="let tab of allTabs; let i = index"
-        class="cvi-tabs__dropdown-item"
-        dataAttribute="tab-button-{{ i }}"
-        (click)="makeActive(i)"
-        id="{{ baseId }}-tab-{{ i }}"
-        [attr.aria-selected]="isTabSelected(i)"
-        role="menuitem"
-        [attr.aria-controls]="baseId + '-menuitem-' + i"
-        #menuButton
-      >
-        {{ tab.title }}
-      </button>
-    </ul>
+      {{ tab.title }}
+    </button>
   </div>
 </div>
 <div
   dataAttribute="tab-content"
   class="cvi-tabs__tab-content"
-  [attr.aria-labelledby]="baseId + '-tab-' + activeIndex"
+  [attr.aria-labelledby]="
+    baseId +
+    '-tab-' +
+    activeIndex +
+    ' ' +
+    baseId +
+    '-dropdown-button-' +
+    activeIndex
+  "
   tabindex="0"
   role="tabpanel"
   [attr.id]="baseId + '-tabpanel-' + activeIndex"

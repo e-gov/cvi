@@ -67,18 +67,16 @@
       }
     }
 
-    #{$base}__dropdown {
-      #{$base}__dropdown-item {
-        width: 100%;
-        background-color: var(--cvi-color-white);
-        padding: var(--cvi-spacing-paldiski) var(--cvi-spacing-haapsalu);
-        cursor: pointer;
-        color: var(--cvi-color-black-coral-12);
-        font-size: get-font-size(100);
+    #{$base}__dropdown-item {
+      width: 100%;
+      background-color: var(--cvi-color-white);
+      padding: var(--cvi-spacing-paldiski) var(--cvi-spacing-haapsalu);
+      cursor: pointer;
+      color: var(--cvi-color-black-coral-12);
+      font-size: get-font-size(100);
 
-        &:not(:last-child) {
-          border-bottom: 1px solid var(--cvi-color-black-coral-2);
-        }
+      &:not(:last-child) {
+        border-bottom: 1px solid var(--cvi-color-black-coral-2);
       }
     }
 
