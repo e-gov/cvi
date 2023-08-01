@@ -9,10 +9,12 @@ import {
   AfterViewInit,
   ChangeDetectionStrategy,
   Component,
-  ContentChildren, EventEmitter,
+  ContentChildren,
+  EventEmitter,
   HostBinding,
   Input,
-  OnDestroy, Output,
+  OnDestroy,
+  Output,
   QueryList,
 } from '@angular/core';
 import { AccordionItemDirective } from './directives/accordion-item.directive';
