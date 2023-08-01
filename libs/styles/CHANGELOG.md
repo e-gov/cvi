@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.12.3](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/styles-1.12.2...styles-1.12.3) (2023-08-01)
+
+
+### Bug Fixes
+
+* **styles): fix(styles:** fixed cvi-table body cell not wrapping strings that are too long and forcing the table to become too wide ([#153](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/153)) ([076b486](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/076b4861003e9910e1b916103db4d434afe2099b))
+
+
+
 ## [1.12.2](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/styles-1.12.1...styles-1.12.2) (2023-07-31)
 
 
