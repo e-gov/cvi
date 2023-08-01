@@ -64,7 +64,7 @@
       ],
       "Notification",
       "Tabs",
-      ["Tabs", "Tab group"],
+      ["Readme", "Tabs", "Tab group"],
       "Html section",
       "Tooltip",
       "Toast",
