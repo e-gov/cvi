@@ -151,6 +151,17 @@ export class TabsComponent implements AfterViewInit, OnDestroy {
     this.close();
   }
 
+  @HostListener('document:keydown', ['$event'])
+  handleEscape(event: KeyboardEvent) {
+    if (event.key === 'Escape') {
+      if (this.isDropdownOpen) {
+        event.preventDefault();
+        this.close();
+        this.dropdownButton?.nativeElement.focus();
+      }
+    }
+  }
+
   @HostListener('keydown', ['$event'])
   handleKeyboardEvent(event: KeyboardEvent) {
     if (event.key === 'ArrowDown') {
@@ -161,12 +172,6 @@ export class TabsComponent implements AfterViewInit, OnDestroy {
       event.preventDefault();
       this.focusNextDropdownButton();
       this.dropdownItemButtons.get(this.focusIndex)?.nativeElement.focus();
-    } else if (event.key === 'Escape') {
-      if (this.isDropdownOpen) {
-        event.preventDefault();
-        this.close();
-        this.dropdownButton?.nativeElement.focus();
-      }
     }
   }
 
