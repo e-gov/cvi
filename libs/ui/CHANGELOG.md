@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [1.22.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.21.0...ui-1.22.0) (2023-08-01)
+
+
+### Features
+
+* **ng:** add output to accordion ([#154](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/154)) ([284349d](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/284349d3059c0d26ed86c6e7d463e8ae9438f202))
+
+
+
 # [1.21.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.20.2...ui-1.21.0) (2023-08-01)
 
 
