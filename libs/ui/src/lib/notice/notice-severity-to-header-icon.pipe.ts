@@ -1,12 +1,12 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { StatusBarSeverity } from './status-bar';
+import { NoticeSeverity } from './notice';
 import { CviIconName } from '@egov/cvi-icons';
 
 @Pipe({
   name: 'toHeaderIcon',
 })
-export class StatusBarSeverityToHeaderIconPipe implements PipeTransform {
-  transform(severity: StatusBarSeverity): CviIconName | undefined {
+export class NoticeSeverityToHeaderIconPipe implements PipeTransform {
+  transform(severity: NoticeSeverity): CviIconName | undefined {
     if (severity === 'success') {
       return 'check';
     }

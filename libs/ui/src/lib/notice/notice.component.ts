@@ -1,34 +1,30 @@
 import {
   AfterViewInit,
   ChangeDetectionStrategy,
-  ChangeDetectorRef,
   Component,
   HostBinding,
   Input,
 } from '@angular/core';
 import { CviIconName } from '../../../../../dist/libs/icons';
-import { StatusBarSeverity } from './status-bar';
-import { StatusBarSeverityToHeaderIconPipe } from './status-bar-severity-to-header-icon.pipe';
+import { NoticeSeverity } from './notice';
+import { NoticeSeverityToHeaderIconPipe } from './notice-severity-to-header-icon.pipe';
 
 @Component({
-  selector: 'cvi-ng-status-bar',
-  templateUrl: './status-bar.component.html',
+  selector: 'cvi-ng-notice',
+  templateUrl: './notice.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class StatusBarComponent implements AfterViewInit {
-  @Input() severity: StatusBarSeverity = 'info';
+export class NoticeComponent implements AfterViewInit {
+  @Input() severity: NoticeSeverity = 'info';
   @Input() iconName?: CviIconName;
-  constructor(
-    private readonly cd: ChangeDetectorRef,
-    private readonly iconPipe: StatusBarSeverityToHeaderIconPipe
-  ) {}
+  constructor(private readonly iconPipe: NoticeSeverityToHeaderIconPipe) {}
   ngAfterViewInit(): void {
     throw new Error('Method not implemented.');
   }
 
   @HostBinding('class')
   get hostClasses(): string {
-    return `cvi-status-bar`;
+    return `cvi-notice`;
   }
 
   getIconName(): CviIconName | undefined {

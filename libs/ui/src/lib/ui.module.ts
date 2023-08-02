@@ -93,8 +93,8 @@ import { DatepickerComponent } from './datepicker/datepicker.component';
 import { DatepickerCalendarComponent } from './datepicker/datepicker-calendar.component';
 import { DATEPICKER_LABEL_CONFIG } from './datepicker/datepicker-label-config.token';
 import { DefaultDatepickerLabelConfig } from './datepicker/default-datepicker-label.config';
-import { StatusBarComponent } from './status-bar/status-bar.component';
-import { StatusBarSeverityToHeaderIconPipe } from './status-bar/status-bar-severity-to-header-icon.pipe';
+import { NoticeComponent } from './notice/notice.component';
+import { NoticeSeverityToHeaderIconPipe } from './notice/notice-severity-to-header-icon.pipe';
 
 const components = [
   TrackComponent,
@@ -152,13 +152,13 @@ const components = [
   HeaderCellComponent,
   DatepickerComponent,
   DatepickerCalendarComponent,
-  StatusBarComponent,
+  NoticeComponent,
 ];
 
 const pipes = [
   SafeHtmlPipe,
   NotificationSeverityToHeaderIconPipe,
-  StatusBarSeverityToHeaderIconPipe,
+  NoticeSeverityToHeaderIconPipe,
 ];
 
 const directives = [DataAttributeDirective];

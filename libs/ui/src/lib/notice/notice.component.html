@@ -1,8 +1,8 @@
-<div class="cvi-status-bar__container cvi-status-bar--severity-{{ severity }}">
-  <div class="cvi-status-bar__icon-container">
+<div class="cvi-notice__container cvi-notice--severity-{{ severity }}">
+  <div class="cvi-notice__icon-container">
     <cvi-ng-icon [name]="getIconName()" [height]="24"></cvi-ng-icon>
   </div>
-  <div class="cvi-status-bar__content">
+  <div class="cvi-notice__content">
     <ng-container *ngTemplateOutlet="contentPrefix"></ng-container>
     <ng-template #contentPrefix>
       <ng-content></ng-content>

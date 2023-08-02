@@ -69,4 +69,4 @@ export * from './lib/datepicker/datepicker-calendar.component';
 export * from './lib/datepicker/datepicker-label.config';
 export * from './lib/datepicker/datepicker-label-config.token';
 export * from './lib/datepicker/default-datepicker-label.config';
-export * from './lib/status-bar/status-bar.component';
+export * from './lib/notice/notice.component';
