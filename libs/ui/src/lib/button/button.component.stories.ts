@@ -94,7 +94,7 @@ const TemplateSmallButtonWithIcon: Story<ButtonComponent> = (
   /* template */
   template: `
     <cvi-ng-button [size]="size">
-      <cvi-ng-labeled-icon name="exit_to_app" svgClass="cvi-button__white-icon" appearance="secondary" iconPosition="after" verticalAlignment="center" [iconHeight]="24">
+      <cvi-ng-labeled-icon name="exit_to_app" appearance="secondary" iconPosition="after" verticalAlignment="center" [iconHeight]="24">
         {{ content }}
       </cvi-ng-labeled-icon>
     </cvi-ng-button>
