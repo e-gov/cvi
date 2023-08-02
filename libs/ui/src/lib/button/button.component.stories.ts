@@ -83,10 +83,10 @@ const TemplateTextButtonWithIcon: Story<ButtonComponent> = (
   /* template */
   template: `
   <cvi-ng-button appearance="text">
-  <cvi-ng-labeled-icon name="add" iconPosition="before" verticalAlignment="center" [iconHeight]="16" [gap]="2">
-    {{ content }}
-  </cvi-ng-labeled-icon>
-</cvi-ng-button>
+    <cvi-ng-labeled-icon name="add" iconPosition="before" verticalAlignment="center" [iconHeight]="16" [gap]="2">
+      {{ content }}
+    </cvi-ng-labeled-icon>
+  </cvi-ng-button>
   `,
 });
 
