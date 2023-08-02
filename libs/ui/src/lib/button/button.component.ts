@@ -26,8 +26,14 @@ export class ButtonComponent {
   @Input() iconPosition: LabeledIconPosition = 'after';
 
   /** Icon height in px */
-  @Input()
-  iconHeight?: number = 16;
+  private _iconHeight = 16;
+
+  @Input() get iconHeight() {
+    return this._iconHeight;
+  }
+  set iconHeight(iconHeight) {
+    this._iconHeight = this.size === 'm' ? 16 : 12;
+  }
 
   /** Icon name */
   @Input() iconName!: CviIconName;

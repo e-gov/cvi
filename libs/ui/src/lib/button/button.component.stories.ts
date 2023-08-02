@@ -65,6 +65,13 @@ WithIcon.args = {
   iconPosition: 'after',
 };
 
+export const WithIconSmall = Template.bind({});
+WithIconSmall.args = {
+  size: 's',
+  iconName: 'add',
+  iconPosition: 'after',
+};
+
 export const WithIconBefore = Template.bind({});
 WithIconBefore.args = {
   iconName: 'add',
