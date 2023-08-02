@@ -12,6 +12,7 @@ export default {
     showIcon: true,
     showCloseButton: true,
     title: 'Notification title',
+    contentPrefix: 'Teade',
     content:
       'Header and close buttons are not displayed if notification size is compact. Header and close buttons are not displayed if notification size is compact. Header and close buttons are not displayed if notification size is compact.',
   },
@@ -29,6 +30,7 @@ const Template: Story<NotificationComponent> = (
                          [showCloseButton]="showCloseButton"
                          [title]="title"
                          [iconName]="iconName"
+                         [contentPrefix]="contentPrefix"
     >
       {{content}}
     </cvi-ng-notification>

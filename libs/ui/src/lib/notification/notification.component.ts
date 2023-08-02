@@ -33,6 +33,8 @@ export class NotificationComponent {
   /** Notification title */
   @Input() title!: string;
 
+  @Input() contentPrefix?: string;
+
   /** Emitter for the close button click */
   @Output() closed = new EventEmitter<void>();
 
