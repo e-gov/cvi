@@ -8,10 +8,10 @@ import { CviIconName } from '@egov/cvi-icons';
 export class StatusBarSeverityToHeaderIconPipe implements PipeTransform {
   transform(severity: StatusBarSeverity): CviIconName | undefined {
     if (severity === 'success') {
-      return 'check_circle_outline';
+      return 'check';
     }
     if (severity === 'error') {
-      return 'error_outline';
+      return 'priority_high';
     }
     return severity === 'info' ? 'calendar' : undefined;
   }
