@@ -24,7 +24,7 @@ export class ButtonComponent {
   @Input() disabled = false;
 
   @Input() iconPosition: LabeledIconPosition = 'after';
-  
+
   /** Icon height in px */
   @Input()
   iconHeight?: number = 16;
