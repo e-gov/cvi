@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.13.1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/styles-1.13.0...styles-1.13.1) (2023-08-02)
+
+
+### Bug Fixes
+
+* **ui:** accessibility and documentation improvements for the new TabsComponent (cvi-tabs Sass component) ([#157](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/157)) ([21c0326](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/21c0326be864a8895b5c3bed0386e960d86103fe))
+
+
+
 # [1.13.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/styles-1.12.3...styles-1.13.0) (2023-08-01)
 
 
