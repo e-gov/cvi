@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.23.1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.23.0...ui-1.23.1) (2023-08-01)
+
+
+### Bug Fixes
+
+* **storybook:** prevent Safari from losing a bottom border of the last header cell in the TableComponent (Angular) story due to invalid number of header cells ([#155](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/155)) ([bb65f8d](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/bb65f8dde044aa33a9a9914e82454004e1e6ce75))
+
+
+
 # [1.23.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.22.0...ui-1.23.0) (2023-08-01)
 
 
