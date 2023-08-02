@@ -10,4 +10,4 @@
 
 ## Where to use
 
-Displays a tab container and tabs that have been put inside this tab container
+Displays tabs in a new design. On mobile the component switches to dropdown UI. Add tabs with `cvi-ng-tab` component.

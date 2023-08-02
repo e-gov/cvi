@@ -17,7 +17,7 @@ export default {
   title: 'HTML/Track',
   parameters: {
     notes,
-    options: { selectedPanel: 'html/panel' },
+    options: { selectedPanel: 'storybook/html/panel' },
     layout: 'padded',
   },
   argTypes: {
@@ -27,7 +27,7 @@ export default {
     },
     horizontalAlignment: {
       name: 'Horizontal alignment',
-      options: ['flex-start', 'center', 'flex-end', 'space-between'],
+      options: ['normal', 'flex-start', 'center', 'flex-end', 'space-between'],
       control: { type: 'inline-radio' },
       if: { arg: 'flexDirection', eq: 'horizontal' },
     },
@@ -73,7 +73,7 @@ export default {
   args: {
     gap: 1,
     layout: 'flex',
-    horizontalAlignment: 'flex-start',
+    horizontalAlignment: 'normal',
     verticalAlignment: 'normal',
     flexDirection: 'horizontal',
     flexIsMultiline: 'nowrap',

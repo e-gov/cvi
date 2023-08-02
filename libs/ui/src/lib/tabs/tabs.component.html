@@ -1,6 +1,6 @@
 <div class="cvi-tabs__list" role="tablist">
   <button
-    *ngFor="let tab of allTabs; let i = index"
+    *ngFor="let item of allItems; let i = index"
     dataAttribute="tab-button-{{ i }}"
     [ngClass]="{ active: isTabSelected(i) }"
     (click)="makeActive(i)"
@@ -10,32 +10,35 @@
     [attr.aria-selected]="isTabSelected(i)"
     role="tab"
     [attr.tabindex]="isTabSelected(i) ? null : '-1'"
+    (keyup.arrowleft)="makeActivePrev(i)"
+    (keyup.arrowright)="makeActiveNext(i)"
     [attr.aria-controls]="baseId + '-tabpanel-' + i"
     class="cvi-tabs__tab-btn"
   >
-    {{ tab.title }}
+    {{ item.title }}
   </button>
 </div>
-<div class="cvi-tabs__list-mobile" role="menu">
+<div class="cvi-tabs__list-mobile">
   <button
     role="button"
     class="cvi-tabs__mobile-button"
     type="button"
     id="{{ baseId }}-tab-button"
     aria-expanded="false"
+    #dropdownButton
     (click)="handleArrowButtonClick($event)"
   >
     {{ getActiveTabTitle() }}
     <cvi-ng-icon
       [class]="'cvi-tabs__icon'"
-      [name]="isOpen ? 'arrow_up_alt' : 'arrow_down_alt'"
+      [name]="isDropdownOpen ? 'arrow_up_alt' : 'arrow_down_alt'"
       [svgClass]="'cvi-tabs__arrow-icon'"
     >
     </cvi-ng-icon>
   </button>
 </div>
 <div
-  *ngIf="isOpen"
+  *ngIf="isDropdownOpen"
   dataAttribute="tabs-popup"
   class="cvi-tabs__dropdown-popup"
   #popup
@@ -47,16 +50,17 @@
     (keydown)="handleKeyboardEvent($event)"
   >
     <button
-      *ngFor="let tab of allTabs; let i = index"
+      *ngFor="let item of allItems; let i = index"
       class="cvi-tabs__dropdown-item"
+      [ngClass]="{ active: isTabSelected(i) }"
       dataAttribute="tab-button-{{ i }}"
       (click)="makeActive(i)"
       id="{{ baseId }}-dropdown-button-{{ i }}"
       role="menuitem"
       [attr.aria-controls]="baseId + '-tabpanel-' + i"
-      #menuButton
+      #dropdownItemButton
     >
-      {{ tab.title }}
+      {{ item.title }}
     </button>
   </div>
 </div>

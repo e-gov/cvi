@@ -13,6 +13,7 @@ import {
   ViewChildren,
   Input,
   HostListener,
+  ViewChild,
 } from '@angular/core';
 import { TabComponent } from './tab.component';
 import { merge, Subscription } from 'rxjs';
@@ -26,7 +27,7 @@ import { v4 as uuidv4 } from 'uuid';
 export class TabsComponent implements AfterViewInit, OnDestroy {
   @Input() bindValue?: string;
   @Input() bindLabel?: string;
-  @ContentChildren(TabComponent) allTabs!: QueryList<TabComponent>;
+  @ContentChildren(TabComponent) allItems!: QueryList<TabComponent>;
 
   @Output() activeTabChange = new EventEmitter<number>();
 
@@ -42,9 +43,16 @@ export class TabsComponent implements AfterViewInit, OnDestroy {
 
   /** @internal */
   private tabChangesSubscription = Subscription.EMPTY;
-  isOpen = false;
+  isDropdownOpen = false;
 
-  @ViewChildren('menuButton') tabButtons!: QueryList<
+  @ViewChild('dropdownButton', { static: true })
+  dropdownButton?: ElementRef<HTMLInputElement>;
+
+  @ViewChildren('dropdownItemButton') dropdownItemButtons!: QueryList<
+    ElementRef<HTMLButtonElement>
+  >;
+
+  @ViewChildren('tabButton') tabButtons!: QueryList<
     ElementRef<HTMLButtonElement>
   >;
 
@@ -52,7 +60,7 @@ export class TabsComponent implements AfterViewInit, OnDestroy {
 
   ngAfterViewInit() {
     this.tabChangesSubscription = merge(
-      ...this.allTabs.map((tab) => tab._stateChanges)
+      ...this.allItems.map((tab) => tab._stateChanges)
     ).subscribe(() => this.cdRef.markForCheck());
 
     this.activeTabChange.emit(this.activeIndex);
@@ -69,7 +77,28 @@ export class TabsComponent implements AfterViewInit, OnDestroy {
       this.activeTabChange.emit(this.activeIndex);
       this.cdRef.detectChanges();
       this.close();
+      this.updateTabButtonFocus();
     }
+  }
+
+  makeActivePrev(currentIndex: number) {
+    let newIndex = this.allItems.length - 1;
+    if (this.activeIndex > 0) {
+      newIndex = currentIndex - 1;
+    }
+    this.makeActive(newIndex);
+  }
+
+  makeActiveNext(currentIndex: number) {
+    let newIndex = 0;
+    if (this.activeIndex < this.allItems.length - 1) {
+      newIndex = currentIndex + 1;
+    }
+    this.makeActive(newIndex);
+  }
+
+  updateTabButtonFocus(): void {
+    this.tabButtons.get(this.activeIndex)?.nativeElement.focus();
   }
 
   isTabSelected(tabIndex: number): boolean {
@@ -77,7 +106,7 @@ export class TabsComponent implements AfterViewInit, OnDestroy {
   }
 
   getActiveTabTitle() {
-    const activeTab = this.allTabs.get(this.activeIndex);
+    const activeTab = this.allItems.get(this.activeIndex);
     if (!activeTab) {
       throw new Error(`no tab exists with index ${this.activeIndex}`);
     }
@@ -86,7 +115,7 @@ export class TabsComponent implements AfterViewInit, OnDestroy {
   }
 
   getActiveTabContent() {
-    const activeTab = this.allTabs.get(this.activeIndex);
+    const activeTab = this.allItems.get(this.activeIndex);
     if (!activeTab) {
       throw new Error(`no tab exists with index ${this.activeIndex}`);
     }
@@ -95,22 +124,22 @@ export class TabsComponent implements AfterViewInit, OnDestroy {
   }
 
   open() {
-    this.isOpen = true;
+    this.isDropdownOpen = true;
   }
 
   close() {
-    if (!this.isOpen) {
+    if (!this.isDropdownOpen) {
       return;
     }
 
-    this.isOpen = false;
+    this.isDropdownOpen = false;
   }
 
   handleArrowButtonClick(event: MouseEvent) {
     event.stopPropagation();
     event.preventDefault();
 
-    if (this.isOpen) {
+    if (this.isDropdownOpen) {
       this.close();
     } else {
       this.open();
@@ -122,32 +151,43 @@ export class TabsComponent implements AfterViewInit, OnDestroy {
     this.close();
   }
 
-  @HostListener('keydown', ['$event'])
-  handleKeyboardEvent(event: KeyboardEvent) {
-    if (event.key === 'ArrowDown') {
-      this.tabButtons.get(this.focusIndex)?.nativeElement.focus();
-      event.preventDefault();
-      this.focusPreviousButton();
-    } else if (event.key === 'ArrowUp') {
-      event.preventDefault();
-      this.focusNextButton();
-      this.tabButtons.get(this.focusIndex)?.nativeElement.focus();
+  @HostListener('document:keydown', ['$event'])
+  handleEscape(event: KeyboardEvent) {
+    if (event.key === 'Escape') {
+      if (this.isDropdownOpen) {
+        event.preventDefault();
+        this.close();
+        this.dropdownButton?.nativeElement.focus();
+      }
     }
   }
 
-  focusNextButton() {
-    if (this.focusIndex < this.tabButtons.length - 1) {
+  @HostListener('keydown', ['$event'])
+  handleKeyboardEvent(event: KeyboardEvent) {
+    if (event.key === 'ArrowDown') {
+      this.dropdownItemButtons.get(this.focusIndex)?.nativeElement.focus();
+      event.preventDefault();
+      this.focusPreviousDropdownButton();
+    } else if (event.key === 'ArrowUp') {
+      event.preventDefault();
+      this.focusNextDropdownButton();
+      this.dropdownItemButtons.get(this.focusIndex)?.nativeElement.focus();
+    }
+  }
+
+  focusNextDropdownButton() {
+    if (this.focusIndex < this.dropdownItemButtons.length - 1) {
       this.focusIndex++;
     } else {
       this.focusIndex = 0;
     }
   }
 
-  focusPreviousButton() {
+  focusPreviousDropdownButton() {
     if (this.focusIndex > 0) {
       this.focusIndex--;
     } else {
-      this.focusIndex = this.tabButtons.length - 1;
+      this.focusIndex = this.dropdownItemButtons.length - 1;
     }
   }
 }

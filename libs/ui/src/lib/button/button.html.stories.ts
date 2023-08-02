@@ -6,7 +6,7 @@ export default {
   title: 'HTML/Button',
   parameters: {
     notes,
-    options: { selectedPanel: 'html/panel' },
+    options: { selectedPanel: 'storybook/html/panel' },
   },
   argTypes: {
     appearance: {

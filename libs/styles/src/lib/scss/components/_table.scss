@@ -35,6 +35,9 @@
 
     #{$base}__body-cell {
       color: get-color(black-coral-20);
+      word-break: break-word;
+      overflow-wrap: anywhere;
+      hyphens: auto;
     }
 
     #{$base}__header-row {

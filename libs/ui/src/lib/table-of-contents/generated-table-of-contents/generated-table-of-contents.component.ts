@@ -62,7 +62,7 @@ export class GeneratedTableOfContentsComponent
             );
             this.tocService.toCItemToHighlight = undefined;
           }
-        }, 100);
+        }, 300);
       });
   }
 
@@ -107,13 +107,15 @@ export class GeneratedTableOfContentsComponent
       headingEls.forEach((headingEl: HTMLHeadingElement, i: number) => {
         if (headingEl.textContent) {
           const anchorId = `toc-${i}`;
+          const lastAnchorId = `toc-${headingEls.length - 1}`;
           this.renderer.setProperty(headingEl, 'id', anchorId);
           this.tocItems.push({
             label: headingEl.textContent,
             href: `#${anchorId}`,
             intersectionObserver: this.createItemIntersectionObserver(
               headingEl,
-              anchorId
+              anchorId,
+              lastAnchorId
             ),
           });
         }
@@ -124,10 +126,21 @@ export class GeneratedTableOfContentsComponent
 
   createItemIntersectionObserver(
     headingEl: HTMLHeadingElement,
-    anchorId: string
+    anchorId: string,
+    lastAnchorId: string
   ): IntersectionObserver {
     const intersectionObservable = new IntersectionObserver(
       (entries: IntersectionObserverEntry[]) => {
+        const isBottom = isBottomOfPage();
+        const isTop = isTopOfPage();
+        if (isBottom && !isTop) {
+          this.tocService.setCurrentToCSection(
+            lastAnchorId,
+            entries[entries.length - 1].time
+          );
+          this.cdRef.detectChanges();
+          return;
+        }
         entries.forEach((entry) => {
           if (
             entry.isIntersecting &&
@@ -139,7 +152,7 @@ export class GeneratedTableOfContentsComponent
           }
         });
       },
-      { rootMargin: '5px 0px -50% 0px', threshold: 1 }
+      { rootMargin: '5px 0px 5px 0px', threshold: 1 }
     );
     intersectionObservable.observe(headingEl);
     return intersectionObservable;
@@ -153,6 +166,14 @@ export class GeneratedTableOfContentsComponent
       this.tocItems = [];
     }
   }
+}
+
+function isBottomOfPage() {
+  return window.innerHeight + window.scrollY + 1 > document.body.offsetHeight;
+}
+
+function isTopOfPage() {
+  return window.scrollY === 0;
 }
 
 type TocItem = {
