@@ -1,6 +1,7 @@
 import { Story, Meta } from '@storybook/angular';
 import notes from './button.component.md';
 import { ButtonComponent } from './button.component';
+import { iconSizeDefault } from '../icons/icon/icon';
 
 export default {
   title: 'Angular/Button',
@@ -24,6 +25,10 @@ export default {
     content: 'Button label',
     appearance: 'primary',
     disabled: false,
+    iconHeight: iconSizeDefault,
+    iconName: undefined,
+    gap: 4,
+    iconPosition: 'after',
   },
 } as Meta<ButtonComponent>;
 
@@ -77,11 +82,11 @@ const TemplateTextButtonWithIcon: Story<ButtonComponent> = (
   props: args,
   /* template */
   template: `
-    <cvi-ng-button appearance="text">
-      <cvi-ng-labeled-icon name="add" iconPosition="before" verticalAlignment="center" [iconHeight]="16" [gap]="2">
-        {{ content }}
-      </cvi-ng-labeled-icon>
-    </cvi-ng-button>
+  <cvi-ng-button appearance="text">
+  <cvi-ng-labeled-icon name="add" iconPosition="before" verticalAlignment="center" [iconHeight]="16" [gap]="2">
+    {{ content }}
+  </cvi-ng-labeled-icon>
+</cvi-ng-button>
   `,
 });
 
@@ -93,11 +98,7 @@ const TemplateSmallButtonWithIcon: Story<ButtonComponent> = (
   props: args,
   /* template */
   template: `
-    <cvi-ng-button [size]="size">
-      <cvi-ng-labeled-icon name="exit_to_app" appearance="secondary" iconPosition="after" verticalAlignment="center" [iconHeight]="24">
-        {{ content }}
-      </cvi-ng-labeled-icon>
-    </cvi-ng-button>
+  <cvi-ng-button [iconPosition]="iconPosition" [iconName]="'exit_to_app'" [disabled]="disabled" [size]="size" [appearance]="appearance" [gap]="gap">{{ content }}</cvi-ng-button>
   `,
 });
 

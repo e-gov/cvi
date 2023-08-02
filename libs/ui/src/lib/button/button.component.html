@@ -1,3 +1,29 @@
-<button type="button" class="cvi-button__button" [attr.disabled]="disabled ? disabled : null" (click)="onClick()" #buttonRef>
-  <ng-content></ng-content>
+<button
+  type="button"
+  class="{{ iconName && 'cvi-button__icon-button' }} cvi-button__button"
+  [attr.disabled]="disabled ? disabled : null"
+  (click)="onClick()"
+  #buttonRef
+>
+  <cvi-ng-track [gap]="gap">
+    <ng-container *ngIf="iconPosition === 'before'">
+      <ng-container *ngTemplateOutlet="icon"></ng-container>
+    </ng-container>
+    <div #content class="cvi-labeled-icon__content">
+      <ng-content></ng-content>
+    </div>
+    <ng-container *ngIf="iconPosition === 'after'">
+      <ng-container *ngTemplateOutlet="icon"></ng-container>
+    </ng-container>
+  </cvi-ng-track>
 </button>
+
+<ng-template #icon>
+  <cvi-ng-icon
+    [name]="iconName"
+    [height]="iconHeight"
+    svgClass="cvi-button__icon-svg"
+    class="{{ iconClass }}"
+  >
+  </cvi-ng-icon>
+</ng-template>

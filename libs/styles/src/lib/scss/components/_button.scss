@@ -97,6 +97,10 @@
         padding-inline: get-spacing('valga');
         padding-block: get-spacing('loksa');
       }
+
+      #{$base}__icon-svg {
+        display: flex;
+      }
     }
   }
 }
