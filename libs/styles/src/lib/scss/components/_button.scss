@@ -18,10 +18,7 @@
 
       #{$base}--appearance-primary & {
         color: get-color(white);
-        & path {
-          fill: get-color(white);
-        }
-
+        fill: get-color(white);
         background-color: var(
           --cvi-button-color,
           #{get-color(sapphire-blue-10)}
@@ -53,12 +50,9 @@
 
       #{$base}--appearance-secondary & {
         color: get-color(black-coral-20);
+        fill: get-color(black-coral-20);
         background-color: get-color(white);
         border: var(--cvi-border-width) solid get-color(black-coral-10);
-
-        & path {
-          fill: get-color(black-coral-20);
-        }
 
         &:hover {
           border-color: get-color(black-coral-1);
