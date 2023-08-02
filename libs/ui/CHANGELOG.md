@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [1.24.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.23.2...ui-1.24.0) (2023-08-02)
+
+
+### Features
+
+* **storybook:** add small icon button ([#156](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/156)) ([6cb6bf3](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/6cb6bf3b0fe4612e1d2eee5a7e40d9eefbf41307))
+
+
+
 ## [1.23.2](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.23.1...ui-1.23.2) (2023-08-02)
 
 
