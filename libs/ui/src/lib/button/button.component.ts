@@ -9,7 +9,7 @@ import {
 } from '@angular/core';
 import { CviIconName } from '../../../../../dist/libs/icons';
 import { iconSizeDefault } from '../icons/icon/icon';
-import { LabeledIconPosition } from '../icons/labeled-icon/icon-position';
+import { LabeledIconPosition } from '../icons/icon-position';
 import { Gap } from '../track/track';
 
 @Component({
