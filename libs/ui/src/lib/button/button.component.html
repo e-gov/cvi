@@ -5,7 +5,7 @@
   (click)="onClick()"
   #buttonRef
 >
-  <cvi-ng-track [gap]="gap">
+  <cvi-ng-track [gap]="iconName ? gap : 0">
     <ng-container *ngIf="iconPosition === 'before'">
       <ng-container *ngTemplateOutlet="icon"></ng-container>
     </ng-container>

@@ -56,6 +56,10 @@
         background-color: get-color(white);
         border: var(--cvi-border-width) solid get-color(black-coral-10);
 
+        & path {
+          fill: get-color(black-coral-20);
+        }
+
         &:hover {
           border-color: get-color(black-coral-1);
         }
