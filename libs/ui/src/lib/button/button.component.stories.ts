@@ -1,7 +1,7 @@
 import { Story, Meta } from '@storybook/angular';
 import notes from './button.component.md';
 import { ButtonComponent } from './button.component';
-import { iconSizeDefault } from '../icons/icon/icon';
+import { storybookIconsNames } from '../icons/storybook-icons';
 
 export default {
   title: 'Angular/Button',
@@ -12,6 +12,11 @@ export default {
       name: 'Appearance',
       options: ['primary', 'secondary', 'text'],
       control: { type: 'inline-radio' },
+    },
+    iconName: {
+      name: 'Icon name',
+      options: storybookIconsNames,
+      control: { type: 'select' },
     },
     content: {
       name: 'Content',
@@ -25,10 +30,6 @@ export default {
     content: 'Button label',
     appearance: 'primary',
     disabled: false,
-    iconHeight: iconSizeDefault,
-    iconName: undefined,
-    gap: 4,
-    iconPosition: 'after',
   },
 } as Meta<ButtonComponent>;
 
@@ -36,7 +37,7 @@ const Template: Story<ButtonComponent> = (args: ButtonComponent) => ({
   props: args,
   /* template */
   template: `
-    <cvi-ng-button [disabled]="disabled" [size]="size" [appearance]="appearance">{{ content }}</cvi-ng-button>
+    <cvi-ng-button [disabled]="disabled" [size]="size" [appearance]="appearance" [iconName]="iconName" [iconPosition]="iconPosition"[iconHeight]="iconHeight">{{ content }}</cvi-ng-button>
   `,
 });
 

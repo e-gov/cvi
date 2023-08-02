@@ -7,10 +7,8 @@ import {
   Output,
   ViewChild,
 } from '@angular/core';
-import { CviIconName } from '../../../../../dist/libs/icons';
-import { iconSizeDefault } from '../icons/icon/icon';
+import { CviIconName } from '@egov/cvi-icons';
 import { LabeledIconPosition } from '../icons/icon-position';
-import { Gap } from '../track/track';
 
 @Component({
   selector: 'cvi-ng-button',
@@ -25,15 +23,16 @@ export class ButtonComponent {
   /** Button is disabled */
   @Input() disabled = false;
 
+  @Input() iconPosition: LabeledIconPosition = 'after';
+  
+  /** Icon height in px */
+  @Input()
+  iconHeight?: number = 16;
+
+  /** Icon name */
+  @Input() iconName!: CviIconName;
+
   @Output() clickEvent = new EventEmitter();
-
-  @Input() iconPosition: LabeledIconPosition = 'before';
-
-  @Input() iconName?: CviIconName;
-
-  @Input() iconHeight?: number = iconSizeDefault;
-
-  @Input() gap: Gap = 4;
 
   @HostBinding('class') get getHostClasses(): string {
     return `cvi-button cvi-button--appearance-${
