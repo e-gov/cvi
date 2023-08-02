@@ -1,0 +1,11 @@
+<div class="cvi-status-bar__container cvi-status-bar--severity-{{ severity }}">
+  <div class="cvi-status-bar__icon-container">
+    <cvi-ng-icon [name]="iconName" [height]="24"></cvi-ng-icon>
+  </div>
+  <div class="cvi-status-bar__content">
+    <ng-container *ngTemplateOutlet="content"></ng-container>
+    <ng-template #content>
+      <ng-content></ng-content>
+    </ng-template>
+  </div>
+</div>

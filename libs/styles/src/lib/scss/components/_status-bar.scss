@@ -1,0 +1,46 @@
+@mixin cvi-status-bar($base: &) {
+  #{$base}__container {
+    border-radius: var(--cvi-radius-s);
+    display: flex;
+    width: 100%;
+  }
+
+  #{$base}__content {
+    align-items: center;
+    padding: var(--cvi-spacing-valga);
+    width: 100%;
+  }
+
+  #{$base}__icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+  }
+
+  #{$base}--severity-success {
+    border: 1px solid var(--cvi-color-sea-green-10);
+
+    & #{$base}__icon-container {
+      background-color: var(--cvi-color-sea-green-2);
+      fill: var(--cvi-color-sea-green-10);
+    }
+  }
+
+  #{$base}--severity-info {
+    border: 1px solid var(--cvi-color-sapphire-blue-10);
+    & #{$base}__icon-container {
+      background-color: var(--cvi-color-sapphire-blue-2);
+      fill: var(--cvi-color-sapphire-blue-10);
+    }
+  }
+
+  #{$base}--severity-error {
+    border: 1px solid var(--cvi-color-jasper-10);
+
+    & #{$base}__icon-container {
+      background-color: var(--cvi-color-jasper-2);
+      fill: var(--cvi-color-jasper-10);
+    }
+  }
+}
