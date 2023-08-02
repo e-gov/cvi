@@ -18,12 +18,23 @@
 
       #{$base}--appearance-primary & {
         color: get-color(white);
-        background-color: var(--cvi-button-color, #{get-color(sapphire-blue-10)});
-        border: var(--cvi-border-width) solid var(--cvi-button-color, #{get-color(sapphire-blue-10)});
+        fill: get-color(white);
+        background-color: var(
+          --cvi-button-color,
+          #{get-color(sapphire-blue-10)}
+        );
+        border: var(--cvi-border-width) solid
+          var(--cvi-button-color, #{get-color(sapphire-blue-10)});
 
         &:hover {
-          background-color: var(--cvi-button-color--hover, #{get-color(sapphire-blue-13)});
-          border-color: var(--cvi-button-color--hover, #{get-color(sapphire-blue-13)});
+          background-color: var(
+            --cvi-button-color--hover,
+            #{get-color(sapphire-blue-13)}
+          );
+          border-color: var(
+            --cvi-button-color--hover,
+            #{get-color(sapphire-blue-13)}
+          );
         }
 
         &:focus {
@@ -39,6 +50,7 @@
 
       #{$base}--appearance-secondary & {
         color: get-color(black-coral-20);
+        fill: get-color(black-coral-20);
         background-color: get-color(white);
         border: var(--cvi-border-width) solid get-color(black-coral-10);
 
@@ -82,6 +94,10 @@
       #{$base}--size-s:not(#{$base}--appearance-text) & {
         padding-inline: get-spacing('valga');
         padding-block: get-spacing('loksa');
+      }
+
+      #{$base}__icon {
+        display: flex;
       }
     }
   }

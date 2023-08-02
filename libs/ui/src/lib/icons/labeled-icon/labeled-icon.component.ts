@@ -9,7 +9,7 @@ import {
 import { CviIconName } from '@egov/cvi-icons';
 import { Gap } from '../../track/track';
 import { iconSizeDefault } from '../icon/icon';
-import { LabeledIconPosition } from './icon-position';
+import { LabeledIconPosition } from '../icon-position';
 import { LabeledIconVerticalAlignment } from './vertical-alignment';
 
 @Component({
