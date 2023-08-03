@@ -1,6 +1,7 @@
 import { Story, Meta } from '@storybook/angular';
 import notes from './button.component.md';
 import { ButtonComponent } from './button.component';
+import { storybookIconsNames } from '../icons/storybook-icons';
 
 export default {
   title: 'Angular/Button',
@@ -11,6 +12,11 @@ export default {
       name: 'Appearance',
       options: ['primary', 'secondary', 'text'],
       control: { type: 'inline-radio' },
+    },
+    iconName: {
+      name: 'Icon name',
+      options: storybookIconsNames,
+      control: { type: 'select' },
     },
     content: {
       name: 'Content',
@@ -31,7 +37,7 @@ const Template: Story<ButtonComponent> = (args: ButtonComponent) => ({
   props: args,
   /* template */
   template: `
-    <cvi-ng-button [disabled]="disabled" [size]="size" [appearance]="appearance">{{ content }}</cvi-ng-button>
+    <cvi-ng-button [disabled]="disabled" [size]="size" [appearance]="appearance" [iconName]="iconName" [iconPosition]="iconPosition"[iconHeight]="iconHeight">{{ content }}</cvi-ng-button>
   `,
 });
 
@@ -53,6 +59,25 @@ Text.args = {
   appearance: 'text',
 };
 
+export const WithIcon = Template.bind({});
+WithIcon.args = {
+  iconName: 'add',
+  iconPosition: 'after',
+};
+
+export const WithIconSmall = Template.bind({});
+WithIconSmall.args = {
+  size: 's',
+  iconName: 'add',
+  iconPosition: 'after',
+};
+
+export const WithIconBefore = Template.bind({});
+WithIconBefore.args = {
+  iconName: 'add',
+  iconPosition: 'before',
+};
+
 const TemplateWithCustomColor: Story<ButtonComponent> = (
   args: ButtonComponent
 ) => ({
@@ -65,24 +90,10 @@ const TemplateWithCustomColor: Story<ButtonComponent> = (
   ],
   /* template */
   template: `
-    <cvi-ng-button [disabled]="disabled" [size]="size" [appearance]="appearance">{{ content }}</cvi-ng-button>
-  `,
-});
-
-export const WithCustomColor = TemplateWithCustomColor.bind({});
-
-const TemplateTextButtonWithIcon: Story<ButtonComponent> = (
-  args: ButtonComponent
-) => ({
-  props: args,
-  /* template */
-  template: `
-    <cvi-ng-button appearance="text">
-      <cvi-ng-labeled-icon name="add" iconPosition="before" verticalAlignment="center" [iconHeight]="16" [gap]="2">
-        {{ content }}
-      </cvi-ng-labeled-icon>
+    <cvi-ng-button [disabled]="disabled" [size]="size" [appearance]="appearance" [iconName]="iconName" [iconPosition]="iconPosition" [iconHeight]="iconHeight">
+      {{ content }}
     </cvi-ng-button>
   `,
 });
 
-export const TextButtonWithIcon = TemplateTextButtonWithIcon.bind({});
+export const WithCustomColor = TemplateWithCustomColor.bind({});
