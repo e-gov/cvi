@@ -70,3 +70,4 @@ export * from './lib/datepicker/datepicker-label.config';
 export * from './lib/datepicker/datepicker-label-config.token';
 export * from './lib/datepicker/default-datepicker-label.config';
 export * from './lib/notice/notice.component';
+export * from './lib/notice/notice-severity-to-header-icon.pipe';
