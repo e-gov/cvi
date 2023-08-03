@@ -1,26 +1,15 @@
-<div class="cvi-notification cvi-notification--size-{{size}} cvi-notification--severity-{{severity}}"
-     dataAttribute="notification">
+<div class="cvi-notification cvi-notification--size-{{size}} cvi-notification--severity-{{severity}}" dataAttribute="notification">
   <button *ngIf="showCloseButton && size !== 'compact'"
           aria-label="Close"
           class="cvi-notification__close-button"
           (click)="close()"
           type="button">
-    <cvi-ng-icon name="close" class="cvi-notification__close-button-inner"
-                 svgClass="cvi-notification__close-button-icon" dataAttribute="close-icon" [height]="16"></cvi-ng-icon>
-  </button>
-  <button *ngIf="showCloseButton && size === 'compact'"
-          aria-label="Close"
-          class="cvi-notification__close-button compact"
-          (click)="close()"
-          type="button">
-    <cvi-ng-icon name="close" class="cvi-notification__close-button-inner"
-                 svgClass="cvi-notification__close-button-icon" dataAttribute="close-icon" [height]="12"></cvi-ng-icon>
+    <cvi-ng-icon name="close" class="cvi-notification__close-button-inner" svgClass="cvi-notification__close-button-icon" dataAttribute="close-icon" [height]="16"></cvi-ng-icon>
   </button>
   <div class="cvi-notification__inner" dataAttribute="inner">
     <div class="cvi-notification__header" *ngIf="size !== 'compact'" dataAttribute="header">
       <ng-container *ngIf="getIconName() as iconName">
-        <cvi-ng-labeled-icon [name]="iconName" class="cvi-notification__header-icon-wrapper"
-                             iconClass="cvi-notification__header-icon" [iconHeight]="24" dataAttribute="header-icon">
+        <cvi-ng-labeled-icon [name]="iconName" class="cvi-notification__header-icon-wrapper" iconClass="cvi-notification__header-icon" [iconHeight]="24" dataAttribute="header-icon">
           <h2 class="cvi-notification__title">{{ title }}</h2>
         </cvi-ng-labeled-icon>
       </ng-container>
@@ -30,17 +19,14 @@
     </div>
     <div class="cvi-notification__content" dataAttribute="content">
       <ng-container *ngIf="size === 'compact' && getIconName() as iconName">
-        <cvi-ng-labeled-icon [name]="iconName" [iconHeight]="24" class="cvi-notification__content-icon-wrapper"
-                             iconClass="cvi-notification__content-icon" dataAttribute="icon">
+        <cvi-ng-labeled-icon [name]="iconName" [iconHeight]="14" class="cvi-notification__content-icon-wrapper" iconClass="cvi-notification__content-icon" dataAttribute="icon">
           <ng-container *ngTemplateOutlet="content"></ng-container>
         </cvi-ng-labeled-icon>
       </ng-container>
-
       <ng-container *ngIf="size !== 'compact' || !getIconName()">
         <ng-container *ngTemplateOutlet="content"></ng-container>
       </ng-container>
       <ng-template #content>
-        <b *ngIf=contentPrefix> {{contentPrefix}}: </b>
         <ng-content></ng-content>
       </ng-template>
     </div>

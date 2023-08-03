@@ -1,6 +1,4 @@
 @mixin cvi-notification($base: &) {
-  display: flex;
-  flex-direction: row-reverse;
   margin: auto;
   padding: get-spacing('haapsalu');
   position: relative;
@@ -37,7 +35,6 @@
       gap: get-spacing('rapla');
       margin-bottom: get-spacing('elva');
     }
-
     #{$base}__title {
       line-height: get-line-height(500);
       color: get-color(black-coral-20);
@@ -45,7 +42,6 @@
 
     #{$base}__header-icon {
       margin-top: 4px;
-
       #{$base}--severity-info & {
         fill: get-color(sapphire-blue-10);
       }
@@ -69,20 +65,15 @@
 
     #{$base}__content-icon {
       fill: get-color(black);
-      margin-top: 4px;
+      margin-top: 1px;
       margin-right: -6px;
     }
 
     #{$base}__close-button {
-      display: flex;
+      position: absolute;
+      top: 20px;
+      right: 20px;
       cursor: pointer;
-
-      &.compact {
-        align-items: flex-start;
-        margin-top: 4px;
-        display: flex;
-        cursor: pointer;
-      }
     }
 
     #{$base}__close-button-inner {
