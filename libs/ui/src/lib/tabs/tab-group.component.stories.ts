@@ -5,7 +5,7 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { UiModule } from '../ui.module';
 
 export default {
-  title: 'Angular/Tab group',
+  title: 'Angular/Tabs/Tab group',
   parameters: { notes },
   decorators: [
     moduleMetadata({
@@ -58,3 +58,10 @@ const Template: Story<TabGroupComponent> = (args: TabGroupComponent) => {
   };
 };
 export const Default = Template.bind({});
+
+export const Mobile = Template.bind({});
+Mobile.parameters = {
+  viewport: {
+    defaultViewport: 'iphone12mini',
+  },
+};

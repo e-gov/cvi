@@ -1,7 +1,7 @@
 :host {
   display: grid;
-  grid-template-columns: repeat(auto-fit, 170px);
-  grid-template-rows: repeat(6, minmax(100px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  grid-auto-rows: minmax(100px, 1fr);
   align-items: center;
   justify-items: center;
   gap: var(--cvi-spacing-haapsalu);

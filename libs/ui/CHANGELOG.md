@@ -2,6 +2,173 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [1.24.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.23.2...ui-1.24.0) (2023-08-02)
+
+
+### Features
+
+* **storybook:** add small icon button ([#156](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/156)) ([6cb6bf3](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/6cb6bf3b0fe4612e1d2eee5a7e40d9eefbf41307))
+
+
+
+## [1.23.2](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.23.1...ui-1.23.2) (2023-08-02)
+
+
+### Bug Fixes
+
+* **ui:** accessibility and documentation improvements for the new TabsComponent (cvi-tabs Sass component) ([#157](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/157)) ([21c0326](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/21c0326be864a8895b5c3bed0386e960d86103fe))
+
+
+
+## [1.23.1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.23.0...ui-1.23.1) (2023-08-01)
+
+
+### Bug Fixes
+
+* **storybook:** prevent Safari from losing a bottom border of the last header cell in the TableComponent (Angular) story due to invalid number of header cells ([#155](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/155)) ([bb65f8d](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/bb65f8dde044aa33a9a9914e82454004e1e6ce75))
+
+
+
+# [1.23.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.22.0...ui-1.23.0) (2023-08-01)
+
+
+### Features
+
+* **ng:** add new cvi tabs component ([#129](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/129)) ([0db25d7](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/0db25d791144c5bb827b776825ca9f543857c906))
+
+
+
+# [1.22.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.21.0...ui-1.22.0) (2023-08-01)
+
+
+### Features
+
+* **ng:** add output to accordion ([#154](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/154)) ([284349d](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/284349d3059c0d26ed86c6e7d463e8ae9438f202))
+
+
+
+# [1.21.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.20.2...ui-1.21.0) (2023-08-01)
+
+
+### Bug Fixes
+
+* **styles): fix(styles:** fixed cvi-table body cell not wrapping strings that are too long and forcing the table to become too wide ([#153](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/153)) ([076b486](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/076b4861003e9910e1b916103db4d434afe2099b))
+
+
+### Features
+
+* **ng:** add numbers only input feature ([#146](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/146)) ([745ed86](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/745ed868dbb07a4c5f515b26670d3f0c40729ef1))
+
+
+
+## [1.20.2](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.20.1...ui-1.20.2) (2023-07-31)
+
+
+### Bug Fixes
+
+* **styles:** fixed broken appearance of cvi-datepicker when on non-white background ([#144](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/144)) ([41a473f](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/41a473ff0c855330f8fdb3f9680ef0b513117243))
+
+
+
+## [1.20.1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.20.0...ui-1.20.1) (2023-07-28)
+
+
+### Bug Fixes
+
+* **styles:** made styles of inline form elements consistent ([#147](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/147)) ([c7c724a](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/c7c724ab871e778d607e2fb3c81ee5c42bb863b1))
+
+
+
+# [1.20.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.19.0...ui-1.20.0) (2023-07-27)
+
+
+### Features
+
+* **ui:** added a new default value to horizontalAlignment prop of cvi-ng-track ([#142](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/142)) ([8699f74](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/8699f7418f9877a6b980584071e5cac6dd8d8b64))
+
+
+
+# [1.19.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.18.1...ui-1.19.0) (2023-07-27)
+
+
+### Features
+
+* **storybook:** various tweaks to HTML panel to improve DX ([#140](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/140)) ([deff522](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/deff52245ad96642a93c184ac6a98f73c3bce498))
+
+
+
+## [1.18.1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.18.0...ui-1.18.1) (2023-07-26)
+
+
+### Bug Fixes
+
+* **storybook:** added clarifications about the necessity of registering an icon when using @egov/cvi-icons with Angular ([#141](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/141)) ([c2ab36d](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/c2ab36d862baeaaea564ad8279cdf9d8b0f65cdf))
+
+
+
+# [1.18.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.17.1...ui-1.18.0) (2023-07-26)
+
+
+### Features
+
+* **storybook:** add search in the icons list ([#135](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/135)) ([29e54cf](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/29e54cf15a6066bb54f0173a1b41527bdb1fb0a1))
+
+
+
+## [1.17.1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.17.0...ui-1.17.1) (2023-07-25)
+
+
+### Bug Fixes
+
+* **ng:** highlight last heading when at the bottom of the page ([#126](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/126)) ([b72772a](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/b72772aaa2031594f98f12e47e36ee015f3d255d))
+
+
+
+# [1.17.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.16.0...ui-1.17.0) (2023-07-24)
+
+
+### Features
+
+* **ng:** add two-way binding supporrt to ng-steps currentStepIndex ([#128](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/128)) EBS-738 ([93412ce](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/93412cef82da92bcd960c63d0f848eb78cd5c35e))
+
+
+
+# [1.16.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.15.2...ui-1.16.0) (2023-07-13)
+
+
+### Features
+
+* **styles:** added an ability to customise cvi-button color with appearance-primary modifier ([#122](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/122)) ([a63d96f](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/a63d96fad200a04e78d1286d432ad095e85845a6))
+
+
+
+## [1.15.2](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.15.1...ui-1.15.2) (2023-06-20)
+
+
+### Bug Fixes
+
+* **ng:** input disabled state for reactive forms EBS-670 ([#119](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/119)) ([d6ccde8](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/d6ccde8847567d0d40715fb4ae73268e6a755f28))
+
+
+
+## [1.15.1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.15.0...ui-1.15.1) (2023-06-20)
+
+
+### Bug Fixes
+
+* **ng:** status badge class format, clarify a stylelint linting error message ([#118](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/118)) ([3bbf870](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/3bbf87074dbf30e5b28f5386e9ba58c8c35803ef))
+
+
+
+# [1.15.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.14.0...ui-1.15.0) (2023-06-12)
+
+
+### Features
+
+* **ng:** datepicker EBS-116 ([#107](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/107)) ([4d6c2c4](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/4d6c2c4353b144d31f5ea724a6cd724afeb5c484))
+
+
+
 # [1.14.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.13.1...ui-1.14.0) (2023-06-02)
 
 

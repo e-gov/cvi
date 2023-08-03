@@ -54,6 +54,10 @@
   @include cvi-tab-group;
 }
 
+.cvi-tabs {
+  @include cvi-tabs;
+}
+
 .cvi-toast {
   @include cvi-toast;
 }
@@ -96,4 +100,8 @@
 
 .cvi-status-badge {
   @include cvi-status-badge;
+}
+
+.cvi-datepicker {
+  @include cvi-datepicker;
 }

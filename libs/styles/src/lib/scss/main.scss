@@ -42,6 +42,7 @@
 @import 'components/dropdown-popup';
 @import 'components/tooltip';
 @import 'components/tab-group';
+@import 'components/tabs';
 @import 'components/toast';
 @import 'components/toast-container';
 @import 'components/character-counter';
@@ -49,8 +50,10 @@
 @import 'components/modal';
 @import 'components/reorderable-list';
 @import 'components/status-badge';
+@import 'components/datepicker';
 
 @import 'apply';
 
 @import 'storybook/generic';
 @import 'storybook/components/current-component';
+@import 'storybook/components/input';

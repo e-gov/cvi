@@ -5,7 +5,7 @@ export default {
   title: 'HTML/Form/Form item',
   parameters: {
     notes,
-    options: { selectedPanel: 'html/panel' },
+    options: { selectedPanel: 'storybook/html/panel' },
   },
   args: {
     htmlId: 'fksd4kfds',

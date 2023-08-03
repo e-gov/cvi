@@ -164,7 +164,7 @@ module.exports = {
       {
         resolveNestedSelectors: true,
         message:
-          'Please use #{$base} or other allowed prefixes when naming classes',
+          'Please use `#{$base}__`/`#{$base}--` or other allowed prefixes when naming classes',
       },
     ],
     'scss/at-mixin-pattern': [

@@ -33,10 +33,13 @@ import { IconsRegistry } from './icons/icons-registry.service';
 import {
   cviArrowALeft,
   cviArrowARight,
+  cviArrowBLeft,
+  cviArrowBRight,
   cviArrowDown,
   cviArrowDownAlt,
   cviArrowUp,
   cviArrowUpAlt,
+  cviCalendar,
   cviCall,
   cviCheckCircleOutline,
   cviClose,
@@ -65,6 +68,7 @@ import { TooltipComponent } from './tooltip/tooltip.component';
 import { TooltipDirective } from './tooltip/tooltip.directive';
 import { TabComponent } from './tabs/tab.component';
 import { TabGroupComponent } from './tabs/tab-group.component';
+import { TabsComponent } from './tabs/tabs.component';
 import { DefaultToastConfig, TOAST_CONFIG } from './toast/toast-config';
 import { ToastComponent } from './toast/toast.component';
 import { ToastContainerComponent } from './toast/toast-container.component';
@@ -85,6 +89,10 @@ import { TableComponent } from './table/table.component';
 import { BodyCellComponent } from './table/body-cell/body-cell.component';
 import { HeaderCellComponent } from './table/header-cell/header-cell.component';
 import { ScreenreaderTextComponent } from './screenreader-text/screenreader-text.component';
+import { DatepickerComponent } from './datepicker/datepicker.component';
+import { DatepickerCalendarComponent } from './datepicker/datepicker-calendar.component';
+import { DATEPICKER_LABEL_CONFIG } from './datepicker/datepicker-label-config.token';
+import { DefaultDatepickerLabelConfig } from './datepicker/default-datepicker-label.config';
 
 const components = [
   TrackComponent,
@@ -126,6 +134,7 @@ const components = [
   TooltipDirective,
   TabComponent,
   TabGroupComponent,
+  TabsComponent,
   ToastComponent,
   ToastContainerComponent,
   CharacterCounterComponent,
@@ -139,6 +148,8 @@ const components = [
   ScreenreaderTextComponent,
   BodyCellComponent,
   HeaderCellComponent,
+  DatepickerComponent,
+  DatepickerCalendarComponent,
 ];
 
 const pipes = [SafeHtmlPipe, NotificationSeverityToHeaderIconPipe];
@@ -163,6 +174,10 @@ const directives = [DataAttributeDirective];
         default: DefaultToastConfig,
       },
     },
+    {
+      provide: DATEPICKER_LABEL_CONFIG,
+      useValue: new DefaultDatepickerLabelConfig(),
+    },
   ],
 })
 export class UiModule {
@@ -177,6 +192,8 @@ export class UiModule {
       cviLoupe,
       cviArrowALeft,
       cviArrowARight,
+      cviArrowBLeft,
+      cviArrowBRight,
       cviSadFace,
       cviHappyFace,
       cviScreenShare,
@@ -188,6 +205,7 @@ export class UiModule {
       cviEditSimple,
       cviArrowUpAlt,
       cviArrowDownAlt,
+      cviCalendar,
     ]);
   }
 }

@@ -42,4 +42,12 @@ $cvi-shadow-beta-blur: 15px;
   --cvi-border-focus: var(--cvi-border-width) solid var(--cvi-color-focus);
   --cvi-shadow-focus: var(--cvi-shadow-delta);
 }
+
+
+// Form-related variables
+:root {
+  --cvi-form-inline-input-height: 40px;
+  --cvi-form-input-border-color: var(--cvi-color-black-coral-5);
+}
+
 /* stylelint-enable no-duplicate-selectors */

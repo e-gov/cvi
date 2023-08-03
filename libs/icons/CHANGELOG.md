@@ -2,6 +2,51 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [1.6.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/icons-1.5.0...icons-1.6.0) (2023-08-02)
+
+
+### Features
+
+* **storybook:** add small icon button ([#156](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/156)) ([6cb6bf3](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/6cb6bf3b0fe4612e1d2eee5a7e40d9eefbf41307))
+
+
+
+# [1.5.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/icons-1.4.0...icons-1.5.0) (2023-07-25)
+
+
+### Features
+
+* **icons:** add content-copy icon EBS-360 ([#127](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/127)) ([3d56101](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/3d5610169c73b883cdb42db001c9a6723a1ecd20))
+
+
+
+# [1.4.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/icons-1.3.0...icons-1.4.0) (2023-07-17)
+
+
+### Features
+
+* add svg, fix status-badge classname ([#124](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/124)) ([d04ac7d](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/d04ac7d7b4f93cca5e31a20509ae0bc114d5a089))
+
+
+
+# [1.3.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/icons-1.2.0...icons-1.3.0) (2023-07-13)
+
+
+### Features
+
+* **icons:** added logout icon to icon library ([#123](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/123)) ([361c5f6](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/361c5f6c7b1bafd656a402de3eaccb0bb85e7c1f))
+
+
+
+# [1.2.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/icons-1.1.1...icons-1.2.0) (2023-06-12)
+
+
+### Features
+
+* **ng:** datepicker EBS-116 ([#107](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/107)) ([4d6c2c4](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/4d6c2c4353b144d31f5ea724a6cd724afeb5c484))
+
+
+
 ## [1.1.1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/icons-1.1.0...icons-1.1.1) (2023-05-22)
 
 
