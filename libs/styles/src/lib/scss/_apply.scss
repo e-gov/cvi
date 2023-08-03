@@ -34,6 +34,10 @@
   @include cvi-notification;
 }
 
+.cvi-notification-message {
+  @include cvi-notification-message;
+}
+
 .cvi-breadcrumbs {
   @include cvi-breadcrumbs;
 }

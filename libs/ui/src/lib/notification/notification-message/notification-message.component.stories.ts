@@ -1,10 +1,10 @@
 import { Meta, Story } from '@storybook/angular';
-import { NotificationComponent } from './notification.component';
-import notes from './notification.component.md';
+import notes from './notification-message.component.md';
+import {NotificationMessageComponent} from "./notification-message.component";
 
 export default {
-  title: 'Angular/Notification/Notification',
-  component: NotificationComponent,
+  title: 'Angular/Notification/Notification mesage',
+  component: NotificationMessageComponent,
   parameters: { notes },
   args: {
     severity: 'info',
@@ -16,15 +16,15 @@ export default {
     content:
       'Header and close buttons are not displayed if notification size is compact. Header and close buttons are not displayed if notification size is compact. Header and close buttons are not displayed if notification size is compact.',
   },
-} as Meta<NotificationComponent>;
+} as Meta<NotificationMessageComponent>;
 
-const Template: Story<NotificationComponent> = (
-  args: NotificationComponent
+const Template: Story<NotificationMessageComponent> = (
+  args: NotificationMessageComponent
 ) => ({
   props: args,
   /* template */
   template: `
-    <cvi-ng-notification [severity]="severity"
+    <cvi-ng-notification-message [severity]="severity"
                          [size]="size"
                          [showIcon]="showIcon"
                          [showCloseButton]="showCloseButton"
@@ -33,14 +33,14 @@ const Template: Story<NotificationComponent> = (
                          [contentPrefix]="contentPrefix"
     >
       {{content}}
-    </cvi-ng-notification>
+    </cvi-ng-notification-message>
   `,
 });
 
 export const Default = Template.bind({});
 
-export const Success = Template.bind({});
-Success.args = { severity: 'success' };
+export const FredSuc = Template.bind({});
+FredSuc.args = { severity: 'success' };
 
 export const Warning = Template.bind({});
 Warning.args = { severity: 'warning' };
