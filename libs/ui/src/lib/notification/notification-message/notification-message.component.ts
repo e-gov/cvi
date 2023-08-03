@@ -1,6 +1,6 @@
-import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {ChangeDetectionStrategy, Component, EventEmitter, Input, Output} from '@angular/core';
 import {NotificationSeverity, NotificationSeverityToHeaderIconPipe, NotificationSize} from "@egov/cvi-ng";
-import { CviIconName } from '@egov/cvi-icons';
+import {CviIconName} from '@egov/cvi-icons';
 
 @Component({
   selector: 'cvi-ng-notification-message',
