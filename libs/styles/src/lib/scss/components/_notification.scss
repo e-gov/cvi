@@ -45,6 +45,7 @@
 
     #{$base}__header-icon {
       margin-top: 4px;
+
       #{$base}--severity-info & {
         fill: get-color(sapphire-blue-10);
       }
@@ -75,13 +76,13 @@
     #{$base}__close-button {
       display: flex;
       cursor: pointer;
-    }
 
-    #{$base}__close-button-compact {
-      align-items: flex-start;
-      margin-top: 4px;
-      display: flex;
-      cursor: pointer;
+      &.compact {
+        align-items: flex-start;
+        margin-top: 4px;
+        display: flex;
+        cursor: pointer;
+      }
     }
 
     #{$base}__close-button-inner {
