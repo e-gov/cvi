@@ -2,6 +2,51 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [1.14.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/styles-1.13.1...styles-1.14.0) (2023-08-02)
+
+
+### Features
+
+* **storybook:** add small icon button ([#156](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/156)) ([6cb6bf3](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/6cb6bf3b0fe4612e1d2eee5a7e40d9eefbf41307))
+
+
+
+## [1.13.1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/styles-1.13.0...styles-1.13.1) (2023-08-02)
+
+
+### Bug Fixes
+
+* **ui:** accessibility and documentation improvements for the new TabsComponent (cvi-tabs Sass component) ([#157](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/157)) ([21c0326](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/21c0326be864a8895b5c3bed0386e960d86103fe))
+
+
+
+# [1.13.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/styles-1.12.3...styles-1.13.0) (2023-08-01)
+
+
+### Features
+
+* **ng:** add new cvi tabs component ([#129](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/129)) ([0db25d7](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/0db25d791144c5bb827b776825ca9f543857c906))
+
+
+
+## [1.12.3](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/styles-1.12.2...styles-1.12.3) (2023-08-01)
+
+
+### Bug Fixes
+
+* **styles): fix(styles:** fixed cvi-table body cell not wrapping strings that are too long and forcing the table to become too wide ([#153](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/153)) ([076b486](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/076b4861003e9910e1b916103db4d434afe2099b))
+
+
+
+## [1.12.2](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/styles-1.12.1...styles-1.12.2) (2023-07-31)
+
+
+### Bug Fixes
+
+* **styles:** fixed broken appearance of cvi-datepicker when on non-white background ([#144](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/144)) ([41a473f](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/41a473ff0c855330f8fdb3f9680ef0b513117243))
+
+
+
 ## [1.12.1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/styles-1.12.0...styles-1.12.1) (2023-07-28)
 
 

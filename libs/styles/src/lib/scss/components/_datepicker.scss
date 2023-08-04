@@ -11,6 +11,7 @@
       align-items: center;
       width: 125px;
       height: var(--cvi-form-inline-input-height);
+      background-color: get-color(white);
 
       &--focused {
         border-color: transparent;

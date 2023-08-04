@@ -24,6 +24,11 @@ export default {
       options: storybookIconsNames,
       control: { type: 'select' },
     },
+    validationType: {
+      name: 'ValidationType',
+      options: ['positiveNumbers'],
+      control: { type: 'select' },
+    },
   },
   args: {
     placeholder: 'Username',
@@ -59,6 +64,13 @@ export const WithSuffixIcon = {
   ...Default,
   args: {
     suffixIconName: 'loupe',
+  },
+};
+
+export const WithOnlyNumbersAllowed = {
+  ...Default,
+  args: {
+    validationType: 'positiveNumbers',
   },
 };
 
@@ -106,7 +118,8 @@ const FormTemplate: StoryFn<InputComponent> = (args: InputComponent) => {
                         [suffixIconName]="suffixIconName"
                         [disabled]="disabled"
                         [placeholder]="placeholder"
-                        [htmlId]="htmlId"></cvi-ng-input>
+                        [htmlId]="htmlId"
+                        [validationType]="validationType"></cvi-ng-input>
         </cvi-ng-form-item>
       </form>
       <cvi-ng-track layout="flex" gap="3">

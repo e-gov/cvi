@@ -1,0 +1,47 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+
+<Meta title="Angular/Tabs/Readme" parameters={{viewMode: 'docs', layout: 'fullscreen' }}/>
+
+# Which tabs component to use?
+
+In CVI there are two versions of tabs. Both versions have compatible API (props and nesting principles are the same). They also both make use of `TabComponent` as a child.
+
+## New tabs
+
+The new tabs are implemented by `TabsComponent`. It has a refreshed design, is mobile-friendly and on mobile replaces the tabs interface with a dropdown.
+
+<Canvas>
+  <Story name="Tabs" height="160px">
+    {{
+      template: `
+        <cvi-ng-tabs>
+          <cvi-ng-tab title="Tab 1">Some text</cvi-ng-tab>
+          <cvi-ng-tab title="Tab 2">
+            Star machine truth tube dirt breath section soldier symbol charge keep cap locate hundred its habit before breathing sent correct off pool here enjoy.
+          </cvi-ng-tab>
+          <cvi-ng-tab title="Tab 3 with lots and lots of random text">Third tab content. File not found. I was having the most wonderful dream. Except you were there, and you were there, and you were there! And when we woke up, we had these bodies. I could if you hadn't turned on the light and shut off my stereo.</cvi-ng-tab>
+        </cvi-ng-tabs>
+      `,
+    }}
+  </Story>
+</Canvas>
+
+## Old tabs
+
+The older tabs are implemented by `TabGroupComponent`. It is not mobile-friendly, but still represents a full-fledged component. It is deprecated and meant to be gradually replaced by the new tabs, with not specific timeline set yet.
+
+<Canvas>
+  <Story name="Tab group" height="160px">
+    {{
+      template: `
+        <cvi-ng-tab-group>
+          <cvi-ng-tab title="Tab 1">Some text</cvi-ng-tab>
+          <cvi-ng-tab title="Tab 2">
+            Star machine truth tube dirt breath section soldier symbol charge keep cap locate hundred its habit before breathing sent correct off pool here enjoy.
+          </cvi-ng-tab>
+          <cvi-ng-tab title="Tab 3 with lots and lots of random text">Third tab content. File not found. I was having the most wonderful dream. Except you were there, and you were there, and you were there! And when we woke up, we had these bodies. I could if you hadn't turned on the light and shut off my stereo.</cvi-ng-tab>
+        </cvi-ng-tab-group>
+      `,
+    }}
+  </Story>
+</Canvas>

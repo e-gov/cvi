@@ -42,6 +42,15 @@ export const WithDisabled = {
   },
 };
 
+export const OnNonWhiteBackground = {
+  ...Default,
+  parameters: {
+    backgrounds: {
+      default: 'Gray',
+    },
+  },
+};
+
 const FormTemplate: StoryFn<DatepickerComponent> = (
   args: DatepickerComponent
 ) => {

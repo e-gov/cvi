@@ -2,6 +2,74 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [1.24.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.23.2...ui-1.24.0) (2023-08-02)
+
+
+### Features
+
+* **storybook:** add small icon button ([#156](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/156)) ([6cb6bf3](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/6cb6bf3b0fe4612e1d2eee5a7e40d9eefbf41307))
+
+
+
+## [1.23.2](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.23.1...ui-1.23.2) (2023-08-02)
+
+
+### Bug Fixes
+
+* **ui:** accessibility and documentation improvements for the new TabsComponent (cvi-tabs Sass component) ([#157](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/157)) ([21c0326](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/21c0326be864a8895b5c3bed0386e960d86103fe))
+
+
+
+## [1.23.1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.23.0...ui-1.23.1) (2023-08-01)
+
+
+### Bug Fixes
+
+* **storybook:** prevent Safari from losing a bottom border of the last header cell in the TableComponent (Angular) story due to invalid number of header cells ([#155](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/155)) ([bb65f8d](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/bb65f8dde044aa33a9a9914e82454004e1e6ce75))
+
+
+
+# [1.23.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.22.0...ui-1.23.0) (2023-08-01)
+
+
+### Features
+
+* **ng:** add new cvi tabs component ([#129](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/129)) ([0db25d7](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/0db25d791144c5bb827b776825ca9f543857c906))
+
+
+
+# [1.22.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.21.0...ui-1.22.0) (2023-08-01)
+
+
+### Features
+
+* **ng:** add output to accordion ([#154](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/154)) ([284349d](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/284349d3059c0d26ed86c6e7d463e8ae9438f202))
+
+
+
+# [1.21.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.20.2...ui-1.21.0) (2023-08-01)
+
+
+### Bug Fixes
+
+* **styles): fix(styles:** fixed cvi-table body cell not wrapping strings that are too long and forcing the table to become too wide ([#153](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/153)) ([076b486](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/076b4861003e9910e1b916103db4d434afe2099b))
+
+
+### Features
+
+* **ng:** add numbers only input feature ([#146](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/146)) ([745ed86](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/745ed868dbb07a4c5f515b26670d3f0c40729ef1))
+
+
+
+## [1.20.2](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.20.1...ui-1.20.2) (2023-07-31)
+
+
+### Bug Fixes
+
+* **styles:** fixed broken appearance of cvi-datepicker when on non-white background ([#144](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/144)) ([41a473f](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/41a473ff0c855330f8fdb3f9680ef0b513117243))
+
+
+
 ## [1.20.1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.20.0...ui-1.20.1) (2023-07-28)
 
 

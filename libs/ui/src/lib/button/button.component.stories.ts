@@ -1,6 +1,7 @@
-import { StoryFn, Meta, componentWrapperDecorator } from '@storybook/angular';
+import { Meta, componentWrapperDecorator } from '@storybook/angular';
 import notes from './button.component.md';
 import { ButtonComponent } from './button.component';
+import { storybookIconsNames } from '../icons/storybook-icons';
 
 const wrapperDecorators = [
   componentWrapperDecorator(ButtonComponent, ({ args }) => {
@@ -15,6 +16,11 @@ export default {
   argTypes: {
     appearance: {
       control: { type: 'inline-radio' },
+    },
+    iconName: {
+      name: 'Icon name',
+      options: storybookIconsNames,
+      control: { type: 'select' },
     },
     content: {
       name: 'Content',
@@ -58,6 +64,31 @@ export const Text = {
   },
 };
 
+export const WithIcon = {
+  ...Default,
+  args: {
+    iconName: 'add',
+    iconPosition: 'after',
+  },
+};
+
+export const WithIconSmall = {
+  ...Default,
+  args: {
+    size: 's',
+    iconName: 'add',
+    iconPosition: 'after',
+  },
+};
+
+export const WithIconBefore = {
+  ...Default,
+  args: {
+    iconName: 'add',
+    iconPosition: 'before',
+  },
+};
+
 export const WithCustomColor = {
   render: (args: ButtonComponent) => ({
     props: args,
@@ -70,22 +101,4 @@ export const WithCustomColor = {
     template: `{{ content }}`,
   }),
   decorators: wrapperDecorators,
-};
-
-const TemplateTextButtonWithIcon: StoryFn<ButtonComponent> = (
-  args: ButtonComponent
-) => ({
-  props: args,
-  /* template */
-  template: `
-    <cvi-ng-button appearance="text">
-      <cvi-ng-labeled-icon name="add" iconPosition="before" verticalAlignment="center" [iconHeight]="16" [gap]="2">
-        {{ content }}
-      </cvi-ng-labeled-icon>
-    </cvi-ng-button>
-  `,
-});
-
-export const TextButtonWithIcon = {
-  render: TemplateTextButtonWithIcon,
 };
