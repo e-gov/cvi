@@ -27,6 +27,7 @@ import { AccordionHeaderDirective } from './accordion/directives/accordion-heade
 import { HtmlSectionComponent } from './html-section/html-section.component';
 import { SafeHtmlPipe } from './html-section/safe-html-pipe';
 import { NotificationComponent } from './notification/notification.component';
+import { NotificationMessageComponent } from './notification/notification-message/notification-message.component';
 import { NotificationSeverityToHeaderIconPipe } from './notification/notification-severity-to-header-icon.pipe';
 import { IconsRegistry } from './icons/icons-registry.service';
 // Only import the icons used inside the library
@@ -124,6 +125,7 @@ const components = [
   TableOfContentsItemComponent,
   GeneratedTableOfContentsComponent,
   NotificationComponent,
+  NotificationMessageComponent,
   BreadcrumbsComponent,
   SelectComponent,
   SelectNavigationDirective,

@@ -2,12 +2,12 @@
 
 Feature | Description
 - | -
-Selector | `cvi-ng-notification`
-Component name | `NotificationComponent`
+Selector | `cvi-ng-notification-message`,
+Component name | `NotificationMessageComponent`
 Design system module | -
 Permitted parent/ancestors | any
 Permitted children | -
 
 ## Where to use
 
-A notification component.
+Updated notification component.

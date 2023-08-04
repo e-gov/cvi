@@ -57,14 +57,14 @@ describe('NotificationComponent', () => {
     cy.loadStory(
       'Angular Notification',
       'With Compact Size'
-    ).runNotificationCommonTest('neutral', 'compact', false, true, '');
+    ).runNotificationCommonTest('neutral', 'compact', false, false, '');
   });
 
   it('Renders compact with icon notification and clicks close button', () => {
     cy.loadStory(
       'Angular Notification',
       'With Compact Size And Icon'
-    ).runNotificationCommonTest('info', 'compact', true, true, 'info');
+    ).runNotificationCommonTest('info', 'compact', true, false, 'info');
   });
 
   it('Renders compact with custom icon notification and clicks close button', () => {
@@ -75,7 +75,7 @@ describe('NotificationComponent', () => {
       'neutral',
       'compact',
       true,
-      true,
+      false,
       'check_circle_outline'
     );
   });

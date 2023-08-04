@@ -39,8 +39,8 @@ const Template: Story<NotificationMessageComponent> = (
 
 export const Default = Template.bind({});
 
-export const FredSuc = Template.bind({});
-FredSuc.args = { severity: 'success' };
+export const Success = Template.bind({});
+Success.args = { severity: 'success' };
 
 export const Warning = Template.bind({});
 Warning.args = { severity: 'warning' };
