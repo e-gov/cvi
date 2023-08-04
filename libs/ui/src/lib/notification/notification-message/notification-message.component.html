@@ -1,20 +1,12 @@
 <div class="cvi-notification-message cvi-notification-message--size-{{size}} cvi-notification-message--severity-{{severity}}"
      dataAttribute="notification">
-  <button *ngIf="showCloseButton && size !== 'compact'"
+  <button *ngIf="showCloseButton"
           aria-label="Close"
           class="cvi-notification-message__close-button"
           (click)="close()"
           type="button">
     <cvi-ng-icon name="close" class="cvi-notification-message__close-button-inner"
                  svgClass="cvi-notification-message__close-button-icon" dataAttribute="close-icon" [height]="16"></cvi-ng-icon>
-  </button>
-  <button *ngIf="showCloseButton && size === 'compact'"
-          aria-label="Close"
-          class="cvi-notification-message__close-button compact"
-          (click)="close()"
-          type="button">
-    <cvi-ng-icon name="close" class="cvi-notification-message__close-button-inner"
-                 svgClass="cvi-notification-message__close-button-icon" dataAttribute="close-icon" [height]="12"></cvi-ng-icon>
   </button>
   <div class="cvi-notification-message__inner" dataAttribute="inner">
     <div class="cvi-notification-message__header" *ngIf="size !== 'compact'" dataAttribute="header">

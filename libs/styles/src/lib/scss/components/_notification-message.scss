@@ -7,11 +7,20 @@
 
   @at-root {
     #{$base}--size-compact {
-      padding: 8px get-spacing('kuressaare');
+      padding: get-spacing('paldiski') 0 get-spacing('paldiski') get-spacing('kuressaare');
+    }
+
+    #{$base}--size-compact #{$base}__close-button-icon {
+      height: get-spacing('elva');
+      margin: 0 get-spacing('rapla');
     }
 
     #{$base}--size-regular {
       padding: get-spacing('haapsalu');
+    }
+
+    #{$base}--size-regular #{$base}__close-button-icon {
+      height: get-spacing('haapsalu');
     }
 
     #{$base}--severity-info {
@@ -80,16 +89,13 @@
       margin-right: -6px;
     }
 
+    #{$base}--size-compact #{$base}__close-button-inner{
+      margin: get-spacing('rapla');
+    }
+
     #{$base}__close-button {
       display: flex;
       cursor: pointer;
-
-      &.compact {
-        align-items: flex-start;
-        margin-top: 4px;
-        display: flex;
-        cursor: pointer;
-      }
     }
 
     #{$base}__close-button-inner {
