@@ -61,7 +61,7 @@
       class="cvi-multiselect__close-button"
     >
       <cvi-ng-icon
-        height="24"
+        [height]="24"
         name="circle_close"
         class="cvi-multiselect__close-icon"
       ></cvi-ng-icon>
@@ -88,7 +88,6 @@
         role="listbox"
         cviNgmultiselectNavigation
         (closed)="close()"
-        (itemFocused)="updateFocusedItem($event)"
         [attr.aria-labelledby]="labelId"
         [attr.id]="listboxHtmlId"
       >
@@ -110,10 +109,9 @@
             }"
             dataAttribute="test-option-checkbox"
             [attr.id]="htmlId"
-            [attr.aria-labelledby]="'multiselectItemCheckbox-' + baseId"
+            [attr.aria-labelledby]="'multiselectItemCheckbox-' + htmlId"
             type="checkbox"
             [checked]="isSelected(item.value)"
-            [aria-checked]="isSelected(item.value)"
           />
           <ng-template #defaultOptionTemplate>
             <span
