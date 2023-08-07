@@ -14,13 +14,15 @@ import { NoticeSeverityToHeaderIconPipe } from './notice-severity-to-header-icon
   templateUrl: './notice.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class NoticeComponent implements AfterViewInit {
+export class NoticeComponent {
   @Input() severity: NoticeSeverity = 'info';
   @Input() iconName?: CviIconName;
+  @Input() title = 'sometitle';
+  @Input() date = 'somedate';
+  @Input() time = 'sometime';
+  @Input() subtitle = 'somesubtitle';
+  @Input() aside = 'someaside';
   constructor(private readonly iconPipe: NoticeSeverityToHeaderIconPipe) {}
-  ngAfterViewInit(): void {
-    throw new Error('Method not implemented.');
-  }
 
   @HostBinding('class')
   get hostClasses(): string {

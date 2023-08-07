@@ -5,7 +5,33 @@
     display: flex;
     color: get-color(black-coral-12);
     fill: get-color(black-coral-12);
-    font-size: 14px;
+    font-size: get-font-size(80);
+
+    &#{$base}__container--severity-success {
+      border: 1px solid var(--cvi-color-black-coral-2);
+
+      & #{$base}__icon-container {
+        background-color: var(--cvi-color-sea-green-2);
+        fill: var(--cvi-color-sea-green-10);
+      }
+    }
+
+    &#{$base}__container--severity-info {
+      border: 1px solid var(--cvi-color-black-coral-2);
+      & #{$base}__icon-container {
+        background-color: var(--cvi-color-sapphire-blue-2);
+        fill: var(--cvi-color-sapphire-blue-10);
+      }
+    }
+
+    &#{$base}__container--severity-error {
+      border: 1px solid var(--cvi-color-jasper-10);
+
+      & #{$base}__icon-container {
+        background-color: var(--cvi-color-jasper-2);
+        fill: var(--cvi-color-jasper-10);
+      }
+    }
   }
 
   #{$base}__content {
@@ -18,38 +44,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 10px;
-  }
-
-  #{$base}--severity-success {
-    border: 1px solid var(--cvi-color-black-coral-2);
-
-    & #{$base}__icon-container {
-      background-color: var(--cvi-color-sea-green-2);
-      fill: var(--cvi-color-sea-green-10);
-    }
-  }
-
-  #{$base}--severity-info {
-    border: 1px solid var(--cvi-color-black-coral-2);
-    & #{$base}__icon-container {
-      background-color: var(--cvi-color-sapphire-blue-2);
-      fill: var(--cvi-color-sapphire-blue-10);
-    }
-  }
-
-  #{$base}--severity-error {
-    border: 1px solid var(--cvi-color-jasper-10);
-
-    & #{$base}__icon-container {
-      background-color: var(--cvi-color-jasper-2);
-      fill: var(--cvi-color-jasper-10);
-    }
+    padding: get-spacing('rapla');
   }
 
   #{$base}--dark-title {
     color: get-color(black);
-    font-size: 16px;
+    font-size: get-font-size(100);
 
     &.underlined {
       text-decoration: underline;
