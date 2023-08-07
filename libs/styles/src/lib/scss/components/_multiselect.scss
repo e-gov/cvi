@@ -209,6 +209,7 @@
 
   #{$base}__close-button {
     margin-left: get-spacing('kuressaare');
+    fill: var(--cvi-color-black-coral-8);
 
     #{$base}__close-icon {
       display: flex;
