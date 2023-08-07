@@ -10,4 +10,4 @@
 
 ## Where to use
 
-Displays a tab container and tabs that have been put inside this tab container
+Displays tabs in an old design. Add tabs with `cvi-ng-tab` component.

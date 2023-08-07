@@ -24,7 +24,10 @@ class ToastWrapperComponent {
   constructor(private toastService: ToastService) {}
 
   openSuccessToast() {
-    this.toastService.success('Success Title', 'Message');
+    this.toastService.success(
+      'Success Title with a lot of text that does not fit',
+      'Message'
+    );
   }
 
   openInfoToast() {

@@ -5,7 +5,7 @@ export default {
   title: 'HTML/Accordion',
   parameters: {
     notes,
-    options: { selectedPanel: 'html/panel' },
+    options: { selectedPanel: 'storybook/html/panel' },
   },
 } as Meta;
 

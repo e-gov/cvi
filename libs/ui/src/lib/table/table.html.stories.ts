@@ -5,7 +5,7 @@ export default {
   title: 'HTML/Table',
   parameters: {
     notes,
-    options: { selectedPanel: 'html/panel' },
+    options: { selectedPanel: 'storybook/html/panel' },
   },
 } as Meta;
 
@@ -60,7 +60,7 @@ const Template: Story = (args) => ({
           </tr>
           <tr class="cvi-table__body-row">
             <td class="cvi-table__body-cell">
-              <div class="cvi-table__body-cell-inner">Abiellumine</div>
+              <div class="cvi-table__body-cell-inner">Meteoroloogiateenistus</div>
             </td>
             <td class="cvi-table__body-cell">
               <div class="cvi-table__body-cell-inner">Avaldatud</div>
@@ -83,7 +83,7 @@ const Template: Story = (args) => ({
           </tr>
           <tr class="cvi-table__body-row">
             <td class="cvi-table__body-cell">
-              <div class="cvi-table__body-cell-inner">Abiellumine</div>
+              <div class="cvi-table__body-cell-inner">Geoloogilise luure teenistus</div>
             </td>
             <td class="cvi-table__body-cell">
               <div class="cvi-table__body-cell-inner">Avaldamise ootel</div>

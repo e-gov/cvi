@@ -5,7 +5,7 @@ export default {
   title: 'HTML/Status badge',
   parameters: {
     notes,
-    options: { selectedPanel: 'html/panel' },
+    options: { selectedPanel: 'storybook/html/panel' },
     layout: 'centered',
   },
   argTypes: {
