@@ -34,7 +34,6 @@ export type AddMultiselectItemFn = (term: string) => unknown | Promise<unknown>;
 export interface MultiSelectOption {
   id: number;
   name: string;
-  // ... other properties ...
 }
 
 @Component({
@@ -378,38 +377,26 @@ export class MultiSelectComponent
     this.itemsList.setItems(items);
   }
 
-  addItem() {
-    let item;
-    if (this.addMultiselectItemFn instanceof Function && !!this.searchTerm) {
-      item = this.addMultiselectItemFn(this.searchTerm);
-    } else {
-      item = this.searchTerm;
-    }
-
-    if (item instanceof Promise) {
-      item
-        .then((result) => this.selectItem(this.itemsList.addItem(result)))
-        // eslint-disable-next-line @typescript-eslint/no-empty-function
-        .catch(() => {
-          this.close();
-        });
-    } else {
-      this.selectItem(this.itemsList.addItem(item));
-    }
-  }
-
   private get validTerm() {
     const term = this.searchTerm && this.searchTerm.trim();
     return term && term.length >= this.minTermLength;
   }
 
-  removeSelectedItem(item: any): void {
+  removeSelectedItem(item: any, event: any): void {
+    event.preventDefault();
     const index = this.selectedItems.indexOf(item);
     if (index > -1) {
       this.selectedItems.splice(index, 1);
-      this.onTouched(); // Mark the control as touched
-      this.cd.markForCheck(); // Trigger change detection
+      this.onTouched();
+      this.cd.markForCheck();
     }
+  }
+
+  removeSelectedItems(): void {
+    console.log('ok');
+    this.selectedItems = [];
+    this.onTouched();
+    this.cd.markForCheck();
   }
 
   getSelectedItemsDisplay() {

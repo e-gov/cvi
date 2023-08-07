@@ -52,7 +52,7 @@
     #{$base}__container {
       display: flex;
       align-items: center;
-      color: get-color(black-coral-18);
+      color: get-color(black-coral-12);
       padding: 0 get-spacing('paldiski');
       height: 38px;
       width: 100%;
@@ -62,11 +62,14 @@
     }
 
     #{$base}__value-container {
+      display: flex;
+      width: 80%;
       flex-grow: 1;
       flex-shrink: 1;
       flex-basis: 0;
       min-width: 0;
       line-height: var(--value-box-height);
+      align-items: center;
     }
 
     #{$base}__placeholder,
@@ -79,10 +82,9 @@
 
     #{$base}__input-container {
       position: absolute;
-      width: 100%;
+      width: 70%;
       left: 1px;
       padding-left: get-spacing('paldiski');
-      padding-right: 40px;
     }
 
     #{$base}__input {
@@ -102,13 +104,7 @@
     }
 
     #{$base}__icon-wrapper {
-      width: 30px;
-      height: 30px;
       display: flex;
-      position: relative;
-      justify-content: center;
-      align-items: center;
-      // sometimes it is a button, sometimes it is not
       cursor: pointer;
     }
 
@@ -117,33 +113,114 @@
       align-items: center;
     }
 
-    #{$base}__icon-svg {
-      height: 8px;
+    #{$base}__icon-edit-svg {
+      fill: get-color(sapphire-blue-10);
+      display: flex;
     }
 
-    #{$base}__icon-edit-svg {
-      height: 16px;
-      fill: get-color(sapphire-blue-10);
+    #{$base}__icon-svg {
+      fill: get-color(black-coral-12);
+      display: flex;
     }
 
     #{$base}__loading-spinner {
       margin-right: get-spacing('loksa');
       vertical-align: middle;
-      width: 15px;
-      height: 15px;
+      width: get-spacing('haapsalu');
+      height: get-spacing('haapsalu');
       animation: cvi-loading-spinner 0.75s linear infinite;
       border: 2px solid get-color(sapphire-blue-10);
       border-right-color: transparent;
       border-radius: 50%;
       display: inline-block;
     }
+
+    #{$base}__dropdown-item {
+      padding: get-spacing('rapla') get-spacing('elva');
+      cursor: pointer;
+      color: get-color(black-coral-12);
+
+      &.is-current {
+        background-color: var(--bg-color-current);
+        color: get-color(white);
+
+        &:hover {
+          background-color: var(--bg-color-focused);
+        }
+      }
+
+      &.multiselect-is-current {
+        background-color: get-color(white);
+      }
+
+      &.is-focused,
+      &.is-focused:hover {
+        background-color: var(--bg-color-focused);
+        color: get-color(white);
+      }
+
+      &:hover {
+        background-color: get-color(sapphire-blue-0);
+      }
+
+      #{$base}__item-checkbox {
+        -webkit-appearance: none;
+        appearance: none;
+        border-radius: var(--cvi-radius-s);
+        margin-right: get-spacing('paldiski');
+        outline: none;
+        cursor: pointer;
+        width: get-spacing('kuressaare');
+        height: get-spacing('kuressaare');
+        border: var(--cvi-border-width) solid var(--cvi-color-black-coral-8);
+        margin-top: 0.19em;
+
+        &.checked {
+          border: var(--cvi-border-width) solid
+            var(--cvi-color-sapphire-blue-10);
+          background-image: none;
+          background-color: var(--cvi-color-sapphire-blue-10);
+          background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M6 10l3 3 6-6'/%3E%3C/svg%3E");
+        }
+
+        &.checked::before {
+          content: '';
+          position: absolute;
+          box-shadow: 0 0 0 13px transparent;
+          border-radius: 50%;
+          width: 0.875rem;
+          height: 0.875rem;
+          background-color: transparent;
+          opacity: 0;
+          pointer-events: none;
+          transform: scale(0);
+        }
+
+        &.checked::after {
+          display: block;
+          transform: rotate(45deg) /*!rtl:ignore*/;
+          width: 0.375rem;
+          height: 0.8125rem;
+          border: 0.125rem solid #fff;
+          margin-left: 0.25rem;
+          margin-top: -1px;
+          background-color: transparent;
+        }
+      }
+    }
   }
 
   #{$base}__selected-item {
-    display: flex;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
-  #{$base}__selected-item-remove {
-    cursor: pointer;
+  #{$base}__close-button {
+    margin-left: get-spacing('kuressaare');
+
+    #{$base}__close-icon {
+      display: flex;
+    }
   }
 }
