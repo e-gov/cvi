@@ -3,8 +3,6 @@
 @mixin cvi-multiselect($base: &) {
   --comment: 'A single choice combobox';
 
-  --value-box-height: 30px;
-
   position: relative;
   display: block;
   box-sizing: border-box;
@@ -54,10 +52,10 @@
       align-items: center;
       color: get-color(black-coral-12);
       padding: 0 get-spacing('paldiski');
-      height: 38px;
+      height: 40px;
       width: 100%;
       border-radius: var(--cvi-radius-s);
-      border: 1px solid get-color(black-coral-3);
+      border: var(--cvi-border-width) solid get-color(black-coral-3);
       background-color: get-color(white);
     }
 
@@ -88,7 +86,6 @@
     }
 
     #{$base}__input {
-      // TODO: consider moving these reset styles to _reset.scss
       box-sizing: content-box;
       background-color: transparent;
       border: none;
@@ -111,11 +108,6 @@
     #{$base}__icon {
       display: flex;
       align-items: center;
-    }
-
-    #{$base}__icon-edit-svg {
-      fill: get-color(sapphire-blue-10);
-      display: flex;
     }
 
     #{$base}__icon-svg {
@@ -173,7 +165,6 @@
         width: get-spacing('kuressaare');
         height: get-spacing('kuressaare');
         border: var(--cvi-border-width) solid var(--cvi-color-black-coral-8);
-        margin-top: 0.19em;
 
         &.checked {
           border: var(--cvi-border-width) solid
@@ -186,7 +177,7 @@
         &.checked::before {
           content: '';
           position: absolute;
-          box-shadow: 0 0 0 13px transparent;
+          box-shadow: 0 0 0 get-spacing('elva') transparent;
           border-radius: 50%;
           width: 0.875rem;
           height: 0.875rem;
@@ -201,7 +192,7 @@
           transform: rotate(45deg) /*!rtl:ignore*/;
           width: 0.375rem;
           height: 0.8125rem;
-          border: 0.125rem solid #fff;
+          border: 0.125rem solid get-color(white);
           margin-left: 0.25rem;
           margin-top: -1px;
           background-color: transparent;

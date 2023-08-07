@@ -53,26 +53,6 @@ export class MultiSelectItemsList {
     this._filteredItems = [...this._items];
   }
 
-  addItem(item: any) {
-    const option = this.mapItem(item);
-    this._items.push(option);
-    this._filteredItems.push(option);
-
-    if (this._select.sortItemsFn instanceof Function) {
-      const sortFn = this._select.sortItemsFn;
-
-      this._items.sort((a, b) => {
-        return sortFn(a.value, b.value);
-      });
-
-      this._filteredItems.sort((a, b) => {
-        return sortFn(a.value, b.value);
-      });
-    }
-
-    return option;
-  }
-
   mapItem(item: any): SelectOption {
     const label = this._select.bindLabel ? item[this._select.bindLabel] : item;
 
