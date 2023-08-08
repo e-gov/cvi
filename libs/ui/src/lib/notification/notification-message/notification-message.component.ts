@@ -1,6 +1,13 @@
-import {ChangeDetectionStrategy, Component, EventEmitter, Input, Output} from '@angular/core';
-import {NotificationSeverity, NotificationSeverityToHeaderIconPipe, NotificationSize} from "@egov/cvi-ng";
-import {CviIconName} from '@egov/cvi-icons';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+} from '@angular/core';
+import { CviIconName } from '@egov/cvi-icons';
+import { NotificationSeverity, NotificationSize } from '../notification';
+import { NotificationSeverityToHeaderIconPipe } from '../notification-severity-to-header-icon.pipe';
 
 @Component({
   selector: 'cvi-ng-notification-message',
@@ -8,7 +15,6 @@ import {CviIconName} from '@egov/cvi-icons';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NotificationMessageComponent {
-
   @Input() severity: NotificationSeverity = 'info';
 
   /** Notification size */
@@ -44,5 +50,4 @@ export class NotificationMessageComponent {
   close() {
     this.closed.emit();
   }
-
 }

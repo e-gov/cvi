@@ -13,6 +13,7 @@ export * from './lib/icons/icons-registry.service';
 export * from './lib/notification/notification-severity-to-header-icon.pipe';
 export * from './lib/notification/notification';
 export * from './lib/notification/notification.component';
+export * from './lib/notification/notification-message/notification-message.component';
 export * from './lib/input/input.component';
 export * from './lib/steps/steps/steps.component';
 export * from './lib/steps/step/step.component';
