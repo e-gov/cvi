@@ -16,10 +16,9 @@ import { TimedNoticeSeverityToIconPipe } from './timed-notice-severity-to-icon.p
 export class TimedNoticeComponent {
   @Input() severity: TimedNoticeSeverity = 'info';
   @Input() iconName?: CviIconName;
-  @Input() title = 'KMD Käibedeklaratsioon';
-  @Input() dueDate = '01.03.2023';
-  @Input() time = '23:59';
-  @Input() subtitle = 'Maksu- ja tolliamet';
+  @Input() title = 'title';
+  @Input() dueDate?: string;
+  @Input() time?: string;
   constructor(private readonly iconPipe: TimedNoticeSeverityToIconPipe) {}
 
   @HostBinding('class')
