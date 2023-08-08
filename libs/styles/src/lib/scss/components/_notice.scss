@@ -47,7 +47,7 @@
     padding: get-spacing('rapla');
   }
 
-  #{$base}--dark-title {
+  #{$base}__title {
     color: get-color(black);
     font-size: get-font-size(100);
 

@@ -19,7 +19,6 @@ export class NoticeComponent {
   @Input() iconName?: CviIconName;
   @Input() title = 'KMD Käibedeklaratsioon';
   @Input() dueDate = '01.03.2023';
-  @Input() fulfillmentDate? = '01.04.2023';
   @Input() time = '23:59';
   @Input() subtitle = 'Maksu- ja tolliamet';
   constructor(private readonly iconPipe: NoticeSeverityToHeaderIconPipe) {}

@@ -16,7 +16,6 @@ export default {
     severity: 'info',
     title: 'KMD Käibedeklaratsioon',
     dueDate: '01.03.2023',
-    fulfillmentDate: '01.04.2023',
     time: '23:59',
     subtitle: 'Maksu- ja tolliamet',
   },
@@ -29,7 +28,6 @@ const Template: Story<NoticeComponent> = (args: NoticeComponent) => ({
       title="KMD Käibedeklaratsioon"
       dueDate="01.03.2023"
       time="22:59">
-
       <cvi-ng-track
         slot="'aside'"
         layout="'flex'"
@@ -100,7 +98,6 @@ const TemplateWithSuccess: Story<NoticeComponent> = (
   template: `
   <cvi-ng-notice [iconName]="iconName" [severity]="'success'" title="KMD Käibedeklaratsioon"
     dueDate="01.03.2023"
-    fulfillmentDate="01.04.2023"
     time="22:59"
     subtitle="Maksu- ja tolliamet">
     <cvi-ng-track
@@ -111,7 +108,7 @@ const TemplateWithSuccess: Story<NoticeComponent> = (
     [gap]="1"
     flexDirection="vertical"
   >
-    <div class="cvi-notice--dark-title">{{ fulfillmentDate }}</div>
+    <div class="cvi-notice__title">01.04.2023</div>
     <cvi-ng-track
       layout="flex"
       horizontalAlignment="justify"
@@ -158,7 +155,6 @@ const TemplateWithInfo: Story<NoticeComponent> = (args: NoticeComponent) => ({
   <cvi-ng-notice [iconName]="iconName" [severity]="'info'"
     title="KMD Käibedeklaratsioon"
     dueDate="01.03.2023"
-    fulfillmentDate="01.04.2023"
     time="22:59"
     subtitle="Maksu- ja tolliamet">
       <cvi-ng-track
