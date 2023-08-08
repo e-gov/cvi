@@ -22,9 +22,9 @@ export default {
 const Template: Story<DatepickerComponent> = (args: DatepickerComponent) => ({
   props: args,
   template: `
-    <cvi-ng-datepicker  [placeholder]="placeholder"
-                        [disabled]="disabled"
-                        [htmlId]="htmlId">
+    <cvi-ng-datepicker [placeholder]="placeholder"
+                       [disabled]="disabled"
+                       [htmlId]="htmlId">
     </cvi-ng-datepicker>
   `,
 });
@@ -76,6 +76,13 @@ export const WithFormGroup = FormTemplate.bind({});
 export const WithCustomPlaceholder = Template.bind({});
 WithCustomPlaceholder.args = {
   placeholder: 'dd.mm.yyyy',
+};
+
+export const OnNonWhiteBackground = Template.bind({});
+OnNonWhiteBackground.parameters = {
+  backgrounds: {
+    default: 'Gray',
+  },
 };
 
 export const WithDisabled = Template.bind({});

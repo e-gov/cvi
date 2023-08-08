@@ -4,7 +4,7 @@ describe('TabContainerComponent', () => {
   });
 
   it('Renders default tab group and clicks the second tab', () => {
-    cy.loadStory('Angular Tab Group', 'Default')
+    cy.loadStory('Angular Tabs Tab Group', 'Default')
       .get('cvi-ng-tab-group')
       .shouldHaveClasses('div', 'cvi-tab-group__list')
       .shouldHaveClasses('[data-cy="tab-button-0"]', [

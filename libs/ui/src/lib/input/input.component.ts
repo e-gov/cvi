@@ -3,6 +3,7 @@ import {
   EventEmitter,
   forwardRef,
   HostBinding,
+  HostListener,
   Input,
   Output,
 } from '@angular/core';
@@ -13,6 +14,20 @@ export const inputComponentValueAccessor = {
   provide: NG_VALUE_ACCESSOR,
   useExisting: forwardRef(() => InputComponent),
   multi: true,
+};
+
+type ValidationType = null | 'positiveNumbers';
+
+const inputRegex: { [key: string]: RegExp } = {
+  positiveNumbers: /\D/g,
+};
+
+const patterns: { [key: string]: string } = {
+  positiveNumbers: '[0-9]*',
+};
+
+const inputModes: { [key: string]: string } = {
+  positiveNumbers: 'numeric',
 };
 
 @Component({
@@ -40,6 +55,15 @@ export class InputComponent implements ControlValueAccessor {
   /** Icon added to the right */
   @Input() suffixIconName!: CviIconName;
 
+  /** Only allow certain characters */
+  @Input()
+  set validationType(value: ValidationType) {
+    this._validationType = value;
+  }
+
+  get validationType(): ValidationType {
+    return this._validationType;
+  }
   /** Emit value on model change */
   @Output() valueChange = new EventEmitter<any>();
 
@@ -48,6 +72,8 @@ export class InputComponent implements ControlValueAccessor {
 
   /** Internal */
   _disabled = false;
+
+  _validationType: ValidationType = null;
 
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   private onChanged: (_: any) => void = () =>
@@ -63,8 +89,33 @@ export class InputComponent implements ControlValueAccessor {
     }${this.suffixIconName ? ' cvi-textfield--has-suffix-icon' : ''}`;
   }
 
+  @HostListener('input', ['$event'])
+  onInput(event: InputEvent) {
+    const inputElement = event.target as HTMLInputElement;
+    inputElement.value = this.handleValue(inputElement.value);
+  }
+
+  handleValue(value: string): string {
+    if (this.validationType !== null) {
+      value = value.replace(inputRegex[this.validationType], '');
+    }
+    return value;
+  }
+
+  get pattern(): string | null {
+    return this.validationType !== null && this.validationType in patterns
+      ? patterns[this.validationType]
+      : null;
+  }
+
+  get inputMode(): string | null {
+    return this.validationType !== null && this.validationType in inputModes
+      ? inputModes[this.validationType]
+      : null;
+  }
+
   setValue(value: any) {
-    this.onChanged(value);
+    this.onChanged(this.handleValue(value));
     this.onTouched();
   }
 
