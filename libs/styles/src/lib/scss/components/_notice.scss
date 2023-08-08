@@ -11,7 +11,7 @@
       border: 1px solid var(--cvi-color-black-coral-2);
 
       & #{$base}__icon-container {
-        background-color: var(--cvi-color-sea-green-2);
+        background-color: var(--cvi-color-sea-green-0);
         fill: var(--cvi-color-sea-green-10);
       }
     }
@@ -19,7 +19,7 @@
     &#{$base}__container--severity-info {
       border: 1px solid var(--cvi-color-black-coral-2);
       & #{$base}__icon-container {
-        background-color: var(--cvi-color-sapphire-blue-2);
+        background-color: var(--cvi-color-sapphire-blue-0);
         fill: var(--cvi-color-sapphire-blue-10);
       }
     }
@@ -28,7 +28,7 @@
       border: 1px solid var(--cvi-color-jasper-10);
 
       & #{$base}__icon-container {
-        background-color: var(--cvi-color-jasper-2);
+        background-color: var(--cvi-color-jasper-0);
         fill: var(--cvi-color-jasper-10);
       }
     }
@@ -55,5 +55,9 @@
       text-decoration: underline;
       cursor: pointer;
     }
+  }
+
+  #{$base}__subtitle-icon {
+    display: flex;
   }
 }

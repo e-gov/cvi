@@ -14,20 +14,43 @@ export default {
   },
   args: {
     severity: 'info',
+    title: 'KMD Käibedeklaratsioon',
+    dueDate: '01.03.2023',
+    fulfillmentDate: '01.04.2023',
+    time: '23:59',
+    subtitle: 'Maksu- ja tolliamet',
   },
 } as Meta<NoticeComponent>;
 
 const Template: Story<NoticeComponent> = (args: NoticeComponent) => ({
   props: args,
   template: `
-    <cvi-ng-notice [iconName]="iconName" [severity]="severity">
+    <cvi-ng-notice [iconName]="iconName" [severity]="severity"
+      title="KMD Käibedeklaratsioon"
+      dueDate="01.03.2023"
+      time="22:59">
+
       <cvi-ng-track
-        layout="flex"
+        slot="'aside'"
+        layout="'flex'"
         horizontalAlignment="justify"
         verticalAlignment="center"
-      >
-        any content content
+        [gap]="4">
+          <div>138.00€</div>
+          <cvi-ng-icon
+            [name]="'info'"
+            [height]="'24'"
+            [cviNgTooltip]="'some tooltip info'">
+            </cvi-ng-icon>
       </cvi-ng-track>
+      <cvi-ng-button
+      slot="action"
+      size="'s'"
+      [iconName]="'exit_to_app'"
+      [iconPosition]="'after'"
+      [iconHeight]="24">
+        kohustust täitma
+      </cvi-ng-button>
     </cvi-ng-notice>
   `,
 });
@@ -37,61 +60,33 @@ export const Default = Template.bind({});
 const TemplateWithError: Story<NoticeComponent> = (args: NoticeComponent) => ({
   props: args,
   template: `
-    <cvi-ng-notice [iconName]="iconName" [severity]="'error'">
+    <cvi-ng-notice [iconName]="iconName" [severity]="'error'" title="KMD Käibedeklaratsioon"
+      dueDate="01.03.2023"
+      time="22:59"
+      subtitle="Maksu- ja tolliamet">
       <cvi-ng-track
-        layout="flex"
-        horizontalAlignment="justify"
-        verticalAlignment="center"
-      >
-        <cvi-ng-track
-          layout="flex"
-          horizontalAlignment="left"
-          verticalAlignment="top"
-          flexDirection="vertical"
-        >
-          <cvi-ng-track
-            layout="flex"
-            horizontalAlignment="justify"
-            verticalAlignment="center"
-            [gap]="4"
-          >
-            <div class="cvi-notice--dark-title">01.03.2023</div>
-            <div class="cvi-notice--dark-title underlined">
-              KMD käibedeklaratsioon
-            </div>
-          </cvi-ng-track>
-          <cvi-ng-track layout="flex" horizontalAlignment="justify" verticalAlignment="center" [gap]="4">
-            <div>23:59</div>
-            <div>Maksu- ja Tolliamet</div>
-            <cvi-ng-icon name="warning_amber" height="18"></cvi-ng-icon>
-          </cvi-ng-track>
-        </cvi-ng-track>
-        <cvi-ng-track
-          layout="flex"
-          horizontalAlignment="right"
-          verticalAlignment="center"
-          [gap]="4"
-        >
-          <cvi-ng-track
-            layout="flex"
-            horizontalAlignment="justify"
-            verticalAlignment="center"
-            [gap]="4"
-          >
-          <div>
-            138.00$
-            </div>
-            <cvi-ng-icon
-              [name]="'info'"
-              [height]="'24'"
-              [cviNgTooltip]="
-                'This tooltip is displayed when hovering, if you move mouse out of element then tooltip dissapears'
-              "
-            ></cvi-ng-icon>
-          </cvi-ng-track>
-          <cvi-ng-button> kohustust täitma </cvi-ng-button>
-        </cvi-ng-track>
-      </cvi-ng-track>
+      slot="'aside'"
+      layout="flex"
+      horizontalAlignment="justify"
+      verticalAlignment="center"
+      [gap]="4"
+    >
+      <div>138.00€</div>
+      <cvi-ng-icon
+        [name]="'info'"
+        [height]="'24'"
+        [cviNgTooltip]="'some tooltip info'"
+      ></cvi-ng-icon>
+    </cvi-ng-track>
+    <cvi-ng-button
+    slot="action"
+    size="'s'"
+    [iconName]="'exit_to_app'"
+    [iconPosition]="'after'"
+    [iconHeight]="24"
+  >
+    kohustust täitma
+  </cvi-ng-button>
     </cvi-ng-notice>
   `,
 });
@@ -103,86 +98,53 @@ const TemplateWithSuccess: Story<NoticeComponent> = (
 ) => ({
   props: args,
   template: `
-  <cvi-ng-notice [iconName]="iconName" [severity]="'success'">
-  <cvi-ng-track
+  <cvi-ng-notice [iconName]="iconName" [severity]="'success'" title="KMD Käibedeklaratsioon"
+    dueDate="01.03.2023"
+    fulfillmentDate="01.04.2023"
+    time="22:59"
+    subtitle="Maksu- ja tolliamet">
+    <cvi-ng-track
+    slot="aside"
     layout="flex"
-    horizontalAlignment="justify"
-    verticalAlignment="center"
+    horizontalAlignment="center"
+    verticalAlignment="top"
+    [gap]="1"
+    flexDirection="vertical"
   >
+    <div class="cvi-notice--dark-title">{{ fulfillmentDate }}</div>
     <cvi-ng-track
       layout="flex"
-      horizontalAlignment="left"
-      verticalAlignment="top"
-      flexDirection="vertical"
+      horizontalAlignment="justify"
+      verticalAlignment="center"
+      [gap]="4"
+      [ngStyle]="{ width: '100%' }"
     >
-      <cvi-ng-track
-        layout="flex"
-        horizontalAlignment="justify"
-        verticalAlignment="center"
-        [gap]="4"
-      >
-        <div class="cvi-notice--dark-title">01.03.2023</div>
-        <div class="cvi-notice--dark-title underlined">
-          KMD käibedeklaratsioon
-        </div>
-      </cvi-ng-track>
-      <cvi-ng-track layout="flex" horizontalAlignment="justify" [gap]="4">
-        <div>23:59</div>
-        <div>Maksu- ja Tolliamet</div>
-        <cvi-ng-icon name="warning_amber" height="18"></cvi-ng-icon>
-      </cvi-ng-track>
+      Tasutud
+      <cvi-ng-icon
+        [name]="'info'"
+        [height]="'24'"
+        [cviNgTooltip]="
+          'This tooltip is displayed when hovering, if you move mouse out of element then tooltip dissapears'
+        "
+      ></cvi-ng-icon>
     </cvi-ng-track>
     <cvi-ng-track
       layout="flex"
-      horizontalAlignment="right"
+      horizontalAlignment="justify"
       verticalAlignment="center"
       [gap]="4"
     >
-      <cvi-ng-track
-        layout="flex"
-        horizontalAlignment="center"
-        verticalAlignment="top"
-        [gap]="1"
-        flexDirection="vertical"
-      >
-        <div class="cvi-notice--dark-title">01.03.2023</div>
-        <cvi-ng-track
-          layout="flex"
-          horizontalAlignment="justify"
-          verticalAlignment="center"
-          [gap]="4"
-          [ngStyle]="{ width: '100%' }"
-        >
-          Tasutud
-          <cvi-ng-icon
-            [name]="'info'"
-            [height]="'24'"
-            [cviNgTooltip]="
-              'This tooltip is displayed when hovering, if you move mouse out of element then tooltip dissapears'
-            "
-          ></cvi-ng-icon>
-        </cvi-ng-track>
-        <cvi-ng-track
-          layout="flex"
-          horizontalAlignment="justify"
-          verticalAlignment="center"
-          [gap]="4"
-        >
-        <div>
-          138.00$
-          </div>
-          <cvi-ng-icon
-            [name]="'info'"
-            [height]="'24'"
-            [cviNgTooltip]="
-              'This tooltip is displayed when hovering, if you move mouse out of element then tooltip dissapears'
-            "
-          ></cvi-ng-icon>
-        </cvi-ng-track>
-      </cvi-ng-track>
-      <cvi-ng-button appearance="secondary"> Lisainfo </cvi-ng-button>
+      <div>138.00€</div>
+      <cvi-ng-icon
+        [name]="'info'"
+        [height]="'24'"
+        [cviNgTooltip]="
+          'This tooltip is displayed when hovering, if you move mouse out of element then tooltip dissapears'
+        "
+      ></cvi-ng-icon>
     </cvi-ng-track>
   </cvi-ng-track>
+    <cvi-ng-button slot="action" appearance="secondary"> Lisainfo </cvi-ng-button>
   </cvi-ng-notice>
   
   `,
@@ -193,88 +155,36 @@ export const WithSuccess = TemplateWithSuccess.bind({});
 const TemplateWithInfo: Story<NoticeComponent> = (args: NoticeComponent) => ({
   props: args,
   template: `
-  <cvi-ng-notice [iconName]="iconName" [severity]="'info'">
-  <cvi-ng-track
-    layout="flex"
-    horizontalAlignment="justify"
-    verticalAlignment="center"
-  >
-    <cvi-ng-track
-      layout="flex"
-      horizontalAlignment="left"
-      verticalAlignment="top"
-      flexDirection="vertical"
-    >
+  <cvi-ng-notice [iconName]="iconName" [severity]="'info'"
+    title="KMD Käibedeklaratsioon"
+    dueDate="01.03.2023"
+    fulfillmentDate="01.04.2023"
+    time="22:59"
+    subtitle="Maksu- ja tolliamet">
       <cvi-ng-track
-        layout="flex"
-        horizontalAlignment="justify"
-        verticalAlignment="center"
-        [gap]="4"
-      >
-        <div class="cvi-notice--dark-title">01.03.2023</div>
-        <div class="cvi-notice--dark-title underlined">
-          KMD käibedeklaratsioon
-        </div>
-      </cvi-ng-track>
-      <cvi-ng-track layout="flex" horizontalAlignment="justify" [gap]="4">
-        <div>23:59</div>
-        <div>Maksu- ja Tolliamet</div>
-        <cvi-ng-icon name="warning_amber" height="18"></cvi-ng-icon>
-      </cvi-ng-track>
-    </cvi-ng-track>
-    <cvi-ng-track
+      slot="'aside'"
       layout="flex"
-      horizontalAlignment="right"
+      horizontalAlignment="justify"
       verticalAlignment="center"
       [gap]="4"
     >
-      <cvi-ng-track
-        layout="flex"
-        horizontalAlignment="center"
-        verticalAlignment="top"
-        [gap]="1"
-        flexDirection="vertical"
-      >
-        <div class="cvi-notice--dark-title">01.03.2023</div>
-        <cvi-ng-track
-          layout="flex"
-          horizontalAlignment="justify"
-          verticalAlignment="center"
-          [gap]="4"
-          [ngStyle]="{ width: '100%' }"
-        >
-          Tasutud
-          <cvi-ng-icon
-            [name]="'info'"
-            [height]="'24'"
-            [cviNgTooltip]="
-              'This tooltip is displayed when hovering, if you move mouse out of element then tooltip dissapears'
-            "
-          ></cvi-ng-icon>
-        </cvi-ng-track>
-        <cvi-ng-track
-          layout="flex"
-          horizontalAlignment="justify"
-          verticalAlignment="center"
-          [gap]="4"
-        >
-        <div>
-          138.00$
-          </div>
-          <cvi-ng-icon
-            [name]="'info'"
-            [height]="'24'"
-            [cviNgTooltip]="
-              'This tooltip is displayed when hovering, if you move mouse out of element then tooltip dissapears'
-            "
-          ></cvi-ng-icon>
-        </cvi-ng-track>
-      </cvi-ng-track>
-      <cvi-ng-button appearance="secondary"> Lisainfo </cvi-ng-button>
+      <div>138.00€</div>
+      <cvi-ng-icon
+        [name]="'info'"
+        [height]="24"
+        [cviNgTooltip]="'some tooltip info'"
+      ></cvi-ng-icon>
     </cvi-ng-track>
-  </cvi-ng-track>
+    <cvi-ng-button
+    slot="action"
+    size="'s'"
+    [iconName]="'exit_to_app'"
+    [iconPosition]="'after'"
+    [iconHeight]="24"
+  >
+    kohustust täitma
+  </cvi-ng-button>
   </cvi-ng-notice>
-  
   `,
 });
 

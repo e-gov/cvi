@@ -5,123 +5,55 @@
     <cvi-ng-icon [name]="getIconName()" [height]="24"></cvi-ng-icon>
   </div>
   <div class="cvi-notice__content">
-    <ng-container [ngTemplateOutlet]="content"></ng-container>
-
-    <ng-template #content>
+    <cvi-ng-track
+      layout="flex"
+      horizontalAlignment="justify"
+      verticalAlignment="center"
+      flexIsMultiline="true"
+    >
       <cvi-ng-track
         layout="flex"
-        horizontalAlignment="justify"
+        horizontalAlignment="left"
         verticalAlignment="center"
+        [gap]="4"
       >
         <cvi-ng-track
           layout="flex"
-          horizontalAlignment="left"
+          horizontalAlignment="center"
           verticalAlignment="top"
           flexDirection="vertical"
         >
-          <cvi-ng-track
-            layout="flex"
-            horizontalAlignment="justify"
-            verticalAlignment="center"
-            [gap]="4"
-          >
-            <div class="cvi-notice--dark-title">{{ dueDate }}</div>
-            <div class="cvi-notice--dark-title underlined">
-              {{ title }}
-            </div>
-          </cvi-ng-track>
-          <cvi-ng-track
-            layout="flex"
-            horizontalAlignment="justify"
-            verticalAlignment="center"
-            [gap]="4"
-          >
-            <div>{{ time }}</div>
-            <div>{{ subtitle }}</div>
-            <cvi-ng-icon name="warning_amber" height="20"></cvi-ng-icon>
-          </cvi-ng-track>
+          <div class="cvi-notice--dark-title">{{ dueDate }}</div>
+          <div>{{ time }}</div>
         </cvi-ng-track>
         <cvi-ng-track
-          *ngIf="severity !== 'success'"
+          flexDirection="vertical"
           layout="flex"
-          horizontalAlignment="right"
-          verticalAlignment="center"
-          [gap]="4"
+          horizontalAlignment="center"
+          verticalAlignment="top"
         >
-          <cvi-ng-track
-            layout="flex"
-            horizontalAlignment="justify"
-            verticalAlignment="center"
-            [gap]="4"
-          >
-            <div>138.00$</div>
+          <div class="cvi-notice--dark-title underlined">
+            {{ title }}
+          </div>
+          <cvi-ng-track layout="flex" [gap]="2">
+            <div>{{ subtitle }}</div>
             <cvi-ng-icon
-              [name]="'info'"
-              [height]="'24'"
-              [cviNgTooltip]="
-                'This tooltip is displayed when hovering, if you move mouse out of element then tooltip dissapears'
-              "
+              class="cvi-notice__subtitle-icon"
+              name="warning_amber"
+              height="20"
             ></cvi-ng-icon>
           </cvi-ng-track>
-          <cvi-ng-button
-            size="s"
-            iconName="exit_to_app"
-            iconPosition="right"
-            [iconHeight]="24"
-          >
-            kohustust täitma
-          </cvi-ng-button>
-        </cvi-ng-track>
-        <cvi-ng-track
-          *ngIf="severity === 'success'"
-          layout="flex"
-          horizontalAlignment="right"
-          verticalAlignment="center"
-          [gap]="4"
-        >
-          <cvi-ng-track
-            layout="flex"
-            horizontalAlignment="center"
-            verticalAlignment="top"
-            [gap]="1"
-            flexDirection="vertical"
-          >
-            <div class="cvi-notice--dark-title">{{ fulfillmentDate }}</div>
-            <cvi-ng-track
-              layout="flex"
-              horizontalAlignment="justify"
-              verticalAlignment="center"
-              [gap]="4"
-              [ngStyle]="{ width: '100%' }"
-            >
-              Tasutud
-              <cvi-ng-icon
-                [name]="'info'"
-                [height]="'24'"
-                [cviNgTooltip]="
-                  'This tooltip is displayed when hovering, if you move mouse out of element then tooltip dissapears'
-                "
-              ></cvi-ng-icon>
-            </cvi-ng-track>
-            <cvi-ng-track
-              layout="flex"
-              horizontalAlignment="justify"
-              verticalAlignment="center"
-              [gap]="4"
-            >
-              <div>138.00$</div>
-              <cvi-ng-icon
-                [name]="'info'"
-                [height]="'24'"
-                [cviNgTooltip]="
-                  'This tooltip is displayed when hovering, if you move mouse out of element then tooltip dissapears'
-                "
-              ></cvi-ng-icon>
-            </cvi-ng-track>
-          </cvi-ng-track>
-          <cvi-ng-button appearance="secondary"> Lisainfo </cvi-ng-button>
         </cvi-ng-track>
       </cvi-ng-track>
-    </ng-template>
+      <cvi-ng-track
+        layout="flex"
+        horizontalAlignment="right"
+        verticalAlignment="center"
+        [gap]="4"
+      >
+        <ng-content slot="aside"></ng-content>
+        <ng-content slot="action"></ng-content>
+      </cvi-ng-track>
+    </cvi-ng-track>
   </div>
 </div>

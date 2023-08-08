@@ -32,7 +32,7 @@ export class ButtonComponent {
     return this._iconHeight;
   }
   @Input() set iconHeight(iconHeight) {
-    this._iconHeight = this.size === 'm' ? 16 : 12;
+    this._iconHeight = iconHeight;
   }
 
   /** Icon name */
