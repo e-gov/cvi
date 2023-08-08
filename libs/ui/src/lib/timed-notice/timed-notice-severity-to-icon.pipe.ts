@@ -1,12 +1,12 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { NoticeSeverity } from './notice';
+import { TimedNoticeSeverity } from './timed-notice';
 import { CviIconName } from '@egov/cvi-icons';
 
 @Pipe({
   name: 'toHeaderIcon',
 })
-export class NoticeSeverityToHeaderIconPipe implements PipeTransform {
-  transform(severity: NoticeSeverity): CviIconName | undefined {
+export class TimedNoticeSeverityToIconPipe implements PipeTransform {
+  transform(severity: TimedNoticeSeverity): CviIconName | undefined {
     if (severity === 'success') {
       return 'check';
     }

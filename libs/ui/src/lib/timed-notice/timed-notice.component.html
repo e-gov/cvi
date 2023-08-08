@@ -1,10 +1,12 @@
 <div
-  class="cvi-notice__container cvi-notice__container--severity-{{ severity }}"
+  class="cvi-timed-notice__container cvi-timed-notice__container--severity-{{
+    severity
+  }}"
 >
-  <div class="cvi-notice__icon-container">
+  <div class="cvi-timed-notice__icon-container">
     <cvi-ng-icon [name]="getIconName()" [height]="24"></cvi-ng-icon>
   </div>
-  <div class="cvi-notice__content">
+  <div class="cvi-timed-notice__content">
     <cvi-ng-track
       layout="flex"
       horizontalAlignment="justify"
@@ -23,7 +25,7 @@
           verticalAlignment="top"
           flexDirection="vertical"
         >
-          <div class="cvi-notice__title">{{ dueDate }}</div>
+          <div class="cvi-timed-notice__title">{{ dueDate }}</div>
           <div>{{ time }}</div>
         </cvi-ng-track>
         <cvi-ng-track
@@ -32,7 +34,7 @@
           horizontalAlignment="center"
           verticalAlignment="top"
         >
-          <div class="cvi-notice__title underlined">
+          <div class="cvi-timed-notice__title underlined">
             {{ title }}
           </div>
           <ng-content select="[slot=subtitle]"></ng-content>

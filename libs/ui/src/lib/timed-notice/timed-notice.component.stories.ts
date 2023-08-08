@@ -1,9 +1,9 @@
 import { Story, Meta } from '@storybook/angular';
-import notes from './notice.component.md';
-import { NoticeComponent } from './notice.component';
+import notes from './timed-notice.component.md';
+import { TimedNoticeComponent } from './timed-notice.component';
 
 export default {
-  title: 'Angular/Notice',
+  title: 'Angular/Timed Notice',
   parameters: { notes, layout: 'padded' },
   argTypes: {
     severity: {
@@ -18,19 +18,19 @@ export default {
     dueDate: '01.03.2023',
     time: '23:59',
   },
-} as Meta<NoticeComponent>;
+} as Meta<TimedNoticeComponent>;
 
-const Template: Story<NoticeComponent> = (args: NoticeComponent) => ({
+const Template: Story<TimedNoticeComponent> = (args: TimedNoticeComponent) => ({
   props: args,
   template: `
-    <cvi-ng-notice [iconName]="iconName" [severity]="severity"
+    <cvi-ng-timed-notice [iconName]="iconName" [severity]="severity"
       title="KMD Käibedeklaratsioon"
       dueDate="01.03.2023"
       time="22:59">
       <cvi-ng-track slot="subtitle" layout="flex" [gap]="2">
       <div>Maksu- ja tolliamet</div>
       <cvi-ng-icon
-        class="cvi-notice__subtitle-icon"
+        class="cvi-timed-notice__subtitle-icon"
         name="warning_amber"
         height="20"
       ></cvi-ng-icon>
@@ -56,22 +56,24 @@ const Template: Story<NoticeComponent> = (args: NoticeComponent) => ({
       [iconHeight]="24">
         kohustust täitma
       </cvi-ng-button>
-    </cvi-ng-notice>
+    </cvi-ng-timed-notice>
   `,
 });
 
 export const Default = Template.bind({});
 
-const TemplateWithError: Story<NoticeComponent> = (args: NoticeComponent) => ({
+const TemplateWithError: Story<TimedNoticeComponent> = (
+  args: TimedNoticeComponent
+) => ({
   props: args,
   template: `
-    <cvi-ng-notice [iconName]="iconName" [severity]="'error'" title="KMD Käibedeklaratsioon"
+    <cvi-ng-timed-notice [iconName]="iconName" [severity]="'error'" title="KMD Käibedeklaratsioon"
       dueDate="01.03.2023"
       time="22:59">
       <cvi-ng-track slot="subtitle" layout="flex" [gap]="2">
       <div>Maksu- ja tolliamet</div>
       <cvi-ng-icon
-        class="cvi-notice__subtitle-icon"
+        class="cvi-timed-notice__subtitle-icon"
         name="warning_amber"
         height="20"
       ></cvi-ng-icon>
@@ -99,24 +101,24 @@ const TemplateWithError: Story<NoticeComponent> = (args: NoticeComponent) => ({
   >
     kohustust täitma
   </cvi-ng-button>
-    </cvi-ng-notice>
+    </cvi-ng-timed-notice>
   `,
 });
 
 export const WithError = TemplateWithError.bind({});
 
-const TemplateWithSuccess: Story<NoticeComponent> = (
-  args: NoticeComponent
+const TemplateWithSuccess: Story<TimedNoticeComponent> = (
+  args: TimedNoticeComponent
 ) => ({
   props: args,
   template: `
-  <cvi-ng-notice [iconName]="iconName" [severity]="'success'" title="KMD Käibedeklaratsioon"
+  <cvi-ng-timed-notice [iconName]="iconName" [severity]="'success'" title="KMD Käibedeklaratsioon"
     dueDate="01.03.2023"
     time="22:59">
     <cvi-ng-track slot="subtitle" layout="flex" [gap]="2">
     <div>Maksu- ja tolliamet</div>
     <cvi-ng-icon
-      class="cvi-notice__subtitle-icon"
+      class="cvi-timed-notice__subtitle-icon"
       name="warning_amber"
       height="20"
     ></cvi-ng-icon>
@@ -129,7 +131,7 @@ const TemplateWithSuccess: Story<NoticeComponent> = (
     [gap]="1"
     flexDirection="vertical"
   >
-    <div class="cvi-notice__title">01.04.2023</div>
+    <div class="cvi-timed-notice__title">01.04.2023</div>
     <cvi-ng-track
       layout="flex"
       horizontalAlignment="justify"
@@ -163,24 +165,26 @@ const TemplateWithSuccess: Story<NoticeComponent> = (
     </cvi-ng-track>
   </cvi-ng-track>
     <cvi-ng-button slot="action" appearance="secondary"> Lisainfo </cvi-ng-button>
-  </cvi-ng-notice>
+  </cvi-ng-timed-notice>
   
   `,
 });
 
 export const WithSuccess = TemplateWithSuccess.bind({});
 
-const TemplateWithInfo: Story<NoticeComponent> = (args: NoticeComponent) => ({
+const TemplateWithInfo: Story<TimedNoticeComponent> = (
+  args: TimedNoticeComponent
+) => ({
   props: args,
   template: `
-  <cvi-ng-notice [iconName]="iconName" [severity]="'info'"
+  <cvi-ng-timed-notice [iconName]="iconName" [severity]="'info'"
     title="KMD Käibedeklaratsioon"
     dueDate="01.03.2023"
     time="22:59">
     <cvi-ng-track slot="subtitle" layout="flex" [gap]="2">
     <div>Maksu- ja tolliamet</div>
     <cvi-ng-icon
-      class="cvi-notice__subtitle-icon"
+      class="cvi-timed-notice__subtitle-icon"
       name="warning_amber"
       height="20"
     ></cvi-ng-icon>
@@ -208,7 +212,7 @@ const TemplateWithInfo: Story<NoticeComponent> = (args: NoticeComponent) => ({
   >
     kohustust täitma
   </cvi-ng-button>
-  </cvi-ng-notice>
+  </cvi-ng-timed-notice>
   `,
 });
 

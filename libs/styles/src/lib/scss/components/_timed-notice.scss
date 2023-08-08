@@ -1,4 +1,4 @@
-@mixin cvi-notice($base: &) {
+@mixin cvi-timed-notice($base: &) {
   width: 100%;
   #{$base}__container {
     border-radius: var(--cvi-radius-s);

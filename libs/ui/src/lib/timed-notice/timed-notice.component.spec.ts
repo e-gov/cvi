@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NoticeComponent } from './notice.component';
+import { TimedNoticeComponent } from './timed-notice.component';
 
-describe('NoticeComponent', () => {
-  let component: NoticeComponent;
-  let fixture: ComponentFixture<NoticeComponent>;
+describe('TimedNoticeComponent', () => {
+  let component: TimedNoticeComponent;
+  let fixture: ComponentFixture<TimedNoticeComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [NoticeComponent],
+      declarations: [TimedNoticeComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(NoticeComponent);
+    fixture = TestBed.createComponent(TimedNoticeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
