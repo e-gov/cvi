@@ -36,7 +36,7 @@
 
   #{$base}__content {
     align-items: center;
-    padding: var(--cvi-spacing-valga);
+    padding: get-spacing('valga');
     width: 100%;
   }
 

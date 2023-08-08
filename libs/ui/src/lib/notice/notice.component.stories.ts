@@ -17,7 +17,6 @@ export default {
     title: 'KMD Käibedeklaratsioon',
     dueDate: '01.03.2023',
     time: '23:59',
-    subtitle: 'Maksu- ja tolliamet',
   },
 } as Meta<NoticeComponent>;
 
@@ -28,8 +27,16 @@ const Template: Story<NoticeComponent> = (args: NoticeComponent) => ({
       title="KMD Käibedeklaratsioon"
       dueDate="01.03.2023"
       time="22:59">
+      <cvi-ng-track slot="subtitle" layout="flex" [gap]="2">
+      <div>Maksu- ja tolliamet</div>
+      <cvi-ng-icon
+        class="cvi-notice__subtitle-icon"
+        name="warning_amber"
+        height="20"
+      ></cvi-ng-icon>
+      </cvi-ng-track>
       <cvi-ng-track
-        slot="'aside'"
+        slot="aside"
         layout="'flex'"
         horizontalAlignment="justify"
         verticalAlignment="center"
@@ -60,10 +67,17 @@ const TemplateWithError: Story<NoticeComponent> = (args: NoticeComponent) => ({
   template: `
     <cvi-ng-notice [iconName]="iconName" [severity]="'error'" title="KMD Käibedeklaratsioon"
       dueDate="01.03.2023"
-      time="22:59"
-      subtitle="Maksu- ja tolliamet">
+      time="22:59">
+      <cvi-ng-track slot="subtitle" layout="flex" [gap]="2">
+      <div>Maksu- ja tolliamet</div>
+      <cvi-ng-icon
+        class="cvi-notice__subtitle-icon"
+        name="warning_amber"
+        height="20"
+      ></cvi-ng-icon>
+      </cvi-ng-track>
       <cvi-ng-track
-      slot="'aside'"
+      slot="aside"
       layout="flex"
       horizontalAlignment="justify"
       verticalAlignment="center"
@@ -98,8 +112,15 @@ const TemplateWithSuccess: Story<NoticeComponent> = (
   template: `
   <cvi-ng-notice [iconName]="iconName" [severity]="'success'" title="KMD Käibedeklaratsioon"
     dueDate="01.03.2023"
-    time="22:59"
-    subtitle="Maksu- ja tolliamet">
+    time="22:59">
+    <cvi-ng-track slot="subtitle" layout="flex" [gap]="2">
+    <div>Maksu- ja tolliamet</div>
+    <cvi-ng-icon
+      class="cvi-notice__subtitle-icon"
+      name="warning_amber"
+      height="20"
+    ></cvi-ng-icon>
+    </cvi-ng-track>
     <cvi-ng-track
     slot="aside"
     layout="flex"
@@ -155,10 +176,17 @@ const TemplateWithInfo: Story<NoticeComponent> = (args: NoticeComponent) => ({
   <cvi-ng-notice [iconName]="iconName" [severity]="'info'"
     title="KMD Käibedeklaratsioon"
     dueDate="01.03.2023"
-    time="22:59"
-    subtitle="Maksu- ja tolliamet">
+    time="22:59">
+    <cvi-ng-track slot="subtitle" layout="flex" [gap]="2">
+    <div>Maksu- ja tolliamet</div>
+    <cvi-ng-icon
+      class="cvi-notice__subtitle-icon"
+      name="warning_amber"
+      height="20"
+    ></cvi-ng-icon>
+    </cvi-ng-track>
       <cvi-ng-track
-      slot="'aside'"
+      slot="aside"
       layout="flex"
       horizontalAlignment="justify"
       verticalAlignment="center"
