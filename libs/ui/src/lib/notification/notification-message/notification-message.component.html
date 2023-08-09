@@ -23,7 +23,7 @@
     <div class="cvi-notification-message__content" dataAttribute="content">
       <ng-container *ngIf="size === 'compact' && getIconName() as iconName">
         <cvi-ng-labeled-icon [name]="iconName" [iconHeight]="24" class="cvi-notification-message__content-icon-wrapper"
-                             iconClass="cvi-notification-message__content-icon" dataAttribute="icon">
+                             iconClass="cvi-notification-message__content-icon" dataAttribute="icon" verticalAlignment="center">
           <ng-container *ngTemplateOutlet="content"></ng-container>
         </cvi-ng-labeled-icon>
       </ng-container>
