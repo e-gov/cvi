@@ -34,17 +34,17 @@
     }
 
     #{$base}--severity-success {
-      background-color: get-color(sea-green-1);
+      background-color: get-color(sea-green-0);
       border: 1px solid get-color(sea-green-10);
     }
 
     #{$base}--severity-error {
-      background-color: get-color(jasper-1);
+      background-color: get-color(jasper-0);
       border: 1px solid get-color(jasper-10);
     }
 
     #{$base}--severity-neutral {
-      background-color: get-color(black-coral-1);
+      background-color: get-color(extra-light);
       border: 1px solid get-color(black-coral-2);
     }
 
@@ -56,7 +56,7 @@
 
     #{$base}__title {
       line-height: get-line-height(500);
-      color: get-color(black-coral-20);
+      color: get-color(black-coral-12);
     }
 
     #{$base}__header-icon {
@@ -79,17 +79,17 @@
       }
 
       #{$base}--severity-neutral & {
-        fill: get-color(black-coral-10);
+        fill: get-color(black-coral-12);
       }
     }
 
     #{$base}__content-icon {
-      fill: get-color(black);
+      fill: get-color(black-coral-12);
       margin-top: 4px;
       margin-right: -6px;
     }
 
-    #{$base}--size-compact #{$base}__close-button-inner{
+    #{$base}--size-compact #{$base}__close-button-inner {
       margin: get-spacing('rapla');
     }
 
@@ -103,13 +103,13 @@
     }
 
     #{$base}__close-button-icon {
-      fill: get-color(black-coral-18);
+      fill: get-color(black-coral-12);
       display: block;
     }
 
     #{$base}__content {
       display: block;
-      color: get-color(black-coral-18);
+      color: get-color(black-coral-12);
       font-size: get-font-size(100);
       line-height: get-line-height(500);
     }
