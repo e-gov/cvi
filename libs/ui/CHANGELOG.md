@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.24.1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.24.0...ui-1.24.1) (2023-08-10)
+
+
+### Bug Fixes
+
+* **ng:** html section content web components removed on re-rendering EBS-835 ([#161](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/161)) ([b5227a5](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/b5227a5f61d0c670ad2ba6eaade8d8d16d6a13c4))
+
+
+
 # [1.24.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.23.2...ui-1.24.0) (2023-08-02)
 
 
