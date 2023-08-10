@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [1.25.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.24.1...ui-1.25.0) (2023-08-10)
+
+
+### Features
+
+* **ng:** add maxLength input to input component EBS-853 ([#163](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/163)) ([b17af8f](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/b17af8fa9552f40136e95b015e8fcc113aab4bdd))
+
+
+
 ## [1.24.1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.24.0...ui-1.24.1) (2023-08-10)
 
 
