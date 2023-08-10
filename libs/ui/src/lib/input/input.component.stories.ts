@@ -29,6 +29,7 @@ export default {
     placeholder: 'Username',
     disabled: false,
     htmlId: 'some-input',
+    maxLength: ''
   },
 } as Meta<InputComponent>;
 
@@ -41,6 +42,7 @@ const Template: Story<InputComponent> = (args: InputComponent) => ({
                     [disabled]="disabled"
                     [suffixIconName]="suffixIconName"
                     [htmlId]="htmlId"
+                    [maxLength]="maxLength"
                     [validationType]="validationType"></cvi-ng-input>
     </cvi-ng-form-item>
   `,
@@ -91,6 +93,7 @@ const FormTemplate: Story<InputComponent> = (args: InputComponent) => {
           <cvi-ng-input formControlName="item"
                         [placeholder]="placeholder"
                         [htmlId]="htmlId"
+                        [maxLength]="maxLength"
                         [validationType]="validationType"></cvi-ng-input>
         </cvi-ng-form-item>
         <cvi-ng-track layout="flex" horizontalAlignment="justify" gap="3">
