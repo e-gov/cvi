@@ -15,6 +15,7 @@ export default {
   args: {
     severity: 'info',
     title: 'KMD Käibedeklaratsioon',
+    titleHref: 'https://www.eesti.ee',
     dueDate: '01.03.2023',
     time: '23:59',
   },
@@ -25,6 +26,7 @@ const Template: Story<TimedNoticeComponent> = (args: TimedNoticeComponent) => ({
   template: `
     <cvi-ng-timed-notice [iconName]="iconName" [severity]="severity"
       title="KMD Käibedeklaratsioon"
+      titleHref="https://www.eesti.ee"
       dueDate="01.03.2023"
       time="22:59">
       <cvi-ng-track slot="subtitle" layout="flex" [gap]="2">
@@ -68,6 +70,7 @@ const TemplateWithError: Story<TimedNoticeComponent> = (
   props: args,
   template: `
     <cvi-ng-timed-notice [iconName]="iconName" [severity]="'error'" title="KMD Käibedeklaratsioon"
+      titleHref="https://www.eesti.ee"
       dueDate="01.03.2023"
       time="22:59">
       <cvi-ng-track slot="subtitle" layout="flex" [gap]="2">
@@ -113,6 +116,7 @@ const TemplateWithSuccess: Story<TimedNoticeComponent> = (
   props: args,
   template: `
   <cvi-ng-timed-notice [iconName]="iconName" [severity]="'success'" title="KMD Käibedeklaratsioon"
+    titleHref="https://www.eesti.ee"
     dueDate="01.03.2023"
     time="22:59">
     <cvi-ng-track slot="subtitle" layout="flex" [gap]="2">
@@ -179,6 +183,7 @@ const TemplateWithInfo: Story<TimedNoticeComponent> = (
   template: `
   <cvi-ng-timed-notice [iconName]="iconName" [severity]="'info'"
     title="KMD Käibedeklaratsioon"
+    titleHref="https://www.eesti.ee"
     dueDate="01.03.2023"
     time="22:59">
     <cvi-ng-track slot="subtitle" layout="flex" [gap]="2">

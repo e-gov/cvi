@@ -17,6 +17,7 @@ export class TimedNoticeComponent {
   @Input() severity: TimedNoticeSeverity = 'info';
   @Input() iconName?: CviIconName;
   @Input() title = 'title';
+  @Input() titleHref = '#';
   @Input() dueDate?: string;
   @Input() time?: string;
   constructor(private readonly iconPipe: TimedNoticeSeverityToIconPipe) {}

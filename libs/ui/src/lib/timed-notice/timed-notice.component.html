@@ -34,9 +34,9 @@
           horizontalAlignment="center"
           verticalAlignment="top"
         >
-          <div class="cvi-timed-notice__title underlined">
+          <a [href]="titleHref" class="cvi-timed-notice__title underlined">
             {{ title }}
-          </div>
+          </a>
           <ng-content select="[slot=subtitle]"></ng-content>
         </cvi-ng-track>
       </cvi-ng-track>
