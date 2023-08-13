@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [1.26.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.25.0...ui-1.26.0) (2023-08-13)
+
+
+### Features
+
+* **storybook:** add html section story to storybook steps component  ([#164](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/164)) ([9cdaeac](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/9cdaeaccc75b6769bb83a7d27f45cdd5e42ad108))
+
+
+
 # [1.25.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.24.1...ui-1.25.0) (2023-08-10)
 
 
