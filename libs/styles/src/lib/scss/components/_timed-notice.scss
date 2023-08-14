@@ -7,7 +7,7 @@
     fill: get-color(black-coral-12);
     font-size: get-font-size(80);
 
-    &#{$base}__container--severity-success {
+    &--severity-success {
       border: 1px solid var(--cvi-color-black-coral-2);
 
       & #{$base}__icon-container {
@@ -16,7 +16,7 @@
       }
     }
 
-    &#{$base}__container--severity-info {
+    &--severity-info {
       border: 1px solid var(--cvi-color-black-coral-2);
       & #{$base}__icon-container {
         background-color: var(--cvi-color-sapphire-blue-0);
@@ -24,7 +24,7 @@
       }
     }
 
-    &#{$base}__container--severity-error {
+    &--severity-error {
       border: 1px solid var(--cvi-color-jasper-10);
 
       & #{$base}__icon-container {

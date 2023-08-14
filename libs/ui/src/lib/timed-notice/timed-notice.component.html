@@ -37,7 +37,7 @@
           <a [href]="titleHref" class="cvi-timed-notice__title underlined">
             {{ title }}
           </a>
-          <ng-content select="[slot=subtitle]"></ng-content>
+          <ng-content select="[cvi-ng-timed-notice=subtitle]"></ng-content>
         </cvi-ng-track>
       </cvi-ng-track>
       <cvi-ng-track
@@ -46,8 +46,8 @@
         verticalAlignment="center"
         [gap]="4"
       >
-        <ng-content select="[slot=aside]"></ng-content>
-        <ng-content select="[slot=action]"></ng-content>
+        <ng-content select="[cvi-ng-timed-notice=aside]"></ng-content>
+        <ng-content select="[cvi-ng-timed-notice=action]"></ng-content>
       </cvi-ng-track>
     </cvi-ng-track>
   </div>

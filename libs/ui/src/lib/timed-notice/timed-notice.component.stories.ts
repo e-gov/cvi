@@ -29,7 +29,7 @@ const Template: Story<TimedNoticeComponent> = (args: TimedNoticeComponent) => ({
       titleHref="https://www.eesti.ee"
       dueDate="01.03.2023"
       time="22:59">
-      <cvi-ng-track slot="subtitle" layout="flex" [gap]="2">
+      <cvi-ng-track cvi-ng-timed-notice="subtitle" layout="flex" [gap]="2">
       <div>Maksu- ja tolliamet</div>
       <cvi-ng-icon
         class="cvi-timed-notice__subtitle-icon"
@@ -38,7 +38,7 @@ const Template: Story<TimedNoticeComponent> = (args: TimedNoticeComponent) => ({
       ></cvi-ng-icon>
       </cvi-ng-track>
       <cvi-ng-track
-        slot="aside"
+        cvi-ng-timed-notice="aside"
         layout="'flex'"
         horizontalAlignment="justify"
         verticalAlignment="center"
@@ -51,7 +51,7 @@ const Template: Story<TimedNoticeComponent> = (args: TimedNoticeComponent) => ({
             </cvi-ng-icon>
       </cvi-ng-track>
       <cvi-ng-button
-      slot="action"
+      cvi-ng-timed-notice="action"
       size="'s'"
       [iconName]="'exit_to_app'"
       [iconPosition]="'after'"
@@ -73,7 +73,7 @@ const TemplateWithError: Story<TimedNoticeComponent> = (
       titleHref="https://www.eesti.ee"
       dueDate="01.03.2023"
       time="22:59">
-      <cvi-ng-track slot="subtitle" layout="flex" [gap]="2">
+      <cvi-ng-track cvi-ng-timed-notice="subtitle" layout="flex" [gap]="2">
       <div>Maksu- ja tolliamet</div>
       <cvi-ng-icon
         class="cvi-timed-notice__subtitle-icon"
@@ -82,7 +82,7 @@ const TemplateWithError: Story<TimedNoticeComponent> = (
       ></cvi-ng-icon>
       </cvi-ng-track>
       <cvi-ng-track
-      slot="aside"
+      cvi-ng-timed-notice="aside"
       layout="flex"
       horizontalAlignment="justify"
       verticalAlignment="center"
@@ -96,7 +96,7 @@ const TemplateWithError: Story<TimedNoticeComponent> = (
       ></cvi-ng-icon>
     </cvi-ng-track>
     <cvi-ng-button
-    slot="action"
+    cvi-ng-timed-notice="action"
     size="'s'"
     [iconName]="'exit_to_app'"
     [iconPosition]="'after'"
@@ -119,7 +119,7 @@ const TemplateWithSuccess: Story<TimedNoticeComponent> = (
     titleHref="https://www.eesti.ee"
     dueDate="01.03.2023"
     time="22:59">
-    <cvi-ng-track slot="subtitle" layout="flex" [gap]="2">
+    <cvi-ng-track cvi-ng-timed-notice="subtitle" layout="flex" [gap]="2">
     <div>Maksu- ja tolliamet</div>
     <cvi-ng-icon
       class="cvi-timed-notice__subtitle-icon"
@@ -128,7 +128,7 @@ const TemplateWithSuccess: Story<TimedNoticeComponent> = (
     ></cvi-ng-icon>
     </cvi-ng-track>
     <cvi-ng-track
-    slot="aside"
+    cvi-ng-timed-notice="aside"
     layout="flex"
     horizontalAlignment="center"
     verticalAlignment="top"
@@ -168,7 +168,7 @@ const TemplateWithSuccess: Story<TimedNoticeComponent> = (
       ></cvi-ng-icon>
     </cvi-ng-track>
   </cvi-ng-track>
-    <cvi-ng-button slot="action" appearance="secondary"> Lisainfo </cvi-ng-button>
+    <cvi-ng-button cvi-ng-timed-notice="action" appearance="secondary"> Lisainfo </cvi-ng-button>
   </cvi-ng-timed-notice>
   
   `,
@@ -186,7 +186,7 @@ const TemplateWithInfo: Story<TimedNoticeComponent> = (
     titleHref="https://www.eesti.ee"
     dueDate="01.03.2023"
     time="22:59">
-    <cvi-ng-track slot="subtitle" layout="flex" [gap]="2">
+    <cvi-ng-track cvi-ng-timed-notice="subtitle" layout="flex" [gap]="2">
     <div>Maksu- ja tolliamet</div>
     <cvi-ng-icon
       class="cvi-timed-notice__subtitle-icon"
@@ -195,7 +195,7 @@ const TemplateWithInfo: Story<TimedNoticeComponent> = (
     ></cvi-ng-icon>
     </cvi-ng-track>
       <cvi-ng-track
-      slot="aside"
+      cvi-ng-timed-notice="aside"
       layout="flex"
       horizontalAlignment="justify"
       verticalAlignment="center"
@@ -209,7 +209,7 @@ const TemplateWithInfo: Story<TimedNoticeComponent> = (
       ></cvi-ng-icon>
     </cvi-ng-track>
     <cvi-ng-button
-    slot="action"
+    cvi-ng-timed-notice="action"
     size="'s'"
     [iconName]="'exit_to_app'"
     [iconPosition]="'after'"
