@@ -48,6 +48,7 @@ import {
   cviErrorOutline,
   cviHappyFace,
   cviInfo,
+  cviInputError,
   cviLocation,
   cviLoupe,
   cviSadFace,
@@ -206,6 +207,7 @@ export class UiModule {
       cviArrowUpAlt,
       cviArrowDownAlt,
       cviCalendar,
+      cviInputError,
     ]);
   }
 }

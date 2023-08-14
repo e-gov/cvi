@@ -13,7 +13,14 @@
           (keyup.arrowright)="makeActiveNext($event)"
           [attr.aria-controls]="baseId + '-tabpanel-' + i"
           class="cvi-tab-group__tab-btn">
-    {{ tab.title }}
+    <cvi-ng-labeled-icon
+            [iconPosition]="tab.iconPosition"
+            [name]="tab.iconName"
+            [iconHeight]="tab.iconHeight"
+            svgClass="{{ tab.svgClass }}"
+    >
+      {{tab.title}}
+    </cvi-ng-labeled-icon>
   </button>
 </div>
 <div dataAttribute="tab-content"
