@@ -42,20 +42,15 @@
       background-color: get-color(black-coral-0);
     }
 
-    &.search-has-focus #{$base}__container {
-      border-color: transparent;
-      outline: var(--cvi-border-focus);
-    }
-
     #{$base}__container {
       display: flex;
       align-items: center;
       color: get-color(black-coral-12);
-      padding: 0 get-spacing('paldiski');
-      height: 40px;
+      padding: 0 var(--cvi-spacing-paldiski);
+      height: var(--cvi-form-inline-input-height);
       width: 100%;
       border-radius: var(--cvi-radius-s);
-      border: var(--cvi-border-width) solid get-color(black-coral-3);
+      border: 1px solid get-color(black-coral-8);
       background-color: get-color(white);
     }
 
@@ -121,7 +116,7 @@
       width: get-spacing('haapsalu');
       height: get-spacing('haapsalu');
       animation: cvi-loading-spinner 0.75s linear infinite;
-      border: 2px solid get-color(sapphire-blue-10);
+      border: 1px solid get-color(sapphire-blue-10);
       border-right-color: transparent;
       border-radius: 50%;
       display: inline-block;
@@ -164,7 +159,7 @@
         cursor: pointer;
         width: get-spacing('kuressaare');
         height: get-spacing('kuressaare');
-        border: var(--cvi-border-width) solid var(--cvi-color-black-coral-8);
+        border: 1px solid var(--cvi-color-black-coral-8);
 
         &.checked {
           border: var(--cvi-border-width) solid
