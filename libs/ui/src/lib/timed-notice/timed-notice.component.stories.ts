@@ -18,44 +18,26 @@ export default {
     titleHref: 'https://www.eesti.ee',
     dueDate: '01.03.2023',
     time: '23:59',
+    asideItems: [
+      {
+        label: '138€',
+        iconName: 'info',
+        tooltipLabel: 'Hey this is the tooltip on the tabletop',
+      },
+    ],
   },
 } as Meta<TimedNoticeComponent>;
 
 const Template: Story<TimedNoticeComponent> = (args: TimedNoticeComponent) => ({
   props: args,
+  /* template */
   template: `
-    <cvi-ng-timed-notice [iconName]="iconName" [severity]="severity"
-      title="KMD Käibedeklaratsioon"
-      titleHref="https://www.eesti.ee"
-      dueDate="01.03.2023"
-      time="22:59">
+    <cvi-ng-timed-notice [iconName]="iconName" [severity]="severity" [asideItems]="asideItems" title="KMD Käibedeklaratsioon" titleHref="https://www.eesti.ee" dueDate="01.03.2023" time="22:59">
       <cvi-ng-track cvi-ng-timed-notice="subtitle" layout="flex" [gap]="2">
-      <div>Maksu- ja tolliamet</div>
-      <cvi-ng-icon
-        class="cvi-timed-notice__subtitle-icon"
-        name="warning_amber"
-        height="20"
-      ></cvi-ng-icon>
+        <div>Maksu- ja tolliamet</div>
+        <cvi-ng-icon name="warning_amber" height="20"></cvi-ng-icon>
       </cvi-ng-track>
-      <cvi-ng-track
-        cvi-ng-timed-notice="aside"
-        layout="'flex'"
-        horizontalAlignment="justify"
-        verticalAlignment="center"
-        [gap]="4">
-          <div>138.00€</div>
-          <cvi-ng-icon
-            [name]="'info'"
-            [height]="'24'"
-            [cviNgTooltip]="'some tooltip info'">
-            </cvi-ng-icon>
-      </cvi-ng-track>
-      <cvi-ng-button
-      cvi-ng-timed-notice="action"
-      size="'s'"
-      [iconName]="'exit_to_app'"
-      [iconPosition]="'after'"
-      [iconHeight]="24">
+      <cvi-ng-button cvi-timed-notice="action" size="s" [iconName]="'exit_to_app'" [iconPosition]="'after'" [iconHeight]="24">
         kohustust täitma
       </cvi-ng-button>
     </cvi-ng-timed-notice>
@@ -64,161 +46,81 @@ const Template: Story<TimedNoticeComponent> = (args: TimedNoticeComponent) => ({
 
 export const Default = Template.bind({});
 
-const TemplateWithError: Story<TimedNoticeComponent> = (
+const TemplateError: Story<TimedNoticeComponent> = (
   args: TimedNoticeComponent
 ) => ({
   props: args,
+  /* template */
   template: `
-    <cvi-ng-timed-notice [iconName]="iconName" [severity]="'error'" title="KMD Käibedeklaratsioon"
-      titleHref="https://www.eesti.ee"
-      dueDate="01.03.2023"
-      time="22:59">
+    <cvi-ng-timed-notice [iconName]="iconName" [severity]="'error'" title="KMD Käibedeklaratsioon" titleHref="https://www.eesti.ee" dueDate="01.03.2023" time="22:59" [asideItems]="asideItems">
       <cvi-ng-track cvi-ng-timed-notice="subtitle" layout="flex" [gap]="2">
-      <div>Maksu- ja tolliamet</div>
-      <cvi-ng-icon
-        class="cvi-timed-notice__subtitle-icon"
-        name="warning_amber"
-        height="20"
-      ></cvi-ng-icon>
+        <div>Maksu- ja tolliamet</div>
+        <cvi-ng-icon name="warning_amber" height="20"></cvi-ng-icon>
       </cvi-ng-track>
-      <cvi-ng-track
-      cvi-ng-timed-notice="aside"
-      layout="flex"
-      horizontalAlignment="justify"
-      verticalAlignment="center"
-      [gap]="4"
-    >
-      <div>138.00€</div>
-      <cvi-ng-icon
-        [name]="'info'"
-        [height]="'24'"
-        [cviNgTooltip]="'some tooltip info'"
-      ></cvi-ng-icon>
-    </cvi-ng-track>
-    <cvi-ng-button
-    cvi-ng-timed-notice="action"
-    size="'s'"
-    [iconName]="'exit_to_app'"
-    [iconPosition]="'after'"
-    [iconHeight]="24"
-  >
-    kohustust täitma
-  </cvi-ng-button>
+      <cvi-ng-track cvi-ng-timed-notice="aside" layout="flex" horizontalAlignment="justify" verticalAlignment="center" [gap]="4">
+        <div>138.00€</div>
+        <cvi-ng-icon [name]="'info'" [height]="'24'" [cviNgTooltip]="'some tooltip info'"></cvi-ng-icon>
+      </cvi-ng-track>
+      <cvi-ng-button cvi-timed-notice="action" size="s" [iconName]="'exit_to_app'" [iconPosition]="'after'" [iconHeight]="24">
+        kohustust täitma
+      </cvi-ng-button>
     </cvi-ng-timed-notice>
   `,
 });
 
-export const WithError = TemplateWithError.bind({});
+export const Error = TemplateError.bind({});
 
-const TemplateWithSuccess: Story<TimedNoticeComponent> = (
+const TemplateSuccess: Story<TimedNoticeComponent> = (
   args: TimedNoticeComponent
 ) => ({
   props: args,
+  /* template */
   template: `
-  <cvi-ng-timed-notice [iconName]="iconName" [severity]="'success'" title="KMD Käibedeklaratsioon"
-    titleHref="https://www.eesti.ee"
-    dueDate="01.03.2023"
-    time="22:59">
-    <cvi-ng-track cvi-ng-timed-notice="subtitle" layout="flex" [gap]="2">
-    <div>Maksu- ja tolliamet</div>
-    <cvi-ng-icon
-      class="cvi-timed-notice__subtitle-icon"
-      name="warning_amber"
-      height="20"
-    ></cvi-ng-icon>
-    </cvi-ng-track>
-    <cvi-ng-track
-    cvi-ng-timed-notice="aside"
-    layout="flex"
-    horizontalAlignment="center"
-    verticalAlignment="top"
-    [gap]="1"
-    flexDirection="vertical"
-  >
-    <div class="cvi-timed-notice__title">01.04.2023</div>
-    <cvi-ng-track
-      layout="flex"
-      horizontalAlignment="justify"
-      verticalAlignment="center"
-      [gap]="4"
-      [ngStyle]="{ width: '100%' }"
-    >
-      Tasutud
-      <cvi-ng-icon
-        [name]="'info'"
-        [height]="'24'"
-        [cviNgTooltip]="
-          'This tooltip is displayed when hovering, if you move mouse out of element then tooltip dissapears'
-        "
-      ></cvi-ng-icon>
-    </cvi-ng-track>
-    <cvi-ng-track
-      layout="flex"
-      horizontalAlignment="justify"
-      verticalAlignment="center"
-      [gap]="4"
-    >
-      <div>138.00€</div>
-      <cvi-ng-icon
-        [name]="'info'"
-        [height]="'24'"
-        [cviNgTooltip]="
-          'This tooltip is displayed when hovering, if you move mouse out of element then tooltip dissapears'
-        "
-      ></cvi-ng-icon>
-    </cvi-ng-track>
-  </cvi-ng-track>
-    <cvi-ng-button cvi-ng-timed-notice="action" appearance="secondary"> Lisainfo </cvi-ng-button>
-  </cvi-ng-timed-notice>
-  
+    <cvi-ng-timed-notice [iconName]="iconName" [severity]="'success'" title="KMD Käibedeklaratsioon" titleHref="https://www.eesti.ee" dueDate="01.03.2023" time="22:59" [asideItems]="asideItems">
+      <cvi-ng-track cvi-ng-timed-notice="subtitle" layout="flex" [gap]="2">
+        <div>Maksu- ja tolliamet</div>
+        <cvi-ng-icon name="warning_amber" height="20"></cvi-ng-icon>
+      </cvi-ng-track>
+      <cvi-ng-button size="s" cvi-timed-notice="action" appearance="secondary">Lisainfo</cvi-ng-button>
+    </cvi-ng-timed-notice>
   `,
 });
 
-export const WithSuccess = TemplateWithSuccess.bind({});
+export const Success = TemplateSuccess.bind({});
 
-const TemplateWithInfo: Story<TimedNoticeComponent> = (
+const TemplateWithMultipleAsideItems: Story<TimedNoticeComponent> = (
   args: TimedNoticeComponent
 ) => ({
   props: args,
+  /* template */
   template: `
-  <cvi-ng-timed-notice [iconName]="iconName" [severity]="'info'"
-    title="KMD Käibedeklaratsioon"
-    titleHref="https://www.eesti.ee"
-    dueDate="01.03.2023"
-    time="22:59">
-    <cvi-ng-track cvi-ng-timed-notice="subtitle" layout="flex" [gap]="2">
-    <div>Maksu- ja tolliamet</div>
-    <cvi-ng-icon
-      class="cvi-timed-notice__subtitle-icon"
-      name="warning_amber"
-      height="20"
-    ></cvi-ng-icon>
-    </cvi-ng-track>
-      <cvi-ng-track
-      cvi-ng-timed-notice="aside"
-      layout="flex"
-      horizontalAlignment="justify"
-      verticalAlignment="center"
-      [gap]="4"
-    >
-      <div>138.00€</div>
-      <cvi-ng-icon
-        [name]="'info'"
-        [height]="24"
-        [cviNgTooltip]="'some tooltip info'"
-      ></cvi-ng-icon>
-    </cvi-ng-track>
-    <cvi-ng-button
-    cvi-ng-timed-notice="action"
-    size="'s'"
-    [iconName]="'exit_to_app'"
-    [iconPosition]="'after'"
-    [iconHeight]="24"
-  >
-    kohustust täitma
-  </cvi-ng-button>
-  </cvi-ng-timed-notice>
+    <cvi-ng-timed-notice [iconName]="iconName" [severity]="'info'" title="KMD Käibedeklaratsioon" titleHref="https://www.eesti.ee" dueDate="01.03.2023" time="22:59" [asideItems]="asideItems">
+      <cvi-ng-track cvi-ng-timed-notice="subtitle" layout="flex" [gap]="2">
+        <div>Maksu- ja tolliamet</div>
+        <cvi-ng-icon name="warning_amber" height="20"></cvi-ng-icon>
+      </cvi-ng-track>
+      <cvi-ng-button cvi-timed-notice="action" size="s" [iconName]="'exit_to_app'" [iconPosition]="'after'" [iconHeight]="24">
+        kohustust täitma
+      </cvi-ng-button>
+    </cvi-ng-timed-notice>
   `,
 });
 
-export const WithInfo = TemplateWithInfo.bind({});
+export const WithMultipleAsideItems = TemplateWithMultipleAsideItems.bind({});
+WithMultipleAsideItems.args = {
+  asideItems: [
+    {
+      label: '28.02.2023',
+    },
+    {
+      label: 'Tasutud',
+      iconName: 'info',
+      tooltipLabel: 'Some other tooltip',
+    },
+    {
+      label: '138€',
+      iconName: 'info',
+      tooltipLabel: 'Some other tooltip yet',
+    },
+  ],
+};

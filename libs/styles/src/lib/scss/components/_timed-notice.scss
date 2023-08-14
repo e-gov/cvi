@@ -34,6 +34,14 @@
     }
   }
 
+  #{$base}__aside-track-item {
+    width: 100%;
+  }
+
+  #{$base}__aside-track-item-icon {
+    display: flex;
+  }
+
   #{$base}__content {
     align-items: center;
     padding: get-spacing('valga');

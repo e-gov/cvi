@@ -5,7 +5,7 @@ import {
   Input,
 } from '@angular/core';
 import { CviIconName } from '../../../../../dist/libs/icons';
-import { TimedNoticeSeverity } from './timed-notice';
+import { TimedNoticeAsideItem, TimedNoticeSeverity } from './timed-notice';
 import { TimedNoticeSeverityToIconPipe } from './timed-notice-severity-to-icon.pipe';
 
 @Component({
@@ -20,6 +20,7 @@ export class TimedNoticeComponent {
   @Input() titleHref = '#';
   @Input() dueDate?: string;
   @Input() time?: string;
+  @Input() asideItems?: TimedNoticeAsideItem[];
   constructor(private readonly iconPipe: TimedNoticeSeverityToIconPipe) {}
 
   @HostBinding('class')

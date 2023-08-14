@@ -46,8 +46,53 @@
         verticalAlignment="center"
         [gap]="4"
       >
-        <ng-content select="[cvi-ng-timed-notice=aside]"></ng-content>
-        <ng-content select="[cvi-ng-timed-notice=action]"></ng-content>
+        <cvi-ng-track
+          layout="flex"
+          [gap]="1"
+          flexDirection="vertical"
+          horizontalAlignment="center"
+          verticalAlignment="top"
+          *ngIf="asideItems"
+        >
+          <cvi-ng-track
+            layout="flex"
+            horizontalAlignment="justify"
+            verticalAlignment="center"
+            [gap]="4"
+            class="cvi-timed-notice__aside-track-item"
+          >
+            <div class="cvi-timed-notice__title">
+              {{ asideItems[0].label }}
+            </div>
+            <cvi-ng-icon
+              [name]="asideItems[0].iconName"
+              [height]="24"
+              [cviNgTooltip]="
+                asideItems[0].tooltipLabel ? asideItems[0].tooltipLabel : ''
+              "
+              class="cvi-timed-notice__aside-track-item-icon"
+            ></cvi-ng-icon>
+          </cvi-ng-track>
+          <cvi-ng-track
+            *ngFor="let asideItem of asideItems | slice : 1"
+            layout="flex"
+            horizontalAlignment="justify"
+            verticalAlignment="center"
+            [gap]="4"
+            class="cvi-timed-notice__aside-track-item"
+          >
+            {{ asideItem.label }}
+            <cvi-ng-icon
+              [name]="asideItem.iconName"
+              [height]="24"
+              [cviNgTooltip]="
+                asideItem.tooltipLabel ? asideItem.tooltipLabel : ''
+              "
+              class="cvi-timed-notice__aside-track-item-icon"
+            ></cvi-ng-icon>
+          </cvi-ng-track>
+        </cvi-ng-track>
+        <ng-content select="[cvi-timed-notice=action]"></ng-content>
       </cvi-ng-track>
     </cvi-ng-track>
   </div>
