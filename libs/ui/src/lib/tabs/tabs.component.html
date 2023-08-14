@@ -15,7 +15,14 @@
     [attr.aria-controls]="baseId + '-tabpanel-' + i"
     class="cvi-tabs__tab-btn"
   >
-    {{ item.title }}
+    <cvi-ng-labeled-icon
+            [iconPosition]="item.iconPosition"
+            [name]="item.iconName"
+            [iconHeight]="item.iconHeight"
+            svgClass="{{ item.svgClass }}"
+    >
+      {{ item.title }}
+    </cvi-ng-labeled-icon>
   </button>
 </div>
 <div class="cvi-tabs__list-mobile">
@@ -60,7 +67,14 @@
       [attr.aria-controls]="baseId + '-tabpanel-' + i"
       #dropdownItemButton
     >
-      {{ item.title }}
+      <cvi-ng-labeled-icon
+              [iconPosition]="item.iconPosition"
+              [name]="item.iconName"
+              [iconHeight]="item.iconHeight"
+              svgClass="{{ item.svgClass }}"
+      >
+        {{ item.title }}
+      </cvi-ng-labeled-icon>
     </button>
   </div>
 </div>
