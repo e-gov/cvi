@@ -112,14 +112,38 @@ export class ProcessDiagramComponent implements AfterViewInit {
             const targetBoxWidth = targetBox.width || this.DEFAULT_MIN_WIDTH;
             const targetBoxHeight = targetBox.height || this.DEFAULT_MIN_HEIGHT;
 
-            if (targetBox.x > box.x) { // Target is to the right
-              this.drawHorizontalArrow(box.x + boxWidth, box.y + boxHeight / 2, targetBox.x, targetBox.y + targetBoxHeight / 2);
-            } else if (targetBox.x < box.x) { // Target is to the left
-              this.drawHorizontalArrow(box.x, box.y + boxHeight / 2, targetBox.x + targetBoxWidth, targetBox.y + targetBoxHeight / 2);
-            } else if (targetBox.y > box.y) { // Target is below
-              this.drawVerticalArrow(box.x + boxWidth / 2, box.y + boxHeight, targetBox.x + targetBoxWidth / 2, targetBox.y);
-            } else { // Target is above
-              this.drawVerticalArrow(box.x + boxWidth / 2, box.y, targetBox.x + targetBoxWidth / 2, targetBox.y + targetBoxHeight);
+            if (targetBox.x > box.x) {
+              // Target is to the right
+              this.drawHorizontalArrow(
+                box.x + boxWidth,
+                box.y + boxHeight / 2,
+                targetBox.x,
+                targetBox.y + targetBoxHeight / 2
+              );
+            } else if (targetBox.x < box.x) {
+              // Target is to the left
+              this.drawHorizontalArrow(
+                box.x,
+                box.y + boxHeight / 2,
+                targetBox.x + targetBoxWidth,
+                targetBox.y + targetBoxHeight / 2
+              );
+            } else if (targetBox.y > box.y) {
+              // Target is below
+              this.drawVerticalArrow(
+                box.x + boxWidth / 2,
+                box.y + boxHeight,
+                targetBox.x + targetBoxWidth / 2,
+                targetBox.y
+              );
+            } else {
+              // Target is above
+              this.drawVerticalArrow(
+                box.x + boxWidth / 2,
+                box.y,
+                targetBox.x + targetBoxWidth / 2,
+                targetBox.y + targetBoxHeight
+              );
             }
           }
         }
@@ -145,14 +169,24 @@ export class ProcessDiagramComponent implements AfterViewInit {
       .style('fill', 'black');
   }
 
-  private drawHorizontalArrow(startX: number, startY: number, endX: number, endY: number): void {
+  private drawHorizontalArrow(
+    startX: number,
+    startY: number,
+    endX: number,
+    endY: number
+  ): void {
     const middleX = (startX + endX) / 2;
     this.drawLine(startX, startY, middleX, startY, false); // Horizontal line from start box
     this.drawLine(middleX, startY, middleX, endY, false); // Vertical line
     this.drawLine(middleX, endY, endX, endY, true); // Horizontal line to the target box with arrow
   }
 
-  private drawVerticalArrow(startX: number, startY: number, endX: number, endY: number): void {
+  private drawVerticalArrow(
+    startX: number,
+    startY: number,
+    endX: number,
+    endY: number
+  ): void {
     const middleY = (startY + endY) / 2;
     this.drawLine(startX, startY, startX, middleY, false); // Vertical line from start box
     this.drawLine(startX, middleY, endX, middleY, false); // Horizontal line
