@@ -5,6 +5,7 @@ import {
   ElementRef,
   Input,
   ViewChild,
+  ViewEncapsulation,
 } from '@angular/core';
 import * as d3 from 'd3';
 import { Box } from './box.interface';
@@ -13,6 +14,7 @@ import { Box } from './box.interface';
   selector: 'cvi-ng-process-diagram',
   templateUrl: './process-diagram.component.html',
   styleUrls: ['./process-diagram.component.scss'],
+  encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProcessDiagramComponent implements AfterViewInit {
@@ -53,8 +55,6 @@ export class ProcessDiagramComponent implements AfterViewInit {
   }
 
   private drawBoxes(): void {
-    const areaWidth = this.diagramRef.nativeElement.offsetWidth;
-
     const links = this.svg
       .selectAll('a')
       .data(this.boxes.filter((box) => box.link))
@@ -97,11 +97,7 @@ export class ProcessDiagramComponent implements AfterViewInit {
       .attr('height', (d: Box) => d.height || this.DEFAULT_MIN_HEIGHT)
       .html((d: Box) => `<div class="box-content">${d.label}</div>`)
       .style('font-size', '14px')
-      .style('line-height', '24px')
-      .style('text-align', 'center')
-      .style('display', 'flex')
-      .style('align-items', 'center')
-      .style('justify-content', 'center');
+      .style('line-height', '24px');
   }
 
   private drawArrows(): void {

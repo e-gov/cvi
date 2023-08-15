@@ -1,11 +1,12 @@
-a > rect {
+a:hover {
+  text-decoration: none;
+}
+
+a:hover > foreignObject {
   cursor: pointer;
 }
 
 foreignObject {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   overflow: visible;
 
   .box-content {
@@ -16,9 +17,12 @@ foreignObject {
     justify-content: center;
     overflow: hidden;
     border-width: 1px;
+    text-align: center;
+
     &.border-none {
       border-style: none;
     }
+
     &.border-dotted {
       border-style: dotted;
     }
