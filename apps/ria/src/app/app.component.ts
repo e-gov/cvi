@@ -18,7 +18,7 @@ export class AppComponent {
       id: 1,
       link: 'https://example.com/1',
       label: 'Health concern',
-      targets: [2, 7]
+      targets: [2, 7],
     },
     {
       x: 150,
@@ -28,7 +28,7 @@ export class AppComponent {
       id: 2,
       link: 'https://example.com/2',
       label: 'I have a minor health issue',
-      targets: [3, 4, 5]
+      targets: [3, 4, 5],
     },
     {
       x: 350,
@@ -56,7 +56,7 @@ export class AppComponent {
       id: 5,
       link: 'https://example.com/5',
       label: '<b>Family doctor</b>',
-      targets: [6, 9]
+      targets: [6, 9],
     },
     {
       x: 550,
@@ -66,7 +66,7 @@ export class AppComponent {
       id: 6,
       link: 'https://example.com/6',
       label: 'Specialist doctor',
-      targets: [9]
+      targets: [9],
     },
     {
       x: 700,
@@ -76,7 +76,7 @@ export class AppComponent {
       id: 9,
       link: 'https://example.com/9',
       label: 'Conclusions/Referrals',
-      targets: [10]
+      targets: [10],
     },
     {
       x: 750,
@@ -95,7 +95,7 @@ export class AppComponent {
       id: 7,
       link: 'https://example.com/7',
       label: 'I have an acute health issue and need emergency care',
-      targets: [8]
+      targets: [8],
     },
     {
       x: 350,
@@ -105,7 +105,7 @@ export class AppComponent {
       id: 8,
       link: 'https://example.com/8',
       label: '<b>Call 112 or go to ER</b>',
-      targets: [11]
+      targets: [11],
     },
     {
       x: 550,
@@ -115,8 +115,8 @@ export class AppComponent {
       id: 11,
       link: 'https://example.com/11',
       label: 'Hospitalization',
-      targets: [9]
-    }
+      targets: [9],
+    },
   ];
 
   constructor(
