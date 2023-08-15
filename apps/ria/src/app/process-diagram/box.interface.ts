@@ -5,8 +5,8 @@ export interface Box {
   borderStyle: 'none' | 'dotted';
   id: number;
   label: string;
-  targets?: number[]; // Array of ids of boxes it points to
-  link?: string; // The link is optional
+  targets?: number[]; // Array box ids it points to
+  link?: string;
   width?: number;
   height?: number;
 }
