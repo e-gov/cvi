@@ -76,7 +76,7 @@ export class AppComponent {
       id: 9,
       link: 'https://example.com/9',
       label: 'Conclusions/Referrals',
-      targets: [10],
+      targets: [10, 11],
     },
     {
       x: 550,
