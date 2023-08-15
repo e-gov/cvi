@@ -12,15 +12,12 @@
           (keyup.arrowleft)="makeActivePrev($event)"
           (keyup.arrowright)="makeActiveNext($event)"
           [attr.aria-controls]="baseId + '-tabpanel-' + i"
-          class="cvi-tab-group__tab-btn">
-    <cvi-ng-labeled-icon
-            [iconPosition]="tab.iconPosition"
-            [name]="tab.iconName"
-            [iconHeight]="tab.iconHeight"
-            svgClass="{{ tab.svgClass }}"
-    >
-      {{tab.title}}
-    </cvi-ng-labeled-icon>
+          class="cvi-tab-group__tab-btn"
+  >
+    <ng-template
+            [ngTemplateOutlet]="tab.iconName ? contentWithIcon : content"
+            [ngTemplateOutletContext]="{ tab: tab }"
+    ></ng-template>
   </button>
 </div>
 <div dataAttribute="tab-content"
@@ -31,3 +28,38 @@
      [attr.id]="baseId + '-tabpanel-' + activeIndex">
   <ng-container *ngTemplateOutlet="getActiveTabContent()"></ng-container>
 </div>
+
+<ng-template #icon let-tab="tab">
+  <cvi-ng-icon
+          [name]="tab.iconName"
+          [height]="tab.iconHeight"
+          svgClass="{{ tab.svgClass }}">
+  </cvi-ng-icon>
+</ng-template>
+
+<ng-template #content let-tab="tab">
+  <span> {{ tab.title }}</span>
+</ng-template>
+
+<ng-template #contentWithIcon let-tab="tab">
+  <cvi-ng-track [gap]="tab.gap">
+    <ng-container *ngIf="tab.iconPosition === 'before'">
+      <ng-container
+              [ngTemplateOutlet]="icon"
+              [ngTemplateOutletContext]="{ tab: tab }"
+      ></ng-container>
+    </ng-container>
+
+    <ng-container
+            [ngTemplateOutlet]="content"
+            [ngTemplateOutletContext]="{ tab: tab }"
+    ></ng-container>
+
+    <ng-container *ngIf="tab.iconPosition === 'after'">
+      <ng-container
+              [ngTemplateOutlet]="icon"
+              [ngTemplateOutletContext]="{ tab: tab }"
+      ></ng-container>
+    </ng-container>
+  </cvi-ng-track>
+</ng-template>

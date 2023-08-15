@@ -15,14 +15,10 @@
     [attr.aria-controls]="baseId + '-tabpanel-' + i"
     class="cvi-tabs__tab-btn"
   >
-    <cvi-ng-labeled-icon
-            [iconPosition]="item.iconPosition"
-            [name]="item.iconName"
-            [iconHeight]="item.iconHeight"
-            svgClass="{{ item.svgClass }}"
-    >
-      {{ item.title }}
-    </cvi-ng-labeled-icon>
+    <ng-template
+            [ngTemplateOutlet]="item.iconName ? contentWithIcon : content"
+            [ngTemplateOutletContext]="{ tab: item }"
+    ></ng-template>
   </button>
 </div>
 <div class="cvi-tabs__list-mobile">
@@ -67,14 +63,10 @@
       [attr.aria-controls]="baseId + '-tabpanel-' + i"
       #dropdownItemButton
     >
-      <cvi-ng-labeled-icon
-              [iconPosition]="item.iconPosition"
-              [name]="item.iconName"
-              [iconHeight]="item.iconHeight"
-              svgClass="{{ item.svgClass }}"
-      >
-        {{ item.title }}
-      </cvi-ng-labeled-icon>
+      <ng-template
+              [ngTemplateOutlet]="item.iconName ? contentWithIcon : content"
+              [ngTemplateOutletContext]="{ tab: item }"
+      ></ng-template>
     </button>
   </div>
 </div>
@@ -96,3 +88,39 @@
 >
   <ng-container *ngTemplateOutlet="getActiveTabContent()"></ng-container>
 </div>
+
+<ng-template #icon let-tab="tab">
+  <cvi-ng-icon
+          [name]="tab.iconName"
+          [height]="tab.iconHeight"
+          svgClass="{{ tab.svgClass }}"
+  >
+  </cvi-ng-icon>
+</ng-template>
+
+<ng-template #content let-tab="tab">
+  <span> {{ tab.title }}</span>
+</ng-template>
+
+<ng-template #contentWithIcon let-tab="tab">
+  <cvi-ng-track [gap]="tab.gap">
+    <ng-container *ngIf="tab.iconPosition === 'before'">
+      <ng-container
+              [ngTemplateOutlet]="icon"
+              [ngTemplateOutletContext]="{ tab: tab }"
+      ></ng-container>
+    </ng-container>
+
+    <ng-container
+            [ngTemplateOutlet]="content"
+            [ngTemplateOutletContext]="{ tab: tab }"
+    ></ng-container>
+
+    <ng-container *ngIf="tab.iconPosition === 'after'">
+      <ng-container
+              [ngTemplateOutlet]="icon"
+              [ngTemplateOutletContext]="{ tab: tab }"
+      ></ng-container>
+    </ng-container>
+  </cvi-ng-track>
+</ng-template>
