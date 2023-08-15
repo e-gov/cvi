@@ -1,8 +1,10 @@
 import {
   AfterViewInit,
   ChangeDetectionStrategy,
-  Component, ElementRef,
-  Input, ViewChild,
+  Component,
+  ElementRef,
+  Input,
+  ViewChild,
 } from '@angular/core';
 import * as d3 from 'd3';
 import { Box } from './box.interface';
@@ -106,11 +108,11 @@ export class ProcessDiagramComponent implements AfterViewInit {
     for (const box of this.boxes) {
       if (box.targets) {
         for (const targetId of box.targets) {
-          const targetBox = this.boxes.find(b => b.id === targetId);
+          const targetBox = this.boxes.find((b) => b.id === targetId);
           if (targetBox) {
             const startX = box.x + 100; // Right edge of the start box
-            const startY = box.y + 25;  // Middle of the start box
-            const endX = targetBox.x;   // Left edge of the target box
+            const startY = box.y + 25; // Middle of the start box
+            const endX = targetBox.x; // Left edge of the target box
             const endY = targetBox.y + 25; // Middle of the target box
 
             // If the boxes are on the same Y level
@@ -146,7 +148,13 @@ export class ProcessDiagramComponent implements AfterViewInit {
       .style('fill', 'black');
   }
 
-  private drawLine(x1: number, y1: number, x2: number, y2: number, addArrow: boolean): void {
+  private drawLine(
+    x1: number,
+    y1: number,
+    x2: number,
+    y2: number,
+    addArrow: boolean
+  ): void {
     this.svg
       .append('line')
       .attr('x1', x1)
