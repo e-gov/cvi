@@ -67,6 +67,26 @@ export class DatepickerComponent implements ControlValueAccessor {
       this.setFocus(false);
     }
   }
+  @HostListener('input', ['$event'])
+  onInput(event: InputEvent) {
+    const inputElement = event.target as HTMLInputElement;
+    inputElement.value = this.handleValue(inputElement.value);
+  }
+
+
+  handleValue(value: string): string {
+    value = value.replace(/[^\d.]/g, '');
+
+    if (value.length >= 3 && value.charAt(2) !== '.') {
+      value = value.substring(0, 2) + '.' + value.substring(2);
+    }
+    if (value.length >= 6 && value.charAt(5) !== '.') {
+      value = value.substring(0, 5) + '.' + value.substring(5);
+    }
+    return value;
+  }
+
+
 
   @HostListener('document:keydown', ['$event'])
   handleKeyboardEvent(event: KeyboardEvent) {

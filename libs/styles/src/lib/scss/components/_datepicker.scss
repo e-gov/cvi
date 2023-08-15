@@ -55,6 +55,7 @@
       width: 392px;
       height: 280px;
       color: get-color(black-coral-15);
+      z-index: get-z-index('datepicker', '__calender');
 
       &-header {
         width: 100%;
