@@ -107,14 +107,14 @@ export class ProcessDiagramComponent implements AfterViewInit {
         const boxHeight = box.height || this.DEFAULT_MIN_HEIGHT;
 
         for (const targetId of box.targets) {
-          const targetBox = this.boxes.find(b => b.id === targetId);
+          const targetBox = this.boxes.find((b) => b.id === targetId);
           if (targetBox) {
             const targetBoxWidth = targetBox.width || this.DEFAULT_MIN_WIDTH;
             const targetBoxHeight = targetBox.height || this.DEFAULT_MIN_HEIGHT;
 
             const startX = box.x + boxWidth; // Right edge of the start box
-            const startY = box.y + boxHeight / 2;  // Middle of the start box
-            const endX = targetBox.x;   // Left edge of the target box
+            const startY = box.y + boxHeight / 2; // Middle of the start box
+            const endX = targetBox.x; // Left edge of the target box
             const endY = targetBox.y + targetBoxHeight / 2; // Middle of the target box
 
             // If the boxes are on the same Y level
@@ -131,7 +131,7 @@ export class ProcessDiagramComponent implements AfterViewInit {
       }
     }
 
-  // Define the arrow marker details
+    // Define the arrow marker details
     this.svg
       .append('svg:defs')
       .selectAll('marker')
@@ -140,10 +140,10 @@ export class ProcessDiagramComponent implements AfterViewInit {
       .append('svg:marker')
       .attr('id', String)
       .attr('viewBox', '0 -5 10 10')
-      .attr('refX', 10)
+      .attr('refX', 9)
       .attr('refY', 0)
-      .attr('markerWidth', 6)
-      .attr('markerHeight', 6)
+      .attr('markerWidth', 4)
+      .attr('markerHeight', 4)
       .attr('orient', 'auto')
       .append('svg:path')
       .attr('d', 'M0,-5L10,0L0,5')
