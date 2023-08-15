@@ -103,13 +103,19 @@ export class ProcessDiagramComponent implements AfterViewInit {
   private drawArrows(): void {
     for (const box of this.boxes) {
       if (box.targets) {
+        const boxWidth = box.width || this.DEFAULT_MIN_WIDTH;
+        const boxHeight = box.height || this.DEFAULT_MIN_HEIGHT;
+
         for (const targetId of box.targets) {
-          const targetBox = this.boxes.find((b) => b.id === targetId);
+          const targetBox = this.boxes.find(b => b.id === targetId);
           if (targetBox) {
-            const startX = box.x + 100; // Right edge of the start box
-            const startY = box.y + 25; // Middle of the start box
-            const endX = targetBox.x; // Left edge of the target box
-            const endY = targetBox.y + 25; // Middle of the target box
+            const targetBoxWidth = targetBox.width || this.DEFAULT_MIN_WIDTH;
+            const targetBoxHeight = targetBox.height || this.DEFAULT_MIN_HEIGHT;
+
+            const startX = box.x + boxWidth; // Right edge of the start box
+            const startY = box.y + boxHeight / 2;  // Middle of the start box
+            const endX = targetBox.x;   // Left edge of the target box
+            const endY = targetBox.y + targetBoxHeight / 2; // Middle of the target box
 
             // If the boxes are on the same Y level
             if (startY === endY) {
@@ -125,7 +131,7 @@ export class ProcessDiagramComponent implements AfterViewInit {
       }
     }
 
-    // Define the arrow marker details
+  // Define the arrow marker details
     this.svg
       .append('svg:defs')
       .selectAll('marker')
