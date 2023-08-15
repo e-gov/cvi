@@ -8,7 +8,7 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 import * as d3 from 'd3';
-import { Box } from './box.interface';
+import { Box } from './box';
 
 @Component({
   selector: 'cvi-ng-process-diagram',
@@ -109,7 +109,6 @@ export class ProcessDiagramComponent implements AfterViewInit {
         for (const targetId of box.targets) {
           const targetBox = this.boxes.find((b) => b.id === targetId);
           if (targetBox) {
-            const targetBoxWidth = targetBox.width || this.DEFAULT_MIN_WIDTH;
             const targetBoxHeight = targetBox.height || this.DEFAULT_MIN_HEIGHT;
 
             const startX = box.x + boxWidth; // Right edge of the start box

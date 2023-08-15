@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { FormBuilder } from '@angular/forms';
-import { Box } from './process-diagram/box.interface';
+import { Box } from './process-diagram/box';
 
 @Component({
   selector: 'cvi-ng-root',
@@ -11,7 +11,7 @@ import { Box } from './process-diagram/box.interface';
 export class AppComponent {
   boxes: Box[] = [
     {
-      x: 50,
+      x: 20,
       y: 150,
       color: '#D3D3D3',
       borderStyle: 'none',
@@ -31,7 +31,7 @@ export class AppComponent {
       targets: [3, 4, 5],
     },
     {
-      x: 350,
+      x: 280,
       y: 20,
       color: '#FFD700',
       borderStyle: 'none',
@@ -40,7 +40,7 @@ export class AppComponent {
       label: 'Pharmacy',
     },
     {
-      x: 350,
+      x: 280,
       y: 80,
       color: '#ADFF2F',
       borderStyle: 'none',
@@ -49,7 +49,7 @@ export class AppComponent {
       label: 'Helpline 1220',
     },
     {
-      x: 350,
+      x: 280,
       y: 140,
       color: '#FF6347',
       borderStyle: 'none',
@@ -59,8 +59,8 @@ export class AppComponent {
       targets: [6, 9],
     },
     {
-      x: 550,
-      y: 140,
+      x: 410,
+      y: 60,
       color: '#8A2BE2',
       borderStyle: 'dotted',
       id: 6,
@@ -69,7 +69,7 @@ export class AppComponent {
       targets: [9],
     },
     {
-      x: 700,
+      x: 410,
       y: 140,
       color: '#DC143C',
       borderStyle: 'none',
@@ -79,8 +79,8 @@ export class AppComponent {
       targets: [10],
     },
     {
-      x: 750,
-      y: 190,
+      x: 550,
+      y: 140,
       color: '#808080',
       borderStyle: 'dotted',
       id: 10,
@@ -98,7 +98,7 @@ export class AppComponent {
       targets: [8],
     },
     {
-      x: 350,
+      x: 280,
       y: 220,
       color: '#FF8C00',
       borderStyle: 'none',
@@ -108,7 +108,7 @@ export class AppComponent {
       targets: [11],
     },
     {
-      x: 550,
+      x: 410,
       y: 220,
       color: '#4682B4',
       borderStyle: 'dotted',
