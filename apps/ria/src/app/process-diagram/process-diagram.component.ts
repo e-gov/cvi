@@ -38,7 +38,6 @@ export class ProcessDiagramComponent implements AfterViewInit {
 
     const areaHeight = this.diagramRef.nativeElement.clientHeight;
     const xIncrement = 150; // horizontal distance between layers
-    const ySpacing = 30; // vertical spacing between boxes in a layer
     const defaultWidth = this.DEFAULT_MIN_WIDTH;
     const defaultHeight = this.DEFAULT_MIN_HEIGHT;
 
@@ -74,16 +73,17 @@ export class ProcessDiagramComponent implements AfterViewInit {
         return acc + (box?.height || defaultHeight);
       }, 0);
 
-      const totalSpacing = (layers[i].length - 1) * ySpacing;
-      const totalLayerHeight = totalBoxesHeight + totalSpacing;
+      // Calculate dynamic ySpacing based on available space
+      const availableSpacingHeight = areaHeight - totalBoxesHeight;
+      const gaps = layers[i].length - 1;
+      const ySpacing = gaps > 0 ? availableSpacingHeight / gaps : 0;
 
-      // This change centers the boxes vertically in the available space
-      let yStart = (areaHeight - totalLayerHeight) / 2;
+      let yStart = (areaHeight - totalBoxesHeight - (ySpacing * gaps)) / 2;
 
       for (const id of layers[i]) {
         const box = this.boxes.find((b) => b.id === id);
         if (!box) {
-          break;
+          continue;
         }
 
         // Determine the box dimensions
@@ -98,6 +98,7 @@ export class ProcessDiagramComponent implements AfterViewInit {
       }
     }
   }
+
 
   private createSvg(): void {
     const areaWidth = this.diagramRef.nativeElement.offsetWidth;
