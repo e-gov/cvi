@@ -77,10 +77,16 @@ export class DatepickerComponent implements ControlValueAccessor {
   handleValue(value: string): string {
     value = value.replace(/[^\d.]/g, '');
 
-    if (value.length >= 3 && value.charAt(2) !== '.') {
+    if (value.length >= 3
+      && value.charAt(2) !== '.'
+      && value.split('.').length - 1 < 2)
+    {
       value = value.substring(0, 2) + '.' + value.substring(2);
     }
-    if (value.length >= 6 && value.charAt(5) !== '.') {
+    if (value.length >= 6
+      && value.charAt(5) !== '.'
+      && value.split('.').length - 1 < 2)
+    {
       value = value.substring(0, 5) + '.' + value.substring(5);
     }
     return value;
