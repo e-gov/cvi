@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [1.27.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.26.0...ui-1.27.0) (2023-08-16)
+
+
+### Features
+
+* **ng:** notice component ([#159](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/159)) ([0e5e064](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/0e5e0641c319b1d43f45570294348f15c7a3e71a))
+
+
+
 # [1.26.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.25.0...ui-1.26.0) (2023-08-13)
 
 
