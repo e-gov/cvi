@@ -78,7 +78,7 @@ export class ProcessDiagramComponent implements AfterViewInit {
       const gaps = layers[i].length - 1;
       const ySpacing = gaps > 0 ? availableSpacingHeight / gaps : 0;
 
-      let yStart = (areaHeight - totalBoxesHeight - (ySpacing * gaps)) / 2;
+      let yStart = (areaHeight - totalBoxesHeight - ySpacing * gaps) / 2;
 
       for (const id of layers[i]) {
         const box = this.boxes.find((b) => b.id === id);
@@ -98,7 +98,6 @@ export class ProcessDiagramComponent implements AfterViewInit {
       }
     }
   }
-
 
   private createSvg(): void {
     const areaWidth = this.diagramRef.nativeElement.offsetWidth;
