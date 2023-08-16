@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.27.1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.27.0...ui-1.27.1) (2023-08-16)
+
+
+### Bug Fixes
+
+* **ng:** fix datepicker component bugs EBS-858 STPA-248 ([#167](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/167)) ([d7d0656](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/d7d065689641e254f63b3542eb00d2d8fe9dd24f))
+
+
+
 # [1.27.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.26.0...ui-1.27.0) (2023-08-16)
 
 
