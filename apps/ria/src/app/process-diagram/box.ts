@@ -1,6 +1,6 @@
 export interface Box {
-  x: number; // x position
-  y: number; // y position
+  x?: number; // x position
+  y?: number; // y position
   color: string;
   borderStyle: 'none' | 'dotted';
   id: number;

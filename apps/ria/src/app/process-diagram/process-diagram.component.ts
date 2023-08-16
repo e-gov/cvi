@@ -26,9 +26,63 @@ export class ProcessDiagramComponent implements AfterViewInit {
   private readonly DEFAULT_MIN_HEIGHT = 50;
 
   ngAfterViewInit(): void {
+    this.generateLayout();
     this.createSvg();
     this.drawBoxes();
     this.drawArrows();
+  }
+
+  private generateLayout() {
+    const layers: number[][] = [];
+    const coveredBoxIds: number[] = [];
+
+    // Determine the initial layer: boxes without a predecessor
+    const initialLayer = this.boxes.filter(box => !this.boxes.some(b => b.targets && b.targets.includes(box.id)));
+    layers.push(initialLayer.map(box => box.id));
+    coveredBoxIds.push(...initialLayer.map(box => box.id));
+
+    while (coveredBoxIds.length < this.boxes.length) {
+      const nextLayer: number[] = [];
+      for (const boxId of layers[layers.length - 1]) {
+        const currentBox = this.boxes.find(b => b.id === boxId);
+        if (currentBox?.targets) {
+          for (const target of currentBox.targets) {
+            if (!coveredBoxIds.includes(target) && !nextLayer.includes(target)) {
+              nextLayer.push(target);
+              coveredBoxIds.push(target);
+            }
+          }
+        }
+      }
+      layers.push(nextLayer);
+    }
+
+    // Assign positions
+    const xIncrement = 150;  // horizontal distance between layers
+    const ySpacing = 30;     // vertical spacing between boxes in a layer
+    const defaultWidth = 100; // default box width
+    const defaultHeight = 50; // default box height
+
+    for (let i = 0; i < layers.length; i++) {
+      let yStart = 20;  // starting y-coordinate for each layer
+
+      for (const id of layers[i]) {
+        const box = this.boxes.find(b => b.id === id);
+        if (!box) {
+          break;
+        }
+
+        // Determine the box dimensions
+        box.width = box.width || defaultWidth;
+        box.height = box.height || defaultHeight;
+
+        box.x = 20 + i * xIncrement;
+        box.y = yStart;
+
+        // Increase the yStart for the next box in the layer
+        yStart += box.height + ySpacing;
+      }
+    }
   }
 
   private createSvg(): void {
@@ -104,6 +158,8 @@ export class ProcessDiagramComponent implements AfterViewInit {
     for (const box of this.boxes) {
       const boxWidth = box.width || this.DEFAULT_MIN_WIDTH;
       const boxHeight = box.height || this.DEFAULT_MIN_HEIGHT;
+      const boxX = box.x || 0;
+      const boxY = box.y || 0;
 
       if (box.targets) {
         for (const targetId of box.targets) {
@@ -111,38 +167,40 @@ export class ProcessDiagramComponent implements AfterViewInit {
           if (targetBox) {
             const targetBoxWidth = targetBox.width || this.DEFAULT_MIN_WIDTH;
             const targetBoxHeight = targetBox.height || this.DEFAULT_MIN_HEIGHT;
+            const targetBoxX = targetBox.x || 0;
+            const targetBoxY = targetBox.y || 0;
 
-            if (targetBox.x > box.x) {
+            if (targetBoxX > boxX) {
               // Target is to the right
               this.drawHorizontalArrow(
-                box.x + boxWidth,
-                box.y + boxHeight / 2,
-                targetBox.x,
-                targetBox.y + targetBoxHeight / 2
+                boxX + boxWidth,
+                boxY + boxHeight / 2,
+                targetBoxX,
+                targetBoxY + targetBoxHeight / 2
               );
-            } else if (targetBox.x < box.x) {
+            } else if (targetBoxX < boxX) {
               // Target is to the left
               this.drawHorizontalArrow(
-                box.x,
-                box.y + boxHeight / 2,
-                targetBox.x + targetBoxWidth,
-                targetBox.y + targetBoxHeight / 2
+                boxX,
+                boxY + boxHeight / 2,
+                targetBoxX + targetBoxWidth,
+                targetBoxY + targetBoxHeight / 2
               );
-            } else if (targetBox.y > box.y) {
+            } else if (targetBoxY > boxY) {
               // Target is below
               this.drawVerticalArrow(
-                box.x + boxWidth / 2,
-                box.y + boxHeight,
-                targetBox.x + targetBoxWidth / 2,
-                targetBox.y
+                boxX + boxWidth / 2,
+                boxY + boxHeight,
+                targetBoxX + targetBoxWidth / 2,
+                targetBoxY
               );
             } else {
               // Target is above
               this.drawVerticalArrow(
-                box.x + boxWidth / 2,
-                box.y,
-                targetBox.x + targetBoxWidth / 2,
-                targetBox.y + targetBoxHeight
+                boxX + boxWidth / 2,
+                boxY,
+                targetBoxX + targetBoxWidth / 2,
+                targetBoxY + targetBoxHeight
               );
             }
           }
