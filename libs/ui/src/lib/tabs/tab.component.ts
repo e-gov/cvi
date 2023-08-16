@@ -22,8 +22,8 @@ export class TabComponent implements OnChanges, OnDestroy {
   @Input() iconName!: CviIconName | undefined;
   @Input() iconPosition: LabeledIconPosition = 'before';
   @Input() svgClass = '';
-  @Input() iconHeight = 20;
-  @Input() gap: Gap = 2;
+  @Input() iconHeight = 15;
+  @Input() gap: Gap = 1;
 
   @ViewChild(TemplateRef, { static: true }) _content!: TemplateRef<any>;
 
