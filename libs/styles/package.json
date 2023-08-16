@@ -1,6 +1,6 @@
 {
   "name": "@egov/cvi-styles",
-  "version": "1.15.0",
+  "version": "1.15.1",
   "dependencies": {
     "tslib": "^2.3.0",
     "@fontsource/roboto": "^4.5.8"
