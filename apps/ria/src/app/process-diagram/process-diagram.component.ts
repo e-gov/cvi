@@ -24,6 +24,7 @@ export class ProcessDiagramComponent implements AfterViewInit {
   private svg: any;
   private readonly DEFAULT_MIN_WIDTH = 100;
   private readonly DEFAULT_MIN_HEIGHT = 50;
+  private readonly ROUNDED_CORNER_RADIUS = 5;
 
   ngAfterViewInit(): void {
     this.generateLayout();
@@ -139,6 +140,8 @@ export class ProcessDiagramComponent implements AfterViewInit {
       .attr('y', (d: Box) => d.y)
       .attr('width', (d: Box) => d.width || this.DEFAULT_MIN_WIDTH)
       .attr('height', (d: Box) => d.height || this.DEFAULT_MIN_HEIGHT)
+      .attr('rx', this.ROUNDED_CORNER_RADIUS)
+      .attr('ry', this.ROUNDED_CORNER_RADIUS)
       .attr('fill', (d: Box) => d.color)
       .attr('stroke', (d: Box) => {
         if (d.borderStyle === 'dotted') {
