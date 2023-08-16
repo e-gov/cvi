@@ -19,7 +19,7 @@ import { Gap } from '../track/track';
 })
 export class TabComponent implements OnChanges, OnDestroy {
   @Input() title: string | undefined;
-  @Input() iconName!: CviIconName;
+  @Input() iconName!: CviIconName | undefined;
   @Input() iconPosition: LabeledIconPosition = 'before';
   @Input() svgClass = '';
   @Input() iconHeight = 20;
