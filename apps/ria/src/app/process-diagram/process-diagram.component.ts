@@ -39,20 +39,20 @@ export class ProcessDiagramComponent implements AfterViewInit {
     const areaHeight = this.diagramRef.nativeElement.clientHeight;
     const xIncrement = 150; // horizontal distance between layers
     const ySpacing = 30; // vertical spacing between boxes in a layer
-    const defaultWidth = 100; // default box width
-    const defaultHeight = 50; // default box height
+    const defaultWidth = this.DEFAULT_MIN_WIDTH;
+    const defaultHeight = this.DEFAULT_MIN_HEIGHT;
 
     // Determine the initial layer: boxes without a predecessor
     const initialLayer = this.boxes.filter(
-      box => !this.boxes.some(b => b.targets && b.targets.includes(box.id))
+      (box) => !this.boxes.some((b) => b.targets && b.targets.includes(box.id))
     );
-    layers.push(initialLayer.map(box => box.id));
-    coveredBoxIds.push(...initialLayer.map(box => box.id));
+    layers.push(initialLayer.map((box) => box.id));
+    coveredBoxIds.push(...initialLayer.map((box) => box.id));
 
     while (coveredBoxIds.length < this.boxes.length) {
       const nextLayer: number[] = [];
       for (const boxId of layers[layers.length - 1]) {
-        const currentBox = this.boxes.find(b => b.id === boxId);
+        const currentBox = this.boxes.find((b) => b.id === boxId);
         if (currentBox?.targets) {
           for (const target of currentBox.targets) {
             if (
@@ -70,7 +70,7 @@ export class ProcessDiagramComponent implements AfterViewInit {
 
     for (let i = 0; i < layers.length; i++) {
       const totalBoxesHeight = layers[i].reduce((acc, id) => {
-        const box = this.boxes.find(b => b.id === id);
+        const box = this.boxes.find((b) => b.id === id);
         return acc + (box?.height || defaultHeight);
       }, 0);
 
@@ -81,7 +81,7 @@ export class ProcessDiagramComponent implements AfterViewInit {
       let yStart = (areaHeight - totalLayerHeight) / 2;
 
       for (const id of layers[i]) {
-        const box = this.boxes.find(b => b.id === id);
+        const box = this.boxes.find((b) => b.id === id);
         if (!box) {
           break;
         }
