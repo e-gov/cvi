@@ -23,7 +23,7 @@ export class ProcessDiagramComponent implements AfterViewInit {
 
   private svg: any;
   private readonly DEFAULT_MIN_WIDTH = 100;
-  private readonly DEFAULT_MIN_HEIGHT = 50;
+  private readonly DEFAULT_MIN_HEIGHT = 30;
   private readonly ROUNDED_CORNER_RADIUS = 5;
 
   ngAfterViewInit(): void {
