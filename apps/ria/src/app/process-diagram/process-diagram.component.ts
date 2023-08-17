@@ -27,9 +27,9 @@ export class ProcessDiagramComponent implements AfterViewInit {
   private readonly ROUNDED_CORNER_RADIUS = 5;
 
   ngAfterViewInit(): void {
-    this.centerGraph();
     this.generateLayout();
     this.createSvg();
+    this.centerGraph();
     this.drawBoxes();
     this.drawArrows();
   }
@@ -72,7 +72,6 @@ export class ProcessDiagramComponent implements AfterViewInit {
       }
     }
   }
-
 
   private generateLayout() {
     const layers: number[][] = [];
