@@ -115,7 +115,19 @@ export class ProcessDiagramComponent implements AfterViewInit {
       .attr('height', areaHeight);
   }
 
-  private darkenColor(color: string, percent: number): string {
+  private getLineColorForBox(box: Box): string {
+    if (box.borderStyle === 'dotted' || box.borderStyle === 'solid') {
+      return box.borderColor || this.darkenColor(box.color);
+    }
+
+    if (box.color === '#FFFFFF') {
+      return 'black';
+    }
+
+    return this.darkenColor(box.color);
+  }
+
+  private darkenColor(color: string, percent = -30): string {
     const num = parseInt(color.slice(1), 16),
       amt = Math.round(2.55 * percent),
       R = (num >> 16) + amt,
@@ -149,13 +161,13 @@ export class ProcessDiagramComponent implements AfterViewInit {
       .attr('fill', (d: Box) => d.color)
       .attr('stroke', (d: Box) => {
         if (d.borderStyle === 'dotted' || d.borderStyle === 'solid') {
-          return d.borderColor || this.darkenColor(d.color, -20);
+          return d.borderColor || this.darkenColor(d.color);
         }
         return 'none';
       })
       .attr('stroke-dasharray', (d: Box) => {
         if (d.borderStyle === 'dotted') {
-          return '1,5';
+          return '4,5';
         }
         return '';
       })
@@ -177,6 +189,7 @@ export class ProcessDiagramComponent implements AfterViewInit {
 
   private drawArrows(): void {
     for (const box of this.boxes) {
+      const lineColor = this.getLineColorForBox(box);
       const boxWidth = box.width || this.DEFAULT_MIN_WIDTH;
       const boxHeight = box.height || this.DEFAULT_MIN_HEIGHT;
       const boxX = box.x || 0;
@@ -197,7 +210,8 @@ export class ProcessDiagramComponent implements AfterViewInit {
                 boxX + boxWidth,
                 boxY + boxHeight / 2,
                 targetBoxX,
-                targetBoxY + targetBoxHeight / 2
+                targetBoxY + targetBoxHeight / 2,
+                lineColor
               );
             } else if (targetBoxX < boxX) {
               // Target is to the left
@@ -205,7 +219,8 @@ export class ProcessDiagramComponent implements AfterViewInit {
                 boxX,
                 boxY + boxHeight / 2,
                 targetBoxX + targetBoxWidth,
-                targetBoxY + targetBoxHeight / 2
+                targetBoxY + targetBoxHeight / 2,
+                lineColor
               );
             } else if (targetBoxY > boxY) {
               // Target is below
@@ -213,7 +228,8 @@ export class ProcessDiagramComponent implements AfterViewInit {
                 boxX + boxWidth / 2,
                 boxY + boxHeight,
                 targetBoxX + targetBoxWidth / 2,
-                targetBoxY
+                targetBoxY,
+                lineColor
               );
             } else {
               // Target is above
@@ -221,7 +237,8 @@ export class ProcessDiagramComponent implements AfterViewInit {
                 boxX + boxWidth / 2,
                 boxY,
                 targetBoxX + targetBoxWidth / 2,
-                targetBoxY + targetBoxHeight
+                targetBoxY + targetBoxHeight,
+                lineColor
               );
             }
           }
@@ -252,24 +269,26 @@ export class ProcessDiagramComponent implements AfterViewInit {
     startX: number,
     startY: number,
     endX: number,
-    endY: number
+    endY: number,
+    color: string
   ): void {
     const middleX = (startX + endX) / 2;
-    this.drawLine(startX, startY, middleX, startY, false); // Horizontal line from start box
-    this.drawLine(middleX, startY, middleX, endY, false); // Vertical line
-    this.drawLine(middleX, endY, endX, endY, true); // Horizontal line to the target box with arrow
+    this.drawLine(startX, startY, middleX, startY, false, color); // Horizontal line from start box
+    this.drawLine(middleX, startY, middleX, endY, false, color); // Vertical line
+    this.drawLine(middleX, endY, endX, endY, true, color); // Horizontal line to the target box with arrow
   }
 
   private drawVerticalArrow(
     startX: number,
     startY: number,
     endX: number,
-    endY: number
+    endY: number,
+    color: string
   ): void {
     const middleY = (startY + endY) / 2;
-    this.drawLine(startX, startY, startX, middleY, false); // Vertical line from start box
-    this.drawLine(startX, middleY, endX, middleY, false); // Horizontal line
-    this.drawLine(endX, middleY, endX, endY, true); // Vertical line to the target box with arrow
+    this.drawLine(startX, startY, startX, middleY, false, color); // Vertical line from start box
+    this.drawLine(startX, middleY, endX, middleY, false, color); // Horizontal line
+    this.drawLine(endX, middleY, endX, endY, true, color); // Vertical line to the target box with arrow
   }
 
   private drawLine(
@@ -277,16 +296,40 @@ export class ProcessDiagramComponent implements AfterViewInit {
     y1: number,
     x2: number,
     y2: number,
-    addArrow: boolean
+    addArrow: boolean,
+    color: string
   ): void {
-    this.svg
+    const line = this.svg
       .append('line')
       .attr('x1', x1)
       .attr('y1', y1)
       .attr('x2', x2)
       .attr('y2', y2)
       .attr('stroke-width', 2)
-      .attr('stroke', 'black')
-      .attr('marker-end', addArrow ? 'url(#arrow)' : '');
+      .attr('stroke', color);
+
+    if (addArrow) {
+      const arrowId = `arrow-${color.replace('#', '')}`;
+      line.attr('marker-end', `url(#${arrowId})`);
+      this.createOrUpdateArrowMarker(arrowId, color);
+    }
+  }
+
+  private createOrUpdateArrowMarker(id: string, color: string): void {
+    let marker = this.svg.select(`#${id}`);
+    if (marker.empty()) {
+      marker = this.svg.append('svg:defs')
+        .append('svg:marker')
+        .attr('id', id)
+        .attr('viewBox', '0 -5 10 10')
+        .attr('refX', 9)
+        .attr('refY', 0)
+        .attr('markerWidth', 4)
+        .attr('markerHeight', 4)
+        .attr('orient', 'auto')
+        .append('svg:path')
+        .attr('d', 'M0,-5L10,0L0,5')
+        .style('fill', color);
+    }
   }
 }
