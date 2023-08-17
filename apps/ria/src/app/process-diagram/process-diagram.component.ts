@@ -40,7 +40,7 @@ export class ProcessDiagramComponent implements AfterViewInit {
   }
   private filterDuplicateIds(): void {
     const uniqueIds: Set<number> = new Set();
-    this.boxes = this.boxes.filter(box => {
+    this.boxes = this.boxes.filter((box) => {
       if (!uniqueIds.has(box.id)) {
         uniqueIds.add(box.id);
         return true;
