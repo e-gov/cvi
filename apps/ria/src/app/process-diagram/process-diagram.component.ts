@@ -23,6 +23,7 @@ export class ProcessDiagramComponent implements AfterViewInit {
   @ViewChild('measureDiv') measureDiv!: ElementRef;
 
   private svg: any;
+  private readonly MAX_BOX_WIDTH = 80;
   private readonly DEFAULT_BOX_WIDTH = 80;
   private readonly DEFAULT_BOX_HEIGHT = 50;
   private readonly ROUNDED_CORNER_RADIUS = 5;
@@ -50,7 +51,7 @@ export class ProcessDiagramComponent implements AfterViewInit {
   private adjustBoxDimensionsForHtmlContent(): void {
     const horizontalPadding = 20; // Padding for left & right
     const verticalPadding = 15; // Padding for top & bottom
-    const MAX_WIDTH = this.DEFAULT_BOX_WIDTH; // Adjust to your needs
+    const MAX_WIDTH = this.MAX_BOX_WIDTH; // Adjust to your needs
 
     for (const box of this.boxes) {
       this.measureDiv.nativeElement.innerHTML = box.label; // Insert the HTML content into the hidden div
