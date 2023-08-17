@@ -22,7 +22,7 @@ export class ProcessDiagramComponent implements AfterViewInit {
   @ViewChild('diagram') diagramRef!: ElementRef;
   @ViewChild('measureDiv') measureDiv!: ElementRef;
 
-  private svg: any;
+  private svg: any = null;
   private readonly MAX_BOX_WIDTH = 80;
   private readonly DEFAULT_BOX_WIDTH = 80;
   private readonly DEFAULT_BOX_HEIGHT = 50;
@@ -108,7 +108,6 @@ export class ProcessDiagramComponent implements AfterViewInit {
     const graphWidth = maxGraphX - minGraphX;
     const graphHeight = maxGraphY - minGraphY;
 
-    // SVG canvas dimensions
     const canvasWidth = this.diagramRef.nativeElement.scrollWidth;
     const canvasHeight = this.diagramRef.nativeElement.scrollHeight;
 
@@ -232,20 +231,14 @@ export class ProcessDiagramComponent implements AfterViewInit {
   private drawArrows(): void {
     for (const box of this.boxes) {
       const lineColor = this.getLineColorForBox(box);
-      const boxWidth = box.width || this.DEFAULT_BOX_WIDTH;
-      const boxHeight = box.height || this.DEFAULT_BOX_HEIGHT;
-      const boxX = box.x || 0;
-      const boxY = box.y || 0;
 
       if (box.targets) {
         for (const targetId of box.targets) {
           const targetBox = this.boxes.find((b) => b.id === targetId);
           if (targetBox) {
             if (this.boxesPointToEachOther(box, targetBox)) {
-              // Draw double arrows
               this.drawDoubleArrows(box, targetBox, lineColor);
             } else {
-              // Draw single arrows
               this.drawSingleArrow(box, targetBox, lineColor);
             }
           }
@@ -255,20 +248,17 @@ export class ProcessDiagramComponent implements AfterViewInit {
   }
 
   private drawSingleArrow(source: Box, target: Box, color: string): void {
-    // Extract dimensions for clarity
-    const sourceWidth = source.width || this.DEFAULT_BOX_WIDTH;
-    const sourceHeight = source.height || this.DEFAULT_BOX_HEIGHT;
-    const sourceX = source.x || 0;
-    const sourceY = source.y || 0;
+    const sourceWidth = source.width ?? this.DEFAULT_BOX_WIDTH;
+    const sourceHeight = source.height ?? this.DEFAULT_BOX_HEIGHT;
+    const sourceX = source.x ?? 0;
+    const sourceY = source.y ?? 0;
 
-    const targetWidth = target.width || this.DEFAULT_BOX_WIDTH;
-    const targetHeight = target.height || this.DEFAULT_BOX_HEIGHT;
-    const targetX = target.x || 0;
-    const targetY = target.y || 0;
+    const targetWidth = target.width ?? this.DEFAULT_BOX_WIDTH;
+    const targetHeight = target.height ?? this.DEFAULT_BOX_HEIGHT;
+    const targetX = target.x ?? 0;
+    const targetY = target.y ?? 0;
 
-    // Calculate positions based on relative positioning
     if (targetX > sourceX) {
-      // Target is to the right
       this.drawHorizontalArrow(
         sourceX + sourceWidth,
         sourceY + sourceHeight / 2,
@@ -277,7 +267,6 @@ export class ProcessDiagramComponent implements AfterViewInit {
         color
       );
     } else if (targetX < sourceX) {
-      // Target is to the left
       this.drawHorizontalArrow(
         sourceX,
         sourceY + sourceHeight / 2,
@@ -286,7 +275,6 @@ export class ProcessDiagramComponent implements AfterViewInit {
         color
       );
     } else if (targetY > sourceY) {
-      // Target is below
       this.drawVerticalArrow(
         sourceX + sourceWidth / 2,
         sourceY + sourceHeight,
@@ -295,7 +283,6 @@ export class ProcessDiagramComponent implements AfterViewInit {
         color
       );
     } else {
-      // Target is above
       this.drawVerticalArrow(
         sourceX + sourceWidth / 2,
         sourceY,
@@ -371,91 +358,18 @@ export class ProcessDiagramComponent implements AfterViewInit {
         .attr('orient', 'auto')
         .append('svg:path')
         .attr('d', 'M0,-5L10,0L0,5')
-        .style('fill', color);
+        .attr('fill', color);
     }
+  }
+
+  private boxesPointToEachOther(source: Box, target: Box): boolean | undefined {
+    return (
+      source.targets?.includes(target.id) && target.targets?.includes(source.id)
+    );
   }
 
   private drawDoubleArrows(source: Box, target: Box, color: string): void {
-    // Extract dimensions for clarity
-    const sourceWidth = source.width || this.DEFAULT_BOX_WIDTH;
-    const sourceHeight = source.height || this.DEFAULT_BOX_HEIGHT;
-    const sourceX = source.x || 0;
-    const sourceY = source.y || 0;
-
-    const targetWidth = target.width || this.DEFAULT_BOX_WIDTH;
-    const targetHeight = target.height || this.DEFAULT_BOX_HEIGHT;
-    const targetX = target.x || 0;
-    const targetY = target.y || 0;
-
-    // Calculate positions based on relative positioning
-    if (targetX > sourceX) {
-      // Target is to the right
-      this.drawHorizontalArrow(
-        sourceX + sourceWidth,
-        sourceY + sourceHeight / 2,
-        targetX,
-        targetY + targetHeight / 2,
-        color
-      );
-      this.drawHorizontalArrow(
-        targetX,
-        targetY + targetHeight / 2,
-        sourceX + sourceWidth,
-        sourceY + sourceHeight / 2,
-        color
-      );
-    } else if (targetX < sourceX) {
-      // Target is to the left
-      this.drawHorizontalArrow(
-        sourceX,
-        sourceY + sourceHeight / 2,
-        targetX + targetWidth,
-        targetY + targetHeight / 2,
-        color
-      );
-      this.drawHorizontalArrow(
-        targetX + targetWidth,
-        targetY + targetHeight / 2,
-        sourceX,
-        sourceY + sourceHeight / 2,
-        color
-      );
-    } else if (targetY > sourceY) {
-      // Target is below
-      this.drawVerticalArrow(
-        sourceX + sourceWidth / 2,
-        sourceY + sourceHeight,
-        targetX + targetWidth / 2,
-        targetY,
-        color
-      );
-      this.drawVerticalArrow(
-        targetX + targetWidth / 2,
-        targetY,
-        sourceX + sourceWidth / 2,
-        sourceY + sourceHeight,
-        color
-      );
-    } else {
-      // Target is above
-      this.drawVerticalArrow(
-        sourceX + sourceWidth / 2,
-        sourceY,
-        targetX + targetWidth / 2,
-        targetY + targetHeight,
-        color
-      );
-      this.drawVerticalArrow(
-        targetX + targetWidth / 2,
-        targetY + targetHeight,
-        sourceX + sourceWidth / 2,
-        sourceY,
-        color
-      );
-    }
-  }
-
-  private boxesPointToEachOther(box1: Box, box2: Box): boolean | undefined {
-    return box1.targets?.includes(box2.id) && box2.targets?.includes(box1.id);
+    this.drawSingleArrow(source, target, color);
+    this.drawSingleArrow(target, source, color);
   }
 }
