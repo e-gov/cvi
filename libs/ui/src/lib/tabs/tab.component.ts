@@ -8,6 +8,9 @@ import {
   ViewChild,
 } from '@angular/core';
 import { Subject } from 'rxjs';
+import { CviIconName } from '@egov/cvi-icons';
+import { LabeledIconPosition } from '../icons/icon-position';
+import { Gap } from '../track/track';
 
 @Component({
   selector: 'cvi-ng-tab',
@@ -16,6 +19,12 @@ import { Subject } from 'rxjs';
 })
 export class TabComponent implements OnChanges, OnDestroy {
   @Input() title: string | undefined;
+  @Input() iconName!: CviIconName | undefined;
+  @Input() iconPosition: LabeledIconPosition = 'before';
+  @Input() svgClass = '';
+  @Input() iconHeight = 15;
+  @Input() gap: Gap = 1;
+
   @ViewChild(TemplateRef, { static: true }) _content!: TemplateRef<any>;
 
   /** @internal */
