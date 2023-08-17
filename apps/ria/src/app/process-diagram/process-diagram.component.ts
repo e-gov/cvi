@@ -29,6 +29,7 @@ export class ProcessDiagramComponent implements AfterViewInit {
   private readonly ROUNDED_CORNER_RADIUS = 5;
 
   ngAfterViewInit(): void {
+    this.filterDuplicateIds();
     this.createSvg();
     this.adjustBoxDimensionsForHtmlContent();
     this.generateLayout();
@@ -36,6 +37,16 @@ export class ProcessDiagramComponent implements AfterViewInit {
     this.centerGraph();
     this.drawBoxes();
     this.drawArrows();
+  }
+  private filterDuplicateIds(): void {
+    const uniqueIds: Set<number> = new Set();
+    this.boxes = this.boxes.filter(box => {
+      if (!uniqueIds.has(box.id)) {
+        uniqueIds.add(box.id);
+        return true;
+      }
+      return false;
+    });
   }
 
   private createSvg(): void {

@@ -11,7 +11,7 @@ import { Box } from './process-diagram/box';
 export class AppComponent {
   boxes: Box[] = [
     {
-      x: 20,
+      x: 10,
       y: 150,
       color: '#F0F0F2',
       borderStyle: 'solid',
