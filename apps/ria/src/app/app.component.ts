@@ -18,7 +18,7 @@ export class AppComponent {
       borderColor: '#D73E3E',
       id: 1,
       link: 'https://example.com/1',
-      label: 'Health concern',
+      label: '<p style="color:#D73E3E">Health concern</p>',
       targets: [2, 7],
     },
     {

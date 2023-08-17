@@ -37,11 +37,6 @@ export class ProcessDiagramComponent implements AfterViewInit {
     const layers: number[][] = [];
     const coveredBoxIds: number[] = [];
 
-    const areaHeight = this.diagramRef.nativeElement.clientHeight;
-    const xIncrement = 150; // horizontal distance between layers
-    const defaultWidth = this.DEFAULT_MIN_WIDTH;
-    const defaultHeight = this.DEFAULT_MIN_HEIGHT;
-
     // Determine the initial layer: boxes without a predecessor
     const initialLayer = this.boxes.filter(
       (box) => !this.boxes.some((b) => b.targets && b.targets.includes(box.id))
@@ -66,37 +61,6 @@ export class ProcessDiagramComponent implements AfterViewInit {
         }
       }
       layers.push(nextLayer);
-    }
-
-    for (let i = 0; i < layers.length; i++) {
-      const totalBoxesHeight = layers[i].reduce((acc, id) => {
-        const box = this.boxes.find((b) => b.id === id);
-        return acc + (box?.height || defaultHeight);
-      }, 0);
-
-      // Calculate dynamic ySpacing based on available space
-      const availableSpacingHeight = areaHeight - totalBoxesHeight;
-      const gaps = layers[i].length - 1;
-      const ySpacing = gaps > 0 ? availableSpacingHeight / gaps : 0;
-
-      let yStart = (areaHeight - totalBoxesHeight - ySpacing * gaps) / 2;
-
-      for (const id of layers[i]) {
-        const box = this.boxes.find((b) => b.id === id);
-        if (!box) {
-          continue;
-        }
-
-        // Determine the box dimensions
-        box.width = box.width || defaultWidth;
-        box.height = box.height || defaultHeight;
-
-        box.x = 20 + i * xIncrement;
-        box.y = yStart;
-
-        // Increase the yStart for the next box in the layer
-        yStart += box.height + ySpacing;
-      }
     }
   }
 
