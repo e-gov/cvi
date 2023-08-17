@@ -32,6 +32,7 @@ export class ProcessDiagramComponent implements AfterViewInit {
     this.createSvg();
     this.adjustBoxDimensionsForHtmlContent();
     this.generateLayout();
+    this.adjustBoxPositionsToAvoidOverlap();
     this.centerGraph();
     this.drawBoxes();
     this.drawArrows();
@@ -154,6 +155,40 @@ export class ProcessDiagramComponent implements AfterViewInit {
       }
       layers.push(nextLayer);
     }
+  }
+
+  private adjustBoxPositionsToAvoidOverlap(): void {
+    const padding = 25;
+    let hasOverlap = true;
+
+    while (hasOverlap) {
+      hasOverlap = false;
+      for (const box1 of this.boxes) {
+        for (const box2 of this.boxes) {
+          if (box1 !== box2 && this.boxesOverlap(box1, box2)) {
+            hasOverlap = true;
+            if (!box1.x || !box1.width || !box2.x) {
+              break;
+            }
+            const dx = (box1.x + box1.width + padding) - box2.x;
+            box2.x += dx;
+          }
+        }
+      }
+    }
+  }
+
+  private boxesOverlap(a: Box, b: Box): boolean {
+    if (!a.x || !a.y || !a.width || !a.height || !b.x || !b.y || !b.width || !b.height) {
+      return false;
+    }
+
+    return (
+      a.x < b.x + b.width &&
+      a.x + a.width > b.x &&
+      a.y < b.y + b.height &&
+      a.y + a.height > b.y
+    );
   }
 
   private getLineColorForBox(box: Box): string {
