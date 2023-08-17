@@ -4,7 +4,7 @@ import {
   HostBinding,
   Input,
 } from '@angular/core';
-import { CviIconName } from '../../../../../dist/libs/icons';
+import { CviIconName } from '@egov/cvi-icons';
 import { TimedNoticeAsideItem, TimedNoticeSeverity } from './timed-notice';
 import { TimedNoticeSeverityToIconPipe } from './timed-notice-severity-to-icon.pipe';
 
