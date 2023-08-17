@@ -170,7 +170,7 @@ export class ProcessDiagramComponent implements AfterViewInit {
             if (!box1.x || !box1.width || !box2.x) {
               break;
             }
-            const dx = (box1.x + box1.width + padding) - box2.x;
+            const dx = box1.x + box1.width + padding - box2.x;
             box2.x += dx;
           }
         }
@@ -179,7 +179,16 @@ export class ProcessDiagramComponent implements AfterViewInit {
   }
 
   private boxesOverlap(a: Box, b: Box): boolean {
-    if (!a.x || !a.y || !a.width || !a.height || !b.x || !b.y || !b.width || !b.height) {
+    if (
+      !a.x ||
+      !a.y ||
+      !a.width ||
+      !a.height ||
+      !b.x ||
+      !b.y ||
+      !b.width ||
+      !b.height
+    ) {
       return false;
     }
 
