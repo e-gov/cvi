@@ -20,6 +20,7 @@ import { Box } from './box';
 export class ProcessDiagramComponent implements AfterViewInit {
   @Input() boxes!: Box[];
   @ViewChild('diagram') diagramRef!: ElementRef;
+  @ViewChild('measureDiv') measureDiv!: ElementRef;
 
   private svg: any;
   private readonly DEFAULT_MIN_WIDTH = 100;
@@ -27,11 +28,49 @@ export class ProcessDiagramComponent implements AfterViewInit {
   private readonly ROUNDED_CORNER_RADIUS = 5;
 
   ngAfterViewInit(): void {
-    this.generateLayout();
     this.createSvg();
+    this.adjustBoxDimensionsForHtmlContent();
+    this.generateLayout();
     this.centerGraph();
     this.drawBoxes();
     this.drawArrows();
+  }
+
+  private createSvg(): void {
+    const areaWidth = this.diagramRef.nativeElement.offsetWidth;
+    const areaHeight = this.diagramRef.nativeElement.offsetHeight;
+
+    this.svg = d3
+      .select(this.diagramRef.nativeElement)
+      .append('svg')
+      .attr('width', areaWidth)
+      .attr('height', areaHeight);
+  }
+
+  private adjustBoxDimensionsForHtmlContent(): void {
+    const horizontalPadding = 10;  // Padding for left & right
+    const verticalPadding = 5;    // Padding for top & bottom
+    const MAX_WIDTH = 80;         // Adjust to your needs
+
+    for (const box of this.boxes) {
+      this.measureDiv.nativeElement.innerHTML = box.label; // Insert the HTML content into the hidden div
+
+      let width = this.measureDiv.nativeElement.offsetWidth; // Measure width
+      const initialHeight = this.measureDiv.nativeElement.offsetHeight; // Measure initial height
+
+      if (width > MAX_WIDTH) {
+        // If the width exceeds the max allowed width, adjust the height
+        const overflowRatio = width / MAX_WIDTH;
+        width = MAX_WIDTH; // Set width to max allowed width
+        box.height = initialHeight * overflowRatio + 2 * verticalPadding; // Increase the height based on overflow
+      } else {
+        box.height = initialHeight + 2 * verticalPadding;
+      }
+
+      box.width = width + 2 * horizontalPadding; // Adjust width with padding
+    }
+
+    this.measureDiv.nativeElement.innerHTML = ''; // Clear the temporary div
   }
 
   private centerGraph(): void {
@@ -102,17 +141,6 @@ export class ProcessDiagramComponent implements AfterViewInit {
       }
       layers.push(nextLayer);
     }
-  }
-
-  private createSvg(): void {
-    const areaWidth = this.diagramRef.nativeElement.offsetWidth;
-    const areaHeight = this.diagramRef.nativeElement.offsetHeight;
-
-    this.svg = d3
-      .select(this.diagramRef.nativeElement)
-      .append('svg')
-      .attr('width', areaWidth)
-      .attr('height', areaHeight);
   }
 
   private getLineColorForBox(box: Box): string {
