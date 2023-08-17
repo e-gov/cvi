@@ -23,8 +23,8 @@ export class ProcessDiagramComponent implements AfterViewInit {
   @ViewChild('measureDiv') measureDiv!: ElementRef;
 
   private svg: any;
-  private readonly DEFAULT_MIN_WIDTH = 100;
-  private readonly DEFAULT_MIN_HEIGHT = 30;
+  private readonly DEFAULT_BOX_WIDTH = 80;
+  private readonly DEFAULT_BOX_HEIGHT = 50;
   private readonly ROUNDED_CORNER_RADIUS = 5;
 
   ngAfterViewInit(): void {
@@ -48,9 +48,9 @@ export class ProcessDiagramComponent implements AfterViewInit {
   }
 
   private adjustBoxDimensionsForHtmlContent(): void {
-    const horizontalPadding = 10;  // Padding for left & right
-    const verticalPadding = 5;    // Padding for top & bottom
-    const MAX_WIDTH = 80;         // Adjust to your needs
+    const horizontalPadding = 10; // Padding for left & right
+    const verticalPadding = 5; // Padding for top & bottom
+    const MAX_WIDTH = this.DEFAULT_BOX_WIDTH; // Adjust to your needs
 
     for (const box of this.boxes) {
       this.measureDiv.nativeElement.innerHTML = box.label; // Insert the HTML content into the hidden div
@@ -74,15 +74,15 @@ export class ProcessDiagramComponent implements AfterViewInit {
   }
 
   private centerGraph(): void {
-    // Step 1: Compute graph dimensions
+    // Compute graph dimensions
     let minGraphX = Infinity;
     let maxGraphX = -Infinity;
     let minGraphY = Infinity;
     let maxGraphY = -Infinity;
 
     for (const box of this.boxes) {
-      const boxWidth = box.width || this.DEFAULT_MIN_WIDTH;
-      const boxHeight = box.height || this.DEFAULT_MIN_HEIGHT;
+      const boxWidth = box.width || this.DEFAULT_BOX_WIDTH;
+      const boxHeight = box.height || this.DEFAULT_BOX_HEIGHT;
 
       minGraphX = Math.min(minGraphX, box.x || 0);
       maxGraphX = Math.max(maxGraphX, (box.x || 0) + boxWidth);
@@ -98,7 +98,7 @@ export class ProcessDiagramComponent implements AfterViewInit {
     const canvasWidth = this.diagramRef.nativeElement.scrollWidth;
     const canvasHeight = this.diagramRef.nativeElement.scrollHeight;
 
-    // Step 2: Adjust box x and y coordinates
+    // Adjust box x and y coordinates
     const xOffset = (canvasWidth - graphWidth) / 2 - minGraphX;
     const yOffset = (canvasHeight - graphHeight) / 2 - minGraphY;
 
@@ -182,8 +182,8 @@ export class ProcessDiagramComponent implements AfterViewInit {
       .append('rect')
       .attr('x', (d: Box) => d.x)
       .attr('y', (d: Box) => d.y)
-      .attr('width', (d: Box) => d.width || this.DEFAULT_MIN_WIDTH)
-      .attr('height', (d: Box) => d.height || this.DEFAULT_MIN_HEIGHT)
+      .attr('width', (d: Box) => d.width || this.DEFAULT_BOX_WIDTH)
+      .attr('height', (d: Box) => d.height || this.DEFAULT_BOX_HEIGHT)
       .attr('rx', this.ROUNDED_CORNER_RADIUS)
       .attr('ry', this.ROUNDED_CORNER_RADIUS)
       .attr('fill', (d: Box) => d.color)
@@ -208,8 +208,8 @@ export class ProcessDiagramComponent implements AfterViewInit {
       .append('foreignObject')
       .attr('x', (d: Box) => d.x)
       .attr('y', (d: Box) => d.y)
-      .attr('width', (d: Box) => d.width || this.DEFAULT_MIN_WIDTH)
-      .attr('height', (d: Box) => d.height || this.DEFAULT_MIN_HEIGHT)
+      .attr('width', (d: Box) => d.width || this.DEFAULT_BOX_WIDTH)
+      .attr('height', (d: Box) => d.height || this.DEFAULT_BOX_HEIGHT)
       .html((d: Box) => `<div class="box-content">${d.label}</div>`)
       .style('font-size', '14px')
       .style('line-height', '24px');
@@ -218,8 +218,8 @@ export class ProcessDiagramComponent implements AfterViewInit {
   private drawArrows(): void {
     for (const box of this.boxes) {
       const lineColor = this.getLineColorForBox(box);
-      const boxWidth = box.width || this.DEFAULT_MIN_WIDTH;
-      const boxHeight = box.height || this.DEFAULT_MIN_HEIGHT;
+      const boxWidth = box.width || this.DEFAULT_BOX_WIDTH;
+      const boxHeight = box.height || this.DEFAULT_BOX_HEIGHT;
       const boxX = box.x || 0;
       const boxY = box.y || 0;
 
@@ -242,13 +242,13 @@ export class ProcessDiagramComponent implements AfterViewInit {
 
   private drawSingleArrow(source: Box, target: Box, color: string): void {
     // Extract dimensions for clarity
-    const sourceWidth = source.width || this.DEFAULT_MIN_WIDTH;
-    const sourceHeight = source.height || this.DEFAULT_MIN_HEIGHT;
+    const sourceWidth = source.width || this.DEFAULT_BOX_WIDTH;
+    const sourceHeight = source.height || this.DEFAULT_BOX_HEIGHT;
     const sourceX = source.x || 0;
     const sourceY = source.y || 0;
 
-    const targetWidth = target.width || this.DEFAULT_MIN_WIDTH;
-    const targetHeight = target.height || this.DEFAULT_MIN_HEIGHT;
+    const targetWidth = target.width || this.DEFAULT_BOX_WIDTH;
+    const targetHeight = target.height || this.DEFAULT_BOX_HEIGHT;
     const targetX = target.x || 0;
     const targetY = target.y || 0;
 
@@ -363,13 +363,13 @@ export class ProcessDiagramComponent implements AfterViewInit {
 
   private drawDoubleArrows(source: Box, target: Box, color: string): void {
     // Extract dimensions for clarity
-    const sourceWidth = source.width || this.DEFAULT_MIN_WIDTH;
-    const sourceHeight = source.height || this.DEFAULT_MIN_HEIGHT;
+    const sourceWidth = source.width || this.DEFAULT_BOX_WIDTH;
+    const sourceHeight = source.height || this.DEFAULT_BOX_HEIGHT;
     const sourceX = source.x || 0;
     const sourceY = source.y || 0;
 
-    const targetWidth = target.width || this.DEFAULT_MIN_WIDTH;
-    const targetHeight = target.height || this.DEFAULT_MIN_HEIGHT;
+    const targetWidth = target.width || this.DEFAULT_BOX_WIDTH;
+    const targetHeight = target.height || this.DEFAULT_BOX_HEIGHT;
     const targetX = target.x || 0;
     const targetY = target.y || 0;
 
