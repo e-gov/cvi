@@ -144,18 +144,18 @@ export class ProcessDiagramComponent implements AfterViewInit {
       .attr('ry', this.ROUNDED_CORNER_RADIUS)
       .attr('fill', (d: Box) => d.color)
       .attr('stroke', (d: Box) => {
-        if (d.borderStyle === 'dotted') {
-          return this.darkenColor(d.color, -20);
+        if (d.borderStyle === 'dotted' || d.borderStyle === 'solid') {
+          return d.borderColor || this.darkenColor(d.color, -20);
         }
         return 'none';
       })
-      .attr('stroke-width', 2)
       .attr('stroke-dasharray', (d: Box) => {
         if (d.borderStyle === 'dotted') {
           return '1,5';
         }
         return '';
-      });
+      })
+      .attr('stroke-width', 2);
 
     (links.nodes().length ? links : this.svg)
       .selectAll('foreignObject')

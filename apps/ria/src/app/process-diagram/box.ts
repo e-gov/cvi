@@ -2,7 +2,8 @@ export interface Box {
   x?: number; // x position
   y?: number; // y position
   color: string;
-  borderStyle: 'none' | 'dotted';
+  borderStyle: 'none' | 'dotted' | 'solid';
+  borderColor?: string;
   id: number;
   label: string;
   targets?: number[]; // Array box ids it points to

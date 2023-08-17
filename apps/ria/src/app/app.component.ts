@@ -13,8 +13,9 @@ export class AppComponent {
     {
       x: 20,
       y: 150,
-      color: '#D3D3D3',
-      borderStyle: 'none',
+      color: '#F0F0F2',
+      borderStyle: 'solid',
+      borderColor: '#D73E3E',
       id: 1,
       link: 'https://example.com/1',
       label: 'Health concern',
@@ -23,7 +24,7 @@ export class AppComponent {
     {
       x: 150,
       y: 80,
-      color: '#FFC0CB',
+      color: '#FFF1D3',
       borderStyle: 'none',
       id: 2,
       link: 'https://example.com/2',
@@ -33,7 +34,7 @@ export class AppComponent {
     {
       x: 280,
       y: 20,
-      color: '#FFD700',
+      color: '#FFF1D3',
       borderStyle: 'none',
       id: 3,
       link: 'https://example.com/3',
@@ -42,7 +43,7 @@ export class AppComponent {
     {
       x: 280,
       y: 80,
-      color: '#ADFF2F',
+      color: '#FFF1D3',
       borderStyle: 'none',
       id: 4,
       link: 'https://example.com/4',
@@ -51,7 +52,7 @@ export class AppComponent {
     {
       x: 280,
       y: 140,
-      color: '#FF6347',
+      color: '#FFF1D3',
       borderStyle: 'none',
       id: 5,
       link: 'https://example.com/5',
@@ -61,7 +62,8 @@ export class AppComponent {
     {
       x: 410,
       y: 60,
-      color: '#8A2BE2',
+      color: '#B9D2E5',
+      borderColor: '#3B85BD',
       borderStyle: 'dotted',
       id: 6,
       link: 'https://example.com/6',
@@ -71,7 +73,7 @@ export class AppComponent {
     {
       x: 410,
       y: 140,
-      color: '#DC143C',
+      color: '#CECFD8',
       borderStyle: 'none',
       id: 9,
       link: 'https://example.com/9',
@@ -81,8 +83,9 @@ export class AppComponent {
     {
       x: 550,
       y: 140,
-      color: '#808080',
+      color: '#ECF4EF',
       borderStyle: 'dotted',
+      borderColor: '#399E43',
       id: 10,
       link: 'https://example.com/10',
       label: 'Treatment at home',
@@ -90,7 +93,7 @@ export class AppComponent {
     {
       x: 150,
       y: 220,
-      color: '#FF4500',
+      color: '#FCEEEE',
       borderStyle: 'none',
       id: 7,
       link: 'https://example.com/7',
@@ -100,7 +103,7 @@ export class AppComponent {
     {
       x: 280,
       y: 220,
-      color: '#FF8C00',
+      color: '#FCEEEE',
       borderStyle: 'none',
       id: 8,
       link: 'https://example.com/8',
@@ -110,7 +113,7 @@ export class AppComponent {
     {
       x: 410,
       y: 220,
-      color: '#4682B4',
+      color: '#FCEEEE',
       borderStyle: 'dotted',
       id: 11,
       link: 'https://example.com/11',
