@@ -27,11 +27,52 @@ export class ProcessDiagramComponent implements AfterViewInit {
   private readonly ROUNDED_CORNER_RADIUS = 5;
 
   ngAfterViewInit(): void {
+    this.centerGraph();
     this.generateLayout();
     this.createSvg();
     this.drawBoxes();
     this.drawArrows();
   }
+
+  private centerGraph(): void {
+    // Step 1: Compute graph dimensions
+    let minGraphX = Infinity;
+    let maxGraphX = -Infinity;
+    let minGraphY = Infinity;
+    let maxGraphY = -Infinity;
+
+    for (const box of this.boxes) {
+      const boxWidth = box.width || this.DEFAULT_MIN_WIDTH;
+      const boxHeight = box.height || this.DEFAULT_MIN_HEIGHT;
+
+      minGraphX = Math.min(minGraphX, box.x || 0);
+      maxGraphX = Math.max(maxGraphX, (box.x || 0) + boxWidth);
+
+      minGraphY = Math.min(minGraphY, box.y || 0);
+      maxGraphY = Math.max(maxGraphY, (box.y || 0) + boxHeight);
+    }
+
+    const graphWidth = maxGraphX - minGraphX;
+    const graphHeight = maxGraphY - minGraphY;
+
+    // SVG canvas dimensions
+    const canvasWidth = this.diagramRef.nativeElement.scrollWidth;
+    const canvasHeight = this.diagramRef.nativeElement.scrollHeight;
+
+    // Step 2: Adjust box x and y coordinates
+    const xOffset = (canvasWidth - graphWidth) / 2 - minGraphX;
+    const yOffset = (canvasHeight - graphHeight) / 2 - minGraphY;
+
+    for (const box of this.boxes) {
+      if (box.x !== undefined) {
+        box.x += xOffset;
+      }
+      if (box.y !== undefined) {
+        box.y += yOffset;
+      }
+    }
+  }
+
 
   private generateLayout() {
     const layers: number[][] = [];
