@@ -48,41 +48,43 @@ export class ProcessDiagramComponent implements AfterViewInit {
   }
 
   private adjustBoxDimensionsForHtmlContent(): void {
-    const horizontalPadding = 12; // Padding for left & right
-    const verticalPadding = 10; // Padding for top & bottom
+    const horizontalPadding = 20; // Padding for left & right
+    const verticalPadding = 15; // Padding for top & bottom
     const MAX_WIDTH = this.DEFAULT_BOX_WIDTH; // Adjust to your needs
 
     for (const box of this.boxes) {
       this.measureDiv.nativeElement.innerHTML = box.label; // Insert the HTML content into the hidden div
 
       // Extract text from the rendered HTML
-      const renderedText = this.measureDiv.nativeElement.innerText || this.measureDiv.nativeElement.textContent;
+      const renderedText =
+        this.measureDiv.nativeElement.innerText ||
+        this.measureDiv.nativeElement.textContent;
 
       let width = this.measureDiv.nativeElement.offsetWidth; // Measure width
       const initialHeight = this.measureDiv.nativeElement.offsetHeight; // Measure initial height
 
       // Check if the rendered content is a single word without whitespace and overflows
-      const isSingleWordAndOverflows = !/\s/.test(renderedText) && width > MAX_WIDTH;
+      const isSingleWordAndOverflows =
+        !/\s/.test(renderedText) && width > MAX_WIDTH;
 
       if (isSingleWordAndOverflows) {
         // If it's a single word that overflows, adjust the width only
-        box.width = width + 2 * horizontalPadding;
-        box.height = initialHeight + 2 * verticalPadding;
+        box.width = width + horizontalPadding;
+        box.height = initialHeight + verticalPadding;
       } else if (width <= MAX_WIDTH) {
         // For other boxes, if they don't exceed the max width, set height with added vertical padding
-        box.height = initialHeight + 2 * verticalPadding;
+        box.height = initialHeight + verticalPadding;
       } else {
         // For boxes that exceed the max width but are not single words
         const overflowRatio = width / MAX_WIDTH;
         width = MAX_WIDTH;
-        box.height = initialHeight * overflowRatio + 2 * verticalPadding;
-        box.width = MAX_WIDTH + 2 * horizontalPadding;
+        box.height = initialHeight * overflowRatio + verticalPadding;
+        box.width = MAX_WIDTH + horizontalPadding;
       }
 
       this.measureDiv.nativeElement.innerHTML = ''; // Clear the temporary div after each iteration
     }
   }
-
 
   private centerGraph(): void {
     // Compute graph dimensions
