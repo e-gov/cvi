@@ -97,7 +97,7 @@ const TemplateWithIcon: Story<TabComponent> = (args: TabComponent) => ({
 export const WithIcon = TemplateWithIcon.bind({});
 WithIcon.args = {
   iconName: 'input_error',
-  iconHeight: 20,
+  iconHeight: 15,
   iconPosition: 'before',
   gap: 2,
 };
