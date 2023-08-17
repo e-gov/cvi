@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [1.28.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.27.1...ui-1.28.0) (2023-08-17)
+
+
+### Features
+
+* **ng:** add icon possibility for tab components EBS-362 ([#165](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/165)) ([910a79c](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/910a79c0b3c29e2862b051502135f5de65cb827d))
+
+
+
 ## [1.27.1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.27.0...ui-1.27.1) (2023-08-16)
 
 
