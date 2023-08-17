@@ -316,9 +316,10 @@ export class ProcessDiagramComponent implements AfterViewInit {
   }
 
   private createOrUpdateArrowMarker(id: string, color: string): void {
-    let marker = this.svg.select(`#${id}`);
+    const marker = this.svg.select(`#${id}`);
     if (marker.empty()) {
-      marker = this.svg.append('svg:defs')
+      this.svg
+        .append('svg:defs')
         .append('svg:marker')
         .attr('id', id)
         .attr('viewBox', '0 -5 10 10')

@@ -115,6 +115,7 @@ export class AppComponent {
       y: 220,
       color: '#FCEEEE',
       borderStyle: 'dotted',
+      borderColor: '#D73E3E',
       id: 11,
       link: 'https://example.com/11',
       label: 'Hospitalization',
