@@ -48,30 +48,41 @@ export class ProcessDiagramComponent implements AfterViewInit {
   }
 
   private adjustBoxDimensionsForHtmlContent(): void {
-    const horizontalPadding = 10; // Padding for left & right
-    const verticalPadding = 5; // Padding for top & bottom
+    const horizontalPadding = 12; // Padding for left & right
+    const verticalPadding = 10; // Padding for top & bottom
     const MAX_WIDTH = this.DEFAULT_BOX_WIDTH; // Adjust to your needs
 
     for (const box of this.boxes) {
       this.measureDiv.nativeElement.innerHTML = box.label; // Insert the HTML content into the hidden div
 
+      // Extract text from the rendered HTML
+      const renderedText = this.measureDiv.nativeElement.innerText || this.measureDiv.nativeElement.textContent;
+
       let width = this.measureDiv.nativeElement.offsetWidth; // Measure width
       const initialHeight = this.measureDiv.nativeElement.offsetHeight; // Measure initial height
 
-      if (width > MAX_WIDTH) {
-        // If the width exceeds the max allowed width, adjust the height
-        const overflowRatio = width / MAX_WIDTH;
-        width = MAX_WIDTH; // Set width to max allowed width
-        box.height = initialHeight * overflowRatio + 2 * verticalPadding; // Increase the height based on overflow
-      } else {
+      // Check if the rendered content is a single word without whitespace and overflows
+      const isSingleWordAndOverflows = !/\s/.test(renderedText) && width > MAX_WIDTH;
+
+      if (isSingleWordAndOverflows) {
+        // If it's a single word that overflows, adjust the width only
+        box.width = width + 2 * horizontalPadding;
         box.height = initialHeight + 2 * verticalPadding;
+      } else if (width <= MAX_WIDTH) {
+        // For other boxes, if they don't exceed the max width, set height with added vertical padding
+        box.height = initialHeight + 2 * verticalPadding;
+      } else {
+        // For boxes that exceed the max width but are not single words
+        const overflowRatio = width / MAX_WIDTH;
+        width = MAX_WIDTH;
+        box.height = initialHeight * overflowRatio + 2 * verticalPadding;
+        box.width = MAX_WIDTH + 2 * horizontalPadding;
       }
 
-      box.width = width + 2 * horizontalPadding; // Adjust width with padding
+      this.measureDiv.nativeElement.innerHTML = ''; // Clear the temporary div after each iteration
     }
-
-    this.measureDiv.nativeElement.innerHTML = ''; // Clear the temporary div
   }
+
 
   private centerGraph(): void {
     // Compute graph dimensions
@@ -155,7 +166,7 @@ export class ProcessDiagramComponent implements AfterViewInit {
     return this.darkenColor(box.color);
   }
 
-  private darkenColor(color: string, percent = -30): string {
+  private darkenColor(color: string, percent = -40): string {
     const num = parseInt(color.slice(1), 16),
       amt = Math.round(2.55 * percent),
       R = (num >> 16) + amt,
