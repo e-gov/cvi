@@ -199,70 +199,69 @@ export class ProcessDiagramComponent implements AfterViewInit {
         for (const targetId of box.targets) {
           const targetBox = this.boxes.find((b) => b.id === targetId);
           if (targetBox) {
-            const targetBoxWidth = targetBox.width || this.DEFAULT_MIN_WIDTH;
-            const targetBoxHeight = targetBox.height || this.DEFAULT_MIN_HEIGHT;
-            const targetBoxX = targetBox.x || 0;
-            const targetBoxY = targetBox.y || 0;
-
-            if (targetBoxX > boxX) {
-              // Target is to the right
-              this.drawHorizontalArrow(
-                boxX + boxWidth,
-                boxY + boxHeight / 2,
-                targetBoxX,
-                targetBoxY + targetBoxHeight / 2,
-                lineColor
-              );
-            } else if (targetBoxX < boxX) {
-              // Target is to the left
-              this.drawHorizontalArrow(
-                boxX,
-                boxY + boxHeight / 2,
-                targetBoxX + targetBoxWidth,
-                targetBoxY + targetBoxHeight / 2,
-                lineColor
-              );
-            } else if (targetBoxY > boxY) {
-              // Target is below
-              this.drawVerticalArrow(
-                boxX + boxWidth / 2,
-                boxY + boxHeight,
-                targetBoxX + targetBoxWidth / 2,
-                targetBoxY,
-                lineColor
-              );
+            if (this.boxesPointToEachOther(box, targetBox)) {
+              // Draw double arrows
+              this.drawDoubleArrows(box, targetBox, lineColor);
             } else {
-              // Target is above
-              this.drawVerticalArrow(
-                boxX + boxWidth / 2,
-                boxY,
-                targetBoxX + targetBoxWidth / 2,
-                targetBoxY + targetBoxHeight,
-                lineColor
-              );
+              // Draw single arrows
+              this.drawSingleArrow(box, targetBox, lineColor);
             }
           }
         }
       }
     }
+  }
 
-    // Define the arrow marker details
-    this.svg
-      .append('svg:defs')
-      .selectAll('marker')
-      .data(['arrow'])
-      .enter()
-      .append('svg:marker')
-      .attr('id', String)
-      .attr('viewBox', '0 -5 10 10')
-      .attr('refX', 9)
-      .attr('refY', 0)
-      .attr('markerWidth', 4)
-      .attr('markerHeight', 4)
-      .attr('orient', 'auto')
-      .append('svg:path')
-      .attr('d', 'M0,-5L10,0L0,5')
-      .style('fill', 'black');
+  private drawSingleArrow(source: Box, target: Box, color: string): void {
+    // Extract dimensions for clarity
+    const sourceWidth = source.width || this.DEFAULT_MIN_WIDTH;
+    const sourceHeight = source.height || this.DEFAULT_MIN_HEIGHT;
+    const sourceX = source.x || 0;
+    const sourceY = source.y || 0;
+
+    const targetWidth = target.width || this.DEFAULT_MIN_WIDTH;
+    const targetHeight = target.height || this.DEFAULT_MIN_HEIGHT;
+    const targetX = target.x || 0;
+    const targetY = target.y || 0;
+
+    // Calculate positions based on relative positioning
+    if (targetX > sourceX) {
+      // Target is to the right
+      this.drawHorizontalArrow(
+        sourceX + sourceWidth,
+        sourceY + sourceHeight / 2,
+        targetX,
+        targetY + targetHeight / 2,
+        color
+      );
+    } else if (targetX < sourceX) {
+      // Target is to the left
+      this.drawHorizontalArrow(
+        sourceX,
+        sourceY + sourceHeight / 2,
+        targetX + targetWidth,
+        targetY + targetHeight / 2,
+        color
+      );
+    } else if (targetY > sourceY) {
+      // Target is below
+      this.drawVerticalArrow(
+        sourceX + sourceWidth / 2,
+        sourceY + sourceHeight,
+        targetX + targetWidth / 2,
+        targetY,
+        color
+      );
+    } else {
+      // Target is above
+      this.drawVerticalArrow(
+        sourceX + sourceWidth / 2,
+        sourceY,
+        targetX + targetWidth / 2,
+        targetY + targetHeight,
+        color
+      );
+    }
   }
 
   private drawHorizontalArrow(
@@ -332,5 +331,89 @@ export class ProcessDiagramComponent implements AfterViewInit {
         .attr('d', 'M0,-5L10,0L0,5')
         .style('fill', color);
     }
+  }
+
+  private drawDoubleArrows(source: Box, target: Box, color: string): void {
+    // Extract dimensions for clarity
+    const sourceWidth = source.width || this.DEFAULT_MIN_WIDTH;
+    const sourceHeight = source.height || this.DEFAULT_MIN_HEIGHT;
+    const sourceX = source.x || 0;
+    const sourceY = source.y || 0;
+
+    const targetWidth = target.width || this.DEFAULT_MIN_WIDTH;
+    const targetHeight = target.height || this.DEFAULT_MIN_HEIGHT;
+    const targetX = target.x || 0;
+    const targetY = target.y || 0;
+
+    // Calculate positions based on relative positioning
+    if (targetX > sourceX) {
+      // Target is to the right
+      this.drawHorizontalArrow(
+        sourceX + sourceWidth,
+        sourceY + sourceHeight / 2,
+        targetX,
+        targetY + targetHeight / 2,
+        color
+      );
+      this.drawHorizontalArrow(
+        targetX,
+        targetY + targetHeight / 2,
+        sourceX + sourceWidth,
+        sourceY + sourceHeight / 2,
+        color
+      );
+    } else if (targetX < sourceX) {
+      // Target is to the left
+      this.drawHorizontalArrow(
+        sourceX,
+        sourceY + sourceHeight / 2,
+        targetX + targetWidth,
+        targetY + targetHeight / 2,
+        color
+      );
+      this.drawHorizontalArrow(
+        targetX + targetWidth,
+        targetY + targetHeight / 2,
+        sourceX,
+        sourceY + sourceHeight / 2,
+        color
+      );
+    } else if (targetY > sourceY) {
+      // Target is below
+      this.drawVerticalArrow(
+        sourceX + sourceWidth / 2,
+        sourceY + sourceHeight,
+        targetX + targetWidth / 2,
+        targetY,
+        color
+      );
+      this.drawVerticalArrow(
+        targetX + targetWidth / 2,
+        targetY,
+        sourceX + sourceWidth / 2,
+        sourceY + sourceHeight,
+        color
+      );
+    } else {
+      // Target is above
+      this.drawVerticalArrow(
+        sourceX + sourceWidth / 2,
+        sourceY,
+        targetX + targetWidth / 2,
+        targetY + targetHeight,
+        color
+      );
+      this.drawVerticalArrow(
+        targetX + targetWidth / 2,
+        targetY + targetHeight,
+        sourceX + sourceWidth / 2,
+        sourceY,
+        color
+      );
+    }
+  }
+
+  private boxesPointToEachOther(box1: Box, box2: Box): boolean | undefined {
+    return box1.targets?.includes(box2.id) && box2.targets?.includes(box1.id);
   }
 }
