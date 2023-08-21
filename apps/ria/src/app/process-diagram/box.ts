@@ -1,13 +1,15 @@
 export interface Box {
-  x?: number; // x position
-  y?: number; // y position
+  id: string;
+  label: string;
   color: string;
   borderStyle: 'none' | 'dotted' | 'solid';
   borderColor?: string;
-  id: number;
-  label: string;
-  targets?: number[]; // Array box ids it points to
-  link?: string;
-  width?: number; // box width
-  height?: number; // box height
+  targets?: string[];
+  href?: string;
+  width?: number;
+  height?: number;
+  x?: number;
+  y?: number;
+  x0?: number;
+  y0?: number;
 }

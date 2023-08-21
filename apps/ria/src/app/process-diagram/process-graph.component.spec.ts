@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ProcessDiagramComponent } from './process-diagram.component';
+import { ProcessGraphComponent } from './process-graph.component';
 
 describe('ProcessDiagramComponent', () => {
-  let component: ProcessDiagramComponent;
-  let fixture: ComponentFixture<ProcessDiagramComponent>;
+  let component: ProcessGraphComponent;
+  let fixture: ComponentFixture<ProcessGraphComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ProcessDiagramComponent],
+      declarations: [ProcessGraphComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(ProcessDiagramComponent);
+    fixture = TestBed.createComponent(ProcessGraphComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

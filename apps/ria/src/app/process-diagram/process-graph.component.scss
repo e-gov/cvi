@@ -28,3 +28,9 @@ foreignObject {
     }
   }
 }
+
+.hidden-measure {
+  visibility: hidden;
+  position: absolute;
+  top: -10000px;
+}
