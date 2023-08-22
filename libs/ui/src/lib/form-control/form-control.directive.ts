@@ -8,10 +8,11 @@ import {
 } from '@angular/core';
 
 import { FormControlComponent } from './form-control.component';
-import { NotificationSeverity } from '@egov/cvi-ng';
+import { NotificationSeverity } from '../notification/notification';
 
 @Directive({
   selector: '[cviNgFormControl]',
+  exportAs: 'cviNgFormControl',
 })
 export class FormControlDirective implements OnChanges {
   @Input() message = '';

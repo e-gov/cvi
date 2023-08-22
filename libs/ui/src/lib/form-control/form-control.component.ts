@@ -3,7 +3,7 @@ import {
   ChangeDetectorRef,
   Component,
 } from '@angular/core';
-import { NotificationSeverity } from '@egov/cvi-ng';
+import { NotificationSeverity } from '../notification/notification';
 
 @Component({
   selector: 'cvi-ng-form-control',

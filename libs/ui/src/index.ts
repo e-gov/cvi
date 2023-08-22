@@ -69,3 +69,5 @@ export * from './lib/datepicker/datepicker-calendar.component';
 export * from './lib/datepicker/datepicker-label.config';
 export * from './lib/datepicker/datepicker-label-config.token';
 export * from './lib/datepicker/default-datepicker-label.config';
+export * from './lib/form-control/form-control.component'
+export * from './lib/form-control/form-control.directive'
