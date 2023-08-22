@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.28.1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.28.0...ui-1.28.1) (2023-08-22)
+
+
+### Bug Fixes
+
+* **ng:** iconName import in timed-notice component ([#168](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/168)) ([2b2c6b1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/2b2c6b1500a272b941a5f963997e06b4292edec0))
+
+
+
 # [1.28.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.27.1...ui-1.28.0) (2023-08-17)
 
 
