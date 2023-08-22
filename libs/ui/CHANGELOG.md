@@ -2,6 +2,60 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [1.28.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.27.1...ui-1.28.0) (2023-08-17)
+
+
+### Features
+
+* **ng:** add icon possibility for tab components EBS-362 ([#165](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/165)) ([910a79c](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/910a79c0b3c29e2862b051502135f5de65cb827d))
+
+
+
+## [1.27.1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.27.0...ui-1.27.1) (2023-08-16)
+
+
+### Bug Fixes
+
+* **ng:** fix datepicker component bugs EBS-858 STPA-248 ([#167](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/167)) ([d7d0656](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/d7d065689641e254f63b3542eb00d2d8fe9dd24f))
+
+
+
+# [1.27.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.26.0...ui-1.27.0) (2023-08-16)
+
+
+### Features
+
+* **ng:** notice component ([#159](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/159)) ([0e5e064](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/0e5e0641c319b1d43f45570294348f15c7a3e71a))
+
+
+
+# [1.26.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.25.0...ui-1.26.0) (2023-08-13)
+
+
+### Features
+
+* **storybook:** add html section story to storybook steps component  ([#164](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/164)) ([9cdaeac](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/9cdaeaccc75b6769bb83a7d27f45cdd5e42ad108))
+
+
+
+# [1.25.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.24.1...ui-1.25.0) (2023-08-10)
+
+
+### Features
+
+* **ng:** add maxLength input to input component EBS-853 ([#163](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/163)) ([b17af8f](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/b17af8fa9552f40136e95b015e8fcc113aab4bdd))
+
+
+
+## [1.24.1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.24.0...ui-1.24.1) (2023-08-10)
+
+
+### Bug Fixes
+
+* **ng:** html section content web components removed on re-rendering EBS-835 ([#161](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/161)) ([b5227a5](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/b5227a5f61d0c670ad2ba6eaade8d8d16d6a13c4))
+
+
+
 # [1.24.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.23.2...ui-1.24.0) (2023-08-02)
 
 
