@@ -105,3 +105,7 @@
 .cvi-datepicker {
   @include cvi-datepicker;
 }
+
+.cvi-form-control{
+  @include cvi-form-control;
+}

@@ -10,6 +10,8 @@ export default {
     htmlId: 'fksd4kfds',
     label: 'Example label',
     placeholder: 'Placeholder text...',
+    displayError: true,
+    errorMessage: 'Error',
   },
 } as Meta<FormItemComponent>;
 
@@ -24,7 +26,11 @@ const Template: Story<FormItemComponent> = (args: FormItemComponent) => ({
                       [labelId]="labelId"
                       [htmlId]="htmlId">
       <cvi-ng-input [placeholder]="placeholder"
-                    [htmlId]="htmlId">
+                    [htmlId]="htmlId"
+                    cviNgFormControl
+                    severityLevel="warning"
+                    [display] = displayError
+                    [message]="errorMessage">
       </cvi-ng-input>
     </cvi-ng-form-item>
   `,
@@ -45,7 +51,11 @@ const WithTextareaTemplate: Story<FormItemComponent> = (
                       [labelId]="labelId"
                       [htmlId]="htmlId">
       <cvi-ng-textarea [placeholder]="placeholder"
-                       [htmlId]="htmlId">
+                       [htmlId]="htmlId"
+                       cviNgFormControl
+                       severityLevel="warning"
+                       [display] = displayError
+                       [message]="errorMessage">
       </cvi-ng-textarea>
     </cvi-ng-form-item>
   `,
@@ -84,13 +94,21 @@ const WithInlineFormElementsTemplate: Story<FormItemComponent> = (
                         [labelId]="labelId"
                         [htmlId]="htmlId">
         <cvi-ng-input [placeholder]="placeholder"
-                      [htmlId]="htmlId">
+                      [htmlId]="htmlId"
+                      cviNgFormControl
+                      [display] =displayError
+                      severityLevel="warning"
+                      [message]="errorMessage">
         </cvi-ng-input>
       </cvi-ng-form-item>
       <cvi-ng-form-item label="Datepicker"
                         htmlId="datepicker-id">
         <cvi-ng-datepicker placeholder="Pick a date"
-                           htmlId="datepicker-id">
+                           htmlId="datepicker-id"
+                           cviNgFormControl
+                           severityLevel="warning"
+                           [display] = displayError
+                           [message]="errorMessage">
         </cvi-ng-datepicker>
       </cvi-ng-form-item>
       <cvi-ng-form-item label="Select"

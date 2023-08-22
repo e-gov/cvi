@@ -1,0 +1,93 @@
+@mixin cvi-form-control($base: &) {
+  font-size: get-font-size(70);
+  position: fixed;
+  height: 32px;
+  margin-top: 7px;
+  padding-top: 7px;
+  padding-right: get-spacing('paldiski');
+  border-radius: var(--cvi-radius-s);
+  box-shadow: var(--cvi-shadow-alpha);
+  z-index: get-z-index('form-control', '__message');
+
+  ::before {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: get-spacing('paldiski');
+    border: 7px solid transparent;
+  }
+
+  @at-root {
+    #{$base}--severity-info {
+      background-color: get-color(sapphire-blue-1);
+
+      ::before {
+        border-bottom-color: get-color(sapphire-blue-1);
+      }
+    }
+
+    #{$base}--severity-warning {
+      background-color: get-color(dark-tangerine-3);
+
+      ::before {
+        border-bottom-color: get-color(dark-tangerine-3);
+      }
+    }
+
+    #{$base}--severity-success {
+      background-color: get-color(sea-green-1);
+
+      ::before {
+        border-bottom-color: get-color(sea-green-1);
+      }
+    }
+
+    #{$base}--severity-error {
+      background-color: get-color(jasper-3);
+
+      ::before {
+        border-bottom-color: get-color(jasper-3);
+      }
+    }
+
+    #{$base}--severity-neutral {
+      background-color: get-color(black-coral-1);
+
+      ::before {
+        border-bottom-color: get-color(black-coral-1);
+      }
+    }
+
+    #{$base}__header-icon {
+      fill: black;
+      margin-left: get-spacing('paldiski');
+      margin-right: get-spacing('paldiski');
+    }
+
+    &--form-border-warning{
+      border-color: get-color(dark-tangerine-10);
+    }
+
+    &--form-border-error{
+      border-color: get-color(jasper-10);
+    }
+
+    &--form-border-info{
+      border-color: get-color(sapphire-blue-10);
+    }
+
+    &--form-border-success{
+      border-color: get-color(sea-green-10);
+    }
+
+    &--form-border-neutral{
+      border-color: get-color(black-coral-10);
+    }
+  }
+}
+
+
+
+
+
+
