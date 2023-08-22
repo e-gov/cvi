@@ -48,6 +48,7 @@ import {
   cviErrorOutline,
   cviHappyFace,
   cviInfo,
+  cviInputError,
   cviLocation,
   cviLoupe,
   cviSadFace,
@@ -93,6 +94,8 @@ import { DatepickerComponent } from './datepicker/datepicker.component';
 import { DatepickerCalendarComponent } from './datepicker/datepicker-calendar.component';
 import { DATEPICKER_LABEL_CONFIG } from './datepicker/datepicker-label-config.token';
 import { DefaultDatepickerLabelConfig } from './datepicker/default-datepicker-label.config';
+import { TimedNoticeComponent } from './timed-notice/timed-notice.component';
+import { TimedNoticeSeverityToIconPipe } from './timed-notice/timed-notice-severity-to-icon.pipe';
 import { FormControlDirective } from './form-control/form-control.directive';
 import { FormControlComponent } from './form-control/form-control.component';
 
@@ -152,11 +155,16 @@ const components = [
   HeaderCellComponent,
   DatepickerComponent,
   DatepickerCalendarComponent,
+  TimedNoticeComponent,
   FormControlComponent,
   FormControlDirective,
 ];
 
-const pipes = [SafeHtmlPipe, NotificationSeverityToHeaderIconPipe];
+const pipes = [
+  SafeHtmlPipe,
+  NotificationSeverityToHeaderIconPipe,
+  TimedNoticeSeverityToIconPipe,
+];
 
 const directives = [DataAttributeDirective];
 
@@ -210,6 +218,7 @@ export class UiModule {
       cviArrowUpAlt,
       cviArrowDownAlt,
       cviCalendar,
+      cviInputError,
     ]);
   }
 }

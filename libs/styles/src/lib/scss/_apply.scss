@@ -106,6 +106,10 @@
   @include cvi-datepicker;
 }
 
+.cvi-timed-notice {
+  @include cvi-timed-notice;
+}
+
 .cvi-form-control{
   @include cvi-form-control;
 }
