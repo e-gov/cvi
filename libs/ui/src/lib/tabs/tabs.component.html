@@ -16,8 +16,8 @@
     class="cvi-tabs__tab-btn"
   >
     <ng-template
-      [ngTemplateOutlet]="item.iconName ? contentWithIcon : content"
-      [ngTemplateOutletContext]="{ tab: item }"
+            [ngTemplateOutlet]="item.iconName ? contentWithIcon : content"
+            [ngTemplateOutletContext]="{ tab: item }"
     ></ng-template>
   </button>
 </div>
@@ -64,8 +64,8 @@
       #dropdownItemButton
     >
       <ng-template
-        [ngTemplateOutlet]="item.iconName ? contentWithIcon : content"
-        [ngTemplateOutletContext]="{ tab: item }"
+              [ngTemplateOutlet]="item.iconName ? contentWithIcon : content"
+              [ngTemplateOutletContext]="{ tab: item }"
       ></ng-template>
     </button>
   </div>
@@ -91,9 +91,9 @@
 
 <ng-template #icon let-tab="tab">
   <cvi-ng-icon
-    [name]="tab.iconName"
-    [height]="tab.iconHeight"
-    svgClass="{{ tab.svgClass }}"
+          [name]="tab.iconName"
+          [height]="tab.iconHeight"
+          svgClass="{{ tab.svgClass }}"
   >
   </cvi-ng-icon>
 </ng-template>
@@ -106,20 +106,20 @@
   <cvi-ng-track [gap]="tab.gap">
     <ng-container *ngIf="tab.iconPosition === 'before'">
       <ng-container
-        [ngTemplateOutlet]="icon"
-        [ngTemplateOutletContext]="{ tab: tab }"
+              [ngTemplateOutlet]="icon"
+              [ngTemplateOutletContext]="{ tab: tab }"
       ></ng-container>
     </ng-container>
 
     <ng-container
-      [ngTemplateOutlet]="content"
-      [ngTemplateOutletContext]="{ tab: tab }"
+            [ngTemplateOutlet]="content"
+            [ngTemplateOutletContext]="{ tab: tab }"
     ></ng-container>
 
     <ng-container *ngIf="tab.iconPosition === 'after'">
       <ng-container
-        [ngTemplateOutlet]="icon"
-        [ngTemplateOutletContext]="{ tab: tab }"
+              [ngTemplateOutlet]="icon"
+              [ngTemplateOutletContext]="{ tab: tab }"
       ></ng-container>
     </ng-container>
   </cvi-ng-track>
