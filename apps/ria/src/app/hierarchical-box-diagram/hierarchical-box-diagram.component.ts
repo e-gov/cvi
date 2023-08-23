@@ -103,9 +103,6 @@ export class HierarchicalBoxDiagramComponent
   }
 
   private drawLines(links: Array<HierarchyPointLink<BoxNode>>): void {
-    // Your line-drawing logic here
-    // This method will draw the lines in your SVG
-    // Example code for drawing lines:
     this.svg
       .selectAll('.link')
       .data(links)
