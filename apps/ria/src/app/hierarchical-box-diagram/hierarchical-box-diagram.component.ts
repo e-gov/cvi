@@ -33,12 +33,11 @@ export class HierarchicalBoxDiagramComponent
   private svg: any = null;
 
   private readonly MAX_BOX_WIDTH = 100;
-  private readonly DEFAULT_BOX_WIDTH = 80;
-  private readonly DEFAULT_BOX_HEIGHT = 50;
-  private readonly ROUNDED_CORNER_RADIUS = 5;
+  private readonly MAX_BOX_HEIGHT = 50;
   private readonly MARGIN = { top: 0, right: 0, bottom: 0, left: 0 };
   private readonly WIDTH = 800 - this.MARGIN.left - this.MARGIN.right;
   private readonly HEIGHT = 400 - this.MARGIN.top - this.MARGIN.bottom;
+
   constructor(private elementRef: ElementRef, private ngZone: NgZone) {}
 
   ngAfterViewInit(): void {
@@ -61,13 +60,12 @@ export class HierarchicalBoxDiagramComponent
     this.svg = d3
       .select(this.elementRef.nativeElement)
       .append('svg')
-      .attr('viewBox', `0 0 ${this.WIDTH} ${this.HEIGHT}`)
-      .append('g')
       .attr(
-        'transform',
-        'translate(' + this.MARGIN.left + ',' + this.MARGIN.top + ')'
-      )
-      .attr('preserveAspectRatio', 'xMidYMid meet');
+        'viewBox',
+        `${-this.MAX_BOX_WIDTH} ${-this.HEIGHT / 2} ${this.WIDTH} ${
+          this.HEIGHT
+        }`
+      );
   }
 
   private generateLayout() {
@@ -76,9 +74,13 @@ export class HierarchicalBoxDiagramComponent
       return;
     }
 
+    const nodeWidth = (d: BoxNode) =>
+      this.MAX_BOX_WIDTH + this.MAX_BOX_WIDTH / 2;
+    const nodeHeight = (d: BoxNode) => this.MAX_BOX_HEIGHT;
+
     const treemap = d3
       .tree<BoxNode>()
-      .size([this.HEIGHT, this.WIDTH - this.MAX_BOX_WIDTH])
+      .nodeSize([nodeHeight(hierarchy), nodeWidth(hierarchy)])
       .separation((a, b) => {
         return a.parent == b.parent ? 1 : 2;
       });
@@ -99,20 +101,6 @@ export class HierarchicalBoxDiagramComponent
     const combinedLinks: Array<HierarchyPointLink<BoxNode>> = links.concat(
       additionalMappedLinks
     );
-
-    // Logic to align nodes in the same layer to the leftmost edge
-    const depthYMap: { [depth: number]: number } = {};
-    nodes.forEach((node) => {
-      if (
-        depthYMap[node.depth] === undefined ||
-        depthYMap[node.depth] > node.y
-      ) {
-        depthYMap[node.depth] = node.y;
-      }
-    });
-    nodes.forEach((node) => {
-      node.y = depthYMap[node.depth];
-    });
 
     this.drawBoxes(nodes, combinedLinks);
   }
@@ -141,7 +129,7 @@ export class HierarchicalBoxDiagramComponent
 
         currentNode.data.targets.forEach((targetId) => {
           if (!nodeMap[targetId]) {
-            throw new Error(`Target box with id ${targetId} not found.`);
+            return;
           }
 
           const childNode = nodeMap[targetId];
@@ -182,7 +170,8 @@ export class HierarchicalBoxDiagramComponent
   }
 
   private calculateBoxDimensions(): void {
-    const { HORIZONTAL_PADDING, VERTICAL_PADDING } = HierarchicalBoxDiagramComponent; // Replace with the actual class name
+    const { HORIZONTAL_PADDING, VERTICAL_PADDING } =
+      HierarchicalBoxDiagramComponent; // Replace with the actual class name
     const MAX_WIDTH = this.MAX_BOX_WIDTH;
 
     const measureDiv = this.measureDiv.nativeElement;
@@ -201,10 +190,11 @@ export class HierarchicalBoxDiagramComponent
       const initialHeight = rect.height;
 
       const renderedText = measureDiv.innerText || measureDiv.textContent;
-      const isSingleWordAndOverflows = !/\s/.test(renderedText) && width > MAX_WIDTH;
+      const isSingleWordAndOverflows =
+        !/\s/.test(renderedText) && width > MAX_WIDTH;
 
       if (isSingleWordAndOverflows) {
-        box.width = width + HORIZONTAL_PADDING;
+        box.width = width;
         box.height = initialHeight + VERTICAL_PADDING;
       } else if (width > MAX_WIDTH) {
         const overflowRatio = width / MAX_WIDTH;
@@ -226,6 +216,9 @@ export class HierarchicalBoxDiagramComponent
     nodes: HierarchyPointNode<BoxNode>[],
     links: Array<HierarchyPointLink<BoxNode>>
   ): void {
+    const defaultWidth = 80;
+    const defaultHeight = 50;
+    const cornerRadius = 5;
     this.svg
       .selectAll('.link')
       .data(links)
@@ -264,33 +257,30 @@ export class HierarchicalBoxDiagramComponent
       .append('a')
       .attr('xlink:href', (d: HierarchyPointNode<BoxNode>) => d.data.data.href);
 
-    // Attach the rectangles either to the 'a' tags or the main 'g' tags
-    const rectParent = hrefBoxes.nodes().length ? hrefBoxes : boxesSelection;
+    const rectSelection = hrefBoxes.nodes().length ? hrefBoxes : boxesSelection;
 
-    rectParent
+    rectSelection
       .append('rect')
       .attr(
         'x',
         (d: HierarchyPointNode<BoxNode>) =>
-          -(d.data.data.width || this.DEFAULT_BOX_WIDTH) / 2
+          -(d.data.data.width || defaultWidth) / 2
       )
       .attr(
         'y',
         (d: HierarchyPointNode<BoxNode>) =>
-          -(d.data.data.height || this.DEFAULT_BOX_HEIGHT) / 2
+          -(d.data.data.height || defaultHeight) / 2
       )
       .attr(
         'width',
-        (d: HierarchyPointNode<BoxNode>) =>
-          d.data.data.width || this.DEFAULT_BOX_WIDTH
+        (d: HierarchyPointNode<BoxNode>) => d.data.data.width || defaultWidth
       )
       .attr(
         'height',
-        (d: HierarchyPointNode<BoxNode>) =>
-          d.data.data.height || this.DEFAULT_BOX_HEIGHT
+        (d: HierarchyPointNode<BoxNode>) => d.data.data.height || defaultHeight
       )
-      .attr('rx', this.ROUNDED_CORNER_RADIUS)
-      .attr('ry', this.ROUNDED_CORNER_RADIUS)
+      .attr('rx', cornerRadius)
+      .attr('ry', cornerRadius)
       .attr('fill', (d: HierarchyPointNode<BoxNode>) => d.data.data.color)
       .attr('stroke', (d: HierarchyPointNode<BoxNode>) => {
         if (
@@ -309,32 +299,29 @@ export class HierarchicalBoxDiagramComponent
       })
       .attr('stroke-width', 2);
 
-    // Attach the foreignObject to either the 'a' tags or the main 'g' tags
-    const foreignObjectParent = hrefBoxes.nodes().length
+    const foreignObjectSelection = hrefBoxes.nodes().length
       ? hrefBoxes
       : boxesSelection;
 
-    foreignObjectParent
+    foreignObjectSelection
       .append('foreignObject')
       .attr(
         'x',
         (d: HierarchyPointNode<BoxNode>) =>
-          -(d.data.data.width || this.DEFAULT_BOX_WIDTH) / 2
+          -(d.data.data.width || defaultWidth) / 2
       )
       .attr(
         'y',
         (d: HierarchyPointNode<BoxNode>) =>
-          -(d.data.data.height || this.DEFAULT_BOX_HEIGHT) / 2
+          -(d.data.data.height || defaultHeight) / 2
       )
       .attr(
         'width',
-        (d: HierarchyPointNode<BoxNode>) =>
-          d.data.data.width || this.DEFAULT_BOX_WIDTH
+        (d: HierarchyPointNode<BoxNode>) => d.data.data.width || defaultWidth
       )
       .attr(
         'height',
-        (d: HierarchyPointNode<BoxNode>) =>
-          d.data.data.height || this.DEFAULT_BOX_HEIGHT
+        (d: HierarchyPointNode<BoxNode>) => d.data.data.height || defaultHeight
       )
       .html(
         (d: HierarchyPointNode<BoxNode>) =>
