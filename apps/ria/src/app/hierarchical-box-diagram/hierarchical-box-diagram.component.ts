@@ -1,5 +1,6 @@
 import {
   AfterViewInit,
+  ChangeDetectionStrategy,
   Component,
   ElementRef,
   Input,
@@ -18,7 +19,7 @@ import { BoxNode } from './box-node';
   templateUrl: './hierarchical-box-diagram.component.html',
   styleUrls: ['./hierarchical-box-diagram.component.scss'],
   encapsulation: ViewEncapsulation.None,
-  // changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HierarchicalBoxDiagramComponent
   implements AfterViewInit, OnDestroy
@@ -50,7 +51,39 @@ export class HierarchicalBoxDiagramComponent
   private createGraph() {
     this.createSvg();
     this.calculateBoxDimensions();
-    this.generateLayout();
+    const { hierarchy, additionalLinks } = this.toHierarchy(this.boxes);
+    if (hierarchy) {
+      const nodeWidth = (d: BoxNode) =>
+        this.MAX_BOX_WIDTH + this.MAX_BOX_WIDTH / 2;
+      const nodeHeight = (d: BoxNode) => this.MAX_BOX_HEIGHT;
+
+      const treemap = d3
+        .tree<BoxNode>()
+        .nodeSize([nodeHeight(hierarchy), nodeWidth(hierarchy)])
+        .separation((a, b) => {
+          return a.parent == b.parent ? 1 : 2;
+        });
+
+      const root = d3.hierarchy(hierarchy);
+      const tree = treemap(root);
+      const nodes: HierarchyPointNode<BoxNode>[] = tree.descendants();
+      const links: Array<HierarchyPointLink<BoxNode>> = tree.links();
+
+      const additionalMappedLinks: Array<HierarchyPointLink<BoxNode>> =
+        additionalLinks.map((link) => {
+          return {
+            source: nodes.find((node) => node.data.data.id === link.source),
+            target: nodes.find((node) => node.data.data.id === link.target),
+          } as HierarchyPointLink<BoxNode>;
+        });
+
+      const combinedLinks: Array<HierarchyPointLink<BoxNode>> = links.concat(
+        additionalMappedLinks
+      );
+
+      this.drawBoxes(nodes);
+      this.drawLines(combinedLinks);
+    }
   }
 
   private createSvg(): void {
@@ -69,41 +102,112 @@ export class HierarchicalBoxDiagramComponent
       .attr('preserveAspectRatio', 'xMidYMid meet');
   }
 
-  private generateLayout() {
-    const { hierarchy, additionalLinks } = this.toHierarchy(this.boxes);
-    if (!hierarchy) {
-      return;
-    }
+  private drawLines(links: Array<HierarchyPointLink<BoxNode>>): void {
+    // Your line-drawing logic here
+    // This method will draw the lines in your SVG
+    // Example code for drawing lines:
+    this.svg
+      .selectAll('.link')
+      .data(links)
+      .enter()
+      .append('path')
+      .attr('class', 'link')
+      .attr('d', (d: HierarchyPointLink<BoxNode>) => {
+        const sourceX = d.source.y;
+        const sourceY = d.source.x;
+        const targetX = d.target.y;
+        const targetY = d.target.x;
+        const middleX = (sourceX + targetX) / 2;
 
-    const nodeWidth = (d: BoxNode) =>
-      this.MAX_BOX_WIDTH + this.MAX_BOX_WIDTH / 2;
-    const nodeHeight = (d: BoxNode) => this.MAX_BOX_HEIGHT;
+        return `M ${sourceX} ${sourceY} L ${middleX} ${sourceY} L ${middleX} ${targetY} L ${targetX} ${targetY}`;
+      })
+      .attr('fill', 'none')
+      .attr('stroke', '#D2D3D8')
+      .attr('stroke-width', 2);
+  }
 
-    const treemap = d3
-      .tree<BoxNode>()
-      .nodeSize([nodeHeight(hierarchy), nodeWidth(hierarchy)])
-      .separation((a, b) => {
-        return a.parent == b.parent ? 1 : 2;
-      });
+  private drawBoxes(nodes: HierarchyPointNode<BoxNode>[]): void {
+    const defaultWidth = 80;
+    const defaultHeight = 50;
+    const cornerRadius = 5;
 
-    const root = d3.hierarchy(hierarchy);
-    const tree = treemap(root);
-    const nodes: HierarchyPointNode<BoxNode>[] = tree.descendants();
-    const links: Array<HierarchyPointLink<BoxNode>> = tree.links();
+    const boxesSelection = this.svg
+      .selectAll('.box')
+      .data(nodes)
+      .enter()
+      .append('g')
+      .attr('class', 'box')
+      .attr(
+        'transform',
+        (d: HierarchyPointNode<BoxNode>) => `translate(${d.y},${d.x})`
+      );
 
-    const additionalMappedLinks: Array<HierarchyPointLink<BoxNode>> =
-      additionalLinks.map((link) => {
-        return {
-          source: nodes.find((node) => node.data.data.id === link.source),
-          target: nodes.find((node) => node.data.data.id === link.target),
-        } as HierarchyPointLink<BoxNode>;
-      });
+    boxesSelection
+      .append('rect')
+      .attr(
+        'x',
+        (d: HierarchyPointNode<BoxNode>) =>
+          -(d.data.data.width || defaultWidth) / 2
+      )
+      .attr(
+        'y',
+        (d: HierarchyPointNode<BoxNode>) =>
+          -(d.data.data.height || defaultHeight) / 2
+      )
+      .attr(
+        'width',
+        (d: HierarchyPointNode<BoxNode>) => d.data.data.width || defaultWidth
+      )
+      .attr(
+        'height',
+        (d: HierarchyPointNode<BoxNode>) => d.data.data.height || defaultHeight
+      )
+      .attr('rx', cornerRadius)
+      .attr('ry', cornerRadius)
+      .attr('fill', (d: HierarchyPointNode<BoxNode>) => d.data.data.color)
+      .attr('stroke', (d: HierarchyPointNode<BoxNode>) => {
+        if (
+          d.data.data.borderStyle === 'dotted' ||
+          d.data.data.borderStyle === 'solid'
+        ) {
+          return d.data.data.borderColor || this.darkenColor(d.data.data.color);
+        }
+        return 'none';
+      })
+      .attr('stroke-dasharray', (d: HierarchyPointNode<BoxNode>) => {
+        if (d.data.data.borderStyle === 'dotted') {
+          return '4,5';
+        }
+        return '';
+      })
+      .attr('stroke-width', 2);
 
-    const combinedLinks: Array<HierarchyPointLink<BoxNode>> = links.concat(
-      additionalMappedLinks
-    );
-
-    this.drawBoxes(nodes, combinedLinks);
+    boxesSelection
+      .append('foreignObject')
+      .attr(
+        'x',
+        (d: HierarchyPointNode<BoxNode>) =>
+          -(d.data.data.width || defaultWidth) / 2
+      )
+      .attr(
+        'y',
+        (d: HierarchyPointNode<BoxNode>) =>
+          -(d.data.data.height || defaultHeight) / 2
+      )
+      .attr(
+        'width',
+        (d: HierarchyPointNode<BoxNode>) => d.data.data.width || defaultWidth
+      )
+      .attr(
+        'height',
+        (d: HierarchyPointNode<BoxNode>) => d.data.data.height || defaultHeight
+      )
+      .html(
+        (d: HierarchyPointNode<BoxNode>) =>
+          `<div class="box-content">${d.data.data.label}</div>`
+      )
+      .style('font-size', '14px')
+      .style('line-height', '18px');
   }
 
   toHierarchy(boxes: Box[]): {
@@ -211,125 +315,6 @@ export class HierarchicalBoxDiagramComponent
       measureDiv.innerHTML = '';
       measureDiv.removeAttribute('style');
     }
-  }
-
-  private drawBoxes(
-    nodes: HierarchyPointNode<BoxNode>[],
-    links: Array<HierarchyPointLink<BoxNode>>
-  ): void {
-    const defaultWidth = 80;
-    const defaultHeight = 50;
-    const cornerRadius = 5;
-    this.svg
-      .selectAll('.link')
-      .data(links)
-      .enter()
-      .append('path')
-      .attr('class', 'link')
-      .attr('d', (d: HierarchyPointLink<BoxNode>) => {
-        const sourceX = d.source.y;
-        const sourceY = d.source.x;
-        const targetX = d.target.y;
-        const targetY = d.target.x;
-        const middleX = (sourceX + targetX) / 2;
-
-        return `M ${sourceX} ${sourceY} L ${middleX} ${sourceY} L ${middleX} ${targetY} L ${targetX} ${targetY}`;
-      })
-      .attr('fill', 'none')
-      .attr('stroke', '#D2D3D8')
-      .attr('stroke-width', 2);
-
-    const boxesSelection = this.svg
-      .selectAll('.box')
-      .data(nodes)
-      .enter()
-      .append('g')
-      .attr('class', 'box')
-      .attr(
-        'transform',
-        (d: HierarchyPointNode<BoxNode>) => `translate(${d.y},${d.x})`
-      );
-
-    const boxesWithHref = boxesSelection.filter(
-      (d: HierarchyPointNode<BoxNode>) => d.data.data.href
-    );
-
-    const hrefBoxes = boxesWithHref
-      .append('a')
-      .attr('xlink:href', (d: HierarchyPointNode<BoxNode>) => d.data.data.href);
-
-    const rectSelection = hrefBoxes.nodes().length ? hrefBoxes : boxesSelection;
-
-    rectSelection
-      .append('rect')
-      .attr(
-        'x',
-        (d: HierarchyPointNode<BoxNode>) =>
-          -(d.data.data.width || defaultWidth) / 2
-      )
-      .attr(
-        'y',
-        (d: HierarchyPointNode<BoxNode>) =>
-          -(d.data.data.height || defaultHeight) / 2
-      )
-      .attr(
-        'width',
-        (d: HierarchyPointNode<BoxNode>) => d.data.data.width || defaultWidth
-      )
-      .attr(
-        'height',
-        (d: HierarchyPointNode<BoxNode>) => d.data.data.height || defaultHeight
-      )
-      .attr('rx', cornerRadius)
-      .attr('ry', cornerRadius)
-      .attr('fill', (d: HierarchyPointNode<BoxNode>) => d.data.data.color)
-      .attr('stroke', (d: HierarchyPointNode<BoxNode>) => {
-        if (
-          d.data.data.borderStyle === 'dotted' ||
-          d.data.data.borderStyle === 'solid'
-        ) {
-          return d.data.data.borderColor || this.darkenColor(d.data.data.color);
-        }
-        return 'none';
-      })
-      .attr('stroke-dasharray', (d: HierarchyPointNode<BoxNode>) => {
-        if (d.data.data.borderStyle === 'dotted') {
-          return '4,5';
-        }
-        return '';
-      })
-      .attr('stroke-width', 2);
-
-    const foreignObjectSelection = hrefBoxes.nodes().length
-      ? hrefBoxes
-      : boxesSelection;
-
-    foreignObjectSelection
-      .append('foreignObject')
-      .attr(
-        'x',
-        (d: HierarchyPointNode<BoxNode>) =>
-          -(d.data.data.width || defaultWidth) / 2
-      )
-      .attr(
-        'y',
-        (d: HierarchyPointNode<BoxNode>) =>
-          -(d.data.data.height || defaultHeight) / 2
-      )
-      .attr(
-        'width',
-        (d: HierarchyPointNode<BoxNode>) => d.data.data.width || defaultWidth
-      )
-      .attr(
-        'height',
-        (d: HierarchyPointNode<BoxNode>) => d.data.data.height || defaultHeight
-      )
-      .html(
-        (d: HierarchyPointNode<BoxNode>) =>
-          `<div class="box-content">${d.data.data.label}</div>`
-      )
-      .style('font-size', '14px')
-      .style('line-height', '18px');
   }
 
   private darkenColor(color: string, percent = -40): string {
