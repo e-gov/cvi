@@ -27,17 +27,17 @@ export class ProcessGraphComponent implements AfterViewInit, OnDestroy {
 
   private svg: any = null;
 
-  private readonly MAX_BOX_WIDTH = 80;
+  private readonly MAX_BOX_WIDTH = 100;
   private readonly DEFAULT_BOX_WIDTH = 80;
   private readonly DEFAULT_BOX_HEIGHT = 50;
   private readonly ROUNDED_CORNER_RADIUS = 5;
-  private readonly MARGIN = { top: 10, right: 10, bottom: 10, left: 10 };
+  private readonly MARGIN = { top: 0, right: 0, bottom: 0, left: 0 };
   private readonly WIDTH = 800 - this.MARGIN.left - this.MARGIN.right;
   private readonly HEIGHT = 400 - this.MARGIN.top - this.MARGIN.bottom;
   constructor(private elementRef: ElementRef, private ngZone: NgZone) {}
 
   ngAfterViewInit(): void {
-    this.ngZone.runOutsideAngular(() => this.createVisualization());
+    this.ngZone.runOutsideAngular(() => this.createGraph());
   }
 
   ngOnDestroy() {
@@ -46,9 +46,9 @@ export class ProcessGraphComponent implements AfterViewInit, OnDestroy {
     }
   }
 
-  private createVisualization() {
-    this.createSvg();
+  private createGraph() {
     this.calculateBoxDimensions();
+    this.createSvg();
     this.generateLayout();
   }
 
@@ -67,8 +67,6 @@ export class ProcessGraphComponent implements AfterViewInit, OnDestroy {
 
   private generateLayout() {
     const { hierarchy, additionalLinks } = this.toHierarchy(this.boxes);
-    console.log(hierarchy);
-    console.log(additionalLinks);
     if (!hierarchy) {
       return;
     }
@@ -96,6 +94,20 @@ export class ProcessGraphComponent implements AfterViewInit, OnDestroy {
     const combinedLinks: Array<HierarchyPointLink<BoxNode>> = links.concat(
       additionalMappedLinks
     );
+
+    // Logic to align nodes in the same layer to the leftmost edge
+    const depthYMap: { [depth: number]: number } = {};
+    nodes.forEach((node) => {
+      if (
+        depthYMap[node.depth] === undefined ||
+        depthYMap[node.depth] > node.y
+      ) {
+        depthYMap[node.depth] = node.y;
+      }
+    });
+    nodes.forEach((node) => {
+      node.y = depthYMap[node.depth];
+    });
 
     this.drawBoxes(nodes, combinedLinks);
   }
@@ -165,8 +177,8 @@ export class ProcessGraphComponent implements AfterViewInit, OnDestroy {
   }
 
   private calculateBoxDimensions(): void {
-    const horizontalPadding = 15; // Padding for left & right
-    const verticalPadding = 15; // Padding for top & bottom
+    const horizontalPadding = 16; // Padding for left & right
+    const verticalPadding = 8; // Padding for top & bottom
     const MAX_WIDTH = this.MAX_BOX_WIDTH; // Adjust to your needs
 
     for (const box of this.boxes) {
@@ -224,7 +236,7 @@ export class ProcessGraphComponent implements AfterViewInit, OnDestroy {
       })
       .attr('fill', 'none')
       .attr('stroke', '#D2D3D8')
-      .attr('stroke-width', 1);
+      .attr('stroke-width', 2);
 
     const boxesSelection = this.svg
       .selectAll('.box')
