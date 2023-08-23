@@ -3,46 +3,45 @@ import {
   ComponentFixture,
   ComponentFixtureAutoDetect,
 } from '@angular/core/testing';
-import { FormControlDirective } from './form-control.directive';
+import { FormNotificationDirective } from './form-notification.directive';
 import { Component, DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
-import { NotificationSeverity } from '@egov/cvi-ng';
+import { FormNotificationSeverity } from './form-notification';
 
 @Component({
   template: `
     <cvi-ng-datepicker
-      cviNgFormControl
+      cviNgFormNotification
       [severityLevel]="severityLevel"
       [display]="display"
-      [message]="message"
-    >
+      [message]="message">
     </cvi-ng-datepicker>
   `,
 })
 class TestComponent {
   display = false;
   message = 'Test message';
-  severityLevel: NotificationSeverity = 'warning';
+  severityLevel: FormNotificationSeverity = 'warning';
 }
 
-describe('FormControlDirective', () => {
+describe('FormNotificationDirective', () => {
   let fixture: ComponentFixture<TestComponent>;
   let component: TestComponent;
-  let directive: FormControlDirective;
+  let directive: FormNotificationDirective;
   let debugElement: DebugElement;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [FormControlDirective, TestComponent],
+      declarations: [FormNotificationDirective, TestComponent],
       providers: [{ provide: ComponentFixtureAutoDetect, useValue: true }],
     });
 
     fixture = TestBed.createComponent(TestComponent);
     component = fixture.componentInstance;
     debugElement = fixture.debugElement.query(
-      By.directive(FormControlDirective)
+      By.directive(FormNotificationDirective)
     );
-    directive = debugElement.injector.get(FormControlDirective);
+    directive = debugElement.injector.get(FormNotificationDirective);
   });
 
   it('should create the directive', () => {

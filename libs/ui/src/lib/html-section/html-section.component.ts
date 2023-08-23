@@ -1,9 +1,12 @@
 import {
   ChangeDetectionStrategy,
-  Component, ElementRef, HostListener,
+  Component,
+  ElementRef,
+  HostListener,
   Injector,
   Input,
-  OnInit, ViewChild,
+  OnInit,
+  ViewChild,
 } from '@angular/core';
 import { createCustomElement } from '@angular/elements';
 import { IconComponent } from '../icons/icon/icon.component';

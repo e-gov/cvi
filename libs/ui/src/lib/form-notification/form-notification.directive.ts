@@ -3,36 +3,41 @@ import {
   Directive,
   ElementRef,
   Input,
-  OnChanges,
+  OnChanges, SimpleChanges,
   ViewContainerRef,
 } from '@angular/core';
 
-import { FormControlComponent } from './form-control.component';
-import { NotificationSeverity } from '../notification/notification';
+import { FormNotificationComponent } from './form-notification.component';
+import { FormNotificationSeverity } from './form-notification';
+
 
 @Directive({
-  selector: '[cviNgFormControl]',
-  exportAs: 'cviNgFormControl',
+  selector: '[cviNgFormNotification]',
+  exportAs: 'cviNgFormNotification',
 })
-export class FormControlDirective implements OnChanges {
+export class FormNotificationDirective implements OnChanges {
   @Input() message = '';
-  @Input() severityLevel!: NotificationSeverity;
+  @Input() severityLevel!: FormNotificationSeverity;
   @Input() display!: boolean;
 
-  private componentRef: ComponentRef<FormControlComponent> | null = null;
+  private componentRef: ComponentRef<FormNotificationComponent> | null = null;
   private inputRef: HTMLInputElement | HTMLTextAreaElement | null = null;
+  private cssClass = ''
 
   constructor(
     private elementRef: ElementRef<HTMLElement>,
     private viewContainerRef: ViewContainerRef
   ) {}
 
-  ngOnChanges(): void {
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['severityLevel']) {
+      this.handleSeverityChange();
+    }
     if (this.componentRef && this.inputRef !== null) {
+      this.handleStyle();
       this.componentRef.instance.display = this.display;
       this.componentRef.instance.message = this.message;
       this.componentRef.instance.severity = this.severityLevel;
-      this.handleStyle();
       this.componentRef.instance.detectChanges();
     } else {
       if (this.display) {
@@ -54,24 +59,31 @@ export class FormControlDirective implements OnChanges {
 
     if (this.componentRef === null && this.inputRef !== null) {
       this.componentRef =
-        this.viewContainerRef.createComponent(FormControlComponent);
+        this.viewContainerRef.createComponent(FormNotificationComponent);
       this.componentRef.instance.display = this.display;
       this.componentRef.instance.message = this.message;
       this.componentRef.instance.severity = this.severityLevel;
     }
   }
 
+  private handleSeverityChange() {
+    // Handle changes in severity level when display stays true
+    if (this.componentRef && this.inputRef) {
+      if (this.display) {
+        this.inputRef.classList.remove(this.cssClass);
+        this.cssClass = 'cvi-form-notification--form-border-' + this.severityLevel;
+        this.inputRef.classList.add(this.cssClass);
+      }
+    }
+  }
+
   private handleStyle() {
     if (this.componentRef && this.inputRef) {
       if (this.display) {
-        console.log(this.inputRef.classList);
-        this.inputRef.classList.add(
-          'cvi-form-control--form-border-' + this.severityLevel
-        );
+        this.cssClass = 'cvi-form-notification--form-border-' + this.severityLevel
+        this.inputRef.classList.add(this.cssClass);
       } else {
-        this.inputRef.classList.remove(
-          'cvi-form-control--form-border-' + this.severityLevel
-        );
+        this.inputRef.classList.remove(this.cssClass);
       }
     }
   }

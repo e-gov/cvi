@@ -1,4 +1,4 @@
-@mixin cvi-form-control($base: &) {
+@mixin cvi-form-notification($base: &) {
   font-size: get-font-size(70);
   position: fixed;
   height: 32px;
@@ -7,7 +7,7 @@
   padding-right: get-spacing('paldiski');
   border-radius: var(--cvi-radius-s);
   box-shadow: var(--cvi-shadow-alpha);
-  z-index: get-z-index('form-control', '__message');
+  z-index: get-z-index('form-notification', '__message');
 
   ::before {
     content: '';
@@ -18,13 +18,6 @@
   }
 
   @at-root {
-    #{$base}--severity-info {
-      background-color: get-color(sapphire-blue-1);
-
-      ::before {
-        border-bottom-color: get-color(sapphire-blue-1);
-      }
-    }
 
     #{$base}--severity-warning {
       background-color: get-color(dark-tangerine-3);
@@ -34,27 +27,11 @@
       }
     }
 
-    #{$base}--severity-success {
-      background-color: get-color(sea-green-1);
-
-      ::before {
-        border-bottom-color: get-color(sea-green-1);
-      }
-    }
-
     #{$base}--severity-error {
       background-color: get-color(jasper-3);
 
       ::before {
         border-bottom-color: get-color(jasper-3);
-      }
-    }
-
-    #{$base}--severity-neutral {
-      background-color: get-color(black-coral-1);
-
-      ::before {
-        border-bottom-color: get-color(black-coral-1);
       }
     }
 
@@ -70,18 +47,6 @@
 
     &--form-border-error{
       border-color: get-color(jasper-10);
-    }
-
-    &--form-border-info{
-      border-color: get-color(sapphire-blue-10);
-    }
-
-    &--form-border-success{
-      border-color: get-color(sea-green-10);
-    }
-
-    &--form-border-neutral{
-      border-color: get-color(black-coral-10);
     }
   }
 }
