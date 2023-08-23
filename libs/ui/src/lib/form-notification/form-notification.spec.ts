@@ -14,7 +14,8 @@ import { FormNotificationSeverity } from './form-notification';
       cviNgFormNotification
       [severityLevel]="severityLevel"
       [display]="display"
-      [message]="message">
+      [message]="message"
+    >
     </cvi-ng-datepicker>
   `,
 })

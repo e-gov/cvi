@@ -2,7 +2,6 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { CviIconName } from '@egov/cvi-icons';
 import { FormNotificationSeverity } from './form-notification';
 
-
 @Pipe({
   name: 'FormNotificationSeverityToHeaderIcon',
 })

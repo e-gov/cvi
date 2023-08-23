@@ -3,13 +3,13 @@ import {
   Directive,
   ElementRef,
   Input,
-  OnChanges, SimpleChanges,
+  OnChanges,
+  SimpleChanges,
   ViewContainerRef,
 } from '@angular/core';
 
 import { FormNotificationComponent } from './form-notification.component';
 import { FormNotificationSeverity } from './form-notification';
-
 
 @Directive({
   selector: '[cviNgFormNotification]',
@@ -22,7 +22,7 @@ export class FormNotificationDirective implements OnChanges {
 
   private componentRef: ComponentRef<FormNotificationComponent> | null = null;
   private inputRef: HTMLInputElement | HTMLTextAreaElement | null = null;
-  private cssClass = ''
+  private cssClass = '';
 
   constructor(
     private elementRef: ElementRef<HTMLElement>,
@@ -58,8 +58,9 @@ export class FormNotificationDirective implements OnChanges {
     this.inputRef = childNode as HTMLInputElement | HTMLTextAreaElement;
 
     if (this.componentRef === null && this.inputRef !== null) {
-      this.componentRef =
-        this.viewContainerRef.createComponent(FormNotificationComponent);
+      this.componentRef = this.viewContainerRef.createComponent(
+        FormNotificationComponent
+      );
       this.componentRef.instance.display = this.display;
       this.componentRef.instance.message = this.message;
       this.componentRef.instance.severity = this.severityLevel;
@@ -71,7 +72,8 @@ export class FormNotificationDirective implements OnChanges {
     if (this.componentRef && this.inputRef) {
       if (this.display) {
         this.inputRef.classList.remove(this.cssClass);
-        this.cssClass = 'cvi-form-notification--form-border-' + this.severityLevel;
+        this.cssClass =
+          'cvi-form-notification--form-border-' + this.severityLevel;
         this.inputRef.classList.add(this.cssClass);
       }
     }
@@ -80,7 +82,8 @@ export class FormNotificationDirective implements OnChanges {
   private handleStyle() {
     if (this.componentRef && this.inputRef) {
       if (this.display) {
-        this.cssClass = 'cvi-form-notification--form-border-' + this.severityLevel
+        this.cssClass =
+          'cvi-form-notification--form-border-' + this.severityLevel;
         this.inputRef.classList.add(this.cssClass);
       } else {
         this.inputRef.classList.remove(this.cssClass);

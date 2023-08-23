@@ -9,9 +9,9 @@ export default {
   argTypes: {
     severityLevel: {
       name: 'Error severity level',
-      options: [ 'warning', 'error' ],
+      options: ['warning', 'error'],
       control: { type: 'inline-radio' },
-    }
+    },
   },
   args: {
     htmlId: 'fksd4kfds',
@@ -19,7 +19,7 @@ export default {
     placeholder: 'Placeholder text...',
     displayError: true,
     errorMessage: 'Error',
-    severityLevel: 'warning'
+    severityLevel: 'warning',
   },
 } as Meta<FormItemComponent>;
 

@@ -165,7 +165,7 @@ const pipes = [
   SafeHtmlPipe,
   NotificationSeverityToHeaderIconPipe,
   TimedNoticeSeverityToIconPipe,
-  FormNotificationSeverityToHeaderIconPipe
+  FormNotificationSeverityToHeaderIconPipe,
 ];
 
 const directives = [DataAttributeDirective];

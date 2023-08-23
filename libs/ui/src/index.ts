@@ -73,3 +73,4 @@ export * from './lib/timed-notice/timed-notice.component';
 export * from './lib/timed-notice/timed-notice-severity-to-icon.pipe';
 export * from './lib/form-notification/form-notification.component';
 export * from './lib/form-notification/form-notification.directive';
+export * from './lib/form-notification/form-notification-severity-to-header-icon.pipe'

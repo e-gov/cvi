@@ -10,7 +10,7 @@ import { FormNotificationSeverityToHeaderIconPipe } from './form-notification-se
 @Component({
   selector: 'cvi-ng-form-notification',
   templateUrl: './form-notification.component.html',
-  providers: [ FormNotificationSeverityToHeaderIconPipe ],
+  providers: [FormNotificationSeverityToHeaderIconPipe],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FormNotificationComponent {
@@ -18,8 +18,10 @@ export class FormNotificationComponent {
   display!: boolean;
   severity!: FormNotificationSeverity;
 
-  constructor(private cdRef: ChangeDetectorRef,
-              private readonly iconPipe: FormNotificationSeverityToHeaderIconPipe) {}
+  constructor(
+    private cdRef: ChangeDetectorRef,
+    private readonly iconPipe: FormNotificationSeverityToHeaderIconPipe
+  ) {}
 
   detectChanges() {
     this.cdRef.markForCheck();
