@@ -24,6 +24,9 @@ import { BoxNode } from './box-node';
 export class HierarchicalBoxDiagramComponent
   implements AfterViewInit, OnDestroy
 {
+  private static readonly HORIZONTAL_PADDING = 16;
+  private static readonly VERTICAL_PADDING = 8;
+
   @Input() boxes!: Box[];
   @ViewChild('measureDiv') measureDiv!: ElementRef;
 
@@ -179,41 +182,43 @@ export class HierarchicalBoxDiagramComponent
   }
 
   private calculateBoxDimensions(): void {
-    const horizontalPadding = 16; // Padding for left & right
-    const verticalPadding = 8; // Padding for top & bottom
-    const MAX_WIDTH = this.MAX_BOX_WIDTH; // Adjust to your needs
+    const { HORIZONTAL_PADDING, VERTICAL_PADDING } = HierarchicalBoxDiagramComponent; // Replace with the actual class name
+    const MAX_WIDTH = this.MAX_BOX_WIDTH;
+
+    const measureDiv = this.measureDiv.nativeElement;
+
+    // Apply styling to the measureDiv
+    measureDiv.style.boxSizing = 'border-box';
+    measureDiv.style.fontSize = '14px';
+    measureDiv.style.lineHeight = '18px';
+    measureDiv.style.fontFamily = 'Roboto, sans-serif'; // Fallback to sans-serif
 
     for (const box of this.boxes) {
-      this.measureDiv.nativeElement.innerHTML = box.label; // Insert the HTML content into the hidden div
+      measureDiv.innerHTML = box.label;
 
-      // Extract text from the rendered HTML
-      const renderedText =
-        this.measureDiv.nativeElement.innerText ||
-        this.measureDiv.nativeElement.textContent;
+      const rect = measureDiv.getBoundingClientRect();
+      let width = rect.width;
+      const initialHeight = rect.height;
 
-      let width = this.measureDiv.nativeElement.offsetWidth; // Measure width
-      const initialHeight = this.measureDiv.nativeElement.offsetHeight; // Measure initial height
-
-      // Check if the rendered content is a single word without whitespace and overflows
-      const isSingleWordAndOverflows =
-        !/\s/.test(renderedText) && width > MAX_WIDTH;
+      const renderedText = measureDiv.innerText || measureDiv.textContent;
+      const isSingleWordAndOverflows = !/\s/.test(renderedText) && width > MAX_WIDTH;
 
       if (isSingleWordAndOverflows) {
-        // If it's a single word that overflows, adjust the width only
-        box.width = width + horizontalPadding;
-        box.height = initialHeight + verticalPadding;
-      } else if (width <= MAX_WIDTH) {
-        // For other boxes, if they don't exceed the max width, set height with added vertical padding
-        box.height = initialHeight + verticalPadding;
-      } else {
-        // For boxes that exceed the max width but are not single words
+        box.width = width + HORIZONTAL_PADDING;
+        box.height = initialHeight + VERTICAL_PADDING;
+      } else if (width > MAX_WIDTH) {
         const overflowRatio = width / MAX_WIDTH;
         width = MAX_WIDTH;
-        box.height = initialHeight * overflowRatio + verticalPadding;
-        box.width = MAX_WIDTH + horizontalPadding;
+        box.width = MAX_WIDTH + HORIZONTAL_PADDING;
+        box.height = initialHeight * overflowRatio + VERTICAL_PADDING;
+      } else {
+        box.width = width + HORIZONTAL_PADDING;
+        box.height = initialHeight + VERTICAL_PADDING;
       }
 
-      this.measureDiv.nativeElement.innerHTML = ''; // Clear the temporary div after each iteration
+      // Reset innerHTML and styles after each box measurement
+      measureDiv.innerHTML = '';
+      measureDiv.removeAttribute('style');
     }
   }
 
