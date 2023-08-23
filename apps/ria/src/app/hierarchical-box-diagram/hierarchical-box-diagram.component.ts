@@ -15,13 +15,15 @@ import { Box } from './box';
 import { BoxNode } from './box-node';
 
 @Component({
-  selector: 'cvi-ng-process-diagram',
-  templateUrl: './process-graph.component.html',
-  styleUrls: ['./process-graph.component.scss'],
+  selector: 'cvi-ng-hierarchical-box-diagram',
+  templateUrl: './hierarchical-box-diagram.component.html',
+  styleUrls: ['./hierarchical-box-diagram.component.scss'],
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ProcessGraphComponent implements AfterViewInit, OnDestroy {
+export class HierarchicalBoxDiagramComponent
+  implements AfterViewInit, OnDestroy
+{
   @Input() boxes!: Box[];
   @ViewChild('measureDiv') measureDiv!: ElementRef;
 
