@@ -1,6 +1,5 @@
 import {
   AfterViewInit,
-  ChangeDetectionStrategy,
   Component,
   ElementRef,
   Input,
@@ -19,7 +18,7 @@ import { BoxNode } from './box-node';
   templateUrl: './hierarchical-box-diagram.component.html',
   styleUrls: ['./hierarchical-box-diagram.component.scss'],
   encapsulation: ViewEncapsulation.None,
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  // changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HierarchicalBoxDiagramComponent
   implements AfterViewInit, OnDestroy
@@ -29,14 +28,12 @@ export class HierarchicalBoxDiagramComponent
 
   @Input() boxes!: Box[];
   @ViewChild('measureDiv') measureDiv!: ElementRef;
+  @ViewChild('container', { static: true }) container!: ElementRef;
 
   private svg: any = null;
 
   private readonly MAX_BOX_WIDTH = 100;
   private readonly MAX_BOX_HEIGHT = 50;
-  private readonly MARGIN = { top: 0, right: 0, bottom: 0, left: 0 };
-  private readonly WIDTH = 800 - this.MARGIN.left - this.MARGIN.right;
-  private readonly HEIGHT = 400 - this.MARGIN.top - this.MARGIN.bottom;
 
   constructor(private elementRef: ElementRef, private ngZone: NgZone) {}
 
@@ -51,21 +48,25 @@ export class HierarchicalBoxDiagramComponent
   }
 
   private createGraph() {
-    this.calculateBoxDimensions();
     this.createSvg();
+    this.calculateBoxDimensions();
     this.generateLayout();
   }
 
   private createSvg(): void {
+    const containerWidth = this.container.nativeElement.clientWidth;
+    const containerHeight = this.container.nativeElement.clientHeight;
+
     this.svg = d3
       .select(this.elementRef.nativeElement)
       .append('svg')
       .attr(
         'viewBox',
-        `${-this.MAX_BOX_WIDTH} ${-this.HEIGHT / 2} ${this.WIDTH} ${
-          this.HEIGHT
-        }`
-      );
+        `${-this.MAX_BOX_WIDTH} ${
+          -containerHeight / 2
+        } ${containerWidth} ${containerHeight}`
+      )
+      .attr('preserveAspectRatio', 'xMidYMid meet');
   }
 
   private generateLayout() {
