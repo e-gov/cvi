@@ -81,8 +81,8 @@ export class HierarchicalBoxDiagramComponent
         additionalMappedLinks
       );
 
-      this.drawBoxes(nodes);
       this.drawLines(combinedLinks);
+      this.drawBoxes(nodes);
     }
   }
 
@@ -114,9 +114,26 @@ export class HierarchicalBoxDiagramComponent
         const sourceY = d.source.x;
         const targetX = d.target.y;
         const targetY = d.target.x;
-        const middleX = (sourceX + targetX) / 2;
 
-        return `M ${sourceX} ${sourceY} L ${middleX} ${sourceY} L ${middleX} ${targetY} L ${targetX} ${targetY}`;
+        // Calculate the midpoint of the source box
+        const midXSource = sourceX;
+        const midYSource = (sourceY + sourceY + d.source.height) / 2;
+
+        // Calculate the midpoint of the target box
+        const midXTarget = targetX;
+        const midYTarget = (targetY + targetY + d.target.height) / 2;
+
+        // Check the position of the target relative to the source
+        if (sourceY < targetY) {
+          // Target is below the source, bend the line downwards
+          return `M ${sourceX} ${sourceY} L ${midXSource} ${midYSource} L ${midXSource} ${midYTarget} L ${midXTarget} ${midYTarget} L ${targetX} ${targetY}`;
+        } else if (sourceY > targetY) {
+          // Target is above the source, bend the line upwards
+          return `M ${sourceX} ${sourceY} L ${midXSource} ${midYSource} L ${midXSource} ${midYTarget} L ${midXTarget} ${midYTarget} L ${targetX} ${targetY}`;
+        } else {
+          // Target is at the same vertical position as the source, draw a straight line
+          return `M ${sourceX} ${sourceY} L ${targetX} ${targetY}`;
+        }
       })
       .attr('fill', 'none')
       .attr('stroke', '#D2D3D8')
