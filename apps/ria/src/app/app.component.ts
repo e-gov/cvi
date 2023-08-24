@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { FormBuilder } from '@angular/forms';
-import { Box } from './hierarchical-box-diagram/box';
+import { Box } from '@egov/cvi-ng-diagrams';
 
 @Component({
   selector: 'cvi-ng-root',

@@ -9,17 +9,18 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HierarchicalBoxDiagramComponent } from './hierarchical-box-diagram/hierarchical-box-diagram.component';
+import { NgDiagramsModule } from '@egov/cvi-ng-diagrams';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
 @NgModule({
-  declarations: [AppComponent, HierarchicalBoxDiagramComponent],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     UiModule,
+    NgDiagramsModule,
     BrowserAnimationsModule,
     HttpClientModule,
     CommonModule,

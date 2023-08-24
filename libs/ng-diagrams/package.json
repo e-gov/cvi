@@ -1,0 +1,16 @@
+{
+  "name": "@egov/cvi-ng-diagrams",
+  "version": "0.0.1",
+  "@angular/animations": ">=14.1.0",
+  "@angular/common": ">=14.1.0",
+  "@angular/core": ">=14.1.0",
+  "@angular/platform-browser": ">=14.1.0",
+  "@angular/platform-browser-dynamic": ">=14.1.0",
+  "dependencies": {
+    "d3": "^7.8.5",
+    "@types/d3": "^7.4.0"
+  },
+  "publishConfig": {
+    "registry": "https://koodivaramu.eesti.ee/api/v4/projects/433/packages/npm/"
+  }
+}
