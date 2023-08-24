@@ -26,6 +26,7 @@
     "publish:ui": "npm publish dist/libs/ui",
     "publish:icons": "npm publish dist/libs/icons",
     "publish:react-ui": "npm publish dist/libs/react-ui",
+    "publish:ng-diagrams": "npm publish dist/libs/ng-diagrams",
     "cypress:ui": "npx nx e2e ui-e2e",
     "chromatic": "chromatic --exit-zero-on-changes --project-token=23c52c9242eb",
     "axe": "npm run build-storybook && npx axe-storybook --build-dir ./dist/storybook/storybook"
