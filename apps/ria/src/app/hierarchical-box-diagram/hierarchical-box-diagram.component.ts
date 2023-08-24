@@ -53,8 +53,7 @@ export class HierarchicalBoxDiagramComponent
     this.calculateBoxDimensions();
     const { hierarchy, additionalLinks } = this.toHierarchy(this.boxes);
     if (hierarchy) {
-      const nodeWidth = (d: BoxNode) =>
-        this.MAX_BOX_WIDTH + this.MAX_BOX_WIDTH / 2;
+      const nodeWidth = (d: BoxNode) => this.MAX_BOX_WIDTH + 50;
       const nodeHeight = (d: BoxNode) => this.MAX_BOX_HEIGHT;
 
       const treemap = d3
@@ -157,6 +156,15 @@ export class HierarchicalBoxDiagramComponent
       );
 
     boxesSelection
+      .append('a') // Wrap each box in an anchor element
+      .attr(
+        'xlink:href',
+        (d: HierarchyPointNode<BoxNode>) =>
+          d.data.data.href || 'javascript:void(0)'
+      )
+      .on('click', (d: HierarchyPointNode<BoxNode>) => {
+        console.log('Box clicked:', d.data.data.href);
+      })
       .append('rect')
       .attr(
         'x',
