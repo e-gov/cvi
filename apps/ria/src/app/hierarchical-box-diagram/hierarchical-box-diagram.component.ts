@@ -11,7 +11,7 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 import * as d3 from 'd3';
-import { HierarchyPointLink, HierarchyPointNode } from 'd3';
+import { HierarchyNode, HierarchyPointLink, HierarchyPointNode } from 'd3';
 import { Box } from './box';
 import { BoxNode } from './box-node';
 
@@ -60,39 +60,49 @@ export class HierarchicalBoxDiagramComponent
   private createGraph() {
     this.createSvg();
     this.calculateBoxDimensions();
-    const { hierarchy, additionalLinks } = this.toHierarchy(this.boxes);
-    if (hierarchy) {
-      const nodeWidth = (d: BoxNode) =>
-        this.MAX_BOX_WIDTH + this.MAX_BOX_WIDTH / 2;
-      const nodeHeight = (d: BoxNode) => this.MAX_BOX_HEIGHT;
-
-      const treemap = d3
-        .tree<BoxNode>()
-        .nodeSize([nodeHeight(hierarchy), nodeWidth(hierarchy)])
-        .separation((a, b) => {
-          return a.parent == b.parent ? 1 : 2;
-        });
-
-      const root = d3.hierarchy(hierarchy);
-      const tree = treemap(root);
-      const nodes: HierarchyPointNode<BoxNode>[] = tree.descendants();
-      const links: Array<HierarchyPointLink<BoxNode>> = tree.links();
-
-      const additionalMappedLinks: Array<HierarchyPointLink<BoxNode>> =
-        additionalLinks.map((link) => {
-          return {
-            source: nodes.find((node) => node.data.data.id === link.source),
-            target: nodes.find((node) => node.data.data.id === link.target),
-          } as HierarchyPointLink<BoxNode>;
-        });
-
-      const combinedLinks: Array<HierarchyPointLink<BoxNode>> = links.concat(
-        additionalMappedLinks
-      );
-
-      this.drawLines(combinedLinks);
-      this.drawBoxes(nodes);
+    const { rootNode, additionalLinks } = this.toHierarchy(this.boxes);
+    if (!rootNode) {
+      return;
     }
+
+    const root = d3.hierarchy(rootNode);
+    const isGraphOverflow = this.isGraphOverflow(root);
+
+    let layout;
+    if (isGraphOverflow) {
+      // Use the top-to-bottom layout
+      layout = d3
+        .tree<BoxNode>()
+        .nodeSize([this.MAX_BOX_WIDTH + this.MAX_BOX_WIDTH / 2, 0])
+        .separation((a, b) => (a.parent == b.parent ? 1 : 2));
+
+      // Center the root node at the top middle
+      root.data.data.x = this.MAX_BOX_HEIGHT / 2;
+      root.data.data.y = 0;
+    } else {
+      // Use the left-to-right layout
+      layout = d3
+        .tree<BoxNode>()
+        .nodeSize([
+          this.MAX_BOX_HEIGHT,
+          this.MAX_BOX_WIDTH + this.MAX_BOX_WIDTH / 2,
+        ])
+        .separation((a, b) => (a.parent == b.parent ? 1 : 2));
+    }
+
+    const hierarchy = layout(root);
+    const nodes: HierarchyPointNode<BoxNode>[] = hierarchy.descendants();
+    const links: Array<HierarchyPointLink<BoxNode>> = hierarchy.links();
+
+    const additionalMappedLinks: Array<HierarchyPointLink<BoxNode>> =
+      additionalLinks.map((link) => this.mapLinkToNodes(link, nodes));
+
+    const combinedLinks: Array<HierarchyPointLink<BoxNode>> = links.concat(
+      additionalMappedLinks
+    );
+
+    this.drawLines(combinedLinks);
+    this.drawBoxes(nodes);
   }
 
   private createSvg(): void {
@@ -117,35 +127,31 @@ export class HierarchicalBoxDiagramComponent
       .enter()
       .append('path')
       .attr('class', 'link')
-      .attr('d', (d: HierarchyPointLink<BoxNode>) => {
-        const sourceX = d.source.y;
-        const sourceY = d.source.x;
-        const targetX = d.target.y;
-        const targetY = d.target.x;
-
-        // Calculate the midpoint of the source box
-        const midXSource = sourceX;
-        const midYSource = (sourceY + sourceY + d.source.height) / 2;
-
-        // Calculate the midpoint of the target box
-        const midXTarget = targetX;
-        const midYTarget = (targetY + targetY + d.target.height) / 2;
-
-        // Check the position of the target relative to the source
-        if (sourceY < targetY) {
-          // Target is below the source, bend the line downwards
-          return `M ${sourceX} ${sourceY} L ${midXSource} ${midYSource} L ${midXSource} ${midYTarget} L ${midXTarget} ${midYTarget} L ${targetX} ${targetY}`;
-        } else if (sourceY > targetY) {
-          // Target is above the source, bend the line upwards
-          return `M ${sourceX} ${sourceY} L ${midXSource} ${midYSource} L ${midXSource} ${midYTarget} L ${midXTarget} ${midYTarget} L ${targetX} ${targetY}`;
-        } else {
-          // Target is at the same vertical position as the source, draw a straight line
-          return `M ${sourceX} ${sourceY} L ${targetX} ${targetY}`;
-        }
-      })
+      .attr('d', this.calculateLinkPath)
       .attr('fill', 'none')
       .attr('stroke', '#D2D3D8')
       .attr('stroke-width', 2);
+  }
+
+  private calculateLinkPath(d: HierarchyPointLink<BoxNode>): string {
+    const sourceX = d.source.y;
+    const sourceY = d.source.x;
+    const targetX = d.target.y;
+    const targetY = d.target.x;
+
+    const midXSource = sourceX;
+    const midYSource = (sourceY + sourceY + d.source.height) / 2;
+
+    const midXTarget = targetX;
+    const midYTarget = (targetY + targetY + d.target.height) / 2;
+
+    if (sourceY < targetY) {
+      return `M ${sourceX} ${sourceY} L ${midXSource} ${midYSource} L ${midXSource} ${midYTarget} L ${midXTarget} ${midYTarget} L ${targetX} ${targetY}`;
+    } else if (sourceY > targetY) {
+      return `M ${sourceX} ${sourceY} L ${midXSource} ${midYSource} L ${midXSource} ${midYTarget} L ${midXTarget} ${midYTarget} L ${targetX} ${targetY}`;
+    } else {
+      return `M ${sourceX} ${sourceY} L ${targetX} ${targetY}`;
+    }
   }
 
   private drawBoxes(nodes: HierarchyPointNode<BoxNode>[]): void {
@@ -164,8 +170,8 @@ export class HierarchicalBoxDiagramComponent
         (d: HierarchyPointNode<BoxNode>) => `translate(${d.y},${d.x})`
       );
 
-    boxesSelection
-      .append('a') // Wrap each box in an anchor element
+    const boxAnchor = boxesSelection
+      .append('a')
       .attr(
         'xlink:href',
         (d: HierarchyPointNode<BoxNode>) =>
@@ -173,7 +179,9 @@ export class HierarchicalBoxDiagramComponent
       )
       .on('click', (d: HierarchyPointNode<BoxNode>) => {
         console.log('Box clicked:', d.data.data.href);
-      })
+      });
+
+    boxAnchor
       .append('rect')
       .attr(
         'x',
@@ -213,7 +221,7 @@ export class HierarchicalBoxDiagramComponent
       })
       .attr('stroke-width', 2);
 
-    boxesSelection
+    boxAnchor
       .append('foreignObject')
       .attr(
         'x',
@@ -242,18 +250,14 @@ export class HierarchicalBoxDiagramComponent
   }
 
   toHierarchy(boxes: Box[]): {
-    hierarchy: BoxNode;
+    rootNode: BoxNode;
     additionalLinks: { source: string; target: string }[];
   } {
     const nodeMap: { [key: string]: BoxNode } = {};
     const additionalLinks: { source: string; target: string }[] = [];
 
-    // Create nodes for all boxes without linking children
-    boxes.forEach((box) => {
-      nodeMap[box.id] = { data: box };
-    });
+    boxes.forEach((box) => (nodeMap[box.id] = { data: box }));
 
-    // Start processing from the root box using BFS
     const rootNode = nodeMap['1'];
     const queue: BoxNode[] = [rootNode];
 
@@ -271,26 +275,14 @@ export class HierarchicalBoxDiagramComponent
           const childNode = nodeMap[targetId];
 
           if (childNode.parent) {
-            // This child already has a parent (so it was processed before).
-            // Add the relationship to additionalLinks instead of linking in the tree.
             const link = {
               source: currentNode.data.id,
               target: childNode.data.id,
             };
-
-            const linkExists = (source: string, target: string) => {
-              return additionalLinks.find(
-                (l) =>
-                  (l.source === source && l.target === target) ||
-                  (l.source === target && l.target === source)
-              );
-            };
-
-            if (!linkExists(currentNode.data.id, childNode.data.id)) {
+            if (!this.linkExists(additionalLinks, link)) {
               additionalLinks.push(link);
             }
           } else {
-            // Link the child to the current node and enqueue for BFS.
             childNode.parent = currentNode;
             currentNode.children?.push(childNode);
             queue.push(childNode);
@@ -299,32 +291,35 @@ export class HierarchicalBoxDiagramComponent
       }
     }
 
-    return {
-      hierarchy: rootNode,
-      additionalLinks,
-    };
+    return { rootNode, additionalLinks };
+  }
+
+  private linkExists(
+    links: { source: string; target: string }[],
+    link: { source: string; target: string }
+  ): boolean {
+    return links.some(
+      (l) =>
+        (l.source === link.source && l.target === link.target) ||
+        (l.source === link.target && l.target === link.source)
+    );
   }
 
   private calculateBoxDimensions(): void {
     const { HORIZONTAL_PADDING, VERTICAL_PADDING } =
-      HierarchicalBoxDiagramComponent; // Replace with the actual class name
+      HierarchicalBoxDiagramComponent;
     const MAX_WIDTH = this.MAX_BOX_WIDTH;
-
     const measureDiv = this.measureDiv.nativeElement;
-
-    // Apply styling to the measureDiv
     measureDiv.style.boxSizing = 'border-box';
     measureDiv.style.fontSize = '14px';
     measureDiv.style.lineHeight = '18px';
-    measureDiv.style.fontFamily = 'Roboto, sans-serif'; // Fallback to sans-serif
+    measureDiv.style.fontFamily = 'Roboto, sans-serif';
 
-    for (const box of this.boxes) {
+    this.boxes.forEach((box) => {
       measureDiv.innerHTML = box.label;
-
       const rect = measureDiv.getBoundingClientRect();
       let width = rect.width;
       const initialHeight = rect.height;
-
       const renderedText = measureDiv.innerText || measureDiv.textContent;
       const isSingleWordAndOverflows =
         !/\s/.test(renderedText) && width > MAX_WIDTH;
@@ -342,18 +337,17 @@ export class HierarchicalBoxDiagramComponent
         box.height = initialHeight + VERTICAL_PADDING;
       }
 
-      // Reset innerHTML and styles after each box measurement
       measureDiv.innerHTML = '';
       measureDiv.removeAttribute('style');
-    }
+    });
   }
 
   private darkenColor(color: string, percent = -40): string {
-    const num = parseInt(color.slice(1), 16),
-      amt = Math.round(2.55 * percent),
-      R = (num >> 16) + amt,
-      G = ((num >> 8) & 0x00ff) + amt,
-      B = (num & 0x0000ff) + amt;
+    const num = parseInt(color.slice(1), 16);
+    const amt = Math.round(2.55 * percent);
+    const R = (num >> 16) + amt;
+    const G = ((num >> 8) & 0x00ff) + amt;
+    const B = (num & 0x0000ff) + amt;
     return (
       '#' +
       ((1 << 24) | (R << 16) | (G << 8) | B).toString(16).slice(1).toUpperCase()
@@ -364,5 +358,30 @@ export class HierarchicalBoxDiagramComponent
     if (this.svg) {
       this.svg.remove();
     }
+  }
+
+  private isGraphOverflow(root: HierarchyNode<BoxNode>): boolean {
+    const nodeSpacingX = 55;
+    const nodeSpacingY = 30;
+
+    // Calculate the total width and height including the spacing between nodes
+    const totalWidth = (root.height + 1) * (this.MAX_BOX_WIDTH + nodeSpacingX);
+    const totalHeight =
+      root.leaves().length * (this.MAX_BOX_HEIGHT + nodeSpacingY);
+
+    const screenWidth = window.innerWidth;
+    const screenHeight = window.innerHeight;
+
+    return totalWidth > screenWidth || totalHeight > screenHeight;
+  }
+
+  private mapLinkToNodes(
+    link: { source: string; target: string },
+    nodes: HierarchyPointNode<BoxNode>[]
+  ): HierarchyPointLink<BoxNode> {
+    return {
+      source: nodes.find((node) => node.data.data.id === link.source),
+      target: nodes.find((node) => node.data.data.id === link.target),
+    } as HierarchyPointLink<BoxNode>;
   }
 }
