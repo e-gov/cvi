@@ -11,7 +11,7 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 import * as d3 from 'd3';
-import { HierarchyNode, HierarchyPointLink, HierarchyPointNode } from 'd3';
+import { HierarchyPointLink, HierarchyPointNode, tree } from 'd3';
 import { Box } from './box';
 import { BoxNode } from './box-node';
 
@@ -48,7 +48,7 @@ export class HierarchicalBoxDiagramComponent
   }
 
   @HostListener('window:resize', ['$event'])
-  onResize(event: Event): void {
+  onResize(): void {
     this.updateGraphOnResize();
   }
 
@@ -60,38 +60,22 @@ export class HierarchicalBoxDiagramComponent
   private createGraph() {
     this.createSvg();
     this.calculateBoxDimensions();
+
     const { rootNode, additionalLinks } = this.toHierarchy(this.boxes);
     if (!rootNode) {
       return;
     }
 
     const root = d3.hierarchy(rootNode);
-    const isGraphOverflow = this.isGraphOverflow(root);
-
-    let layout;
-    if (isGraphOverflow) {
-      // Use the top-to-bottom layout
-      layout = d3
-        .tree<BoxNode>()
-        .nodeSize([this.MAX_BOX_WIDTH + this.MAX_BOX_WIDTH / 2, 0])
-        .separation((a, b) => (a.parent == b.parent ? 1 : 2));
-
-      // Center the root node at the top middle
-      root.data.data.x = this.MAX_BOX_HEIGHT / 2;
-      root.data.data.y = 0;
-    } else {
-      // Use the left-to-right layout
-      layout = d3
-        .tree<BoxNode>()
-        .nodeSize([
-          this.MAX_BOX_HEIGHT,
-          this.MAX_BOX_WIDTH + this.MAX_BOX_WIDTH / 2,
-        ])
-        .separation((a, b) => (a.parent == b.parent ? 1 : 2));
-    }
+    const containerWidth = this.container.nativeElement.clientWidth;
+    const containerHeight = this.container.nativeElement.clientHeight;
+    const layout = tree<BoxNode>()
+      .size([containerHeight, containerWidth - 1.5 * this.MAX_BOX_WIDTH])
+      .separation((a, b) => this.calculateSeparation(a, b));
 
     const hierarchy = layout(root);
     const nodes: HierarchyPointNode<BoxNode>[] = hierarchy.descendants();
+
     const links: Array<HierarchyPointLink<BoxNode>> = hierarchy.links();
 
     const additionalMappedLinks: Array<HierarchyPointLink<BoxNode>> =
@@ -109,14 +93,17 @@ export class HierarchicalBoxDiagramComponent
     const containerWidth = this.container.nativeElement.clientWidth;
     const containerHeight = this.container.nativeElement.clientHeight;
 
+    const viewBoxX = -this.MAX_BOX_WIDTH / 1.5;
+    const viewBoxY = 0;
+
     this.svg = d3
       .select(this.elementRef.nativeElement)
       .append('svg')
+      .attr('width', '100%')
+      .attr('height', '100%')
       .attr(
         'viewBox',
-        `${-this.MAX_BOX_WIDTH} ${
-          -containerHeight / 2
-        } ${containerWidth} ${containerHeight}`
+        `${viewBoxX} ${viewBoxY} ${containerWidth} ${containerHeight}`
       );
   }
 
@@ -243,13 +230,13 @@ export class HierarchicalBoxDiagramComponent
       )
       .html(
         (d: HierarchyPointNode<BoxNode>) =>
-          `<div class="box-content">${d.data.data.label}</div>`
+          `<div class="box-content wordwrap">${d.data.data.label}</div>`
       )
       .style('font-size', '14px')
       .style('line-height', '18px');
   }
 
-  toHierarchy(boxes: Box[]): {
+  private toHierarchy(boxes: Box[]): {
     rootNode: BoxNode;
     additionalLinks: { source: string; target: string }[];
   } {
@@ -354,27 +341,6 @@ export class HierarchicalBoxDiagramComponent
     );
   }
 
-  private removeSvg() {
-    if (this.svg) {
-      this.svg.remove();
-    }
-  }
-
-  private isGraphOverflow(root: HierarchyNode<BoxNode>): boolean {
-    const nodeSpacingX = 55;
-    const nodeSpacingY = 30;
-
-    // Calculate the total width and height including the spacing between nodes
-    const totalWidth = (root.height + 1) * (this.MAX_BOX_WIDTH + nodeSpacingX);
-    const totalHeight =
-      root.leaves().length * (this.MAX_BOX_HEIGHT + nodeSpacingY);
-
-    const screenWidth = window.innerWidth;
-    const screenHeight = window.innerHeight;
-
-    return totalWidth > screenWidth || totalHeight > screenHeight;
-  }
-
   private mapLinkToNodes(
     link: { source: string; target: string },
     nodes: HierarchyPointNode<BoxNode>[]
@@ -383,5 +349,27 @@ export class HierarchicalBoxDiagramComponent
       source: nodes.find((node) => node.data.data.id === link.source),
       target: nodes.find((node) => node.data.data.id === link.target),
     } as HierarchyPointLink<BoxNode>;
+  }
+
+  private calculateSeparation(
+    a: HierarchyPointNode<BoxNode>,
+    b: HierarchyPointNode<BoxNode>
+  ): number {
+    const siblingSeparation = 1;
+    const nonSiblingSeparation = 2;
+
+    // Consider the height of the nodes to determine separation
+    const additionalSeparation =
+      Math.abs(a.x - b.x) < this.MAX_BOX_HEIGHT ? 0.5 : 0;
+
+    return a.parent == b.parent
+      ? siblingSeparation + additionalSeparation
+      : nonSiblingSeparation + additionalSeparation;
+  }
+
+  private removeSvg() {
+    if (this.svg) {
+      this.svg.remove();
+    }
   }
 }
