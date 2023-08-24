@@ -3,6 +3,7 @@ import {
   ChangeDetectionStrategy,
   Component,
   ElementRef,
+  HostListener,
   Input,
   NgZone,
   OnDestroy,
@@ -43,9 +44,17 @@ export class HierarchicalBoxDiagramComponent
   }
 
   ngOnDestroy() {
-    if (this.svg) {
-      this.svg.remove();
-    }
+    this.removeSvg();
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event): void {
+    this.updateGraphOnResize();
+  }
+
+  private updateGraphOnResize(): void {
+    this.removeSvg();
+    this.createGraph();
   }
 
   private createGraph() {
@@ -53,7 +62,8 @@ export class HierarchicalBoxDiagramComponent
     this.calculateBoxDimensions();
     const { hierarchy, additionalLinks } = this.toHierarchy(this.boxes);
     if (hierarchy) {
-      const nodeWidth = (d: BoxNode) => this.MAX_BOX_WIDTH + 50;
+      const nodeWidth = (d: BoxNode) =>
+        this.MAX_BOX_WIDTH + this.MAX_BOX_WIDTH / 2;
       const nodeHeight = (d: BoxNode) => this.MAX_BOX_HEIGHT;
 
       const treemap = d3
@@ -97,8 +107,7 @@ export class HierarchicalBoxDiagramComponent
         `${-this.MAX_BOX_WIDTH} ${
           -containerHeight / 2
         } ${containerWidth} ${containerHeight}`
-      )
-      .attr('preserveAspectRatio', 'xMidYMid meet');
+      );
   }
 
   private drawLines(links: Array<HierarchyPointLink<BoxNode>>): void {
@@ -349,5 +358,11 @@ export class HierarchicalBoxDiagramComponent
       '#' +
       ((1 << 24) | (R << 16) | (G << 8) | B).toString(16).slice(1).toUpperCase()
     );
+  }
+
+  private removeSvg() {
+    if (this.svg) {
+      this.svg.remove();
+    }
   }
 }
