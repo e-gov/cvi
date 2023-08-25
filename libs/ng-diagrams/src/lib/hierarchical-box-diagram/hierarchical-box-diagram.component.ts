@@ -90,9 +90,9 @@ export class HierarchicalBoxDiagramComponent implements OnDestroy, OnChanges {
         while (this.boxesOverlap(nodes[i], nodes[j])) {
           const centerVertical = this.container.nativeElement.clientHeight / 2;
           if (nodes[j].x < centerVertical) {
-            nodes[j].x -= this.MAX_BOX_HEIGHT/2;
+            nodes[j].x -= this.MAX_BOX_HEIGHT / 2;
           } else {
-            nodes[j].x += this.MAX_BOX_HEIGHT/2;
+            nodes[j].x += this.MAX_BOX_HEIGHT / 2;
           }
         }
       }
