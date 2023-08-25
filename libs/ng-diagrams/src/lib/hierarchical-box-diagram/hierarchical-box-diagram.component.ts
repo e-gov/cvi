@@ -31,6 +31,13 @@ export class HierarchicalBoxDiagramComponent implements OnDestroy, OnChanges {
     HORIZONTAL: 16,
     VERTICAL: 8,
   };
+  private static readonly BOX_PARAMS = {
+    MAX_BOX_WIDTH: 100,
+    MAX_BOX_HEIGHT: 50,
+    LINE_HEIGHT: '18px',
+    FONT_SIZE: '14px',
+    FONT_FAMILY: 'Roboto, sans-serif',
+  };
 
   @ViewChild('measureDiv', { static: true }) measureDiv!: ElementRef;
   @ViewChild('container', { static: true }) container!: ElementRef;
@@ -43,9 +50,6 @@ export class HierarchicalBoxDiagramComponent implements OnDestroy, OnChanges {
   private resizeSubscription = this.resizeSubject
     .pipe(debounceTime(5))
     .subscribe(() => this.createDiagram());
-
-  private readonly MAX_BOX_WIDTH = 100;
-  private readonly MAX_BOX_HEIGHT = 50;
 
   constructor(
     private readonly elementRef: ElementRef,
@@ -92,7 +96,8 @@ export class HierarchicalBoxDiagramComponent implements OnDestroy, OnChanges {
     const root = d3.hierarchy(rootNode);
     const containerWidth = this.container.nativeElement.clientWidth;
     const containerHeight = this.container.nativeElement.clientHeight;
-    const rootWidth = 1.5 * this.MAX_BOX_WIDTH;
+    const { BOX_PARAMS } = HierarchicalBoxDiagramComponent;
+    const rootWidth = 1.5 * BOX_PARAMS.MAX_BOX_WIDTH;
     const layout = tree<BoxNode>()
       .size([containerHeight, containerWidth - rootWidth])
       .separation((a, b) => this.calculateSeparation(a, b));
@@ -106,9 +111,9 @@ export class HierarchicalBoxDiagramComponent implements OnDestroy, OnChanges {
         while (this.boxesOverlap(nodes[i], nodes[j])) {
           const centerVertical = this.container.nativeElement.clientHeight / 2;
           if (nodes[j].x < centerVertical) {
-            nodes[j].x -= this.MAX_BOX_HEIGHT / 2;
+            nodes[j].x -= BOX_PARAMS.MAX_BOX_HEIGHT / 2;
           } else {
-            nodes[j].x += this.MAX_BOX_HEIGHT / 2;
+            nodes[j].x += BOX_PARAMS.MAX_BOX_HEIGHT / 2;
           }
         }
       }
@@ -130,8 +135,8 @@ export class HierarchicalBoxDiagramComponent implements OnDestroy, OnChanges {
   private createSvg(): void {
     const containerWidth = this.container.nativeElement.clientWidth;
     const containerHeight = this.container.nativeElement.clientHeight;
-
-    const viewBoxX = -this.MAX_BOX_WIDTH / 1.5;
+    const { BOX_PARAMS } = HierarchicalBoxDiagramComponent;
+    const viewBoxX = -BOX_PARAMS.MAX_BOX_WIDTH / 1.5;
     const viewBoxY = 0;
 
     this.svg = d3
@@ -282,6 +287,7 @@ export class HierarchicalBoxDiagramComponent implements OnDestroy, OnChanges {
       })
       .attr('stroke-width', 2);
 
+    const { BOX_PARAMS } = HierarchicalBoxDiagramComponent;
     boxAnchor
       .append('foreignObject')
       .attr(
@@ -306,8 +312,8 @@ export class HierarchicalBoxDiagramComponent implements OnDestroy, OnChanges {
         (d: HierarchyPointNode<BoxNode>) =>
           `<div class="box-content wordwrap">${d.data.data.label}</div>`
       )
-      .style('font-size', '14px')
-      .style('line-height', '18px');
+      .style('font-size', BOX_PARAMS.FONT_SIZE)
+      .style('line-height', BOX_PARAMS.LINE_HEIGHT);
   }
 
   private toHierarchy(boxes: Box[]): HierarchyResult {
@@ -364,13 +370,13 @@ export class HierarchicalBoxDiagramComponent implements OnDestroy, OnChanges {
   }
 
   private calculateBoxDimensions(): void {
-    const { PADDING } = HierarchicalBoxDiagramComponent;
-    const MAX_WIDTH = this.MAX_BOX_WIDTH;
+    const { PADDING, BOX_PARAMS } = HierarchicalBoxDiagramComponent;
+    const MAX_WIDTH = BOX_PARAMS.MAX_BOX_WIDTH;
     const measureDiv = this.measureDiv?.nativeElement;
     measureDiv.style.boxSizing = 'border-box';
-    measureDiv.style.fontSize = '14px';
-    measureDiv.style.lineHeight = '18px';
-    measureDiv.style.fontFamily = 'Roboto, sans-serif';
+    measureDiv.style.fontSize = BOX_PARAMS.FONT_SIZE;
+    measureDiv.style.lineHeight = BOX_PARAMS.LINE_HEIGHT;
+    measureDiv.style.fontFamily = BOX_PARAMS.FONT_FAMILY;
 
     this.boxes.forEach((box) => {
       measureDiv.innerHTML = box.label;
@@ -429,8 +435,9 @@ export class HierarchicalBoxDiagramComponent implements OnDestroy, OnChanges {
     const nonSiblingSeparation = 2;
 
     // Consider the height of the nodes to determine separation
+    const { BOX_PARAMS } = HierarchicalBoxDiagramComponent;
     const additionalSeparation =
-      Math.abs(a.x - b.x) < this.MAX_BOX_HEIGHT ? 0.5 : 0;
+      Math.abs(a.x - b.x) < BOX_PARAMS.MAX_BOX_HEIGHT ? 0.5 : 0;
 
     return a.parent == b.parent
       ? siblingSeparation + additionalSeparation
