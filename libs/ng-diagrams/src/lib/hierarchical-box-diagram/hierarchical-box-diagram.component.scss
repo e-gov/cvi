@@ -30,13 +30,13 @@ foreignObject {
   }
 }
 
-.hidden-measure {
+.hidden-measure-helper {
   visibility: hidden;
   position: absolute;
   top: -10000px;
 }
 
-.svg-container {
+.svg-diagram-container {
   width: 100%;
   height: 100%;
   position: absolute;

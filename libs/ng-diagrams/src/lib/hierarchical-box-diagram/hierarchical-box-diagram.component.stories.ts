@@ -47,10 +47,20 @@ Primary.args = {
       targets: ['2', '7'],
     },
     ...defaultBoxes([
-      { id: '2', href: 'https://example.com/2', label: 'I have a minor health issue', targets: ['3', '4', '5'] },
+      {
+        id: '2',
+        href: 'https://example.com/2',
+        label: 'I have a minor health issue',
+        targets: ['3', '4', '5'],
+      },
       { id: '3', href: 'https://example.com/3', label: 'Pharmacy' },
       { id: '4', href: 'https://example.com/4', label: 'Helpline 1220' },
-      { id: '5', href: 'https://example.com/5', label: '<b>Family doctor</b>', targets: ['6', '9'] }
+      {
+        id: '5',
+        href: 'https://example.com/5',
+        label: '<b>Family doctor</b>',
+        targets: ['6', '9'],
+      },
     ]),
     {
       ...dottedBoxStyles('#B9D2E5', '#3B85BD'),
@@ -96,7 +106,11 @@ Primary.args = {
   ],
 };
 
-function baseBoxStyles(color: string, borderStyle: string = 'none', borderColor: string = 'transparent') {
+function baseBoxStyles(
+  color: string,
+  borderStyle: string = 'none',
+  borderColor: string = 'transparent'
+) {
   return {
     color: color,
     borderStyle: borderStyle,
@@ -106,13 +120,13 @@ function baseBoxStyles(color: string, borderStyle: string = 'none', borderColor:
 
 function dottedBoxStyles(color: string, borderColor: string) {
   return {
-    ...baseBoxStyles(color, 'dotted', borderColor)
+    ...baseBoxStyles(color, 'dotted', borderColor),
   };
 }
 
 function defaultBoxes(boxes: Array<any>) {
-  return boxes.map(box => ({
+  return boxes.map((box) => ({
     ...baseBoxStyles('#FFF1D3'),
-    ...box
+    ...box,
   }));
 }

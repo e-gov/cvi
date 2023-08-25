@@ -1,12 +1,14 @@
 import {
-  AfterViewInit,
   ChangeDetectionStrategy,
+  ChangeDetectorRef,
   Component,
   ElementRef,
   HostListener,
   Input,
   NgZone,
+  OnChanges,
   OnDestroy,
+  SimpleChanges,
   ViewChild,
   ViewEncapsulation,
 } from '@angular/core';
@@ -22,25 +24,30 @@ import { BoxNode } from './box-node';
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HierarchicalBoxDiagramComponent
-  implements AfterViewInit, OnDestroy
-{
+export class HierarchicalBoxDiagramComponent implements OnDestroy, OnChanges {
   private static readonly HORIZONTAL_PADDING = 16;
   private static readonly VERTICAL_PADDING = 8;
 
-  @Input() boxes!: Box[];
-  @ViewChild('measureDiv') measureDiv!: ElementRef;
+  @ViewChild('measureDiv', { static: true }) measureDiv!: ElementRef;
   @ViewChild('container', { static: true }) container!: ElementRef;
+
+  @Input() boxes!: Box[];
 
   private svg: any = null;
 
   private readonly MAX_BOX_WIDTH = 100;
   private readonly MAX_BOX_HEIGHT = 50;
 
-  constructor(private elementRef: ElementRef, private ngZone: NgZone) {}
+  constructor(
+    private readonly elementRef: ElementRef,
+    private readonly ngZone: NgZone,
+    private readonly cdRef: ChangeDetectorRef
+  ) {}
 
-  ngAfterViewInit(): void {
-    this.ngZone.runOutsideAngular(() => this.createGraph());
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['boxes']?.currentValue) {
+      this.createDiagram();
+    }
   }
 
   ngOnDestroy() {
@@ -49,18 +56,20 @@ export class HierarchicalBoxDiagramComponent
 
   @HostListener('window:resize', ['$event'])
   onResize(): void {
-    this.updateGraphOnResize();
+    this.createDiagram();
   }
 
-  private updateGraphOnResize(): void {
-    this.removeSvg();
-    this.createGraph();
+  private createDiagram(): void {
+    this.ngZone.runOutsideAngular(() => {
+      this.removeSvg();
+      this.createSvg();
+      this.calculateBoxDimensions();
+      this.drawGraph();
+      this.cdRef.detectChanges();
+    });
   }
 
-  private createGraph() {
-    this.createSvg();
-    this.calculateBoxDimensions();
-
+  private drawGraph() {
     const { rootNode, additionalLinks } = this.toHierarchy(this.boxes);
     if (!rootNode) {
       return;
@@ -97,7 +106,7 @@ export class HierarchicalBoxDiagramComponent
     const viewBoxY = 0;
 
     this.svg = d3
-      .select(this.elementRef.nativeElement)
+      .select(this.container.nativeElement)
       .append('svg')
       .attr('width', '100%')
       .attr('height', '100%')
@@ -142,7 +151,7 @@ export class HierarchicalBoxDiagramComponent
   }
 
   private drawBoxes(nodes: HierarchyPointNode<BoxNode>[]): void {
-    const defaultWidth = 80;
+    const defaultWidth = 100;
     const defaultHeight = 50;
     const cornerRadius = 5;
 
@@ -296,7 +305,7 @@ export class HierarchicalBoxDiagramComponent
     const { HORIZONTAL_PADDING, VERTICAL_PADDING } =
       HierarchicalBoxDiagramComponent;
     const MAX_WIDTH = this.MAX_BOX_WIDTH;
-    const measureDiv = this.measureDiv.nativeElement;
+    const measureDiv = this.measureDiv?.nativeElement;
     measureDiv.style.boxSizing = 'border-box';
     measureDiv.style.fontSize = '14px';
     measureDiv.style.lineHeight = '18px';
