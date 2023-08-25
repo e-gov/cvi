@@ -16,7 +16,6 @@ import * as d3 from 'd3';
 import { HierarchyPointLink, HierarchyPointNode, tree } from 'd3';
 import { Box } from './box';
 import { BoxNode } from './box-node';
-import { debounceTime, Subject } from 'rxjs';
 import { HierarchyResult } from './hierarchy-result';
 
 @Component({
@@ -46,11 +45,6 @@ export class HierarchicalBoxDiagramComponent implements OnDestroy, OnChanges {
 
   private svg: any = null;
 
-  private resizeSubject = new Subject<void>();
-  private resizeSubscription = this.resizeSubject
-    .pipe(debounceTime(5))
-    .subscribe(() => this.createDiagram());
-
   constructor(
     private readonly elementRef: ElementRef,
     private readonly ngZone: NgZone,
@@ -65,12 +59,11 @@ export class HierarchicalBoxDiagramComponent implements OnDestroy, OnChanges {
 
   ngOnDestroy() {
     this.removeSvg();
-    this.resizeSubscription.unsubscribe();
   }
 
   @HostListener('window:resize', ['$event'])
   onResize(): void {
-    this.resizeSubject.next();
+    this.createDiagram();
   }
 
   private createDiagram(): void {
