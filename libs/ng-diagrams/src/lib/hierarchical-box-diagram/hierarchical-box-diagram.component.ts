@@ -379,6 +379,10 @@ export class HierarchicalBoxDiagramComponent implements OnDestroy, OnChanges {
   private removeSvg() {
     if (this.svg) {
       this.svg.remove();
+      const svgElement = this.container.nativeElement.querySelector('svg');
+      if (svgElement) {
+        svgElement.parentNode.removeChild(svgElement);
+      }
     }
   }
 }
