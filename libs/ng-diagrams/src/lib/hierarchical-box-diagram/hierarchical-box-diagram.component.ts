@@ -168,15 +168,13 @@ export class HierarchicalBoxDiagramComponent implements OnDestroy, OnChanges {
 
     const boxAnchor = boxesSelection
       .append('a')
-      .attr(
-        'xlink:href',
-        (d: HierarchyPointNode<BoxNode>) =>
-          d.data.data.href || 'javascript:void(0)'
-      )
-      .attr(
-        'href',
-        (d: HierarchyPointNode<BoxNode>) => `#linkFor-${d.data.data.id}`
-      );
+      .each(function(this: SVGAElement, d: HierarchyPointNode<BoxNode>) {
+        const href = d.data.data.href;
+        if (href) {
+          d3.select(this).attr('href', href);
+        }
+      });
+
 
     // Title for Screen Readers
     boxAnchor
