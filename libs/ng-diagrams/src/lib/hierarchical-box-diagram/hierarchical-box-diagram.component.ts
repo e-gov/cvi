@@ -229,12 +229,6 @@ export class HierarchicalBoxDiagramComponent implements OnDestroy, OnChanges {
         description += ` This box is a child of ${d.parent.data.data.label}.`;
       }
 
-      // Describe the children relationship
-      if (d.children && d.children.length > 0) {
-        const childrenLabels = d.children.map((child) => child.data.data.label);
-        description += ` This box has children: ${childrenLabels.join(', ')}.`;
-      }
-
       // Describe the targets relationship
       if (d.data.data.targets && d.data.data.targets.length > 0) {
         const targetLabels = d.data.data.targets.map(
