@@ -56,7 +56,7 @@ RUN if [ "$use_private_registry" = true ]; then \
     echo "CYPRESS_INSTALL_BINARY=${CYPRESS_INSTALL_BINARY}" && \
     npm i; \
 else \
-    npm ci; \
+    npm ci --legacy-peer-deps; \
 fi
 
 ENV NX_DAEMON=false
