@@ -2,6 +2,42 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.28.1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.28.0...ui-1.28.1) (2023-08-22)
+
+
+### Bug Fixes
+
+* **ng:** iconName import in timed-notice component ([#168](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/168)) ([2b2c6b1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/2b2c6b1500a272b941a5f963997e06b4292edec0))
+
+
+
+# [1.28.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.27.1...ui-1.28.0) (2023-08-17)
+
+
+### Features
+
+* **ng:** add icon possibility for tab components EBS-362 ([#165](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/165)) ([910a79c](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/910a79c0b3c29e2862b051502135f5de65cb827d))
+
+
+
+## [1.27.1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.27.0...ui-1.27.1) (2023-08-16)
+
+
+### Bug Fixes
+
+* **ng:** fix datepicker component bugs EBS-858 STPA-248 ([#167](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/167)) ([d7d0656](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/d7d065689641e254f63b3542eb00d2d8fe9dd24f))
+
+
+
+# [1.27.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.26.0...ui-1.27.0) (2023-08-16)
+
+
+### Features
+
+* **ng:** notice component ([#159](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/159)) ([0e5e064](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/0e5e0641c319b1d43f45570294348f15c7a3e71a))
+
+
+
 # [1.26.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.25.0...ui-1.26.0) (2023-08-13)
 
 

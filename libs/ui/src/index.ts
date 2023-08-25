@@ -69,3 +69,5 @@ export * from './lib/datepicker/datepicker-calendar.component';
 export * from './lib/datepicker/datepicker-label.config';
 export * from './lib/datepicker/datepicker-label-config.token';
 export * from './lib/datepicker/default-datepicker-label.config';
+export * from './lib/timed-notice/timed-notice.component';
+export * from './lib/timed-notice/timed-notice-severity-to-icon.pipe';
