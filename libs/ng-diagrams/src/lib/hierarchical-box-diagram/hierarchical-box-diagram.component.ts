@@ -85,6 +85,19 @@ export class HierarchicalBoxDiagramComponent implements OnDestroy, OnChanges {
     const hierarchy = layout(root);
     const nodes: HierarchyPointNode<BoxNode>[] = hierarchy.descendants();
 
+    for (let i = 0; i < nodes.length; i++) {
+      for (let j = i + 1; j < nodes.length; j++) {
+        while (this.boxesOverlap(nodes[i], nodes[j])) {
+          const centerVertical = this.container.nativeElement.clientHeight / 2;
+          if (nodes[j].x < centerVertical) {
+            nodes[j].x -= this.MAX_BOX_HEIGHT/2;
+          } else {
+            nodes[j].x += this.MAX_BOX_HEIGHT/2;
+          }
+        }
+      }
+    }
+
     const links: Array<HierarchyPointLink<BoxNode>> = hierarchy.links();
 
     const additionalMappedLinks: Array<HierarchyPointLink<BoxNode>> =
@@ -416,6 +429,26 @@ export class HierarchicalBoxDiagramComponent implements OnDestroy, OnChanges {
     return a.parent == b.parent
       ? siblingSeparation + additionalSeparation
       : nonSiblingSeparation + additionalSeparation;
+  }
+
+  private boxesOverlap(
+    first: HierarchyPointNode<BoxNode>,
+    second: HierarchyPointNode<BoxNode>
+  ): boolean {
+    const sensitivityFactor = 5;
+
+    const halfWidth1 = (first.data.data.width ?? 0) / 2 + sensitivityFactor;
+    const halfHeight1 = (first.data.data.height ?? 0) / 2 + sensitivityFactor;
+
+    const halfWidth2 = (second.data.data.width ?? 0) / 2 + sensitivityFactor;
+    const halfHeight2 = (second.data.data.height ?? 0) / 2 + sensitivityFactor;
+
+    return (
+      first.y + halfWidth1 > second.y - halfWidth2 &&
+      first.y - halfWidth1 < second.y + halfWidth2 &&
+      first.x + halfHeight1 > second.x - halfHeight2 &&
+      first.x - halfHeight1 < second.x + halfHeight2
+    );
   }
 
   private removeSvg() {
