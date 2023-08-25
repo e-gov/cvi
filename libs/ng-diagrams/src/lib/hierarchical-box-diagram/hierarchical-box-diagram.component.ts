@@ -16,6 +16,7 @@ import * as d3 from 'd3';
 import { HierarchyPointLink, HierarchyPointNode, tree } from 'd3';
 import { Box } from './box';
 import { BoxNode } from './box-node';
+import { debounceTime, Subject } from 'rxjs';
 
 @Component({
   selector: 'cvi-ng-hierarchical-box-diagram',
@@ -35,6 +36,11 @@ export class HierarchicalBoxDiagramComponent implements OnDestroy, OnChanges {
 
   private svg: any = null;
 
+  private resizeSubject = new Subject<void>();
+  private resizeSubscription = this.resizeSubject.pipe(
+    debounceTime(50)
+  ).subscribe(() => this.createDiagram());
+
   private readonly MAX_BOX_WIDTH = 100;
   private readonly MAX_BOX_HEIGHT = 50;
 
@@ -52,11 +58,12 @@ export class HierarchicalBoxDiagramComponent implements OnDestroy, OnChanges {
 
   ngOnDestroy() {
     this.removeSvg();
+    this.resizeSubscription.unsubscribe();
   }
 
   @HostListener('window:resize', ['$event'])
   onResize(): void {
-    this.createDiagram();
+    this.resizeSubject.next();
   }
 
   private createDiagram(): void {
@@ -65,6 +72,7 @@ export class HierarchicalBoxDiagramComponent implements OnDestroy, OnChanges {
       this.createSvg();
       this.calculateBoxDimensions();
       this.drawGraph();
+      this.cdRef.markForCheck();
       this.cdRef.detectChanges();
     });
   }
