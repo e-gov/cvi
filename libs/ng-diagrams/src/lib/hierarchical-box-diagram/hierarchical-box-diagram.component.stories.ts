@@ -36,8 +36,8 @@ const Template: Story<HierarchicalBoxDiagramComponent> = (
   props: args,
 });
 
-export const Primary = Template.bind({});
-Primary.args = {
+export const Default = Template.bind({});
+Default.args = {
   boxes: [
     {
       ...baseBoxStyles('#F0F0F2', 'solid', '#D73E3E'),
