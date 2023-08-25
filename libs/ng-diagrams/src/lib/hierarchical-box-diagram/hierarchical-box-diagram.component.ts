@@ -92,8 +92,9 @@ export class HierarchicalBoxDiagramComponent implements OnDestroy, OnChanges {
     const root = d3.hierarchy(rootNode);
     const containerWidth = this.container.nativeElement.clientWidth;
     const containerHeight = this.container.nativeElement.clientHeight;
+    const rootWidth = 1.5 * this.MAX_BOX_WIDTH;
     const layout = tree<BoxNode>()
-      .size([containerHeight, containerWidth - 1.5 * this.MAX_BOX_WIDTH])
+      .size([containerHeight, containerWidth - rootWidth])
       .separation((a, b) => this.calculateSeparation(a, b));
 
     const hierarchy = layout(root);
