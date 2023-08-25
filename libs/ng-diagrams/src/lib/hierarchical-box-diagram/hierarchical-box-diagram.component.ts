@@ -17,6 +17,7 @@ import { HierarchyPointLink, HierarchyPointNode, tree } from 'd3';
 import { Box } from './box';
 import { BoxNode } from './box-node';
 import { debounceTime, Subject } from 'rxjs';
+import { HierarchyResult } from './hierarchy-result';
 
 @Component({
   selector: 'cvi-ng-hierarchical-box-diagram',
@@ -26,8 +27,10 @@ import { debounceTime, Subject } from 'rxjs';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HierarchicalBoxDiagramComponent implements OnDestroy, OnChanges {
-  private static readonly HORIZONTAL_PADDING = 16;
-  private static readonly VERTICAL_PADDING = 8;
+  private static readonly PADDING = {
+    HORIZONTAL: 16,
+    VERTICAL: 8,
+  };
 
   @ViewChild('measureDiv', { static: true }) measureDiv!: ElementRef;
   @ViewChild('container', { static: true }) container!: ElementRef;
@@ -68,13 +71,16 @@ export class HierarchicalBoxDiagramComponent implements OnDestroy, OnChanges {
 
   private createDiagram(): void {
     this.ngZone.runOutsideAngular(() => {
-      this.removeSvg();
-      this.createSvg();
-      this.calculateBoxDimensions();
-      this.drawGraph();
+      this.setupDiagram();
       this.cdRef.markForCheck();
-      this.cdRef.detectChanges();
     });
+  }
+
+  private setupDiagram() {
+    this.removeSvg();
+    this.createSvg();
+    this.calculateBoxDimensions();
+    this.drawGraph();
   }
 
   private drawGraph() {
@@ -308,10 +314,7 @@ export class HierarchicalBoxDiagramComponent implements OnDestroy, OnChanges {
       .style('line-height', '18px');
   }
 
-  private toHierarchy(boxes: Box[]): {
-    rootNode: BoxNode;
-    additionalLinks: { source: string; target: string }[];
-  } {
+  private toHierarchy(boxes: Box[]): HierarchyResult {
     const nodeMap: { [key: string]: BoxNode } = {};
     const additionalLinks: { source: string; target: string }[] = [];
 
@@ -365,8 +368,7 @@ export class HierarchicalBoxDiagramComponent implements OnDestroy, OnChanges {
   }
 
   private calculateBoxDimensions(): void {
-    const { HORIZONTAL_PADDING, VERTICAL_PADDING } =
-      HierarchicalBoxDiagramComponent;
+    const { PADDING } = HierarchicalBoxDiagramComponent;
     const MAX_WIDTH = this.MAX_BOX_WIDTH;
     const measureDiv = this.measureDiv?.nativeElement;
     measureDiv.style.boxSizing = 'border-box';
@@ -385,15 +387,15 @@ export class HierarchicalBoxDiagramComponent implements OnDestroy, OnChanges {
 
       if (isSingleWordAndOverflows) {
         box.width = width;
-        box.height = initialHeight + VERTICAL_PADDING;
+        box.height = initialHeight + PADDING.VERTICAL;
       } else if (width > MAX_WIDTH) {
         const overflowRatio = width / MAX_WIDTH;
         width = MAX_WIDTH;
-        box.width = MAX_WIDTH + HORIZONTAL_PADDING;
-        box.height = initialHeight * overflowRatio + VERTICAL_PADDING;
+        box.width = MAX_WIDTH + PADDING.HORIZONTAL;
+        box.height = initialHeight * overflowRatio + PADDING.VERTICAL;
       } else {
-        box.width = width + HORIZONTAL_PADDING;
-        box.height = initialHeight + VERTICAL_PADDING;
+        box.width = width + PADDING.HORIZONTAL;
+        box.height = initialHeight + PADDING.VERTICAL;
       }
 
       measureDiv.innerHTML = '';
