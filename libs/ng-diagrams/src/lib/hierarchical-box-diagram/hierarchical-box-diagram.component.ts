@@ -173,9 +173,54 @@ export class HierarchicalBoxDiagramComponent implements OnDestroy, OnChanges {
         (d: HierarchyPointNode<BoxNode>) =>
           d.data.data.href || 'javascript:void(0)'
       )
-      .on('click', (d: HierarchyPointNode<BoxNode>) => {
-        console.log('Box clicked:', d.data.data.href);
-      });
+      .attr(
+        'href',
+        (d: HierarchyPointNode<BoxNode>) => `#linkFor-${d.data.data.id}`
+      );
+
+    // Title for Screen Readers
+    boxAnchor
+      .append('title')
+      .text(
+        (d: HierarchyPointNode<BoxNode>) =>
+          `Diagram box for ${d.data.data.label}`
+      );
+
+    // Making SVG elements focusable
+    boxAnchor.attr('tabindex', '0');
+
+    const idToLabelLookup = nodes.reduce((acc, boxNode) => {
+      acc[boxNode.data.data.id] = boxNode.data.data.label;
+      return acc;
+    }, {} as Record<string, string>);
+
+    // Description to understand the box and its links
+    boxAnchor.append('desc').text((d: HierarchyPointNode<BoxNode>) => {
+      let description = `Box labeled ${d.data.data.label}.`;
+
+      // Describe the parent relationship
+      if (d.parent) {
+        description += ` This box is a child of ${d.parent.data.data.label}.`;
+      }
+
+      // Describe the children relationship
+      if (d.children && d.children.length > 0) {
+        const childrenLabels = d.children.map((child) => child.data.data.label);
+        description += ` This box has children: ${childrenLabels.join(', ')}.`;
+      }
+
+      // Describe the targets relationship
+      if (d.data.data.targets && d.data.data.targets.length > 0) {
+        const targetLabels = d.data.data.targets.map(
+          (targetId) => idToLabelLookup[targetId] || targetId
+        );
+        description += ` This box links to boxes labeled: ${targetLabels.join(
+          ', '
+        )}.`;
+      }
+
+      return description;
+    });
 
     boxAnchor
       .append('rect')
