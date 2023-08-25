@@ -100,6 +100,7 @@ export class HierarchicalBoxDiagramComponent implements OnDestroy, OnChanges {
     const hierarchy = layout(root);
     const nodes: HierarchyPointNode<BoxNode>[] = hierarchy.descendants();
 
+    // Adjust overlapping boxes
     for (let i = 0; i < nodes.length; i++) {
       for (let j = i + 1; j < nodes.length; j++) {
         while (this.boxesOverlap(nodes[i], nodes[j])) {
