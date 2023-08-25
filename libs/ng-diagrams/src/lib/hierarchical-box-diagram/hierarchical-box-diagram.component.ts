@@ -37,9 +37,9 @@ export class HierarchicalBoxDiagramComponent implements OnDestroy, OnChanges {
   private svg: any = null;
 
   private resizeSubject = new Subject<void>();
-  private resizeSubscription = this.resizeSubject.pipe(
-    debounceTime(50)
-  ).subscribe(() => this.createDiagram());
+  private resizeSubscription = this.resizeSubject
+    .pipe(debounceTime(50))
+    .subscribe(() => this.createDiagram());
 
   private readonly MAX_BOX_WIDTH = 100;
   private readonly MAX_BOX_HEIGHT = 50;
