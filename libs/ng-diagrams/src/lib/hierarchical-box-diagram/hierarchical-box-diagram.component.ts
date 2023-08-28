@@ -385,7 +385,6 @@ export class HierarchicalBoxDiagramComponent implements OnDestroy, OnChanges {
         box.height = initialHeight + PADDING.VERTICAL;
       } else if (width > MAX_WIDTH) {
         const overflowRatio = width / MAX_WIDTH;
-        width = MAX_WIDTH;
         box.width = MAX_WIDTH + PADDING.HORIZONTAL;
         box.height = initialHeight * overflowRatio + PADDING.VERTICAL;
       } else {
