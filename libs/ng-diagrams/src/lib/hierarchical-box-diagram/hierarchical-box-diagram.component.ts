@@ -263,7 +263,9 @@ export class HierarchicalBoxDiagramComponent implements OnDestroy, OnChanges {
       )
       .attr('rx', cornerRadius)
       .attr('ry', cornerRadius)
-      .attr('fill', (d: HierarchyPointNode<BoxNode>) => d.data.data.color)
+      .attr('fill', (d: HierarchyPointNode<BoxNode>) => {
+        return d.data.data.color;
+      })
       .attr('stroke', (d: HierarchyPointNode<BoxNode>) => {
         if (
           d.data.data.borderStyle === 'dotted' ||

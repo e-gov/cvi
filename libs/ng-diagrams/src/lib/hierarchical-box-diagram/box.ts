@@ -2,7 +2,7 @@ export interface Box {
   id: string;
   label: string;
   color: string;
-  borderStyle: 'none' | 'dotted' | 'solid';
+  borderStyle?: 'none' | 'dotted' | 'solid';
   borderColor?: string;
   targets?: string[];
   href?: string;
