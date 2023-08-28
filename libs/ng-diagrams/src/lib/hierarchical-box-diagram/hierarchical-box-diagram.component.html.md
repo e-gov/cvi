@@ -23,7 +23,7 @@ Add the `cvi-ng-hierarchical-box-diagram` tag to your HTML template:
 
 ### In TypeScript
 
-Define a `boxes` array within your Angular component's TypeScript file. Then bind it to the `[boxes]` input attribute of the `app-hierarchical-box-diagram` component.
+Define a `boxes` array within your Angular component's TypeScript file. Then bind it to the `[boxes]` input attribute of the `cvi-ng-hierarchical-box-diagram` component.
 
 ```typescript
 boxes = [
