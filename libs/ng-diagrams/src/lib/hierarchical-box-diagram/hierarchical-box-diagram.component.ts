@@ -374,7 +374,7 @@ export class HierarchicalBoxDiagramComponent implements OnDestroy, OnChanges {
     this.boxes.forEach((box) => {
       measureDiv.innerHTML = box.label;
       const rect = measureDiv.getBoundingClientRect();
-      let width = rect.width;
+      const width = rect.width;
       const initialHeight = rect.height;
       const renderedText = measureDiv.innerText || measureDiv.textContent;
       const isSingleWordAndOverflows =
