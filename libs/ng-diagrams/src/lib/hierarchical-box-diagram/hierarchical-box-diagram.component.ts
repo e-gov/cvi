@@ -42,6 +42,7 @@ export class HierarchicalBoxDiagramComponent implements OnDestroy, OnChanges {
   @ViewChild('container', { static: true }) container!: ElementRef;
 
   @Input() boxes!: Box[];
+  @Input() ariaLabel = 'Hierarchical box diagram';
 
   private svg: any = null;
 
@@ -303,7 +304,7 @@ export class HierarchicalBoxDiagramComponent implements OnDestroy, OnChanges {
       )
       .html(
         (d: HierarchyPointNode<BoxNode>) =>
-          `<div class="box-content wordwrap">${d.data.data.label}</div>`
+          `<div class="box-content">${d.data.data.label}</div>`
       )
       .style('font-size', BOX_PARAMS.FONT_SIZE)
       .style('line-height', BOX_PARAMS.LINE_HEIGHT);

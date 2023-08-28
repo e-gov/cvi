@@ -2,21 +2,10 @@ a:hover {
   text-decoration: none;
 }
 
-foreignObject {
-  overflow: visible;
-}
-
 .hidden-measure-helper {
   position: absolute;
   top: -10000px;
   visibility: hidden;
-}
-
-.wordwrap {
-  white-space: pre-wrap;
-  white-space: -moz-pre-wrap;
-  white-space: -o-pre-wrap;
-  word-wrap: break-word;
 }
 
 .svg-diagram-container {
@@ -25,26 +14,22 @@ foreignObject {
   width: 100%;
 }
 
-a:hover > foreignObject {
-  cursor: pointer;
-}
-
-foreignObject .box-content {
+.box-content {
   align-items: center;
   border-width: 1px;
   display: flex;
-  font-family: 'Roboto Regular', sans-serif;
   height: 100%;
   justify-content: center;
   overflow: hidden;
   text-align: center;
   width: 100%;
+  word-wrap: break-word;
 }
 
-foreignObject .box-content.border-none {
+.box-content.border-none {
   border-style: none;
 }
 
-foreignObject .box-content.border-dotted {
+.box-content.border-dotted {
   border-style: dotted;
 }
