@@ -216,7 +216,7 @@
           border-radius: 51%;
           border: $number-border-width solid currentColor;
           color: currentColor;
-          font-size: get-font-size(100);
+          font-size: get-font-size(80);
           line-height: 0;
           padding-inline: 8px;
           width: $number-size--desktop;
@@ -321,7 +321,7 @@
           border-radius: 51%;
           color: get-color(white);
           background-color: get-color(sapphire-blue-13);
-          font-size: get-font-size(100);
+          font-size: get-font-size(80);
           line-height: 0;
           padding-inline: 8px;
           width: $number-size--desktop;
