@@ -71,6 +71,8 @@
       "Modal",
       ["Modal directive", "Modal", "Confirmation modal"],
       "Reorderable list"
-    ]
+    ],
+    "Angular Diagrams",
+    ["Installation"]
   ]
 }

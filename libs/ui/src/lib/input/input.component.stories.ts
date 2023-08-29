@@ -29,7 +29,7 @@ export default {
     placeholder: 'Username',
     disabled: false,
     htmlId: 'some-input',
-    maxLength: ''
+    maxLength: '',
   },
 } as Meta<InputComponent>;
 
