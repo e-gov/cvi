@@ -1,6 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
-import sanitizeHtml from 'sanitize-html';
+import sanitizeHtml, { AllowedAttribute, Attributes } from 'sanitize-html';
 
 @Pipe({
   name: 'safeHtml',
@@ -8,33 +8,30 @@ import sanitizeHtml from 'sanitize-html';
 export class SafeHtmlPipe implements PipeTransform {
   constructor(private readonly sanitizer: DomSanitizer) {}
 
-  transform(value?: string): string {
-    const sanitizedHtml = this.sanitize(value ? value : '');
+  transform(
+    value: string,
+    allowedTags: string[],
+    allowedAttributes: Record<string, AllowedAttribute[]>
+  ): string {
+    const sanitizedHtml = this.sanitize(
+      value ? value : '',
+      allowedTags,
+      allowedAttributes
+    );
     return this.sanitizer.bypassSecurityTrustHtml(sanitizedHtml) as string;
   }
 
-  private sanitize(dirty: string): string {
+  private sanitize(
+    dirty: string,
+    allowedTags: string[],
+    allowedAttributes?: Record<string, AllowedAttribute[]>
+  ): string {
     return sanitizeHtml(dirty, {
-      allowedTags: sanitizeHtml?.defaults?.allowedTags?.concat([
-        'cvi-web-labeled-icon',
-        'cvi-web-icon',
-        'cvi-web-track',
-      ]),
+      allowedTags: sanitizeHtml?.defaults?.allowedTags?.concat(allowedTags),
       allowedAttributes: {
         ...sanitizeHtml?.defaults?.allowedAttributes,
         '*': ['class'],
-        'cvi-web-labeled-icon': ['name'],
-        'cvi-web-icon': ['name'],
-        'cvi-web-track': [
-          'gap',
-          'layout',
-          'flex-columns-equal',
-          'grid-rows',
-          'horizontal-alignment',
-          'vertical-alignment',
-          'flex-direction',
-          'flex-is-multiline',
-        ],
+        ...allowedAttributes,
       },
     });
   }
