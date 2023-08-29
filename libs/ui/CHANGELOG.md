@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [1.30.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.29.0...ui-1.30.0) (2023-08-29)
+
+
+### Features
+
+* **ng:** html section to have the possibility of custom components EBS-856 ([#174](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/174)) ([8ceeea3](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/8ceeea34cd97f0e8a42064a98fc3f6575fd83f5a))
+
+
+
 # [1.29.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.28.1...ui-1.29.0) (2023-08-29)
 
 
