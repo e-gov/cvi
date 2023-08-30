@@ -2,6 +2,24 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [1.16.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/styles-1.15.2...styles-1.16.0) (2023-08-29)
+
+
+### Features
+
+* **ng:** box diagram EBS-856 ([#173](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/173)) ([3cd6156](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/3cd615642b04b4839d97b935da8d020b2ff5b92e))
+
+
+
+## [1.15.2](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/styles-1.15.1...styles-1.15.2) (2023-08-28)
+
+
+### Bug Fixes
+
+* **styles:** marriage event service UI alignment with portal observations EBS-620 ([#166](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/166)) ([89c3e17](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/89c3e17d42a9e823850355068cc94efada530074))
+
+
+
 ## [1.15.1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/styles-1.15.0...styles-1.15.1) (2023-08-16)
 
 

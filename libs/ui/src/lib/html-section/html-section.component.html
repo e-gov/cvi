@@ -1,1 +1,1 @@
-<div class="cvi-html-section" [innerHTML]="sanitize ? (html | safeHtml) : html" #htmlSectionRef></div>
+<div class="cvi-html-section" [innerHTML]="sanitize ? (html | safeHtml: allowedTags : allowedAttributes) : html" #htmlSectionRef></div>
