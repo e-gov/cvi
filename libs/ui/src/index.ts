@@ -71,6 +71,6 @@ export * from './lib/datepicker/datepicker-label-config.token';
 export * from './lib/datepicker/default-datepicker-label.config';
 export * from './lib/timed-notice/timed-notice.component';
 export * from './lib/timed-notice/timed-notice-severity-to-icon.pipe';
-export * from './lib/form-notification/form-notification.component';
-export * from './lib/form-notification/form-notification.directive';
-export * from './lib/form-notification/form-notification-severity-to-header-icon.pipe'
+export * from './lib/form-message/form-message.component';
+export * from './lib/form-message/form-message.directive';
+export * from './lib/form-message/form-message-severity-to-header-icon.pipe';

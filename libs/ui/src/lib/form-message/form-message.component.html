@@ -1,0 +1,6 @@
+<cvi-ng-labeled-icon *ngIf="getIconName() as iconName" [name]="iconName"
+                     class="cvi-form-message-icon-wrapper"
+                     iconClass="cvi-form-message__header-icon" [gap]="0" [iconHeight]="16"
+                     dataAttribute="header-icon">
+    <b>{{ errorLabel }}</b> {{ message }}
+</cvi-ng-labeled-icon>

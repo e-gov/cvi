@@ -1,8 +1,7 @@
 @mixin cvi-form-item($base: &) {
   --comment: 'A wrapper for a form field';
 
-  display: inline-block;
-  position: relative;
+  display: flex;
   gap: get-spacing('haapsalu');
 
   &--label-position-top {

@@ -17,9 +17,10 @@ export default {
     htmlId: 'fksd4kfds',
     label: 'Example label',
     placeholder: 'Placeholder text...',
-    displayError: true,
+    displayError: false,
     errorMessage: 'Error',
     severityLevel: 'warning',
+    errorLabel: '',
   },
 } as Meta<FormItemComponent>;
 
@@ -35,10 +36,11 @@ const Template: Story<FormItemComponent> = (args: FormItemComponent) => ({
                       [htmlId]="htmlId">
       <cvi-ng-input [placeholder]="placeholder"
                     [htmlId]="htmlId"
-                    cviNgFormNotification
+                    cviNgFormMessage
                     [severityLevel]="severityLevel"
-                    [display] = displayError
-                    [message]="errorMessage">
+                    [display] ="displayError"
+                    [message]="errorMessage"
+                    [errorLabel]="errorLabel">
       </cvi-ng-input>
     </cvi-ng-form-item>
   `,
@@ -60,10 +62,11 @@ const WithTextareaTemplate: Story<FormItemComponent> = (
                       [htmlId]="htmlId">
       <cvi-ng-textarea [placeholder]="placeholder"
                        [htmlId]="htmlId"
-                       cviNgFormNotification
+                       cviNgFormMessage
                        [severityLevel]="severityLevel"
-                       [display] = displayError
-                       [message]="errorMessage">
+                       [display] ="displayError"
+                       [message]="errorMessage"
+                       [errorLabel]="errorLabel">
       </cvi-ng-textarea>
     </cvi-ng-form-item>
   `,
@@ -103,20 +106,22 @@ const WithInlineFormElementsTemplate: Story<FormItemComponent> = (
                         [htmlId]="htmlId">
         <cvi-ng-input [placeholder]="placeholder"
                       [htmlId]="htmlId"
-                      cviNgFormNotification
-                      [display] =displayError
+                      cviNgFormMessage
+                      [display] ="displayError"
                       [severityLevel]="severityLevel"
-                      [message]="errorMessage">
+                      [message]="errorMessage"
+                      [errorLabel]="errorLabel">
         </cvi-ng-input>
       </cvi-ng-form-item>
       <cvi-ng-form-item label="Datepicker"
                         htmlId="datepicker-id">
         <cvi-ng-datepicker placeholder="Pick a date"
                            htmlId="datepicker-id"
-                           cviNgFormNotification
+                           cviNgFormMessage
                            [severityLevel]="severityLevel"
-                           [display] = displayError
-                           [message]="errorMessage">
+                           [display] ="displayError"
+                           [message]="errorMessage"
+                           [errorLabel]="errorLabel">
         </cvi-ng-datepicker>
       </cvi-ng-form-item>
       <cvi-ng-form-item label="Select"
@@ -125,7 +130,12 @@ const WithInlineFormElementsTemplate: Story<FormItemComponent> = (
                         [ngStyle]="{'width.px': 220}">
         <cvi-ng-select [items]="items"
                        labelId="select-label-id"
-                       htmlId="select-id">
+                       htmlId="select-id"
+                       cviNgFormMessage
+                       [severityLevel]="severityLevel"
+                       [display] ="displayError"
+                       [message]="errorMessage"
+                       [errorLabel]="errorLabel">
         </cvi-ng-select>
       </cvi-ng-form-item>
     </cvi-ng-track>

@@ -96,9 +96,9 @@ import { DATEPICKER_LABEL_CONFIG } from './datepicker/datepicker-label-config.to
 import { DefaultDatepickerLabelConfig } from './datepicker/default-datepicker-label.config';
 import { TimedNoticeComponent } from './timed-notice/timed-notice.component';
 import { TimedNoticeSeverityToIconPipe } from './timed-notice/timed-notice-severity-to-icon.pipe';
-import { FormNotificationDirective } from './form-notification/form-notification.directive';
-import { FormNotificationComponent } from './form-notification/form-notification.component';
-import { FormNotificationSeverityToHeaderIconPipe } from './form-notification/form-notification-severity-to-header-icon.pipe';
+import { FormMessageDirective } from './form-message/form-message.directive';
+import { FormMessageComponent } from './form-message/form-message.component';
+import { FormMessageSeverityToHeaderIconPipe } from './form-message/form-message-severity-to-header-icon.pipe';
 
 const components = [
   TrackComponent,
@@ -157,15 +157,15 @@ const components = [
   DatepickerComponent,
   DatepickerCalendarComponent,
   TimedNoticeComponent,
-  FormNotificationComponent,
-  FormNotificationDirective,
+  FormMessageComponent,
+  FormMessageDirective,
 ];
 
 const pipes = [
   SafeHtmlPipe,
   NotificationSeverityToHeaderIconPipe,
   TimedNoticeSeverityToIconPipe,
-  FormNotificationSeverityToHeaderIconPipe,
+  FormMessageSeverityToHeaderIconPipe,
 ];
 
 const directives = [DataAttributeDirective];

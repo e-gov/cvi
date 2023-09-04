@@ -1,13 +1,14 @@
-@mixin cvi-form-notification($base: &) {
-  font-size: get-font-size(70);
-  position: fixed;
-  height: 32px;
+@mixin cvi-form-message($base: &) {
+  font-size: get-font-size(75);
+  position: absolute;
+  max-width: 100%;
   margin-top: 7px;
   padding-top: 7px;
+  padding-bottom: get-spacing('loksa');
   padding-right: get-spacing('paldiski');
   border-radius: var(--cvi-radius-s);
   box-shadow: var(--cvi-shadow-alpha);
-  z-index: get-z-index('form-notification', '__message');
+  z-index: get-z-index('form-message', '__message');
 
   ::before {
     content: '';
@@ -15,6 +16,7 @@
     bottom: 100%;
     left: get-spacing('paldiski');
     border: 7px solid transparent;
+    pointer-events: none
   }
 
   @at-root {
@@ -39,14 +41,6 @@
       fill: black;
       margin-left: get-spacing('paldiski');
       margin-right: get-spacing('paldiski');
-    }
-
-    &--form-border-warning{
-      border-color: get-color(dark-tangerine-10);
-    }
-
-    &--form-border-error{
-      border-color: get-color(jasper-10);
     }
   }
 }
