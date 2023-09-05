@@ -18,11 +18,10 @@ const Template: Story<FormMessageComponent> = (args: FormMessageComponent) => ({
   /* template */
   template: `
      <cvi-ng-track [gap]="4">
-      <cvi-ng-form-item label="Input field"
-                        htmlId="input-id">
-        <cvi-ng-input [htmlId]="htmlId"
+      <cvi-ng-form-item label="Input field" htmlId="input-id">
+        <cvi-ng-input htmlId="input-id"
                       cviNgFormMessage
-                      [displayMessage] ="displayMessage"
+                      [displayMessage]="displayMessage"
                       [severityLevel]="severityLevel"
                       [message]="message"
                       [title]="title">
@@ -30,7 +29,7 @@ const Template: Story<FormMessageComponent> = (args: FormMessageComponent) => ({
       </cvi-ng-form-item>
       <cvi-ng-form-item label="Datepicker"
                         htmlId="datepicker-id">
-        <cvi-ng-datepicker [htmlId]="htmlId"
+        <cvi-ng-datepicker htmlId="datepicker-id"
                            cviNgFormMessage
                            [severityLevel]="severityLevel"
                            [displayMessage] ="displayMessage"
