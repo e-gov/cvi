@@ -9,7 +9,6 @@
   padding-right: get-spacing('paldiski');
   border-radius: var(--cvi-radius-s);
   box-shadow: var(--cvi-shadow-alpha);
-  z-index: get-z-index('form-message', '__message');
 
   ::before {
     content: '';
@@ -17,7 +16,7 @@
     bottom: 100%;
     left: get-spacing('paldiski');
     border: 7px solid transparent;
-    pointer-events: none
+    pointer-events: none;
   }
 
   @at-root {
@@ -45,9 +44,3 @@
     }
   }
 }
-
-
-
-
-
-

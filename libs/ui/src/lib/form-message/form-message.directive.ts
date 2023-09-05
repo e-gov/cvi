@@ -68,7 +68,7 @@ export class FormMessageDirective implements OnChanges {
       this.renderer.insertBefore(
         this.elementRef.nativeElement,
         this.container,
-        this.inputRef.nextSibling
+        this.componentRef
       );
 
       this.componentRef =
