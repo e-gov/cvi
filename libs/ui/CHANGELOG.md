@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [1.31.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.30.1...ui-1.31.0) (2023-09-05)
+
+
+### Features
+
+* **ng:** create form notification component EBS-864  ([#170](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/170)) ([e3a9bc2](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/e3a9bc2fbfd7896cf5a8c1db6801221548a209b4))
+
+
+
 ## [1.30.1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.30.0...ui-1.30.1) (2023-09-01)
 
 
