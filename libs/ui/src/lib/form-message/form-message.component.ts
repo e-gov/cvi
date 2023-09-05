@@ -16,9 +16,9 @@ import { FormMessageSeverityToHeaderIconPipe } from './form-message-severity-to-
 })
 export class FormMessageComponent {
   message = '';
-  display!: boolean;
-  severity!: FormMessageSeverity;
-  errorLabel!: string;
+  displayMessage!: boolean;
+  severityLevel!: FormMessageSeverity;
+  title!: string;
 
   constructor(
     private cdRef: ChangeDetectorRef,
@@ -26,7 +26,7 @@ export class FormMessageComponent {
   ) {}
 
   @HostBinding('class') get getHostClasses(): string {
-    return `cvi-form-message cvi-form-message--severity-${this.severity}`;
+    return `cvi-form-message cvi-form-message--severity-${this.severityLevel}`;
   }
 
   detectChanges() {
@@ -35,6 +35,6 @@ export class FormMessageComponent {
   }
 
   getIconName(): CviIconName | undefined {
-    return this.iconPipe.transform(this.severity);
+    return this.iconPipe.transform(this.severityLevel);
   }
 }

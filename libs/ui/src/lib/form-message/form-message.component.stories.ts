@@ -6,10 +6,10 @@ export default {
   title: 'Angular/Form/FormMessage',
   component: FormMessageComponent,
   args: {
-    display: true,
-    severity: 'warning',
+    displayMessage: true,
+    severityLevel: 'warning',
     message: 'Error',
-    label: '',
+    title: 'Warning message',
   },
 } as Meta<FormMessageComponent>;
 
@@ -20,24 +20,20 @@ const Template: Story<FormMessageComponent> = (args: FormMessageComponent) => ({
      <cvi-ng-track [gap]="4">
       <cvi-ng-form-item label="Input field"
                         htmlId="input-id">
-        <cvi-ng-input [placeholder]="placeholder"
-                      [htmlId]="htmlId"
-                      cviNgFormMessage
-                      [display] ="display"
-                      [severityLevel]="severity"
+        <cvi-ng-input cviNgFormMessage
+                      [displayMessage] ="displayMessage"
+                      [severityLevel]="severityLevel"
                       [message]="message"
-                      [errorLabel]="label">
+                      [title]="title">
         </cvi-ng-input>
       </cvi-ng-form-item>
       <cvi-ng-form-item label="Datepicker"
                         htmlId="datepicker-id">
-        <cvi-ng-datepicker placeholder="Pick a date"
-                           htmlId="datepicker-id"
-                           cviNgFormMessage
-                           [severityLevel]="severity"
-                           [display] ="display"
+        <cvi-ng-datepicker cviNgFormMessage
+                           [severityLevel]="severityLevel"
+                           [displayMessage] ="displayMessage"
                            [message]="message"
-                           [errorLabel]="label">
+                           [title]="title">
         </cvi-ng-datepicker>
       </cvi-ng-form-item>
     </cvi-ng-track>
@@ -48,9 +44,11 @@ export const Default = Template.bind({});
 
 export const Warning = Template.bind({});
 Warning.args = {
-  severity: 'warning',
+  severityLevel: 'warning',
+  title: 'Warning message',
 };
 export const Error = Template.bind({});
 Error.args = {
-  severity: 'error',
+  severityLevel: 'error',
+  title: 'Error message',
 };

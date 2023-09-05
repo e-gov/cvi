@@ -1,6 +1,7 @@
 @mixin cvi-form-message($base: &) {
   font-size: get-font-size(75);
-  position: absolute;
+  display: block;
+  position: relative;
   max-width: 100%;
   margin-top: 7px;
   padding-top: 7px;

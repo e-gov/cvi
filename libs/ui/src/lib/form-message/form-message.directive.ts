@@ -19,8 +19,8 @@ import { FormMessageSeverity } from './form-message';
 export class FormMessageDirective implements OnChanges {
   @Input() message = '';
   @Input() severityLevel!: FormMessageSeverity;
-  @Input() display!: boolean;
-  @Input() errorLabel?: string;
+  @Input() displayMessage!: boolean;
+  @Input() title?: string;
 
   private componentRef: ComponentRef<FormMessageComponent> | null = null;
   private container: HTMLDivElement | null = null;
@@ -33,7 +33,7 @@ export class FormMessageDirective implements OnChanges {
   ) {}
 
   ngOnChanges(): void {
-    if (!this.display) {
+    if (!this.displayMessage) {
       this.destroyComponent();
       return;
     }
@@ -41,15 +41,15 @@ export class FormMessageDirective implements OnChanges {
       this.updateComponentProperties();
       return;
     }
-    if (this.display) {
+    if (this.displayMessage) {
       this.createComponent();
     }
   }
   @HostBinding('style.--cvi-form-input-border-color')
   get hostFormInputBorderColor(): string | null {
-    if (this.display && this.severityLevel === 'warning') {
+    if (this.displayMessage && this.severityLevel === 'warning') {
       return 'var(--cvi-color-dark-tangerine-10)';
-    } else if (this.display && this.severityLevel === 'error') {
+    } else if (this.displayMessage && this.severityLevel === 'error') {
       return 'var(--cvi-color-jasper-10)';
     } else {
       return 'var(--cvi-color-black-coral-5)';
@@ -96,14 +96,10 @@ export class FormMessageDirective implements OnChanges {
 
   private updateComponentProperties() {
     if (this.componentRef) {
-      this.componentRef.instance.display = this.display;
+      this.componentRef.instance.displayMessage = this.displayMessage;
       this.componentRef.instance.message = this.message;
-      this.componentRef.instance.severity = this.severityLevel;
-      this.componentRef.instance.errorLabel =
-        this.errorLabel ||
-        this.severityLevel.charAt(0).toUpperCase() +
-          this.severityLevel.slice(1) +
-          ' message:';
+      this.componentRef.instance.severityLevel = this.severityLevel;
+      this.componentRef.instance.title = this.title + ': ';
       this.componentRef.instance.detectChanges();
     }
   }
