@@ -10,7 +10,6 @@ export default {
     severityLevel: 'warning',
     message: 'Error',
     title: 'Warning message',
-    htmlId: 'someId',
   },
 } as Meta<FormMessageComponent>;
 
