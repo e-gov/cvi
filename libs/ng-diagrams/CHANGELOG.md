@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [0.2.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ng-diagrams-0.1.0...ng-diagrams-0.2.0) (2023-09-05)
+
+
+### Features
+
+* **ng:** create form notification component EBS-864  ([#170](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/170)) ([e3a9bc2](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/e3a9bc2fbfd7896cf5a8c1db6801221548a209b4))
+
+
+
 # 0.1.0 (2023-08-29)
 
 
