@@ -13,15 +13,15 @@ import { FormMessageSeverity } from './form-message';
     <cvi-ng-datepicker
       cviNgFormMessage
       [severityLevel]="severityLevel"
-      [display]="display"
+      [displayMessage]="displayMessage"
       [message]="message"
-      [errorLabel]=""
+      [title]=""
     >
     </cvi-ng-datepicker>
   `,
 })
 class TestComponent {
-  display = false;
+  displayMessage = false;
   message = 'Test message';
   severityLevel: FormMessageSeverity = 'warning';
 }
@@ -51,24 +51,24 @@ describe('FormMessageDirective', () => {
   });
 
   it('should create component when display is true', () => {
-    component.display = true;
+    component.displayMessage = true;
     fixture.detectChanges();
-    expect(directive.display).toBe(true);
+    expect(directive.displayMessage).toBe(true);
   });
 
   it('should not create component when display is false', () => {
-    component.display = false;
+    component.displayMessage = false;
     fixture.detectChanges();
     expect(directive['componentRef']?.instance).toBeFalsy();
   });
 
   it('should update component properties on input changes', () => {
-    component.display = true;
+    component.displayMessage = true;
     component.message = 'Updated message';
     component.severityLevel = 'error';
     fixture.detectChanges();
 
-    expect(directive.display).toBe(true);
+    expect(directive.displayMessage).toBe(true);
     expect(directive.message).toBe('Updated message');
     expect(directive.severityLevel).toBe('error');
   });

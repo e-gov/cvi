@@ -10,6 +10,7 @@ export default {
     severityLevel: 'warning',
     message: 'Error',
     title: 'Warning message',
+    htmlId: 'someId',
   },
 } as Meta<FormMessageComponent>;
 
@@ -20,7 +21,8 @@ const Template: Story<FormMessageComponent> = (args: FormMessageComponent) => ({
      <cvi-ng-track [gap]="4">
       <cvi-ng-form-item label="Input field"
                         htmlId="input-id">
-        <cvi-ng-input cviNgFormMessage
+        <cvi-ng-input [htmlId]="htmlId"
+                      cviNgFormMessage
                       [displayMessage] ="displayMessage"
                       [severityLevel]="severityLevel"
                       [message]="message"
@@ -29,7 +31,8 @@ const Template: Story<FormMessageComponent> = (args: FormMessageComponent) => ({
       </cvi-ng-form-item>
       <cvi-ng-form-item label="Datepicker"
                         htmlId="datepicker-id">
-        <cvi-ng-datepicker cviNgFormMessage
+        <cvi-ng-datepicker [htmlId]="htmlId"
+                           cviNgFormMessage
                            [severityLevel]="severityLevel"
                            [displayMessage] ="displayMessage"
                            [message]="message"
