@@ -3,7 +3,7 @@ import { Story, Meta } from '@storybook/angular';
 import { FormMessageComponent } from './form-message.component';
 
 export default {
-  title: 'Angular/Form/FormMessage',
+  title: 'Angular/Form/Form message',
   component: FormMessageComponent,
   args: {
     displayMessage: true,
@@ -14,11 +14,22 @@ export default {
 } as Meta<FormMessageComponent>;
 
 const Template: Story<FormMessageComponent> = (args: FormMessageComponent) => ({
-  props: args,
+  props: {
+    ...args,
+    selectItems: [
+      'City of Sierra Nevada 1',
+      'City of Bilbao 2',
+      'valik 3 (cy test)',
+      'Rest queen discovery stood far everything keep aside merely girl two making inch hard example remove steel right silent trunk central refused other 4',
+      'City of London 5',
+      'Option 6 with enough text to feed a saltwater crocodile',
+      'Option 7 with enough text to feed a prehistoric jaguar',
+    ],
+  },
   /* template */
   template: `
-     <cvi-ng-track [gap]="4" [flexIsMultiline]="true">
-      <cvi-ng-form-item label="Input field 1" htmlId="input-id1">
+     <cvi-ng-track [gap]="4" [flexIsMultiline]="true" verticalAlignment="top">
+      <cvi-ng-form-item label="This is a test label. Scone – and it's gone! And once again" htmlId="input-id1">
         <cvi-ng-input htmlId="input-id1"
                       cviNgFormMessage
                       [displayMessage]="displayMessage"
@@ -27,14 +38,8 @@ const Template: Story<FormMessageComponent> = (args: FormMessageComponent) => ({
                       [title]="title">
         </cvi-ng-input>
       </cvi-ng-form-item>
-      <cvi-ng-form-item label="Input field 2 with a longer label that might span several lines" htmlId="input-id2">
-      <cvi-ng-input htmlId="input-id2"
-                    cviNgFormMessage
-                    [displayMessage]="true"
-                    severityLevel="warning"
-                    message="This is a test for the world fastest car engine. Scone – and it's gone!"
-                    title="It's a title">
-      </cvi-ng-input>
+      <cvi-ng-form-item label="Input field 2 that shows a need in aligning the fields to top in containing track" htmlId="input-id2">
+        <cvi-ng-input htmlId="input-id2"></cvi-ng-input>
       </cvi-ng-form-item>
       <cvi-ng-form-item label="This input is intentionally made erroneous" htmlId="input-id3">
         <cvi-ng-input htmlId="input-id3"
@@ -54,6 +59,19 @@ const Template: Story<FormMessageComponent> = (args: FormMessageComponent) => ({
                            [message]="message"
                            [title]="title">
         </cvi-ng-datepicker>
+      </cvi-ng-form-item>
+      <cvi-ng-form-item label="Select"
+                        labelId="select-label-id"
+                        htmlId="select-id">
+        <cvi-ng-select [items]="selectItems"
+                       labelId="select-label-id"
+                       htmlId="select-id"
+                       cviNgFormMessage
+                       severityLevel="warning"
+                       [displayMessage]="true"
+                       message="Some message"
+                       title="Some title">
+        </cvi-ng-select>
       </cvi-ng-form-item>
     </cvi-ng-track>
   `,

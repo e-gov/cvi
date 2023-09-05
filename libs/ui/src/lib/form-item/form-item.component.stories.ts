@@ -7,10 +7,34 @@ export default {
   component: FormItemComponent,
   parameters: { notes },
   argTypes: {
+    displayMessage: {
+      name: 'Show form message?',
+      table: {
+        category: 'Playground',
+      },
+    },
+    title: {
+      name: 'Form message title',
+      if: { arg: 'displayMessage', eq: true },
+      table: {
+        category: 'Playground',
+      },
+    },
+    message: {
+      name: 'Form message text',
+      if: { arg: 'displayMessage', eq: true },
+      table: {
+        category: 'Playground',
+      },
+    },
     severityLevel: {
-      name: 'Message severity level',
+      name: 'Form message severity level',
+      if: { arg: 'displayMessage', eq: true },
       options: ['warning', 'error'],
       control: { type: 'inline-radio' },
+      table: {
+        category: 'Playground',
+      },
     },
   },
   args: {
@@ -107,7 +131,7 @@ const WithInlineFormElementsTemplate: Story<FormItemComponent> = (
         <cvi-ng-input [placeholder]="placeholder"
                       [htmlId]="htmlId"
                       cviNgFormMessage
-                      [displayMessage] ="displayMessage"
+                      [displayMessage]="displayMessage"
                       [severityLevel]="severityLevel"
                       [message]="message"
                       [title]="title">  
