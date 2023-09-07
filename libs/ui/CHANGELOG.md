@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.31.1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.31.0...ui-1.31.1) (2023-09-07)
+
+
+### Bug Fixes
+
+* timed-notice incorrect import ([#176](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/176)) ([377070a](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/377070ae4ead66946f378243329b7008c48f4632))
+
+
+
 # [1.31.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.30.1...ui-1.31.0) (2023-09-05)
 
 
