@@ -1,4 +1,4 @@
-import { CviIconName } from '../../../../../dist/libs/icons';
+import { CviIconName } from '@egov/cvi-icons';
 
 export type TimedNoticeSeverity = 'info' | 'success' | 'error';
 
