@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { CircleComponent } from './circle/circle.component';
 
 import { TrackComponent } from './track/track.component';
 import { ContentContainerComponent } from './content-container/content-container.component';
@@ -56,7 +57,7 @@ import {
   cviSuccess,
   cviWarningAmber,
   cviOpenInNew,
-  cviFilter
+  cviFilter,
 } from '@egov/cvi-icons';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
@@ -161,6 +162,7 @@ const components = [
   TimedNoticeComponent,
   FormMessageComponent,
   FormMessageDirective,
+  CircleComponent,
 ];
 
 const pipes = [
@@ -224,7 +226,7 @@ export class UiModule {
       cviCalendar,
       cviInputError,
       cviOpenInNew,
-      cviFilter
+      cviFilter,
     ]);
   }
 }

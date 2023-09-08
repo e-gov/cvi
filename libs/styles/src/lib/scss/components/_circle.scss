@@ -1,0 +1,24 @@
+@mixin cvi-circle($base: &) {
+  --comment: 'Themed circle with content';
+
+  $number-border-width: 2px;
+  $number-size--mobile: 32px;
+  $number-size--desktop: 24px;
+
+  &::before {
+    content: counter(numberedlist);
+    border-radius: 51%;
+    border: $number-border-width solid var(--border-color);
+    color: var(--color);
+    background-color: var(--background-color);
+    font-size: get-font-size(80);
+    font-weight: get-font-weight(gamma);
+    line-height: 0;
+    width: $number-size--desktop;
+    aspect-ratio: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+}
