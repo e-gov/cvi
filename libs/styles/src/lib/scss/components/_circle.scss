@@ -1,16 +1,17 @@
 @mixin cvi-circle($base: &) {
   --comment: 'Themed circle with content';
 
+  $has-max-progress: var(--progress) == '100%';
+
   $number-border-width: 2px;
   $number-size--mobile: 32px;
   $number-size--desktop: 24px;
 
+  --number-background-color: var(--cvi-color-sapphire-blue-0);
+
   &::before {
     content: counter(numberedlist);
     border-radius: 51%;
-    border: $number-border-width solid var(--border-color);
-    color: var(--color);
-    background-color: var(--background-color);
     font-size: get-font-size(80);
     font-weight: get-font-weight(gamma);
     line-height: 0;
@@ -19,6 +20,23 @@
     display: flex;
     justify-content: center;
     align-items: center;
-  }
 
+    @if $has-max-progress {
+      border: $number-border-width solid var(--border-color);
+      color: var(--color);
+      background-color: var(--background-color);
+    } @else {
+      border: $number-border-width solid transparent;
+      color: get-color(black-coral-10);
+      background-image:
+        linear-gradient(
+            var(--number-background-color),
+            var(--number-background-color)),
+        conic-gradient(
+            get-color(sapphire-blue-10) var(--progress),
+            get-color(black-coral-2) var(--progress));
+      background-origin: border-box;
+      background-clip: content-box, border-box;
+    }
+  }
 }

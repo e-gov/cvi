@@ -43,6 +43,9 @@ export class CircleComponent {
     | null {
     return this.getSeverityProperty('--background-color');
   }
+  @HostBinding('style.--progress') get hostStyleProgress(): string | null {
+    return this.progressPercentage ? this.progressPercentage + '%' : '100%';
+  }
 
   getThemeProperty(propName: keyof CircleThemeProperties): string | null {
     const item = circleThemePropertyGroups.find(
