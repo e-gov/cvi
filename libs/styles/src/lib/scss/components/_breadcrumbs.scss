@@ -9,10 +9,8 @@
     #{$base}__item {
       @include cvi-breakpoint-down(sm) {
         /* stylelint-disable-next-line selector-pseudo-class-disallowed-list */
-        &:not(&:nth-last-child(2)) {
-          #{$base}__item-link {
-            display: none;
-          }
+        &:not(&.mobile-breadcrumb) {
+          display: none;
         }
       }
 
@@ -35,6 +33,11 @@
     #{$base}__item-link {
       cursor: pointer;
       color: get-color(sapphire-blue-10);
+    }
+
+    #{$base}__item-disabled {
+      cursor: default;
+      color: get-color(black-coral-12);
     }
 
     #{$base}__icon {

@@ -7,7 +7,12 @@ export default {
   component: BreadcrumbsComponent,
   parameters: { notes },
   args: {
-    breadcrumbLabels: ['Avaleht', 'Abiellumine', 'Avalduse esitamine'],
+    breadcrumbs: [
+      { title: 'Avaleht', href: '/avaleht' },
+      { title: 'Ilma urlita samm' },
+      { title: 'Abiellumine', href: '/abiellumine' },
+      { title: 'Avalduse esitamine', href: '/abiellumine/avalduse-esitamine' },
+    ],
   },
 } as Meta<BreadcrumbsComponent>;
 
@@ -15,7 +20,7 @@ const Template: Story<BreadcrumbsComponent> = (args: BreadcrumbsComponent) => ({
   props: args,
   /* template */
   template: `
-    <cvi-ng-breadcrumbs [breadcrumbLabels]="breadcrumbLabels"></cvi-ng-breadcrumbs>
+    <cvi-ng-breadcrumbs [breadcrumbs]="breadcrumbs"></cvi-ng-breadcrumbs>
   `,
 });
 
@@ -29,7 +34,7 @@ const TemplateWithIcon: Story<BreadcrumbsComponent> = (
   /* template */
   template: `
     <cvi-ng-breadcrumbs
-        [breadcrumbLabels]="breadcrumbLabels"
+        [breadcrumbs]="breadcrumbs"
         [iconName]="iconName">
     </cvi-ng-breadcrumbs>
   `,

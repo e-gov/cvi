@@ -25,7 +25,7 @@ const Template: Story = (args) => ({
           <li class="cvi-breadcrumbs__item">
             <a class="cvi-breadcrumbs__item-link">Avaleht</a>
           </li>
-          <li class="cvi-breadcrumbs__item">
+          <li class="cvi-breadcrumbs__item mobile-breadcrumb">
             <a class="cvi-breadcrumbs__item-link">Abiellumine</a>
           </li>
           <li class="cvi-breadcrumbs__item">
