@@ -1,3 +1,5 @@
-<div>
-  <ng-content></ng-content>
-</div>
+<ng-content></ng-content>
+<cvi-ng-icon *ngIf="iconName"
+  [name]="iconName"
+  svgClass="cvi-circle__content-icon">
+</cvi-ng-icon>
