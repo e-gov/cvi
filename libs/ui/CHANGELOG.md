@@ -2,6 +2,22 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [2.0.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.31.1...ui-2.0.0) (2023-09-11)
+
+
+### Features
+
+* breadcrumbs without link EBS-904 STPA-268 ([#177](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/177)) ([e25655f](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/e25655f180b3d1dee2dfe23b3129be9b0d92b3b6))
+
+
+### BREAKING CHANGES
+
+* breadcrumb component input
+
+* refactor: code review
+
+
+
 ## [1.31.1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.31.0...ui-1.31.1) (2023-09-07)
 
 
