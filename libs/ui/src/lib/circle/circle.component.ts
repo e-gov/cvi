@@ -1,6 +1,6 @@
 import {
   ChangeDetectionStrategy,
-  Component,
+  Component, ElementRef,
   HostBinding,
   Input,
 } from '@angular/core';
@@ -30,28 +30,37 @@ export class CircleComponent {
   @HostBinding('class') get hostClasses(): string {
     return `cvi-circle`;
   }
+
   @HostBinding('class.cvi-circle__with-progress')
   get hostProgressClass(): boolean {
     return this.progressPercentage !== undefined;
   }
-  @HostBinding('style.--border-color') get hostStyleBorderColor():
-    | string
-    | null {
-    return this.getThemeProperty('--border-color');
+
+  @HostBinding('style.--border-color') get hostStyleBorderColor(): string | null {
+    const customValue = this.el.nativeElement.style.getPropertyValue('--border-color');
+    return this.getThemeProperty('--border-color', customValue);
   }
+
   @HostBinding('style.--color') get hostStyleColor(): string | null {
-    return this.getThemeProperty('--color');
+    const customValue = this.el.nativeElement.style.getPropertyValue('--color');
+    return this.getThemeProperty('--color', customValue);
   }
-  @HostBinding('style.--background-color') get hostStyleBackgroundColor():
-    | string
-    | null {
+
+  @HostBinding('style.--background-color') get hostStyleBackgroundColor(): string | null {
     return this.getSeverityProperty('--background-color');
   }
+
   @HostBinding('style.--progress') get hostStyleProgress(): string | null {
     return this.progressPercentage ? this.progressPercentage + '%' : null;
   }
 
-  getThemeProperty(propName: keyof CircleThemeProperties): string | null {
+  constructor(private el: ElementRef) {
+  }
+
+  getThemeProperty(propName: keyof CircleThemeProperties, customValue?: string): string | null {
+    if (customValue) {
+      return `var(${customValue})`;
+    }
     const item = circleThemePropertyGroups.find(
       (group: CircleThemePropertyGroup) => group.theme === this.theme
     );
