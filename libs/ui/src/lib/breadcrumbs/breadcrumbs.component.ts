@@ -3,10 +3,7 @@ import {
   Component,
   EventEmitter,
   Input,
-  OnChanges,
-  OnInit,
   Output,
-  SimpleChanges,
 } from '@angular/core';
 import { CviIconName } from '@egov/cvi-icons';
 
@@ -15,7 +12,7 @@ import { CviIconName } from '@egov/cvi-icons';
   templateUrl: './breadcrumbs.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class BreadcrumbsComponent implements OnChanges, OnInit {
+export class BreadcrumbsComponent {
   @Input() breadcrumbs!: { title: string; href: string | undefined }[];
 
   /** Name of an icon in front of breadcrumb */
@@ -25,17 +22,10 @@ export class BreadcrumbsComponent implements OnChanges, OnInit {
 
   mobileBreadcrumbIndex!: number;
 
-  ngOnInit(): void {
-    this.mobileBreadcrumbIndex = this.getMobileBreadcrumbIndex();
-  }
-
-  ngOnChanges(changes: SimpleChanges): void {
-    if (changes['breadcrumbs'] && this.breadcrumbs) {
-      this.mobileBreadcrumbIndex = this.getMobileBreadcrumbIndex();
-    }
-  }
-
-  private getMobileBreadcrumbIndex(): number {
+  // Finds the index of a breadcrumb item that should be shown for mobile view.
+  // Finds the index of last element starting from penultimate element in the list that has a href.
+  // If no such elements exist, returns index of last element.
+  public getMobileBreadcrumbIndex(): number {
     const lastElementIndex = this.breadcrumbs.length - 1;
     for (let index = lastElementIndex - 1; index >= 0; index--) {
       if (index !== lastElementIndex && this.breadcrumbs[index].href) {

@@ -9,7 +9,7 @@
     #{$base}__item {
       @include cvi-breakpoint-down(sm) {
         /* stylelint-disable-next-line selector-pseudo-class-disallowed-list */
-        &:not(&.mobile-breadcrumb) {
+        &:not(&.is-mobile-breadcrumb) {
           display: none;
         }
       }

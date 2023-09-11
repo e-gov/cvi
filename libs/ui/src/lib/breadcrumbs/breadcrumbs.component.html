@@ -4,10 +4,11 @@
                class="cvi-breadcrumbs__icon-wrapper"
                svgClass="cvi-breadcrumbs__icon">
   </cvi-ng-icon>
-  <ul class="cvi-breadcrumbs__items">
+  <ul class="cvi-breadcrumbs__items"
+      *ngIf="{index: getMobileBreadcrumbIndex()} as mobile">
     <li *ngFor="let breadcrumb of breadcrumbs; index as index"
         class="cvi-breadcrumbs__item"
-        [ngClass]="{'mobile-breadcrumb': index === mobileBreadcrumbIndex}">
+        [ngClass]="{'is-mobile-breadcrumb': index === mobile.index}">
       <a *ngIf="breadcrumb.href" class="cvi-breadcrumbs__item-link" (click)="breadcrumbChange.emit(index)">{{ breadcrumb.title }}</a>
       <span class="cvi-breadcrumbs__item-disabled" *ngIf="!breadcrumb.href">{{ breadcrumb.title }}</span>
     </li>
