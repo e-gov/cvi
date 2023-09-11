@@ -8,7 +8,7 @@
   --number-background-color: var(--cvi-color-sapphire-blue-0);
 
   &::before {
-    content: counter(numberedlist);
+    //content: counter(numberedlist);
     border-radius: 51%;
     border: $number-border-width solid var(--border-color);
     color: var(--color);
@@ -40,7 +40,9 @@
     }
 
     #{$base}__content-icon {
-
+      position: absolute;
+      fill: var(--color);
+      stroke: var(--color);
     }
   }
 }
