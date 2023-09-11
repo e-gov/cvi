@@ -30,6 +30,10 @@ export class CircleComponent {
   @HostBinding('class') get hostClasses(): string {
     return `cvi-circle`;
   }
+  @HostBinding('class.cvi-circle__with-progress')
+  get hostProgressClass(): boolean {
+    return this.progressPercentage !== undefined;
+  }
   @HostBinding('style.--border-color') get hostStyleBorderColor():
     | string
     | null {
@@ -44,7 +48,7 @@ export class CircleComponent {
     return this.getSeverityProperty('--background-color');
   }
   @HostBinding('style.--progress') get hostStyleProgress(): string | null {
-    return this.progressPercentage ? this.progressPercentage + '%' : '100%';
+    return this.progressPercentage ? this.progressPercentage + '%' : null;
   }
 
   getThemeProperty(propName: keyof CircleThemeProperties): string | null {
