@@ -1,4 +1,5 @@
 import {Meta, Story} from '@storybook/angular';
+import {concatMap, delay, from, of} from 'rxjs';
 import {CircleComponent} from './circle.component';
 import notes from './circle.component.md';
 import {storybookIconsNames} from '../icons/storybook-icons';
@@ -45,7 +46,7 @@ const Template: Story<CircleComponent> = (args: CircleComponent) => ({
       [severity]="severity"
       [iconName]="iconName"
       [progressPercentage]="progressPercentage"
-    ></cvi-ng-circle>
+    >4</cvi-ng-circle>
   `,
 });
 
@@ -60,7 +61,7 @@ const TemplateLight: Story<CircleComponent> = (args: CircleComponent) => ({
       <cvi-ng-circle
         [theme]="theme"
         [severity]="severity"
-      ></cvi-ng-circle>
+      >4</cvi-ng-circle>
     </div>
   `,
   styles: [
@@ -80,10 +81,23 @@ WithLightTheme.args = {
   theme: 'light',
 };
 
-export const WithProgress = Template.bind({});
-WithProgress.args = {
-  progressPercentage: 40,
-};
+const TemplateProgress: Story<CircleComponent> = (args: CircleComponent) => ({
+  props: {
+    ...args,
+    progress$: from([20, 40, 60, 80, 100])
+      .pipe(concatMap(item => of(item).pipe(delay(800)))),
+  },
+  template: `
+    <ng-container *ngIf="(progress$ | async) as progress">
+      <cvi-ng-circle
+        [theme]="theme"
+        [severity]="severity"
+        [progressPercentage]="progress"
+      >{{ progress }}</cvi-ng-circle>
+    </ng-container>
+  `,
+});
+export const WithProgress = TemplateProgress.bind({});
 
 const CustomStyleTemplate: Story<CircleComponent> = (
   args: CircleComponent
@@ -91,11 +105,20 @@ const CustomStyleTemplate: Story<CircleComponent> = (
   props: args,
   template: `
     <cvi-ng-circle
-    [theme]="theme"
-    [severity]="severity"
-    style="--border-color: --cvi-color-sea-green-10"
-  ></cvi-ng-circle>
+      [theme]="theme"
+      [severity]="severity"
+      style="--border-color: --cvi-color-sea-green-10"
+    >4</cvi-ng-circle>
   `,
 });
 
 export const WithCustomBorderColor = CustomStyleTemplate.bind({});
+WithCustomBorderColor.args = {
+  theme: 'light',
+  severity: 'success',
+};
+
+export const WithIcon = Template.bind({});
+WithIcon.args = {
+  iconName: 'check',
+};
