@@ -1,5 +1,9 @@
-<ng-content></ng-content>
-<cvi-ng-icon *ngIf="iconName"
-  [name]="iconName"
-  svgClass="cvi-circle__content-icon">
-</cvi-ng-icon>
+<ng-container *ngIf="!iconName; else withIcon">
+  <ng-content></ng-content>
+</ng-container>
+
+<ng-template #withIcon>
+  <cvi-ng-icon [name]="iconName"
+               svgClass="cvi-circle__content-icon">
+  </cvi-ng-icon>
+</ng-template>
