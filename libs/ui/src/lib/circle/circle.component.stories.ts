@@ -61,6 +61,8 @@ const TemplateLight: Story<CircleComponent> = (args: CircleComponent) => ({
       <cvi-ng-circle
         [theme]="theme"
         [severity]="severity"
+        [iconName]="iconName"
+        [progressPercentage]="progressPercentage"
       >4</cvi-ng-circle>
     </div>
   `,
@@ -84,14 +86,16 @@ WithLightTheme.args = {
 const TemplateProgress: Story<CircleComponent> = (args: CircleComponent) => ({
   props: {
     ...args,
-    progress$: from([20, 40, 60, 80, 100])
-      .pipe(concatMap(item => of(item).pipe(delay(800)))),
+    progress$: from([20, 40, 60, 80, 100]).pipe(
+      concatMap((item) => of(item).pipe(delay(800)))
+    ),
   },
   template: `
     <ng-container *ngIf="(progress$ | async) as progress">
       <cvi-ng-circle
         [theme]="theme"
         [severity]="severity"
+        [iconName]="iconName"
         [progressPercentage]="progress"
       >{{ progress }}</cvi-ng-circle>
     </ng-container>
@@ -102,11 +106,15 @@ export const WithProgress = TemplateProgress.bind({});
 const CustomStyleTemplate: Story<CircleComponent> = (
   args: CircleComponent
 ) => ({
-  props: args,
+  props: {
+    ...args,
+  },
   template: `
     <cvi-ng-circle
       [theme]="theme"
       [severity]="severity"
+      [iconName]="iconName"
+      [progressPercentage]="progressPercentage"
       style="--border-color: --cvi-color-sea-green-10"
     >4</cvi-ng-circle>
   `,
