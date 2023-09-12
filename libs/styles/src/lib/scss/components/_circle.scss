@@ -1,49 +1,56 @@
 @mixin cvi-circle($base: &) {
-  --comment: 'Themed circle with content';
+  --comment: 'Themed circle';
 
-  $number-border-width: 2px;
-  $number-size--mobile: 32px;
-  $number-size--desktop: 24px;
+  $circle-border-width: 2px;
+  $circle-size--mobile: 32px;
+  $icon-size--mobile: 24px;
+  $circle-size--desktop: 24px;
+  $icon-size--desktop: 16px;
 
-  --number-background-color: var(--cvi-color-white);
+  border-radius: 51%;
+  border: $circle-border-width solid var(--border-color);
+  color: var(--color);
+  background-color: var(--background-color);
+  line-height: 0;
+  aspect-ratio: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-  &::before {
-    //content: counter(numberedlist);
-    border-radius: 51%;
-    border: $number-border-width solid var(--border-color);
-    color: var(--color);
-    background-color: var(--background-color);
-    font-size: get-font-size(80);
+  @include cvi-breakpoint-down(sm) {
+    width: $circle-size--mobile;
     font-weight: get-font-weight(gamma);
-    line-height: 0;
-    width: $number-size--desktop;
-    aspect-ratio: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  }
+
+  @include cvi-breakpoint-up(sm) {
+    width: $circle-size--desktop;
+    font-size: get-font-size(50);
   }
 
   @at-root {
     #{$base}__with-progress {
-      &::before {
-        border: $number-border-width solid transparent;
-        color: get-color(black-coral-10);
-        background-image: linear-gradient(
-            var(--number-background-color),
-            var(--number-background-color)),
-        conic-gradient(
-            get-color(sapphire-blue-10) var(--progress),
-            get-color(black-coral-2) var(--progress));
-        background-origin: border-box;
-        background-clip: content-box, border-box;
-        width: $number-size--mobile;
-      }
+      border: $circle-border-width solid transparent;
+      color: get-color(black-coral-10);
+      background-image: linear-gradient(
+          var(--progress-background-color),
+          var(--progress-background-color)),
+      conic-gradient(
+          get-color(sapphire-blue-10) var(--progress),
+          get-color(black-coral-2) var(--progress));
+      background-origin: border-box;
+      background-clip: content-box, border-box;
     }
 
     #{$base}__content-icon {
-      position: absolute;
       fill: var(--color);
-      stroke: var(--color);
+
+      @include cvi-breakpoint-up(sm) {
+        height: $icon-size--desktop;
+      }
+
+      @include cvi-breakpoint-down(sm) {
+        height: $icon-size--mobile;
+      }
     }
   }
 }

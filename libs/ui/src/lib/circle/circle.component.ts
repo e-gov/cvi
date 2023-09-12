@@ -54,6 +54,10 @@ export class CircleComponent {
     return this.progressPercentage ? this.progressPercentage + '%' : null;
   }
 
+  @HostBinding('style.--progress-background-color') get hostStyleProgressBackgroundColor(): string | null {
+    return this.getSeverityProperty('--progress-background-color');
+  }
+
   constructor(private el: ElementRef) {
   }
 
