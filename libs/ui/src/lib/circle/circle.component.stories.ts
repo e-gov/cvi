@@ -70,7 +70,7 @@ const TemplateLight: Story<CircleComponent> = (args: CircleComponent) => ({
     `.container {
       width: 50px;
       height: 50px;
-      background-color: var(--cvi-color-black-coral-2);
+      background-color: var(--cvi-color-black-coral-1);
       display: flex;
       justify-content: center;
       align-items: center;
