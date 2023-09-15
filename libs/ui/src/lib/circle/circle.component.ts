@@ -1,7 +1,6 @@
 import {
   ChangeDetectionStrategy,
   Component,
-  ElementRef,
   HostBinding,
   Input,
 } from '@angular/core';
@@ -39,9 +38,7 @@ export class CircleComponent {
 
   @HostBinding('style.--border-color')
   get hostStyleBorderColor(): string | null {
-    const customValue = this.el.nativeElement.style
-      .getPropertyValue('--border-color');
-    return this.getThemeProperty('--border-color', customValue);
+    return this.getThemeProperty('--border-color');
   }
 
   @HostBinding('style.--color')
@@ -64,16 +61,7 @@ export class CircleComponent {
     return this.getSeverityProperty('--progress-background-color');
   }
 
-  constructor(private el: ElementRef) {
-  }
-
-  getThemeProperty(
-    propName: keyof CircleThemeProperties,
-    customValue?: string
-  ): string | null {
-    if (customValue) {
-      return `var(${customValue})`;
-    }
+  getThemeProperty(propName: keyof CircleThemeProperties): string | null {
     const item = circleThemePropertyGroups.find(
       (group: CircleThemePropertyGroup) => group.theme === this.theme
     );

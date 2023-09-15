@@ -115,7 +115,7 @@ const CustomStyleTemplate: Story<CircleComponent> = (
       [severity]="severity"
       [iconName]="iconName"
       [progressPercentage]="progressPercentage"
-      style="--border-color: --cvi-color-sea-green-10"
+      style="--custom-border-color: --cvi-color-sea-green-10"
     >4</cvi-ng-circle>
   `,
 });

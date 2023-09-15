@@ -8,7 +8,7 @@
   $icon-size--desktop: 16px;
 
   border-radius: 51%;
-  border: $circle-border-width solid var(--border-color);
+  border: $circle-border-width solid var(--custom-border-color, var(--border-color));
   color: var(--color);
   background-color: var(--background-color);
   line-height: 0;
