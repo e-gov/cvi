@@ -61,7 +61,7 @@ export const Default = Template.bind({});
 
 export const WithLightTheme = Template.bind({});
 WithLightTheme.parameters = {
-  backgrounds: {default: 'Gray'}
+  backgrounds: {default: 'Gray'},
 };
 WithLightTheme.args = {
   theme: 'light',

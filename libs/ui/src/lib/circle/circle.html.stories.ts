@@ -52,7 +52,7 @@ const TemplateWithSeverity: Story = (args) => ({
 
 export const WithSeverity = TemplateWithSeverity.bind({});
 WithSeverity.parameters = {
-  backgrounds: {default: 'Gray'}
+  backgrounds: {default: 'Gray'},
 };
 
 const TemplateWithProgress: Story = (args) => ({
