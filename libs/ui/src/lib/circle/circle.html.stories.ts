@@ -1,11 +1,11 @@
-import {Story, Meta} from '@storybook/angular';
+import { Story, Meta } from '@storybook/angular';
 import notes from './circle.html.md';
 
 export default {
   title: 'HTML/Circle',
   parameters: {
     notes,
-    options: {selectedPanel: 'storybook/html/panel'},
+    options: { selectedPanel: 'storybook/html/panel' },
     layout: 'centered',
   },
   argTypes: {
@@ -52,7 +52,7 @@ const TemplateWithSeverity: Story = (args) => ({
 
 export const WithSeverity = TemplateWithSeverity.bind({});
 WithSeverity.parameters = {
-  backgrounds: {default: 'Gray'},
+  backgrounds: { default: 'Gray' },
 };
 
 const TemplateWithProgress: Story = (args) => ({

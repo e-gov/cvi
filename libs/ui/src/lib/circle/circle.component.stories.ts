@@ -1,36 +1,36 @@
-import {Meta, Story} from '@storybook/angular';
-import {concatMap, delay, from, of} from 'rxjs';
-import {CircleComponent} from './circle.component';
+import { Meta, Story } from '@storybook/angular';
+import { concatMap, delay, from, of } from 'rxjs';
+import { CircleComponent } from './circle.component';
 import notes from './circle.component.md';
-import {storybookIconsNames} from '../icons/storybook-icons';
+import { storybookIconsNames } from '../icons/storybook-icons';
 
 export default {
   title: 'Angular/Circle',
-  parameters: {notes, layout: 'centered'},
+  parameters: { notes, layout: 'centered' },
   argTypes: {
     theme: {
       name: 'Theme',
       options: ['light', 'dark'],
-      control: {type: 'inline-radio'},
+      control: { type: 'inline-radio' },
     },
     severity: {
       name: 'Severity',
       options: ['success', 'error', 'info', 'none'],
-      control: {type: 'select'},
+      control: { type: 'select' },
     },
     size: {
       name: 'Size',
       options: ['s', 'm'],
-      control: {type: 'inline-radio'},
+      control: { type: 'inline-radio' },
     },
     iconName: {
       name: 'Icon name',
       options: storybookIconsNames,
-      control: {type: 'select'},
+      control: { type: 'select' },
     },
     progressPercentage: {
       name: 'Progress',
-      control: {type: 'range', min: 0, max: 100, step: 1},
+      control: { type: 'range', min: 0, max: 100, step: 1 },
     },
   },
   args: {
@@ -61,7 +61,7 @@ export const Default = Template.bind({});
 
 export const WithLightTheme = Template.bind({});
 WithLightTheme.parameters = {
-  backgrounds: {default: 'Gray'},
+  backgrounds: { default: 'Gray' },
 };
 WithLightTheme.args = {
   theme: 'light',
