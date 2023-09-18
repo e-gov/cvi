@@ -24,11 +24,12 @@ import { CviIconName } from '@egov/cvi-icons';
 export class CircleComponent {
   @Input() theme: CircleTheme = 'light';
   @Input() severity: CircleSeverity = 'none';
+  @Input() size: 'm' | 's' = 's';
   @Input() iconName?: CviIconName = undefined;
   @Input() progressPercentage?: number = undefined;
 
   @HostBinding('class') get hostClasses(): string {
-    return `cvi-circle`;
+    return `cvi-circle cvi-circle__size-${this.size}`;
   }
 
   @HostBinding('class.cvi-circle__with-progress')

@@ -11,12 +11,17 @@ export default {
     theme: {
       name: 'Theme',
       options: ['light', 'dark'],
-      control: {type: 'select'},
+      control: {type: 'inline-radio'},
     },
     severity: {
       name: 'Severity',
       options: ['success', 'error', 'info', 'none'],
       control: {type: 'select'},
+    },
+    size: {
+      name: 'Size',
+      options: ['s', 'm'],
+      control: {type: 'inline-radio'},
     },
     iconName: {
       name: 'Icon name',
@@ -31,6 +36,7 @@ export default {
   args: {
     theme: 'dark',
     severity: 'none',
+    size: 's',
     iconName: undefined,
     progressPercentage: undefined,
   },
@@ -44,6 +50,7 @@ const Template: Story<CircleComponent> = (args: CircleComponent) => ({
     <cvi-ng-circle
       [theme]="theme"
       [severity]="severity"
+      [size]="size"
       [iconName]="iconName"
       [progressPercentage]="progressPercentage"
     >4</cvi-ng-circle>
@@ -77,6 +84,7 @@ const TemplateProgress: Story<CircleComponent> = (args: CircleComponent) => ({
       <cvi-ng-circle
         [theme]="theme"
         [severity]="severity"
+        [size]="size"
         [iconName]="iconName"
         [progressPercentage]="progress"
       >{{ progress }}</cvi-ng-circle>
@@ -95,6 +103,7 @@ const CustomBorderTemplate: Story<CircleComponent> = (
     <cvi-ng-circle
       [theme]="theme"
       [severity]="severity"
+      [size]="size"
       [iconName]="iconName"
       [progressPercentage]="progressPercentage"
       style="--cvi-circle-border-color: --cvi-color-sea-green-10"

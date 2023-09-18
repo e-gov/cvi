@@ -3,11 +3,11 @@
 
   $circle-border-width: 2px;
 
-  $circle-size--mobile: 32px;
-  $circle-size--desktop: 24px;
+  $circle-size-m: 32px;
+  $circle-size-s: 24px;
 
-  $icon-size--mobile: 14px;
-  $icon-size--desktop: 10px;
+  $icon-size-m: 14px;
+  $icon-size-s: 10px;
 
   border-radius: 51%;
   border: $circle-border-width solid var(--cvi-circle-border-color, var(--border-color));
@@ -19,17 +19,29 @@
   justify-content: center;
   align-items: center;
 
-  @include cvi-breakpoint-down(sm) {
-    width: $circle-size--mobile;
-    font-weight: get-font-weight(gamma);
-  }
-
-  @include cvi-breakpoint-up(sm) {
-    width: $circle-size--desktop;
-    font-size: get-font-size(50);
-  }
-
   @at-root {
+    #{$base}__content-icon {
+      fill: var(--color);
+    }
+
+    #{$base}__size-s {
+      width: $circle-size-s;
+      font-size: get-font-size(50);
+
+      #{$base}__content-icon {
+        height: $icon-size-s;
+      }
+    }
+
+    #{$base}__size-m {
+      width: $circle-size-m;
+      font-weight: get-font-weight(gamma);
+
+      #{$base}__content-icon {
+        height: $icon-size-m;
+      }
+    }
+
     #{$base}__with-progress {
       border: $circle-border-width solid transparent;
       color: get-color(black-coral-10);
@@ -44,18 +56,6 @@
 
       #{$base}__content-icon {
         fill: get-color(black-coral-10);
-      }
-    }
-
-    #{$base}__content-icon {
-      fill: var(--color);
-
-      @include cvi-breakpoint-up(sm) {
-        height: $icon-size--desktop;
-      }
-
-      @include cvi-breakpoint-down(sm) {
-        height: $icon-size--mobile;
       }
     }
   }
