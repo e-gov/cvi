@@ -2,13 +2,15 @@
   --comment: 'Themed circle';
 
   $circle-border-width: 2px;
+
   $circle-size--mobile: 32px;
   $circle-size--desktop: 24px;
-  $icon-size--mobile: 24px;
-  $icon-size--desktop: 16px;
+
+  $icon-size--mobile: 14px;
+  $icon-size--desktop: 10px;
 
   border-radius: 51%;
-  border: $circle-border-width solid var(--custom-border-color, var(--border-color));
+  border: $circle-border-width solid var(--cvi-circle-border-color, var(--border-color));
   color: var(--color);
   background-color: var(--background-color);
   line-height: 0;
@@ -39,6 +41,10 @@
           get-color(black-coral-2) var(--progress));
       background-origin: border-box;
       background-clip: content-box, border-box;
+
+      #{$base}__content-icon {
+        fill: get-color(black-coral-10);
+      }
     }
 
     #{$base}__content-icon {
