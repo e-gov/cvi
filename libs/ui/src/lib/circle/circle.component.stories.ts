@@ -52,35 +52,17 @@ const Template: Story<CircleComponent> = (args: CircleComponent) => ({
 
 export const Default = Template.bind({});
 
-const TemplateLight: Story<CircleComponent> = (args: CircleComponent) => ({
-  props: {
-    ...args,
-  },
-  template: `
-    <div class="container">
-      <cvi-ng-circle
-        [theme]="theme"
-        [severity]="severity"
-        [iconName]="iconName"
-        [progressPercentage]="progressPercentage"
-      >4</cvi-ng-circle>
-    </div>
-  `,
-  styles: [
-    `.container {
-      width: 50px;
-      height: 50px;
-      background-color: var(--cvi-color-black-coral-1);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }`,
-  ],
-});
-
-export const WithLightTheme = TemplateLight.bind({});
+export const WithLightTheme = Template.bind({});
+WithLightTheme.parameters = {
+  backgrounds: {default: 'Gray'}
+};
 WithLightTheme.args = {
   theme: 'light',
+};
+
+export const WithIcon = Template.bind({});
+WithIcon.args = {
+  iconName: 'close',
 };
 
 const TemplateProgress: Story<CircleComponent> = (args: CircleComponent) => ({
@@ -103,7 +85,7 @@ const TemplateProgress: Story<CircleComponent> = (args: CircleComponent) => ({
 });
 export const WithProgress = TemplateProgress.bind({});
 
-const CustomStyleTemplate: Story<CircleComponent> = (
+const CustomBorderTemplate: Story<CircleComponent> = (
   args: CircleComponent
 ) => ({
   props: {
@@ -115,18 +97,13 @@ const CustomStyleTemplate: Story<CircleComponent> = (
       [severity]="severity"
       [iconName]="iconName"
       [progressPercentage]="progressPercentage"
-      style="--custom-border-color: --cvi-color-sea-green-10"
+      style="--cvi-circle-border-color: --cvi-color-sea-green-10"
     >4</cvi-ng-circle>
   `,
 });
 
-export const WithCustomBorderColor = CustomStyleTemplate.bind({});
+export const WithCustomBorderColor = CustomBorderTemplate.bind({});
 WithCustomBorderColor.args = {
   theme: 'light',
   severity: 'success',
-};
-
-export const WithIcon = Template.bind({});
-WithIcon.args = {
-  iconName: 'check',
 };
