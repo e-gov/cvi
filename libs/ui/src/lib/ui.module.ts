@@ -55,6 +55,8 @@ import {
   cviScreenShare,
   cviSuccess,
   cviWarningAmber,
+  cviOpenInNew,
+  cviFilter,
 } from '@egov/cvi-icons';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
@@ -96,6 +98,9 @@ import { DATEPICKER_LABEL_CONFIG } from './datepicker/datepicker-label-config.to
 import { DefaultDatepickerLabelConfig } from './datepicker/default-datepicker-label.config';
 import { TimedNoticeComponent } from './timed-notice/timed-notice.component';
 import { TimedNoticeSeverityToIconPipe } from './timed-notice/timed-notice-severity-to-icon.pipe';
+import { FormMessageDirective } from './form-message/form-message.directive';
+import { FormMessageComponent } from './form-message/form-message.component';
+import { FormMessageSeverityToHeaderIconPipe } from './form-message/form-message-severity-to-header-icon.pipe';
 
 const components = [
   TrackComponent,
@@ -154,12 +159,15 @@ const components = [
   DatepickerComponent,
   DatepickerCalendarComponent,
   TimedNoticeComponent,
+  FormMessageComponent,
+  FormMessageDirective,
 ];
 
 const pipes = [
   SafeHtmlPipe,
   NotificationSeverityToHeaderIconPipe,
   TimedNoticeSeverityToIconPipe,
+  FormMessageSeverityToHeaderIconPipe,
 ];
 
 const directives = [DataAttributeDirective];
@@ -215,6 +223,8 @@ export class UiModule {
       cviArrowDownAlt,
       cviCalendar,
       cviInputError,
+      cviOpenInNew,
+      cviFilter,
     ]);
   }
 }

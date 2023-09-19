@@ -2,6 +2,71 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [2.0.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.31.1...ui-2.0.0) (2023-09-11)
+
+
+### Features
+
+* breadcrumbs without link EBS-904 STPA-268 ([#177](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/177)) ([e25655f](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/e25655f180b3d1dee2dfe23b3129be9b0d92b3b6))
+
+
+### BREAKING CHANGES
+
+* breadcrumb component input
+
+* refactor: code review
+
+
+
+## [1.31.1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.31.0...ui-1.31.1) (2023-09-07)
+
+
+### Bug Fixes
+
+* timed-notice incorrect import ([#176](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/176)) ([377070a](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/377070ae4ead66946f378243329b7008c48f4632))
+
+
+
+# [1.31.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.30.1...ui-1.31.0) (2023-09-05)
+
+
+### Features
+
+* **ng:** create form notification component EBS-864  ([#170](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/170)) ([e3a9bc2](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/e3a9bc2fbfd7896cf5a8c1db6801221548a209b4))
+
+
+
+## [1.30.1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.30.0...ui-1.30.1) (2023-09-01)
+
+
+
+# [1.30.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.29.0...ui-1.30.0) (2023-08-29)
+
+
+### Features
+
+* **ng:** html section to have the possibility of custom components EBS-856 ([#174](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/174)) ([8ceeea3](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/8ceeea34cd97f0e8a42064a98fc3f6575fd83f5a))
+
+
+
+# [1.29.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.28.1...ui-1.29.0) (2023-08-29)
+
+
+### Features
+
+* **ng:** box diagram EBS-856 ([#173](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/173)) ([3cd6156](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/3cd615642b04b4839d97b935da8d020b2ff5b92e))
+
+
+
+## [1.28.1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.28.0...ui-1.28.1) (2023-08-22)
+
+
+### Bug Fixes
+
+* **ng:** iconName import in timed-notice component ([#168](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/168)) ([2b2c6b1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/2b2c6b1500a272b941a5f963997e06b4292edec0))
+
+
+
 # [1.28.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.27.1...ui-1.28.0) (2023-08-17)
 
 

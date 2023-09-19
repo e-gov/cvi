@@ -1,0 +1,46 @@
+@mixin cvi-form-message($base: &) {
+  font-size: get-font-size(75);
+  display: block;
+  position: relative;
+  max-width: 100%;
+  margin-top: 7px;
+  padding-top: 7px;
+  padding-bottom: get-spacing('loksa');
+  padding-right: get-spacing('paldiski');
+  border-radius: var(--cvi-radius-s);
+  box-shadow: var(--cvi-shadow-alpha);
+
+  ::before {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: get-spacing('paldiski');
+    border: 7px solid transparent;
+    pointer-events: none;
+  }
+
+  @at-root {
+
+    #{$base}--severity-warning {
+      background-color: get-color(dark-tangerine-3);
+
+      ::before {
+        border-bottom-color: get-color(dark-tangerine-3);
+      }
+    }
+
+    #{$base}--severity-error {
+      background-color: get-color(jasper-3);
+
+      ::before {
+        border-bottom-color: get-color(jasper-3);
+      }
+    }
+
+    #{$base}__header-icon {
+      fill: black;
+      margin-left: get-spacing('paldiski');
+      margin-right: get-spacing('paldiski');
+    }
+  }
+}

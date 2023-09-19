@@ -3,6 +3,7 @@
   "version": 2,
   "projects": {
     "icons": "libs/icons",
+    "ng-diagrams": "libs/ng-diagrams",
     "react-sandbox": "apps/react-sandbox",
     "react-sandbox-e2e": "apps/react-sandbox-e2e",
     "react-ui": "libs/react-ui",
@@ -12,5 +13,6 @@
     "styles": "libs/styles",
     "ui": "libs/ui",
     "ui-e2e": "apps/ui-e2e"
-  }
+  },
+  "defaultProject": "ria"
 }

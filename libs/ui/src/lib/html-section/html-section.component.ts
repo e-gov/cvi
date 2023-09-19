@@ -1,14 +1,18 @@
 import {
   ChangeDetectionStrategy,
-  Component, ElementRef, HostListener,
+  Component,
+  ElementRef,
+  HostListener,
   Injector,
   Input,
-  OnInit, ViewChild,
+  OnInit,
+  ViewChild,
 } from '@angular/core';
 import { createCustomElement } from '@angular/elements';
 import { IconComponent } from '../icons/icon/icon.component';
 import { LabeledIconComponent } from '../icons/labeled-icon/labeled-icon.component';
 import { TrackComponent } from '../track/track.component';
+import { AllowedAttribute } from 'sanitize-html';
 
 @Component({
   selector: 'cvi-ng-html-section',
@@ -16,8 +20,32 @@ import { TrackComponent } from '../track/track.component';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HtmlSectionComponent implements OnInit {
-  @Input() html?: string;
+  @Input() html = '';
   @Input() sanitize = true;
+  @Input() customElements: [any, string][] = [
+    [LabeledIconComponent, 'cvi-web-labeled-icon'],
+    [IconComponent, 'cvi-web-icon'],
+    [TrackComponent, 'cvi-web-track'],
+  ];
+  @Input() allowedTags: string[] = [
+    'cvi-web-labeled-icon',
+    'cvi-web-icon',
+    'cvi-web-track',
+  ];
+  @Input() allowedAttributes: Record<string, AllowedAttribute[]> = {
+    'cvi-web-labeled-icon': ['name'],
+    'cvi-web-icon': ['name'],
+    'cvi-web-track': [
+      'gap',
+      'layout',
+      'flex-columns-equal',
+      'grid-rows',
+      'horizontal-alignment',
+      'vertical-alignment',
+      'flex-direction',
+      'flex-is-multiline',
+    ],
+  };
   @ViewChild('htmlSectionRef') htmlSectionRef?: ElementRef;
 
   constructor(private readonly injector: Injector) {}
@@ -32,11 +60,7 @@ export class HtmlSectionComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.createCustomElements([
-      [LabeledIconComponent, 'cvi-web-labeled-icon'],
-      [IconComponent, 'cvi-web-icon'],
-      [TrackComponent, 'cvi-web-track'],
-    ]);
+    this.createCustomElements(this.customElements);
   }
 
   private createCustomElements(elements: [any, string][]) {

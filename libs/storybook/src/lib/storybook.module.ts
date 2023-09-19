@@ -22,7 +22,7 @@ import { StorybookInputDirective } from './directives/storybook-input/storybook-
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // eslint-disable-next-line @nrwl/nx/enforce-module-boundaries
 import { storybookIcons } from '../../../ui/src/lib/icons/storybook-icons';
-import * as cviNg from '@egov/cvi-ng';
+import { IconsRegistry } from '@egov/cvi-ng';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, 'i18n/', '.json');
@@ -62,10 +62,7 @@ const components = [
   providers: [{ provide: LOCALE_ID, useValue: 'et' }],
 })
 export class StorybookModule {
-  constructor(
-    private registry: cviNg.IconsRegistry,
-    translate: TranslateService
-  ) {
+  constructor(private registry: IconsRegistry, translate: TranslateService) {
     this.registry.registerIcons(storybookIcons);
     translate.setDefaultLang('et');
     translate.use('et');
