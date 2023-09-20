@@ -64,6 +64,11 @@ const Template: Story<CircleComponent> = (args: CircleComponent) => ({
 export const Default = Template.bind({});
 
 export const WithLightTheme = Template.bind({});
+WithLightTheme.parameters = {
+  backgrounds: {
+    default: 'Dark',
+  },
+};
 WithLightTheme.args = {
   theme: 'light',
 };
