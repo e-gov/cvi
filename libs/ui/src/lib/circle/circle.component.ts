@@ -77,9 +77,13 @@ export class CircleComponent {
       (group: CircleSeverityPropertyGroup) => group.severity === this.severity
     );
     if (item) {
-      return `var(${
-        item.properties[propName as keyof CircleSeverityProperties]
-      })`;
+      const cssValue =
+        item.properties[propName as keyof CircleSeverityProperties];
+      if (cssValue !== 'transparent') {
+        return `var(${cssValue})`;
+      } else {
+        return 'transparent';
+      }
     }
     return null;
   }
