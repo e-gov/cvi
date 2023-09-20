@@ -24,7 +24,7 @@
       fill: var(--color);
     }
 
-    #{$base}__size-s {
+    #{$base}--size-s {
       width: $circle-size-s;
       font-size: get-font-size(50);
 
@@ -33,7 +33,7 @@
       }
     }
 
-    #{$base}__size-m {
+    #{$base}--size-m {
       width: $circle-size-m;
       font-weight: get-font-weight(gamma);
 
@@ -42,7 +42,7 @@
       }
     }
 
-    #{$base}__with-progress {
+    #{$base}--with-progress {
       border: $circle-border-width solid transparent;
       color: get-color(black-coral-10);
       background-image: linear-gradient(

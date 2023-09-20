@@ -29,10 +29,10 @@ export class CircleComponent {
   @Input() progressPercentage?: number = undefined;
 
   @HostBinding('class') get hostClasses(): string {
-    return `cvi-circle cvi-circle__size-${this.size}`;
+    return `cvi-circle cvi-circle--size-${this.size}`;
   }
 
-  @HostBinding('class.cvi-circle__with-progress')
+  @HostBinding('class.cvi-circle--with-progress')
   get hostProgressClass(): boolean {
     return this.progressPercentage !== undefined;
   }
