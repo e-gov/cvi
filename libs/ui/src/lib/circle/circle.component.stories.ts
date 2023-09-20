@@ -6,8 +6,14 @@ import { storybookIconsNames } from '../icons/storybook-icons';
 
 export default {
   title: 'Angular/Circle',
-  parameters: { notes, layout: 'centered' },
   component: CircleComponent,
+  parameters: {
+    notes,
+    layout: 'centered',
+    backgrounds: {
+      default: 'Gray',
+    },
+  },
   argTypes: {
     theme: {
       name: 'Theme',
@@ -58,9 +64,6 @@ const Template: Story<CircleComponent> = (args: CircleComponent) => ({
 export const Default = Template.bind({});
 
 export const WithLightTheme = Template.bind({});
-WithLightTheme.parameters = {
-  backgrounds: { default: 'Gray' },
-};
 WithLightTheme.args = {
   theme: 'light',
 };
