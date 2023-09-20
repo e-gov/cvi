@@ -46,7 +46,9 @@ export class CircleComponent {
 
   @HostBinding('style.--color')
   get hostStyleColor(): string | null {
-    return this.getThemeProperty('--color');
+    return this.severity === 'none'
+      ? this.getThemeProperty('--color')
+      : this.getSeverityProperty('--color');
   }
 
   @HostBinding('style.--background-color')

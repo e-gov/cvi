@@ -15,6 +15,7 @@ export type CircleThemePropertyGroup = {
 export type CircleSeverityProperties = {
   '--background-color': string;
   '--progress-background-color': string;
+  '--color'?: string;
 };
 
 export type CircleSeverityPropertyGroup = {
@@ -53,6 +54,7 @@ export const circleSeverityPropertyGroups: CircleSeverityPropertyGroup[] = [
     properties: {
       '--background-color': '--cvi-color-sea-green-10',
       '--progress-background-color': '--cvi-color-sea-green-10',
+      '--color': '--cvi-color-white',
     },
   },
   {
@@ -60,6 +62,7 @@ export const circleSeverityPropertyGroups: CircleSeverityPropertyGroup[] = [
     properties: {
       '--background-color': '--cvi-color-jasper-10',
       '--progress-background-color': '--cvi-color-jasper-10',
+      '--color': '--cvi-color-white',
     },
   },
   {
@@ -67,6 +70,7 @@ export const circleSeverityPropertyGroups: CircleSeverityPropertyGroup[] = [
     properties: {
       '--background-color': '--cvi-color-sapphire-blue-13',
       '--progress-background-color': '--cvi-color-sapphire-blue-13',
+      '--color': '--cvi-color-white',
     },
   },
 ];
