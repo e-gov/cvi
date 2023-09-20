@@ -1,4 +1,4 @@
-export type CircleTheme = 'light' | 'dark';
+export type CircleTheme = 'dark' | 'light';
 
 export type CircleSeverity = 'none' | 'success' | 'error' | 'info';
 
@@ -43,6 +43,7 @@ export const circleSeverityPropertyGroups: CircleSeverityPropertyGroup[] = [
   {
     severity: 'none',
     properties: {
+      // Note that literal, non CSS-variable-like values like this need special treatment in the component logic
       '--background-color': 'transparent',
       '--progress-background-color': '--cvi-color-white',
     },

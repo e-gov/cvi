@@ -22,7 +22,9 @@ import { CviIconName } from '@egov/cvi-icons';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CircleComponent {
+  /** Only relevant when progressPercentage is undefined */
   @Input() theme: CircleTheme = 'light';
+
   @Input() severity: CircleSeverity = 'none';
   @Input() size: 'm' | 's' = 's';
   @Input() iconName?: CviIconName = undefined;
