@@ -26,6 +26,7 @@ describe('CircleComponent', () => {
     cy.loadStory('Angular Circle', 'With Light Theme')
       .get('cvi-ng-circle')
       .changeArg('severity', 'error')
+      .changeArg('size', 's')
       .changeArg('iconName', 'close');
     cy.shouldHaveClasses('cvi-ng-circle', ['cvi-circle', 'cvi-circle--size-s'])
       .shouldHaveCSSVar('cvi-ng-circle', '--color', '#ffffff')
@@ -33,7 +34,7 @@ describe('CircleComponent', () => {
       .shouldHaveCSSVar('cvi-ng-circle', '--background-color', '#d73e3e')
       .within(() => {
         cy.shouldHaveAttributes('cvi-ng-icon', {
-          name: 'name',
+          name: 'ng-reflect-name',
           value: 'close',
         }).shouldHaveClasses('svg', 'cvi-circle__content-icon');
       });
