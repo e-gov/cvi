@@ -41,7 +41,15 @@ describe('CircleComponent', () => {
 
   it('Renders medium circle with progress', () => {
     cy.loadStory('Angular Circle', 'With Progress')
-      .shouldHaveClasses('cvi-ng-circle', ['cvi-circle', 'cvi-circle--size-s', 'cvi-circle--with-progress'])
-      .shouldHaveCSSVar('cvi-ng-circle', '--progress-background-color', '#ffffff');
+      .shouldHaveClasses('cvi-ng-circle', [
+        'cvi-circle',
+        'cvi-circle--size-s',
+        'cvi-circle--with-progress',
+      ])
+      .shouldHaveCSSVar(
+        'cvi-ng-circle',
+        '--progress-background-color',
+        '#ffffff'
+      );
   });
 });
