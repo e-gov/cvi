@@ -7,20 +7,18 @@ import { storybookIconsNames } from '../icons/storybook-icons';
 export default {
   title: 'Angular/Circle',
   parameters: { notes, layout: 'centered' },
+  component: CircleComponent,
   argTypes: {
     theme: {
       name: 'Theme',
-      options: ['light', 'dark'],
       control: { type: 'inline-radio' },
     },
     severity: {
       name: 'Severity',
-      options: ['success', 'error', 'info', 'none'],
-      control: { type: 'select' },
+      control: { type: 'inline-radio' },
     },
     size: {
       name: 'Size',
-      options: ['s', 'm'],
       control: { type: 'inline-radio' },
     },
     iconName: {
