@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [2.1.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-2.0.0...ui-2.1.0) (2023-09-21)
+
+
+### Features
+
+* **ng:** add circle component EBS-879 STPA-277 ([#179](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/179)) ([8d98f89](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/8d98f89e454a6129eb49dbe839f28d79c6936d61))
+
+
+
 # [2.0.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.31.1...ui-2.0.0) (2023-09-11)
 
 
