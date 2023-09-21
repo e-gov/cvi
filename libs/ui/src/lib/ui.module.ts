@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { CircleComponent } from './circle/circle.component';
 
 import { TrackComponent } from './track/track.component';
 import { ContentContainerComponent } from './content-container/content-container.component';
@@ -42,6 +43,7 @@ import {
   cviCalendar,
   cviCall,
   cviCheckCircleOutline,
+  cviCheck,
   cviClose,
   cviEditSimple,
   cviEmail,
@@ -161,6 +163,7 @@ const components = [
   TimedNoticeComponent,
   FormMessageComponent,
   FormMessageDirective,
+  CircleComponent,
 ];
 
 const pipes = [
@@ -203,6 +206,7 @@ export class UiModule {
       cviClose,
       cviInfo,
       cviCheckCircleOutline,
+      cviCheck,
       cviWarningAmber,
       cviErrorOutline,
       cviLoupe,

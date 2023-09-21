@@ -1,0 +1,63 @@
+@mixin cvi-circle($base: &) {
+  --comment: 'Themed circle';
+
+  $circle-border-width: 2px;
+
+  $circle-size-m: 32px;
+  $circle-size-s: 24px;
+
+  $icon-size-m: 14px;
+  $icon-size-s: 10px;
+
+  border-radius: 51%;
+  border: $circle-border-width solid var(--cvi-circle-border-color, var(--border-color));
+  color: var(--color);
+  fill: var(--color);
+  background-color: var(--background-color);
+  line-height: 0;
+  aspect-ratio: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @at-root {
+    #{$base}--size-s {
+      width: $circle-size-s;
+      font-size: get-font-size(50);
+
+      #{$base}__content-icon {
+        height: $icon-size-s;
+      }
+    }
+
+    #{$base}--size-m {
+      width: $circle-size-m;
+      font-weight: get-font-weight(gamma);
+
+      #{$base}__content-icon {
+        height: $icon-size-m;
+      }
+    }
+
+    #{$base}--with-progress {
+      border: $circle-border-width solid transparent;
+      color: get-color(white);
+      background-image: linear-gradient(
+          var(--progress-background-color),
+          var(--progress-background-color)),
+      conic-gradient(
+          get-color(sapphire-blue-10) var(--progress),
+          get-color(black-coral-2) var(--progress));
+      background-origin: border-box;
+      background-clip: content-box, border-box;
+
+      &#{$base}--severity-none {
+        color: get-color(black-coral-10);
+      }
+
+      #{$base}__content-icon {
+        fill: get-color(black-coral-10);
+      }
+    }
+  }
+}
