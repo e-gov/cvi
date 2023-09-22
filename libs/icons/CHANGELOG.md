@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [1.12.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/icons-1.11.0...icons-1.12.0) (2023-09-22)
+
+
+### Features
+
+* **icons:** add new heart icons  ([#182](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/182)) ([77b29bc](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/77b29bc765600e8c005133096c36b94ac6a23116))
+
+
+
 # [1.11.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/icons-1.10.1...icons-1.11.0) (2023-09-19)
 
 
