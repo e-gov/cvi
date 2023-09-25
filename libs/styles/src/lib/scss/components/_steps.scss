@@ -77,7 +77,6 @@
     }
 
     #{$base}__list {
-      counter-reset: numberedlist;
       list-style: none;
       gap: get-spacing('paldiski');
       @include cvi-breakpoint-down(sm) {
@@ -94,10 +93,7 @@
     }
 
     #{$base}__list-item {
-      counter-increment: numberedlist;
       @include cvi-breakpoint-down(sm) {
-        color: get-color(black-coral-15);
-        font-weight: get-font-weight(beta);
         border-top-left-radius: var(--cvi-radius-s);
         border-top-right-radius: var(--cvi-radius-s);
         background-color: get-color(white);
@@ -163,66 +159,6 @@
 
         &:focus-visible {
           outline: none;
-        }
-      }
-    }
-
-    #{$base}__list-item-inner {
-      @include cvi-breakpoint-down(sm) {
-        --number-background-color: var(--cvi-color-sapphire-blue-0);
-
-        display: flex;
-        width: 100%;
-        gap: get-spacing('haapsalu');
-        align-items: center;
-        color: get-color(sapphire-blue-10);
-
-        &::before {
-          flex-shrink: 0;
-          border-radius: 51%;
-          border: $number-border-width solid transparent;
-          content: counter(numberedlist);
-          width: $number-size--mobile;
-          background-image: linear-gradient(var(--number-background-color), var(--number-background-color)),
-            conic-gradient(
-              get-color(sapphire-blue-10) var(--progress),
-              get-color(black-coral-2) var(--progress)
-            );
-          background-origin: border-box;
-          background-clip: content-box, border-box;
-          aspect-ratio: 1;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          font-weight: get-font-weight(gamma);
-
-          #{$base}.is-any-step-selected & {
-            --number-background-color: var(--cvi-color-white);
-
-            color: get-color(black-coral-10);
-          }
-        }
-      }
-      @include cvi-breakpoint-up(sm) {
-        display: flex;
-        gap: get-spacing('paldiski');
-        width: 100%;
-        height: 100%;
-        align-items: center;
-
-        &::before {
-          content: counter(numberedlist);
-          border-radius: 51%;
-          border: $number-border-width solid currentColor;
-          color: currentColor;
-          font-size: get-font-size(80);
-          line-height: 0;
-          padding-inline: 8px;
-          width: $number-size--desktop;
-          aspect-ratio: 1;
-          display: flex;
-          justify-content: center;
-          align-items: center;
         }
       }
     }
