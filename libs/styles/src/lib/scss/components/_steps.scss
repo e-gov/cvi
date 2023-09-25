@@ -227,6 +227,19 @@
       }
     }
 
+    #{$base}__list-item-circle-wrapper {
+      @include cvi-breakpoint-down(sm) {
+        &--desktop {
+          display: none;
+        }
+      }
+      @include cvi-breakpoint-up(sm) {
+        &--mobile {
+          display: none;
+        }
+      }
+    }
+
     #{$base}__list-item-title {
       @include cvi-breakpoint-down(sm) {
         color: get-color(sapphire-blue-10);

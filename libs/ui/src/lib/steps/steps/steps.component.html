@@ -4,7 +4,7 @@
     <ng-content select="[cvi-steps=after-title]"></ng-content>
   </div>
   <div class="cvi-steps__inner" dataAttribute="steps_container">
-    <ol class="cvi-steps__list" [style.--progress]="anyStepSelected ? currentProgressCSSVar + '%' : '100%'">
+    <ol class="cvi-steps__list">
       <li class="cvi-steps__list-item"
           *ngFor="let stepTitle of stepTitles; let i = index"
           [ngClass]="{'is-past': this.currentStepIndex !== null && i <= currentStepIndex, 'is-current': i === currentStepIndex}"
@@ -13,9 +13,18 @@
                 (click)="stepSelected(i)">
           <cvi-ng-track [layout]="'flex'" [horizontalAlignment]="'justify'" [verticalAlignment]="'center'">
             <cvi-ng-track [gap]="2" [verticalAlignment]="'center'">
-              <cvi-ng-circle [theme]="i === currentStepIndex ? 'light' : 'dark'">
-                {{ i + 1 }}
-              </cvi-ng-circle>
+              <div class="cvi-steps__list-item-circle-wrapper--desktop">
+                <cvi-ng-circle [theme]="i === currentStepIndex ? 'light' : 'dark'">
+                  {{ i + 1 }}
+                </cvi-ng-circle>
+              </div>
+              <div class="cvi-steps__list-item-circle-wrapper--mobile">
+                <cvi-ng-circle
+                  [theme]="'dark'"
+                  [progressPercentage]="anyStepSelected ? currentProgressCSSVar : undefined">
+                  {{ i + 1 }}
+                </cvi-ng-circle>
+              </div>
               <span class="cvi-steps__list-item-title">{{ stepTitle }}</span>
             </cvi-ng-track>
             <cvi-ng-track [gap]="4">
