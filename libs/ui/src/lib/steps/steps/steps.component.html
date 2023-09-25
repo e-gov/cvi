@@ -20,7 +20,8 @@
               </div>
               <div class="cvi-steps__list-item-circle-wrapper--mobile">
                 <cvi-ng-circle
-                  [theme]="'dark'"
+                  size="m"
+                  style="--cvi-circle-border-color: var(--cvi-color-sapphire-blue-10); --cvi-circle-color: var(--cvi-color-sapphire-blue-10);"
                   [progressPercentage]="anyStepSelected ? currentProgressCSSVar : undefined">
                   {{ i + 1 }}
                 </cvi-ng-circle>
