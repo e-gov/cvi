@@ -226,18 +226,6 @@
           align-items: center;
         }
       }
-
-      #{$base}__list-item.is-current & {
-        @include cvi-breakpoint-up(sm) {
-          color: get-color(white);
-        }
-      }
-
-      #{$base}__list-item:not(.is-current) & {
-        @include cvi-breakpoint-up(sm) {
-          color: get-color(sapphire-blue-13);
-        }
-      }
     }
 
     #{$base}__list-item-title {
@@ -252,6 +240,11 @@
       @include cvi-breakpoint-up(sm) {
         #{$base}__list-item:not(.is-current) & {
           text-decoration: underline;
+          color: get-color(sapphire-blue-13);
+        }
+
+        #{$base}__list-item.is-current & {
+          color: get-color(white);
         }
       }
     }

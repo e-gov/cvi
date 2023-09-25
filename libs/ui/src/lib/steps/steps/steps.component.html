@@ -9,11 +9,16 @@
           *ngFor="let stepTitle of stepTitles; let i = index"
           [ngClass]="{'is-past': this.currentStepIndex !== null && i <= currentStepIndex, 'is-current': i === currentStepIndex}"
           [dataAttribute]="'cvi-steps__list-item_' + i">
-        <button class="cvi-steps__list-item-button" [dataAttribute]="'cvi-steps__list-item-button_' + i" (click)="stepSelected(i)">
-          <div class="cvi-steps__list-item-inner">
+        <button class="cvi-steps__list-item-button" [dataAttribute]="'cvi-steps__list-item-button_' + i"
+                (click)="stepSelected(i)">
+          <cvi-ng-track [gap]="2" [verticalAlignment]="'center'">
+            <cvi-ng-circle [theme]="i === currentStepIndex ? 'light' : 'dark'">
+              {{ i + 1 }}
+            </cvi-ng-circle>
             <span class="cvi-steps__list-item-title">{{ stepTitle }}</span>
-            <cvi-ng-icon [name]="'arrow_a_right'" class="cvi-steps__list-item-arrow-icon-wrapper" [svgClass]="'cvi-steps__list-item-arrow-icon'"></cvi-ng-icon>
-          </div>
+            <cvi-ng-icon [name]="'arrow_a_right'" class="cvi-steps__list-item-arrow-icon-wrapper"
+                         [svgClass]="'cvi-steps__list-item-arrow-icon'"></cvi-ng-icon>
+          </cvi-ng-track>
         </button>
       </li>
     </ol>
