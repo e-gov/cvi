@@ -14,7 +14,8 @@
           <cvi-ng-track [layout]="'flex'" [horizontalAlignment]="'justify'" [verticalAlignment]="'center'">
             <cvi-ng-track [gap]="2" [verticalAlignment]="'center'">
               <div class="cvi-steps__list-item-circle-wrapper--desktop">
-                <cvi-ng-circle [theme]="i === currentStepIndex ? 'light' : 'dark'">
+                <cvi-ng-circle [theme]="i === currentStepIndex ? 'light' : 'dark'"
+                               [severity]="(this.stepStatuses[i]) | toStepCircleSeverity">
                   {{ i + 1 }}
                 </cvi-ng-circle>
               </div>

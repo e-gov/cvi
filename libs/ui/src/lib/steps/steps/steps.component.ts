@@ -50,6 +50,7 @@ export class StepsComponent
 
   @Output() stepChange = new EventEmitter<number>();
 
+  stepStatuses!: ('success' | 'error' | null)[];
   stepTitles!: string[];
   @Input() currentProgressCSSVar = 0;
   @Input() anyStepSelected = false;
@@ -95,7 +96,7 @@ export class StepsComponent
   }
 
   ngAfterContentInit(): void {
-    this.updateTitles(this._stepPanels.toArray());
+    this.updateStepsData(this._stepPanels.toArray());
     if (this.currentStepIndex !== null) {
       this.anyStepSelected = true;
       this.setProgress(this.currentStepIndex);
@@ -109,7 +110,7 @@ export class StepsComponent
       this.cdRef.markForCheck();
     });
     this._stepPanels.changes.subscribe((stepPanels: StepPanelComponent[]) => {
-      this.updateTitles(stepPanels);
+      this.updateStepsData(stepPanels);
       this.cdRef.markForCheck();
     });
   }
@@ -127,9 +128,12 @@ export class StepsComponent
     }
   }
 
-  updateTitles(stepPanels: StepPanelComponent[]) {
+  updateStepsData(stepPanels: StepPanelComponent[]) {
     this.stepTitles = stepPanels.map(
       (stepPanel: StepPanelComponent) => stepPanel.title
+    );
+    this.stepStatuses = stepPanels.map(
+      (stepPanel: StepPanelComponent) => stepPanel.status
     );
   }
 
