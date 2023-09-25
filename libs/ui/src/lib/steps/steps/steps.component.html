@@ -11,13 +11,17 @@
           [dataAttribute]="'cvi-steps__list-item_' + i">
         <button class="cvi-steps__list-item-button" [dataAttribute]="'cvi-steps__list-item-button_' + i"
                 (click)="stepSelected(i)">
-          <cvi-ng-track [gap]="2" [verticalAlignment]="'center'">
-            <cvi-ng-circle [theme]="i === currentStepIndex ? 'light' : 'dark'">
-              {{ i + 1 }}
-            </cvi-ng-circle>
-            <span class="cvi-steps__list-item-title">{{ stepTitle }}</span>
-            <cvi-ng-icon [name]="'arrow_a_right'" class="cvi-steps__list-item-arrow-icon-wrapper"
-                         [svgClass]="'cvi-steps__list-item-arrow-icon'"></cvi-ng-icon>
+          <cvi-ng-track [layout]="'flex'" [horizontalAlignment]="'justify'" [verticalAlignment]="'center'">
+            <cvi-ng-track [gap]="2" [verticalAlignment]="'center'">
+              <cvi-ng-circle [theme]="i === currentStepIndex ? 'light' : 'dark'">
+                {{ i + 1 }}
+              </cvi-ng-circle>
+              <span class="cvi-steps__list-item-title">{{ stepTitle }}</span>
+            </cvi-ng-track>
+            <cvi-ng-track [gap]="4">
+              <cvi-ng-icon [name]="'arrow_a_right'" class="cvi-steps__list-item-arrow-icon-wrapper"
+                           [svgClass]="'cvi-steps__list-item-arrow-icon'"></cvi-ng-icon>
+            </cvi-ng-track>
           </cvi-ng-track>
         </button>
       </li>

@@ -136,7 +136,6 @@
       font-size: get-font-size(100);
 
       @include cvi-breakpoint-down(sm) {
-        display: flex;
         width: 100%;
         padding-block: get-spacing('paldiski');
         #{$base}:not(.is-any-step-selected) & {
@@ -230,7 +229,7 @@
 
     #{$base}__list-item-title {
       @include cvi-breakpoint-down(sm) {
-        flex-grow: 1;
+        color: get-color(sapphire-blue-10);
         font-weight: get-font-weight(gamma);
         #{$base}.is-any-step-selected & {
           font-weight: get-font-weight(delta);
@@ -257,7 +256,7 @@
 
     #{$base}__list-item-arrow-icon {
       @include cvi-breakpoint-down(sm) {
-        fill: currentColor;
+        fill: get-color(sapphire-blue-10);
         height: 12px;
         #{$base}.is-any-step-selected & {
           display: none;
