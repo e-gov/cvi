@@ -12,25 +12,28 @@
         <button class="cvi-steps__list-item-button" [dataAttribute]="'cvi-steps__list-item-button_' + i"
                 (click)="stepSelected(i)">
           <cvi-ng-track [layout]="'flex'" [horizontalAlignment]="'justify'" [verticalAlignment]="'center'">
-            <cvi-ng-track [gap]="2" [verticalAlignment]="'center'">
-              <div class="cvi-steps__list-item-circle-wrapper--desktop">
+            <div class="cvi-steps__list-item-circle-wrapper--desktop">
+              <cvi-ng-track [gap]="2" [verticalAlignment]="'center'">
                 <cvi-ng-circle
                   [theme]="i === currentStepIndex || this.stepStatuses[i] === 'success' || this.stepStatuses[i] === 'error'  ? 'light' : 'dark'"
                   [severity]="this.stepStatuses[i] | toStepCircleSeverity"
                   [iconName]="this.stepStatuses[i] | toStepCircleIconName">
                   {{ i + 1 }}
                 </cvi-ng-circle>
-              </div>
-              <div class="cvi-steps__list-item-circle-wrapper--mobile">
+                <span class="cvi-steps__list-item-title">{{ stepTitle }}</span>
+              </cvi-ng-track>
+            </div>
+            <div class="cvi-steps__list-item-circle-wrapper--mobile">
+              <cvi-ng-track [gap]="4" [verticalAlignment]="'center'">
                 <cvi-ng-circle
                   size="m"
                   style="--cvi-circle-border-color: var(--cvi-color-sapphire-blue-10); --cvi-circle-color: var(--cvi-color-sapphire-blue-10);"
                   [progressPercentage]="anyStepSelected ? currentProgressCSSVar : undefined">
                   {{ i + 1 }}
                 </cvi-ng-circle>
-              </div>
-              <span class="cvi-steps__list-item-title">{{ stepTitle }}</span>
-            </cvi-ng-track>
+                <span class="cvi-steps__list-item-title">{{ stepTitle }}</span>
+              </cvi-ng-track>
+            </div>
             <cvi-ng-track [gap]="4">
               <cvi-ng-icon [name]="'arrow_a_right'" class="cvi-steps__list-item-arrow-icon-wrapper"
                            [svgClass]="'cvi-steps__list-item-arrow-icon'"></cvi-ng-icon>
