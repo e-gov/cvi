@@ -27,13 +27,19 @@ export default {
     withTooltip: false,
     tooltipText: 'some tooltip text',
     tooltipIcon: 'info',
+    hasBackground: true,
   },
 } as Meta<StatusBadgeComponent>;
 
 const Template: Story<StatusBadgeComponent> = (args: StatusBadgeComponent) => ({
   props: args,
   template: `
-    <cvi-ng-status-badge [severity]="severity" [label]="label" [withTooltip]="withTooltip" [tooltipText]="tooltipText" [tooltipIcon]="tooltipIcon">
+    <cvi-ng-status-badge [severity]="severity"
+                         [label]="label"
+                         [withTooltip]="withTooltip"
+                         [tooltipText]="tooltipText"
+                         [tooltipIcon]="tooltipIcon"
+                         [hasBackground]="hasBackground">
     </cvi-ng-status-badge>
   `,
 });

@@ -23,6 +23,7 @@ export class StatusBadgeComponent {
   @Input() withTooltip = false;
   @Input() tooltipText? = '';
   @Input() tooltipIcon?: CviIconName = 'info';
+  @Input() hasBackground = true;
 
   @HostBinding('class') get hostClasses(): string {
     return `cvi-status-badge`;
@@ -33,7 +34,7 @@ export class StatusBadgeComponent {
   @HostBinding('style.--background-color') get hostStyleBackgroundColor():
     | string
     | null {
-    return this.getCustomProperty('--background-color');
+    return this.hasBackground ? this.getCustomProperty('--background-color') : null;
   }
   @HostBinding('style.--border-color') get hostStyleBorderColor():
     | string
