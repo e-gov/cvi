@@ -15,6 +15,8 @@ export * from './lib/notification/notification';
 export * from './lib/notification/notification.component';
 export * from './lib/input/input.component';
 export * from './lib/steps/steps/steps.component';
+export * from './lib/steps/steps/to-step-circle-icon-name.pipe';
+export * from './lib/steps/steps/to-step-circle-severity.pipe';
 export * from './lib/steps/step/step.component';
 export * from './lib/steps/step-panel/step-panel.component';
 export * from './lib/radio-button/radio-button/radio-button.component';

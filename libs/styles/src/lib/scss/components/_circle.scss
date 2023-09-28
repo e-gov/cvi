@@ -11,8 +11,8 @@
 
   border-radius: 51%;
   border: $circle-border-width solid var(--cvi-circle-border-color, var(--border-color));
-  color: var(--color);
-  fill: var(--color);
+  color: var(--cvi-circle-color, var(--color));
+  fill: var(--cvi-circle-color, var(--color));
   background-color: var(--background-color);
   line-height: 0;
   aspect-ratio: 1;

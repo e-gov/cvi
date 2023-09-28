@@ -23,6 +23,15 @@ export class StepPanelComponent implements OnDestroy {
     return this._title;
   }
 
+  _status: 'success' | 'error' | null = null;
+  @Input()
+  set status(status: 'success' | 'error' | null) {
+    this._status = status;
+  }
+  get status(): 'success' | 'error' | null {
+    return this._status;
+  }
+
   /** @internal */
   public titleChangeSubject = new ReplaySubject<string>(1);
 

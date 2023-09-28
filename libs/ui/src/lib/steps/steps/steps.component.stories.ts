@@ -226,3 +226,40 @@ WithHTMLSections.parameters = {
     disabledRules: ['button-name'],
   },
 };
+
+const TemplateWithStepStatus: Story = (args) => ({
+  component: StepsComponent,
+  props: {
+    ...args,
+  },
+  /* template */
+  template: `
+    <cvi-ng-steps [title]="title" [currentStepIndex]="currentStepIndex">
+      <cvi-ng-step>
+        <cvi-ng-step-panel title="First" [status]="null">
+          <span>Status is set to 'null'.</span>
+        </cvi-ng-step-panel>
+      </cvi-ng-step>
+      <cvi-ng-step>
+        <cvi-ng-step-panel title="Second" [status]="'success'">
+          <span>Success status!</span>
+        </cvi-ng-step-panel>
+      </cvi-ng-step>
+      <cvi-ng-step>
+        <cvi-ng-step-panel title="Third">
+          <span>Status is not set.</span>
+        </cvi-ng-step-panel>
+      </cvi-ng-step>
+      <cvi-ng-step>
+        <cvi-ng-step-panel title="Fourth" [status]="'error'">
+          <span>Error status!</span>
+        </cvi-ng-step-panel>
+      </cvi-ng-step>
+    </cvi-ng-steps>
+  `,
+});
+
+export const WithStepStatuses = TemplateWithStepStatus.bind({});
+WithStepStatuses.args = {
+  currentStepIndex: 0,
+};
