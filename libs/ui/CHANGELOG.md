@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [2.3.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-2.2.0...ui-2.3.0) (2023-09-29)
+
+
+### Features
+
+* badge without background EBS-939 STPA-277 ([#185](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/185)) ([33588e7](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/33588e7b9f01a403801b3a1b9f5d4ceda4ee0492))
+
+
+
 # [2.2.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-2.1.0...ui-2.2.0) (2023-09-29)
 
 
