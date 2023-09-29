@@ -7,6 +7,7 @@ export const statusBadgeCustomPropertyGroups: StatusBadgeCustomPropertyGroup[] =
       customProperties: {
         '--color': '--cvi-color-sapphire-blue-10',
         '--background-color': '--cvi-color-sapphire-blue-0',
+        '--border-color': '--cvi-color-sapphire-blue-10',
       },
     },
     {
@@ -14,6 +15,7 @@ export const statusBadgeCustomPropertyGroups: StatusBadgeCustomPropertyGroup[] =
       customProperties: {
         '--color': '--cvi-color-sea-green-11',
         '--background-color': '--cvi-color-sea-green-0',
+        '--border-color': '--cvi-color-sea-green-11',
       },
     },
     {
