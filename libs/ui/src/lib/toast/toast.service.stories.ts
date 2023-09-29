@@ -39,7 +39,7 @@ class ToastWrapperComponent {
   }
 
   openErrorToast() {
-    this.toastService.error('Error Title', 'Message');
+    this.toastService.error('Error Title', 'Message. Long unbreakable string: 6516949e9bbc0e07ddbaa7283d558cf1');
   }
 }
 

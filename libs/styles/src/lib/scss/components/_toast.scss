@@ -2,7 +2,8 @@
   --comment: 'A toast aka floating notification';
 
   position: relative;
-  width: 300px;
+  min-width: 300px;
+  width: min-content;
   overflow: hidden;
   padding: var(--cvi-spacing-haapsalu);
   margin-bottom: var(--cvi-spacing-paldiski);
@@ -71,6 +72,8 @@
     #{$base}__title-text {
       font-size: get-font-size(200);
       margin-left: 10px;
+      font-weight: get-font-weight(beta);
+      line-height: get-line-height(100);
     }
 
     #{$base}__close-button {
