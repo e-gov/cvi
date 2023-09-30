@@ -28,6 +28,7 @@ export default {
     withTooltip: false,
     tooltipText: 'some tooltip text',
     tooltipIcon: 'info',
+    hasBackground: true,
   },
 } as Meta<StatusBadgeComponent>;
 

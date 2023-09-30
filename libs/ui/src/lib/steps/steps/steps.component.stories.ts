@@ -36,6 +36,8 @@ export default {
       'Its contents are mildly interesting, if you like that sort of thing.',
       'There is a "Moments in the Nursery" page, conducted by Luella Granville Waterman.',
       'There is a "Moments of Meditation" page, conducted by the Reverend Edwin T. Philpotts.',
+      '<div class="cvi-html-section__content"><div class="cvi-html-section__content-elements"><p>Võtke ühendust Politsei- ja Piirivalveametiga.</p></div><div class="cvi-html-section__content-elements"><cvi-web-track gap="4" layout="flex" flex-direction="vertical"><cvi-web-labeled-icon name="email"><a href="mailto:ppa&#64;politsei.ee">ppa&#64;politsei.ee</a></cvi-web-labeled-icon><cvi-web-labeled-icon name="screen_share"><a href="https://www.politsei.ee/" target="_blank" class="external-link" rel="noopener noreferrer">politsei.ee</a></cvi-web-labeled-icon><cvi-web-labeled-icon name="location">Pärnu mnt 139, 15060 Tallinn</cvi-web-labeled-icon></cvi-web-track></div></div>"',
+      '<div class="cvi-html-section__content"><div class="cvi-html-section__content-elements"><p>Võtke ühendust perekonnaseisuasutusega, kus soovite abielu sõlmida.</p></div><div class="cvi-html-section__content-elements"><cvi-web-track gap="4" layout="flex" flex-direction="vertical"><cvi-web-labeled-icon name="screen_share"><a href="https://www.siseministeerium.ee/maakonnakeskuse-kohalikud-omavalitsused-rahvastiku-toimingute-valdkonnas" target="_blank" class="external-link" rel="noopener noreferrer">Maakonnakeskuse kohalikud omavalitsused</a></cvi-web-labeled-icon><cvi-web-labeled-icon name="screen_share"><a href="https://www.notar.ee/et/notarid/nimekiri" target="_blank" class="external-link" rel="noopener noreferrer">Notarid</a></cvi-web-labeled-icon><cvi-web-labeled-icon name="screen_share"><a href="https://www.siseministeerium.ee/abielu-solmimise-oigust-omavad-vaimulikud" target="_blank" class="external-link" rel="noopener noreferrer">Abielu sõlmimise õigust omavad vaimulikud</a></cvi-web-labeled-icon></cvi-web-track></div></div>"',
     ],
   },
 } as Meta<StepsComponent>;
@@ -188,5 +190,68 @@ export const WithTranslations = {
       // disabling because axe doesn't wait sometimes for the button text to load
       disabledRules: ['button-name'],
     },
+  },
+};
+
+export const WithHTMLSections = {
+  render: (args: StepsComponent) => ({
+    props: args,
+    /* template */
+    template: `
+      <cvi-ng-steps [title]="'common.steps.title' | translate" [currentStepIndex]="currentStepIndex" [hasTableOfContents]="hasTableOfContents">
+        <p cvi-steps="after-title" dataAttribute="steps-description">You can now add custom content before steps</p>
+        <cvi-ng-step dataAttribute="step_1">
+          <cvi-ng-step-panel [title]="'common.steps.step1' | translate">
+            <cvi-ng-html-section html="{{ stepsContent[5] }}"></cvi-ng-html-section>
+          </cvi-ng-step-panel>
+        </cvi-ng-step>
+        <cvi-ng-step dataAttribute="step_2">
+          <cvi-ng-step-panel [title]="'common.steps.step2' | translate">
+            <cvi-ng-html-section html="{{ stepsContent[4] }}"></cvi-ng-html-section>
+          </cvi-ng-step-panel>
+        </cvi-ng-step>
+      </cvi-ng-steps>
+    `,
+  }),
+
+  parameters: {
+    axe: {
+      // disabling because axe doesn't wait sometimes for the button text to load
+      disabledRules: ['button-name'],
+    },
+  },
+};
+
+export const WithStepStatus = {
+  render: (args: StepsComponent) => ({
+    props: args,
+    /* template */
+    template: `
+      <cvi-ng-steps [title]="title" [currentStepIndex]="currentStepIndex">
+        <cvi-ng-step>
+          <cvi-ng-step-panel title="First" [status]="null">
+            <span>Status is set to 'null'.</span>
+          </cvi-ng-step-panel>
+        </cvi-ng-step>
+        <cvi-ng-step>
+          <cvi-ng-step-panel title="Second" status="success">
+            <span>Success status!</span>
+          </cvi-ng-step-panel>
+        </cvi-ng-step>
+        <cvi-ng-step>
+          <cvi-ng-step-panel title="Third">
+            <span>Status is not set.</span>
+          </cvi-ng-step-panel>
+        </cvi-ng-step>
+        <cvi-ng-step>
+          <cvi-ng-step-panel title="Fourth" status="error">
+            <span>Error status!</span>
+          </cvi-ng-step-panel>
+        </cvi-ng-step>
+      </cvi-ng-steps>
+    `,
+  }),
+  args: {
+    currentStepIndex: 1,
   },
 };

@@ -105,3 +105,15 @@
 .cvi-datepicker {
   @include cvi-datepicker;
 }
+
+.cvi-timed-notice {
+  @include cvi-timed-notice;
+}
+
+.cvi-form-message{
+  @include cvi-form-message;
+}
+
+.cvi-circle {
+  @include cvi-circle;
+}

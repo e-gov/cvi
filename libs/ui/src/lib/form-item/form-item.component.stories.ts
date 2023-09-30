@@ -12,10 +12,45 @@ export default {
   title: 'Angular/Form/Form item',
   component: FormItemComponent,
   parameters: { notes },
+  argTypes: {
+    displayMessage: {
+      name: 'Show form message?',
+      table: {
+        category: 'Playground',
+      },
+    },
+    title: {
+      name: 'Form message title',
+      if: { arg: 'displayMessage', eq: true },
+      table: {
+        category: 'Playground',
+      },
+    },
+    message: {
+      name: 'Form message text',
+      if: { arg: 'displayMessage', eq: true },
+      table: {
+        category: 'Playground',
+      },
+    },
+    severityLevel: {
+      name: 'Form message severity level',
+      if: { arg: 'displayMessage', eq: true },
+      options: ['warning', 'error'],
+      control: { type: 'inline-radio' },
+      table: {
+        category: 'Playground',
+      },
+    },
+  },
   args: {
     htmlId: 'fksd4kfds',
     label: 'Example label',
     placeholder: 'Placeholder text...',
+    displayMessage: false,
+    message: 'Error',
+    severityLevel: 'warning',
+    title: 'Warning message',
   },
 } as Meta<FormItemComponent>;
 
@@ -70,16 +105,39 @@ export const WithInlineFormElements = {
                           [label]="label"
                           [labelId]="labelId"
                           [htmlId]="htmlId">
-          <cvi-ng-input [placeholder]="placeholder" [htmlId]="htmlId"></cvi-ng-input>
+          <cvi-ng-input [placeholder]="placeholder"
+                        [htmlId]="htmlId"
+                        cviNgFormMessage
+                        [displayMessage]="displayMessage"
+                        [severityLevel]="severityLevel"
+                        [message]="message"
+                        [title]="title">
+          </cvi-ng-input>
         </cvi-ng-form-item>
-        <cvi-ng-form-item label="Datepicker" htmlId="datepicker-id">
-          <cvi-ng-datepicker placeholder="Pick a date" htmlId="datepicker-id"></cvi-ng-datepicker>
+        <cvi-ng-form-item label="Datepicker"
+                          htmlId="datepicker-id">
+          <cvi-ng-datepicker placeholder="Pick a date"
+                            htmlId="datepicker-id"
+                            cviNgFormMessage
+                            [severityLevel]="severityLevel"
+                            [displayMessage] ="displayMessage"
+                            [message]="message"
+                            [title]="title">
+          </cvi-ng-datepicker>
         </cvi-ng-form-item>
         <cvi-ng-form-item label="Select"
                           labelId="select-label-id"
                           htmlId="select-id"
                           [ngStyle]="{'width.px': 220}">
-          <cvi-ng-select [items]="items" labelId="select-label-id" htmlId="select-id"></cvi-ng-select>
+          <cvi-ng-select [items]="items"
+                        labelId="select-label-id"
+                        htmlId="select-id"
+                        cviNgFormMessage
+                        [severityLevel]="severityLevel"
+                        [displayMessage] ="displayMessage"
+                        [message]="message"
+                        [title]="title">
+          </cvi-ng-select>
         </cvi-ng-form-item>
       </cvi-ng-track>
     `,

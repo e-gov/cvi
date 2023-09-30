@@ -2,6 +2,7 @@ import {
   ChangeDetectionStrategy,
   Component,
   EventEmitter,
+  HostBinding,
   Input,
   Output,
 } from '@angular/core';
@@ -13,11 +14,26 @@ import { CviIconName } from '@egov/cvi-icons';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class BreadcrumbsComponent {
-  @Input() breadcrumbLabels!: string[];
+  @Input() breadcrumbs!: { title: string; href: string | undefined }[];
 
   /** Name of an icon in front of breadcrumb */
   // TODO: the icon is always the same (arrow_a_left), the prop should be removed
   @Input() iconName: CviIconName | null = null;
 
   @Output() breadcrumbChange = new EventEmitter<number>();
+
+  mobileBreadcrumbIndex!: number;
+
+  // Finds the index of a breadcrumb item that should be shown for mobile view.
+  // Finds the index of last element starting from penultimate element in the list that has a href.
+  // If no such elements exist, returns index of last element.
+  public getMobileBreadcrumbIndex(): number {
+    const lastElementIndex = this.breadcrumbs.length - 1;
+    for (let index = lastElementIndex - 1; index >= 0; index--) {
+      if (index !== lastElementIndex && this.breadcrumbs[index].href) {
+        return index;
+      }
+    }
+    return lastElementIndex;
+  }
 }

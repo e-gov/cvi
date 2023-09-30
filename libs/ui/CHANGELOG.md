@@ -2,6 +2,152 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [2.3.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-2.2.0...ui-2.3.0) (2023-09-29)
+
+
+### Features
+
+* badge without background EBS-939 STPA-277 ([#185](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/185)) ([33588e7](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/33588e7b9f01a403801b3a1b9f5d4ceda4ee0492))
+
+
+
+# [2.2.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-2.1.0...ui-2.2.0) (2023-09-29)
+
+
+### Features
+
+* use cvi-ng-circle in steps EBS-880 STPA-280 ([#183](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/183)) ([3e56da2](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/3e56da2b564a9a4120286a07ac60120d72c72332))
+
+
+
+# [2.1.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-2.0.0...ui-2.1.0) (2023-09-21)
+
+
+### Features
+
+* **ng:** add circle component EBS-879 STPA-277 ([#179](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/179)) ([8d98f89](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/8d98f89e454a6129eb49dbe839f28d79c6936d61))
+
+
+
+# [2.0.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.31.1...ui-2.0.0) (2023-09-11)
+
+
+### Features
+
+* breadcrumbs without link EBS-904 STPA-268 ([#177](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/177)) ([e25655f](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/e25655f180b3d1dee2dfe23b3129be9b0d92b3b6))
+
+
+### BREAKING CHANGES
+
+* breadcrumb component input
+
+* refactor: code review
+
+
+
+## [1.31.1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.31.0...ui-1.31.1) (2023-09-07)
+
+
+### Bug Fixes
+
+* timed-notice incorrect import ([#176](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/176)) ([377070a](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/377070ae4ead66946f378243329b7008c48f4632))
+
+
+
+# [1.31.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.30.1...ui-1.31.0) (2023-09-05)
+
+
+### Features
+
+* **ng:** create form notification component EBS-864  ([#170](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/170)) ([e3a9bc2](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/e3a9bc2fbfd7896cf5a8c1db6801221548a209b4))
+
+
+
+## [1.30.1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.30.0...ui-1.30.1) (2023-09-01)
+
+
+
+# [1.30.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.29.0...ui-1.30.0) (2023-08-29)
+
+
+### Features
+
+* **ng:** html section to have the possibility of custom components EBS-856 ([#174](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/174)) ([8ceeea3](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/8ceeea34cd97f0e8a42064a98fc3f6575fd83f5a))
+
+
+
+# [1.29.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.28.1...ui-1.29.0) (2023-08-29)
+
+
+### Features
+
+* **ng:** box diagram EBS-856 ([#173](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/173)) ([3cd6156](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/3cd615642b04b4839d97b935da8d020b2ff5b92e))
+
+
+
+## [1.28.1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.28.0...ui-1.28.1) (2023-08-22)
+
+
+### Bug Fixes
+
+* **ng:** iconName import in timed-notice component ([#168](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/168)) ([2b2c6b1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/2b2c6b1500a272b941a5f963997e06b4292edec0))
+
+
+
+# [1.28.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.27.1...ui-1.28.0) (2023-08-17)
+
+
+### Features
+
+* **ng:** add icon possibility for tab components EBS-362 ([#165](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/165)) ([910a79c](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/910a79c0b3c29e2862b051502135f5de65cb827d))
+
+
+
+## [1.27.1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.27.0...ui-1.27.1) (2023-08-16)
+
+
+### Bug Fixes
+
+* **ng:** fix datepicker component bugs EBS-858 STPA-248 ([#167](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/167)) ([d7d0656](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/d7d065689641e254f63b3542eb00d2d8fe9dd24f))
+
+
+
+# [1.27.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.26.0...ui-1.27.0) (2023-08-16)
+
+
+### Features
+
+* **ng:** notice component ([#159](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/159)) ([0e5e064](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/0e5e0641c319b1d43f45570294348f15c7a3e71a))
+
+
+
+# [1.26.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.25.0...ui-1.26.0) (2023-08-13)
+
+
+### Features
+
+* **storybook:** add html section story to storybook steps component  ([#164](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/164)) ([9cdaeac](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/9cdaeaccc75b6769bb83a7d27f45cdd5e42ad108))
+
+
+
+# [1.25.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.24.1...ui-1.25.0) (2023-08-10)
+
+
+### Features
+
+* **ng:** add maxLength input to input component EBS-853 ([#163](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/163)) ([b17af8f](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/b17af8fa9552f40136e95b015e8fcc113aab4bdd))
+
+
+
+## [1.24.1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.24.0...ui-1.24.1) (2023-08-10)
+
+
+### Bug Fixes
+
+* **ng:** html section content web components removed on re-rendering EBS-835 ([#161](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/161)) ([b5227a5](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/b5227a5f61d0c670ad2ba6eaade8d8d16d6a13c4))
+
+
+
 # [1.24.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-1.23.2...ui-1.24.0) (2023-08-02)
 
 

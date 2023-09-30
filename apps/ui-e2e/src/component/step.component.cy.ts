@@ -15,7 +15,7 @@ describe('StepComponent', () => {
           'is-current',
         ])
           .shouldHaveClasses('button', 'cvi-steps__list-item-button')
-          .shouldHaveClasses('div', 'cvi-steps__list-item-inner')
+          .shouldExist('cvi-ng-circle')
           .shouldHaveClasses('span', 'cvi-steps__list-item-title')
           .get('cvi-ng-icon')
           .shouldHaveClasses('svg', 'cvi-steps__list-item-arrow-icon');

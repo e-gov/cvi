@@ -39,6 +39,9 @@ export class InputComponent implements ControlValueAccessor {
   /** HTML id passed from FormItem component */
   @Input() htmlId!: string;
 
+  /** Maximum number of characters allowed */
+  @Input() maxLength?: string;
+
   /** Input is disabled */
   @Input()
   set disabled(value: boolean) {

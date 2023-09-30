@@ -75,7 +75,9 @@
       color: var(--cvi-color-black-coral-12);
       font-size: get-font-size(100);
 
-      &.active, &:focus, &:hover {
+      &.active,
+      &:focus,
+      &:hover {
         background-color: var(--cvi-color-sapphire-blue-0);
       }
 

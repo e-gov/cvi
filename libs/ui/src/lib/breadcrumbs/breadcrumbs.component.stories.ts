@@ -7,7 +7,12 @@ export default {
   component: BreadcrumbsComponent,
   parameters: { notes },
   args: {
-    breadcrumbLabels: ['Avaleht', 'Abiellumine', 'Avalduse esitamine'],
+    breadcrumbs: [
+      { title: 'Avaleht', href: '/avaleht' },
+      { title: 'Ilma urlita samm' },
+      { title: 'Abiellumine', href: '/abiellumine' },
+      { title: 'Avalduse esitamine', href: '/abiellumine/avalduse-esitamine' },
+    ],
     iconName: 'arrow_a_left',
   },
 } as Meta<BreadcrumbsComponent>;

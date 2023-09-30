@@ -1,0 +1,48 @@
+import {Meta, Story} from '@storybook/addon-docs';
+import diagramsPkg from '/libs/ng-diagrams/package.json'
+
+<Meta title="Angular Diagrams/Installation" parameters={{
+  viewMode: 'docs',
+  chromatic: { disableSnapshot: true },
+}}/>
+
+# How to Install the Angular Diagrams library
+
+<Story name="Installation">
+  {{
+    props: {diagramsPkg},
+    template: `
+      Latest version: {{ diagramsPkg.version }}
+    `,
+  }}
+</Story>
+
+## peerDependencies
+
+```
+"@angular/animations": ">=14.1.0",
+"@angular/common": ">=14.1.0",
+"@angular/core": ">=14.1.0",
+"@angular/platform-browser": ">=14.1.0",
+"@angular/platform-browser-dynamic": ">=14.1.0",
+```
+
+## Installation
+
+1. Install the library
+```
+npm i --save @egov/cvi-ng-diagrams
+```
+
+2. Import `NgDiagramsModule` in your `app.module.ts`.
+
+```ts
+
+import { NgDiagramsModule } from '@egov/cvi-ng-diagrams';
+
+@NgModule({
+  ...
+  imports: [NgDiagramsModule],
+  ...
+})
+```

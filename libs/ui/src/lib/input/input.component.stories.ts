@@ -38,6 +38,7 @@ export default {
     onChanged: () => {},
     // eslint-disable-next-line @typescript-eslint/no-empty-function
     onTouched: () => {},
+    maxLength: '',
   },
 } as Meta;
 
@@ -119,6 +120,7 @@ const FormTemplate: StoryFn<InputComponent> = (args: InputComponent) => {
                         [disabled]="disabled"
                         [placeholder]="placeholder"
                         [htmlId]="htmlId"
+                        [maxLength]="maxLength"
                         [validationType]="validationType"></cvi-ng-input>
         </cvi-ng-form-item>
       </form>

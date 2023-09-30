@@ -1,5 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { CircleComponent } from './circle/circle.component';
+import { ToStepCircleIconNamePipe } from './steps/steps/to-step-circle-icon-name.pipe';
+import { ToStepCircleSeverityPipe } from './steps/steps/to-step-circle-severity.pipe';
 
 import { TrackComponent } from './track/track.component';
 import { ContentContainerComponent } from './content-container/content-container.component';
@@ -42,18 +45,22 @@ import {
   cviCalendar,
   cviCall,
   cviCheckCircleOutline,
+  cviCheck,
   cviClose,
   cviEditSimple,
   cviEmail,
   cviErrorOutline,
   cviHappyFace,
   cviInfo,
+  cviInputError,
   cviLocation,
   cviLoupe,
   cviSadFace,
   cviScreenShare,
   cviSuccess,
   cviWarningAmber,
+  cviOpenInNew,
+  cviFilter,
 } from '@egov/cvi-icons';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
@@ -93,6 +100,11 @@ import { DatepickerComponent } from './datepicker/datepicker.component';
 import { DatepickerCalendarComponent } from './datepicker/datepicker-calendar.component';
 import { DATEPICKER_LABEL_CONFIG } from './datepicker/datepicker-label-config.token';
 import { DefaultDatepickerLabelConfig } from './datepicker/default-datepicker-label.config';
+import { TimedNoticeComponent } from './timed-notice/timed-notice.component';
+import { TimedNoticeSeverityToIconPipe } from './timed-notice/timed-notice-severity-to-icon.pipe';
+import { FormMessageDirective } from './form-message/form-message.directive';
+import { FormMessageComponent } from './form-message/form-message.component';
+import { FormMessageSeverityToHeaderIconPipe } from './form-message/form-message-severity-to-header-icon.pipe';
 
 const components = [
   TrackComponent,
@@ -150,9 +162,20 @@ const components = [
   HeaderCellComponent,
   DatepickerComponent,
   DatepickerCalendarComponent,
+  TimedNoticeComponent,
+  FormMessageComponent,
+  FormMessageDirective,
+  CircleComponent,
 ];
 
-const pipes = [SafeHtmlPipe, NotificationSeverityToHeaderIconPipe];
+const pipes = [
+  SafeHtmlPipe,
+  NotificationSeverityToHeaderIconPipe,
+  TimedNoticeSeverityToIconPipe,
+  FormMessageSeverityToHeaderIconPipe,
+  ToStepCircleSeverityPipe,
+  ToStepCircleIconNamePipe,
+];
 
 const directives = [DataAttributeDirective];
 
@@ -187,6 +210,7 @@ export class UiModule {
       cviClose,
       cviInfo,
       cviCheckCircleOutline,
+      cviCheck,
       cviWarningAmber,
       cviErrorOutline,
       cviLoupe,
@@ -206,6 +230,9 @@ export class UiModule {
       cviArrowUpAlt,
       cviArrowDownAlt,
       cviCalendar,
+      cviInputError,
+      cviOpenInNew,
+      cviFilter,
     ]);
   }
 }

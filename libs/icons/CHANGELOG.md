@@ -2,6 +2,64 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [1.12.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/icons-1.11.0...icons-1.12.0) (2023-09-22)
+
+
+### Features
+
+* **icons:** add new heart icons  ([#182](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/182)) ([77b29bc](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/77b29bc765600e8c005133096c36b94ac6a23116))
+
+
+
+# [1.11.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/icons-1.10.1...icons-1.11.0) (2023-09-19)
+
+
+### Features
+
+* **icons:** add new icons ([#180](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/180)) ([ebdd49f](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/ebdd49f14605e9b9fd636663dc763b3f981f9afb))
+
+
+
+## [1.10.1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/icons-1.10.0...icons-1.10.1) (2023-09-01)
+
+
+
+# [1.10.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/icons-1.9.0...icons-1.10.0) (2023-08-29)
+
+
+### Features
+
+* **ng:** box diagram EBS-856 ([#173](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/173)) ([3cd6156](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/3cd615642b04b4839d97b935da8d020b2ff5b92e))
+
+
+
+# [1.9.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/icons-1.8.0...icons-1.9.0) (2023-08-25)
+
+
+### Features
+
+* add icon ([#172](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/172)) ([5662246](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/56622468590d07b7abbec5e7b7d09c18e38cda34))
+
+
+
+# [1.8.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/icons-1.7.0...icons-1.8.0) (2023-08-23)
+
+
+### Features
+
+* **icons:** add new icons ([#169](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/169)) ([ea8704d](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/ea8704d8411ed3c8f9ae4ccfc8377a220bee400f))
+
+
+
+# [1.7.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/icons-1.6.0...icons-1.7.0) (2023-08-17)
+
+
+### Features
+
+* **ng:** add icon possibility for tab components EBS-362 ([#165](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/165)) ([910a79c](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/910a79c0b3c29e2862b051502135f5de65cb827d))
+
+
+
 # [1.6.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/icons-1.5.0...icons-1.6.0) (2023-08-02)
 
 
