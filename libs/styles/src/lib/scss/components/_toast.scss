@@ -2,8 +2,7 @@
   --comment: 'A toast aka floating notification';
 
   position: relative;
-  min-width: 300px;
-  width: min-content;
+  width: 350px;
   overflow: hidden;
   padding: var(--cvi-spacing-haapsalu);
   margin-bottom: var(--cvi-spacing-paldiski);
@@ -11,6 +10,11 @@
   color: var(--cvi-color-black-coral-18);
   cursor: pointer;
   display: block;
+
+  @include cvi-breakpoint-down(sm) {
+    width: 300px;
+    max-width: calc(100vw - 40px);
+  }
 
   &:hover {
     box-shadow: var(--cvi-shadow-alpha);
@@ -67,6 +71,7 @@
     #{$base}__title {
       display: flex;
       align-items: center;
+      margin-top: 20px;
     }
 
     #{$base}__title-text {
@@ -96,6 +101,8 @@
 
     #{$base}__message {
       margin-top: var(--cvi-spacing-elva);
+      word-break: break-word;
+      overflow-wrap: break-word;
     }
 
     #{$base}__progress-bar {
