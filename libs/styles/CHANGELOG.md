@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [2.3.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/styles-2.2.0...styles-2.3.0) (2023-10-02)
+
+
+### Features
+
+* toast style modifications EBS-996 STPA-264 ([#186](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/186)) ([ce02431](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/ce0243149593b91148ada629f3d51888c8ba3f05))
+
+
+
 # [2.2.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/styles-2.1.0...styles-2.2.0) (2023-09-29)
 
 
