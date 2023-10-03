@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [1.13.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/storybook-1.12.1...storybook-1.13.0) (2023-10-03)
+
+
+### Features
+
+* **storybook:** Added a new background color to the Storybook and set it to the Icons list page to allow for faster discovery of fixed fills ([#191](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/191)) ([f600fa6](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/f600fa6d8587a90d5bdeb8d4851a32ec842b914d))
+
+
+
 ## [1.12.1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/storybook-1.12.0...storybook-1.12.1) (2023-09-29)
 
 
