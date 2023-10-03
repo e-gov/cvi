@@ -1,7 +1,7 @@
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { ToastService } from './toast.service';
 import notes from './toast.service.md';
-import { Component } from '@angular/core';
+import { AfterViewInit, Component } from '@angular/core';
 
 @Component({
   selector: 'cvi-ng-storybook-toast-wrapper',
@@ -20,8 +20,15 @@ import { Component } from '@angular/core';
     </cvi-ng-track>
   `,
 })
-class ToastWrapperComponent {
+class ToastWrapperComponent implements AfterViewInit {
   constructor(private toastService: ToastService) {}
+
+  ngAfterViewInit() {
+    this.toastService.info(
+      'Default Title',
+      'Default message. Long unbreakable string: 6516949e9bbc0e07ddbaa7283d558cf1'
+    );
+  }
 
   openSuccessToast() {
     this.toastService.success(
