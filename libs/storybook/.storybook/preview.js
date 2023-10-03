@@ -53,6 +53,10 @@ export const parameters = {
         name: 'Gray',
         value: '#f0f0f2',
       },
+      {
+        name: 'Darkgray',
+        value: '#cccccc',
+      },
     ],
   },
   options: {
