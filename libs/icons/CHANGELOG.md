@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.12.1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/icons-1.12.0...icons-1.12.1) (2023-10-04)
+
+
+### Bug Fixes
+
+* **icons:** removed offending attributes from some icons ([#194](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/194)) ([9c45759](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/9c457595790711a74b36469185697d48c4763dae))
+
+
+
 # [1.12.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/icons-1.11.0...icons-1.12.0) (2023-09-22)
 
 
