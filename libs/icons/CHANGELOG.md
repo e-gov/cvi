@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.12.2](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/icons-1.12.1...icons-1.12.2) (2023-10-04)
+
+
+### Bug Fixes
+
+* **icons:** make a white non-recolorable spot in the center of step_icon icon transparent ([#192](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/192)) ([306a10e](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/306a10e0e081cad8705617605e75a6f009aa7ddb))
+
+
+
 ## [1.12.1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/icons-1.12.0...icons-1.12.1) (2023-10-04)
 
 
