@@ -87,3 +87,6 @@ const TemplateOpenOnLoad: Story = (args) => ({
   `,
 });
 export const OpenOnLoad = TemplateOpenOnLoad.bind({});
+OpenOnLoad.parameters = {
+  chromatic: { delay: 1000 },
+};
