@@ -57,6 +57,7 @@
       ],
       "Button",
       "Table",
+      "Responsive table",
       "Status badge",
       "Accordion",
       "Icon",
@@ -78,7 +79,8 @@
       "Toast",
       "Modal",
       ["Modal directive", "Modal", "Confirmation modal"],
-      "Reorderable list"
+      "Reorderable list",
+      "Card"
     ],
     "Angular Diagrams",
     ["Installation"]
