@@ -1,0 +1,23 @@
+@use 'sass:map';
+
+@mixin cvi-table-responsive($base: &) {
+  --comment: 'A responsive table using card and table component styles';
+
+  #{$base}__cvi-table {
+    /* stylelint-disable-next-line selector-class-pattern */
+    .cvi-button__button {
+      text-decoration: none;
+    }
+
+    @include cvi-breakpoint-down(sm) {
+      display: none;
+    }
+  }
+
+  #{$base}__cvi-card {
+    @include cvi-breakpoint-up(sm) {
+      display: none;
+    }
+  }
+
+}

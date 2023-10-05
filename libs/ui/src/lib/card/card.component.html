@@ -1,0 +1,14 @@
+<cvi-ng-track [gap]="2" [horizontalAlignment]="'normal'" [flexDirection]="'vertical'">
+    <div class="cvi-card__inner" *ngFor="let row of data">
+        <cvi-ng-track [gap]="1" [horizontalAlignment]="'normal'" [flexDirection]="'vertical'">
+            <cvi-ng-track [gap]="3" [horizontalAlignment]="'normal'" [flexDirection]="'vertical'">
+                <ng-container *ngTemplateOutlet="body || defaultBody; context: {headers: headers, cardBody: row}">
+                </ng-container>
+            </cvi-ng-track>
+        </cvi-ng-track>
+    </div>
+</cvi-ng-track>
+
+<ng-template #defaultBody let-row>
+    <div *ngFor="let row of row | keyvalue">{{ row.value }}</div>
+</ng-template>

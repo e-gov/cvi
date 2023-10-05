@@ -1,0 +1,24 @@
+@use 'sass:map';
+
+@mixin cvi-card($base: &) {
+  --comment: 'A stack of cards';
+
+  #{$base}__inner {
+    padding: get-spacing('viljandi');
+    background-color: var(--cvi-color-white);
+    border: 1px solid get-color(black-coral-2);
+    border-radius: map.get($cvi-radii, l);
+    overflow-x: auto;
+  }
+
+  #{$base}__header-cell {
+    color: get-color(black-coral-12);
+  }
+
+  #{$base}__text-button {
+    /* stylelint-disable-next-line selector-class-pattern */
+    .cvi-button__button {
+      text-decoration: none;
+    }
+  }
+}

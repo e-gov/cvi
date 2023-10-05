@@ -114,6 +114,16 @@
   @include cvi-form-message;
 }
 
+.cvi-table-responsive {
+  @include cvi-table-responsive;
+  @include cvi-table;
+  @include cvi-card;
+}
+
+.cvi-card {
+  @include cvi-card;
+}
+
 .cvi-circle {
   @include cvi-circle;
 }
