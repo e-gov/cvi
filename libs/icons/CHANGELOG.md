@@ -2,6 +2,33 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [1.13.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/icons-1.12.2...icons-1.13.0) (2023-10-05)
+
+
+### Features
+
+* add icons ([#195](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/195)) ([9a92563](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/9a925632b61ca6aa992c00ace24d36670a02e75f))
+
+
+
+## [1.12.2](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/icons-1.12.1...icons-1.12.2) (2023-10-04)
+
+
+### Bug Fixes
+
+* **icons:** make a white non-recolorable spot in the center of step_icon icon transparent ([#192](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/192)) ([306a10e](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/306a10e0e081cad8705617605e75a6f009aa7ddb))
+
+
+
+## [1.12.1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/icons-1.12.0...icons-1.12.1) (2023-10-04)
+
+
+### Bug Fixes
+
+* **icons:** removed offending attributes from some icons ([#194](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/194)) ([9c45759](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/9c457595790711a74b36469185697d48c4763dae))
+
+
+
 # [1.12.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/icons-1.11.0...icons-1.12.0) (2023-09-22)
 
 
