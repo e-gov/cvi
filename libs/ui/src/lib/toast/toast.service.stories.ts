@@ -65,7 +65,13 @@ export default {
       declarations: [ToastWrapperComponent],
     }),
   ],
-  argTypes: {},
+  argTypes: {
+    showButtons: {
+      table: {
+        disable: true,
+      },
+    },
+  },
 } as Meta;
 
 const Template: Story = (args) => ({
