@@ -1,12 +1,12 @@
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { ToastService } from './toast.service';
 import notes from './toast.service.md';
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, Input } from '@angular/core';
 
 @Component({
   selector: 'cvi-ng-storybook-toast-wrapper',
   template: `
-    <cvi-ng-track [gap]="4">
+    <cvi-ng-track [gap]="4" *ngIf="showButtons">
       <cvi-ng-button
         (click)="openSuccessToast()"
         dataAttribute="test-success-toast-button"
@@ -20,8 +20,18 @@ import { Component } from '@angular/core';
     </cvi-ng-track>
   `,
 })
-class ToastWrapperComponent {
+class ToastWrapperComponent implements AfterViewInit {
+  @Input() showButtons = true;
   constructor(private toastService: ToastService) {}
+
+  ngAfterViewInit() {
+    if (!this.showButtons) {
+      this.toastService.info(
+        'Default Title which is quite darn long',
+        'Default message. Long unbreakable string: 6516949e9bbc0e07ddbaa7283d558cf1'
+      );
+    }
+  }
 
   openSuccessToast() {
     this.toastService.success(
@@ -55,7 +65,13 @@ export default {
       declarations: [ToastWrapperComponent],
     }),
   ],
-  argTypes: {},
+  argTypes: {
+    showButtons: {
+      table: {
+        disable: true,
+      },
+    },
+  },
 } as Meta;
 
 const Template: Story = (args) => ({
@@ -67,3 +83,16 @@ const Template: Story = (args) => ({
   `,
 });
 export const Default = Template.bind({});
+
+const TemplateOpenOnLoad: Story = (args) => ({
+  props: {
+    ...args,
+  },
+  template: `
+    <cvi-ng-storybook-toast-wrapper [showButtons]="false"></cvi-ng-storybook-toast-wrapper>
+  `,
+});
+export const OpenOnLoad = TemplateOpenOnLoad.bind({});
+OpenOnLoad.parameters = {
+  chromatic: { delay: 1000 },
+};
