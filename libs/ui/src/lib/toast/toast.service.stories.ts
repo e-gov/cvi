@@ -27,7 +27,7 @@ class ToastWrapperComponent implements AfterViewInit {
   ngAfterViewInit() {
     if (!this.showButtons) {
       this.toastService.info(
-        'Default Title',
+        'Default Title which is quite darn long',
         'Default message. Long unbreakable string: 6516949e9bbc0e07ddbaa7283d558cf1'
       );
     }
