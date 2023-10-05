@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [1.13.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/icons-1.12.2...icons-1.13.0) (2023-10-05)
+
+
+### Features
+
+* add icons ([#195](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/195)) ([9a92563](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/9a925632b61ca6aa992c00ace24d36670a02e75f))
+
+
+
 ## [1.12.2](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/icons-1.12.1...icons-1.12.2) (2023-10-04)
 
 
