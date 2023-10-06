@@ -1,10 +1,13 @@
 @mixin cvi-toast($base: &) {
   --comment: 'A toast aka floating notification';
 
+  --padding: var(--cvi-spacing-haapsalu);
+  --close-button-size: 16px;
+
   position: relative;
   width: 350px;
   overflow: hidden;
-  padding: var(--cvi-spacing-haapsalu);
+  padding: var(--padding);
   margin-bottom: var(--cvi-spacing-paldiski);
   border-radius: var(--cvi-radius-m);
   color: var(--cvi-color-black-coral-18);
@@ -28,8 +31,8 @@
 
     #{$base}__icon {
       display: block;
-      width: 16px;
-      height: 16px;
+      width: var(--close-button-size);
+      height: var(--close-button-size);
     }
 
     #{$base}--appearance-success {
@@ -71,7 +74,7 @@
     #{$base}__title {
       display: flex;
       align-items: center;
-      margin-top: 20px;
+      margin-right: calc(var(--close-button-size) + var(--cvi-spacing-rapla));
     }
 
     #{$base}__title-text {
@@ -83,8 +86,8 @@
 
     #{$base}__close-button {
       position: absolute;
-      top: 20px;
-      right: 20px;
+      top: var(--padding);
+      right: var(--padding);
       cursor: pointer;
     }
 

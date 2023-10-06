@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [2.3.1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/styles-2.3.0...styles-2.3.1) (2023-10-05)
+
+
+### Bug Fixes
+
+* **styles:** fixed cvi-toast title shifted down ([#193](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/193)) ([7bed608](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/7bed608014e4e0bdbf758039ff7aee4070ff7810))
+
+
+
 # [2.3.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/styles-2.2.0...styles-2.3.0) (2023-10-02)
 
 
