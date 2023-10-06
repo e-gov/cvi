@@ -4,7 +4,7 @@ import {
   HostBinding,
   Input,
 } from '@angular/core';
-import { NgTemplateOutlet } from '@angular/common';
+import { Gap } from '../track/track';
 
 const statuses = [
   {
@@ -20,16 +20,15 @@ const statuses = [
   selector: 'cvi-ng-table-responsive',
   templateUrl: './table-responsive.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [NgTemplateOutlet],
 })
 export class TableResponsiveComponent {
   @Input() data!: any[];
   @Input() headerLabels!: any[];
-  @Input() cardRowGap = 1;
+  @Input() cardRowGap: Gap = 1;
   @HostBinding('class') get getHostClasses(): string {
     return 'cvi-table-responsive';
   }
 
   getStatusBadgeLabelBySeverity = (severity: any) =>
-    statuses.find((st: any) => st.severity === severity)?.label;
+    statuses.find((st: any) => st.severity === severity)?.label || 'info';
 }

@@ -77,3 +77,5 @@ export * from './lib/form-message/form-message.component';
 export * from './lib/form-message/form-message.directive';
 export * from './lib/form-message/form-message-severity-to-header-icon.pipe';
 export * from './lib/circle/circle.component';
+export * from './lib/card/card.component';
+export * from './lib/table-responsive/table-responsive.component';

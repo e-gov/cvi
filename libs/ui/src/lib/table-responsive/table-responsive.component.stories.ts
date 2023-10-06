@@ -4,7 +4,7 @@ import { TableResponsiveComponent } from './table-responsive.component';
 import { UiModule } from '../ui.module';
 
 export default {
-  title: 'Angular/Table responsive',
+  title: 'Angular/Responsive table',
   parameters: { notes },
   args: {
     headerLabels: ['Lõppkuupäev', 'Sündmus', 'Staatus'],
