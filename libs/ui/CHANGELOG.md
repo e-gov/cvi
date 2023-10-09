@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [2.4.2](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-2.4.1...ui-2.4.2) (2023-10-09)
+
+
+### Bug Fixes
+
+* **ui:** accept october dates ([#198](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/198)) ([97baf60](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/97baf6094b0dd27ff6d23a4b971c789990d25e79))
+
+
+
 ## [2.4.1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-2.4.0...ui-2.4.1) (2023-10-05)
 
 
