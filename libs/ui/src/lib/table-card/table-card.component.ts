@@ -8,16 +8,16 @@ import {
 } from '@angular/core';
 
 @Component({
-  selector: 'cvi-ng-card',
-  templateUrl: './card.component.html',
+  selector: 'cvi-ng-table-card',
+  templateUrl: './table-card.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class CardComponent {
+export class TableCardComponent {
   @Input() headers!: any[];
   @Input() data!: any[];
   @ContentChild('body') body: TemplateRef<any> | undefined;
 
   @HostBinding('class') get getHostClasses(): string {
-    return 'cvi-card';
+    return 'cvi-table-card';
   }
 }

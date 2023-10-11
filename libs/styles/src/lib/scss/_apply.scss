@@ -116,14 +116,16 @@
 
 .cvi-table-responsive {
   @include cvi-table-responsive;
-  @include cvi-table;
-  @include cvi-card;
 }
 
-.cvi-card {
-  @include cvi-card;
+.cvi-table-card {
+  @include cvi-table-card;
 }
 
 .cvi-circle {
   @include cvi-circle;
+}
+
+.cvi-labelled-item {
+  @include cvi-labelled-item;
 }

@@ -1,8 +1,8 @@
-<cvi-ng-track [gap]="2" [horizontalAlignment]="'normal'" [flexDirection]="'vertical'">
-    <div class="cvi-card__inner" *ngFor="let row of data">
+<cvi-ng-track class="cvi-table-card__card" [gap]="2" [horizontalAlignment]="'normal'" [flexDirection]="'vertical'">
+    <div class="cvi-table-card__inner" *ngFor="let row of data">
         <cvi-ng-track [gap]="1" [horizontalAlignment]="'normal'" [flexDirection]="'vertical'">
             <cvi-ng-track [gap]="3" [horizontalAlignment]="'normal'" [flexDirection]="'vertical'">
-                <ng-container *ngTemplateOutlet="body || defaultBody; context: {headers: headers, cardBody: row}">
+                <ng-container *ngTemplateOutlet="body || defaultBody; context: { headers: headers, cardBody: row }">
                 </ng-container>
             </cvi-ng-track>
         </cvi-ng-track>

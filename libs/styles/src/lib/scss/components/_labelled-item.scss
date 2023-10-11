@@ -1,0 +1,7 @@
+@use 'sass:map';
+
+@mixin cvi-labelled-item($base: &) {
+  #{$base}__header-label {
+    color: get-color(black-coral-12);
+  }
+}

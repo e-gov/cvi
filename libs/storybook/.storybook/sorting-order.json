@@ -62,6 +62,7 @@
       "Accordion",
       "Icon",
       "Labeled icon",
+      "Labelled item",
       "Steps",
       ["Steps", "Step", "Step panel"],
       "Table of contents",
@@ -80,7 +81,7 @@
       "Modal",
       ["Modal directive", "Modal", "Confirmation modal"],
       "Reorderable list",
-      "Card"
+      "Table Card"
     ],
     "Angular Diagrams",
     ["Installation"]

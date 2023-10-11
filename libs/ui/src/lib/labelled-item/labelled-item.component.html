@@ -1,0 +1,8 @@
+<cvi-ng-track [gap]="gap" [flexDirection]="flexDirection">
+        <div class="cvi-labelled-item__header-label">{{label}}</div>
+        <ng-container *ngTemplateOutlet="content"></ng-container>
+</cvi-ng-track>
+
+<ng-template #content>
+        <ng-content></ng-content>
+</ng-template>

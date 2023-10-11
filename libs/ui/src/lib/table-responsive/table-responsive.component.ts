@@ -4,7 +4,6 @@ import {
   HostBinding,
   Input,
 } from '@angular/core';
-import { Gap } from '../track/track';
 
 const statuses = [
   {
@@ -24,7 +23,6 @@ const statuses = [
 export class TableResponsiveComponent {
   @Input() data!: any[];
   @Input() headerLabels!: any[];
-  @Input() cardRowGap: Gap = 1;
   @HostBinding('class') get getHostClasses(): string {
     return 'cvi-table-responsive';
   }

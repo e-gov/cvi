@@ -1,0 +1,18 @@
+@use 'sass:map';
+
+@mixin cvi-table-card($base: &) {
+  --comment: 'A stack of cards';
+
+  #{$base}__card {
+    width: 300px;
+    max-width: calc(100vw - 40px);
+  }
+
+  #{$base}__inner {
+    padding: get-spacing('haapsalu') get-spacing('kuressaare');
+    background-color: var(--cvi-color-white);
+    border: 1px solid get-color(black-coral-2);
+    border-radius: map.get($cvi-radii, s);
+    overflow-x: auto;
+  }
+}

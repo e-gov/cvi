@@ -13,6 +13,7 @@ export default {
         event: 'Abielu sõlmimine',
         statusSeverity: 'info',
         lastChanged: '2021-07-20',
+        tooltipText: 'Lõppenud',
         button: 'Vaata',
         icon: 'arrow_b_right',
       },
@@ -20,11 +21,11 @@ export default {
         event: 'Abielu sõlmimine',
         statusSeverity: 'error',
         lastChanged: '2018-07-17',
+        tooltipText: 'Katkenud',
         button: 'Vaata',
         icon: 'arrow_b_right',
       },
     ],
-    rowGap: 1,
   },
   decorators: [
     moduleMetadata({
@@ -41,7 +42,7 @@ const Template: Story<TableResponsiveComponent> = (
   },
   /* template */
   template: `
-  <cvi-ng-table-responsive [data]="data" [headerLabels]="headerLabels" [cardRowGap]="rowGap">
+  <cvi-ng-table-responsive [data]="data" [headerLabels]="headerLabels">
   </cvi-ng-table-responsive>
   `,
 });

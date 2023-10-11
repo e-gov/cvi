@@ -1,4 +1,4 @@
-<cvi-ng-table class="cvi-table-responsive__cvi-table" [data]="data" >
+<cvi-ng-table class="cvi-table-responsive__cvi-table" [data]="data">
     <ng-template #headers>
         <ng-container *ngFor="let headerLabel of headerLabels">
             <th cvi-ng-header-cell>{{ headerLabel }}</th>
@@ -12,7 +12,10 @@
         <td cvi-ng-body-cell>{{ row.lastChanged }}</td>
         <td cvi-ng-body-cell>{{ row.event }}</td>
         <td cvi-ng-body-cell>
-            <cvi-ng-status-badge [severity]="row.statusSeverity" [label]="getStatusBadgeLabelBySeverity(row.statusSeverity)" [withTooltip]="true" [hasBackground]="false"></cvi-ng-status-badge>
+            <cvi-ng-status-badge [severity]="row.statusSeverity"
+                                 [label]="getStatusBadgeLabelBySeverity(row.statusSeverity)"
+                                 [withTooltip]="true" [tooltipText]="row.tooltipText"
+                                 [hasBackground]="false"></cvi-ng-status-badge>
         </td>
         <td cvi-ng-body-cell>
             <cvi-ng-track>
@@ -28,25 +31,18 @@
     </ng-template>
 </cvi-ng-table>
 
-<cvi-ng-card class="cvi-table-responsive__cvi-card" [data]="data" [headers]="headerLabels">
+<cvi-ng-table-card class="cvi-table-responsive__cvi-table-card" [data]="data" [headers]="headerLabels">
     <ng-template #body let-headers="headers" let-row="cardBody">
-        <cvi-ng-track [gap]="cardRowGap" [flexDirection]="'vertical'">
-            <div class="cvi-card__header-cell">{{headers[0]}}</div>
-            <div>{{row.event}}</div>
-        </cvi-ng-track>
-        <cvi-ng-track [gap]="cardRowGap" [flexDirection]="'vertical'">
-            <div class="cvi-card__header-cell">{{headers[1]}}</div>
-            <div>{{row.lastChanged}}</div>
-        </cvi-ng-track>
-        <cvi-ng-track [gap]="cardRowGap" [flexDirection]="'vertical'">
-            <div class="cvi-card__header-cell">{{headers[2]}}</div>
+        <cvi-ng-labelled-item [label]="headers[0]">{{row.lastChanged}}</cvi-ng-labelled-item>
+        <cvi-ng-labelled-item [label]="headers[1]">{{row.event}}</cvi-ng-labelled-item>
+        <cvi-ng-labelled-item [label]="headers[2]">
             <div>
-                <cvi-ng-status-badge [severity]="row.statusSeverity" [label]="getStatusBadgeLabelBySeverity(row.statusSeverity)" [withTooltip]="true"
-                                     [hasBackground]="false"></cvi-ng-status-badge>
+                <cvi-ng-status-badge [severity]="row.statusSeverity" [label]="getStatusBadgeLabelBySeverity(row.statusSeverity)"
+                                     [withTooltip]="true" [tooltipText]="row.tooltipText" [hasBackground]="false"></cvi-ng-status-badge>
             </div>
-        </cvi-ng-track>
-        <cvi-ng-track [gap]="cardRowGap">
-            <cvi-ng-button [appearance]="'text'" class="cvi-card__text-button">
+        </cvi-ng-labelled-item>
+        <cvi-ng-track [gap]="1">
+            <cvi-ng-button [appearance]="'text'">
                 <cvi-ng-track horizontalAlignment="center" verticalAlignment="center">
                     <cvi-ng-labeled-icon [iconPosition]="'after'" [name]="row.icon" [iconHeight]="14">
                         {{ row.button }}
@@ -55,6 +51,6 @@
             </cvi-ng-button>
         </cvi-ng-track>
     </ng-template>
-</cvi-ng-card>
+</cvi-ng-table-card>
 
 
