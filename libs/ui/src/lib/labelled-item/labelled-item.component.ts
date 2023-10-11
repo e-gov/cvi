@@ -1,10 +1,15 @@
-import { ChangeDetectionStrategy, Component, HostBinding, Input } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  HostBinding,
+  Input,
+} from '@angular/core';
 import { Gap } from '../track/track';
 
 @Component({
   selector: 'cvi-ng-labelled-item',
   templateUrl: './labelled-item.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LabelledItemComponent {
   @Input() label: any;

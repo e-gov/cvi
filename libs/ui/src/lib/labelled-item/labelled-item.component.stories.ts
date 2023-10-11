@@ -9,7 +9,7 @@ export default {
     headerLabel: 'Sündmus',
     event: 'Abielu sõlmimine',
     gap: 1,
-    flexDirection: 'vertical'
+    flexDirection: 'vertical',
   },
 } as Meta<LabelledItemComponent>;
 

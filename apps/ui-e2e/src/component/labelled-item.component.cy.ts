@@ -7,7 +7,7 @@ describe('LabelledItemComponent', () => {
     cy.loadStory('Angular Labelled item', 'Default')
       .shouldExist('cvi-ng-track')
       .within(() => {
-        cy.shouldHaveClasses('div', 'cvi-labelled-item__header-label')
-      })
+        cy.shouldHaveClasses('div', 'cvi-labelled-item__header-label');
+      });
   });
 });
