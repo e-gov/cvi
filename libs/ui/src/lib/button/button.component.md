@@ -13,3 +13,5 @@ Permitted children | Phrasing content
 Displays a regular button. You can have it `disabled` or switch its visuals through `appearance` prop.
 
 You can use `--cvi-button-color` and `--cvi-button-color--hover` CSS variables to customise the background color of the button with `appearance=primary` prop.
+
+You can also utilise `--cvi-button--text-decoration` to remove the underline when `appearance="text"`.

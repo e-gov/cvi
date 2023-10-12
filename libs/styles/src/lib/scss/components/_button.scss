@@ -71,7 +71,7 @@
         padding: 0;
         color: get-color(sapphire-blue-10);
         fill: get-color(sapphire-blue-10);
-        text-decoration: underline;
+        text-decoration: var(--cvi-button--text-decoration, underline);
         border: var(--cvi-border-width) solid transparent;
         border-radius: var(--cvi-radius-xs);
 

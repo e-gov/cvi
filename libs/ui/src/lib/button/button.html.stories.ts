@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/angular';
+import { Meta, Story, componentWrapperDecorator } from '@storybook/angular';
 import notes from './button.html.md';
 import { ButtonAppearance, ButtonSize } from './button';
 
@@ -77,3 +77,33 @@ const TemplateWithCustomColor: Story = (args) => ({
 });
 
 export const WithCustomColor = TemplateWithCustomColor.bind({});
+
+const TemplateTextWithoutUnderline: Story = (args) => ({
+  props: args,
+  styles: [
+    `:host {
+      --cvi-button--text-decoration: none;
+    }`,
+  ],
+  /* template */
+  template: `
+    <div class="cvi-button cvi-button--appearance-{{ appearance }} cvi-button--size-{{ size }}">
+      <button type="button" class="cvi-button__button" disabled="{{ disabled ? true : null }}">{{ content }}</button>
+    </div>
+  `,
+});
+
+export const TextWithoutUnderline = TemplateTextWithoutUnderline.bind({});
+TextWithoutUnderline.args = {
+  appearance: ButtonAppearance.TEXT,
+};
+TextWithoutUnderline.decorators = [
+  componentWrapperDecorator((story) => {
+    return `
+      <cvi-ng-storybook-note>
+        Define <code>--cvi-button--text-decoration: none</code> CSS variable on the element or its ancestor to remove the underline.
+      </cvi-ng-storybook-note>
+      ${story}
+    `;
+  }),
+];
