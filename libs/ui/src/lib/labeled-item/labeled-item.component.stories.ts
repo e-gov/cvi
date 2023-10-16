@@ -13,9 +13,7 @@ export default {
   },
 } as Meta<LabeledItemComponent>;
 
-const Template: Story<LabeledItemComponent> = (
-  args: LabeledItemComponent
-) => ({
+const Template: Story<LabeledItemComponent> = (args: LabeledItemComponent) => ({
   props: {
     ...args,
   },
