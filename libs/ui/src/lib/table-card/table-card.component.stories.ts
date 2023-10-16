@@ -51,14 +51,14 @@ const Template: Story<TableCardComponent> = (args: TableCardComponent) => ({
   template: `
   <cvi-ng-table-card [data]="data" [headers]="headerLabels">
     <ng-template #body let-headers="headers" let-row="cardBody">
-      <cvi-ng-labelled-item [label]="headers[0]">{{row.lastChanged}}</cvi-ng-labelled-item>
-      <cvi-ng-labelled-item [label]="headers[1]">{{row.event}}</cvi-ng-labelled-item>
-      <cvi-ng-labelled-item [label]="headers[2]">
+      <cvi-ng-labeled-item [label]="headers[0]">{{row.lastChanged}}</cvi-ng-labeled-item>
+      <cvi-ng-labeled-item [label]="headers[1]">{{row.event}}</cvi-ng-labeled-item>
+      <cvi-ng-labeled-item [label]="headers[2]">
         <div>
           <cvi-ng-status-badge [severity]="row.statusSeverity" [label]="getStatusBadgeLabelBySeverity(row.statusSeverity)" 
             [withTooltip]="true" [tooltipText]="row.tooltip" [hasBackground]="false"></cvi-ng-status-badge>
         </div>
-      </cvi-ng-labelled-item>
+      </cvi-ng-labeled-item>
       <cvi-ng-track [gap]="1">
         <cvi-ng-button [appearance]="'text'">
           <cvi-ng-track horizontalAlignment="center" verticalAlignment="center">

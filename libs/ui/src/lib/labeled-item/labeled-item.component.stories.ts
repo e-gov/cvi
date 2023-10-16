@@ -1,5 +1,5 @@
-import notes from './labelled-item.component.md';
-import { LabelledItemComponent } from './labelled-item.component';
+import notes from './labeled-item.component.md';
+import { LabeledItemComponent } from './labeled-item.component';
 import { Meta, Story } from '@storybook/angular';
 
 export default {
@@ -11,19 +11,19 @@ export default {
     gap: 1,
     flexDirection: 'vertical',
   },
-} as Meta<LabelledItemComponent>;
+} as Meta<LabeledItemComponent>;
 
-const Template: Story<LabelledItemComponent> = (
-  args: LabelledItemComponent
+const Template: Story<LabeledItemComponent> = (
+  args: LabeledItemComponent
 ) => ({
   props: {
     ...args,
   },
   /* template */
   template: `
-  <cvi-ng-labelled-item [label]="headerLabel" [gap]="gap" [flexDirection]="flexDirection">
+  <cvi-ng-labeled-item [label]="headerLabel" [gap]="gap" [flexDirection]="flexDirection">
     {{event}}
-  </cvi-ng-labelled-item>
+  </cvi-ng-labeled-item>
   `,
 });
 

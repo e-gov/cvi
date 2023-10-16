@@ -10,6 +10,7 @@ import {
 @Component({
   selector: 'cvi-ng-table-card',
   templateUrl: './table-card.component.html',
+  styleUrls: ['./table-card.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TableCardComponent {

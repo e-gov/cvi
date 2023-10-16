@@ -18,6 +18,7 @@ const statuses = [
 @Component({
   selector: 'cvi-ng-table-responsive',
   templateUrl: './table-responsive.component.html',
+  styleUrls: ['table-responsive.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TableResponsiveComponent {

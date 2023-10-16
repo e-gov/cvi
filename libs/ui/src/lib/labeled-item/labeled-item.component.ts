@@ -7,11 +7,11 @@ import {
 import { Gap } from '../track/track';
 
 @Component({
-  selector: 'cvi-ng-labelled-item',
-  templateUrl: './labelled-item.component.html',
+  selector: 'cvi-ng-labeled-item',
+  templateUrl: './labeled-item.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class LabelledItemComponent {
+export class LabeledItemComponent {
   @Input() label: any;
   @Input() flexDirection:
     | 'horizontal'
@@ -21,6 +21,6 @@ export class LabelledItemComponent {
   @Input() gap: Gap = 1;
 
   @HostBinding('class') get getHostClasses(): string {
-    return 'cvi-labelled-item';
+    return 'cvi-labeled-item';
   }
 }
