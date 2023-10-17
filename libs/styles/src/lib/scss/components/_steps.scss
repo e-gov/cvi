@@ -57,14 +57,6 @@
 
     #{$base}__intro {
       margin-bottom: get-spacing('haapsalu');
-      @include cvi-breakpoint-down(sm) {
-        #{$base}.is-any-step-selected & {
-          display: none;
-        }
-      }
-      @include cvi-breakpoint-up(sm) {
-        margin-bottom: get-spacing('haapsalu');
-      }
     }
 
     #{$base}__inner {

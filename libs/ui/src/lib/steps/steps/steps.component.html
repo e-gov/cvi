@@ -1,8 +1,8 @@
 <h1 *ngIf="title" class="cvi-steps__title" dataAttribute="steps_title">{{ title }}</h1>
+<div class="cvi-steps__intro">
+  <ng-content select="[cvi-steps=after-title]"></ng-content>
+</div>
 <div class="cvi-steps__inner-wrapper">
-  <div class="cvi-steps__intro">
-    <ng-content select="[cvi-steps=after-title]"></ng-content>
-  </div>
   <div class="cvi-steps__inner" dataAttribute="steps_container">
     <ol class="cvi-steps__list">
       <li class="cvi-steps__list-item"
