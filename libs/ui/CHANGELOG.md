@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [2.5.1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-2.5.0...ui-2.5.1) (2023-10-17)
+
+
+### Bug Fixes
+
+* after title position in steps mobile view EBS-911 STPA-280 ([#200](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/200)) ([5303af5](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/5303af5cf17db386afea318f67b94e1a2eb9044c))
+
+
+
 # [2.5.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-2.4.2...ui-2.5.0) (2023-10-13)
 
 
