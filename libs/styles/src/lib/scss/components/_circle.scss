@@ -20,6 +20,9 @@
   justify-content: center;
   align-items: center;
 
+  // This prevents the circle to get shrunk when inside of a flex track
+  flex-shrink: 0;
+
   @at-root {
     #{$base}--size-s {
       width: $circle-size-s;
