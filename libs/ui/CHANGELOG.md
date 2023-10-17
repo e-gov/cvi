@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [2.5.2](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-2.5.1...ui-2.5.2) (2023-10-17)
+
+
+### Bug Fixes
+
+* **styles:** fixed cvi-circle Sass component getting shrunk when inside of a flex track (eg inside of cvi-steps) ([#201](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/201)) ([292b315](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/292b315d67ff266e5608d6133f471e7bac89a086))
+
+
+
 ## [2.5.1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-2.5.0...ui-2.5.1) (2023-10-17)
 
 
