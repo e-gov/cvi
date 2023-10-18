@@ -1,56 +1,57 @@
 <cvi-ng-table class="cvi-table-responsive__cvi-table" [data]="data">
-    <ng-template #headers>
-        <ng-container *ngFor="let headerLabel of headerLabels">
-            <th cvi-ng-header-cell>{{ headerLabel }}</th>
-        </ng-container>
-        <th cvi-ng-header-cell>
-            <cvi-ng-screenreader-text label="Icons"></cvi-ng-screenreader-text>
-        </th>
-    </ng-template>
+  <ng-template #headers>
+    <ng-container *ngFor="let headerLabel of headerLabels; let idx = index">
+      <th cvi-ng-header-cell>
+        <ng-container *ngTemplateOutlet="headerTemplate || defaultHeaderTemplate; context: { $implicit: headerLabel, idx: idx }"></ng-container>
+      </th>
+    </ng-container>
+  </ng-template>
 
-    <ng-template #rows let-row>
-        <td cvi-ng-body-cell>{{ row.lastChanged }}</td>
-        <td cvi-ng-body-cell>{{ row.event }}</td>
-        <td cvi-ng-body-cell>
-            <cvi-ng-status-badge [severity]="row.statusSeverity"
-                                 [label]="getStatusBadgeLabelBySeverity(row.statusSeverity)"
-                                 [withTooltip]="true" [tooltipText]="row.tooltipText"
-                                 [hasBackground]="false"></cvi-ng-status-badge>
-        </td>
-        <td cvi-ng-body-cell>
-            <cvi-ng-track>
-                <cvi-ng-button [appearance]="'text'">
-                    <cvi-ng-track horizontalAlignment="center" verticalAlignment="center">
-                        <cvi-ng-labeled-icon [iconPosition]="'after'" [name]="row.icon" [iconHeight]="14">
-                            {{ row.button }}
-                        </cvi-ng-labeled-icon>
-                    </cvi-ng-track>
-                </cvi-ng-button>
-            </cvi-ng-track>
-        </td>
-    </ng-template>
+  <ng-template #rows let-row>
+    <td cvi-ng-body-cell>{{ row.lastChanged }}</td>
+    <td cvi-ng-body-cell>{{ row.event }}</td>
+    <td cvi-ng-body-cell>
+      <cvi-ng-status-badge [severity]="row.statusSeverity"
+      [label]="getStatusBadgeLabelBySeverity(row.statusSeverity)"
+      [withTooltip]="true" [tooltipText]="row.tooltipText"
+      [hasBackground]="false"></cvi-ng-status-badge>
+    </td>
+    <td cvi-ng-body-cell>
+      <cvi-ng-track>
+        <cvi-ng-button [appearance]="'text'">
+          <cvi-ng-track horizontalAlignment="center" verticalAlignment="center">
+            <cvi-ng-labeled-icon [iconPosition]="'after'" [name]="row.icon" [iconHeight]="14">
+              {{ row.button }}
+            </cvi-ng-labeled-icon>
+          </cvi-ng-track>
+        </cvi-ng-button>
+      </cvi-ng-track>
+    </td>
+  </ng-template>
 </cvi-ng-table>
 
 <cvi-ng-table-card class="cvi-table-responsive__cvi-table-card" [data]="data" [headers]="headerLabels">
-    <ng-template #body let-headers="headers" let-row="cardBody">
-        <cvi-ng-labeled-item [label]="headers[0]">{{row.lastChanged}}</cvi-ng-labeled-item>
-        <cvi-ng-labeled-item [label]="headers[1]">{{row.event}}</cvi-ng-labeled-item>
-        <cvi-ng-labeled-item [label]="headers[2]">
-            <div>
-                <cvi-ng-status-badge [severity]="row.statusSeverity" [label]="getStatusBadgeLabelBySeverity(row.statusSeverity)"
-                                     [withTooltip]="true" [tooltipText]="row.tooltipText" [hasBackground]="false"></cvi-ng-status-badge>
-            </div>
-        </cvi-ng-labeled-item>
-        <cvi-ng-track [gap]="1">
-            <cvi-ng-button [appearance]="'text'">
-                <cvi-ng-track horizontalAlignment="center" verticalAlignment="center">
-                    <cvi-ng-labeled-icon [iconPosition]="'after'" [name]="row.icon" [iconHeight]="14">
-                        {{ row.button }}
-                    </cvi-ng-labeled-icon>
-                </cvi-ng-track>
-            </cvi-ng-button>
+  <ng-template #body let-headers="headers" let-row="cardBody">
+    <cvi-ng-labeled-item [label]="headers[0]">{{row.lastChanged}}</cvi-ng-labeled-item>
+    <cvi-ng-labeled-item [label]="headers[1]">{{row.event}}</cvi-ng-labeled-item>
+    <cvi-ng-labeled-item [label]="headers[2]">
+      <div>
+        <cvi-ng-status-badge [severity]="row.statusSeverity" [label]="getStatusBadgeLabelBySeverity(row.statusSeverity)"
+        [withTooltip]="true" [tooltipText]="row.tooltipText" [hasBackground]="false"></cvi-ng-status-badge>
+      </div>
+    </cvi-ng-labeled-item>
+    <cvi-ng-track [gap]="1">
+      <cvi-ng-button [appearance]="'text'">
+        <cvi-ng-track horizontalAlignment="center" verticalAlignment="center">
+          <cvi-ng-labeled-icon [iconPosition]="'after'" [name]="row.icon" [iconHeight]="14">
+            {{ row.button }}
+          </cvi-ng-labeled-icon>
         </cvi-ng-track>
-    </ng-template>
+      </cvi-ng-button>
+    </cvi-ng-track>
+  </ng-template>
 </cvi-ng-table-card>
 
-
+<ng-template #defaultHeaderTemplate let-data>
+  {{ data }}
+</ng-template>

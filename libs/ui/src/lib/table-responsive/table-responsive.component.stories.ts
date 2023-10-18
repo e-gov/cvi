@@ -7,7 +7,7 @@ export default {
   title: 'Angular/Responsive table',
   parameters: { notes },
   args: {
-    headerLabels: ['Lõppkuupäev', 'Sündmus', 'Staatus'],
+    headerLabels: ['Lõppkuupäev', 'Sündmus', 'Staatus', 'Tegevus'],
     data: [
       {
         event: 'Abielu sõlmimine',
@@ -42,8 +42,7 @@ const Template: Story<TableResponsiveComponent> = (
   },
   /* template */
   template: `
-  <cvi-ng-table-responsive [data]="data" [headerLabels]="headerLabels">
-  </cvi-ng-table-responsive>
+  <cvi-ng-table-responsive [data]="data" [headerLabels]="headerLabels"></cvi-ng-table-responsive>
   `,
 });
 
@@ -62,3 +61,22 @@ Tablet.parameters = {
     defaultViewport: 'ipad',
   },
 };
+
+const TemplateWithCustomHeader: Story<TableResponsiveComponent> = (
+  args: TableResponsiveComponent
+) => ({
+  props: {
+    ...args,
+  },
+  /* template */
+  template: `
+  <cvi-ng-table-responsive [data]="data" [headerLabels]="headerLabels">
+    <ng-template #headerTemplate let-label let-idx="idx">
+      <ng-container *ngIf="idx !== 3">{{ label }}</ng-container>
+      <cvi-ng-screenreader-text [label]="label" *ngIf="idx === 3"></cvi-ng-screenreader-text>
+    </ng-template>
+  </cvi-ng-table-responsive>
+  `,
+});
+
+export const WithCustomHeader = TemplateWithCustomHeader.bind({});
