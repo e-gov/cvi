@@ -24,7 +24,7 @@ const statuses = [
 })
 export class TableResponsiveComponent {
   @Input() data!: any[];
-  @Input() headerLabels!: any[];
+  @Input() headerLabels!: string[];
   @HostBinding('class') get getHostClasses(): string {
     return 'cvi-table-responsive';
   }
