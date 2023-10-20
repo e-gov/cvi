@@ -3,24 +3,21 @@ describe('TableResponsiveComponent', () => {
     cy.visitStorybook();
   });
 
-  it('should render table when desktop', () => {
+  it('should render table when on desktop', () => {
     cy.loadStory('Angular Responsive table', 'Default')
       .shouldExist('cvi-ng-table')
-      .shouldHaveClasses('cvi-ng-table', 'cvi-table-responsive__cvi-table');
+      .shouldHaveClasses('cvi-ng-table', 'cvi-table-responsive__table');
   });
 
-  it('should render table when tablet', () => {
+  it('should render table when on tablet', () => {
     cy.loadStory('Angular Responsive Table', 'Tablet')
       .shouldExist('cvi-ng-table')
-      .shouldHaveClasses('cvi-ng-table', 'cvi-table-responsive__cvi-table');
+      .shouldHaveClasses('cvi-ng-table', 'cvi-table-responsive__table');
   });
 
   it('should render list of cards when mobile', () => {
     cy.loadStory('Angular Responsive Table', 'Mobile')
-      .shouldExist('cvi-ng-table-card')
-      .shouldHaveClasses(
-        'cvi-ng-table-card',
-        'cvi-table-responsive__cvi-table-card'
-      );
+      .shouldExist('cvi-ng-track')
+      .shouldHaveClasses('cvi-ng-track', 'cvi-table-responsive__cards');
   });
 });
