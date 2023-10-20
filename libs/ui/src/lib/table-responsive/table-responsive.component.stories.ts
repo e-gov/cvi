@@ -151,3 +151,14 @@ const TemplateWithCustomHeaderBody: Story<TableResponsiveComponent> = (
 });
 
 export const WithCustomHeaderAndBody = TemplateWithCustomHeaderBody.bind({});
+
+export const WithCustomHeaderAndBodyMobile = TemplateWithCustomHeaderBody.bind(
+  {}
+);
+WithCustomHeaderAndBodyMobile.storyName =
+  'With Custom Header And Body (Mobile)';
+WithCustomHeaderAndBodyMobile.parameters = {
+  viewport: {
+    defaultViewport: 'iphone12mini',
+  },
+};
