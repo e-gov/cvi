@@ -36,7 +36,7 @@ export class StatusBadgeComponent {
     | null {
     return this.hasBackground
       ? this.getCustomProperty('--background-color')
-      : null;
+      : 'white';
   }
   @HostBinding('style.--border-color') get hostStyleBorderColor():
     | string
