@@ -9,4 +9,4 @@
 
 ## Where to use
 
-To display a table component with or without header block, to where buttons, form inputs etc. can be added.
+To display a simple table.

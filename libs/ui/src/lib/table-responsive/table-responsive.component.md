@@ -9,4 +9,4 @@
 
 ## Where to use
 
-To display a responsive table component where in mobile is shown card component and elsewhere table component.
+When you need a simple table to present an inconsiderable amount of data. The table will be visualised as mobile-friendly cards on small viewports.
