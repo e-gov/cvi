@@ -39,15 +39,13 @@
         [withTooltip]="true" [tooltipText]="row.tooltipText" [hasBackground]="false"></cvi-ng-status-badge>
     </cvi-ng-labeled-item>
 
-    <cvi-ng-track [gap]="1" class="cvi-table-responsive__card-action">
-      <cvi-ng-button appearance="text">
-        <cvi-ng-track horizontalAlignment="center" verticalAlignment="center">
-          <cvi-ng-labeled-icon [iconPosition]="'after'" [name]="row.icon" [iconHeight]="14">
-            {{ row.button }}
-          </cvi-ng-labeled-icon>
-        </cvi-ng-track>
-      </cvi-ng-button>
-    </cvi-ng-track>
+    <cvi-ng-button appearance="text" class="cvi-table-responsive__card-action">
+      <cvi-ng-track horizontalAlignment="center" verticalAlignment="center">
+        <cvi-ng-labeled-icon [iconPosition]="'after'" [name]="row.icon" [iconHeight]="14">
+          {{ row.button }}
+        </cvi-ng-labeled-icon>
+      </cvi-ng-track>
+    </cvi-ng-button>
   </cvi-ng-table-card>
 </cvi-ng-track>
 
