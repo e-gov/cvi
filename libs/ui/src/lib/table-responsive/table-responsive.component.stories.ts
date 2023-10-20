@@ -141,7 +141,7 @@ const TemplateWithCustomHeaderBody: Story<TableResponsiveComponent> = (
         <ng-container *ngIf="colIdx === 3">
           <cvi-ng-button appearance="text">
             <cvi-ng-track horizontalAlignment="center" verticalAlignment="center" [gap]="3">
-              <cvi-ng-labeled-icon iconPosition="after" name="arrow_b_right" [iconHeight]="14">Vaata</cvi-ng-labeled-icon>
+              <cvi-ng-labeled-icon [gap]="3" iconPosition="after" name="arrow_b_right" [iconHeight]="14">Vaata</cvi-ng-labeled-icon>
             </cvi-ng-track>
           </cvi-ng-button>
         </ng-container>
