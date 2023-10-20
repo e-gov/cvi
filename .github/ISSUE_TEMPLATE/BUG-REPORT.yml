@@ -61,7 +61,7 @@ body:
     id: repro-url
     attributes:
       label: "Reproduction URL"
-      description: Please enter a URL for the Storybook where the bug can be reproduced or a public link to a minimal reproduction of your own
+      description: Please enter a URL for the Storybook where the bug can be reproduced, a URL to a fork of https://codesandbox.io/p/github/ekateriinal/angular-cvi-starter or a public link to a minimal reproduction of your own
       placeholder: "eg. https://e-gov.github.io/cvi/?path=/story/angular-form-input--default"
     validations:
       required: false
@@ -99,4 +99,4 @@ body:
   - type: markdown
     attributes:
       value: |
-        I confirm by submitting this issue that I have studied the [README file](https://github.com/e-gov/cvi/blob/main/README.md), read the [Storybook documentation](https://e-gov.github.io/cvi/?path=/story/intro--page) and, if applicable, attempted to reproduce it in the Storybook.
+        I confirm by submitting this issue that I have studied the [README file](https://github.com/e-gov/cvi/blob/main/README.md), read the [Storybook documentation](https://e-gov.github.io/cvi/?path=/story/intro--page) and, if applicable, attempted to reproduce it.
