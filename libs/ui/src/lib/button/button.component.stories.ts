@@ -26,6 +26,7 @@ export default {
     },
     onClick: { action: 'Button clicked!' },
   },
+  svgClass: { control: false },
   args: {
     content: 'Button label',
     appearance: 'primary',
@@ -129,3 +130,28 @@ TextWithoutUnderline.decorators = [
     `;
   }),
 ];
+
+const TemplateWithCustomIconStyle: Story<ButtonComponent> = (
+  args: ButtonComponent
+) => ({
+  props: args,
+  styles: [
+    `
+      ::ng-deep .svg-class {
+        fill: red;
+      }
+    `,
+  ],
+  /* template */
+  template: `
+    <cvi-ng-button [disabled]="disabled" [size]="size" [appearance]="appearance" [iconName]="iconName" [iconPosition]="iconPosition" [iconHeight]="iconHeight" svgClass="svg-class">
+      {{ content }}
+    </cvi-ng-button>
+  `,
+});
+
+export const WithCustomIconStyle = TemplateWithCustomIconStyle.bind({});
+WithCustomIconStyle.args = {
+  iconName: 'add',
+  iconPosition: 'after',
+};
