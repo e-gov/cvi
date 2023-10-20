@@ -1,8 +1,6 @@
-<cvi-ng-track [gap]="gap" [flexDirection]="flexDirection">
-        <div class="cvi-labeled-item__header-label">{{label}}</div>
-        <ng-container *ngTemplateOutlet="content"></ng-container>
+<cvi-ng-track [gap]="1" flexDirection="vertical">
+  <div *ngIf="label" class="cvi-labeled-item__label">{{ label }}</div>
+  <span class="cvi-labeled-item__content">
+    <ng-content></ng-content>
+  </span>
 </cvi-ng-track>
-
-<ng-template #content>
-        <ng-content></ng-content>
-</ng-template>

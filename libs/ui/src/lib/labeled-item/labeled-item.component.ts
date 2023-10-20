@@ -4,7 +4,6 @@ import {
   HostBinding,
   Input,
 } from '@angular/core';
-import { Gap } from '../track/track';
 
 @Component({
   selector: 'cvi-ng-labeled-item',
@@ -12,13 +11,7 @@ import { Gap } from '../track/track';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LabeledItemComponent {
-  @Input() label: any;
-  @Input() flexDirection:
-    | 'horizontal'
-    | 'vertical'
-    | 'verticalOnMobile'
-    | 'verticalReverseOnMobile' = 'vertical';
-  @Input() gap: Gap = 1;
+  @Input() label!: string;
 
   @HostBinding('class') get getHostClasses(): string {
     return 'cvi-labeled-item';

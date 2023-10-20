@@ -3,13 +3,17 @@ import { LabeledItemComponent } from './labeled-item.component';
 import { Meta, Story } from '@storybook/angular';
 
 export default {
-  title: 'Angular/Labelled item',
+  title: 'Angular/Labeled item',
   parameters: { notes },
+  content: {
+    name: 'Content',
+    table: {
+      category: 'Playground',
+    },
+  },
   args: {
-    headerLabel: 'Sündmus',
-    event: 'Abielu sõlmimine',
-    gap: 1,
-    flexDirection: 'vertical',
+    label: 'Sündmus',
+    content: 'Abielu sõlmimine',
   },
 } as Meta<LabeledItemComponent>;
 
@@ -19,9 +23,7 @@ const Template: Story<LabeledItemComponent> = (args: LabeledItemComponent) => ({
   },
   /* template */
   template: `
-  <cvi-ng-labeled-item [label]="headerLabel" [gap]="gap" [flexDirection]="flexDirection">
-    {{event}}
-  </cvi-ng-labeled-item>
+    <cvi-ng-labeled-item [label]="label">{{ content }}</cvi-ng-labeled-item>
   `,
 });
 
@@ -34,9 +36,7 @@ Mobile.parameters = {
   },
 };
 
-export const Tablet = Template.bind({});
-Tablet.parameters = {
-  viewport: {
-    defaultViewport: 'ipad',
-  },
+export const WithoutLabel = Template.bind({});
+WithoutLabel.args = {
+  label: '',
 };

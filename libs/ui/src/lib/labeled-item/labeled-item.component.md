@@ -9,4 +9,4 @@
 
 ## Where to use
 
-To display an item with label.
+To display an item with label. Like cvi-ng-form-item, but for non form content.
