@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [1.14.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/storybook-1.13.0...storybook-1.14.0) (2023-10-20)
+
+
+### Features
+
+* **github:** added links to an example app at codesandbox.io to the documentation ([#204](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/204)) ([834fe06](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/834fe06af9f94350af088186146839a6d3fc705e))
+
+
+
 # [1.13.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/storybook-1.12.1...storybook-1.13.0) (2023-10-03)
 
 
