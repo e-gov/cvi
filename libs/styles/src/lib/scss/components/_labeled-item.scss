@@ -3,5 +3,6 @@
 @mixin cvi-labeled-item($base: &) {
   #{$base}__header-label {
     color: get-color(black-coral-12);
+    font-size: get-font-size(80);
   }
 }
