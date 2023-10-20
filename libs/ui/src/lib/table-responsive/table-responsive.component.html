@@ -1,54 +1,35 @@
 <cvi-ng-table class="cvi-table-responsive__table" [data]="data">
   <ng-template #headers>
-    <ng-container *ngFor="let headerLabel of headerLabels; let idx = index">
+    <ng-container *ngFor="let headerLabel of headerLabels; let colIdx = index">
       <th cvi-ng-header-cell>
-        <ng-container *ngTemplateOutlet="headerTemplate || defaultHeaderTemplate; context: { $implicit: headerLabel, idx: idx }"></ng-container>
+        <ng-container *ngTemplateOutlet="headerTemplate || defaultHeaderTemplate; context: { $implicit: headerLabel, colIdx: colIdx }"></ng-container>
       </th>
     </ng-container>
   </ng-template>
 
   <ng-template #rows let-row>
-    <td cvi-ng-body-cell>{{ row.lastChanged }}</td>
-    <td cvi-ng-body-cell>{{ row.event }}</td>
-    <td cvi-ng-body-cell>
-      <cvi-ng-status-badge [severity]="row.statusSeverity"
-      [label]="getStatusBadgeLabelBySeverity(row.statusSeverity)"
-      [withTooltip]="true" [tooltipText]="row.tooltipText"
-      [hasBackground]="false"></cvi-ng-status-badge>
-    </td>
-    <td cvi-ng-body-cell>
-      <cvi-ng-track>
-        <cvi-ng-button [appearance]="'text'">
-          <cvi-ng-track horizontalAlignment="center" verticalAlignment="center">
-            <cvi-ng-labeled-icon [iconPosition]="'after'" [name]="row.icon" [iconHeight]="14">
-              {{ row.button }}
-            </cvi-ng-labeled-icon>
-          </cvi-ng-track>
-        </cvi-ng-button>
-      </cvi-ng-track>
-    </td>
+    <ng-container *ngFor="let headerLabel of headerLabels; let colIdx = index">
+      <td cvi-ng-body-cell>
+        <ng-container *ngTemplateOutlet="bodyTemplate || defaultBodyTemplate; context: { $implicit: row, colIdx: colIdx }"></ng-container>
+      </td>
+    </ng-container>
   </ng-template>
 </cvi-ng-table>
 
 <cvi-ng-track class="cvi-table-responsive__cards" [gap]="2" flexDirection="vertical">
-  <cvi-ng-table-card *ngFor="let row of data; let idx = index">
-    <cvi-ng-labeled-item [label]="headerLabels[0]">{{ row.lastChanged }}</cvi-ng-labeled-item>
-    <cvi-ng-labeled-item [label]="headerLabels[1]">{{ row.event }}</cvi-ng-labeled-item>
-    <cvi-ng-labeled-item [label]="headerLabels[2]">
-      <cvi-ng-status-badge [severity]="row.statusSeverity" [label]="getStatusBadgeLabelBySeverity(row.statusSeverity)"
-        [withTooltip]="true" [tooltipText]="row.tooltipText" [hasBackground]="false"></cvi-ng-status-badge>
+  <cvi-ng-table-card *ngFor="let row of data">
+    <cvi-ng-labeled-item *ngFor="let headerLabel of headerLabels; let colIdx = index" [label]="headerLabel">
+      <ng-container *ngTemplateOutlet="bodyTemplate || defaultBodyTemplate; context: { $implicit: row, colIdx: colIdx }"></ng-container>
     </cvi-ng-labeled-item>
-
-    <cvi-ng-button appearance="text" class="cvi-table-responsive__card-action">
-      <cvi-ng-track horizontalAlignment="center" verticalAlignment="center">
-        <cvi-ng-labeled-icon [iconPosition]="'after'" [name]="row.icon" [iconHeight]="14">
-          {{ row.button }}
-        </cvi-ng-labeled-icon>
-      </cvi-ng-track>
-    </cvi-ng-button>
   </cvi-ng-table-card>
 </cvi-ng-track>
 
-<ng-template #defaultHeaderTemplate let-data>
-  {{ data }}
+<ng-template #defaultHeaderTemplate let-label>
+  {{ label }}
+</ng-template>
+
+<ng-template #defaultBodyTemplate let-row let-colIdx="colIdx">
+  <ng-container *ngFor="let row of row | keyvalue; let curColIdx = index">
+    <ng-container *ngIf="curColIdx === colIdx">{{ row.value }}</ng-container>
+  </ng-container>
 </ng-template>

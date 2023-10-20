@@ -30,6 +30,7 @@ export class TableResponsiveComponent {
   }
 
   @ContentChild('headerTemplate') headerTemplate: TemplateRef<any> | undefined;
+  @ContentChild('bodyTemplate') bodyTemplate: TemplateRef<any> | undefined;
 
   getStatusBadgeLabelBySeverity = (severity: any) =>
     statuses.find((st: any) => st.severity === severity)?.label || 'info';
