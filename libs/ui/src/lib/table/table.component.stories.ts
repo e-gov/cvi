@@ -1,10 +1,10 @@
 import { FormControl, FormGroup } from '@angular/forms';
-import { Meta, moduleMetadata, Story } from '@storybook/angular';
-import { UiModule } from '../ui.module';
+import { Meta, Story } from '@storybook/angular';
 import { TableComponent } from './table.component';
 import notes from './table.component.md';
+import { StatusBadgeSeverity } from '../status-badge/status-badge';
 
-const statuses = [
+const statuses: { severity: StatusBadgeSeverity; label: string }[] = [
   {
     severity: 'info',
     label: 'Avaldamise ootel',
@@ -19,8 +19,11 @@ const statuses = [
   },
 ];
 
-const getStatusBadgeLabelBySeverity = (severity: any) =>
-  statuses.find((st: any) => st.severity === severity)?.label;
+const getStatusBadgeLabelBySeverity = (severity: StatusBadgeSeverity) =>
+  statuses.find(
+    (st: { severity: StatusBadgeSeverity; label: string }) =>
+      st.severity === severity
+  )?.label;
 
 export default {
   title: 'Angular/Table',
@@ -56,11 +59,6 @@ export default {
     rowIconHeight: 18,
     rowIconGap: 3,
   },
-  decorators: [
-    moduleMetadata({
-      imports: [UiModule],
-    }),
-  ],
 } as Meta<TableComponent>;
 
 const Template: Story<TableComponent> = (args: TableComponent) => ({
