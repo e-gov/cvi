@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [2.4.3](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/styles-2.4.2...styles-2.4.3) (2023-10-20)
+
+
+### Bug Fixes
+
+* add white background and change s circle font size EBS-1130 STPA-276 ([#202](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/202)) ([cb83b20](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/cb83b205585f259b15c24c13b13716e52d403ee3))
+
+
+
 ## [2.4.2](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/styles-2.4.1...styles-2.4.2) (2023-10-17)
 
 
