@@ -22,5 +22,6 @@ jobs:
     - run: npm run generate-icons
     - run: npm run storybook:compodoc
     - run: npx nx run ui-e2e:e2e
+    - run: npm run lint:svg
     - run: npx nx run storybook:build-storybook
     - run: npx axe-storybook --build-dir ./dist/storybook/storybook
