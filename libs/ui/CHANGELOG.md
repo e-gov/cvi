@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [2.6.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-2.5.3...ui-2.6.0) (2023-10-21)
+
+
+### Features
+
+* add svgClass to button icon EBS-1132 ([#203](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/203)) ([2c51a6b](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/2c51a6bf454f7d981eb654644121b11eded3959b))
+
+
+
 ## [2.5.3](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-2.5.2...ui-2.5.3) (2023-10-20)
 
 
