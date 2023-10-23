@@ -1,4 +1,4 @@
-export type StatusBadgeSeverity = 'info' | 'success' | 'warning';
+export type StatusBadgeSeverity = 'info' | 'success' | 'warning' | 'error';
 
 export const statusBadgeCustomPropertyGroups: StatusBadgeCustomPropertyGroup[] =
   [
@@ -24,6 +24,14 @@ export const statusBadgeCustomPropertyGroups: StatusBadgeCustomPropertyGroup[] =
         '--color': '--cvi-color-dark-tangerine-15',
         '--background-color': '--cvi-color-dark-tangerine-1',
         '--border-color': '--cvi-color-dark-tangerine-10',
+      },
+    },
+    {
+      severity: 'error',
+      customProperties: {
+        '--color': '--cvi-color-jasper-10',
+        '--background-color': '--cvi-color-jasper-1',
+        '--border-color': '--cvi-color-jasper-10',
       },
     },
   ];

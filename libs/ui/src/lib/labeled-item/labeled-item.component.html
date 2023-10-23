@@ -1,0 +1,6 @@
+<cvi-ng-track [gap]="1" flexDirection="vertical">
+  <div *ngIf="label" class="cvi-labeled-item__label" [attr.id]="baseId">{{ label }}</div>
+  <span class="cvi-labeled-item__content" [attr.aria-labelledby]="label ? baseId : null">
+    <ng-content></ng-content>
+  </span>
+</cvi-ng-track>

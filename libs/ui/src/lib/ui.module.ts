@@ -105,6 +105,9 @@ import { TimedNoticeSeverityToIconPipe } from './timed-notice/timed-notice-sever
 import { FormMessageDirective } from './form-message/form-message.directive';
 import { FormMessageComponent } from './form-message/form-message.component';
 import { FormMessageSeverityToHeaderIconPipe } from './form-message/form-message-severity-to-header-icon.pipe';
+import { TableCardComponent } from './table-card/table-card.component';
+import { TableResponsiveComponent } from './table-responsive/table-responsive.component';
+import { LabeledItemComponent } from './labeled-item/labeled-item.component';
 
 const components = [
   TrackComponent,
@@ -166,6 +169,9 @@ const components = [
   FormMessageComponent,
   FormMessageDirective,
   CircleComponent,
+  TableCardComponent,
+  TableResponsiveComponent,
+  LabeledItemComponent,
 ];
 
 const pipes = [

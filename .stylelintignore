@@ -2,3 +2,4 @@
 /dist
 /libs/styles/src/lib/scss/storybook
 /libs/storybook
+*.ts
