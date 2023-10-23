@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [1.15.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/storybook-1.14.0...storybook-1.15.0) (2023-10-23)
+
+
+### Features
+
+* add responsive-table, card EBS-985 STPA-277 ([#196](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/196)) ([60d3bc7](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/60d3bc75dacce1e7c7014767f1f166f8759d207d))
+
+
+
 # [1.14.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/storybook-1.13.0...storybook-1.14.0) (2023-10-20)
 
 
