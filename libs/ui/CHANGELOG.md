@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [2.7.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-2.6.0...ui-2.7.0) (2023-10-23)
+
+
+### Features
+
+* add responsive-table, card EBS-985 STPA-277 ([#196](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/196)) ([60d3bc7](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/60d3bc75dacce1e7c7014767f1f166f8759d207d))
+
+
+
 # [2.6.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-2.5.3...ui-2.6.0) (2023-10-21)
 
 
