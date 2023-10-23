@@ -28,6 +28,9 @@ export class ButtonComponent {
   /** Icon height in px */
   private _iconHeight = 16;
 
+  /** Additional classes for the SVG element */
+  @Input() svgClass = '';
+
   get iconHeight() {
     return this._iconHeight;
   }

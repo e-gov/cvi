@@ -8,6 +8,8 @@ The CSS has been architectured to be independent of any specific Javascript fram
 
 The CSS framework and Angular component library utilize [Storybook](https://storybook.js.org) for comprehensive documentation and seamless usage.
 
+You can also play with the library in a live app-like environment at [codesandbox.io](https://codesandbox.io/p/github/ekateriinal/angular-cvi-starter).
+
 To get started, you can access the installation instructions and documentation on e-Gov CVI's Storybook:
 
 [📌 https://e-gov.github.io/cvi/](https://e-gov.github.io/cvi/)
@@ -54,6 +56,8 @@ If you want to contribute to the Common Visual Identity Component Library, follo
 1. Create a fork of the repository.
 2. Make changes in your own fork.
 3. Create a pull-request back to this repository.
+
+Feel free to use the library sandbox available at [codesandbox.io](https://codesandbox.io/p/github/ekateriinal/angular-cvi-starter) to verify issues or play with existing components.
 
 For more detailed instructions, follow the link below:
 
@@ -139,7 +143,7 @@ This will open up the Cypress visual testing tool. Select E2E Testing to view al
 The project uses automatic screenshot testing via Chromatic.
 
 1. To run the tests, use the following command in your terminal: `npm run chromatic`
-2. Open the resulting URL and review the visual changes, accepting or denying them in the Chromatic UI.
+2. Open the resulting URL and review the visual changes.
 
 💡 Chromatic CI also runs on every push. The action always passes (even when visual changes are detected) except for cases when a story is broken. Contributors and reviewers should check the results of the action (and accept or decline them in the Chromatic UI) by following a link in the build log. 💡
 
