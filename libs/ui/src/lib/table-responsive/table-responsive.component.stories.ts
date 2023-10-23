@@ -103,7 +103,7 @@ const TemplateWithCustomHeaderBody: Story<TableResponsiveComponent> = (
 ) => ({
   props: {
     ...args,
-    headerLabels: ['Lõppkuupäev', 'Sündmus', 'Staatus', 'Tegevus'],
+    headerLabels: ['Lõppkuupäev', 'Sündmus', 'Staatus', ''],
     data: [
       {
         event: 'Abielu sõlmimine',
