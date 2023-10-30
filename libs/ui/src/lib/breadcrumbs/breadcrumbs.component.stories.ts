@@ -55,12 +55,12 @@ Mobile.parameters = {
   },
 };
 
-export const MobileGroup = TemplateWithIcon.bind({});
-MobileGroup.args = {
+export const MobileSkipLastBreadcrumb = TemplateWithIcon.bind({});
+MobileSkipLastBreadcrumb.args = {
   iconName: 'arrow_a_left',
   skipLastBreadcrumbMobile: true,
 };
-MobileGroup.parameters = {
+MobileSkipLastBreadcrumb.parameters = {
   viewport: {
     defaultViewport: 'iphone12mini',
   },
