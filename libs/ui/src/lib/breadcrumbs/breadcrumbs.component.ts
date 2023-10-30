@@ -18,7 +18,7 @@ export class BreadcrumbsComponent {
   /** Name of an icon in front of breadcrumb */
   @Input() iconName: CviIconName | null = null;
 
-  @Input() isGroupService = false;
+  @Input() skipLastBreadcrumbMobile = false;
 
   @Output() breadcrumbChange = new EventEmitter<number>();
 
@@ -29,7 +29,7 @@ export class BreadcrumbsComponent {
   // If no such elements exist, returns index of last element.
   public getMobileBreadcrumbIndex(): number {
     let lastElementIndex = this.breadcrumbs.length - 1;
-    if (this.isGroupService) {
+    if (this.skipLastBreadcrumbMobile) {
       lastElementIndex -= 1;
     }
     for (let index = lastElementIndex - 1; index >= 0; index--) {
