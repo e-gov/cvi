@@ -29,7 +29,8 @@
   @at-root {
     #{$base}__title {
       color: get-color(black-coral-10);
-      margin-block: get-spacing('haapsalu');
+      margin-top: get-spacing('haapsalu');
+      margin-bottom: get-spacing('paldiski');
       font-size: get-font-size(350);
       font-weight: get-font-weight(alpha);
 
