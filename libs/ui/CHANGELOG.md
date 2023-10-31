@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [2.7.1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-2.7.0...ui-2.7.1) (2023-10-31)
+
+
+### Bug Fixes
+
+* **ui:** mobile breadcrumb for group service EBS-1147 STPA-268 ([#206](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/206)) ([86e6b94](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/86e6b94f7320e8feac74d5e5d1fb0a8765825049))
+
+
+
 # [2.7.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-2.6.0...ui-2.7.0) (2023-10-23)
 
 
