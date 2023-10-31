@@ -11,7 +11,11 @@ export default {
       { title: 'Avaleht', href: '/avaleht' },
       { title: 'Ilma urlita samm' },
       { title: 'Abiellumine', href: '/abiellumine' },
-      { title: 'Avalduse esitamine', href: '/abiellumine/avalduse-esitamine' },
+      { title: 'Abielu sõlmimine', href: '/abiellumine/abielu-solmimine' },
+      {
+        title: 'Avalduse esitamine',
+        href: '/abiellumine/abielu-solmimine/avalduse-esitamine',
+      },
     ],
   },
 } as Meta<BreadcrumbsComponent>;
@@ -35,6 +39,7 @@ const TemplateWithIcon: Story<BreadcrumbsComponent> = (
   template: `
     <cvi-ng-breadcrumbs
         [breadcrumbs]="breadcrumbs"
+        [skipLastBreadcrumbMobile]="skipLastBreadcrumbMobile"
         [iconName]="iconName">
     </cvi-ng-breadcrumbs>
   `,
@@ -45,6 +50,17 @@ Mobile.args = {
   iconName: 'arrow_a_left',
 };
 Mobile.parameters = {
+  viewport: {
+    defaultViewport: 'iphone12mini',
+  },
+};
+
+export const MobileSkipLastBreadcrumb = TemplateWithIcon.bind({});
+MobileSkipLastBreadcrumb.args = {
+  iconName: 'arrow_a_left',
+  skipLastBreadcrumbMobile: true,
+};
+MobileSkipLastBreadcrumb.parameters = {
   viewport: {
     defaultViewport: 'iphone12mini',
   },
