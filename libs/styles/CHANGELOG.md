@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [2.5.1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/styles-2.5.0...styles-2.5.1) (2023-11-02)
+
+
+### Bug Fixes
+
+* reduce steps title bottom margin EBS-1153 ([#207](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/207)) ([52b22a3](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/52b22a3e5578d4f481a1ea9a321233578732f8d7))
+
+
+
 # [2.5.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/styles-2.4.3...styles-2.5.0) (2023-10-23)
 
 
