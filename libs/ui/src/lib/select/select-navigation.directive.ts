@@ -14,6 +14,7 @@ import {
 export class SelectNavigationDirective implements AfterViewInit {
   @Input() scrollableEl?: HTMLElement;
   @Input() inputField?: HTMLInputElement | ElementRef<HTMLInputElement>;
+  @Input() selectedItemIndex = 0;
   @Output() closed: EventEmitter<any> = new EventEmitter();
   @Output() itemFocused: EventEmitter<number> = new EventEmitter();
 
@@ -47,7 +48,7 @@ export class SelectNavigationDirective implements AfterViewInit {
   constructor(private readonly hostEl: ElementRef) {}
 
   ngAfterViewInit(): void {
-    this.focusByIndex(0);
+    this.focusByIndex(this.selectedItemIndex);
   }
 
   private isEventOfKey(key: string, event: KeyboardEvent): boolean {
