@@ -122,7 +122,11 @@ export class SelectComponent
   }
 
   get selectedItem(): SelectOption | undefined {
-    return this.itemsList.selectedItem;
+    const item = this.itemsList.selectedItem;
+    if (item !== undefined) {
+      this.updateSelectedItemIndex(item);
+    }
+    return item;
   }
 
   get hasValue() {
@@ -178,9 +182,7 @@ export class SelectComponent
 
   selectItem(item: SelectOption): void {
     this.itemsList.select(item);
-    this.selectedItemIndex = this.itemsList.filteredItems.findIndex(
-      (option) => option === item
-    );
+    this.updateSelectedItemIndex(item);
 
     const selectedValue = this.bindValue
       ? this.itemsList.selectedItem?.value[this.bindValue]
@@ -193,6 +195,12 @@ export class SelectComponent
 
     this.close();
     this.restoreFocusAfterClosing();
+  }
+
+  private updateSelectedItemIndex(item: SelectOption) {
+    this.selectedItemIndex = this.itemsList.filteredItems.findIndex(
+      (option) => option === item
+    );
   }
 
   updateFocusedItem(index: number) {
