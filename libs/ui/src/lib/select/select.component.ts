@@ -123,7 +123,7 @@ export class SelectComponent
 
   get selectedItem(): SelectOption | undefined {
     const item = this.itemsList.selectedItem;
-    if (item != undefined) {
+    if (item !== undefined) {
       this.updateSelectedItemIndex(item);
     }
     return item;
