@@ -70,6 +70,7 @@
           cviNgSelectNavigation
           [scrollableEl]="popup"
           [inputField]="searchInput"
+          [selectedItemIndex]="selectedItemIndex"
           (closed)="close()"
           (itemFocused)="updateFocusedItem($event)"
           [attr.aria-labelledby]="labelId"

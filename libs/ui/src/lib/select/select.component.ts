@@ -83,6 +83,7 @@ export class SelectComponent
   itemsList: SelectItemsList;
   searchInputFocused = false;
   focusedOptionIndex: number | null = null;
+  selectedItemIndex = 0;
 
   private readonly destroy$ = new Subject<void>();
   private readonly select: HTMLElement;
@@ -177,6 +178,9 @@ export class SelectComponent
 
   selectItem(item: SelectOption): void {
     this.itemsList.select(item);
+    this.selectedItemIndex = this.itemsList.filteredItems.findIndex(
+      (option) => option === item
+    );
 
     const selectedValue = this.bindValue
       ? this.itemsList.selectedItem?.value[this.bindValue]
