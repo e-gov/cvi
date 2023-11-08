@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [2.7.2](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-2.7.1...ui-2.7.2) (2023-11-08)
+
+
+### Bug Fixes
+
+* **ui:** cvi-ng-select default option EBS-1170 STPA-247 ([#208](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/208)) ([55020d6](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/55020d682ae05807e2fec8fe5bb1a74767d1c893))
+
+
+
 ## [2.7.1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/ui-2.7.0...ui-2.7.1) (2023-10-31)
 
 
