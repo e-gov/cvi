@@ -49,6 +49,7 @@ export class SelectNavigationDirective implements AfterViewInit {
 
   ngAfterViewInit(): void {
     this.focusByIndex(this.selectedItemIndex);
+    this.scrollToFocusedElement(this.hostEl.nativeElement);
   }
 
   private isEventOfKey(key: string, event: KeyboardEvent): boolean {
