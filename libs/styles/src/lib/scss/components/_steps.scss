@@ -170,6 +170,7 @@
     }
 
     #{$base}__list-item-title {
+      word-break: break-word;
       @include cvi-breakpoint-down(sm) {
         color: get-color(sapphire-blue-10);
         font-weight: get-font-weight(gamma);
