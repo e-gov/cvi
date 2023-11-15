@@ -70,7 +70,7 @@ const Template: Story<StepsComponent> = (args: StepsComponent) => {
           </cvi-ng-step-panel>
         </cvi-ng-step>
         <cvi-ng-step dataAttribute="step_3">
-          <cvi-ng-step-panel title="Third">
+          <cvi-ng-step-panel title="VeryVeryVeryLongWordThatNeedsToBreakInOrderToFit">
             {{ stepsContent[2] }}
           </cvi-ng-step-panel>
         </cvi-ng-step>
