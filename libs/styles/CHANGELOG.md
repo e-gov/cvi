@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [2.6.0](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/styles-2.5.1...styles-2.6.0) (2023-11-15)
+
+
+### Features
+
+* **styles:** add word break to step title EBS-1217 ([#210](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/210)) ([4639601](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/4639601f8e99203c2e548ab3ab70dc0919c78321))
+
+
+
 ## [2.5.1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/styles-2.5.0...styles-2.5.1) (2023-11-02)
 
 
