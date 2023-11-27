@@ -7,19 +7,19 @@
 </button>
 
 <div class="cvi-reorderable-list__ordering-buttons">
-  <button (click)="moveStepTo('next')"
-          [dataAttribute]="'step-' + orderNr + '-set-as-next-button'"
-          [ngClass]="setAsNextStepButtonVisible ? '' : 'hidden'"
-          aria-label="Next">
+  <button (click)="moveStepTo('previous')"
+          [dataAttribute]="'step-' + orderNr + '-set-as-previous-button'"
+          [ngClass]="setAsPreviousStepButtonVisible ? '' : 'hidden'"
+          aria-label="Previous">
     <cvi-ng-icon name="arrow_up_alt" svgClass="cvi-reorderable-list__order-button-icon"></cvi-ng-icon>
   </button>
   <div [dataAttribute]="'step-' + orderNr + '-order-nr'" class="cvi-reorderable-list__order-nr">
     {{ orderNr }}
   </div>
-  <button (click)="moveStepTo('previous')"
-          [dataAttribute]="'step-' + orderNr + '-set-as-previous-button'"
-          [ngClass]="setAsPreviousStepButtonVisible ? '' : 'hidden'"
-          aria-label="Previous">
+  <button (click)="moveStepTo('next')"
+          [dataAttribute]="'step-' + orderNr + '-set-as-next-button'"
+          [ngClass]="setAsNextStepButtonVisible ? '' : 'hidden'"
+          aria-label="Next">
     <cvi-ng-icon name="arrow_down_alt" svgClass="cvi-reorderable-list__order-button-icon"></cvi-ng-icon>
   </button>
 </div>
