@@ -2910,7 +2910,7 @@ h2 {
   padding: var(--cvi-spacing-haapsalu);
   position: relative;
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   width: 100%;
   gap: var(--cvi-spacing-haapsalu);
 }
