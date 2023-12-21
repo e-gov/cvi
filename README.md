@@ -147,6 +147,7 @@ The project uses automatic screenshot testing via Chromatic.
 
 💡 Chromatic CI also runs on every push. The action always passes (even when visual changes are detected) except for cases when a story is broken. Contributors and reviewers should check the results of the action (and accept or decline them in the Chromatic UI) by following a link in the build log. 💡
 
+
 Publishing to Chromatic also gives a possibility to share a Storybook link for a specific branch (even non-pushed, if the local npm command is used) in this format:
 
 `https://<branch>--6373995e3f280e239470296d.chromatic.com`
