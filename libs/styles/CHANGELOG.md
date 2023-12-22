@@ -2,6 +2,10 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [2.6.1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/styles-2.6.0...styles-2.6.1) (2023-12-22)
+
+
+
 # 1.0.0 (2023-11-22)
 
 
