@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [2.6.2](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/styles-2.6.1...styles-2.6.2) (2023-12-22)
+
+
+### Bug Fixes
+
+* **styles:** update version (dummy change) ([#214](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/issues/214)) ([a635ceb](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/commits/a635ceb5697ac475ded34de5c3d6663d790d5ebd))
+
+
+
 ## [2.6.1](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/styles-2.6.0...styles-2.6.1) (2023-12-22)
 
 
