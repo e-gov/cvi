@@ -5,7 +5,7 @@
 @mixin cvi-textfield($base: &) {
   $min-width: 200px;
   $single-line--max-width: 300px;
-  $multiple-lines--max-width: 670px;
+  $multiple-lines--max-width: 725px;
   $text-control-padding-inline-end: spacing.get-spacing('elva');
   $suffix-icon-width: 16px;
 
