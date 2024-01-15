@@ -9,8 +9,9 @@
     }
     #{$base}__content {
       border-radius: var(--cvi-radius-s);
-      background-color: get-color(white);
-      color: get-color(black-coral-18);
+      background-color: get-color(black-coral-12);
+      color: get-color(white);
+      font-weight: get-font-weight(beta);
       box-shadow: var(--cvi-shadow-beta);
       padding: var(--cvi-spacing-rapla) var(--cvi-spacing-elva);
       max-width: 400px;
@@ -27,7 +28,7 @@
       // If --cvi-tooltip-zindex is not set, --arrow-configurable-index is not set too
       --arrow-configurable-index: calc(var(--cvi-tooltip-zindex) + 1);
 
-      background-color: get-color(white);
+      background-color: get-color(black-coral-12);
       transform: rotate(45deg);
       width: 15px;
       height: 15px;
