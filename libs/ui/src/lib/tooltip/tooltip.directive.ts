@@ -113,7 +113,8 @@ export class TooltipDirective {
 
       this.componentRef.instance.left = tooltipPositionX + this.tooltipRight;
       this.componentRef.instance.top = tooltipPositionY;
-      this.componentRef.instance.arrowLeft = tooltipArrowPositionX + this.tooltipRight;
+      this.componentRef.instance.arrowLeft =
+        tooltipArrowPositionX + this.tooltipRight;
       this.componentRef.instance.arrowTop = tooltipArrowPositionY;
       this.componentRef.changeDetectorRef.detectChanges();
     }
