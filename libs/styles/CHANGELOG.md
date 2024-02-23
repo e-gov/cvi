@@ -2,6 +2,17 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [2.6.3](https://github.com/e-gov/cvi/compare/styles-2.6.2...styles-2.6.3) (2024-02-23)
+
+
+### Bug Fixes
+
+* **style:** remove padding and margin EBS-1251 ([#215](https://github.com/e-gov/cvi/issues/215)) ([dc0c758](https://github.com/e-gov/cvi/commit/dc0c75804dd8b43ca001bb7adadbc50f6c130d47))
+* **styles:** form message displays max width EBS-1145 ([#217](https://github.com/e-gov/cvi/issues/217)) ([0361500](https://github.com/e-gov/cvi/commit/03615005cc8baed9d6a8628d9cd8600d076d5856))
+* **ui:** tooltip doesnt close on scroll EBS-1264 ([#218](https://github.com/e-gov/cvi/issues/218)) ([73d446a](https://github.com/e-gov/cvi/commit/73d446afffea681d617dafd3da229a7ed46a14e6))
+
+
+
 ## [2.6.2](https://bitbucket.ria.ee/scm/gh/e-gov-cvi/compare/styles-2.6.1...styles-2.6.2) (2023-12-22)
 
 
