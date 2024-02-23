@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [2.8.1](https://github.com/e-gov/cvi/compare/ui-2.8.0...ui-2.8.1) (2024-02-23)
+
+
+### Bug Fixes
+
+* **ui:** tooltip doesnt close on scroll EBS-1264 ([#218](https://github.com/e-gov/cvi/issues/218)) ([73d446a](https://github.com/e-gov/cvi/commit/73d446afffea681d617dafd3da229a7ed46a14e6))
+
+
+
 # 1.0.0 (2023-11-22)
 
 
