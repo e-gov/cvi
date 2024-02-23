@@ -1484,9 +1484,7 @@ h2 {
 @media (max-width: 601px) {
   .cvi-steps__title {
     line-height: var(--cvi-line-height-100);
-  }
-  .cvi-steps.is-any-step-selected .cvi-steps__title {
-    padding-inline: var(--cvi-spacing-valga);
+    margin-top: 0;
   }
 }
 
@@ -2401,8 +2399,9 @@ h2 {
 
 .cvi-tooltip__content {
   border-radius: var(--cvi-radius-s);
-  background-color: var(--cvi-color-white);
-  color: var(--cvi-color-black-coral-18);
+  background-color: var(--cvi-color-black-coral-12);
+  color: var(--cvi-color-white);
+  font-weight: var(--cvi-font-weight-beta);
   box-shadow: var(--cvi-shadow-beta);
   padding: var(--cvi-spacing-rapla) var(--cvi-spacing-elva);
   max-width: 400px;
@@ -2419,7 +2418,7 @@ h2 {
 
 .cvi-tooltip__arrow {
   --arrow-configurable-index: calc(var(--cvi-tooltip-zindex) + 1);
-  background-color: var(--cvi-color-white);
+  background-color: var(--cvi-color-black-coral-12);
   transform: rotate(45deg);
   width: 15px;
   height: 15px;
@@ -3292,7 +3291,8 @@ h2 {
   font-size: var(--cvi-font-size-75);
   display: block;
   position: relative;
-  max-width: 100%;
+  width: -moz-fit-content;
+  width: fit-content;
   margin-top: 7px;
   padding-top: 7px;
   padding-bottom: var(--cvi-spacing-loksa);
