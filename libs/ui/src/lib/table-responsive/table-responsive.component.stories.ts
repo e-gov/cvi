@@ -162,3 +162,37 @@ WithCustomHeaderAndBodyMobile.parameters = {
     defaultViewport: 'iphone12mini',
   },
 };
+
+
+const TemplateWithTranslations: Story<TableResponsiveComponent> = (
+  args: TableResponsiveComponent
+) => ({
+  props: {
+    ...args,
+    data: [
+      {
+        who: "Monkey",
+        what: "see-do"
+      },
+      {
+        "who": "Bear",
+        "what": "drink-drank-drunk"
+      }
+    ]
+  },
+  /* template */
+  template: `
+    <cvi-ng-table-responsive [data]="data" [headerLabels]="'common.tableResponsive.headerLabels' | translate"></cvi-ng-table-responsive>
+  `,
+});
+
+export const WithTranslations = TemplateWithTranslations.bind({});
+WithTranslations.parameters = {
+  layout: 'fullscreen',
+  backgrounds: {
+    default: 'light',
+  },
+  viewport: {
+    defaultViewport: 'iphone12mini',
+  },
+};
