@@ -7,6 +7,7 @@
       // Why we don't move position: fixed to the root element? Because we need the arrow to be positioned independently in the viewport - it must be at the same x coordinate as the reference element
       position: fixed;
     }
+
     #{$base}__content {
       border-radius: var(--cvi-radius-s);
       background-color: get-color(white);
