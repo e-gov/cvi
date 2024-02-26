@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [2.6.4](https://github.com/e-gov/cvi/compare/styles-2.6.3...styles-2.6.4) (2024-02-26)
+
+
+### Bug Fixes
+
+* **styles:** update version ([#221](https://github.com/e-gov/cvi/issues/221)) ([b174089](https://github.com/e-gov/cvi/commit/b17408941c2a32dc59d57a584cbcaaba94ba3bc6))
+
+
+
 ## [2.6.3](https://github.com/e-gov/cvi/compare/styles-2.6.2...styles-2.6.3) (2024-02-23)
 
 
