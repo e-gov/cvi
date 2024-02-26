@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [2.9.0](https://github.com/e-gov/cvi/compare/ui-2.8.1...ui-2.9.0) (2024-02-26)
+
+
+### Features
+
+* **ui:** table-responsive mobile view cannot translate headers EBS-1282 ([#222](https://github.com/e-gov/cvi/issues/222)) ([ae1e5f9](https://github.com/e-gov/cvi/commit/ae1e5f963dd51d86010c249ca3f1854ea7988998))
+
+
+
 ## [2.8.1](https://github.com/e-gov/cvi/compare/ui-2.8.0...ui-2.8.1) (2024-02-23)
 
 
