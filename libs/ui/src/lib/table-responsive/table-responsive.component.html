@@ -18,7 +18,10 @@
 
 <cvi-ng-track class="cvi-table-responsive__cards" [gap]="2" flexDirection="vertical">
   <cvi-ng-table-card *ngFor="let row of data">
-    <cvi-ng-labeled-item *ngFor="let headerLabel of headerLabels; let colIdx = index" [label]="headerLabel">
+    <cvi-ng-labeled-item *ngFor="let headerLabel of headerLabels; let colIdx = index">
+      <div class="cvi-labeled-item__label">
+        <ng-container *ngTemplateOutlet="headerTemplate || defaultHeaderTemplate; context: { $implicit: headerLabel, colIdx: colIdx }"></ng-container>
+      </div>
       <ng-container *ngTemplateOutlet="bodyTemplate || defaultBodyTemplate; context: { $implicit: row, colIdx: colIdx }"></ng-container>
     </cvi-ng-labeled-item>
   </cvi-ng-table-card>
