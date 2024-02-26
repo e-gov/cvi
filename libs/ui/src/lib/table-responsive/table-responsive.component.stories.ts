@@ -2,6 +2,9 @@ import { Meta, Story } from '@storybook/angular';
 import notes from './table-responsive.component.md';
 import { TableResponsiveComponent } from './table-responsive.component';
 import { StatusBadgeSeverity } from '../status-badge/status-badge';
+import { concatMap, delay, from, of } from 'rxjs';
+
+const withObservableTitlesDelay = 1000;
 
 const statuses: { severity: StatusBadgeSeverity; label: string }[] = [
   {
@@ -158,6 +161,43 @@ export const WithCustomHeaderAndBodyMobile = TemplateWithCustomHeaderBody.bind(
 WithCustomHeaderAndBodyMobile.storyName =
   'With Custom Header And Body (Mobile)';
 WithCustomHeaderAndBodyMobile.parameters = {
+  viewport: {
+    defaultViewport: 'iphone12mini',
+  },
+};
+
+const TemplateWithObservables: Story<TableResponsiveComponent> = (
+  args: TableResponsiveComponent
+) => ({
+  props: {
+    ...args,
+    data: [
+      {
+        who: 'Monkey',
+        what: 'see-do',
+      },
+      {
+        who: 'Bear',
+        what: 'drink-drank-drunk',
+      },
+    ],
+    headerLabels$: from([['Lunes', 'Viernes']]).pipe(
+      concatMap((item) => of(item).pipe(delay(withObservableTitlesDelay)))
+    ),
+  },
+  /* template */
+  template: `
+    <cvi-ng-table-responsive [data]="data" [headerLabels]="headerLabels$ | async"></cvi-ng-table-responsive>
+  `,
+});
+
+export const WithObservables = TemplateWithObservables.bind({});
+WithObservables.parameters = {
+  chromatic: { delay: withObservableTitlesDelay + 300 },
+  layout: 'fullscreen',
+  backgrounds: {
+    default: 'light',
+  },
   viewport: {
     defaultViewport: 'iphone12mini',
   },
