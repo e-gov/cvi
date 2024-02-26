@@ -4,6 +4,9 @@
       "title": "Abiellumine (Eesti keeles)",
       "step1": "Esimene samm",
       "step2": "Teine samm"
+    },
+    "tableResponsive": {
+      "headerLabels": ["Esmaspäev", "Teisipäev"]
     }
   }
 }
