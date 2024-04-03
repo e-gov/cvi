@@ -296,12 +296,12 @@ export const WithURLStep = TemplateWithUrlStep.bind({});
 WithURLStep.args = {
   currentStepIndex: 0,
   urlStepTitle: 'Navigate to somewhere or do something',
-  urlStepLabel: 'Next step in your journey: '
+  urlStepLabel: 'Next step in your journey: ',
 };
 
 export const MobileWithURLStep = TemplateWithUrlStep.bind({});
 MobileWithURLStep.args = {
-  urlStepTitle: 'Navigate to somewhere or do something'
+  urlStepTitle: 'Navigate to somewhere or do something',
 };
 MobileWithURLStep.parameters = {
   layout: 'fullscreen',

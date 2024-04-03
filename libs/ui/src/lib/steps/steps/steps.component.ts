@@ -148,7 +148,7 @@ export class StepsComponent
       return;
     }
     if (this.stepTitles.length == stepIndex) {
-      this.urlStepClicked()
+      this.urlStepClicked();
       return;
     }
     this.anyStepSelected = true;
