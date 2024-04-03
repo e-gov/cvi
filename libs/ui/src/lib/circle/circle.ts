@@ -1,11 +1,10 @@
-export type CircleTheme = 'dark' | 'light' | 'dark-filled';
+export type CircleTheme = 'dark' | 'light';
 
 export type CircleSeverity = 'none' | 'success' | 'error' | 'info';
 
 export type CircleThemeProperties = {
   '--border-color': string;
   '--color': string;
-  '--background-color': string;
 };
 
 export type CircleThemePropertyGroup = {
@@ -30,7 +29,6 @@ export const circleThemePropertyGroups: CircleThemePropertyGroup[] = [
     properties: {
       '--border-color': '--cvi-color-sapphire-blue-13',
       '--color': '--cvi-color-sapphire-blue-13',
-      '--background-color': 'transparent',
     },
   },
   {
@@ -38,15 +36,6 @@ export const circleThemePropertyGroups: CircleThemePropertyGroup[] = [
     properties: {
       '--border-color': '--cvi-color-white',
       '--color': '--cvi-color-white',
-      '--background-color': 'transparent',
-    },
-  },
-  {
-    theme: 'dark-filled',
-    properties: {
-      '--border-color': '--cvi-color-sapphire-blue-13',
-      '--color': '--cvi-color-white',
-      '--background-color': '--cvi-color-sapphire-blue-13',
     },
   },
 ];
