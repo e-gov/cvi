@@ -18,7 +18,7 @@
                   [theme]="i === currentStepIndex || this.stepStatuses[i] === 'success' || this.stepStatuses[i] === 'error'  ? 'light' : 'dark'"
                   [severity]="this.stepStatuses[i] | toStepCircleSeverity"
                   [iconName]="this.stepStatuses[i] | toStepCircleIconName">
-                  {{ i + 1 }}
+                  <b>{{ i + 1 }}</b>
                 </cvi-ng-circle>
                 <span class="cvi-steps__list-item-title">{{ stepTitle }}</span>
               </cvi-ng-track>
@@ -41,6 +41,21 @@
           </cvi-ng-track>
         </button>
       </li>
+      <li *ngIf="urlStepTitle"
+          class="cvi-steps__list-item cvi-steps__display_desktop">
+        <button class="cvi-steps__list-item-button" style="background-color: white;" (click)="urlStepClicked()">
+          <cvi-ng-track [layout]="'flex'" [horizontalAlignment]="'justify'" [verticalAlignment]="'center'">
+            <div class="cvi-steps__list-item-circle-wrapper--desktop">
+              <cvi-ng-track [gap]="2" [verticalAlignment]="'center'">
+                <cvi-ng-circle [iconName]="'arrow_a_right'"
+                               [theme]="'dark-filled'">
+                </cvi-ng-circle>
+                <span class="cvi-steps__list-item-title">{{ urlStepTitle }}</span>
+              </cvi-ng-track>
+            </div>
+          </cvi-ng-track>
+        </button>
+      </li>
     </ol>
     <ng-content></ng-content>
     <div *ngIf="this.stepChildren.length > 1 && this.currentStepIndex !== null"
@@ -56,13 +71,17 @@
           {{ this.stepTitles[this.currentStepIndex - 1] }}
         </span>
       </button>
-      <button *ngIf="this.currentStepIndex < this.stepChildren.length - 1"
+      <button *ngIf="this.currentStepIndex < this.stepChildren.length - 1 || urlStepTitle"
               class="cvi-steps__directional-button cvi-steps__directional-button--direction-next"
               (click)="stepSelected(this.currentStepIndex + 1)"
               [title]="this.stepTitles[this.currentStepIndex + 1]"
               [dataAttribute]="'next_step_button_' + this.currentStepIndex">
         <span class="cvi-steps__directional-button-label">
           {{ this.stepTitles[this.currentStepIndex + 1] }}
+        </span>
+        <span *ngIf="urlStepTitle && currentStepIndex === stepTitles.length - 1"
+              class="cvi-steps__directional-button-label">
+          {{ (urlStepLabel ? urlStepLabel : '') + urlStepTitle }}
         </span>
         <cvi-ng-icon [name]="'arrow_a_right'" [svgClass]="'cvi-steps__directional-button-icon'"></cvi-ng-icon>
       </button>

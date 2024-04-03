@@ -26,4 +26,21 @@ describe('StepsComponent', () => {
     expect(component.stepChange.emit).toBeCalledTimes(1);
     expect(component.stepChange.emit).toBeCalledWith(1);
   });
+
+  it('should emit url step click when stepSelected is called with stepIndex equal to stepTitles length', () => {
+    jest.spyOn(component.urlStepClick, 'emit');
+    component.stepTitles = ['index_0', 'index_1']
+    component.stepSelected(2);
+
+    expect(component.urlStepClick.emit).toBeCalledTimes(1);
+    expect(component.urlStepClick.emit).toBeCalledWith();
+  });
+
+  it('should emit url step click when urlStepClicked is called', () => {
+    jest.spyOn(component.urlStepClick, 'emit');
+    component.urlStepClicked();
+
+    expect(component.urlStepClick.emit).toBeCalledTimes(1);
+    expect(component.urlStepClick.emit).toBeCalledWith();
+  });
 });
