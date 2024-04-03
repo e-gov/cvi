@@ -18,7 +18,7 @@
                   [theme]="i === currentStepIndex || this.stepStatuses[i] === 'success' || this.stepStatuses[i] === 'error'  ? 'light' : 'dark'"
                   [severity]="this.stepStatuses[i] | toStepCircleSeverity"
                   [iconName]="this.stepStatuses[i] | toStepCircleIconName">
-                  <b>{{ i + 1 }}</b>
+                  {{ i + 1 }}
                 </cvi-ng-circle>
                 <span class="cvi-steps__list-item-title">{{ stepTitle }}</span>
               </cvi-ng-track>
