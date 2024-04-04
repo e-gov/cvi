@@ -95,6 +95,10 @@
         #{$base}.is-any-step-selected &:not(.is-current) {
           @include cvi-screenreader-text;
         }
+
+        &--is-url-step {
+          display: none;
+        }
       }
       @include cvi-breakpoint-up(sm) {
         min-height: 72px;
@@ -337,12 +341,6 @@
     #{$base}__directional-button-label {
       @include cvi-breakpoint-down(sm) {
         @include cvi-screenreader-text;
-      }
-    }
-
-    #{$base}__display_desktop {
-      @include cvi-breakpoint-down(sm) {
-        display: none;
       }
     }
   }
