@@ -95,10 +95,6 @@
         #{$base}.is-any-step-selected &:not(.is-current) {
           @include cvi-screenreader-text;
         }
-
-        &--is-url-step {
-          display: none;
-        }
       }
       @include cvi-breakpoint-up(sm) {
         min-height: 72px;
@@ -108,6 +104,30 @@
         border-radius: var(--cvi-radius-l);
         // TODO: in future we could try to move the filter code from HTML to CSS for better separation of concerns. However right now there's an issue in Safari where the filter is not applied
         // filter: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='round'%3E%3CfeGaussianBlur in='SourceGraphic' stdDeviation='3' result='blur' %2f%3E%3CfeColorMatrix in='blur' mode='matrix' values='1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 19 -9' result='goo' %2f%3E%3CfeComposite in='SourceGraphic' in2='goo' operator='atop'%2f%3E%3C%2ffilter%3E%3C%2fsvg%3E#round")
+        filter: url('#round') drop-shadow(0 1px 5px rgba(var(--cvi-color-rgb-black) / .15));
+        transition: filter .3s;
+
+        &:hover,
+        &:focus {
+          filter: url('#round') drop-shadow(0 1px 5px rgba(var(--cvi-color-rgb-black) / .3));
+        }
+
+        &:focus-within {
+          filter: url('#round') drop-shadow(0 0 2px var(--cvi-color-black));
+        }
+      }
+    }
+
+    #{$base}__list-item-url-step {
+      @include cvi-breakpoint-down(sm) {
+        display: none;
+      }
+      @include cvi-breakpoint-up(sm) {
+        min-height: 72px;
+        flex-grow: 1;
+        flex-shrink: 1;
+        flex-basis: 0;
+        border-radius: var(--cvi-radius-l);
         filter: url('#round') drop-shadow(0 1px 5px rgba(var(--cvi-color-rgb-black) / .15));
         transition: filter .3s;
 
