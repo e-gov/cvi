@@ -213,6 +213,14 @@
       }
     }
 
+    #{$base}__list-item-url-step-title {
+      word-break: break-word;
+      @include cvi-breakpoint-up(sm) {
+          text-decoration: underline;
+          color: get-color(sapphire-blue-13);
+        }
+      }
+
     #{$base}__list-item-arrow-icon-wrapper {
       @include cvi-breakpoint-up(sm) {
         display: none;
