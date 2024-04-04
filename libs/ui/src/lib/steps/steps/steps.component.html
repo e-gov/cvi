@@ -42,7 +42,7 @@
         </button>
       </li>
       <li *ngIf="urlStepTitle"
-          class="cvi-steps__list-item-url-step">
+          class="cvi-steps__list-item cvi-steps__list-item--is-url-step">
         <button class="cvi-steps__list-item-button" style="background-color: white;" (click)="urlStepClicked()">
           <cvi-ng-track [layout]="'flex'" [horizontalAlignment]="'justify'" [verticalAlignment]="'center'">
             <div class="cvi-steps__list-item-circle-wrapper--desktop">
@@ -52,7 +52,7 @@
                                [severity]="'info'"
                                style="--cvi-circle-border-color: var(--cvi-color-sapphire-blue-13)">
                 </cvi-ng-circle>
-                <span class="cvi-steps__list-item-url-step-title">{{ urlStepTitle }}</span>
+                <span class="cvi-steps__list-item-title">{{ urlStepTitle }}</span>
               </cvi-ng-track>
             </div>
           </cvi-ng-track>
