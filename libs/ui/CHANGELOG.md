@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [2.10.0](https://github.com/e-gov/cvi/compare/ui-2.9.0...ui-2.10.0) (2024-04-05)
+
+
+### Features
+
+* **ui:** url step for steps component EBS-1316 ([#225](https://github.com/e-gov/cvi/issues/225)) ([df0fb98](https://github.com/e-gov/cvi/commit/df0fb98ba7c421e3bf62082faab235d413f5df60))
+
+
+
 # [2.9.0](https://github.com/e-gov/cvi/compare/ui-2.8.1...ui-2.9.0) (2024-02-26)
 
 
