@@ -1582,6 +1582,12 @@ h2 {
   }
 }
 
+@media (max-width: 601px) {
+  .cvi-steps__list-item--is-url-step {
+    display: none;
+  }
+}
+
 .cvi-steps__list-item-button {
   position: relative;
   font-size: var(--cvi-font-size-100);
