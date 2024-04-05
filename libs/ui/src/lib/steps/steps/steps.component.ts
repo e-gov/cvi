@@ -28,6 +28,10 @@ export class StepsComponent
 {
   @Input() title!: string;
 
+  @Input() urlStepTitle?: string;
+
+  @Input() urlStepLabel?: string;
+
   /** Internal */
   private _currentStepIndex: number | null = null;
 
@@ -49,6 +53,8 @@ export class StepsComponent
   @Input() stepIndex: number | null = null;
 
   @Output() stepChange = new EventEmitter<number>();
+
+  @Output() urlStepClick = new EventEmitter<any>();
 
   stepStatuses!: ('success' | 'error' | null)[];
   stepTitles!: string[];
@@ -141,6 +147,10 @@ export class StepsComponent
     if (this.currentStepIndex == stepIndex) {
       return;
     }
+    if (this.stepTitles.length == stepIndex) {
+      this.urlStepClicked();
+      return;
+    }
     this.anyStepSelected = true;
     this.currentStepIndex = stepIndex;
     this.hideStepsContent();
@@ -158,5 +168,9 @@ export class StepsComponent
     this.currentProgressCSSVar = Math.round(
       ((stepIndex + 1) / this.stepTitles.length) * 100
     );
+  }
+
+  urlStepClicked() {
+    this.urlStepClick.emit();
   }
 }

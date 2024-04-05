@@ -95,6 +95,8 @@
         #{$base}.is-any-step-selected &:not(.is-current) {
           @include cvi-screenreader-text;
         }
+
+        
       }
       @include cvi-breakpoint-up(sm) {
         min-height: 72px;
@@ -114,6 +116,12 @@
 
         &:focus-within {
           filter: url('#round') drop-shadow(0 0 2px var(--cvi-color-black));
+        }
+      }
+      
+      &--is-url-step {
+        @include cvi-breakpoint-down(sm) {
+          display: none;
         }
       }
     }
