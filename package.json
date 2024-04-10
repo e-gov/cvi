@@ -111,7 +111,7 @@
     "@vitest/ui": "0.25.8",
     "@whitespace/storybook-addon-html": "^5.1.4",
     "babel-jest": "29.0.3",
-    "chromatic": "^6.17.2",
+    "chromatic": "^11.3.0",
     "cpy-cli": "^4.2.0",
     "cypress": "^11.0.0",
     "cypress-storybook": "^0.5.1",
