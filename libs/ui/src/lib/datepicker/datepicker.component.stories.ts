@@ -1,6 +1,5 @@
-import { Meta, moduleMetadata, Story } from '@storybook/angular';
+import { Meta, moduleMetadata, StoryFn } from '@storybook/angular';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { UiModule } from '../ui.module';
 import notes from './datepicker.component.md';
 import { DatepickerComponent } from './datepicker.component';
 
@@ -8,7 +7,7 @@ export default {
   title: 'Angular/Form/Datepicker',
   decorators: [
     moduleMetadata({
-      imports: [UiModule, ReactiveFormsModule],
+      imports: [ReactiveFormsModule],
     }),
   ],
   parameters: { notes },
@@ -19,21 +18,40 @@ export default {
   },
 } as Meta<DatepickerComponent>;
 
-const Template: Story<DatepickerComponent> = (args: DatepickerComponent) => ({
-  props: args,
-  template: `
-    <cvi-ng-datepicker [placeholder]="placeholder"
-                       [disabled]="disabled"
-                       [htmlId]="htmlId">
-    </cvi-ng-datepicker>
-  `,
-});
+export const Default = {
+  render: (args: DatepickerComponent) => ({
+    props: args,
+    /* template */
+    template: `
+      <cvi-ng-datepicker [placeholder]="placeholder" [disabled]="disabled" [htmlId]="htmlId"></cvi-ng-datepicker>
+    `,
+  }),
+};
 
-export const Default = Template.bind({});
-Default.storyName = 'Default';
-Default.args = {};
+export const WithCustomPlaceholder = {
+  ...Default,
+  args: {
+    placeholder: 'dd.mm.yyyy',
+  },
+};
 
-const FormTemplate: Story<DatepickerComponent> = (
+export const WithDisabled = {
+  ...Default,
+  args: {
+    disabled: true,
+  },
+};
+
+export const OnNonWhiteBackground = {
+  ...Default,
+  parameters: {
+    backgrounds: {
+      default: 'Gray',
+    },
+  },
+};
+
+const FormTemplate: StoryFn<DatepickerComponent> = (
   args: DatepickerComponent
 ) => {
   const form = new FormGroup({
@@ -58,34 +76,19 @@ const FormTemplate: Story<DatepickerComponent> = (
     /* template */
     template: `
       <form [formGroup]="form" (ngSubmit)="onSubmit(this.form.value)">
-        <cvi-ng-form-item label="Some label"
-                          [htmlId]="htmlId">
-            <cvi-ng-datepicker  formControlName="date"
-                                [placeholder]="placeholder"
-                                [disabled]="disabled"
-                                [htmlId]="htmlId">
-            </cvi-ng-datepicker>
+        <cvi-ng-form-item label="Some label" [htmlId]="htmlId">
+          <cvi-ng-datepicker formControlName="date"
+                             [placeholder]="placeholder"
+                             [disabled]="disabled"
+                             [htmlId]="htmlId">
+          </cvi-ng-datepicker>
         </cvi-ng-form-item>
       </form>
       <div>Inserted value: {{selectedValue()}}</div>
     `,
   };
 };
-export const WithFormGroup = FormTemplate.bind({});
 
-export const WithCustomPlaceholder = Template.bind({});
-WithCustomPlaceholder.args = {
-  placeholder: 'dd.mm.yyyy',
-};
-
-export const OnNonWhiteBackground = Template.bind({});
-OnNonWhiteBackground.parameters = {
-  backgrounds: {
-    default: 'Gray',
-  },
-};
-
-export const WithDisabled = Template.bind({});
-WithDisabled.args = {
-  disabled: true,
+export const WithFormGroup = {
+  render: FormTemplate,
 };

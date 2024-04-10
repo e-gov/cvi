@@ -1,4 +1,4 @@
-import { Story, Meta } from '@storybook/angular';
+import { Meta } from '@storybook/angular';
 import notes from './form-item.html.md';
 
 export default {
@@ -24,17 +24,17 @@ export default {
   },
 } as Meta;
 
-const Template: Story = (args) => ({
-  props: args,
-  /* template */
-  template: `
-    <div class="cvi-form-item cvi-form-item--label-position-{{ labelPosition }}{{ required ? ' cvi-form-item--is-required' : ''}}">
-      <label for="{{ htmlId }}" class="{{ isLabelHidden ? 'cvi-screenreader-text' : 'cvi-form-item__label' }}">{{ label }}{{ required ? ' *' : ''}}</label>
-      <span class="cvi-textfield cvi-textfield--type-single-line">
-        <input type="text" placeholder="{{ placeholder }}" class="cvi-textfield__text-control" id="{{ htmlId }}" />
-      </span>
-    </div>
-  `,
-});
-
-export const Default = Template.bind({});
+export const Default = {
+  render: (args: unknown) => ({
+    props: args,
+    /* template */
+    template: `
+      <div class="cvi-form-item cvi-form-item--label-position-{{ labelPosition }}{{ required ? ' cvi-form-item--is-required' : ''}}">
+        <label for="{{ htmlId }}" class="{{ isLabelHidden ? 'cvi-screenreader-text' : 'cvi-form-item__label' }}">{{ label }}{{ required ? ' *' : ''}}</label>
+        <span class="cvi-textfield cvi-textfield--type-single-line">
+          <input type="text" placeholder="{{ placeholder }}" class="cvi-textfield__text-control" id="{{ htmlId }}" />
+        </span>
+      </div>
+    `,
+  }),
+};

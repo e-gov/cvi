@@ -40,6 +40,7 @@ export class RadioGroupComponent
 
   @Input() disabled = false;
 
+  /** `compact` is only relevant when `cvi-ng-option-button` is used as a child */
   @Input() appearance: 'regular' | 'compact' = 'regular';
 
   @HostBinding('class') get getHostClasses(): string {

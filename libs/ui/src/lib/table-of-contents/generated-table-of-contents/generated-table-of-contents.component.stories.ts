@@ -1,4 +1,4 @@
-import { Meta, moduleMetadata, Story } from '@storybook/angular';
+import { Meta, moduleMetadata } from '@storybook/angular';
 import notes from './generated-table-of-contents.component.md';
 import { GeneratedTableOfContentsComponent } from './generated-table-of-contents.component';
 import { Component, Input } from '@angular/core';
@@ -105,104 +105,100 @@ export default {
   },
 } as Meta;
 
-const Template: Story<GeneratedTableOfContentsComponent> = (
-  args: GeneratedTableOfContentsComponent
-) => ({
-  component: GeneratedTableOfContentsComponent,
-  props: {
-    ...args,
-  },
-  /* template */
-  template: `
-    <cvi-ng-generated-table-of-contents [title]="title" [headingSelector]="headingSelector">
-      <cvi-ng-storybook-toc-html-example></cvi-ng-storybook-toc-html-example>
-    </cvi-ng-generated-table-of-contents>
-  `,
-});
-
-export const Default = Template.bind({});
-Default.parameters = {
-  axe: {
-    // disabling because of a false trigger when axe-storybook is run as a Github action
-    disabledRules: ['scrollable-region-focusable'],
+export const Default = {
+  render: (args: GeneratedTableOfContentsComponent) => ({
+    props: args,
+    /* template */
+    template: `
+      <cvi-ng-generated-table-of-contents [title]="title" [headingSelector]="headingSelector">
+        <cvi-ng-storybook-toc-html-example></cvi-ng-storybook-toc-html-example>
+      </cvi-ng-generated-table-of-contents>
+    `,
+  }),
+  parameters: {
+    axe: {
+      // disabling because of a false trigger when axe-storybook is run as a Github action
+      disabledRules: ['scrollable-region-focusable'],
+    },
   },
 };
 
-export const WithCustomHeadingLevels = Template.bind({});
-WithCustomHeadingLevels.args = {
-  headingSelector: 'h1, h2',
-};
-WithCustomHeadingLevels.parameters = {
-  axe: {
-    // disabling because of a false trigger when axe-storybook is run as a Github action
-    disabledRules: ['scrollable-region-focusable'],
+export const WithCustomHeadingLevels = {
+  ...Default,
+  args: {
+    headingSelector: 'h1, h2',
+  },
+  parameters: {
+    axe: {
+      // disabling because of a false trigger when axe-storybook is run as a Github action
+      disabledRules: ['scrollable-region-focusable'],
+    },
   },
 };
 
-const TemplateWithSteps: Story<GeneratedTableOfContentsComponent> = (
-  args: GeneratedTableOfContentsComponent
-) => ({
-  component: GeneratedTableOfContentsComponent,
-  props: {
-    ...args,
-    extraAsyncSections: from([
-      [
-        {
-          title: 'I am the title of the first observable array element',
-          content:
-            'Content is irrelevant market if tone term notice road settlers higher cry industrial job headed wing friendly color throughout symbol front mouse rear cat swing short sent noun cold wherever author establish felt come ocean look power help whether easier heavy gray softly industrial rising wise package record shirt they ice press even scale wealth shallow post exactly ball line complex may gather for composition burn duty accident say stronger job author are in bit',
-        },
-        {
-          title: 'I am the title of the second observable array element',
-          content:
-            'This content is also irrelevant southern river couple hollow ancient cookies flat onto our behind thin unusual away instance everything explanation setting drive cold roll refer case brought continent blew been wood goes known sink important goose seldom pocket fat food central label teach meet contrast car breakfast thou throat week cat rough',
-        },
-      ],
-    ]).pipe(concatMap((item) => of(item).pipe(delay(500)))),
-  },
-  /* template */
-  template: `
-    <cvi-ng-steps title="Abiellumine" [currentStepIndex]="null" [hasTableOfContents]="true">
-      <p cvi-steps="after-title">Custom content before steps</p>
-      <cvi-ng-step>
-        <cvi-ng-generated-table-of-contents [title]="title">
-          <cvi-ng-step-panel title="Step One">
-            <cvi-ng-storybook-toc-html-steps-example [extraAsyncSections]="extraAsyncSections"></cvi-ng-storybook-toc-html-steps-example>
-          </cvi-ng-step-panel>
-        </cvi-ng-generated-table-of-contents>
-      </cvi-ng-step>
-      <cvi-ng-step>
-        <cvi-ng-generated-table-of-contents [title]="title">
-          <cvi-ng-step-panel title="Step Two">
-            <div>
-              <div [cviNgStorybookRandomParagraphs]="2"></div>
-                <h2>Some random h2</h2>
-                <div [cviNgStorybookRandomParagraphs]="10"></div>
-            </div>
-            <div>
-              <h3>A random h3 heading with a lot of sense in it</h3>
-              <div [cviNgStorybookRandomParagraphs]="10"></div>
-            </div>
-            <div>
+export const WithSteps = {
+  render: (args: GeneratedTableOfContentsComponent) => ({
+    props: {
+      ...args,
+      extraAsyncSections: from([
+        [
+          {
+            title: 'I am the title of the first observable array element',
+            content:
+              'Content is irrelevant market if tone term notice road settlers higher cry industrial job headed wing friendly color throughout symbol front mouse rear cat swing short sent noun cold wherever author establish felt come ocean look power help whether easier heavy gray softly industrial rising wise package record shirt they ice press even scale wealth shallow post exactly ball line complex may gather for composition burn duty accident say stronger job author are in bit',
+          },
+          {
+            title: 'I am the title of the second observable array element',
+            content:
+              'This content is also irrelevant southern river couple hollow ancient cookies flat onto our behind thin unusual away instance everything explanation setting drive cold roll refer case brought continent blew been wood goes known sink important goose seldom pocket fat food central label teach meet contrast car breakfast thou throat week cat rough',
+          },
+        ],
+      ]).pipe(concatMap((item) => of(item).pipe(delay(500)))),
+    },
+    /* template */
+    template: `
+      <cvi-ng-steps title="Abiellumine" [currentStepIndex]="null" [hasTableOfContents]="true">
+        <p cvi-steps="after-title">Custom content before steps</p>
+        <cvi-ng-step>
+          <cvi-ng-generated-table-of-contents [title]="title">
+            <cvi-ng-step-panel title="Step One">
+              <cvi-ng-storybook-toc-html-steps-example [extraAsyncSections]="extraAsyncSections"></cvi-ng-storybook-toc-html-steps-example>
+            </cvi-ng-step-panel>
+          </cvi-ng-generated-table-of-contents>
+        </cvi-ng-step>
+        <cvi-ng-step>
+          <cvi-ng-generated-table-of-contents [title]="title">
+            <cvi-ng-step-panel title="Step Two">
               <div>
-                <h2>Papadiboopi</h2>
+                <div [cviNgStorybookRandomParagraphs]="2"></div>
+                  <h2>Some random h2</h2>
+                  <div [cviNgStorybookRandomParagraphs]="10"></div>
               </div>
-              <div [cviNgStorybookRandomParagraphs]="10"></div>
-            </div>
-          </cvi-ng-step-panel>
-        </cvi-ng-generated-table-of-contents>
-      </cvi-ng-step>
-    </cvi-ng-steps>
-  `,
-});
+              <div>
+                <h3>A random h3 heading with a lot of sense in it</h3>
+                <div [cviNgStorybookRandomParagraphs]="10"></div>
+              </div>
+              <div>
+                <div>
+                  <h2>Papadiboopi</h2>
+                </div>
+                <div [cviNgStorybookRandomParagraphs]="10"></div>
+              </div>
+            </cvi-ng-step-panel>
+          </cvi-ng-generated-table-of-contents>
+        </cvi-ng-step>
+      </cvi-ng-steps>
+    `,
+  }),
+  name: 'With steps',
+};
 
-export const WithSteps = TemplateWithSteps.bind({});
-WithSteps.storyName = 'With steps';
-
-export const WithStepsMobile = TemplateWithSteps.bind({});
-WithStepsMobile.storyName = 'With steps (mobile)';
-WithStepsMobile.parameters = {
-  viewport: {
-    defaultViewport: 'iphone12mini',
+export const WithStepsMobile = {
+  ...WithSteps,
+  name: 'With steps (mobile)',
+  parameters: {
+    viewport: {
+      defaultViewport: 'iphone12mini',
+    },
   },
 };

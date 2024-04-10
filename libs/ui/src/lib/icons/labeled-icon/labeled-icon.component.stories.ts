@@ -1,8 +1,14 @@
-import { componentWrapperDecorator, Meta, Story } from '@storybook/angular';
+import { componentWrapperDecorator, Meta } from '@storybook/angular';
 import { iconSizeDefault } from '../icon/icon';
 import { LabeledIconComponent } from './labeled-icon.component';
 import notes from './labeled-icon.component.md';
 import { storybookIconsNames } from '../storybook-icons';
+
+const wrapperDecorators = [
+  componentWrapperDecorator(LabeledIconComponent, ({ args }) => {
+    return args;
+  }),
+];
 
 export default {
   title: 'Angular/Labeled icon',
@@ -35,72 +41,67 @@ export default {
     iconPosition: 'before',
     content: 'This is a labeled icon',
   },
-} as Meta<any>;
+} as Meta;
 
-const Template: Story<LabeledIconComponent> = (args: LabeledIconComponent) => ({
-  props: args,
-  /* template */
-  template: `
-    <cvi-ng-labeled-icon [name]="name" [iconPosition]="iconPosition" [verticalAlignment]="verticalAlignment" [iconHeight]="iconHeight" [gap]="gap">
-      {{ content }}
-    </cvi-ng-labeled-icon>
-  `,
-});
-
-export const Default = Template.bind({});
-
-export const WithIconAfter = Template.bind({});
-WithIconAfter.args = { iconPosition: 'after' };
-
-export const WithCustomGap = Template.bind({});
-WithCustomGap.args = { gap: 2 };
-
-export const LabeledIconInsideButton = Template.bind({});
-LabeledIconInsideButton.args = {
-  iconPosition: 'after',
-  verticalAlignment: 'center',
-};
-LabeledIconInsideButton.decorators = [
-  componentWrapperDecorator((story) => {
-    return `
-      <cvi-ng-button appearance="secondary">
-        ${story}
-      </cvi-ng-button>
-    `;
+export const Default = {
+  render: (args: LabeledIconComponent) => ({
+    props: args,
+    template: `{{ content }}`,
   }),
-];
+  decorators: wrapperDecorators,
+};
 
-const TemplateWithCustomStyling: Story<LabeledIconComponent> = (
-  args: LabeledIconComponent
-) => ({
-  props: args,
-  /* template */
-  template: `
-    <cvi-ng-labeled-icon [name]="name"
-                         [iconPosition]="iconPosition"
-                         [verticalAlignment]="verticalAlignment"
-                         [iconHeight]="iconHeight"
-                         iconClass="icon-wrapper-class"
-                         svgClass="svg-class">
-      {{ content }}
-    </cvi-ng-labeled-icon>
-  `,
-  styles: [
-    // you don't need to use ::ng-deep in your app
-    `
-      ::ng-deep .svg-class {
-        fill: red;
-      }
-    `,
-    `
-      ::ng-deep .icon-wrapper-class {
-        border: 1px green solid;
-      }
-    `,
+export const WithIconAfter = {
+  ...Default,
+  args: { iconPosition: 'after' },
+};
+
+export const WithCustomGap = {
+  ...Default,
+  args: { gap: 2 },
+};
+
+export const LabeledIconInsideButton = {
+  ...Default,
+  args: {
+    iconPosition: 'after',
+    verticalAlignment: 'center',
+  },
+  decorators: [
+    ...wrapperDecorators,
+    componentWrapperDecorator((story) => {
+      return `
+        <cvi-ng-button appearance="secondary">
+          ${story}
+        </cvi-ng-button>
+      `;
+    }),
   ],
-});
-export const WithCustomStyling = TemplateWithCustomStyling.bind({});
-WithCustomStyling.args = {
-  iconHeight: 40,
-  verticalAlignment: 'center',
+};
+
+export const WithCustomStyling = {
+  render: (args: LabeledIconComponent) => ({
+    props: args,
+    template: `{{ content }}`,
+    styles: [
+      // in your app you don't need to use ::ng-deep
+      `
+        ::ng-deep .icon-wrapper-class {
+          border: 1px green solid;
+        }
+      `,
+      `
+        ::ng-deep .svg-class {
+          fill: red;
+        }
+      `,
+    ],
+  }),
+  decorators: wrapperDecorators,
+  args: {
+    iconHeight: 40,
+    verticalAlignment: 'center',
+    iconClass: 'icon-wrapper-class',
+    svgClass: 'svg-class',
+  },
 };

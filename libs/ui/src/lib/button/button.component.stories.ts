@@ -1,7 +1,13 @@
-import { Story, Meta, componentWrapperDecorator } from '@storybook/angular';
+import { Meta, componentWrapperDecorator } from '@storybook/angular';
 import notes from './button.component.md';
 import { ButtonComponent } from './button.component';
 import { storybookIconsNames } from '../icons/storybook-icons';
+
+const wrapperDecorators = [
+  componentWrapperDecorator(ButtonComponent, ({ args }) => {
+    return args;
+  }),
+];
 
 export default {
   title: 'Angular/Button',
@@ -9,8 +15,6 @@ export default {
   parameters: { notes },
   argTypes: {
     appearance: {
-      name: 'Appearance',
-      options: ['primary', 'secondary', 'text'],
       control: { type: 'inline-radio' },
     },
     iconName: {
@@ -29,129 +33,118 @@ export default {
   svgClass: { control: false },
   args: {
     content: 'Button label',
-    appearance: 'primary',
-    disabled: false,
   },
 } as Meta<ButtonComponent>;
 
-const Template: Story<ButtonComponent> = (args: ButtonComponent) => ({
-  props: args,
-  /* template */
-  template: `
-    <cvi-ng-button [disabled]="disabled" [size]="size" [appearance]="appearance" [iconName]="iconName" [iconPosition]="iconPosition"[iconHeight]="iconHeight">{{ content }}</cvi-ng-button>
-  `,
-});
-
-export const Default = Template.bind({});
-Default.args = {};
-
-export const Secondary = Template.bind({});
-Secondary.args = {
-  appearance: 'secondary',
+export const Default = {
+  render: (args: ButtonComponent) => ({
+    props: args,
+    template: `{{ content }}`,
+  }),
+  decorators: wrapperDecorators,
 };
 
-export const Small = Template.bind({});
-Small.args = {
-  size: 's',
+export const Secondary = {
+  ...Default,
+  args: {
+    appearance: 'secondary',
+  },
 };
 
-export const Text = Template.bind({});
-Text.args = {
-  appearance: 'text',
+export const Small = {
+  ...Default,
+  args: {
+    size: 's',
+  },
 };
 
-export const WithIcon = Template.bind({});
-WithIcon.args = {
-  iconName: 'add',
-  iconPosition: 'after',
+export const Text = {
+  ...Default,
+  args: {
+    appearance: 'text',
+  },
 };
 
-export const WithIconSmall = Template.bind({});
-WithIconSmall.args = {
-  size: 's',
-  iconName: 'add',
-  iconPosition: 'after',
+export const WithIcon = {
+  ...Default,
+  args: {
+    iconName: 'add',
+    iconPosition: 'after',
+  },
 };
 
-export const WithIconBefore = Template.bind({});
-WithIconBefore.args = {
-  iconName: 'add',
-  iconPosition: 'before',
+export const WithIconSmall = {
+  ...Default,
+  args: {
+    size: 's',
+    iconName: 'add',
+    iconPosition: 'after',
+  },
 };
 
-const TemplateWithCustomColor: Story<ButtonComponent> = (
-  args: ButtonComponent
-) => ({
-  props: args,
-  styles: [
-    `:host {
-      --cvi-button-color: var(--cvi-color-jasper-10);
-      --cvi-button-color--hover: var(--cvi-color-jasper-12);
-    }`,
-  ],
-  /* template */
-  template: `
-    <cvi-ng-button [disabled]="disabled" [size]="size" [appearance]="appearance" [iconName]="iconName" [iconPosition]="iconPosition" [iconHeight]="iconHeight">
-      {{ content }}
-    </cvi-ng-button>
-  `,
-});
-
-export const WithCustomColor = TemplateWithCustomColor.bind({});
-
-const TemplateTextWithoutUnderline: Story<ButtonComponent> = (
-  args: ButtonComponent
-) => ({
-  props: args,
-  styles: [
-    `:host {
-      --cvi-button--text-decoration: none;
-    }`,
-  ],
-  /* template */
-  template: `
-    <cvi-ng-button [disabled]="disabled" [size]="size" [appearance]="appearance" [iconName]="iconName" [iconPosition]="iconPosition" [iconHeight]="iconHeight">
-      {{ content }}
-    </cvi-ng-button>
-  `,
-});
-
-export const TextWithoutUnderline = TemplateTextWithoutUnderline.bind({});
-TextWithoutUnderline.args = {
-  appearance: 'text',
+export const WithIconBefore = {
+  ...Default,
+  args: {
+    iconName: 'add',
+    iconPosition: 'before',
+  },
 };
-TextWithoutUnderline.decorators = [
-  componentWrapperDecorator((story) => {
-    return `
+
+export const WithCustomColor = {
+  render: (args: ButtonComponent) => ({
+    props: args,
+    styles: [
+      `:host {
+        --cvi-button-color: var(--cvi-color-jasper-10);
+        --cvi-button-color--hover: var(--cvi-color-jasper-12);
+      }`,
+    ],
+    template: `{{ content }}`,
+  }),
+  decorators: wrapperDecorators,
+};
+
+export const TextWithoutUnderline = {
+  render: (args: ButtonComponent) => ({
+    props: {
+      ...args,
+      appearance: 'text',
+    },
+    styles: [
+      `:host {
+        --cvi-button--text-decoration: none;
+      }`,
+    ],
+    template: `{{ content }}`,
+  }),
+  decorators: [
+    ...wrapperDecorators,
+    componentWrapperDecorator((story) => {
+      return `
       <cvi-ng-storybook-note>
         Apply <code>--cvi-button--text-decoration: none</code> CSS variable on the component host or its ancestor to remove the underline.
       </cvi-ng-storybook-note>
       ${story}
     `;
-  }),
-];
-
-const TemplateWithCustomIconStyle: Story<ButtonComponent> = (
-  args: ButtonComponent
-) => ({
-  props: args,
-  styles: [
-    `
-      ::ng-deep .svg-class {
-        fill: red;
-      }
-    `,
+    }),
   ],
-  /* template */
-  template: `
-    <cvi-ng-button [disabled]="disabled" [size]="size" [appearance]="appearance" [iconName]="iconName" [iconPosition]="iconPosition" [iconHeight]="iconHeight" svgClass="svg-class">
-      {{ content }}
-    </cvi-ng-button>
-  `,
-});
+};
 
-export const WithCustomIconStyle = TemplateWithCustomIconStyle.bind({});
-WithCustomIconStyle.args = {
-  iconName: 'add',
-  iconPosition: 'after',
+export const WithCustomIconStyle = {
+  ...Default,
+  render: (args: ButtonComponent) => ({
+    props: args,
+    styles: [
+      `::ng-deep .svg-class {
+        fill: red;
+      }`,
+    ],
+    template: `{{ content }}`,
+  }),
+  args: {
+    iconName: 'add',
+    iconPosition: 'after',
+    svgClass: 'svg-class',
+  },
+  decorators: wrapperDecorators,
 };

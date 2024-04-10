@@ -1,8 +1,8 @@
 import { FormControl, FormGroup } from '@angular/forms';
-import { Meta, Story } from '@storybook/angular';
+import { Meta, StoryFn } from '@storybook/angular';
 import { TableComponent } from './table.component';
-import notes from './table.component.md';
 import { StatusBadgeSeverity } from '../status-badge/status-badge';
+import notes from './table.component.md';
 
 const statuses: { severity: StatusBadgeSeverity; label: string }[] = [
   {
@@ -27,6 +27,7 @@ const getStatusBadgeLabelBySeverity = (severity: StatusBadgeSeverity) =>
 
 export default {
   title: 'Angular/Table',
+  component: TableComponent,
   parameters: { notes },
   args: {
     headerLabels: ['Sündmusteenus', 'Staatus', 'Email', 'Viimati muudetud'],
@@ -61,62 +62,66 @@ export default {
   },
 } as Meta<TableComponent>;
 
-const Template: Story<TableComponent> = (args: TableComponent) => ({
-  props: {
-    ...args,
-    getStatusBadgeLabelBySeverity,
-  },
-  /* template */
-  template: `
-  <cvi-ng-table [data]="data">
-    <ng-template #headers>
-      <ng-container *ngFor="let headerLabel of headerLabels">
-        <th cvi-ng-header-cell>{{ headerLabel }}</th>
-      </ng-container>
-      <th cvi-ng-header-cell>
-        <cvi-ng-screenreader-text label="Icons"></cvi-ng-screenreader-text>
-      </th>
-    </ng-template>
-    <ng-template #rows let-row>
-      <td cvi-ng-body-cell>{{ row.event }}</td>
-      <td cvi-ng-body-cell>
-        <cvi-ng-status-badge [severity]="row.statusSeverity" [label]="getStatusBadgeLabelBySeverity(row.statusSeverity)"></cvi-ng-status-badge>
-      </td>
-      <td cvi-ng-body-cell>{{ row.email }}</td>
-      <td cvi-ng-body-cell>{{ row.lastChanged }}</td>
-      <td cvi-ng-body-cell>
-        <cvi-ng-track [gap]="rowIconGap">
-          <button *ngFor="let icon of row.icons" [attr.title]="icon.actionLabel">
-            <cvi-ng-screenreader-text [label]="icon.actionLabel"></cvi-ng-screenreader-text>
-            <cvi-ng-icon [name]="icon.iconName"
-                           [svgClass]="svgClass"
-                           [height]="rowIconHeight">
-            </cvi-ng-icon>
-          </button>
-        </cvi-ng-track>
-      </td>
-    </ng-template>
-  </cvi-ng-table>
-  `,
-});
+export const Default = {
+  render: (args: TableComponent) => ({
+    props: {
+      ...args,
+      getStatusBadgeLabelBySeverity,
+    },
+    /* template */
+    template: `
+      <cvi-ng-table [data]="data">
+        <ng-template #headers>
+          <ng-container *ngFor="let headerLabel of headerLabels">
+            <th cvi-ng-header-cell>{{ headerLabel }}</th>
+          </ng-container>
+          <th cvi-ng-header-cell>
+            <cvi-ng-screenreader-text label="Icons"></cvi-ng-screenreader-text>
+          </th>
+        </ng-template>
+        <ng-template #rows let-row>
+          <td cvi-ng-body-cell>{{ row.event }}</td>
+          <td cvi-ng-body-cell>
+            <cvi-ng-status-badge [severity]="row.statusSeverity" [label]="getStatusBadgeLabelBySeverity(row.statusSeverity)"></cvi-ng-status-badge>
+          </td>
+          <td cvi-ng-body-cell>{{ row.email }}</td>
+          <td cvi-ng-body-cell>{{ row.lastChanged }}</td>
+          <td cvi-ng-body-cell>
+            <cvi-ng-track [gap]="rowIconGap">
+              <button *ngFor="let icon of row.icons" [attr.title]="icon.actionLabel">
+                <cvi-ng-screenreader-text [label]="icon.actionLabel"></cvi-ng-screenreader-text>
+                <cvi-ng-icon [name]="icon.iconName"
+                              [svgClass]="svgClass"
+                              [height]="rowIconHeight">
+                </cvi-ng-icon>
+              </button>
+            </cvi-ng-track>
+          </td>
+        </ng-template>
+      </cvi-ng-table>
+    `,
+  }),
+};
 
-export const Default = Template.bind({});
-
-export const Mobile = Template.bind({});
-Mobile.parameters = {
-  viewport: {
-    defaultViewport: 'iphone12mini',
+export const Mobile = {
+  ...Default,
+  parameters: {
+    viewport: {
+      defaultViewport: 'iphone12mini',
+    },
   },
 };
 
-export const Tablet = Template.bind({});
-Tablet.parameters = {
-  viewport: {
-    defaultViewport: 'ipad',
+export const Tablet = {
+  ...Default,
+  parameters: {
+    viewport: {
+      defaultViewport: 'ipad',
+    },
   },
 };
 
-const TemplateWithToolbar: Story<TableComponent> = (args: TableComponent) => {
+const TemplateWithToolbar: StoryFn<TableComponent> = (args: TableComponent) => {
   const form = new FormGroup({
     item: new FormControl(null),
   });
@@ -129,50 +134,51 @@ const TemplateWithToolbar: Story<TableComponent> = (args: TableComponent) => {
     },
     /* template */
     template: `
-    <cvi-ng-table [data]="data">
+      <cvi-ng-table [data]="data">
+        <cvi-ng-track horizontalAlignment="justify">
+          <cvi-ng-form-item label="Otsi sündmusteenust" htmlId="some-table-search-id">
+            <cvi-ng-input placeholder="Abiellumine" htmlId="some-table-search-id" suffixIconName="loupe"></cvi-ng-input>
+          </cvi-ng-form-item>
+          <cvi-ng-button appearance="text">
+            <cvi-ng-track [gap]="2">
+              <cvi-ng-icon name="add" [height]="14"></cvi-ng-icon>
+              Lisa uus sündmusteenus
+            </cvi-ng-track>
+          </cvi-ng-button>
+        </cvi-ng-track>
 
-      <cvi-ng-track horizontalAlignment="justify">
-        <cvi-ng-form-item label="Otsi sündmusteenust" htmlId="some-table-search-id">
-          <cvi-ng-input placeholder="Abiellumine" htmlId="some-table-search-id" suffixIconName="loupe"></cvi-ng-input>
-        </cvi-ng-form-item>
-        <cvi-ng-button appearance="text">
-          <cvi-ng-track [gap]="2">
-            <cvi-ng-icon name="add" [height]="14"></cvi-ng-icon>
-            Lisa uus sündmusteenus
-          </cvi-ng-track>
-        </cvi-ng-button>
-      </cvi-ng-track>
+        <ng-template #headers>
+          <ng-container *ngFor="let headerLabel of headerLabels">
+            <th cvi-ng-header-cell>{{ headerLabel }}</th>
+          </ng-container>
+          <th cvi-ng-header-cell>
+            <cvi-ng-screenreader-text label="Icons"></cvi-ng-screenreader-text>
+          </th>
+        </ng-template>
 
-      <ng-template #headers>
-        <ng-container *ngFor="let headerLabel of headerLabels">
-          <th cvi-ng-header-cell>{{ headerLabel }}</th>
-        </ng-container>
-        <th cvi-ng-header-cell>
-          <cvi-ng-screenreader-text label="Icons"></cvi-ng-screenreader-text>
-        </th>
-      </ng-template>
-
-      <ng-template #rows let-row>
-        <td cvi-ng-body-cell>{{ row.event }}</td>
-        <td cvi-ng-body-cell>
-          <cvi-ng-status-badge [severity]="row.statusSeverity" [label]="getStatusBadgeLabelBySeverity(row.statusSeverity)"></cvi-ng-status-badge>
-        </td>
-        <td cvi-ng-body-cell>{{ row.email }}</td>
-        <td cvi-ng-body-cell>{{ row.lastChanged }}</td>
-        <td cvi-ng-body-cell>
-          <cvi-ng-track [gap]="rowIconGap">
-            <button *ngFor="let icon of row.icons" [attr.title]="icon.actionLabel">
-              <cvi-ng-screenreader-text [label]="icon.actionLabel"></cvi-ng-screenreader-text>
-              <cvi-ng-icon [name]="icon.iconName"
-                             [height]="rowIconHeight">
-              </cvi-ng-icon>
-            </button>
-          </cvi-ng-track>
-        </td>
-      </ng-template>
-    </cvi-ng-table>
+        <ng-template #rows let-row>
+          <td cvi-ng-body-cell>{{ row.event }}</td>
+          <td cvi-ng-body-cell>
+            <cvi-ng-status-badge [severity]="row.statusSeverity" [label]="getStatusBadgeLabelBySeverity(row.statusSeverity)"></cvi-ng-status-badge>
+          </td>
+          <td cvi-ng-body-cell>{{ row.email }}</td>
+          <td cvi-ng-body-cell>{{ row.lastChanged }}</td>
+          <td cvi-ng-body-cell>
+            <cvi-ng-track [gap]="rowIconGap">
+              <button *ngFor="let icon of row.icons" [attr.title]="icon.actionLabel">
+                <cvi-ng-screenreader-text [label]="icon.actionLabel"></cvi-ng-screenreader-text>
+                <cvi-ng-icon [name]="icon.iconName"
+                              [height]="rowIconHeight">
+                </cvi-ng-icon>
+              </button>
+            </cvi-ng-track>
+          </td>
+        </ng-template>
+      </cvi-ng-table>
     `,
   };
 };
 
-export const WithToolbar = TemplateWithToolbar.bind({});
+export const WithToolbar = {
+  render: TemplateWithToolbar,
+};

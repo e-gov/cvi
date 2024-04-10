@@ -1,8 +1,14 @@
-import { Meta, Story } from '@storybook/angular';
+import { Meta, componentWrapperDecorator } from '@storybook/angular';
 import { concatMap, delay, from, of } from 'rxjs';
 import { CircleComponent } from './circle.component';
 import notes from './circle.component.md';
 import { storybookIconsNames } from '../icons/storybook-icons';
+
+const wrapperDecorators = [
+  componentWrapperDecorator(CircleComponent, ({ args }) => {
+    return args;
+  }),
+];
 
 export default {
   title: 'Angular/Circle',
@@ -36,6 +42,12 @@ export default {
       name: 'Progress',
       control: { type: 'range', min: 0, max: 100, step: 1 },
     },
+    content: {
+      name: 'Content',
+      table: {
+        category: 'Playground',
+      },
+    },
   },
   args: {
     theme: 'dark',
@@ -43,82 +55,75 @@ export default {
     size: 's',
     iconName: undefined,
     progressPercentage: undefined,
+    content: '4',
   },
 } as Meta<CircleComponent>;
 
-const Template: Story<CircleComponent> = (args: CircleComponent) => ({
-  props: {
-    ...args,
-  },
-  template: `
-    <cvi-ng-circle
-      [theme]="theme"
-      [severity]="severity"
-      [size]="size"
-      [iconName]="iconName"
-      [progressPercentage]="progressPercentage"
-    >4</cvi-ng-circle>
-  `,
-});
-
-export const Default = Template.bind({});
-
-export const WithLightTheme = Template.bind({});
-WithLightTheme.parameters = {
-  backgrounds: {
-    default: 'Dark',
-  },
-};
-WithLightTheme.args = {
-  theme: 'light',
+export const Default = {
+  render: (args: CircleComponent) => ({
+    props: args,
+    template: `{{ content }}`,
+  }),
+  decorators: wrapperDecorators,
 };
 
-export const WithIcon = Template.bind({});
-WithIcon.args = {
-  iconName: 'close',
+export const WithLightTheme = {
+  ...Default,
+  parameters: {
+    backgrounds: {
+      default: 'Dark',
+    },
+  },
+  args: {
+    theme: 'light',
+  },
 };
 
-const TemplateProgress: Story<CircleComponent> = (args: CircleComponent) => ({
-  props: {
-    ...args,
-    progress$: from([20, 40, 60, 80, 100]).pipe(
-      concatMap((item) => of(item).pipe(delay(800)))
-    ),
+export const WithIcon = {
+  ...Default,
+  args: {
+    iconName: 'close',
   },
-  template: `
-    <ng-container *ngIf="(progress$ | async) as progress">
+};
+
+export const WithProgress = {
+  render: (args: CircleComponent) => ({
+    props: {
+      ...args,
+      progress$: from([20, 40, 60, 80, 100]).pipe(
+        concatMap((item) => of(item).pipe(delay(800)))
+      ),
+    },
+    template: `
+      <ng-container *ngIf="(progress$ | async) as progress">
+        <cvi-ng-circle
+          [theme]="theme"
+          [severity]="severity"
+          [size]="size"
+          [iconName]="iconName"
+          [progressPercentage]="progress"
+        >{{ progress }}</cvi-ng-circle>
+      </ng-container>
+    `,
+  }),
+};
+
+export const WithCustomBorderColor = {
+  render: (args: CircleComponent) => ({
+    props: args,
+    template: `
       <cvi-ng-circle
         [theme]="theme"
         [severity]="severity"
         [size]="size"
         [iconName]="iconName"
-        [progressPercentage]="progress"
-      >{{ progress }}</cvi-ng-circle>
-    </ng-container>
-  `,
-});
-export const WithProgress = TemplateProgress.bind({});
-
-const CustomBorderTemplate: Story<CircleComponent> = (
-  args: CircleComponent
-) => ({
-  props: {
-    ...args,
+        [progressPercentage]="progressPercentage"
+        style="--cvi-circle-border-color: --cvi-color-sea-green-10"
+      >4</cvi-ng-circle>
+    `,
+  }),
+  args: {
+    theme: 'light',
+    severity: 'success',
   },
-  template: `
-    <cvi-ng-circle
-      [theme]="theme"
-      [severity]="severity"
-      [size]="size"
-      [iconName]="iconName"
-      [progressPercentage]="progressPercentage"
-      style="--cvi-circle-border-color: --cvi-color-sea-green-10"
-    >4</cvi-ng-circle>
-  `,
-});
-
-export const WithCustomBorderColor = CustomBorderTemplate.bind({});
-WithCustomBorderColor.args = {
-  theme: 'light',
-  severity: 'success',
 };

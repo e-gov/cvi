@@ -1,4 +1,4 @@
-import { Story, Meta } from '@storybook/angular';
+import { Meta } from '@storybook/angular';
 import notes from './content-panel.html.md';
 
 export default {
@@ -23,15 +23,15 @@ export default {
   },
 } as Meta;
 
-const Template: Story = (args) => ({
-  props: args,
-  /* template */
-  template: `
-    <div class="cvi-content-panel">
-      <h1 class="cvi-content-panel__title">{{ title }}</h1>
-      {{ content }}
-    </div>
-  `,
-});
-
-export const Default = Template.bind({});
+export const Default = {
+  render: (args: unknown) => ({
+    props: args,
+    /* template */
+    template: `
+      <div class="cvi-content-panel">
+        <h1 class="cvi-content-panel__title">{{ title }}</h1>
+        {{ content }}
+      </div>
+    `,
+  }),
+};

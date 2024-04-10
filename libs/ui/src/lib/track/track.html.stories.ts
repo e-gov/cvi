@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/angular';
+import { Meta, StoryFn } from '@storybook/angular';
 import notes from './track.html.md';
 
 const categoryFlex = {
@@ -82,32 +82,34 @@ export default {
   },
 } as Meta;
 
-const Template: Story = (args) => ({
-  props: args,
-  /* template */
-  template: `
-    <div class="cvi-track cvi-track--layout-{{ layout }} cvi-track--direction-{{ flexDirection }}" [ngClass]="{'cvi-track--items-have-equal-width': flexColumnsEqual, 'cvi-track--has-rows': !!gridRows}" style="--gap: {{ gap }}; --horizontal-alignment: {{ horizontalAlignment }}; --vertical-alignment: {{ verticalAlignment }}; --wrap: {{ flexIsMultiline }}; --rows: {{ gridRows }}">
-      <div class="cvi-button cvi-button--appearance-primary">
-        <button type="button" class="cvi-button__button">Button 1</button>
+export const Default = {
+  render: (args: unknown) => ({
+    props: args,
+    /* template */
+    template: `
+      <div class="cvi-track cvi-track--layout-{{ layout }} cvi-track--direction-{{ flexDirection }}" [ngClass]="{'cvi-track--items-have-equal-width': flexColumnsEqual, 'cvi-track--has-rows': !!gridRows}" style="--gap: {{ gap }}; --horizontal-alignment: {{ horizontalAlignment }}; --vertical-alignment: {{ verticalAlignment }}; --wrap: {{ flexIsMultiline }}; --rows: {{ gridRows }}">
+        <div class="cvi-button cvi-button--appearance-primary">
+          <button type="button" class="cvi-button__button">Button 1</button>
+        </div>
+        <div class="cvi-button cvi-button--appearance-primary">
+          <button type="button" class="cvi-button__button">Button 2</button>
+        </div>
+        <div class="cvi-button cvi-button--appearance-primary">
+          <button type="button" class="cvi-button__button">Button 3 with a longer text that does not fit anywhere</button>
+        </div>
+        <div class="cvi-button cvi-button--appearance-primary">
+          <button type="button" class="cvi-button__button">Button 4</button>
+        </div>
       </div>
-      <div class="cvi-button cvi-button--appearance-primary">
-        <button type="button" class="cvi-button__button">Button 2</button>
-      </div>
-      <div class="cvi-button cvi-button--appearance-primary">
-        <button type="button" class="cvi-button__button">Button 3 with a longer text that does not fit anywhere</button>
-      </div>
-      <div class="cvi-button cvi-button--appearance-primary">
-        <button type="button" class="cvi-button__button">Button 4</button>
-      </div>
-    </div>
-  `,
-});
+    `,
+  }),
+};
 
-export const Default = Template.bind({});
-
-export const Mobile = Template.bind({});
-Mobile.parameters = {
-  viewport: {
-    defaultViewport: 'iphone12mini',
+export const Mobile = {
+  ...Default,
+  parameters: {
+    viewport: {
+      defaultViewport: 'iphone12mini',
+    },
   },
 };

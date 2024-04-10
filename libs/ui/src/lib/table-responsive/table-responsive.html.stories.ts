@@ -1,4 +1,4 @@
-import { Story, Meta } from '@storybook/angular';
+import { StoryObj, Meta } from '@storybook/angular';
 import notes from './table-responsive.html.md';
 
 export default {
@@ -9,10 +9,11 @@ export default {
   },
 } as Meta;
 
-const Template: Story = (args) => ({
-  props: args,
-  /* template */
-  template: `
+export const Default: StoryObj = {
+  render: (args: any) => ({
+    props: args,
+    /* template */
+    template: `
     <div class="cvi-table-responsive">
       <div class="cvi-table-responsive__table cvi-table">
         <div class="cvi-table__inner">
@@ -123,13 +124,14 @@ const Template: Story = (args) => ({
       </div>
     </div>
   `,
-});
+  }),
+};
 
-export const Default = Template.bind({});
-
-export const Mobile = Template.bind({});
-Mobile.parameters = {
-  viewport: {
-    defaultViewport: 'iphone12mini',
+export const Mobile: StoryObj = {
+  ...Default,
+  parameters: {
+    viewport: {
+      defaultViewport: 'iphone12mini',
+    },
   },
 };

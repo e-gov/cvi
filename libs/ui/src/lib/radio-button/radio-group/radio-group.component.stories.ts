@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/angular';
+import { Meta } from '@storybook/angular';
 import notes from './radio-group.component.md';
 import { RadioGroupComponent } from './radio-group.component';
 import { RadioGroupAppearance } from './radio-group';
@@ -13,53 +13,40 @@ export default {
   },
 } as Meta<RadioGroupComponent>;
 
-const Template: Story<RadioGroupComponent> = (args: RadioGroupComponent) => ({
-  props: args,
-  /* template */
-  template: `
-    <cvi-ng-radio-group [title]="title">
-      <cvi-ng-radio-button value="1" label="Label 1" dataAttribute="option_1"></cvi-ng-radio-button>
-      <cvi-ng-radio-button value="2" label="Label 2"></cvi-ng-radio-button>
-      <cvi-ng-radio-button value="3" label="Label 3"></cvi-ng-radio-button>
-    </cvi-ng-radio-group>
-  `,
-});
+export const Default = {
+  render: (args: RadioGroupComponent) => ({
+    props: args,
+    /* template */
+    template: `
+      <cvi-ng-radio-group [title]="title">
+        <cvi-ng-radio-button value="1" label="Label 1" dataAttribute="option_1"></cvi-ng-radio-button>
+        <cvi-ng-radio-button value="2" label="Label 2"></cvi-ng-radio-button>
+        <cvi-ng-radio-button value="3" label="Label 3"></cvi-ng-radio-button>
+      </cvi-ng-radio-group>
+    `,
+  }),
+};
 
-export const Default = Template.bind({});
-Default.args = {};
+export const WithOptionButtons = {
+  render: (args: RadioGroupComponent) => ({
+    props: args,
+    /* template */
+    template: `
+      <cvi-ng-radio-group [title]="title" [appearance]="appearance">
+        <cvi-ng-option-button value="no" label="No" dataAttribute="option_1"></cvi-ng-option-button>
+        <cvi-ng-option-button value="partially" label="Partially"></cvi-ng-option-button>
+        <cvi-ng-option-button value="yes" label="Yes"></cvi-ng-option-button>
+      </cvi-ng-radio-group>
+    `,
+  }),
+  args: {
+    appearance: RadioGroupAppearance.REGULAR,
+  },
+};
 
-const OptionButtonTemplate: Story<RadioGroupComponent> = (
-  args: RadioGroupComponent
-) => ({
-  props: args,
-  /* template */
-  template: `
-    <cvi-ng-radio-group [title]="title" [appearance]="appearance">
-      <cvi-ng-option-button value="no" label="No" dataAttribute="option_1"></cvi-ng-option-button>
-      <cvi-ng-option-button value="partially" label="Partially"></cvi-ng-option-button>
-      <cvi-ng-option-button value="yes" label="Yes"></cvi-ng-option-button>
-    </cvi-ng-radio-group>
-  `,
-});
-
-export const OptionButton = OptionButtonTemplate.bind({});
-OptionButton.args = {};
-
-const OptionButtonCompactTemplate: Story<RadioGroupComponent> = (
-  args: RadioGroupComponent
-) => ({
-  props: args,
-  /* template */
-  template: `
-    <cvi-ng-radio-group [title]="title" [appearance]="appearance">
-      <cvi-ng-option-button value="1" label="1" dataAttribute="option_1"></cvi-ng-option-button>
-      <cvi-ng-option-button value="2" label="2"></cvi-ng-option-button>
-      <cvi-ng-option-button value="3" label="3"></cvi-ng-option-button>
-    </cvi-ng-radio-group>
-  `,
-});
-
-export const OptionButtonCompact = OptionButtonCompactTemplate.bind({});
-OptionButtonCompact.args = {
-  appearance: RadioGroupAppearance.COMPACT,
+export const WithCompactOptionButtons = {
+  ...WithOptionButtons,
+  args: {
+    appearance: RadioGroupAppearance.COMPACT,
+  },
 };

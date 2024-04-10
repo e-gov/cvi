@@ -28,6 +28,7 @@
     "publish:react-ui": "npm publish dist/libs/react-ui",
     "publish:ng-diagrams": "npm publish dist/libs/ng-diagrams",
     "cypress:ui": "npx nx e2e ui-e2e",
+    "cypress:ui:watch": "npx nx e2e ui-e2e --watch",
     "chromatic": "chromatic --exit-zero-on-changes --project-token=23c52c9242eb",
     "axe": "npm run build-storybook && npx axe-storybook --build-dir ./dist/storybook/storybook"
   },
@@ -111,7 +112,7 @@
     "@vitest/ui": "0.25.8",
     "@whitespace/storybook-addon-html": "^5.1.4",
     "babel-jest": "29.0.3",
-    "chromatic": "^6.17.2",
+    "chromatic": "^11.3.0",
     "cpy-cli": "^4.2.0",
     "cypress": "^11.0.0",
     "cypress-storybook": "^0.5.1",

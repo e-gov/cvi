@@ -1,7 +1,7 @@
-import { Meta, moduleMetadata, Story } from '@storybook/angular';
+import { AfterViewInit, Component, Input } from '@angular/core';
+import { Meta, moduleMetadata } from '@storybook/angular';
 import { ToastService } from './toast.service';
 import notes from './toast.service.md';
-import { AfterViewInit, Component, Input } from '@angular/core';
 
 @Component({
   selector: 'cvi-ng-storybook-toast-wrapper',
@@ -74,25 +74,16 @@ export default {
   },
 } as Meta;
 
-const Template: Story = (args) => ({
-  props: {
-    ...args,
-  },
-  template: `
-    <cvi-ng-storybook-toast-wrapper></cvi-ng-storybook-toast-wrapper>
-  `,
-});
-export const Default = Template.bind({});
+export const Default = {};
 
-const TemplateOpenOnLoad: Story = (args) => ({
-  props: {
-    ...args,
+export const OpenOnLoad = {
+  render: (args: ToastWrapperComponent) => ({
+    props: args,
+    template: `
+      <cvi-ng-storybook-toast-wrapper [showButtons]="false"></cvi-ng-storybook-toast-wrapper>
+    `,
+  }),
+  parameters: {
+    chromatic: { delay: 1000 },
   },
-  template: `
-    <cvi-ng-storybook-toast-wrapper [showButtons]="false"></cvi-ng-storybook-toast-wrapper>
-  `,
-});
-export const OpenOnLoad = TemplateOpenOnLoad.bind({});
-OpenOnLoad.parameters = {
-  chromatic: { delay: 1000 },
 };

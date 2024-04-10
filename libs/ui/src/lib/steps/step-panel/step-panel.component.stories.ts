@@ -1,6 +1,6 @@
-import { Meta, Story } from '@storybook/angular';
-import notes from './step-panel.component.md';
+import { Meta } from '@storybook/angular';
 import { StepPanelComponent } from './step-panel.component';
+import notes from './step-panel.component.md';
 
 export default {
   title: 'Angular/Steps/Step panel',
@@ -23,26 +23,23 @@ export default {
   },
 } as Meta;
 
-const Template: Story<StepPanelComponent> = (args: StepPanelComponent) => ({
-  component: StepPanelComponent,
-  props: {
-    ...args,
-  },
-  /* template */
-  template: `
-    <cvi-ng-steps title="Abiellumine" [currentStepIndex]="0">
-      <cvi-ng-step>
-        <cvi-ng-step-panel [title]="title" cviNgStorybookCurrentComponent>
-          {{ content }}
-        </cvi-ng-step-panel>
-      </cvi-ng-step>
-      <cvi-ng-step title="Another step">
-        <cvi-ng-step-panel title="Another step title" cviNgStorybookCurrentComponent>
-          Some content
-        </cvi-ng-step-panel>
-      </cvi-ng-step>
-    </cvi-ng-steps>
-  `,
-});
-
-export const Default = Template.bind({});
+export const Default = {
+  render: (args: StepPanelComponent) => ({
+    props: args,
+    /* template */
+    template: `
+      <cvi-ng-steps title="Abiellumine" [currentStepIndex]="0">
+        <cvi-ng-step>
+          <cvi-ng-step-panel [title]="title" cviNgStorybookCurrentComponent>
+            {{ content }}
+          </cvi-ng-step-panel>
+        </cvi-ng-step>
+        <cvi-ng-step title="Another step">
+          <cvi-ng-step-panel title="Another step title" cviNgStorybookCurrentComponent>
+            Some content
+          </cvi-ng-step-panel>
+        </cvi-ng-step>
+      </cvi-ng-steps>
+    `,
+  }),
+};

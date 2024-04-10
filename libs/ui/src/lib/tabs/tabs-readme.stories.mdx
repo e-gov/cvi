@@ -6,6 +6,8 @@ import { Canvas, Meta, Story } from '@storybook/addon-docs';
 
 In CVI there are two versions of tabs. Both versions have compatible API (props and nesting principles are the same). They also both make use of `TabComponent` as a child.
 
+## New tabs
+
 The new tabs are implemented by `TabsComponent`. It has a refreshed design, is mobile-friendly and on mobile replaces the tabs interface with a dropdown.
 
 <Canvas>
@@ -23,6 +25,8 @@ The new tabs are implemented by `TabsComponent`. It has a refreshed design, is m
     }}
   </Story>
 </Canvas>
+
+## Old tabs
 
 The older tabs are implemented by `TabGroupComponent`. It is not mobile-friendly, but still represents a full-fledged component. It is deprecated and meant to be gradually replaced by the new tabs, with not specific timeline set yet.
 

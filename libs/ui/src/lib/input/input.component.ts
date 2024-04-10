@@ -70,10 +70,10 @@ export class InputComponent implements ControlValueAccessor {
   /** Emit value on model change */
   @Output() valueChange = new EventEmitter<any>();
 
-  /** Internal */
+  /** @internal */
   _internalValue?: any;
 
-  /** Internal */
+  /** @internal */
   _disabled = false;
 
   _validationType: ValidationType = null;

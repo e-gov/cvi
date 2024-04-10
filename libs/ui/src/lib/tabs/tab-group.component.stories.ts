@@ -1,5 +1,5 @@
 import notes from './tab-group.component.md';
-import { Meta, moduleMetadata, Story } from '@storybook/angular';
+import { Meta, moduleMetadata, StoryFn } from '@storybook/angular';
 import { TabGroupComponent } from './tab-group.component';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { UiModule } from '../ui.module';
@@ -29,7 +29,9 @@ export default {
   },
 } as Meta<TabGroupComponent>;
 
-const Template: Story<TabGroupComponent> = (args: TabGroupComponent) => {
+const DefaultTemplate: StoryFn<TabGroupComponent> = (
+  args: TabGroupComponent
+) => {
   const form = new FormGroup({
     text: new FormControl('Some text'),
   });
@@ -59,35 +61,38 @@ const Template: Story<TabGroupComponent> = (args: TabGroupComponent) => {
     `,
   };
 };
-export const Default = Template.bind({});
+export const Default = {
+  render: DefaultTemplate,
+};
 
-export const Mobile = Template.bind({});
-Mobile.parameters = {
+export const Mobile = {
+  ...Default,
   viewport: {
     defaultViewport: 'iphone12mini',
   },
 };
 
-const TemplateWithIcon: Story<TabComponent> = (args: TabComponent) => ({
+const TemplateWithIcon: StoryFn<TabComponent> = (args: TabComponent) => ({
   props: args,
+  /* template */
   template: `
-<cvi-ng-tab-group>
-  <cvi-ng-tab
-    title="Tab 1"
-    [iconName]="iconName"
-    [svgClass]="'svg-class'"
-    [iconPosition]="iconPosition"
-    [iconHeight]="iconHeight"
-    [gap]="gap"
-    >{{ content }}</cvi-ng-tab
-  >
-  <cvi-ng-tab title="Tab 2 with lots and lots of random text"
-    >Third tab content. File not found. I was having the most wonderful dream.
-    Except you were there, and you were there, and you were there! And when we
-    woke up, we had these bodies. I could if you hadn't turned on the light and
-    shut off my stereo.</cvi-ng-tab
-  >
-</cvi-ng-tab-group>
+    <cvi-ng-tab-group>
+      <cvi-ng-tab
+        title="Tab 1"
+        [iconName]="iconName"
+        [svgClass]="'svg-class'"
+        [iconPosition]="iconPosition"
+        [iconHeight]="iconHeight"
+        [gap]="gap"
+        >{{ content }}</cvi-ng-tab
+      >
+      <cvi-ng-tab title="Tab 2 with lots and lots of random text"
+        >Third tab content. File not found. I was having the most wonderful dream.
+        Except you were there, and you were there, and you were there! And when we
+        woke up, we had these bodies. I could if you hadn't turned on the light and
+        shut off my stereo.</cvi-ng-tab
+      >
+    </cvi-ng-tab-group>
   `,
   styles: [
     // you don't need to use ::ng-deep in your app

@@ -1,4 +1,4 @@
-import { Story, Meta } from '@storybook/angular';
+import { Meta } from '@storybook/angular';
 import notes from './breadcrumbs.component.md';
 import { BreadcrumbsComponent } from './breadcrumbs.component';
 
@@ -17,51 +17,24 @@ export default {
         href: '/abiellumine/abielu-solmimine/avalduse-esitamine',
       },
     ],
+    iconName: 'arrow_a_left',
   },
 } as Meta<BreadcrumbsComponent>;
 
-const Template: Story<BreadcrumbsComponent> = (args: BreadcrumbsComponent) => ({
-  props: args,
-  /* template */
-  template: `
-    <cvi-ng-breadcrumbs [breadcrumbs]="breadcrumbs"></cvi-ng-breadcrumbs>
-  `,
-});
+export const Default = {};
 
-export const Default = Template.bind({});
-Default.args = {};
-
-const TemplateWithIcon: Story<BreadcrumbsComponent> = (
-  args: BreadcrumbsComponent
-) => ({
-  props: args,
-  /* template */
-  template: `
-    <cvi-ng-breadcrumbs
-        [breadcrumbs]="breadcrumbs"
-        [skipLastBreadcrumbMobile]="skipLastBreadcrumbMobile"
-        [iconName]="iconName">
-    </cvi-ng-breadcrumbs>
-  `,
-});
-
-export const Mobile = TemplateWithIcon.bind({});
-Mobile.args = {
-  iconName: 'arrow_a_left',
-};
-Mobile.parameters = {
-  viewport: {
-    defaultViewport: 'iphone12mini',
+export const Mobile = {
+  ...Default,
+  parameters: {
+    viewport: {
+      defaultViewport: 'iphone12mini',
+    },
   },
 };
 
-export const MobileSkipLastBreadcrumb = TemplateWithIcon.bind({});
-MobileSkipLastBreadcrumb.args = {
-  iconName: 'arrow_a_left',
-  skipLastBreadcrumbMobile: true,
-};
-MobileSkipLastBreadcrumb.parameters = {
-  viewport: {
-    defaultViewport: 'iphone12mini',
+export const MobileSkipLastBreadcrumb = {
+  ...Mobile,
+  args: {
+    skipLastBreadcrumbMobile: true,
   },
 };

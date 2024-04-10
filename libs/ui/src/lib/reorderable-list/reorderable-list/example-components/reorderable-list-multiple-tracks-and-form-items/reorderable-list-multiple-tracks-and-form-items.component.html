@@ -1,7 +1,7 @@
 <cvi-ng-track horizontalAlignment="right">
   <cvi-ng-button (click)="addNewItem()" [appearance]="'text'">
     <cvi-ng-labeled-icon
-      [alignment]="'center'"
+      [verticalAlignment]="'center'"
       [iconPosition]="'before'"
       [name]="'add'"
     >
@@ -21,10 +21,10 @@
       [setAsPreviousStepButtonVisible]="isNotFirstItem(item)"
     >
       <!-- Additional track for gaps between containing elements -->
-      <cvi-ng-track gap="8" flexDirection="vertical">
+      <cvi-ng-track [gap]="8" flexDirection="vertical">
         <!-- 1st track-->
-        <cvi-ng-track gap="4"
-                        gridRows="1"
+        <cvi-ng-track [gap]="4"
+                        [gridRows]="1"
                         layout="grid">
           <cvi-ng-form-item [htmlId]="'track-1-field-1-step-' + getOrderNr(item) + '-form-item'"
                               [label]="'Track 1 form item 1 label'">
@@ -50,8 +50,8 @@
         </cvi-ng-track>
 
         <!-- 2nd track -->
-        <cvi-ng-track gap="4"
-                        gridRows="1"
+        <cvi-ng-track [gap]="4"
+                        [gridRows]="1"
                         layout="grid">
           <cvi-ng-form-item [htmlId]="'track-2-field-1-step-' + getOrderNr(item) + '-form-item'"
                               [label]="'Track 2 form item 1 label'">

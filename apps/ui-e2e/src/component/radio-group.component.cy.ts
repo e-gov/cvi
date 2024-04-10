@@ -18,7 +18,7 @@ describe('RadioGroupComponent', () => {
   });
 
   it('Renders option radio buttons group and clicks first button', () => {
-    cy.loadStory('Angular Form Radio Button Group', 'Option Button')
+    cy.loadStory('Angular Form Radio Button Group', 'With Option Buttons')
       .runRadioGroupCommonTest('regular')
       .get('[data-cy="option_1"]')
       .within(() => {
@@ -39,7 +39,10 @@ describe('RadioGroupComponent', () => {
   });
 
   it('Renders option button compact and clicks first button', () => {
-    cy.loadStory('Angular Form Radio Button Group', 'Option Button Compact')
+    cy.loadStory(
+      'Angular Form Radio Button Group',
+      'With Compact Option Buttons'
+    )
       .runRadioGroupCommonTest('compact')
       .get('[data-cy="option_1"]')
       .within(() => {

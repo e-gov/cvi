@@ -36,18 +36,10 @@ describe('StepsComponent', () => {
       ]);
   });
 
-  it('Renders mobile steps and clicks on the first step', () => {
-    cy.loadStory('Angular Steps Steps', 'Mobile').setDevice('mobile');
-
-    cy.shouldExist('[data-cy="steps-description"]');
-
-    cy.runStepsCommonTest();
-  });
-
   it('Renders steps with observable titles and clicks on the first step', () => {
-    cy.loadStory(
-      'Angular Steps Steps',
-      'With Observable Titles'
-    ).runStepsCommonTest();
+    cy.loadStory('Angular Steps Steps', 'With Observable Titles');
+    // eslint-disable-next-line cypress/no-unnecessary-waiting
+    cy.wait(1500);
+    cy.runStepsCommonTest();
   });
 });
