@@ -1,6 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
-import sanitizeHtml, { AllowedAttribute } from 'sanitize-html';
+import sanitizeHtml, { AllowedAttribute, Attributes } from 'sanitize-html';
 
 @Pipe({
   name: 'safeHtml',
