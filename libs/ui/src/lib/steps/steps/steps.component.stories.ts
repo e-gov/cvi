@@ -255,3 +255,52 @@ export const WithStepStatus = {
     currentStepIndex: 1,
   },
 };
+
+const TemplateWithUrlStep: Story = (args) => ({
+  component: StepsComponent,
+  props: {
+    ...args,
+    urlClicked: false,
+  },
+  /* template */
+  template: `
+      <cvi-ng-notification *ngIf="urlClicked"
+                           [severity]="'success'"
+                           [showCloseButton]="false"
+                           [title]="'URL step clicked'">
+        URL STEP CLICKED! Clicking url step emits an event <b>urlStepClick</b> that can be used for redirections to other pages and etc.
+      </cvi-ng-notification>
+      <cvi-ng-steps [title]="title" [currentStepIndex]="currentStepIndex" [urlStepTitle]="urlStepTitle" (urlStepClick)="urlClicked = true" [urlStepLabel]="urlStepLabel">
+        <cvi-ng-step>
+          <cvi-ng-step-panel title="First">
+            <span>This is just a normal step</span>
+          </cvi-ng-step-panel>
+        </cvi-ng-step>
+        <cvi-ng-step>
+          <cvi-ng-step-panel title="Second">
+            <span>This is another normal step, except when you are using mobile. Mobile has arrow button that can be used for redirections to other pages and etc.</span>
+          </cvi-ng-step-panel>
+        </cvi-ng-step>
+      </cvi-ng-steps>
+  `,
+});
+export const WithURLStep = TemplateWithUrlStep.bind({});
+WithURLStep.args = {
+  currentStepIndex: 0,
+  urlStepTitle: 'Navigate to somewhere or do something',
+  urlStepLabel: 'Next step in your journey: ',
+};
+
+export const MobileWithURLStep = TemplateWithUrlStep.bind({});
+MobileWithURLStep.args = {
+  urlStepTitle: 'Navigate to somewhere or do something',
+};
+MobileWithURLStep.parameters = {
+  layout: 'fullscreen',
+  backgrounds: {
+    default: 'light',
+  },
+  viewport: {
+    defaultViewport: 'iphone12mini',
+  },
+};
