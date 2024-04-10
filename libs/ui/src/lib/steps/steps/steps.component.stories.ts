@@ -298,7 +298,7 @@ MobileWithURLStep.args = {
 MobileWithURLStep.parameters = {
   layout: 'fullscreen',
   backgrounds: {
-    default: 'light',
+    default: 'Gray',
   },
   viewport: {
     defaultViewport: 'iphone12mini',
