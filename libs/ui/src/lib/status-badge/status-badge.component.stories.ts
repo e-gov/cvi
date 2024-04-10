@@ -10,7 +10,7 @@ export default {
   argTypes: {
     severity: {
       name: 'Severity style',
-      options: ['info', 'success', 'warning'],
+      options: ['info', 'success', 'warning', 'error'],
       control: { type: 'select' },
     },
     tooltipText: {

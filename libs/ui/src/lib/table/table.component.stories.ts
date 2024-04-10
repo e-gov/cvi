@@ -4,7 +4,7 @@ import { TableComponent } from './table.component';
 import { StatusBadgeSeverity } from '../status-badge/status-badge';
 import notes from './table.component.md';
 
-const statuses = [
+const statuses: { severity: StatusBadgeSeverity; label: string }[] = [
   {
     severity: 'info',
     label: 'Avaldamise ootel',
@@ -20,7 +20,10 @@ const statuses = [
 ];
 
 const getStatusBadgeLabelBySeverity = (severity: StatusBadgeSeverity) =>
-  statuses.find((st: any) => st.severity === severity)?.label;
+  statuses.find(
+    (st: { severity: StatusBadgeSeverity; label: string }) =>
+      st.severity === severity
+  )?.label;
 
 export default {
   title: 'Angular/Table',

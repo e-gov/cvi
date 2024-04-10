@@ -20,6 +20,8 @@ export class BreadcrumbsComponent {
   // TODO: the icon is always the same (arrow_a_left), the prop should be removed
   @Input() iconName: CviIconName | null = null;
 
+  @Input() skipLastBreadcrumbMobile = false;
+
   @Output() breadcrumbChange = new EventEmitter<number>();
 
   mobileBreadcrumbIndex!: number;
@@ -28,7 +30,10 @@ export class BreadcrumbsComponent {
   // Finds the index of last element starting from penultimate element in the list that has a href.
   // If no such elements exist, returns index of last element.
   public getMobileBreadcrumbIndex(): number {
-    const lastElementIndex = this.breadcrumbs.length - 1;
+    let lastElementIndex = this.breadcrumbs.length - 1;
+    if (this.skipLastBreadcrumbMobile) {
+      lastElementIndex -= 1;
+    }
     for (let index = lastElementIndex - 1; index >= 0; index--) {
       if (index !== lastElementIndex && this.breadcrumbs[index].href) {
         return index;

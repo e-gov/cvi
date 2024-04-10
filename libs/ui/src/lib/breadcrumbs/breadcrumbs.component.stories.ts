@@ -11,7 +11,11 @@ export default {
       { title: 'Avaleht', href: '/avaleht' },
       { title: 'Ilma urlita samm' },
       { title: 'Abiellumine', href: '/abiellumine' },
-      { title: 'Avalduse esitamine', href: '/abiellumine/avalduse-esitamine' },
+      { title: 'Abielu sõlmimine', href: '/abiellumine/abielu-solmimine' },
+      {
+        title: 'Avalduse esitamine',
+        href: '/abiellumine/abielu-solmimine/avalduse-esitamine',
+      },
     ],
     iconName: 'arrow_a_left',
   },
@@ -25,5 +29,12 @@ export const Mobile = {
     viewport: {
       defaultViewport: 'iphone12mini',
     },
+  },
+};
+
+export const MobileSkipLastBreadcrumb = {
+  ...Mobile,
+  args: {
+    skipLastBreadcrumbMobile: true,
   },
 };

@@ -30,6 +30,7 @@ export default {
     },
     onClick: { action: 'Button clicked!' },
   },
+  svgClass: { control: false },
   args: {
     content: 'Button label',
   },
@@ -96,6 +97,49 @@ export const WithCustomColor = {
       `:host {
         --cvi-button-color: var(--cvi-color-jasper-10);
         --cvi-button-color--hover: var(--cvi-color-jasper-12);
+      }`,
+    ],
+    template: `{{ content }}`,
+  }),
+  decorators: wrapperDecorators,
+};
+
+export const TextWithoutUnderline = {
+  render: (args: ButtonComponent) => ({
+    props: {
+      ...args,
+      appearance: 'text',
+    },
+    styles: [
+      `:host {
+        --cvi-button--text-decoration: none;
+      }`,
+    ],
+    template: `{{ content }}`,
+  }),
+  decorators: [
+    ...wrapperDecorators,
+    componentWrapperDecorator((story) => {
+      return `
+      <cvi-ng-storybook-note>
+        Apply <code>--cvi-button--text-decoration: none</code> CSS variable on the component host or its ancestor to remove the underline.
+      </cvi-ng-storybook-note>
+      ${story}
+    `;
+    }),
+  ],
+};
+
+export const WithCustomIconStyle = {
+  render: (args: ButtonComponent) => ({
+    props: {
+      ...args,
+      iconName: 'add',
+      iconPosition: 'after',
+    },
+    styles: [
+      `::ng-deep .svg-class {
+        fill: red;
       }`,
     ],
     template: `{{ content }}`,

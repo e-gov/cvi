@@ -1,0 +1,14 @@
+@use 'sass:map';
+
+@mixin cvi-table-card($base: &) {
+  --comment: 'A card used in a table';
+
+  & {
+    display: block;
+    padding: get-spacing('haapsalu') get-spacing('kuressaare');
+    background-color: var(--cvi-color-white);
+    border: 1px solid get-color(black-coral-2);
+    border-radius: map.get($cvi-radii, s);
+    overflow-x: auto;
+  }
+}

@@ -29,15 +29,14 @@
   @at-root {
     #{$base}__title {
       color: get-color(black-coral-10);
-      margin-block: get-spacing('haapsalu');
+      margin-top: get-spacing('haapsalu');
+      margin-bottom: get-spacing('paldiski');
       font-size: get-font-size(350);
       font-weight: get-font-weight(alpha);
 
       @include cvi-breakpoint-down(sm) {
         line-height: get-line-height(100);
-        #{$base}.is-any-step-selected & {
-          padding-inline: get-spacing('valga');
-        }
+        margin-top: 0;
       }
       @include cvi-breakpoint-up(sm) {
         line-height: get-line-height(500);
@@ -57,14 +56,6 @@
 
     #{$base}__intro {
       margin-bottom: get-spacing('haapsalu');
-      @include cvi-breakpoint-down(sm) {
-        #{$base}.is-any-step-selected & {
-          display: none;
-        }
-      }
-      @include cvi-breakpoint-up(sm) {
-        margin-bottom: get-spacing('haapsalu');
-      }
     }
 
     #{$base}__inner {
@@ -177,6 +168,7 @@
     }
 
     #{$base}__list-item-title {
+      word-break: break-word;
       @include cvi-breakpoint-down(sm) {
         color: get-color(sapphire-blue-10);
         font-weight: get-font-weight(gamma);

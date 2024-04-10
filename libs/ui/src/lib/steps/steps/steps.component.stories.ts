@@ -70,12 +70,12 @@ const DefaultTemplate: StoryFn<StepsComponent> = (args: StepsComponent) => {
           </cvi-ng-step-panel>
         </cvi-ng-step>
         <cvi-ng-step dataAttribute="step_3">
-          <cvi-ng-step-panel title="Third">
+          <cvi-ng-step-panel title="VeryVeryVeryLongWordThatNeedsToBreakInOrderToFit">
             {{ stepsContent[2] }}
           </cvi-ng-step-panel>
         </cvi-ng-step>
         <cvi-ng-step dataAttribute="step_4">
-          <cvi-ng-step-panel title="Fourth">
+          <cvi-ng-step-panel title="Id-kaardi ja passi kättesaamine (i am a long string)">
             {{ stepsContent[3] }}
           </cvi-ng-step-panel>
         </cvi-ng-step>

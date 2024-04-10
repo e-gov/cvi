@@ -1,0 +1,38 @@
+<cvi-ng-table class="cvi-table-responsive__table" [data]="data">
+  <ng-template #headers>
+    <ng-container *ngFor="let headerLabel of headerLabels; let colIdx = index">
+      <th cvi-ng-header-cell>
+        <ng-container *ngTemplateOutlet="headerTemplate || defaultHeaderTemplate; context: { $implicit: headerLabel, colIdx: colIdx }"></ng-container>
+      </th>
+    </ng-container>
+  </ng-template>
+
+  <ng-template #rows let-row>
+    <ng-container *ngFor="let headerLabel of headerLabels; let colIdx = index">
+      <td cvi-ng-body-cell>
+        <ng-container *ngTemplateOutlet="bodyTemplate || defaultBodyTemplate; context: { $implicit: row, colIdx: colIdx }"></ng-container>
+      </td>
+    </ng-container>
+  </ng-template>
+</cvi-ng-table>
+
+<cvi-ng-track class="cvi-table-responsive__cards" [gap]="2" flexDirection="vertical">
+  <cvi-ng-table-card *ngFor="let row of data">
+    <cvi-ng-labeled-item *ngFor="let headerLabel of headerLabels; let colIdx = index">
+      <div class="cvi-labeled-item__label">
+        <ng-container *ngTemplateOutlet="headerTemplate || defaultHeaderTemplate; context: { $implicit: headerLabel, colIdx: colIdx }"></ng-container>
+      </div>
+      <ng-container *ngTemplateOutlet="bodyTemplate || defaultBodyTemplate; context: { $implicit: row, colIdx: colIdx }"></ng-container>
+    </cvi-ng-labeled-item>
+  </cvi-ng-table-card>
+</cvi-ng-track>
+
+<ng-template #defaultHeaderTemplate let-label>
+  {{ label }}
+</ng-template>
+
+<ng-template #defaultBodyTemplate let-row let-colIdx="colIdx">
+  <ng-container *ngFor="let row of row | keyvalue; let curColIdx = index">
+    <ng-container *ngIf="curColIdx === colIdx">{{ row.value }}</ng-container>
+  </ng-container>
+</ng-template>

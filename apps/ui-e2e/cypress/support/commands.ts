@@ -94,7 +94,10 @@ declare global {
         iconPosition: LabeledIconPosition
       ): void;
 
-      runButtonCommonTest(appearance: ButtonAppearance, size: ButtonSize): void;
+      runButtonCommonTest(
+        appearance: 'primary' | 'secondary' | 'text',
+        size: 'm' | 's'
+      ): void;
 
       runRadioGroupCommonTest(
         appearance: RadioGroupAppearance

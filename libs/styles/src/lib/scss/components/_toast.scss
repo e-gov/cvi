@@ -1,15 +1,23 @@
 @mixin cvi-toast($base: &) {
   --comment: 'A toast aka floating notification';
 
+  --padding: var(--cvi-spacing-haapsalu);
+  --close-button-size: 16px;
+
   position: relative;
-  width: 300px;
+  width: 350px;
   overflow: hidden;
-  padding: var(--cvi-spacing-haapsalu);
+  padding: var(--padding);
   margin-bottom: var(--cvi-spacing-paldiski);
   border-radius: var(--cvi-radius-m);
   color: var(--cvi-color-black-coral-18);
   cursor: pointer;
   display: block;
+
+  @include cvi-breakpoint-down(sm) {
+    width: 300px;
+    max-width: calc(100vw - 40px);
+  }
 
   &:hover {
     box-shadow: var(--cvi-shadow-alpha);
@@ -23,8 +31,8 @@
 
     #{$base}__icon {
       display: block;
-      width: 16px;
-      height: 16px;
+      width: var(--close-button-size);
+      height: var(--close-button-size);
     }
 
     #{$base}--appearance-success {
@@ -66,17 +74,20 @@
     #{$base}__title {
       display: flex;
       align-items: center;
+      margin-right: calc(var(--close-button-size) + var(--cvi-spacing-rapla));
     }
 
     #{$base}__title-text {
       font-size: get-font-size(200);
       margin-left: 10px;
+      font-weight: get-font-weight(beta);
+      line-height: get-line-height(100);
     }
 
     #{$base}__close-button {
       position: absolute;
-      top: 20px;
-      right: 20px;
+      top: var(--padding);
+      right: var(--padding);
       cursor: pointer;
     }
 
@@ -93,6 +104,8 @@
 
     #{$base}__message {
       margin-top: var(--cvi-spacing-elva);
+      word-break: break-word;
+      overflow-wrap: break-word;
     }
 
     #{$base}__progress-bar {

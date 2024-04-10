@@ -7,10 +7,12 @@
       // Why we don't move position: fixed to the root element? Because we need the arrow to be positioned independently in the viewport - it must be at the same x coordinate as the reference element
       position: fixed;
     }
+
     #{$base}__content {
       border-radius: var(--cvi-radius-s);
-      background-color: get-color(white);
-      color: get-color(black-coral-18);
+      background-color: get-color(black-coral-12);
+      color: get-color(white);
+      font-weight: get-font-weight(beta);
       box-shadow: var(--cvi-shadow-beta);
       padding: var(--cvi-spacing-rapla) var(--cvi-spacing-elva);
       max-width: 400px;
@@ -27,7 +29,7 @@
       // If --cvi-tooltip-zindex is not set, --arrow-configurable-index is not set too
       --arrow-configurable-index: calc(var(--cvi-tooltip-zindex) + 1);
 
-      background-color: get-color(white);
+      background-color: get-color(black-coral-12);
       transform: rotate(45deg);
       width: 15px;
       height: 15px;

@@ -18,6 +18,8 @@ import { TooltipComponent } from './tooltip.component';
 export class TooltipDirective {
   @Input() cviNgTooltip = '';
 
+  @Input() tooltipRight = 0;
+
   private componentRef: ComponentRef<TooltipComponent> | null = null;
 
   constructor(
@@ -109,9 +111,10 @@ export class TooltipDirective {
         tooltipArrowPositionY = top - halfOfArrowWidth * 3;
       }
 
-      this.componentRef.instance.left = tooltipPositionX;
+      this.componentRef.instance.left = tooltipPositionX + this.tooltipRight;
       this.componentRef.instance.top = tooltipPositionY;
-      this.componentRef.instance.arrowLeft = tooltipArrowPositionX;
+      this.componentRef.instance.arrowLeft =
+        tooltipArrowPositionX + this.tooltipRight;
       this.componentRef.instance.arrowTop = tooltipArrowPositionY;
       this.componentRef.changeDetectorRef.detectChanges();
     }
@@ -119,6 +122,15 @@ export class TooltipDirective {
 
   @HostListener('mouseleave')
   onMouseLeave() {
+    this.DestroyComponent();
+  }
+
+  @HostListener('window:scroll', ['$event'])
+  onWindowScroll() {
+    this.DestroyComponent();
+  }
+
+  private DestroyComponent() {
     if (this.componentRef !== null) {
       this.componentRef.destroy();
       this.componentRef = null;

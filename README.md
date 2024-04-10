@@ -8,6 +8,8 @@ The CSS has been architectured to be independent of any specific Javascript fram
 
 The CSS framework and Angular component library utilize [Storybook](https://storybook.js.org) for comprehensive documentation and seamless usage.
 
+You can also play with the library in a live app-like environment at [codesandbox.io](https://codesandbox.io/p/github/ekateriinal/angular-cvi-starter).
+
 To get started, you can access the installation instructions and documentation on e-Gov CVI's Storybook:
 
 [📌 https://e-gov.github.io/cvi/](https://e-gov.github.io/cvi/)
@@ -24,7 +26,7 @@ To discuss any issues, suggestions or questions, join our public [CVI Signal gro
 
 Follow these steps to install and integrate our library:
 
-1. 📥 Add the public Koodivaramu registry to your project by following the instructions provided [here](https://koodivaramu.eesti.ee/e-gov/cvi/-/packages/385).
+1. 📥 Add the public Koodivaramu registry to your project by following the instructions provided [here](https://koodivaramu.eesti.ee/e-gov/cvi/-/packages/385). In short, you will need to update your `.npmrc` file. Be sure to choose the second radio button in the Koodivaramu UI ("**project**-level registry setup").
 
 2. 📦 Install the necessary package to your project:
   - CSS framework: Use the command `npm i --save @egov/cvi-styles`
@@ -54,6 +56,8 @@ If you want to contribute to the Common Visual Identity Component Library, follo
 1. Create a fork of the repository.
 2. Make changes in your own fork.
 3. Create a pull-request back to this repository.
+
+Feel free to use the library sandbox available at [codesandbox.io](https://codesandbox.io/p/github/ekateriinal/angular-cvi-starter) to verify issues or play with existing components.
 
 For more detailed instructions, follow the link below:
 
@@ -90,7 +94,7 @@ For example, to introduce a content selector that inserts custom content before 
 
 ## 🚀 Running the Storybook
 
-Run the following command to build documentation and start the Storybook locally: 
+Run the following command to build documentation and start the Storybook locally:
 
 `npm run storybook`
 
@@ -98,7 +102,7 @@ Run the following command to build documentation and start the Storybook locally
 
 To run Storybook locally using Docker, follow these steps:
 
-1. Build the Docker image with the following command: 
+1. Build the Docker image with the following command:
 
 `docker build -f ./libs/storybook/Dockerfile -t cvi-storybook .`
 
@@ -139,11 +143,12 @@ This will open up the Cypress visual testing tool. Select E2E Testing to view al
 The project uses automatic screenshot testing via Chromatic.
 
 1. To run the tests, use the following command in your terminal: `npm run chromatic`
-2. Open the resulting URL and review the visual changes, accepting or denying them in the Chromatic UI.
-   
+2. Open the resulting URL and review the visual changes.
+
 💡 Chromatic CI also runs on every push. The action always passes (even when visual changes are detected) except for cases when a story is broken. Contributors and reviewers should check the results of the action (and accept or decline them in the Chromatic UI) by following a link in the build log. 💡
 
-Publishing to Chromatic also gives a possibility to share a Storybook link for a specific branch (even non-pushed, if the local npm command is used) in this format: 
+
+Publishing to Chromatic also gives a possibility to share a Storybook link for a specific branch (even non-pushed, if the local npm command is used) in this format:
 
 `https://<branch>--6373995e3f280e239470296d.chromatic.com`
 
