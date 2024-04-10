@@ -35,7 +35,7 @@
           [ngClass]="getDateClass(day, j)"
           (click)="handleClick(day)"
           [attr.aria-label]="dayFullLabels[j]"
-          [attr.aria-selected]="day === selectedDate?.getDay()"
+          [attr.aria-selected]="day === selectedDate.getDay()"
           [attr.aria-current]="day === today.getDate() ? 'date' : null"
         >
           {{ day }}
