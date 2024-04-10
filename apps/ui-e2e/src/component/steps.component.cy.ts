@@ -48,6 +48,9 @@ describe('StepsComponent', () => {
     cy.loadStory(
       'Angular Steps Steps',
       'With Observable Titles'
-    ).runStepsCommonTest();
+    );
+    // eslint-disable-next-line cypress/no-unnecessary-waiting
+    cy.wait(1500);
+    cy.runStepsCommonTest();
   });
 });
