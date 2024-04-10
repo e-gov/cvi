@@ -28,6 +28,7 @@
     "publish:react-ui": "npm publish dist/libs/react-ui",
     "publish:ng-diagrams": "npm publish dist/libs/ng-diagrams",
     "cypress:ui": "npx nx e2e ui-e2e",
+    "cypress:ui:watch": "npx nx e2e ui-e2e --watch",
     "chromatic": "chromatic --exit-zero-on-changes --project-token=23c52c9242eb",
     "axe": "npm run build-storybook && npx axe-storybook --build-dir ./dist/storybook/storybook"
   },
