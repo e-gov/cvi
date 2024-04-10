@@ -256,7 +256,7 @@ export const WithStepStatus = {
   },
 };
 
-const TemplateWithUrlStep: Story = (args) => ({
+const TemplateWithUrlStep: StoryFn = (args) => ({
   component: StepsComponent,
   props: {
     ...args,
