@@ -59,7 +59,7 @@ export const WithProgress: StoryObj = {
   render: (args: any) => ({
     props: args,
     template: `
-      <span class="cvi-circle cvi-circle--size-s cvi-circle--with-progress" style="--border-color: var(--cvi-color-sapphire-blue-13); --color: var(--cvi-color-sapphire-blue-13); --progress: 30%; --progress-background-color: var(--cvi-color-white);">{{ content }}</span>
+      <span class="cvi-circle cvi-circle--size-s cvi-circle--with-progress cvi-circle--severity-none" style="--border-color: var(--cvi-color-sapphire-blue-13); --color: var(--cvi-color-sapphire-blue-13); --progress: 30%; --progress-background-color: var(--cvi-color-white);">{{ content }}</span>
     `,
   }),
 };
