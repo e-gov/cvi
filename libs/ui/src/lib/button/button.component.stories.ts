@@ -131,12 +131,9 @@ export const TextWithoutUnderline = {
 };
 
 export const WithCustomIconStyle = {
+  ...Default,
   render: (args: ButtonComponent) => ({
-    props: {
-      ...args,
-      iconName: 'add',
-      iconPosition: 'after',
-    },
+    props: args,
     styles: [
       `::ng-deep .svg-class {
         fill: red;
@@ -144,5 +141,10 @@ export const WithCustomIconStyle = {
     ],
     template: `{{ content }}`,
   }),
+  args: {
+    iconName: 'add',
+    iconPosition: 'after',
+    svgClass: 'svg-class',
+  },
   decorators: wrapperDecorators,
 };
