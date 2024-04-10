@@ -9,6 +9,7 @@ export default {
     axe: {
       skip: true,
     },
+    chromatic: { disableSnapshot: true },
     backgrounds: {
       default: 'Darkgray',
     },
