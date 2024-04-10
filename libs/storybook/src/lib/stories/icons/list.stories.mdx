@@ -1,42 +1,8 @@
 import {Meta, Story} from '@storybook/addon-docs';
-import { storybookIconsNames } from '../../../../../ui/src/lib/icons/storybook-icons';
+import * as IconsListStories from './list.stories.ts';
 
-<Meta title="Icons/Available Icons" parameters={{
-  layout: 'padded',
-  axe: {
-    skip: true,
-  },
-  backgrounds: {
-    default: 'Darkgray',
-  },
-}} argTypes={{
-  fill: {
-    name: 'Icon color',
-    control: { type: 'color' }
-  }
-}} args={{ fill: 'red' }} />
-
-export const Template = (args) => ({
-  props: {
-    ...args,
-    icons: storybookIconsNames,
-    filteredIcons: storybookIconsNames,
-    filterIcons: (query, icons) => {
-      return query ? icons.filter(iconName => iconName.includes(query)) : icons;
-    }
-  },
-  template: `
-    <input type="text" #search (input)="filteredIcons = filterIcons(search.value, icons)" cviNgStorybookInput placeholder="Type icon name...">
-    <cvi-ng-storybook-icon-cards>
-      <cvi-ng-storybook-icon-card *ngFor="let name of filteredIcons" [label]="name" [ngStyle]="{ 'fill': fill }">
-        <cvi-ng-icon [name]="name"></cvi-ng-icon>
-      </cvi-ng-storybook-icon-card>
-    </cvi-ng-storybook-icon-cards>
-  `
-});
+<Meta of={IconsListStories} />
 
 Switch to *Canvas* tab for a full-screen view.
 
-<Story name="All icons" height="540px">
-  { Template.bind({}) }
-</Story>
+<Story name="All icons" height="540px" of={IconsListStories.Default} />
