@@ -22,16 +22,22 @@ import { AllowedAttribute } from 'sanitize-html';
 export class HtmlSectionComponent implements OnInit {
   @Input() html = '';
   @Input() sanitize = true;
+
+  /** @internal */
   @Input() customElements: [any, string][] = [
     [LabeledIconComponent, 'cvi-web-labeled-icon'],
     [IconComponent, 'cvi-web-icon'],
     [TrackComponent, 'cvi-web-track'],
   ];
+
+  /** @internal */
   @Input() allowedTags: string[] = [
     'cvi-web-labeled-icon',
     'cvi-web-icon',
     'cvi-web-track',
   ];
+
+  /** @internal */
   @Input() allowedAttributes: Record<string, AllowedAttribute[]> = {
     'cvi-web-labeled-icon': ['name'],
     'cvi-web-icon': ['name'],
@@ -64,13 +70,15 @@ export class HtmlSectionComponent implements OnInit {
   }
 
   private createCustomElements(elements: [any, string][]) {
-    elements
-      .filter(([, name]) => !customElements.get(name))
-      .forEach(([component, name]) => {
-        const element = createCustomElement(component, {
-          injector: this.injector,
+    if (elements) {
+      elements
+        .filter(([_, name]) => !customElements.get(name))
+        .forEach(([component, name]) => {
+          const element = createCustomElement(component, {
+            injector: this.injector,
+          });
+          customElements.define(name, element);
         });
-        customElements.define(name, element);
-      });
+    }
   }
 }
