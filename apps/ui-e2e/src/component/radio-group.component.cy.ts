@@ -28,6 +28,11 @@ describe('RadioGroupComponent', () => {
         ).shouldHaveClasses('input', 'cvi-radio-group__input');
       });
 
+    /**
+     * TODO(@nrwl/cypress): Nesting Cypress commands in a should assertion now throws.
+     * You should use .then() to chain commands instead.
+     * More Info: https://docs.cypress.io/guides/references/migration-guide#-should
+     **/
     cy.get('[data-cy="option_1"]')
       .within(() => {
         cy.get('input').should('not.be.checked');
@@ -52,6 +57,11 @@ describe('RadioGroupComponent', () => {
         ).shouldHaveClasses('input', 'cvi-radio-group__input');
       });
 
+    /**
+     * TODO(@nrwl/cypress): Nesting Cypress commands in a should assertion now throws.
+     * You should use .then() to chain commands instead.
+     * More Info: https://docs.cypress.io/guides/references/migration-guide#-should
+     **/
     cy.get('[data-cy="option_1"]')
       .within(() => {
         cy.get('input').should('not.be.checked');
