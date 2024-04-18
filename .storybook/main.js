@@ -1,7 +1,6 @@
 module.exports = {
   stories: [],
   addons: [
-    '@storybook/addon-essentials',
     '@whitespace/storybook-addon-html',
     '@storybook/addon-a11y',
     'storybook-addon-pseudo-states',

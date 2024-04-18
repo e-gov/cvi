@@ -25,7 +25,8 @@
           "libs/styles/src/lib/scss/main.scss"
         ],
         "scripts": [],
-        "webpackConfig": "@nrwl/react/plugins/webpack"
+        "webpackConfig": "apps/react-sandbox/webpack.config.js",
+        "isolatedConfig": true
       },
       "configurations": {
         "development": {
