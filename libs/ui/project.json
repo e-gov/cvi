@@ -8,7 +8,7 @@
   "prefix": "cvi-ng",
   "targets": {
     "build": {
-      "executor": "@nrwl/angular:package",
+      "executor": "@nx/angular:package",
       "outputs": ["{workspaceRoot}/dist/libs/ui"],
       "options": {
         "project": "libs/ui/ng-package.json"
@@ -24,7 +24,7 @@
       "defaultConfiguration": "production"
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
+      "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/libs/ui"],
       "options": {
         "jestConfig": "libs/ui/jest.config.ts",
@@ -32,7 +32,7 @@
       }
     },
     "lint": {
-      "executor": "@nrwl/linter:eslint",
+      "executor": "@nx/linter:eslint",
       "options": {
         "lintFilePatterns": ["libs/ui/**/*.ts", "libs/ui/**/*.html"]
       }
