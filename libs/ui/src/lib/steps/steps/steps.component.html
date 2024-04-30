@@ -63,7 +63,7 @@
         </ol>
         <div #rightEdge style="width: 1px"></div>
         <button *ngIf="isScrollable && !leftEdgeVisible"
-                id="left-scroll-button"
+                aria-label="left-scroll-button"
                 class="cvi-steps__scroll-button cvi-steps__scroll-button--left-scroll"
                 (click)="onClickScroll(-150)">
           <cvi-ng-icon [name]="'arrow_a_left'"
@@ -71,7 +71,7 @@
           </cvi-ng-icon>
         </button>
         <button *ngIf="isScrollable && !rightEdgeVisible"
-                id="right-scroll-button"
+                aria-label="right-scroll-button"
                 class="cvi-steps__scroll-button cvi-steps__scroll-button--right-scroll"
                 (click)="onClickScroll(150)">
           <cvi-ng-icon [name]="'arrow_a_right'"
