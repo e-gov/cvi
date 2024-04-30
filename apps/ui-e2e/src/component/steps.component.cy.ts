@@ -42,4 +42,12 @@ describe('StepsComponent', () => {
     cy.wait(1500);
     cy.runStepsCommonTest();
   });
+
+  it('Renders steps with scrollbar and clicks right button to make left button visible', () => {
+    cy.loadStory('Angular Steps Steps', 'Default with scroll');
+    cy.shouldNotExist('button[id="left-scroll-button"]');
+    cy.get('button[id="right-scroll-button"]').click();
+
+    cy.shouldExist('button[id="left-scroll-button"]');
+  });
 });
