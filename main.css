@@ -3097,13 +3097,13 @@ h2 {
 }
 
 .cvi-datepicker__input-container {
-  background-color: var(--cvi-color-white);
   border: 1px solid var(--cvi-form-input-border-color);
   border-radius: 4px;
   display: flex;
   align-items: center;
   width: 125px;
   height: var(--cvi-form-inline-input-height);
+  background-color: var(--cvi-color-white);
 }
 
 .cvi-datepicker__input-container--focused {
@@ -3111,7 +3111,7 @@ h2 {
   outline: var(--cvi-border-focus);
 }
 
-.cvi-datepicker__input-container--is-disabled .cvi-datepicker__input-container {
+.cvi-datepicker--is-disabled .cvi-datepicker__input-container {
   background-color: var(--cvi-color-black-coral-0);
   border-color: var(--cvi-color-black-coral-5);
 }
