@@ -2,6 +2,10 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.2.1](https://github.com/e-gov/cvi/compare/ng-diagrams-0.2.0...ng-diagrams-0.2.1) (2024-05-02)
+
+
+
 # 0.1.0 (2023-11-22)
 
 
