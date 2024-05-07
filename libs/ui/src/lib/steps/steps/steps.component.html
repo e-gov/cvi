@@ -8,7 +8,7 @@
       <div #stepScrollBar class="cvi-steps__scroll-container">
         <div>
           <button *ngIf="isScrollable && !leftEdgeVisible"
-                  id="steps-left-scroll-button"
+                  aria-label="Scroll left"
                   class="cvi-steps__scroll-button cvi-steps__scroll-button--left-scroll"
                   (click)="onClickScroll(-150)">
             <cvi-ng-icon [name]="'arrow_a_left'"
@@ -17,7 +17,7 @@
           </button>
 
           <button *ngIf="isScrollable && !rightEdgeVisible"
-                  id="steps-right-scroll-button"
+                  aria-label="Scroll right"
                   class="cvi-steps__scroll-button cvi-steps__scroll-button--right-scroll"
                   (click)="onClickScroll(150)">
             <cvi-ng-icon [name]="'arrow_a_right'"
