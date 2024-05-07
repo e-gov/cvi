@@ -108,6 +108,11 @@ export const DefaultWithSelectedStep = {
 
 export const DefaultWithScroll = {
   ...Default,
+  parameters: {
+    viewport: {
+      defaultViewport: 'ipad',
+    },
+  },
   args: {
     isScrollable: true,
   },

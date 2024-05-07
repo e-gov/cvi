@@ -4,7 +4,28 @@
 </div>
 <div class="cvi-steps__inner-wrapper">
   <div class="cvi-steps__inner" dataAttribute="steps_container">
+    <div class="cvi-steps__scroll-wrapper">
       <div #stepScrollBar class="cvi-steps__scroll-container">
+        <div>
+          <button *ngIf="isScrollable && !leftEdgeVisible"
+                  id="steps-left-scroll-button"
+                  class="cvi-steps__scroll-button cvi-steps__scroll-button--left-scroll"
+                  (click)="onClickScroll(-150)">
+            <cvi-ng-icon [name]="'arrow_a_left'"
+                         svgClass="cvi-steps__scroll-button-icon">
+            </cvi-ng-icon>
+          </button>
+
+          <button *ngIf="isScrollable && !rightEdgeVisible"
+                  id="steps-right-scroll-button"
+                  class="cvi-steps__scroll-button cvi-steps__scroll-button--right-scroll"
+                  (click)="onClickScroll(150)">
+            <cvi-ng-icon [name]="'arrow_a_right'"
+                         svgClass="cvi-steps__scroll-button-icon">
+            </cvi-ng-icon>
+          </button>
+        </div>
+
         <div #leftEdge style="width: 1px"></div>
         <ol class="cvi-steps__list">
           <li class="cvi-steps__list-item"
@@ -62,23 +83,9 @@
           </li>
         </ol>
         <div #rightEdge style="width: 1px"></div>
-        <button *ngIf="isScrollable && !leftEdgeVisible"
-                aria-label="left-scroll-button"
-                class="cvi-steps__scroll-button cvi-steps__scroll-button--left-scroll"
-                (click)="onClickScroll(-150)">
-          <cvi-ng-icon [name]="'arrow_a_left'"
-                       svgClass="cvi-steps__scroll-button--scroll-icon">
-          </cvi-ng-icon>
-        </button>
-        <button *ngIf="isScrollable && !rightEdgeVisible"
-                aria-label="right-scroll-button"
-                class="cvi-steps__scroll-button cvi-steps__scroll-button--right-scroll"
-                (click)="onClickScroll(150)">
-          <cvi-ng-icon [name]="'arrow_a_right'"
-                       svgClass="cvi-steps__scroll-button--scroll-icon">
-          </cvi-ng-icon>
-        </button>
-        </div>
+      </div>
+    </div>
+
     <ng-content></ng-content>
     <div *ngIf="this.stepChildren.length > 1 && this.currentStepIndex !== null"
         class="cvi-steps__directional-buttons"
