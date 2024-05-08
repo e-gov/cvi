@@ -76,6 +76,12 @@
         flex-direction: column;
       }
       @include cvi-breakpoint-up(sm) {
+        #{$base}.is-scrollable & {
+          display: flex;
+          padding-left: get-spacing('loksa');
+          padding-right: get-spacing('loksa');
+        }
+
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(209px, 1fr));
         column-gap: 0;
@@ -99,6 +105,11 @@
         
       }
       @include cvi-breakpoint-up(sm) {
+        #{$base}.is-scrollable & {
+          min-width: 247px;
+          height: 100%;
+        }
+
         min-height: 72px;
         flex-grow: 1;
         flex-shrink: 1;
@@ -346,6 +357,54 @@
       @include cvi-breakpoint-down(sm) {
         @include cvi-screenreader-text;
       }
+    }
+
+    #{$base}.is-scrollable {
+      #{$base}__scroll-wrapper {
+        position: relative;
+      }
+      #{$base}__scroll-container {
+        @include cvi-breakpoint-down(sm) {
+          display: grid;
+        }
+
+        display: flex;
+        width: 100%;
+        overflow-x: auto;
+        scrollbar-width: none;
+        scroll-behavior: smooth;
+      }
+    }
+
+      #{$base}__scroll-button {
+        @include cvi-breakpoint-down(sm) {
+          display: none;
+        }
+        @include cvi-breakpoint-up(sm) {
+        position: absolute;
+        z-index: get-z-index('steps', '__scroll-button');
+        height: calc(100% - get-spacing('kuressaare'));
+        width: 32px;
+        background-color: get-color(black-coral-20);
+        opacity: 0.8;
+        display: flex;
+        line-height: 0;
+        justify-content: center;
+        align-items: center;
+
+        &--left-scroll {
+          left: 0;
+        }
+
+        &--right-scroll {
+          right: 0;
+        }
+      }
+    }
+
+    #{$base}__scroll-button-icon {
+      height: get-spacing('haapsalu');
+      fill: get-color(white);
     }
   }
 }
