@@ -1,5 +1,8 @@
 module.exports = {
-  stories: [],
+  framework: {
+    name: '@storybook/angular',
+    options: {},
+  },
   addons: [
     '@whitespace/storybook-addon-html',
     '@storybook/addon-a11y',
@@ -8,6 +11,7 @@ module.exports = {
     '@storybook/addon-actions',
   ],
   core: { disableTelemetry: true },
+  stories: [],
   // uncomment the property below if you want to apply some webpack config globally
   // webpackFinal: async (config, { configType }) => {
   //   // Make whatever fine-grained changes you need that should apply to all storybook configs

@@ -20,7 +20,7 @@ const statuses: { severity: StatusBadgeSeverity; label: string }[] = [
 const getStatusBadgeLabelBySeverity = (severity: StatusBadgeSeverity) =>
   statuses.find(
     (st: { severity: StatusBadgeSeverity; label: string }) =>
-      st.severity === severity
+      st.severity === severity,
   )?.label || 'info';
 
 export default {
@@ -150,7 +150,7 @@ export const WithCustomHeaderAndBody: Story = {
 
 export const WithCustomHeaderAndBodyMobile: Story = {
   ...WithCustomHeaderAndBody,
-  storyName: 'With Custom Header And Body (Mobile)',
+  name: 'With Custom Header And Body (Mobile)',
   parameters: {
     viewport: {
       defaultViewport: 'iphone12mini',
@@ -204,7 +204,7 @@ export const WithObservables: Story = {
         },
       ],
       headerLabels$: from([['Lunes', 'Viernes']]).pipe(
-        concatMap((item) => of(item).pipe(delay(withObservableTitlesDelay)))
+        concatMap((item) => of(item).pipe(delay(withObservableTitlesDelay))),
       ),
     },
     /* template */
