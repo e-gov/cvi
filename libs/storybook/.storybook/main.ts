@@ -1,16 +1,16 @@
-const rootMain = require('../../../.storybook/main');
+import rootMain from '../../../.storybook/main';
+import { StorybookConfig } from '@storybook/angular';
 
-module.exports = {
+const config: StorybookConfig = {
   ...rootMain,
-
-  core: { ...rootMain.core, builder: 'webpack5' },
 
   stories: [
     ...rootMain.stories,
-    '../src/lib/**/*.stories.mdx',
-    '../src/lib/**/*.stories.@(js|jsx|ts|tsx)',
+    '../../**/src/lib/**/*.stories.ts',
+    '../../**/src/lib/**/*.stories.mdx',
   ],
-  addons: [...rootMain.addons],
+  addons: [...rootMain.addons, '@storybook/addon-essentials'],
+  staticDirs: ['../src/assets'],
   webpackFinal: async (config, { configType }) => {
     // apply any global webpack configs that might have been specified in .storybook/main.js
     if (rootMain.webpackFinal) {
@@ -21,3 +21,5 @@ module.exports = {
     return config;
   },
 };
+
+export default config;
