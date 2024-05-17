@@ -1,10 +1,14 @@
 import { Meta, StoryObj } from '@storybook/angular';
-import notes from './circle.html.md';
+import notes from './circle.html.md?raw';
 
 export default {
   title: 'HTML/Circle',
   parameters: {
-    notes,
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
     options: { selectedPanel: 'storybook/html/panel' },
     layout: 'centered',
   },

@@ -1,7 +1,7 @@
 import { Meta, componentWrapperDecorator } from '@storybook/angular';
 import { concatMap, delay, from, of } from 'rxjs';
 import { CircleComponent } from './circle.component';
-import notes from './circle.component.md';
+import notes from './circle.component.md?raw';
 import { storybookIconsNames } from '../icons/storybook-icons';
 
 const wrapperDecorators = [
@@ -14,7 +14,11 @@ export default {
   title: 'Angular/Circle',
   component: CircleComponent,
   parameters: {
-    notes,
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
     layout: 'centered',
     backgrounds: {
       default: 'Gray',
@@ -91,7 +95,7 @@ export const WithProgress = {
     props: {
       ...args,
       progress$: from([20, 40, 60, 80, 100]).pipe(
-        concatMap((item) => of(item).pipe(delay(800)))
+        concatMap((item) => of(item).pipe(delay(800))),
       ),
     },
     template: `
