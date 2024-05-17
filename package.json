@@ -116,7 +116,7 @@
     "chromatic": "^11.3.0",
     "cpy-cli": "^4.2.0",
     "cypress": "^12.2.0",
-    "cypress-storybook": "^0.5.1",
+    "cypress-storybook": "1.0.0",
     "eslint": "~8.15.0",
     "eslint-config-prettier": "8.1.0",
     "eslint-plugin-cypress": "^2.10.3",

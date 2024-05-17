@@ -12,7 +12,6 @@ const config: StorybookConfig = {
     'storybook-addon-pseudo-states',
     '@storybook/addon-viewport',
     '@storybook/addon-actions',
-    '@chromatic-com/storybook',
   ],
   core: { disableTelemetry: true },
   docs: {

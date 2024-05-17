@@ -2,11 +2,16 @@ import { UiModule } from '@egov/cvi-ng';
 import { Component } from '@storybook/addon-docs';
 import { setCompodocJson } from '@storybook/addon-docs/angular';
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
-import { moduleMetadata, Parameters, Preview } from '@storybook/angular';
+import {
+  applicationConfig,
+  moduleMetadata,
+  Parameters,
+  Preview,
+} from '@storybook/angular';
 import { StorybookModule } from '../src/lib/storybook.module';
 import docJson from './documentation.json';
 import sortingOrder from './sorting-order.json';
-import 'cypress-storybook/angular';
+import 'cypress-storybook/client';
 
 setCompodocJson(docJson);
 
@@ -80,5 +85,8 @@ export default preview;
 export const decorators = [
   moduleMetadata({
     imports: [UiModule, StorybookModule],
+  }),
+  applicationConfig({
+    providers: [UiModule, StorybookModule],
   }),
 ];
