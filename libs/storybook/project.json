@@ -6,14 +6,20 @@
   "targets": {
     "lint": {
       "executor": "@nx/linter:eslint",
-      "outputs": ["{options.outputFile}"],
+      "outputs": [
+        "{options.outputFile}"
+      ],
       "options": {
-        "lintFilePatterns": ["libs/storybook/**/*.ts"]
+        "lintFilePatterns": [
+          "libs/storybook/**/*.ts"
+        ]
       }
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/libs/storybook"],
+      "outputs": [
+        "{workspaceRoot}/coverage/libs/storybook"
+      ],
       "options": {
         "jestConfig": "libs/storybook/jest.config.ts",
         "passWithNoTests": true
@@ -26,7 +32,9 @@
         "configDir": "libs/storybook/.storybook",
         "browserTarget": "storybook:build-storybook",
         "compodoc": false,
-        "styles": ["libs/styles/src/lib/scss/main.scss"]
+        "styles": [
+          "libs/styles/src/lib/scss/main.scss"
+        ]
       },
       "configurations": {
         "ci": {
@@ -36,13 +44,17 @@
     },
     "build-storybook": {
       "executor": "@storybook/angular:build-storybook",
-      "outputs": ["{options.outputDir}"],
+      "outputs": [
+        "{options.outputDir}"
+      ],
       "options": {
         "outputDir": "dist/storybook/storybook",
         "configDir": "libs/storybook/.storybook",
         "browserTarget": "storybook:build-storybook",
         "compodoc": false,
-        "styles": ["libs/styles/src/lib/scss/main.scss"]
+        "styles": [
+          "libs/styles/src/lib/scss/main.scss"
+        ]
       },
       "configurations": {
         "ci": {
@@ -58,10 +70,19 @@
         "push": true,
         "noVerify": true,
         "commitMessageFormat": "chore(${projectName}): release version ${version} [skip ci]",
-        "skipCommitTypes": ["chore", "ci", "docs", "style", "test", "format"]
+        "skipCommitTypes": [
+          "chore",
+          "ci",
+          "docs",
+          "style",
+          "test",
+          "format"
+        ]
       }
     }
   },
   "tags": [],
-  "implicitDependencies": ["styles"]
+  "implicitDependencies": [
+    "styles"
+  ]
 }

@@ -2,16 +2,23 @@
   "name": "ui",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
-  "tags": ["scope:cvi-ng"],
-  "implicitDependencies": ["icons"],
+  "tags": [
+    "scope:cvi-ng"
+  ],
+  "implicitDependencies": [
+    "icons"
+  ],
   "sourceRoot": "libs/ui/src",
   "prefix": "cvi-ng",
   "targets": {
     "build": {
       "executor": "@nx/angular:package",
-      "outputs": ["{workspaceRoot}/dist/libs/ui"],
+      "outputs": [
+        "{workspaceRoot}/dist/libs/ui"
+      ],
       "options": {
-        "project": "libs/ui/ng-package.json"
+        "project": "libs/ui/ng-package.json",
+        "updateBuildableProjectDepsInPackageJson": true
       },
       "configurations": {
         "production": {
@@ -25,7 +32,9 @@
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/libs/ui"],
+      "outputs": [
+        "{workspaceRoot}/coverage/libs/ui"
+      ],
       "options": {
         "jestConfig": "libs/ui/jest.config.ts",
         "passWithNoTests": true
@@ -34,7 +43,10 @@
     "lint": {
       "executor": "@nx/linter:eslint",
       "options": {
-        "lintFilePatterns": ["libs/ui/**/*.ts", "libs/ui/**/*.html"]
+        "lintFilePatterns": [
+          "libs/ui/**/*.ts",
+          "libs/ui/**/*.html"
+        ]
       }
     },
     "version": {
@@ -45,7 +57,14 @@
         "push": true,
         "noVerify": true,
         "commitMessageFormat": "chore(${projectName}): release version ${version} [skip ci]",
-        "skipCommitTypes": ["chore", "ci", "docs", "style", "test", "format"]
+        "skipCommitTypes": [
+          "chore",
+          "ci",
+          "docs",
+          "style",
+          "test",
+          "format"
+        ]
       }
     }
   }

@@ -3,18 +3,26 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/react-ui/src",
   "projectType": "library",
-  "tags": ["scope:cvi-react"],
+  "tags": [
+    "scope:cvi-react"
+  ],
   "targets": {
     "lint": {
       "executor": "@nx/linter:eslint",
-      "outputs": ["{options.outputFile}"],
+      "outputs": [
+        "{options.outputFile}"
+      ],
       "options": {
-        "lintFilePatterns": ["libs/react-ui/**/*.{ts,tsx,js,jsx}"]
+        "lintFilePatterns": [
+          "libs/react-ui/**/*.{ts,tsx,js,jsx}"
+        ]
       }
     },
     "build": {
       "executor": "@nx/vite:build",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "defaultConfiguration": "production",
       "options": {
         "project": "libs/react-ui/ng-package.json",
@@ -33,7 +41,9 @@
     },
     "test": {
       "executor": "@nx/vite:test",
-      "outputs": ["{projectRoot}/coverage"],
+      "outputs": [
+        "{projectRoot}/coverage"
+      ],
       "options": {
         "passWithNoTests": true
       }
@@ -46,7 +56,14 @@
         "push": true,
         "noVerify": true,
         "commitMessageFormat": "chore(${projectName}): release version ${version} [skip ci]",
-        "skipCommitTypes": ["chore", "ci", "docs", "style", "test", "format"]
+        "skipCommitTypes": [
+          "chore",
+          "ci",
+          "docs",
+          "style",
+          "test",
+          "format"
+        ]
       }
     }
   }

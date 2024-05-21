@@ -1,7 +1,7 @@
 /// <reference types="vitest" />
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import tsconfigPaths from 'vite-tsconfig-paths';
+import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
 import dts from 'vite-plugin-dts';
 import { join } from 'path';
 
@@ -13,9 +13,7 @@ export default defineConfig({
       skipDiagnostics: true,
     }),
     react(),
-    tsconfigPaths({
-      root: './',
-    }),
+    nxViteTsPaths(),
   ],
 
   // Configuration for building your library.
