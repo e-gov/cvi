@@ -1,47 +1,20 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
-  "npmScope": "ria",
   "affected": {
     "defaultBase": "master"
   },
   "cli": {
     "packageManager": "npm"
   },
-  "tasksRunnerOptions": {
-    "default": {
-      "runner": "nx/tasks-runners/default",
-      "options": {
-        "cacheableOperations": [
-          "build",
-          "lint",
-          "test",
-          "e2e",
-          "build-storybook"
-        ]
-      }
-    }
-  },
   "targetDefaults": {
     "build": {
-      "dependsOn": [
-        "^build"
-      ],
-      "inputs": [
-        "production",
-        "^production"
-      ]
-    },
-    "test": {
-      "inputs": [
-        "default",
-        "^default"
-      ]
+      "dependsOn": ["^build"],
+      "inputs": ["production", "^production"],
+      "cache": true
     },
     "lint": {
-      "inputs": [
-        "default",
-        "{workspaceRoot}/.eslintrc.json"
-      ]
+      "inputs": ["default", "{workspaceRoot}/.eslintrc.json"],
+      "cache": true
     },
     "build-storybook": {
       "inputs": [
@@ -49,7 +22,28 @@
         "^production",
         "{projectRoot}/.storybook/**/*",
         "{projectRoot}/tsconfig.storybook.json"
-      ]
+      ],
+      "cache": true
+    },
+    "e2e": {
+      "cache": true
+    },
+    "@nx/jest:jest": {
+      "inputs": ["default", "^default"],
+      "cache": true,
+      "options": {
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    },
+    "@nx/vite:test": {
+      "inputs": ["default", "^default"],
+      "cache": true
     }
   },
   "generators": {
@@ -85,10 +79,7 @@
   },
   "defaultProject": "ria",
   "namedInputs": {
-    "default": [
-      "{projectRoot}/**/*",
-      "sharedGlobals"
-    ],
+    "default": ["{projectRoot}/**/*", "sharedGlobals"],
     "sharedGlobals": [],
     "production": [
       "default",

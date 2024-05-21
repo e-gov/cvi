@@ -18,19 +18,13 @@
       }
     },
     "lint": {
-      "executor": "@nx/linter:eslint",
-      "outputs": [
-        "{options.outputFile}"
-      ],
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": [
-          "apps/ria-e2e/**/*.{js,ts}"
-        ]
+        "lintFilePatterns": ["apps/ria-e2e/**/*.{js,ts}"]
       }
     }
   },
   "tags": [],
-  "implicitDependencies": [
-    "ria"
-  ]
+  "implicitDependencies": ["ria"]
 }

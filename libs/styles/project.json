@@ -11,24 +11,17 @@
       }
     },
     "lint": {
-      "executor": "@nx/linter:eslint",
-      "outputs": [
-        "{options.outputFile}"
-      ],
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": [
-          "libs/styles/**/*.ts"
-        ]
+        "lintFilePatterns": ["libs/styles/**/*.ts"]
       }
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": [
-        "{workspaceRoot}/coverage/libs/styles"
-      ],
+      "outputs": ["{workspaceRoot}/coverage/libs/styles"],
       "options": {
-        "jestConfig": "libs/styles/jest.config.ts",
-        "passWithNoTests": true
+        "jestConfig": "libs/styles/jest.config.ts"
       }
     },
     "version": {
@@ -39,18 +32,9 @@
         "push": true,
         "noVerify": true,
         "commitMessageFormat": "chore(${projectName}): release version ${version} [skip ci]",
-        "skipCommitTypes": [
-          "chore",
-          "ci",
-          "docs",
-          "style",
-          "test",
-          "format"
-        ]
+        "skipCommitTypes": ["chore", "ci", "docs", "style", "test", "format"]
       }
     }
   },
-  "tags": [
-    "scope:cvi-styles"
-  ]
+  "tags": ["scope:cvi-styles"]
 }

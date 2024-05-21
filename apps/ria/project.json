@@ -7,9 +7,7 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/ria",
         "index": "apps/ria/src/index.html",
@@ -17,10 +15,7 @@
         "polyfills": "apps/ria/src/polyfills.ts",
         "tsConfig": "apps/ria/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": [
-          "apps/ria/src/favicon.ico",
-          "apps/ria/src/assets"
-        ],
+        "assets": ["apps/ria/src/favicon.ico", "apps/ria/src/assets"],
         "styles": [
           "apps/ria/src/styles.scss",
           "libs/styles/src/lib/scss/main.scss"
@@ -64,10 +59,10 @@
       "executor": "@angular-devkit/build-angular:dev-server",
       "configurations": {
         "production": {
-          "browserTarget": "ria:build:production"
+          "buildTarget": "ria:build:production"
         },
         "development": {
-          "browserTarget": "ria:build:development"
+          "buildTarget": "ria:build:development"
         }
       },
       "defaultConfiguration": "development"
@@ -75,26 +70,20 @@
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "browserTarget": "ria:build"
+        "buildTarget": "ria:build"
       }
     },
     "lint": {
-      "executor": "@nx/linter:eslint",
+      "executor": "@nx/eslint:lint",
       "options": {
-        "lintFilePatterns": [
-          "apps/ria/**/*.ts",
-          "apps/ria/**/*.html"
-        ]
+        "lintFilePatterns": ["apps/ria/**/*.ts", "apps/ria/**/*.html"]
       }
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": [
-        "{workspaceRoot}/coverage/apps/ria"
-      ],
+      "outputs": ["{workspaceRoot}/coverage/apps/ria"],
       "options": {
-        "jestConfig": "apps/ria/jest.config.ts",
-        "passWithNoTests": true
+        "jestConfig": "apps/ria/jest.config.ts"
       }
     }
   },
