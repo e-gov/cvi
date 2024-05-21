@@ -1,8 +1,5 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
-  "affected": {
-    "defaultBase": "master"
-  },
   "cli": {
     "packageManager": "npm"
   },
@@ -88,5 +85,7 @@
       "!{projectRoot}/tsconfig.storybook.json",
       "!{projectRoot}/src/test-setup.[jt]s"
     ]
-  }
+  },
+  "useInferencePlugins": false,
+  "defaultBase": "master"
 }
