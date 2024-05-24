@@ -10,7 +10,6 @@ import {
 } from '@storybook/angular';
 import { StorybookModule } from '../src/lib/storybook.module';
 import docJson from './documentation.json';
-import sortingOrder from './sorting-order.json';
 import 'cypress-storybook/client';
 
 setCompodocJson(docJson);
@@ -68,12 +67,7 @@ const preview: Preview = {
         },
       ],
     },
-    options: {
-      // stories inside one file will be sorted in alphabetical order because of this bug https://github.com/storybookjs/storybook/issues/18659
-      storySort: {
-        order: sortingOrder.ids,
-      },
-    },
+    options: {},
     layout: 'centered',
     viewport: {
       viewports: INITIAL_VIEWPORTS,
