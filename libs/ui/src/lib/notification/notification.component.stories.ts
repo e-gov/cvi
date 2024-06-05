@@ -35,6 +35,24 @@ export const Default = {
   }),
 };
 
+export const HtmlSection = {
+  render: (args: NotificationComponent) => ({
+    props: args,
+    /* template */
+    template: `
+      <cvi-ng-notification [severity]="severity"
+                           [size]="size"
+                           [showIcon]="showIcon"
+                           [showCloseButton]="showCloseButton"
+                           [title]="title"
+                           [iconName]="iconName"
+      >
+      <cvi-ng-html-section html="{{content}}"></cvi-ng-html-section>
+      </cvi-ng-notification>
+    `,
+  }),
+};
+
 export const Success = {
   ...Default,
   args: { severity: 'success' },
@@ -71,5 +89,14 @@ export const WithCompactSizeAndCustomIcon = {
     severity: 'neutral',
     size: 'compact',
     iconName: 'check_circle_outline',
+  },
+};
+export const WithBoldTextAndLink = {
+  ...HtmlSection,
+  args: {
+    severity: 'neutral',
+    size: 'compact',
+    content:
+      '<b>Bold text</b> and link <a href="https://www.jenkins.io/" target="_blank" class="external-link">Click here</a>',
   },
 };
