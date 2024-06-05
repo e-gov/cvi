@@ -96,6 +96,7 @@ export const WithBoldTextAndLink = {
   args: {
     severity: 'neutral',
     size: 'compact',
-    content: "<b>Bold text</b> and link <a href=\"https://www.jenkins.io/\" target=\"_blank\" class=\"external-link\">Click here</a>"
+    content:
+      '<b>Bold text</b> and link <a href="https://www.jenkins.io/" target="_blank" class="external-link">Click here</a>',
   },
 };
