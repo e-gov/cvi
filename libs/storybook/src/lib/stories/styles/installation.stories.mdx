@@ -1,21 +1,14 @@
-import {Meta, Story} from '@storybook/addon-docs';
+import { Meta } from '@storybook/addon-docs';
 import stylesPkg from '/libs/styles/package.json';
-
-# How to Install CVI Styles
 
 <Meta title="Styles/How to install" parameters={{
   viewMode: 'docs',
   chromatic: { disableSnapshot: true },
 }}/>
 
-<Story name="How to install">
-  {{
-    props: {stylesPkg},
-    template: `
-      Latest version: {{ stylesPkg.version }}
-    `,
-  }}
-</Story>
+# How to Install CVI Styles
+
+Latest version: { stylesPkg.version }
 
 The library styles are built using Sass (namely [Dart Sass](https://sass-lang.com/dart-sass)).
 
