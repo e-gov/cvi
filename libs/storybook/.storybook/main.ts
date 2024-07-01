@@ -5,17 +5,9 @@ const config: StorybookConfig = {
   ...rootMain,
 
   stories: [
-    // ...rootMain.stories,
-    // '../../**/src/lib/**/*.mdx',
-    // '../../**/src/lib/**/*.stories.ts',
-    '../src/lib/stories/angular.stories.mdx',
-    '../src/lib/stories/ng-diagrams.stories.mdx',
-    '../src/lib/stories/icons/installation.stories.mdx',
-    '../src/lib/stories/icons/contributions.stories.mdx',
-    '../src/lib/stories/styles/installation.stories.mdx',
-    '../src/lib/stories/styles/variables/colors.mdx',
-    '../src/lib/stories/styles/variables/colors.stories.ts',
-
+    ...rootMain.stories,
+    '../../**/src/lib/**/*.mdx',
+    '../../**/src/lib/**/*.stories.ts',
   ],
   exceptions: ['../src/lib/stories/styles/variables/colors.stories.ts'],
   addons: [...rootMain.addons, '@storybook/addon-essentials'],

@@ -1,3 +1,4 @@
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UiModule } from '@egov/cvi-ng';
 import { Component } from '@storybook/addon-docs';
 import { setCompodocJson } from '@storybook/addon-docs/angular';
@@ -81,6 +82,6 @@ export const decorators = [
     imports: [UiModule, StorybookModule],
   }),
   applicationConfig({
-    providers: [UiModule, StorybookModule],
+    providers: [UiModule, StorybookModule, BrowserAnimationsModule],
   }),
 ];

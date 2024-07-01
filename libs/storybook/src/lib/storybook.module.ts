@@ -19,7 +19,6 @@ import { StorybookNoteComponent } from './components/storybook-note/storybook-no
 import { StorybookRandomParagraphsDirective } from './directives/storybook-random-paragraphs/storybook-random-paragraphs.directive';
 import { StorybookCurrentComponentDirective } from './directives/storybook-current-component/storybook-current-component.directive';
 import { StorybookInputDirective } from './directives/storybook-input/storybook-input.directive';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // eslint-disable-next-line @nx/enforce-module-boundaries
 import { storybookIcons } from '../../../ui/src/lib/icons/storybook-icons';
 import { IconsRegistry } from '@egov/cvi-ng';
@@ -46,7 +45,6 @@ const components = [
 
 @NgModule({
   imports: [
-    BrowserAnimationsModule,
     HttpClientModule,
     CommonModule,
     TranslateModule.forRoot({
