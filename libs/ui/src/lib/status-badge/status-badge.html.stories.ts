@@ -1,10 +1,14 @@
 import { Meta } from '@storybook/angular';
-import notes from './status-badge.html.md';
+import notes from './status-badge.html.md?raw';
 
 export default {
   title: 'HTML/Status badge',
   parameters: {
-    notes,
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
     options: { selectedPanel: 'storybook/html/panel' },
     layout: 'centered',
   },

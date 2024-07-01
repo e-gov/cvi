@@ -1,5 +1,5 @@
-import { Meta, StoryFn } from '@storybook/angular';
-import notes from './track.html.md';
+import { Meta } from '@storybook/angular';
+import notes from './track.html.md?raw';
 
 const categoryFlex = {
   table: {
@@ -16,7 +16,11 @@ const categoryGrid = {
 export default {
   title: 'HTML/Track',
   parameters: {
-    notes,
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
     options: { selectedPanel: 'storybook/html/panel' },
     layout: 'padded',
   },

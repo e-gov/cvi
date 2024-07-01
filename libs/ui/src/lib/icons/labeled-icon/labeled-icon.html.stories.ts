@@ -1,10 +1,14 @@
 import { componentWrapperDecorator, Meta } from '@storybook/angular';
-import notes from './labeled-icon.html.md';
+import notes from './labeled-icon.html.md?raw';
 
 export default {
   title: 'HTML/Labeled icon',
   parameters: {
-    notes,
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
     options: { selectedPanel: 'storybook/html/panel' },
   },
   argTypes: {

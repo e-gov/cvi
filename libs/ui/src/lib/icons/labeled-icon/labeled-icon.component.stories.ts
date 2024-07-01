@@ -1,7 +1,7 @@
 import { componentWrapperDecorator, Meta } from '@storybook/angular';
 import { iconSizeDefault } from '../icon/icon';
 import { LabeledIconComponent } from './labeled-icon.component';
-import notes from './labeled-icon.component.md';
+import notes from './labeled-icon.component.md?raw';
 import { storybookIconsNames } from '../storybook-icons';
 
 const wrapperDecorators = [
@@ -13,7 +13,13 @@ const wrapperDecorators = [
 export default {
   title: 'Angular/Labeled icon',
   component: LabeledIconComponent,
-  parameters: { notes },
+  parameters: {
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
+  },
   argTypes: {
     name: {
       name: 'Icon name',

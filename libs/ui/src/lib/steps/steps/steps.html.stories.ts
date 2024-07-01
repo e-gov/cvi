@@ -1,10 +1,14 @@
 import { Meta } from '@storybook/angular';
-import notes from './steps.html.md';
+import notes from './steps.html.md?raw';
 
 export default {
   title: 'HTML/Steps',
   parameters: {
-    notes,
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
     layout: 'padded',
     options: { selectedPanel: 'storybook/html/panel' },
   },

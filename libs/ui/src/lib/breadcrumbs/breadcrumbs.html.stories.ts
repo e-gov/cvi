@@ -1,10 +1,14 @@
 import { Meta } from '@storybook/angular';
-import notes from './breadcrumbs.html.md';
+import notes from './breadcrumbs.html.md?raw';
 
 export default {
   title: 'HTML/Breadcrumbs',
   parameters: {
-    notes,
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
     options: { selectedPanel: 'storybook/html/panel' },
   },
 } as Meta;

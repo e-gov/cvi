@@ -1,10 +1,14 @@
 import { Meta } from '@storybook/angular';
-import notes from './datepicker.html.md';
+import notes from './datepicker.html.md?raw';
 
 export default {
   title: 'HTML/Form/Datepicker',
   parameters: {
-    notes,
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
     options: { selectedPanel: 'storybook/html/panel' },
   },
 } as Meta;

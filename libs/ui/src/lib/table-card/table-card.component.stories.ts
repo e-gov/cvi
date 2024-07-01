@@ -1,10 +1,16 @@
 import { Meta, StoryObj } from '@storybook/angular';
-import notes from './table-card.component.md';
+import notes from './table-card.component.md?raw';
 import { TableCardComponent } from './table-card.component';
 
 export default {
   title: 'Angular/Table Card',
-  parameters: { notes },
+  parameters: {
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
+  },
 } as Meta<TableCardComponent>;
 type Story = StoryObj<TableCardComponent>;
 

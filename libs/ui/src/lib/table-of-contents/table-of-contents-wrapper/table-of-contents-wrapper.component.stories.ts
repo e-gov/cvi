@@ -1,13 +1,17 @@
 import { Meta } from '@storybook/angular';
 import { TableOfContentsWrapperComponent } from './table-of-contents-wrapper.component';
-import notes from './table-of-contents-wrapper.component.md';
+import notes from './table-of-contents-wrapper.component.md?raw';
 
 export default {
   title: 'Angular/Table of contents/Table of contents wrapper',
   component: TableOfContentsWrapperComponent,
   parameters: {
     layout: 'padded',
-    notes,
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
     // disabling Chromatic because random text will trigger changes on each run
     chromatic: { disableSnapshot: true },
   },

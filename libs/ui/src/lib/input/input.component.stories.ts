@@ -4,7 +4,7 @@ import {
   moduleMetadata,
   componentWrapperDecorator,
 } from '@storybook/angular';
-import notes from './input.component.md';
+import notes from './input.component.md?raw';
 import { InputComponent } from './input.component';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { storybookIconsNames } from '../icons/storybook-icons';
@@ -17,7 +17,13 @@ export default {
       imports: [ReactiveFormsModule],
     }),
   ],
-  parameters: { notes },
+  parameters: {
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
+  },
   argTypes: {
     suffixIconName: {
       name: 'Icon',

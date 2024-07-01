@@ -1,9 +1,15 @@
 import { Meta } from '@storybook/angular';
-import notes from './notification.html.md';
+import notes from './notification.html.md?raw';
 
 export default {
   title: 'HTML/Notification',
-  parameters: { notes },
+  parameters: {
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
+  },
 } as Meta;
 
 export const Default = {

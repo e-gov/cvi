@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/angular';
-import notes from './table-responsive.component.md';
+import notes from './table-responsive.component.md?raw';
 import { TableResponsiveComponent } from './table-responsive.component';
 import { StatusBadgeSeverity } from '../status-badge/status-badge';
 import { concatMap, delay, from, of } from 'rxjs';
@@ -25,7 +25,13 @@ const getStatusBadgeLabelBySeverity = (severity: StatusBadgeSeverity) =>
 
 export default {
   title: 'Angular/Responsive table',
-  parameters: { notes },
+  parameters: {
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
+  },
   args: {
     headerLabels: [
       'First column',

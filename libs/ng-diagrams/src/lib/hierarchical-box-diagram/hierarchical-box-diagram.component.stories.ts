@@ -1,12 +1,16 @@
 import { Meta } from '@storybook/angular';
 import { HierarchicalBoxDiagramComponent } from './hierarchical-box-diagram.component';
-import notes from './hierarchical-box-diagram.component.html.md';
+import notes from './hierarchical-box-diagram.component.html.md?raw';
 
 export default {
   title: 'Angular Diagrams/Hierarchical Box Diagram',
   component: HierarchicalBoxDiagramComponent,
   parameters: {
-    notes,
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
     layout: 'fullscreen',
     backgrounds: {
       default: 'default',

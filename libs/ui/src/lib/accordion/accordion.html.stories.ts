@@ -1,10 +1,14 @@
 import { Meta } from '@storybook/angular';
-import notes from './accordion.html.md';
+import notes from './accordion.html.md?raw';
 
 export default {
   title: 'HTML/Accordion',
   parameters: {
-    notes,
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
     options: { selectedPanel: 'storybook/html/panel' },
   },
 } as Meta;

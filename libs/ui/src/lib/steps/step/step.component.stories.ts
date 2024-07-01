@@ -1,5 +1,5 @@
 import { Meta } from '@storybook/angular';
-import notes from './step.component.md';
+import notes from './step.component.md?raw';
 import { StepComponent } from './step.component';
 
 export default {
@@ -7,7 +7,11 @@ export default {
   component: StepComponent,
   parameters: {
     layout: 'padded',
-    notes,
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
   },
 } as Meta;
 

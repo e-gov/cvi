@@ -1,5 +1,5 @@
 import { Meta, componentWrapperDecorator } from '@storybook/angular';
-import notes from './content-panel.component.md';
+import notes from './content-panel.component.md?raw';
 import { ContentPanelComponent } from './content-panel.component';
 
 const wrapperDecorators = [
@@ -10,7 +10,14 @@ const wrapperDecorators = [
 
 export default {
   title: 'Angular/Content panel',
-  parameters: { notes, layout: 'padded' },
+  parameters: {
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
+    layout: 'padded',
+  },
   argTypes: {
     content: {
       name: 'Content',

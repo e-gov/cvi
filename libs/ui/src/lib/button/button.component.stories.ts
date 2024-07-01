@@ -1,5 +1,5 @@
 import { Meta, componentWrapperDecorator } from '@storybook/angular';
-import notes from './button.component.md';
+import notes from './button.component.md?raw';
 import { ButtonComponent } from './button.component';
 import { storybookIconsNames } from '../icons/storybook-icons';
 
@@ -12,7 +12,13 @@ const wrapperDecorators = [
 export default {
   title: 'Angular/Button',
   component: ButtonComponent,
-  parameters: { notes },
+  parameters: {
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
+  },
   argTypes: {
     appearance: {
       control: { type: 'inline-radio' },

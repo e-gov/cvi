@@ -1,10 +1,14 @@
-import { Meta, StoryFn } from '@storybook/angular';
-import notes from './radio-group.html.md';
+import { Meta } from '@storybook/angular';
+import notes from './radio-group.html.md?raw';
 
 export default {
   title: 'HTML/Form/Radio button group',
   parameters: {
-    notes,
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
     options: { selectedPanel: 'storybook/html/panel' },
   },
   argTypes: {

@@ -2,17 +2,21 @@ import {
   componentWrapperDecorator,
   Meta,
   moduleMetadata,
-  StoryFn,
+  StoryFn
 } from '@storybook/angular';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { TextareaComponent } from './textarea.component';
-import notes from './textarea.component.md';
+import notes from './textarea.component.md?raw';
 
 export default {
   title: 'Angular/Form/Textarea',
   component: TextareaComponent,
   parameters: {
-    notes,
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
     // Disabling Chromatic because cvi-ng-textarea triggers a visual change on every build
     chromatic: { disableSnapshot: true },
   },

@@ -2,7 +2,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { Meta, StoryFn } from '@storybook/angular';
 import { TableComponent } from './table.component';
 import { StatusBadgeSeverity } from '../status-badge/status-badge';
-import notes from './table.component.md';
+import notes from './table.component.md?raw';
 
 const statuses: { severity: StatusBadgeSeverity; label: string }[] = [
   {
@@ -28,7 +28,13 @@ const getStatusBadgeLabelBySeverity = (severity: StatusBadgeSeverity) =>
 export default {
   title: 'Angular/Table',
   component: TableComponent,
-  parameters: { notes },
+  parameters: {
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
+  },
   args: {
     headerLabels: ['Sündmusteenus', 'Staatus', 'Email', 'Viimati muudetud'],
     data: [

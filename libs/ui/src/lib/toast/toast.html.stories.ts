@@ -1,10 +1,14 @@
 import { Meta } from '@storybook/angular';
-import notes from './toast.html.md';
+import notes from './toast.html.md?raw';
 
 export default {
   title: 'HTML/Toast',
   parameters: {
-    notes,
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
     options: { selectedPanel: 'storybook/html/panel' },
   },
   argTypes: {

@@ -1,4 +1,4 @@
-import notes from './tab-group.component.md';
+import notes from './tab-group.component.md?raw';
 import { Meta, moduleMetadata, StoryFn } from '@storybook/angular';
 import { TabGroupComponent } from './tab-group.component';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
@@ -8,7 +8,13 @@ import { storybookIconsNames } from '../icons/storybook-icons';
 
 export default {
   title: 'Angular/Tabs/Tab group',
-  parameters: { notes },
+  parameters: {
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
+  },
   decorators: [
     moduleMetadata({
       imports: [UiModule, ReactiveFormsModule],

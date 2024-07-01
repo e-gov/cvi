@@ -1,10 +1,16 @@
 import { Meta } from '@storybook/angular';
-import notes from './feedback.component.md';
+import notes from './feedback.component.md?raw';
 import { FeedbackComponent } from './feedback.component';
 
 export default {
   title: 'Angular/Feedback',
-  parameters: { notes },
+  parameters: {
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
+  },
   component: FeedbackComponent,
 } as Meta<FeedbackComponent>;
 

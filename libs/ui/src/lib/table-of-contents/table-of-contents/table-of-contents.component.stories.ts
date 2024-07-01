@@ -1,5 +1,5 @@
 import { Meta } from '@storybook/angular';
-import notes from './table-of-contents.component.md';
+import notes from './table-of-contents.component.md?raw';
 import { TableOfContentsComponent } from './table-of-contents.component';
 
 export default {
@@ -7,7 +7,11 @@ export default {
   component: TableOfContentsComponent,
   parameters: {
     layout: 'padded',
-    notes,
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
   },
   args: {
     title: 'Table of contents',

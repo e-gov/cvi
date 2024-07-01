@@ -1,10 +1,14 @@
 import { Meta } from '@storybook/angular';
-import notes from './table.html.md';
+import notes from './table.html.md?raw';
 
 export default {
   title: 'HTML/Table',
   parameters: {
-    notes,
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
     options: { selectedPanel: 'storybook/html/panel' },
   },
 } as Meta;

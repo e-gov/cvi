@@ -1,11 +1,17 @@
 import { Meta } from '@storybook/angular';
 import { NotificationComponent } from './notification.component';
-import notes from './notification.component.md';
+import notes from './notification.component.md?raw';
 
 export default {
   title: 'Angular/Notification',
   component: NotificationComponent,
-  parameters: { notes },
+  parameters: {
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
+  },
   args: {
     severity: 'info',
     size: 'regular',

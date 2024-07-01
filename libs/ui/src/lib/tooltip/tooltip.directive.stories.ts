@@ -1,11 +1,17 @@
 import { Meta } from '@storybook/angular';
 import { TooltipDirective } from './tooltip.directive';
-import notes from './tooltip.directive.md';
+import notes from './tooltip.directive.md?raw';
 
 export default {
   title: 'Angular/Tooltip/Tooltip Directive',
   component: TooltipDirective,
-  parameters: { notes },
+  parameters: {
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
+  },
 } as Meta;
 
 export const Default = {

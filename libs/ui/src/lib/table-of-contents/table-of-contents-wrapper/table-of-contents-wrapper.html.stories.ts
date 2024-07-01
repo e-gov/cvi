@@ -1,11 +1,15 @@
 import { Meta } from '@storybook/angular';
-import notes from './table-of-contents-wrapper.html.md';
+import notes from './table-of-contents-wrapper.html.md?raw';
 
 export default {
   title: 'HTML/Table of contents',
   parameters: {
     layout: 'padded',
-    notes,
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
   },
 } as Meta;
 

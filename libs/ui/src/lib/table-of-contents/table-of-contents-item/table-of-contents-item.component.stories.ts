@@ -1,13 +1,17 @@
 import { Meta } from '@storybook/angular';
 import { TableOfContentsItemComponent } from './table-of-contents-item.component';
-import notes from './table-of-contents-item.component.md';
+import notes from './table-of-contents-item.component.md?raw';
 
 export default {
   title: 'Angular/Table of contents/Table of contents item',
   component: TableOfContentsItemComponent,
   parameters: {
     layout: 'padded',
-    notes,
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
     // disabling Chromatic because random text will trigger changes on each run
     chromatic: { disableSnapshot: true },
   },

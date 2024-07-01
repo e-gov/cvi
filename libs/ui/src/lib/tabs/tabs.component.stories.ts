@@ -1,4 +1,4 @@
-import notes from './tabs.component.md';
+import notes from './tabs.component.md?raw';
 import { Meta, moduleMetadata, StoryObj } from '@storybook/angular';
 import { TabsComponent } from './tabs.component';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
@@ -6,7 +6,13 @@ import { storybookIconsNames } from '../icons/storybook-icons';
 
 export default {
   title: 'Angular/Tabs/Tabs',
-  parameters: { notes },
+  parameters: {
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
+  },
   decorators: [
     moduleMetadata({
       imports: [ReactiveFormsModule],

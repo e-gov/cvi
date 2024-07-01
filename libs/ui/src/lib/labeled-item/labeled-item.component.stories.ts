@@ -1,10 +1,16 @@
-import notes from './labeled-item.component.md';
+import notes from './labeled-item.component.md?raw';
 import { LabeledItemComponent } from './labeled-item.component';
 import { Meta, StoryObj } from '@storybook/angular';
 
 export default {
   title: 'Angular/Labeled item',
-  parameters: { notes },
+  parameters: {
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
+  },
   content: {
     name: 'Content',
     table: {

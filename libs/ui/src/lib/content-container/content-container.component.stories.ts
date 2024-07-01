@@ -1,5 +1,5 @@
 import { Meta, componentWrapperDecorator } from '@storybook/angular';
-import notes from './content-container.component.md';
+import notes from './content-container.component.md?raw';
 import { ContentContainerComponent } from './content-container.component';
 
 const wrapperDecorators = [
@@ -10,7 +10,14 @@ const wrapperDecorators = [
 
 export default {
   title: 'Angular/Content container',
-  parameters: { notes, layout: 'padded' },
+  parameters: {
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
+    layout: 'padded',
+  },
   argTypes: {
     content: {
       name: 'Content',

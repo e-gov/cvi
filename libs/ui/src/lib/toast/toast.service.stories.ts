@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, Input } from '@angular/core';
 import { Meta, moduleMetadata } from '@storybook/angular';
 import { ToastService } from './toast.service';
-import notes from './toast.service.md';
+import notes from './toast.service.md?raw';
 
 @Component({
   selector: 'cvi-ng-storybook-toast-wrapper',
@@ -59,7 +59,13 @@ class ToastWrapperComponent implements AfterViewInit {
 export default {
   title: 'Angular/Toast',
   component: ToastWrapperComponent,
-  parameters: { notes },
+  parameters: {
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
+  },
   decorators: [
     moduleMetadata({
       declarations: [ToastWrapperComponent],

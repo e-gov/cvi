@@ -1,11 +1,15 @@
 import { Meta, componentWrapperDecorator } from '@storybook/angular';
-import notes from './button.html.md';
+import notes from './button.html.md?raw';
 import { ButtonAppearance, ButtonSize } from './button';
 
 export default {
   title: 'HTML/Button',
   parameters: {
-    notes,
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
     options: { selectedPanel: 'storybook/html/panel' },
   },
   argTypes: {

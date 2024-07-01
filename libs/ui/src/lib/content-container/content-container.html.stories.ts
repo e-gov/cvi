@@ -1,10 +1,14 @@
 import { Meta } from '@storybook/angular';
-import notes from './content-container.html.md';
+import notes from './content-container.html.md?raw';
 
 export default {
   title: 'HTML/Content container',
   parameters: {
-    notes,
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
     options: { selectedPanel: 'storybook/html/panel' },
     layout: 'padded',
   },

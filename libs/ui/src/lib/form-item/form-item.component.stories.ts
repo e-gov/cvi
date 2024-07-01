@@ -1,5 +1,5 @@
 import { Meta, componentWrapperDecorator } from '@storybook/angular';
-import notes from './form-item.component.md';
+import notes from './form-item.component.md?raw';
 import { FormItemComponent } from './form-item.component';
 
 const wrapperDecorators = [
@@ -11,7 +11,13 @@ const wrapperDecorators = [
 export default {
   title: 'Angular/Form/Form item',
   component: FormItemComponent,
-  parameters: { notes },
+  parameters: {
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
+  },
   argTypes: {
     displayMessage: {
       name: 'Show form message?',

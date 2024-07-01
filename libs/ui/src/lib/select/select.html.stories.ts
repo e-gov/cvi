@@ -1,10 +1,14 @@
 import { Meta } from '@storybook/angular';
-import notes from './select.html.md';
+import notes from './select.html.md?raw';
 
 export default {
   title: 'HTML/Form/Select',
   parameters: {
-    notes,
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
     options: { selectedPanel: 'storybook/html/panel' },
   },
   argTypes: {

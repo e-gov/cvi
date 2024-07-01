@@ -1,6 +1,6 @@
 import { Meta, moduleMetadata, StoryFn } from '@storybook/angular';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import notes from './datepicker.component.md';
+import notes from './datepicker.component.md?raw';
 import { DatepickerComponent } from './datepicker.component';
 
 export default {
@@ -10,7 +10,13 @@ export default {
       imports: [ReactiveFormsModule],
     }),
   ],
-  parameters: { notes },
+  parameters: {
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
+  },
   args: {
     placeholder: 'pp.kk.aaaa',
     disabled: false,

@@ -1,11 +1,10 @@
 import {
-  StoryFn,
   Meta,
   ArgTypes,
   componentWrapperDecorator,
 } from '@storybook/angular';
 import { TrackComponent } from './track.component';
-import notes from './track.component.md';
+import notes from './track.component.md?raw';
 
 const wrapperDecorators = [
   componentWrapperDecorator(TrackComponent, ({ args }) => {
@@ -29,7 +28,11 @@ export default {
   title: 'Angular/Track/Stories',
   component: TrackComponent,
   parameters: {
-    notes,
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
     layout: 'padded',
   },
   argTypes: {

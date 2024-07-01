@@ -1,11 +1,17 @@
 import { Meta } from '@storybook/angular';
 import { concatMap, delay, from, of } from 'rxjs';
-import notes from './accordion.component.md';
+import notes from './accordion.component.md?raw';
 import { AccordionComponent } from './accordion.component';
 
 export default {
   title: 'Angular/Accordion',
-  parameters: { notes },
+  parameters: {
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
+  },
   args: {
     singleOpen: true,
     content$: from([

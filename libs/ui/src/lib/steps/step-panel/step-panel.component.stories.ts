@@ -1,13 +1,17 @@
 import { Meta } from '@storybook/angular';
 import { StepPanelComponent } from './step-panel.component';
-import notes from './step-panel.component.md';
+import notes from './step-panel.component.md?raw';
 
 export default {
   title: 'Angular/Steps/Step panel',
   component: StepPanelComponent,
   parameters: {
     layout: 'padded',
-    notes,
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
   },
   argTypes: {
     content: {

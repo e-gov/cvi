@@ -1,10 +1,14 @@
 import { Meta } from '@storybook/angular';
-import notes from './screenreader-text.html.md';
+import notes from './screenreader-text.html.md?raw';
 
 export default {
   title: 'HTML/Screenreader text',
   parameters: {
-    notes,
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
     options: { selectedPanel: 'storybook/html/panel' },
     layout: 'padded',
   },

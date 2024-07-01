@@ -1,5 +1,5 @@
 import { SelectComponent } from './select.component';
-import notes from './select.component.md';
+import notes from './select.component.md?raw';
 import { Meta, moduleMetadata, StoryFn } from '@storybook/angular';
 import {
   FormControl,
@@ -16,7 +16,13 @@ export default {
       imports: [UiModule, ReactiveFormsModule],
     }),
   ],
-  parameters: { notes },
+  parameters: {
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
+  },
   argTypes: {
     itemChanged: { action: 'Item changed!' },
     containerWidth: {

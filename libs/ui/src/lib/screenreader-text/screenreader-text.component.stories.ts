@@ -1,12 +1,16 @@
 import { Meta } from '@storybook/angular';
-import notes from './screenreader-text.component.md';
+import notes from './screenreader-text.component.md?raw';
 import { ScreenreaderTextComponent } from './screenreader-text.component';
 
 export default {
   title: 'Angular/Screenreader text',
   component: ScreenreaderTextComponent,
   parameters: {
-    notes,
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
     layout: 'padded',
   },
   args: {

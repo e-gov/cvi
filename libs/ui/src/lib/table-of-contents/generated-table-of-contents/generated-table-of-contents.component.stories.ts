@@ -1,5 +1,5 @@
 import { Meta, moduleMetadata } from '@storybook/angular';
-import notes from './generated-table-of-contents.component.md';
+import notes from './generated-table-of-contents.component.md?raw';
 import { GeneratedTableOfContentsComponent } from './generated-table-of-contents.component';
 import { Component, Input } from '@angular/core';
 import { concatMap, delay, from, of } from 'rxjs';
@@ -87,7 +87,11 @@ export default {
   component: GeneratedTableOfContentsComponent,
   parameters: {
     layout: 'padded',
-    notes,
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
     // disabling Chromatic because random text will trigger changes on each run
     chromatic: { disableSnapshot: true },
   },

@@ -1,5 +1,5 @@
 import { Meta, componentWrapperDecorator } from '@storybook/angular';
-import notes from './tooltip.directive.md';
+import notes from './tooltip.directive.md?raw';
 import { TooltipComponent } from './tooltip.component';
 
 type TooltipComponentWithCustomArgs = TooltipComponent & {
@@ -9,7 +9,13 @@ type TooltipComponentWithCustomArgs = TooltipComponent & {
 export default {
   title: 'Angular/Tooltip/Tooltip',
   component: TooltipComponent,
-  parameters: { notes },
+  parameters: {
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
+  },
   argTypes: {
     configurableZIndexCSSVar: {
       name: 'Custom z-index',
