@@ -7,11 +7,19 @@ const config: StorybookConfig = {
   },
   stories: [],
   addons: [
-    '@whitespace/storybook-addon-html',
+    '@storybook/addon-controls',
+    {
+      name: '@storybook/addon-storysource',
+      options: {
+        loaderOptions: {
+          prettierConfig: { printWidth: 80, singleQuote: false },
+        },
+      },
+    },
+    '@storybook/addon-actions',
     '@storybook/addon-a11y',
     'storybook-addon-pseudo-states',
     '@storybook/addon-viewport',
-    '@storybook/addon-actions',
   ],
   core: { disableTelemetry: true },
   docs: {
