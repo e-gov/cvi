@@ -1,4 +1,5 @@
 import { StorybookConfig } from '@storybook/angular';
+import remarkGfm from 'remark-gfm';
 
 const config: StorybookConfig = {
   framework: {
@@ -20,6 +21,16 @@ const config: StorybookConfig = {
     '@storybook/addon-a11y',
     'storybook-addon-pseudo-states',
     '@storybook/addon-viewport',
+    {
+      name: "@storybook/addon-docs",
+      options: {
+        mdxPluginOptions: {
+          mdxCompileOptions: {
+            remarkPlugins: [remarkGfm],
+          },
+        },
+      },
+    }
   ],
   core: { disableTelemetry: true },
   docs: {

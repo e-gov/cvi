@@ -1,7 +1,7 @@
 ## General description
 
 | Feature                    | Description     |
-| -------------------------- | --------------- |
+|----------------------------|-----------------|
 | Selector                   | `cvi-ng-tabs`   |
 | Component name             | `TabsComponent` |
 | Content                    | yes             |

@@ -1,12 +1,12 @@
 ## General description
 
-| Feature                    | Description                                                          |
-| -------------------------- | -------------------------------------------------------------------- |
-| Selector                   | `cvi-ng-labeled-icon`                                              |
-| Component name             | `LabeledIconComponent`                                               |
-| Content                    | yes                                                                  |
-| Permitted parent/ancestors | any                                                                  |
-| Permitted children         | Phrasing content                                                     |
+| Feature                    | Description            |
+|----------------------------|------------------------|
+| Selector                   | `cvi-ng-labeled-icon`  |
+| Component name             | `LabeledIconComponent` |
+| Content                    | yes                    |
+| Permitted parent/ancestors | any                    |
+| Permitted children         | Phrasing content       |
 
 ## Where to use
 

@@ -1,12 +1,12 @@
 ## General description
 
-Feature | Description
-- | -
-Sass component | `cvi-labeled-icon`
-Corresponding Javascript component | `LabeledIconComponent`
-Design system module | -
-Permitted parent/ancestors | any
-Permitted Sass components as children of accordion items | any
+| Feature                                                  | Description            |
+|----------------------------------------------------------|------------------------|
+| Sass component                                           | `cvi-labeled-icon`     |
+| Corresponding Javascript component                       | `LabeledIconComponent` |
+| Design system module                                     | -                      |
+| Permitted parent/ancestors                               | any                    |
+| Permitted Sass components as children of accordion items | any                    |
 
 ## Where to use
 
