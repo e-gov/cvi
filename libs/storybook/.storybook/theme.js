@@ -8,4 +8,5 @@ export default create({
   brandUrl: 'https://github.com/e-gov/cvi',
   brandImage: logo,
   brandTarget: '_self',
+  panelPosition: 'bottom',
 });
