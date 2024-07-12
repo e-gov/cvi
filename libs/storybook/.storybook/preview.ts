@@ -76,7 +76,7 @@ export default preview;
 
 export const decorators = [
   moduleMetadata({
-    imports: [UiModule, StorybookModule],
+    imports: [UiModule, StorybookModule, BrowserAnimationsModule],
   }),
   applicationConfig({
     providers: [UiModule, StorybookModule, BrowserAnimationsModule],
