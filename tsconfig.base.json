@@ -12,37 +12,18 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "esnext",
-    "lib": [
-      "es2017",
-      "dom",
-      "dom.Iterable"
-    ],
+    "lib": ["es2017", "dom", "dom.Iterable"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
-    "types": [
-      "node"
-    ],
+    "types": ["node"],
     "baseUrl": ".",
     "paths": {
-      "@egov/cvi-icons": [
-        "dist/libs/icons/index"
-      ],
-      "@egov/cvi-ng": [
-        "libs/ui/src/index.ts"
-      ],
-      "@egov/cvi-ng-diagrams": [
-        "libs/ng-diagrams/src/index.ts"
-      ],
-      "@egov/cvi-react": [
-        "libs/react-ui/src/index.ts"
-      ],
-      "@egov/cvi-styles": [
-        "libs/styles/src/index.ts"
-      ]
+      "@egov/cvi-icons": ["dist/libs/icons/index"],
+      "@egov/cvi-ng": ["libs/ui/src/index.ts"],
+      "@egov/cvi-ng-diagrams": ["libs/ng-diagrams/src/index.ts"],
+      "@egov/cvi-react": ["libs/react-ui/src/index.ts"],
+      "@egov/cvi-styles": ["libs/styles/src/index.ts"]
     }
   },
-  "exclude": [
-    "node_modules",
-    "tmp"
-  ]
+  "exclude": ["node_modules", "tmp"]
 }

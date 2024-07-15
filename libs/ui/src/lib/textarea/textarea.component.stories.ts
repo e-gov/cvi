@@ -2,7 +2,7 @@ import {
   componentWrapperDecorator,
   Meta,
   moduleMetadata,
-  StoryFn
+  StoryFn,
 } from '@storybook/angular';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { TextareaComponent } from './textarea.component';

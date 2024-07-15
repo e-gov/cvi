@@ -120,7 +120,8 @@ export class DatepickerComponent implements ControlValueAccessor, OnInit {
     this.dayFullLabels$ = this.labelConfig.getDayFullLabels();
     this.monthLabels$ = this.labelConfig.getMonthLabels();
     this.screenreaderLabel$ = this.labelConfig.getScreenReaderLabel();
-    this.screenreaderDescription$ = this.labelConfig.getScreenReaderDescription();
+    this.screenreaderDescription$ =
+      this.labelConfig.getScreenReaderDescription();
   }
 
   get value(): string | undefined {

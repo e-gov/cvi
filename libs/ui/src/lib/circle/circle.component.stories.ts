@@ -95,7 +95,7 @@ export const WithProgress = {
     props: {
       ...args,
       progress$: from([20, 40, 60, 80, 100]).pipe(
-        concatMap((item) => of(item).pipe(delay(800))),
+        concatMap((item) => of(item).pipe(delay(800)))
       ),
     },
     template: `

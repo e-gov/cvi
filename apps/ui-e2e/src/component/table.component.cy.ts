@@ -5,7 +5,8 @@ describe('TableComponent', () => {
 
   it('Renders default table', () => {
     cy.loadStory('Angular Table', 'Default').then(() => {
-      cy.get('cvi-ng-table').should('exist')
+      cy.get('cvi-ng-table')
+        .should('exist')
         .find('.cvi-table__inner')
         .should('exist')
         .each(($tableInner, index, $tableInnerArray) => {

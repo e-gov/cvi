@@ -26,7 +26,10 @@ export class StepComponent {
   get isVisible() {
     return this._isVisible;
   }
-  constructor(public ref: ElementRef, private cdRef: ChangeDetectorRef) {}
+  constructor(
+    public ref: ElementRef,
+    private cdRef: ChangeDetectorRef
+  ) {}
 
   @HostBinding('class') get getHostClasses(): string {
     return 'cvi-steps__step';

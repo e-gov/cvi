@@ -20,7 +20,7 @@ const statuses: { severity: StatusBadgeSeverity; label: string }[] = [
 const getStatusBadgeLabelBySeverity = (severity: StatusBadgeSeverity) =>
   statuses.find(
     (st: { severity: StatusBadgeSeverity; label: string }) =>
-      st.severity === severity,
+      st.severity === severity
   )?.label || 'info';
 
 export default {
@@ -210,7 +210,7 @@ export const WithObservables: Story = {
         },
       ],
       headerLabels$: from([['Lunes', 'Viernes']]).pipe(
-        concatMap((item) => of(item).pipe(delay(withObservableTitlesDelay))),
+        concatMap((item) => of(item).pipe(delay(withObservableTitlesDelay)))
       ),
     },
     /* template */

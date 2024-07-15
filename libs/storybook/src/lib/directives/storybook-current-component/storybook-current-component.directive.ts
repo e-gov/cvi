@@ -14,7 +14,10 @@ export class StorybookCurrentComponentDirective implements AfterViewInit {
 
   private baseClass = 'u-storybook-current-component';
 
-  constructor(private el: ElementRef, private renderer: Renderer2) {}
+  constructor(
+    private el: ElementRef,
+    private renderer: Renderer2
+  ) {}
 
   ngAfterViewInit(): void {
     this.renderer.addClass(this.el.nativeElement, this.baseClass);

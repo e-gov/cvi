@@ -60,7 +60,10 @@ const components = [
   providers: [{ provide: LOCALE_ID, useValue: 'et' }],
 })
 export class StorybookModule {
-  constructor(private registry: IconsRegistry, translate: TranslateService) {
+  constructor(
+    private registry: IconsRegistry,
+    translate: TranslateService
+  ) {
     this.registry.registerIcons(storybookIcons);
     translate.setDefaultLang('et');
     translate.use('et');

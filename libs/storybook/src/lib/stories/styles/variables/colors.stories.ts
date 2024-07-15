@@ -14,9 +14,9 @@ export default {
     colorsTotal: {
       table: {
         disable: true,
-      }
-    }
-  }
+      },
+    },
+  },
 } as Meta;
 
 export const BlackCoral: StoryFn = (args: any) => ({

@@ -22,7 +22,7 @@ const config: StorybookConfig = {
     'storybook-addon-pseudo-states',
     '@storybook/addon-viewport',
     {
-      name: "@storybook/addon-docs",
+      name: '@storybook/addon-docs',
       options: {
         mdxPluginOptions: {
           mdxCompileOptions: {
@@ -30,7 +30,7 @@ const config: StorybookConfig = {
           },
         },
       },
-    }
+    },
   ],
   core: { disableTelemetry: true },
   docs: {

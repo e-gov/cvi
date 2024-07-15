@@ -5,7 +5,8 @@ describe('TableCardComponent', () => {
 
   it('Should render default table card', () => {
     cy.loadStory('Angular Table Card', 'Default').then(() => {
-      cy.get('cvi-ng-table-card').should('exist')
+      cy.get('cvi-ng-table-card')
+        .should('exist')
         .find('cvi-ng-track')
         .should('exist')
         .each(($track) => {
