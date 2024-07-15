@@ -105,7 +105,7 @@ export const Default = {
 function baseBoxStyles(
   color: string,
   borderStyle: 'solid' | 'none' | 'dotted' = 'none',
-  borderColor: string = 'transparent'
+  borderColor = 'transparent'
 ) {
   return {
     color: color,
