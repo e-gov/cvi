@@ -10,11 +10,8 @@ describe('RadioGroupComponent', () => {
       .shouldHaveClasses('label', 'cvi-radio-group__item-inner')
       .shouldHaveClasses('input', 'cvi-radio-group__item-control');
 
-    cy.get('[type="radio"]')
-      .first()
-      .should('not.be.checked')
-      .check()
-      .should('be.checked');
+    cy.get('[type="radio"]').first().should('not.be.checked').check();
+    cy.get('[type="radio"]').first().should('be.checked');
   });
 
   it('Renders option radio buttons group and clicks first button', () => {
@@ -28,19 +25,13 @@ describe('RadioGroupComponent', () => {
         ).shouldHaveClasses('input', 'cvi-radio-group__input');
       });
 
-    /**
-     * TODO(@nx/cypress): Nesting Cypress commands in a should assertion now throws.
-     * You should use .then() to chain commands instead.
-     * More Info: https://docs.cypress.io/guides/references/migration-guide#-should
-     **/
-    cy.get('[data-cy="option_1"]')
-      .within(() => {
-        cy.get('input').should('not.be.checked');
-      })
-      .click()
-      .within(() => {
-        cy.get('input').should('be.checked');
-      });
+    cy.get('[data-cy="option_1"]').within(() => {
+      cy.get('input').should('not.be.checked');
+    });
+    cy.get('[data-cy="option_1"]').click();
+    cy.get('[data-cy="option_1"]').within(() => {
+      cy.get('input').should('be.checked');
+    });
   });
 
   it('Renders option button compact and clicks first button', () => {
@@ -57,18 +48,12 @@ describe('RadioGroupComponent', () => {
         ).shouldHaveClasses('input', 'cvi-radio-group__input');
       });
 
-    /**
-     * TODO(@nx/cypress): Nesting Cypress commands in a should assertion now throws.
-     * You should use .then() to chain commands instead.
-     * More Info: https://docs.cypress.io/guides/references/migration-guide#-should
-     **/
-    cy.get('[data-cy="option_1"]')
-      .within(() => {
-        cy.get('input').should('not.be.checked');
-      })
-      .click()
-      .within(() => {
-        cy.get('input').should('be.checked');
-      });
+    cy.get('[data-cy="option_1"]').within(() => {
+      cy.get('input').should('not.be.checked');
+    });
+    cy.get('[data-cy="option_1"]').click();
+    cy.get('[data-cy="option_1"]').within(() => {
+      cy.get('input').should('be.checked');
+    });
   });
 });

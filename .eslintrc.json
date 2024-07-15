@@ -11,9 +11,7 @@
           {
             "enforceBuildableLibDependency": true,
             "allowCircularSelfDependency": true,
-            "allow": [
-              ".storybook/main"
-            ],
+            "allow": [".storybook/main"],
             "depConstraints": [
               {
                 "sourceTag": "*",

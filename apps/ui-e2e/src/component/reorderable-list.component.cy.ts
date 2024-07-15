@@ -85,26 +85,28 @@ describe('ReorderableListComponent', () => {
   });
 
   it('Clicking remove button on the First step removes it and second step becomes first', () => {
-    cy.loadStory('Angular Reorderable list', 'ReorderableListSingleFormItem')
+    cy.loadStory('Angular Reorderable list', 'ReorderableListSingleFormItem');
+    cy.get('cvi-ng-reorderable-list-item')
       // Check 2nd step name
       .reorderableListItemShouldHaveName(2, 'Confirmation of time and place')
       // Check 1st step name
-      .reorderableListItemShouldHaveName(1, 'Submission of application')
-      // Remove 1st step
-      .get('[data-cy="step-1-remove-button"]')
-      .click()
+      .reorderableListItemShouldHaveName(1, 'Submission of application');
+    // Remove 1st step
+    cy.get('[data-cy="step-1-remove-button"]').click();
+    cy.get('cvi-ng-reorderable-list-item')
       // Previously 2nd step should be the new 1st
       .reorderableListItemShouldHaveName(2, 'Confirmation of time and place');
   });
 
   it('Clicking second step up arrow button swaps it with third', () => {
-    cy.loadStory('Angular Reorderable list', 'ReorderableListSingleFormItem')
+    cy.loadStory('Angular Reorderable list', 'ReorderableListSingleFormItem');
+    cy.get('cvi-ng-reorderable-list-item')
       // Check 3rd step name
       .reorderableListItemShouldHaveName(3, 'Getting married')
       // Check 2nd step name
-      .reorderableListItemShouldHaveName(2, 'Confirmation of time and place')
-      .get('[data-cy="step-2-set-as-next-button"]')
-      .click()
+      .reorderableListItemShouldHaveName(2, 'Confirmation of time and place');
+    cy.get('[data-cy="step-2-set-as-next-button"]').click();
+    cy.get('cvi-ng-reorderable-list-item')
       // Old 2nd step should be the new 3rd step
       .reorderableListItemShouldHaveName(3, 'Getting married')
       // Old 3rd step should be the new 2nd step

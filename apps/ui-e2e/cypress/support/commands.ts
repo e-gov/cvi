@@ -237,16 +237,16 @@ Cypress.Commands.add('storyAction', (actionName) => {
 });
 
 Cypress.Commands.add('runStepsCommonTest', () => {
-  cy.shouldNotBeVisible('[data-cy="step_1"]')
-    .shouldNotHaveClasses('[data-cy="cvi-steps__list-item_0"]', [
-      'is-past',
-      'is-current',
-    ])
-    .click()
-    .shouldHaveClasses('[data-cy="cvi-steps__list-item_0"]', [
-      'is-past',
-      'is-current',
-    ])
+  cy.shouldNotBeVisible('[data-cy="step_1"]');
+  cy.shouldNotHaveClasses('[data-cy="cvi-steps__list-item_0"]', [
+    'is-past',
+    'is-current',
+  ]);
+  cy.get('[data-cy="cvi-steps__list-item_0"]').click();
+  cy.shouldHaveClasses('[data-cy="cvi-steps__list-item_0"]', [
+    'is-past',
+    'is-current',
+  ])
     .shouldBeVisible('[data-cy="step_1"]')
     .shouldNotExist('[data-cy="previous_step_button_0"]')
     .shouldExist('[data-cy="next_step_button_0"]');
@@ -270,14 +270,13 @@ Cypress.Commands.add(
 
       if (showCloseButton) {
         cy.get('[data-cy="notification"]').within(() => {
-          cy.shouldHaveClasses('button', 'cvi-notification__close-button')
-            .click()
-            .within(() => {
-              cy.shouldHaveAttributes('[data-cy="close-icon"]', {
-                name: 'name',
-                value: 'close',
-              });
+          cy.shouldHaveClasses('button', 'cvi-notification__close-button');
+          cy.get('button').within(() => {
+            cy.shouldHaveAttributes('[data-cy="close-icon"]', {
+              name: 'name',
+              value: 'close',
             });
+          });
         });
       } else {
         cy.shouldNotExist('[data-cy="close-icon"]');
