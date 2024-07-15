@@ -44,7 +44,7 @@ export const Default = {
                 </div>
               </td>
               <td class="cvi-table__body-cell">
-                <div class="cvi-table__body-cell-inner">doagwelcometotheteamoftwenty@cochol.eu</div>
+                <div class="cvi-table__body-cell-inner">doagwelcometotheteamoftwenty&#64;cochol.eu</div>
               </td>
               <td class="cvi-table__body-cell"><div class="cvi-table__body-cell-inner">2021-07-15</div></td>
               <td class="cvi-table__body-cell">
@@ -89,7 +89,7 @@ export const Default = {
                   </span>
                 </div>
               </td>
-              <td class="cvi-table__body-cell"><div class="cvi-table__body-cell-inner">utpa@pi.ca</div></td>
+              <td class="cvi-table__body-cell"><div class="cvi-table__body-cell-inner">utpa&#64;pi.ca</div></td>
               <td class="cvi-table__body-cell"><div class="cvi-table__body-cell-inner">2018-07-17</div></td>
               <td class="cvi-table__body-cell">
                 <div class="cvi-table__body-cell-inner">
@@ -119,7 +119,7 @@ export const Default = {
                   </span>
                 </div>
               </td>
-              <td class="cvi-table__body-cell"><div class="cvi-table__body-cell-inner">boole@dok.ky</div></td>
+              <td class="cvi-table__body-cell"><div class="cvi-table__body-cell-inner">boole&#64;dok.ky</div></td>
               <td class="cvi-table__body-cell"><div class="cvi-table__body-cell-inner">2016-07-05</div></td>
               <td class="cvi-table__body-cell">
                 <div class="cvi-table__body-cell-inner">
