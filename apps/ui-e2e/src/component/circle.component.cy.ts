@@ -1,5 +1,5 @@
 describe('CircleComponent', () => {
-  before(() => {
+  beforeEach(() => {
     cy.visitStorybook();
   });
 
@@ -12,8 +12,8 @@ describe('CircleComponent', () => {
   });
 
   it('Renders medium circle with light theme and success severity', () => {
-    cy.loadStory('Angular Circle', 'With Light Theme')
-      .get('cvi-ng-circle')
+    cy.loadStory('Angular Circle', 'With Light Theme');
+    cy.get('cvi-ng-circle')
       .changeArg('severity', 'success')
       .changeArg('size', 'm');
     cy.shouldHaveClasses('cvi-ng-circle', ['cvi-circle', 'cvi-circle--size-m'])
@@ -23,8 +23,8 @@ describe('CircleComponent', () => {
   });
 
   it('Renders small circle with light theme, error severity and close icon', () => {
-    cy.loadStory('Angular Circle', 'With Light Theme')
-      .get('cvi-ng-circle')
+    cy.loadStory('Angular Circle', 'With Light Theme');
+    cy.get('cvi-ng-circle')
       .changeArg('severity', 'error')
       .changeArg('size', 's')
       .changeArg('iconName', 'close');
