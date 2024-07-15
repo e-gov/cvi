@@ -17,6 +17,8 @@ import {
 import { StepComponent } from '../step/step.component';
 import { StepPanelComponent } from '../step-panel/step-panel.component';
 import { Subscription } from 'rxjs';
+import { ViewChild } from '@angular/core';
+import { ElementRef } from '@angular/core';
 
 @Component({
   selector: 'cvi-ng-steps',
@@ -26,11 +28,17 @@ import { Subscription } from 'rxjs';
 export class StepsComponent
   implements AfterViewInit, AfterContentInit, OnChanges, OnDestroy
 {
+  private leftEdgeIntersectionObserver?: IntersectionObserver;
+
+  private rightEdgeIntersectionObserver?: IntersectionObserver;
+
   @Input() title!: string;
 
   @Input() urlStepTitle?: string;
 
   @Input() urlStepLabel?: string;
+
+  @Input() isScrollable?: boolean;
 
   /** Internal */
   private _currentStepIndex: number | null = null;
@@ -62,6 +70,13 @@ export class StepsComponent
   @Input() anyStepSelected = false;
   @ContentChildren(StepComponent) stepChildren!: QueryList<StepComponent>;
 
+  @ViewChild('leftEdge') leftEdge?: ElementRef;
+  @ViewChild('rightEdge') rightEdge?: ElementRef;
+  @ViewChild('stepScrollBar') stepScrollBar?: ElementRef;
+
+  leftEdgeVisible = false;
+  rightEdgeVisible = false;
+
   panelSubscription!: Subscription;
   _stepPanels!: QueryList<StepPanelComponent>;
   @ContentChildren(StepPanelComponent, { descendants: true })
@@ -90,9 +105,9 @@ export class StepsComponent
   constructor(private cdRef: ChangeDetectorRef) {}
 
   @HostBinding('class') get getHostClasses(): string {
-    return `cvi-steps${this.anyStepSelected ? ' is-any-step-selected' : ''}${
-      this.hasTableOfContents ? ' has-toc' : ''
-    }`;
+    return `cvi-steps${this.anyStepSelected ? ' is-any-step-selected' : ''}
+    ${this.hasTableOfContents ? ' has-toc' : ''}
+    cvi-steps${this.isScrollable ? ' is-scrollable' : ''}`;
   }
 
   @HostBinding('style.--current-step') get getCurrentStepAsCSSVar(): string {
@@ -119,6 +134,35 @@ export class StepsComponent
       this.updateStepsData(stepPanels);
       this.cdRef.markForCheck();
     });
+
+    if (this.isScrollable) {
+      const observerOptions = {
+        root: null,
+        threshold: 0.5,
+      };
+
+      this.leftEdgeIntersectionObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            this.leftEdgeVisible = entry.isIntersecting;
+            this.cdRef.markForCheck();
+          });
+        },
+        observerOptions
+      );
+      this.rightEdgeIntersectionObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            this.rightEdgeVisible = entry.isIntersecting;
+            this.cdRef.markForCheck();
+          });
+        },
+        observerOptions
+      );
+
+      this.leftEdgeIntersectionObserver.observe(this.leftEdge?.nativeElement);
+      this.rightEdgeIntersectionObserver.observe(this.rightEdge?.nativeElement);
+    }
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -131,6 +175,14 @@ export class StepsComponent
   ngOnDestroy(): void {
     if (this.panelSubscription) {
       this.panelSubscription.unsubscribe();
+    }
+
+    if (this.leftEdgeIntersectionObserver) {
+      this.leftEdgeIntersectionObserver.disconnect();
+    }
+
+    if (this.rightEdgeIntersectionObserver) {
+      this.rightEdgeIntersectionObserver.disconnect();
     }
   }
 
@@ -172,5 +224,11 @@ export class StepsComponent
 
   urlStepClicked() {
     this.urlStepClick.emit();
+  }
+
+  onClickScroll(amount: number) {
+    if (this.stepScrollBar?.nativeElement) {
+      this.stepScrollBar.nativeElement.scrollLeft += amount;
+    }
   }
 }

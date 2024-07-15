@@ -2,6 +2,19 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [2.11.0](https://github.com/e-gov/cvi/compare/ui-2.10.1...ui-2.11.0) (2024-05-08)
+
+
+### Features
+
+* **ui:** add option to make steps scrollable EBS-1314 ([#227](https://github.com/e-gov/cvi/issues/227)) ([6d77fb1](https://github.com/e-gov/cvi/commit/6d77fb109df6b47a15308ce0e5b087f9c6715c0b))
+
+
+
+## [2.10.1](https://github.com/e-gov/cvi/compare/ui-2.10.0...ui-2.10.1) (2024-05-02)
+
+
+
 # [2.10.0](https://github.com/e-gov/cvi/compare/ui-2.9.0...ui-2.10.0) (2024-04-05)
 
 

@@ -4,61 +4,88 @@
 </div>
 <div class="cvi-steps__inner-wrapper">
   <div class="cvi-steps__inner" dataAttribute="steps_container">
-    <ol class="cvi-steps__list">
-      <li class="cvi-steps__list-item"
-          *ngFor="let stepTitle of stepTitles; let i = index"
-          [ngClass]="{'is-past': this.currentStepIndex !== null && i <= currentStepIndex, 'is-current': i === currentStepIndex}"
-          [dataAttribute]="'cvi-steps__list-item_' + i">
-        <button class="cvi-steps__list-item-button" [dataAttribute]="'cvi-steps__list-item-button_' + i"
-                (click)="stepSelected(i)">
-          <cvi-ng-track [layout]="'flex'" [horizontalAlignment]="'justify'" [verticalAlignment]="'center'">
-            <div class="cvi-steps__list-item-circle-wrapper--desktop">
-              <cvi-ng-track [gap]="2" [verticalAlignment]="'center'">
-                <cvi-ng-circle
-                  [theme]="i === currentStepIndex || this.stepStatuses[i] === 'success' || this.stepStatuses[i] === 'error'  ? 'light' : 'dark'"
-                  [severity]="this.stepStatuses[i] | toStepCircleSeverity"
-                  [iconName]="this.stepStatuses[i] | toStepCircleIconName">
-                  {{ i + 1 }}
-                </cvi-ng-circle>
-                <span class="cvi-steps__list-item-title">{{ stepTitle }}</span>
+    <div class="cvi-steps__scroll-wrapper">
+      <div #stepScrollBar class="cvi-steps__scroll-container">
+        <div>
+          <button *ngIf="isScrollable && !leftEdgeVisible"
+                  aria-label="Scroll left"
+                  class="cvi-steps__scroll-button cvi-steps__scroll-button--left-scroll"
+                  (click)="onClickScroll(-150)">
+            <cvi-ng-icon [name]="'arrow_a_left'"
+                         svgClass="cvi-steps__scroll-button-icon">
+            </cvi-ng-icon>
+          </button>
+
+          <button *ngIf="isScrollable && !rightEdgeVisible"
+                  aria-label="Scroll right"
+                  class="cvi-steps__scroll-button cvi-steps__scroll-button--right-scroll"
+                  (click)="onClickScroll(150)">
+            <cvi-ng-icon [name]="'arrow_a_right'"
+                         svgClass="cvi-steps__scroll-button-icon">
+            </cvi-ng-icon>
+          </button>
+        </div>
+
+        <div #leftEdge style="width: 1px"></div>
+        <ol class="cvi-steps__list">
+          <li class="cvi-steps__list-item"
+              *ngFor="let stepTitle of stepTitles; let i = index"
+              [ngClass]="{'is-past': this.currentStepIndex !== null && i <= currentStepIndex, 'is-current': i === currentStepIndex}"
+              [dataAttribute]="'cvi-steps__list-item_' + i">
+            <button class="cvi-steps__list-item-button" [dataAttribute]="'cvi-steps__list-item-button_' + i"
+                    (click)="stepSelected(i)">
+              <cvi-ng-track [layout]="'flex'" [horizontalAlignment]="'justify'" [verticalAlignment]="'center'">
+                <div class="cvi-steps__list-item-circle-wrapper--desktop">
+                  <cvi-ng-track [gap]="2" [verticalAlignment]="'center'">
+                    <cvi-ng-circle
+                      [theme]="i === currentStepIndex || this.stepStatuses[i] === 'success' || this.stepStatuses[i] === 'error'  ? 'light' : 'dark'"
+                      [severity]="this.stepStatuses[i] | toStepCircleSeverity"
+                      [iconName]="this.stepStatuses[i] | toStepCircleIconName">
+                      {{ i + 1 }}
+                    </cvi-ng-circle>
+                    <span class="cvi-steps__list-item-title">{{ stepTitle }}</span>
+                  </cvi-ng-track>
+                </div>
+                <div class="cvi-steps__list-item-circle-wrapper--mobile">
+                  <cvi-ng-track [gap]="4" [verticalAlignment]="'center'">
+                    <cvi-ng-circle
+                      size="m"
+                      style="--cvi-circle-border-color: var(--cvi-color-sapphire-blue-10); --cvi-circle-color: var(--cvi-color-sapphire-blue-10);"
+                      [progressPercentage]="anyStepSelected ? currentProgressCSSVar : undefined">
+                      {{ i + 1 }}
+                    </cvi-ng-circle>
+                    <span class="cvi-steps__list-item-title">{{ stepTitle }}</span>
+                  </cvi-ng-track>
+                </div>
+                <cvi-ng-track [gap]="4">
+                  <cvi-ng-icon [name]="'arrow_a_right'" class="cvi-steps__list-item-arrow-icon-wrapper"
+                               [svgClass]="'cvi-steps__list-item-arrow-icon'"></cvi-ng-icon>
+                </cvi-ng-track>
               </cvi-ng-track>
-            </div>
-            <div class="cvi-steps__list-item-circle-wrapper--mobile">
-              <cvi-ng-track [gap]="4" [verticalAlignment]="'center'">
-                <cvi-ng-circle
-                  size="m"
-                  style="--cvi-circle-border-color: var(--cvi-color-sapphire-blue-10); --cvi-circle-color: var(--cvi-color-sapphire-blue-10);"
-                  [progressPercentage]="anyStepSelected ? currentProgressCSSVar : undefined">
-                  {{ i + 1 }}
-                </cvi-ng-circle>
-                <span class="cvi-steps__list-item-title">{{ stepTitle }}</span>
+            </button>
+          </li>
+          <li *ngIf="urlStepTitle"
+              class="cvi-steps__list-item cvi-steps__list-item--is-url-step">
+            <button class="cvi-steps__list-item-button" style="background-color: white;" (click)="urlStepClicked()">
+              <cvi-ng-track [layout]="'flex'" [horizontalAlignment]="'justify'" [verticalAlignment]="'center'">
+                <div class="cvi-steps__list-item-circle-wrapper--desktop">
+                  <cvi-ng-track [gap]="2" [verticalAlignment]="'center'">
+                    <cvi-ng-circle [iconName]="'arrow_a_right'"
+                                   [theme]="'light'"
+                                   [severity]="'info'"
+                                   style="--cvi-circle-border-color: var(--cvi-color-sapphire-blue-13)">
+                    </cvi-ng-circle>
+                    <span class="cvi-steps__list-item-title">{{ urlStepTitle }}</span>
+                  </cvi-ng-track>
+                </div>
               </cvi-ng-track>
-            </div>
-            <cvi-ng-track [gap]="4">
-              <cvi-ng-icon [name]="'arrow_a_right'" class="cvi-steps__list-item-arrow-icon-wrapper"
-                           [svgClass]="'cvi-steps__list-item-arrow-icon'"></cvi-ng-icon>
-            </cvi-ng-track>
-          </cvi-ng-track>
-        </button>
-      </li>
-      <li *ngIf="urlStepTitle"
-          class="cvi-steps__list-item cvi-steps__list-item--is-url-step">
-        <button class="cvi-steps__list-item-button" style="background-color: white;" (click)="urlStepClicked()">
-          <cvi-ng-track [layout]="'flex'" [horizontalAlignment]="'justify'" [verticalAlignment]="'center'">
-            <div class="cvi-steps__list-item-circle-wrapper--desktop">
-              <cvi-ng-track [gap]="2" [verticalAlignment]="'center'">
-                <cvi-ng-circle [iconName]="'arrow_a_right'"
-                               [theme]="'light'"
-                               [severity]="'info'"
-                               style="--cvi-circle-border-color: var(--cvi-color-sapphire-blue-13)">
-                </cvi-ng-circle>
-                <span class="cvi-steps__list-item-title">{{ urlStepTitle }}</span>
-              </cvi-ng-track>
-            </div>
-          </cvi-ng-track>
-        </button>
-      </li>
-    </ol>
+            </button>
+          </li>
+        </ol>
+        <div #rightEdge style="width: 1px"></div>
+      </div>
+    </div>
+
     <ng-content></ng-content>
     <div *ngIf="this.stepChildren.length > 1 && this.currentStepIndex !== null"
         class="cvi-steps__directional-buttons"

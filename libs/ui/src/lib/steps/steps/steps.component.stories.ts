@@ -35,6 +35,7 @@ export default {
   args: {
     title: 'Abiellumine',
     currentStepIndex: null,
+    isScrollable: false,
     stepsContent: [
       '<a href="https://www.eesti.ee">Nevertheless, Cosy Moments thrives. It has its public.</a>',
       'Its contents are mildly interesting, if you like that sort of thing.',
@@ -61,7 +62,7 @@ const DefaultTemplate: StoryFn<StepsComponent> = (args: StepsComponent) => {
     },
     /* template */
     template: `
-      <cvi-ng-steps [title]="title" [currentStepIndex]="currentStepIndex" [hasTableOfContents]="hasTableOfContents">
+      <cvi-ng-steps [title]="title" [currentStepIndex]="currentStepIndex" [hasTableOfContents]="hasTableOfContents" [isScrollable]="isScrollable">
         <p cvi-steps="after-title" dataAttribute="steps-description">You can now add custom content before steps</p>
         <cvi-ng-step dataAttribute="step_1">
           <cvi-ng-step-panel [title]="title">
@@ -106,6 +107,18 @@ export const DefaultWithSelectedStep = {
   ...Default,
   args: {
     currentStepIndex: 1,
+  },
+};
+
+export const DefaultWithScroll = {
+  ...Default,
+  parameters: {
+    viewport: {
+      defaultViewport: 'ipad',
+    },
+  },
+  args: {
+    isScrollable: true,
   },
 };
 
@@ -261,7 +274,6 @@ export const WithStepStatus = {
 };
 
 const TemplateWithUrlStep: StoryFn = (args) => ({
-  component: StepsComponent,
   props: {
     ...args,
     urlClicked: false,

@@ -2,6 +2,10 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.0.1](https://github.com/e-gov/cvi/compare/storybook-1.0.0...storybook-1.0.1) (2024-05-02)
+
+
+
 # 1.0.0 (2023-11-22)
 
 
