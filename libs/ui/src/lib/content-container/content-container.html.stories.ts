@@ -1,5 +1,5 @@
 import { Meta } from '@storybook/angular';
-import notes from './content-container.html.md?raw';
+import notes from './content-container.html.md';
 
 export default {
   title: 'HTML/Content container',

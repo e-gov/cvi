@@ -1,5 +1,5 @@
 import { Meta } from '@storybook/angular';
-import notes from './table.html.md?raw';
+import notes from './table.html.md';
 
 export default {
   title: 'HTML/Table',

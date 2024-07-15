@@ -1,5 +1,5 @@
 import { Meta } from '@storybook/angular';
-import notes from './datepicker.html.md?raw';
+import notes from './datepicker.html.md';
 
 export default {
   title: 'HTML/Form/Datepicker',

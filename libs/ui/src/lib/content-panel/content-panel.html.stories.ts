@@ -1,5 +1,5 @@
 import { Meta } from '@storybook/angular';
-import notes from './content-panel.html.md?raw';
+import notes from './content-panel.html.md';
 
 export default {
   title: 'HTML/Content panel',

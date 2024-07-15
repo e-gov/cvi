@@ -1,5 +1,5 @@
 import { SelectComponent } from './select.component';
-import notes from './select.component.md?raw';
+import notes from './select.component.md';
 import { Meta, moduleMetadata, StoryFn } from '@storybook/angular';
 import {
   FormControl,

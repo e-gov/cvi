@@ -4,7 +4,7 @@ import {
   moduleMetadata,
 } from '@storybook/angular';
 import { ReorderableListComponent } from './reorderable-list.component';
-import notes from './reorderable-list.component.md?raw';
+import notes from './reorderable-list.component.md';
 import { ReorderableListExampleComponent } from './example-components/reorderable-list-example/reorderable-list-example.component';
 import { ReorderableListSingleFormItemComponent } from './example-components/reorderable-list-single-form-item/reorderable-list-single-form-item.component';
 import { ReorderableListMultipleFormItemsComponent } from './example-components/reorderable-list-multiple-form-items/reorderable-list-multiple-form-items.component';

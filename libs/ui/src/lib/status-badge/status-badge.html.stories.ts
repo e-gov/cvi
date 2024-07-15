@@ -1,5 +1,5 @@
 import { Meta } from '@storybook/angular';
-import notes from './status-badge.html.md?raw';
+import notes from './status-badge.html.md';
 
 export default {
   title: 'HTML/Status badge',

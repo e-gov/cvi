@@ -1,6 +1,6 @@
 import { Meta, ArgTypes, componentWrapperDecorator } from '@storybook/angular';
 import { TrackComponent } from './track.component';
-import notes from './track.component.md?raw';
+import notes from './track.component.md';
 
 const wrapperDecorators = [
   componentWrapperDecorator(TrackComponent, ({ args }) => {

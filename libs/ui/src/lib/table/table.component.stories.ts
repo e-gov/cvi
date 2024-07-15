@@ -2,7 +2,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { Meta, StoryFn } from '@storybook/angular';
 import { TableComponent } from './table.component';
 import { StatusBadgeSeverity } from '../status-badge/status-badge';
-import notes from './table.component.md?raw';
+import notes from './table.component.md';
 
 const statuses: { severity: StatusBadgeSeverity; label: string }[] = [
   {

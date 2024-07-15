@@ -1,4 +1,4 @@
-import notes from './labeled-item.component.md?raw';
+import notes from './labeled-item.component.md';
 import { LabeledItemComponent } from './labeled-item.component';
 import { Meta, StoryObj } from '@storybook/angular';
 

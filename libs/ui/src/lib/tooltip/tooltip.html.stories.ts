@@ -1,5 +1,5 @@
 import { Meta } from '@storybook/angular';
-import notes from './tooltip.html.md?raw';
+import notes from './tooltip.html.md';
 
 export default {
   title: 'HTML/Tooltip',

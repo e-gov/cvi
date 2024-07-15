@@ -1,6 +1,6 @@
 import { Meta } from '@storybook/angular';
 import { TableOfContentsItemComponent } from './table-of-contents-item.component';
-import notes from './table-of-contents-item.component.md?raw';
+import notes from './table-of-contents-item.component.md';
 
 export default {
   title: 'Angular/Table of contents/Table of contents item',

@@ -1,5 +1,5 @@
 import { Meta, componentWrapperDecorator } from '@storybook/angular';
-import notes from './content-container.component.md?raw';
+import notes from './content-container.component.md';
 import { ContentContainerComponent } from './content-container.component';
 
 const wrapperDecorators = [

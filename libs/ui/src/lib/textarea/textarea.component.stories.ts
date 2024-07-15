@@ -6,7 +6,7 @@ import {
 } from '@storybook/angular';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { TextareaComponent } from './textarea.component';
-import notes from './textarea.component.md?raw';
+import notes from './textarea.component.md';
 
 export default {
   title: 'Angular/Form/Textarea',

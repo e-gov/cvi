@@ -1,5 +1,5 @@
 import { componentWrapperDecorator, Meta } from '@storybook/angular';
-import notes from './labeled-icon.html.md?raw';
+import notes from './labeled-icon.html.md';
 
 export default {
   title: 'HTML/Labeled icon',

@@ -1,7 +1,7 @@
 import { Meta, componentWrapperDecorator } from '@storybook/angular';
 import { concatMap, delay, from, of } from 'rxjs';
 import { CircleComponent } from './circle.component';
-import notes from './circle.component.md?raw';
+import notes from './circle.component.md';
 import { storybookIconsNames } from '../icons/storybook-icons';
 
 const wrapperDecorators = [

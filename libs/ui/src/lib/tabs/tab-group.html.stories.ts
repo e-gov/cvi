@@ -1,5 +1,5 @@
 import { Meta } from '@storybook/angular';
-import notes from './tab-group.html.md?raw';
+import notes from './tab-group.html.md';
 
 export default {
   title: 'HTML/Tabs/Tab group',

@@ -1,5 +1,5 @@
 import { Meta } from '@storybook/angular';
-import notes from './breadcrumbs.html.md?raw';
+import notes from './breadcrumbs.html.md';
 
 export default {
   title: 'HTML/Breadcrumbs',

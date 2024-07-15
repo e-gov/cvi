@@ -1,5 +1,5 @@
 import { Meta } from '@storybook/angular';
-import notes from './radio-group.component.md?raw';
+import notes from './radio-group.component.md';
 import { RadioGroupComponent } from './radio-group.component';
 import { RadioGroupAppearance } from './radio-group';
 

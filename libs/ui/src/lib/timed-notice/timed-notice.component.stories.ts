@@ -1,5 +1,5 @@
 import { StoryObj, Meta } from '@storybook/angular';
-import notes from './timed-notice.component.md?raw';
+import notes from './timed-notice.component.md';
 import { TimedNoticeComponent } from './timed-notice.component';
 
 export default {

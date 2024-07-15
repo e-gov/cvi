@@ -1,5 +1,5 @@
 import { Meta } from '@storybook/angular';
-import notes from './input.html.md?raw';
+import notes from './input.html.md';
 
 export default {
   title: 'HTML/Form/Input',

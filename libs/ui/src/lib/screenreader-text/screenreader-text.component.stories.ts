@@ -1,5 +1,5 @@
 import { Meta } from '@storybook/angular';
-import notes from './screenreader-text.component.md?raw';
+import notes from './screenreader-text.component.md';
 import { ScreenreaderTextComponent } from './screenreader-text.component';
 
 export default {

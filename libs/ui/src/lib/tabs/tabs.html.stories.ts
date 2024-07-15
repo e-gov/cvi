@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/angular';
-import notes from './tabs.html.md?raw';
+import notes from './tabs.html.md';
 
 export default {
   title: 'HTML/Tabs/Tabs',

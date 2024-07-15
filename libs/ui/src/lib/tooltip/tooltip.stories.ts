@@ -1,5 +1,5 @@
 import { Meta, componentWrapperDecorator } from '@storybook/angular';
-import notes from './tooltip.directive.md?raw';
+import notes from './tooltip.directive.md';
 import { TooltipComponent } from './tooltip.component';
 
 type TooltipComponentWithCustomArgs = TooltipComponent & {

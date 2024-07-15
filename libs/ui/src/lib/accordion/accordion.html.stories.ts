@@ -1,5 +1,5 @@
 import { Meta } from '@storybook/angular';
-import notes from './accordion.html.md?raw';
+import notes from './accordion.html.md';
 
 export default {
   title: 'HTML/Accordion',

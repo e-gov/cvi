@@ -1,5 +1,5 @@
 import { Meta } from '@storybook/angular';
-import notes from './breadcrumbs.component.md?raw';
+import notes from './breadcrumbs.component.md';
 import { BreadcrumbsComponent } from './breadcrumbs.component';
 
 export default {

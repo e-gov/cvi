@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/angular';
-import notes from './circle.html.md?raw';
+import notes from './circle.html.md';
 
 export default {
   title: 'HTML/Circle',

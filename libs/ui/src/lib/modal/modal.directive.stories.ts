@@ -1,5 +1,5 @@
 import { Meta } from '@storybook/angular';
-import notes from './modal.directive.md?raw';
+import notes from './modal.directive.md';
 
 export default {
   title: 'Angular/Modal/Modal directive',

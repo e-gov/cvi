@@ -1,6 +1,6 @@
 import { Meta } from '@storybook/angular';
 import { TooltipDirective } from './tooltip.directive';
-import notes from './tooltip.directive.md?raw';
+import notes from './tooltip.directive.md';
 
 export default {
   title: 'Angular/Tooltip/Tooltip Directive',

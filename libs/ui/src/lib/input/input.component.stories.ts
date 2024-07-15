@@ -4,7 +4,7 @@ import {
   moduleMetadata,
   componentWrapperDecorator,
 } from '@storybook/angular';
-import notes from './input.component.md?raw';
+import notes from './input.component.md';
 import { InputComponent } from './input.component';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { storybookIconsNames } from '../icons/storybook-icons';

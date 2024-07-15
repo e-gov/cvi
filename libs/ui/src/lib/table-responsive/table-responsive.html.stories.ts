@@ -1,5 +1,5 @@
 import { StoryObj, Meta } from '@storybook/angular';
-import notes from './table-responsive.html.md?raw';
+import notes from './table-responsive.html.md';
 
 export default {
   title: 'HTML/Responsive table',

@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/angular';
-import notes from './timed-notice.html.md?raw';
+import notes from './timed-notice.html.md';
 
 export default {
   title: 'HTML/Timed Notice',

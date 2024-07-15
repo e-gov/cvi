@@ -1,7 +1,7 @@
 import { componentWrapperDecorator, Meta } from '@storybook/angular';
 import { iconSizeDefault } from '../icon/icon';
 import { LabeledIconComponent } from './labeled-icon.component';
-import notes from './labeled-icon.component.md?raw';
+import notes from './labeled-icon.component.md';
 import { storybookIconsNames } from '../storybook-icons';
 
 const wrapperDecorators = [

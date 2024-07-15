@@ -1,5 +1,5 @@
 import { Meta } from '@storybook/angular';
-import notes from './track.html.md?raw';
+import notes from './track.html.md';
 
 const categoryFlex = {
   table: {

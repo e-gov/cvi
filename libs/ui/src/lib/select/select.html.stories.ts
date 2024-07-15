@@ -1,5 +1,5 @@
 import { Meta } from '@storybook/angular';
-import notes from './select.html.md?raw';
+import notes from './select.html.md';
 
 export default {
   title: 'HTML/Form/Select',

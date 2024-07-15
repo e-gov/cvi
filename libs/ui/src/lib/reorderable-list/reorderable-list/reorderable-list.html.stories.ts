@@ -1,5 +1,5 @@
 import { Meta } from '@storybook/angular';
-import notes from './reorderable-list.html.md?raw';
+import notes from './reorderable-list.html.md';
 
 export default {
   title: 'HTML/Reorderable list',

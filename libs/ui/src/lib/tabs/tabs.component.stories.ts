@@ -1,4 +1,4 @@
-import notes from './tabs.component.md?raw';
+import notes from './tabs.component.md';
 import { Meta, moduleMetadata, StoryObj } from '@storybook/angular';
 import { TabsComponent } from './tabs.component';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';

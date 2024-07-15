@@ -1,5 +1,5 @@
 import { Meta, componentWrapperDecorator } from '@storybook/angular';
-import notes from './form-item.component.md?raw';
+import notes from './form-item.component.md';
 import { FormItemComponent } from './form-item.component';
 
 const wrapperDecorators = [

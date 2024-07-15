@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/angular';
-import notes from './table-card.component.md?raw';
+import notes from './table-card.component.md';
 import { TableCardComponent } from './table-card.component';
 
 export default {

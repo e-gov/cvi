@@ -1,5 +1,5 @@
 import { Meta } from '@storybook/angular';
-import notes from './html-section.html.md?raw';
+import notes from './html-section.html.md';
 
 export default {
   title: 'HTML/Html section',

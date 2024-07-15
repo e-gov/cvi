@@ -1,5 +1,5 @@
 import { Meta, componentWrapperDecorator } from '@storybook/angular';
-import notes from './button.component.md?raw';
+import notes from './button.component.md';
 import { ButtonComponent } from './button.component';
 import { storybookIconsNames } from '../icons/storybook-icons';
 

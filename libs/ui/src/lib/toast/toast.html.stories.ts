@@ -1,5 +1,5 @@
 import { Meta } from '@storybook/angular';
-import notes from './toast.html.md?raw';
+import notes from './toast.html.md';
 
 export default {
   title: 'HTML/Toast',

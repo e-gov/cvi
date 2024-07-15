@@ -1,5 +1,5 @@
 import { Meta } from '@storybook/angular';
-import notes from './textarea.html.md?raw';
+import notes from './textarea.html.md';
 
 export default {
   title: 'HTML/Form/Textarea',

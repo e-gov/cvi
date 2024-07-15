@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/angular';
-import notes from './table-responsive.component.md?raw';
+import notes from './table-responsive.component.md';
 import { TableResponsiveComponent } from './table-responsive.component';
 import { StatusBadgeSeverity } from '../status-badge/status-badge';
 import { concatMap, delay, from, of } from 'rxjs';

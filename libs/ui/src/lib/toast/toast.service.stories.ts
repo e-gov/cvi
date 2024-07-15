@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, Input } from '@angular/core';
 import { Meta, moduleMetadata } from '@storybook/angular';
 import { ToastService } from './toast.service';
-import notes from './toast.service.md?raw';
+import notes from './toast.service.md';
 
 @Component({
   selector: 'cvi-ng-storybook-toast-wrapper',

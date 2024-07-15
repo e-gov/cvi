@@ -1,5 +1,5 @@
 import { Meta, componentWrapperDecorator } from '@storybook/angular';
-import notes from './button.html.md?raw';
+import notes from './button.html.md';
 import { ButtonAppearance, ButtonSize } from './button';
 
 export default {

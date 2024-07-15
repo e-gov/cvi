@@ -1,6 +1,6 @@
 import { Meta } from '@storybook/angular';
 import { TableOfContentsWrapperComponent } from './table-of-contents-wrapper.component';
-import notes from './table-of-contents-wrapper.component.md?raw';
+import notes from './table-of-contents-wrapper.component.md';
 
 export default {
   title: 'Angular/Table of contents/Table of contents wrapper',

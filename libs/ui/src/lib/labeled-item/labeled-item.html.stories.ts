@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/angular';
-import notes from './labeled-item.html.md?raw';
+import notes from './labeled-item.html.md';
 
 export default {
   title: 'HTML/Labeled item',

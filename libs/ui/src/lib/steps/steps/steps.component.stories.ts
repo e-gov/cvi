@@ -3,7 +3,7 @@ import { concatMap, delay, from, of } from 'rxjs';
 import { StepsComponent } from './steps.component';
 import { moduleMetadata } from '@storybook/angular';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import notes from './steps.component.md?raw';
+import notes from './steps.component.md';
 
 const withObservableTitlesDelay = 1000;
 

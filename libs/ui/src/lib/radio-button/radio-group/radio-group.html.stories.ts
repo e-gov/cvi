@@ -1,5 +1,5 @@
 import { Meta } from '@storybook/angular';
-import notes from './radio-group.html.md?raw';
+import notes from './radio-group.html.md';
 
 export default {
   title: 'HTML/Form/Radio button group',

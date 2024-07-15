@@ -1,5 +1,5 @@
 import { Meta } from '@storybook/angular';
-import notes from './status-badge.component.md?raw';
+import notes from './status-badge.component.md';
 import { StatusBadgeComponent } from './status-badge.component';
 import { storybookIconsNames } from '../icons/storybook-icons';
 

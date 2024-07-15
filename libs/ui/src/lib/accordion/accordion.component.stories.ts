@@ -1,6 +1,6 @@
 import { Meta } from '@storybook/angular';
 import { concatMap, delay, from, of } from 'rxjs';
-import notes from './accordion.component.md?raw';
+import notes from './accordion.component.md';
 import { AccordionComponent } from './accordion.component';
 
 export default {

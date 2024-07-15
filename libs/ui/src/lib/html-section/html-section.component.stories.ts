@@ -1,6 +1,6 @@
 import { Meta, componentWrapperDecorator } from '@storybook/angular/';
 import { HtmlSectionComponent } from './html-section.component';
-import notes from './html-section.component.md?raw';
+import notes from './html-section.component.md';
 
 export default {
   title: 'Angular/Html section',

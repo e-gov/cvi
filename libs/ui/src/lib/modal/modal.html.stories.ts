@@ -1,5 +1,5 @@
 import { Meta } from '@storybook/angular';
-import notes from './modal.html.md?raw';
+import notes from './modal.html.md';
 
 export default {
   title: 'HTML/Modal',

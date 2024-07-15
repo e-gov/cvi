@@ -1,5 +1,5 @@
 import { Meta } from '@storybook/angular';
-import notes from './step.component.md?raw';
+import notes from './step.component.md';
 import { StepComponent } from './step.component';
 
 export default {
