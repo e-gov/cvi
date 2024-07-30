@@ -102,7 +102,7 @@
           @include cvi-screenreader-text;
         }
 
-        
+
       }
       @include cvi-breakpoint-up(sm) {
         #{$base}.is-scrollable & {
@@ -129,7 +129,7 @@
           filter: url('#round') drop-shadow(0 0 2px var(--cvi-color-black));
         }
       }
-      
+
       &--is-url-step {
         @include cvi-breakpoint-down(sm) {
           display: none;
@@ -361,6 +361,12 @@
 
     #{$base}.is-scrollable {
       #{$base}__scroll-wrapper {
+        @include cvi-breakpoint-down(sm) {
+          position: sticky;
+          top: 0;
+          box-shadow: var(--cvi-shadow-alpha);
+        }
+
         position: relative;
       }
       #{$base}__scroll-container {

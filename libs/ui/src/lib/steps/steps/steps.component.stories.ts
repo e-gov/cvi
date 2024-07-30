@@ -31,7 +31,7 @@ export default {
   args: {
     title: 'Abiellumine',
     currentStepIndex: null,
-    isScrollable: false,
+    isScrollable: true,
     stepsContent: [
       '<a href="https://www.eesti.ee">Nevertheless, Cosy Moments thrives. It has its public.</a>',
       'Its contents are mildly interesting, if you like that sort of thing.',
@@ -58,10 +58,35 @@ const DefaultTemplate: StoryFn<StepsComponent> = (args: StepsComponent) => {
     },
     /* template */
     template: `
+    <div style="margin: 50px">
       <cvi-ng-steps [title]="title" [currentStepIndex]="currentStepIndex" [hasTableOfContents]="hasTableOfContents" [isScrollable]="isScrollable">
         <p cvi-steps="after-title" dataAttribute="steps-description">You can now add custom content before steps</p>
         <cvi-ng-step dataAttribute="step_1">
           <cvi-ng-step-panel [title]="title">
+          <div [formGroup]="form">
+              Textarea, input and the character counter directive should work properly inside steps.
+              <cvi-ng-form-item [label]="formLabel" [htmlId]="formHtmlId">
+                <cvi-ng-textarea formControlName="text" cviNgCharacterCounter [maxChars]="30" [minRows]="formMinRows" [htmlId]="formHtmlId"></cvi-ng-textarea>
+              </cvi-ng-form-item>
+            </div>
+            <div [formGroup]="form">
+              Textarea, input and the character counter directive should work properly inside steps.
+              <cvi-ng-form-item [label]="formLabel" [htmlId]="formHtmlId">
+                <cvi-ng-textarea formControlName="text" cviNgCharacterCounter [maxChars]="30" [minRows]="formMinRows" [htmlId]="formHtmlId"></cvi-ng-textarea>
+              </cvi-ng-form-item>
+            </div>
+            <div [formGroup]="form">
+              Textarea, input and the character counter directive should work properly inside steps.
+              <cvi-ng-form-item [label]="formLabel" [htmlId]="formHtmlId">
+                <cvi-ng-textarea formControlName="text" cviNgCharacterCounter [maxChars]="30" [minRows]="formMinRows" [htmlId]="formHtmlId"></cvi-ng-textarea>
+              </cvi-ng-form-item>
+            </div>
+            <div [formGroup]="form">
+              Textarea, input and the character counter directive should work properly inside steps.
+              <cvi-ng-form-item [label]="formLabel" [htmlId]="formHtmlId">
+                <cvi-ng-textarea formControlName="text" cviNgCharacterCounter [maxChars]="30" [minRows]="formMinRows" [htmlId]="formHtmlId"></cvi-ng-textarea>
+              </cvi-ng-form-item>
+            </div>
             <cvi-ng-html-section html="{{ stepsContent[0] }}"></cvi-ng-html-section>
           </cvi-ng-step-panel>
         </cvi-ng-step>
@@ -91,6 +116,7 @@ const DefaultTemplate: StoryFn<StepsComponent> = (args: StepsComponent) => {
           </cvi-ng-step-panel>
         </cvi-ng-step>
       </cvi-ng-steps>
+    </div>
     `,
   };
 };
