@@ -39,6 +39,7 @@ export default {
   svgClass: { control: false },
   args: {
     content: 'Button label',
+    appearance: 'primary',
   },
 } as Meta<ButtonComponent>;
 
