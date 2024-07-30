@@ -57,6 +57,7 @@ export default {
     message: 'Error',
     severityLevel: 'warning',
     title: 'Warning message',
+    labelPosition: 'top',
   },
 } as Meta<FormItemComponent>;
 
