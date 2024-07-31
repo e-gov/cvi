@@ -289,11 +289,19 @@
 
     #{$base}__directional-buttons {
       @include cvi-breakpoint-down(sm) {
+        &--desktop {
+          display: none;
+        }
+
         #{$base}:not(.is-any-step-selected) & {
           display: none;
         }
       }
       @include cvi-breakpoint-up(sm) {
+        &--mobile {
+          display: none;
+        }
+
         --width: calc(100% - (var(--cvi-steps--panel-margin) * var(--has-toc)));
         --gap: calc(var(--cvi-steps--gap) * var(--has-toc) / 1);
 
@@ -359,16 +367,18 @@
       }
     }
 
-    #{$base}.is-scrollable {
-      #{$base}__scroll-wrapper {
-        @include cvi-breakpoint-down(sm) {
-          position: sticky;
-          top: 0;
-          box-shadow: var(--cvi-shadow-alpha);
-        }
-
-        position: relative;
+    #{$base}__scroll-wrapper {
+      @include cvi-breakpoint-down(sm) {
+        position: sticky;
+        top: 0;
+        box-shadow: var(--cvi-shadow-alpha);
+        z-index: get-z-index('steps', '__scroll-wrapper');
       }
+
+      position: relative;
+    }
+
+    #{$base}.is-scrollable {
       #{$base}__scroll-container {
         @include cvi-breakpoint-down(sm) {
           display: grid;
@@ -382,11 +392,11 @@
       }
     }
 
-      #{$base}__scroll-button {
-        @include cvi-breakpoint-down(sm) {
-          display: none;
-        }
-        @include cvi-breakpoint-up(sm) {
+    #{$base}__scroll-button {
+      @include cvi-breakpoint-down(sm) {
+        display: none;
+      }
+      @include cvi-breakpoint-up(sm) {
         position: absolute;
         z-index: get-z-index('steps', '__scroll-button');
         height: calc(100% - get-spacing('kuressaare'));

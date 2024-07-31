@@ -31,11 +31,11 @@ export default {
   args: {
     title: 'Abiellumine',
     currentStepIndex: null,
-    isScrollable: true,
+    isScrollable: false,
     stepsContent: [
       '<a href="https://www.eesti.ee">Nevertheless, Cosy Moments thrives. It has its public.</a>',
       'Its contents are mildly interesting, if you like that sort of thing.',
-      'There is a "Moments in the Nursery" page, conducted by Luella Granville Waterman.',
+      '<b>Long text</b> <br> ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sed quam interdum, interdum nunc accumsan, fermentum ipsum. Mauris ac odio hendrerit nunc scelerisque laoreet. Duis vehicula porta lacus, non fermentum tellus venenatis ultricies. Praesent ac ullamcorper felis. Nunc dictum elementum leo, a convallis neque consectetur condimentum. Proin quis tortor nisl. Phasellus nibh sapien, venenatis non arcu sit amet, consectetur malesuada sem. Proin porttitor tellus ut nulla sollicitudin efficitur. Aliquam euismod ipsum quis ante mattis egestas. Cras at finibus ipsum, nec varius nibh. Aliquam nisl ipsum, vestibulum id neque a, facilisis vestibulum enim. Vivamus suscipit ex magna, consequat pretium massa imperdiet ut. Proin et aliquam erat. Sed dapibus turpis id sollicitudin dictum. Aliquam rhoncus at nunc eu ultricies. Cras malesuada lacinia nibh, sit amet ultricies mi vehicula eget. Mauris molestie nunc ut ultrices feugiat. Maecenas urna felis, rhoncus eget felis id, finibus porttitor turpis. Aliquam eu felis non est ullamcorper lobortis sed vel tortor. Ut pharetra augue arcu, rutrum mattis est imperdiet at. Praesent molestie tincidunt ex ut vehicula. Integer porta feugiat neque, ac pulvinar quam lobortis id. Fusce auctor condimentum felis quis eleifend. Praesent dignissim vel libero nec cursus. Quisque ullamcorper a sapien eget venenatis. Aenean sed convallis justo. Interdum et malesuada fames ac ante ipsum primis in faucibus. In porttitor, nulla at elementum auctor, velit mi ultrices ex, molestie fringilla augue metus in nunc. Integer in imperdiet lacus, placerat sodales nisl. Phasellus non ultricies urna, bibendum dictum mi. Donec sit amet varius lacus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Ut sed arcu ac nunc cursus viverra non sed ante. Nunc dictum sem lectus, at viverra urna molestie at.',
       'There is a "Moments of Meditation" page, conducted by the Reverend Edwin T. Philpotts.',
       '<div class="cvi-html-section__content"><div class="cvi-html-section__content-elements"><p>Võtke ühendust Politsei- ja Piirivalveametiga.</p></div><div class="cvi-html-section__content-elements"><cvi-web-track gap="4" layout="flex" flex-direction="vertical"><cvi-web-labeled-icon name="email"><a href="mailto:ppa&#64;politsei.ee">ppa&#64;politsei.ee</a></cvi-web-labeled-icon><cvi-web-labeled-icon name="screen_share"><a href="https://www.politsei.ee/" target="_blank" class="external-link" rel="noopener noreferrer">politsei.ee</a></cvi-web-labeled-icon><cvi-web-labeled-icon name="location">Pärnu mnt 139, 15060 Tallinn</cvi-web-labeled-icon></cvi-web-track></div></div>"',
       '<div class="cvi-html-section__content"><div class="cvi-html-section__content-elements"><p>Võtke ühendust perekonnaseisuasutusega, kus soovite abielu sõlmida.</p></div><div class="cvi-html-section__content-elements"><cvi-web-track gap="4" layout="flex" flex-direction="vertical"><cvi-web-labeled-icon name="screen_share"><a href="https://www.siseministeerium.ee/maakonnakeskuse-kohalikud-omavalitsused-rahvastiku-toimingute-valdkonnas" target="_blank" class="external-link" rel="noopener noreferrer">Maakonnakeskuse kohalikud omavalitsused</a></cvi-web-labeled-icon><cvi-web-labeled-icon name="screen_share"><a href="https://www.notar.ee/et/notarid/nimekiri" target="_blank" class="external-link" rel="noopener noreferrer">Notarid</a></cvi-web-labeled-icon><cvi-web-labeled-icon name="screen_share"><a href="https://www.siseministeerium.ee/abielu-solmimise-oigust-omavad-vaimulikud" target="_blank" class="external-link" rel="noopener noreferrer">Abielu sõlmimise õigust omavad vaimulikud</a></cvi-web-labeled-icon></cvi-web-track></div></div>"',
@@ -58,35 +58,10 @@ const DefaultTemplate: StoryFn<StepsComponent> = (args: StepsComponent) => {
     },
     /* template */
     template: `
-    <div style="margin: 50px">
       <cvi-ng-steps [title]="title" [currentStepIndex]="currentStepIndex" [hasTableOfContents]="hasTableOfContents" [isScrollable]="isScrollable">
         <p cvi-steps="after-title" dataAttribute="steps-description">You can now add custom content before steps</p>
         <cvi-ng-step dataAttribute="step_1">
           <cvi-ng-step-panel [title]="title">
-          <div [formGroup]="form">
-              Textarea, input and the character counter directive should work properly inside steps.
-              <cvi-ng-form-item [label]="formLabel" [htmlId]="formHtmlId">
-                <cvi-ng-textarea formControlName="text" cviNgCharacterCounter [maxChars]="30" [minRows]="formMinRows" [htmlId]="formHtmlId"></cvi-ng-textarea>
-              </cvi-ng-form-item>
-            </div>
-            <div [formGroup]="form">
-              Textarea, input and the character counter directive should work properly inside steps.
-              <cvi-ng-form-item [label]="formLabel" [htmlId]="formHtmlId">
-                <cvi-ng-textarea formControlName="text" cviNgCharacterCounter [maxChars]="30" [minRows]="formMinRows" [htmlId]="formHtmlId"></cvi-ng-textarea>
-              </cvi-ng-form-item>
-            </div>
-            <div [formGroup]="form">
-              Textarea, input and the character counter directive should work properly inside steps.
-              <cvi-ng-form-item [label]="formLabel" [htmlId]="formHtmlId">
-                <cvi-ng-textarea formControlName="text" cviNgCharacterCounter [maxChars]="30" [minRows]="formMinRows" [htmlId]="formHtmlId"></cvi-ng-textarea>
-              </cvi-ng-form-item>
-            </div>
-            <div [formGroup]="form">
-              Textarea, input and the character counter directive should work properly inside steps.
-              <cvi-ng-form-item [label]="formLabel" [htmlId]="formHtmlId">
-                <cvi-ng-textarea formControlName="text" cviNgCharacterCounter [maxChars]="30" [minRows]="formMinRows" [htmlId]="formHtmlId"></cvi-ng-textarea>
-              </cvi-ng-form-item>
-            </div>
             <cvi-ng-html-section html="{{ stepsContent[0] }}"></cvi-ng-html-section>
           </cvi-ng-step-panel>
         </cvi-ng-step>
@@ -97,7 +72,7 @@ const DefaultTemplate: StoryFn<StepsComponent> = (args: StepsComponent) => {
         </cvi-ng-step>
         <cvi-ng-step dataAttribute="step_3">
           <cvi-ng-step-panel title="VeryVeryVeryLongWordThatNeedsToBreakInOrderToFit">
-            {{ stepsContent[2] }}
+            <cvi-ng-html-section html="{{ stepsContent[2] }}"></cvi-ng-html-section>
           </cvi-ng-step-panel>
         </cvi-ng-step>
         <cvi-ng-step dataAttribute="step_4">
@@ -116,7 +91,6 @@ const DefaultTemplate: StoryFn<StepsComponent> = (args: StepsComponent) => {
           </cvi-ng-step-panel>
         </cvi-ng-step>
       </cvi-ng-steps>
-    </div>
     `,
   };
 };
