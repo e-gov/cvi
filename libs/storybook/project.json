@@ -22,6 +22,7 @@
         "configDir": "libs/storybook/.storybook",
         "browserTarget": "storybook:build-storybook",
         "compodoc": false,
+        "open": false,
         "styles": ["libs/styles/src/lib/scss/main.scss"]
       },
       "configurations": {
