@@ -12,7 +12,11 @@ export default {
   component: StepsComponent,
   parameters: {
     layout: 'padded',
-    notes,
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
   },
   decorators: [
     moduleMetadata({

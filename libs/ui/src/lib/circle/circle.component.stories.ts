@@ -14,7 +14,11 @@ export default {
   title: 'Angular/Circle',
   component: CircleComponent,
   parameters: {
-    notes,
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
     layout: 'centered',
     backgrounds: {
       default: 'Gray',

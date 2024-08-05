@@ -6,7 +6,13 @@ import { storybookIconsNames } from '../icons/storybook-icons';
 
 export default {
   title: 'Angular/Tabs/Tabs',
-  parameters: { notes },
+  parameters: {
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
+  },
   decorators: [
     moduleMetadata({
       imports: [ReactiveFormsModule],

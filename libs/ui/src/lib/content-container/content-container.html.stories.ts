@@ -4,7 +4,11 @@ import notes from './content-container.html.md';
 export default {
   title: 'HTML/Content container',
   parameters: {
-    notes,
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
     options: { selectedPanel: 'storybook/html/panel' },
     layout: 'padded',
   },

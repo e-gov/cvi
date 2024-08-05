@@ -59,10 +59,17 @@ class ToastWrapperComponent implements AfterViewInit {
 export default {
   title: 'Angular/Toast',
   component: ToastWrapperComponent,
-  parameters: { notes },
+  parameters: {
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
+  },
   decorators: [
     moduleMetadata({
       declarations: [ToastWrapperComponent],
+      providers: [ToastService],
     }),
   ],
   argTypes: {

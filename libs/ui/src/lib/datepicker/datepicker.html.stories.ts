@@ -4,7 +4,11 @@ import notes from './datepicker.html.md';
 export default {
   title: 'HTML/Form/Datepicker',
   parameters: {
-    notes,
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
     options: { selectedPanel: 'storybook/html/panel' },
   },
 } as Meta;
@@ -43,7 +47,7 @@ export const Default = {
                 </button>
               </div>
             </div>
-            <div role="grid" class="cvi-datepicker__calendar-grid" aria-busy="true" aria-labelledby="monthYearLabel-datepicker-e5fbfa48-a30e-4edf-aa76-a1e84c2657c7">
+            <div role="grid" class="cvi-datepicker__calendar-grid" aria-labelledby="monthYearLabel-datepicker-e5fbfa48-a30e-4edf-aa76-a1e84c2657c7">
               <div class="cvi-datepicker__calendar-daylabels">
                 <div class="cvi-datepicker__calendar-daylabel">E</div>
                 <div class="cvi-datepicker__calendar-daylabel">T</div>
@@ -53,114 +57,111 @@ export const Default = {
                 <div class="cvi-datepicker__calendar-daylabel">L</div>
                 <div class="cvi-datepicker__calendar-daylabel">P</div>
               </div>
-              <div class="cvi-datepicker__calendar-weekrow">
-                <div class="cvi-datepicker__calendar-daynumber">
+              <div role="row" class="cvi-datepicker__calendar-weekrow">
+                <div role="gridcell" class="cvi-datepicker__calendar-daynumber"></div>
+                <div role="gridcell" class="cvi-datepicker__calendar-daynumber"></div>
+                <div role="gridcell" class="cvi-datepicker__calendar-daynumber"></div>
+                <div role="gridcell" class="cvi-datepicker__calendar-daynumber">
+                  <button class="cvi-datepicker__calendar-button" aria-label="Neljapäev">1</button>
                 </div>
-                <div class="cvi-datepicker__calendar-daynumber">
+                <div role="gridcell" class="cvi-datepicker__calendar-daynumber">
+                  <button class="cvi-datepicker__calendar-button" aria-label="Reede">2</button>
                 </div>
-                <div class="cvi-datepicker__calendar-daynumber">
-                </div>
-                <div class="cvi-datepicker__calendar-daynumber">
-                  <button class="cvi-datepicker__calendar-button"  aria-label="Neljapäev">1</button>
-                </div>
-                <div class="cvi-datepicker__calendar-daynumber">
-                  <button class="cvi-datepicker__calendar-button"  aria-label="Reede">2</button>
-                </div>
-                <div class="cvi-datepicker__calendar-daynumber">
+                <div role="gridcell" class="cvi-datepicker__calendar-daynumber">
                   <button class="cvi-datepicker__calendar-button cvi-datepicker__calendar-button--weekend" aria-label="Laupäev">3</button>
                 </div>
-                <div class="cvi-datepicker__calendar-daynumber">
+                <div role="gridcell" class="cvi-datepicker__calendar-daynumber">
                   <button class="cvi-datepicker__calendar-button cvi-datepicker__calendar-button--weekend" aria-label="Pühapäev">4</button>
                 </div>
               </div>
-              <div class="cvi-datepicker__calendar-weekrow">
-                <div class="cvi-datepicker__calendar-daynumber">
+              <div role="row" class="cvi-datepicker__calendar-weekrow">
+                <div role="gridcell" class="cvi-datepicker__calendar-daynumber">
                   <button class="cvi-datepicker__calendar-button"  aria-label="Esmaspäev">5</button>
                 </div>
-                <div class="cvi-datepicker__calendar-daynumber">
+                <div role="gridcell" class="cvi-datepicker__calendar-daynumber">
                   <button class="cvi-datepicker__calendar-button cvi-datepicker__calendar-button--selected" aria-label="Teisipäev">6</button>
                 </div>
-                <div class="cvi-datepicker__calendar-daynumber">
+                <div role="gridcell" class="cvi-datepicker__calendar-daynumber">
                   <button class="cvi-datepicker__calendar-button"  aria-label="Kolmapäev">7</button>
                 </div>
-                <div class="cvi-datepicker__calendar-daynumber">
+                <div role="gridcell" class="cvi-datepicker__calendar-daynumber">
                   <button class="cvi-datepicker__calendar-button"  aria-label="Neljapäev">8</button>
                 </div>
-                <div class="cvi-datepicker__calendar-daynumber">
+                <div role="gridcell" class="cvi-datepicker__calendar-daynumber">
                   <button class="cvi-datepicker__calendar-button"  aria-label="Reede">9</button>
                 </div>
-                <div class="cvi-datepicker__calendar-daynumber">
+                <div role="gridcell" class="cvi-datepicker__calendar-daynumber">
                   <button class="cvi-datepicker__calendar-button cvi-datepicker__calendar-button--weekend" aria-label="Laupäev">10</button>
                 </div>
-                <div class="cvi-datepicker__calendar-daynumber">
+                <div role="gridcell" class="cvi-datepicker__calendar-daynumber">
                   <button class="cvi-datepicker__calendar-button cvi-datepicker__calendar-button--weekend" aria-label="Pühapäev">11</button>
                 </div>
               </div>
-              <div class="cvi-datepicker__calendar-weekrow">
-                <div class="cvi-datepicker__calendar-daynumber">
+              <div role="row" class="cvi-datepicker__calendar-weekrow">
+                <div role="gridcell" class="cvi-datepicker__calendar-daynumber">
                   <button class="cvi-datepicker__calendar-button cvi-datepicker__calendar-button--today" aria-label="Esmaspäev" aria-current="date">12</button>
                 </div>
-                <div class="cvi-datepicker__calendar-daynumber">
+                <div role="gridcell" class="cvi-datepicker__calendar-daynumber">
                   <button class="cvi-datepicker__calendar-button"  aria-label="Teisipäev">13</button>
                 </div>
-                <div class="cvi-datepicker__calendar-daynumber">
+                <div role="gridcell" class="cvi-datepicker__calendar-daynumber">
                   <button class="cvi-datepicker__calendar-button"  aria-label="Kolmapäev">14</button>
                 </div>
-                <div class="cvi-datepicker__calendar-daynumber">
+                <div role="gridcell" class="cvi-datepicker__calendar-daynumber">
                   <button class="cvi-datepicker__calendar-button"  aria-label="Neljapäev">15</button>
                 </div>
-                <div class="cvi-datepicker__calendar-daynumber">
+                <div role="gridcell" class="cvi-datepicker__calendar-daynumber">
                   <button class="cvi-datepicker__calendar-button"  aria-label="Reede">16</button>
                 </div>
-                <div class="cvi-datepicker__calendar-daynumber">
+                <div role="gridcell" class="cvi-datepicker__calendar-daynumber">
                   <button class="cvi-datepicker__calendar-button cvi-datepicker__calendar-button--weekend" aria-label="Laupäev">17</button>
                 </div>
-                <div class="cvi-datepicker__calendar-daynumber">
+                <div role="gridcell" class="cvi-datepicker__calendar-daynumber">
                   <button class="cvi-datepicker__calendar-button cvi-datepicker__calendar-button--weekend" aria-label="Pühapäev">18</button>
                 </div>
               </div>
-              <div class="cvi-datepicker__calendar-weekrow">
-                <div class="cvi-datepicker__calendar-daynumber">
+              <div role="row" class="cvi-datepicker__calendar-weekrow">
+                <div role="gridcell" class="cvi-datepicker__calendar-daynumber">
                   <button class="cvi-datepicker__calendar-button"  aria-label="Esmaspäev">19</button>
                 </div>
-                <div class="cvi-datepicker__calendar-daynumber">
+                <div role="gridcell" class="cvi-datepicker__calendar-daynumber">
                   <button class="cvi-datepicker__calendar-button"  aria-label="Teisipäev">20</button>
                 </div>
-                <div class="cvi-datepicker__calendar-daynumber">
+                <div role="gridcell" class="cvi-datepicker__calendar-daynumber">
                   <button class="cvi-datepicker__calendar-button"  aria-label="Kolmapäev">21</button>
                 </div>
-                <div class="cvi-datepicker__calendar-daynumber">
+                <div role="gridcell" class="cvi-datepicker__calendar-daynumber">
                   <button class="cvi-datepicker__calendar-button"  aria-label="Neljapäev">22</button>
                 </div>
-                <div class="cvi-datepicker__calendar-daynumber">
+                <div role="gridcell" class="cvi-datepicker__calendar-daynumber">
                   <button class="cvi-datepicker__calendar-button"  aria-label="Reede">23</button>
                 </div>
-                <div class="cvi-datepicker__calendar-daynumber">
+                <div role="gridcell" class="cvi-datepicker__calendar-daynumber">
                   <button class="cvi-datepicker__calendar-button cvi-datepicker__calendar-button--weekend" aria-label="Laupäev">24</button>
                 </div>
-                <div class="cvi-datepicker__calendar-daynumber">
+                <div role="gridcell" class="cvi-datepicker__calendar-daynumber">
                   <button class="cvi-datepicker__calendar-button cvi-datepicker__calendar-button--weekend" aria-label="Pühapäev">25</button>
                 </div>
               </div>
-              <div class="cvi-datepicker__calendar-weekrow">
-                <div class="cvi-datepicker__calendar-daynumber">
+              <div role="row" class="cvi-datepicker__calendar-weekrow">
+                <div role="gridcell" class="cvi-datepicker__calendar-daynumber">
                   <button class="cvi-datepicker__calendar-button"  aria-label="Esmaspäev">26</button>
                 </div>
-                <div class="cvi-datepicker__calendar-daynumber">
+                <div role="gridcell" class="cvi-datepicker__calendar-daynumber">
                   <button class="cvi-datepicker__calendar-button"  aria-label="Teisipäev">27</button>
                 </div>
-                <div class="cvi-datepicker__calendar-daynumber">
+                <div role="gridcell" class="cvi-datepicker__calendar-daynumber">
                   <button class="cvi-datepicker__calendar-button"  aria-label="Kolmapäev">28</button>
                 </div>
-                <div class="cvi-datepicker__calendar-daynumber">
+                <div role="gridcell" class="cvi-datepicker__calendar-daynumber">
                   <button class="cvi-datepicker__calendar-button"  aria-label="Neljapäev">29</button>
                 </div>
-                <div class="cvi-datepicker__calendar-daynumber">
+                <div role="gridcell" class="cvi-datepicker__calendar-daynumber">
                   <button class="cvi-datepicker__calendar-button"  aria-label="Reede">30</button>
                 </div>
-                <div class="cvi-datepicker__calendar-daynumber">
+                <div role="gridcell" class="cvi-datepicker__calendar-daynumber">
                 </div>
-                <div class="cvi-datepicker__calendar-daynumber">
+                <div role="gridcell" class="cvi-datepicker__calendar-daynumber">
                 </div>
               </div>
             </div>

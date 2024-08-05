@@ -7,7 +7,11 @@ export default {
   component: StepPanelComponent,
   parameters: {
     layout: 'padded',
-    notes,
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
   },
   argTypes: {
     content: {

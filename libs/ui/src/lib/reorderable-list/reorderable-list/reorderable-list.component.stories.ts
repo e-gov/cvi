@@ -22,7 +22,11 @@ export default {
   component: ReorderableListComponent,
   parameters: {
     layout: 'padded',
-    notes,
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
   },
   decorators: [
     moduleMetadata({

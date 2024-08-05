@@ -1,12 +1,12 @@
 ## General description
 
-Feature | Description
-- | -
-Selector | `cvi-ng-input`
-Component name | `InputComponent`
-Content | no
-Permitted parent/ancestors | `cvi-ng-form-item`
-Permitted children | -
+| Feature                    | Description        |
+|----------------------------|--------------------|
+| Selector                   | `cvi-ng-input`     |
+| Component name             | `InputComponent`   |
+| Content                    | no                 |
+| Permitted parent/ancestors | `cvi-ng-form-item` |
+| Permitted children         | -                  |
 
 ## Where to use
 

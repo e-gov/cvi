@@ -28,7 +28,13 @@ const getStatusBadgeLabelBySeverity = (severity: StatusBadgeSeverity) =>
 export default {
   title: 'Angular/Table',
   component: TableComponent,
-  parameters: { notes },
+  parameters: {
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
+  },
   args: {
     headerLabels: ['Sündmusteenus', 'Staatus', 'Email', 'Viimati muudetud'],
     data: [

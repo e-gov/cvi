@@ -12,8 +12,10 @@ import {
   template: `
     <ng-container *ngFor="let item of items">
       <ng-container
-        *ngTemplateOutlet="templateRef; context: { $implicit: item }"
-      ></ng-container>
+        *ngTemplateOutlet="
+          templateRef;
+          context: { $implicit: item }
+        "></ng-container>
     </ng-container>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,

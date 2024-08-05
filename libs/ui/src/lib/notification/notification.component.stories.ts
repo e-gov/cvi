@@ -5,7 +5,13 @@ import notes from './notification.component.md';
 export default {
   title: 'Angular/Notification',
   component: NotificationComponent,
-  parameters: { notes },
+  parameters: {
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
+  },
   args: {
     severity: 'info',
     size: 'regular',

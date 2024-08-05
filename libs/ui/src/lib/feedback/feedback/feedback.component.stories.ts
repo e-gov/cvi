@@ -4,7 +4,13 @@ import { FeedbackComponent } from './feedback.component';
 
 export default {
   title: 'Angular/Feedback',
-  parameters: { notes },
+  parameters: {
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
+  },
   component: FeedbackComponent,
 } as Meta<FeedbackComponent>;
 

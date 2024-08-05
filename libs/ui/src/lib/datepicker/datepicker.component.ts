@@ -7,12 +7,14 @@ import {
   HostListener,
   Inject,
   Input,
+  OnInit,
   ViewChild,
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { DATEPICKER_LABEL_CONFIG } from './datepicker-label-config.token';
 import { DatepickerLabelConfig } from './datepicker-label.config';
 import { v4 as uuidv4 } from 'uuid';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'cvi-ng-datepicker',
@@ -26,7 +28,7 @@ import { v4 as uuidv4 } from 'uuid';
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class DatepickerComponent implements ControlValueAccessor {
+export class DatepickerComponent implements ControlValueAccessor, OnInit {
   @Input() htmlId!: string;
   @Input() disabled = false;
   @Input() placeholder = '';
@@ -36,11 +38,11 @@ export class DatepickerComponent implements ControlValueAccessor {
 
   private internalValue?: string;
 
-  dayShorthandLabels$ = this.labelConfig.getDayShorthandLabels();
-  dayFullLabels$ = this.labelConfig.getDayFullLabels();
-  monthLabels$ = this.labelConfig.getMonthLabels();
-  screenreaderLabel$ = this.labelConfig.getScreenReaderLabel();
-  screenreaderDescription$ = this.labelConfig.getScreenReaderDescription();
+  dayShorthandLabels$!: Observable<string[]>;
+  dayFullLabels$!: Observable<string[]>;
+  monthLabels$!: Observable<string[]>;
+  screenreaderLabel$!: Observable<string>;
+  screenreaderDescription$!: Observable<string>;
 
   focus = false;
   valueValidated = '';
@@ -67,6 +69,7 @@ export class DatepickerComponent implements ControlValueAccessor {
       this.setFocus(false);
     }
   }
+
   @HostListener('input', ['$event'])
   onInput(event: InputEvent) {
     const inputElement = event.target as HTMLInputElement;
@@ -110,6 +113,15 @@ export class DatepickerComponent implements ControlValueAccessor {
     private readonly elementRef: ElementRef
   ) {
     this.select = elementRef.nativeElement;
+  }
+
+  ngOnInit() {
+    this.dayShorthandLabels$ = this.labelConfig.getDayShorthandLabels();
+    this.dayFullLabels$ = this.labelConfig.getDayFullLabels();
+    this.monthLabels$ = this.labelConfig.getMonthLabels();
+    this.screenreaderLabel$ = this.labelConfig.getScreenReaderLabel();
+    this.screenreaderDescription$ =
+      this.labelConfig.getScreenReaderDescription();
   }
 
   get value(): string | undefined {

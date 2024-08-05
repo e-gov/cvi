@@ -27,8 +27,8 @@
     <div class="cvi-datepicker__calendar-daylabels">
       <div class="cvi-datepicker__calendar-daylabel" *ngFor="let label of dayShorthandLabels">{{ label }}</div>
     </div>
-    <div class="cvi-datepicker__calendar-weekrow" *ngFor="let _ of [].constructor(calendarArray.length); let i = index">
-      <div class="cvi-datepicker__calendar-daynumber" *ngFor="let day of calendarArray[i]; let j = index">
+    <div role="row" class="cvi-datepicker__calendar-weekrow" *ngFor="let _ of [].constructor(calendarArray.length); let i = index">
+      <div role="gridcell" class="cvi-datepicker__calendar-daynumber" *ngFor="let day of calendarArray[i]; let j = index">
         <button
           class="cvi-datepicker__calendar-button"
           *ngIf="day !== 0"

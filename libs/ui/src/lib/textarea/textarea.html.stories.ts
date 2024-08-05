@@ -3,7 +3,13 @@ import notes from './textarea.html.md';
 
 export default {
   title: 'HTML/Form/Textarea',
-  parameters: { notes },
+  parameters: {
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
+  },
   args: {
     placeholder: 'Placeholder...',
     maxLength: 2000,

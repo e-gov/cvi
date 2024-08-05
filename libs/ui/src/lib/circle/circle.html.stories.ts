@@ -4,7 +4,11 @@ import notes from './circle.html.md';
 export default {
   title: 'HTML/Circle',
   parameters: {
-    notes,
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
     options: { selectedPanel: 'storybook/html/panel' },
     layout: 'centered',
   },

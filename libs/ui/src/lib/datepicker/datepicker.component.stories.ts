@@ -10,7 +10,13 @@ export default {
       imports: [ReactiveFormsModule],
     }),
   ],
-  parameters: { notes },
+  parameters: {
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
+  },
   args: {
     placeholder: 'pp.kk.aaaa',
     disabled: false,

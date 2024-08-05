@@ -10,7 +10,14 @@ const wrapperDecorators = [
 
 export default {
   title: 'Angular/Content panel',
-  parameters: { notes, layout: 'padded' },
+  parameters: {
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
+    layout: 'padded',
+  },
   argTypes: {
     content: {
       name: 'Content',

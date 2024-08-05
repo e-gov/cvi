@@ -1,4 +1,4 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-npm run format && npm run affected:lint && npm run workspace-lint && npm run lint:css && npm run lint:svg
+npm run format && npm run affected:lint && npm run lint:css && npm run lint:svg

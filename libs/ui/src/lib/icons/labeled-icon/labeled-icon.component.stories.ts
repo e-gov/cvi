@@ -13,7 +13,13 @@ const wrapperDecorators = [
 export default {
   title: 'Angular/Labeled icon',
   component: LabeledIconComponent,
-  parameters: { notes },
+  parameters: {
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
+  },
   argTypes: {
     name: {
       name: 'Icon name',

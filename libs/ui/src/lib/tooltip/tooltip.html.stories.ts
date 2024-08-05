@@ -4,7 +4,11 @@ import notes from './tooltip.html.md';
 export default {
   title: 'HTML/Tooltip',
   parameters: {
-    notes,
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
     options: { selectedPanel: 'storybook/html/panel' },
   },
 } as Meta;

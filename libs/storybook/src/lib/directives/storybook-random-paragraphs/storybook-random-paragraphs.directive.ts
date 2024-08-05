@@ -18,7 +18,10 @@ export class StorybookRandomParagraphsDirective implements AfterViewInit {
 
   maxParagraphs = 20;
 
-  constructor(private el: ElementRef, private renderer: Renderer2) {}
+  constructor(
+    private el: ElementRef,
+    private renderer: Renderer2
+  ) {}
 
   ngAfterViewInit(): void {
     const randomParagraphsCount = Math.floor(

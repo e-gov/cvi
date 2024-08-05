@@ -1,7 +1,7 @@
 ## General description
 
 | Feature                               | Description     |
-| ------------------------------------- | --------------- |
+|---------------------------------------|-----------------|
 | Sass component                        | `cvi-tabs`      |
 | Corresponding Javascript component    | `TabsComponent` |
 | Permitted parent/ancestors            | any             |

@@ -4,7 +4,11 @@ import notes from './screenreader-text.html.md';
 export default {
   title: 'HTML/Screenreader text',
   parameters: {
-    notes,
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
     options: { selectedPanel: 'storybook/html/panel' },
     layout: 'padded',
   },

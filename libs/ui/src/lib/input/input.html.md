@@ -1,11 +1,11 @@
 ## General description
 
-Feature | Description
-- | -
-Sass component | `cvi-textfield`
-Corresponding Javascript component | `InputComponent`
-Permitted parent/ancestors | `cvi-form-item`
-Permitted Sass components as children | -
+| Feature                               | Description      |
+|---------------------------------------|------------------|
+| Sass component                        | `cvi-textfield`  |
+| Corresponding Javascript component    | `InputComponent` |
+| Permitted parent/ancestors            | `cvi-form-item`  |
+| Permitted Sass components as children | -                |
 
 ## Where to use
 

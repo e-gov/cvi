@@ -4,7 +4,11 @@ import notes from './labeled-item.html.md';
 export default {
   title: 'HTML/Labeled item',
   parameters: {
-    notes,
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
     options: { selectedPanel: 'storybook/html/panel' },
   },
 } as Meta;

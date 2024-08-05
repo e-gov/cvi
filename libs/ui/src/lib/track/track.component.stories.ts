@@ -1,9 +1,4 @@
-import {
-  StoryFn,
-  Meta,
-  ArgTypes,
-  componentWrapperDecorator,
-} from '@storybook/angular';
+import { Meta, ArgTypes, componentWrapperDecorator } from '@storybook/angular';
 import { TrackComponent } from './track.component';
 import notes from './track.component.md';
 
@@ -29,7 +24,11 @@ export default {
   title: 'Angular/Track/Stories',
   component: TrackComponent,
   parameters: {
-    notes,
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
     layout: 'padded',
   },
   argTypes: {
@@ -337,10 +336,13 @@ export const NestedTracks = {
     props: args,
     /* template */
     template: `
-      <div>Item 1</div>
-      <cvi-ng-track [gap]="2" horizontalAlignment="left">
-        <div>This story is to verify a bug where a nested track with <code>horizontalAlignment=left</code> can't override the same prop of an ancestor track.<br>Here, the parent track is set to <code>right</code> and nested track to <code>left</code>. The nested track therefore must not align to right for the correct behaviour.</div>
-        <div>Nested track: Item 2.2</div>
+      <cvi-ng-storybook-note>This story is to verify a bug where a nested track  with <code>horizontalAlignment=left</code> can't override the same prop of an ancestor track.<br>Here, the parent track is set to <code>right</code> and nested track to <code>left</code>. The nested track therefore must not align to right for the correct behaviour.</cvi-ng-storybook-note>
+      <cvi-ng-track [gap]="gap" [horizontalAlignment]="horizontalAlignment" [verticalAlignment]="verticalAlignment" [flexDirection]="flexDirection" [flexIsMultiline]="flexIsMultiline" [layout]="layout">
+        <div>Item 1</div>
+        <cvi-ng-track [gap]="2" horizontalAlignment="left">
+          <div>Nested track with <code>horizontalAlignment="left"</code>: Item 2.1<br>And some filler easy view fifty tell string park its easier large read help ship younger rising gate hundred silk policeman dear hidden powerful table further mission</div>
+          <div>Nested track: Item 2.2</div>
+        </cvi-ng-track>
       </cvi-ng-track>
     `,
   }),

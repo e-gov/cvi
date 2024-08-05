@@ -4,7 +4,11 @@ import notes from './tab-group.html.md';
 export default {
   title: 'HTML/Tabs/Tab group',
   parameters: {
-    notes,
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
     options: { selectedPanel: 'storybook/html/panel' },
   },
 } as Meta;

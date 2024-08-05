@@ -12,7 +12,13 @@ const wrapperDecorators = [
 export default {
   title: 'Angular/Button',
   component: ButtonComponent,
-  parameters: { notes },
+  parameters: {
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
+  },
   argTypes: {
     appearance: {
       control: { type: 'inline-radio' },
@@ -33,6 +39,7 @@ export default {
   svgClass: { control: false },
   args: {
     content: 'Button label',
+    appearance: 'primary',
   },
 } as Meta<ButtonComponent>;
 

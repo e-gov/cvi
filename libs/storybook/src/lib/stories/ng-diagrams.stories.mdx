@@ -1,4 +1,4 @@
-import {Meta, Story} from '@storybook/addon-docs';
+import { Meta } from '@storybook/addon-docs';
 import diagramsPkg from '/libs/ng-diagrams/package.json'
 
 <Meta title="Angular Diagrams/Installation" parameters={{
@@ -8,23 +8,16 @@ import diagramsPkg from '/libs/ng-diagrams/package.json'
 
 # How to Install the Angular Diagrams library
 
-<Story name="Installation">
-  {{
-    props: {diagramsPkg},
-    template: `
-      Latest version: {{ diagramsPkg.version }}
-    `,
-  }}
-</Story>
+Latest version: { diagramsPkg.version }
 
 ## peerDependencies
 
 ```
-"@angular/animations": ">=14.1.0",
-"@angular/common": ">=14.1.0",
-"@angular/core": ">=14.1.0",
-"@angular/platform-browser": ">=14.1.0",
-"@angular/platform-browser-dynamic": ">=14.1.0",
+"@angular/animations": ">=17.2.4",
+"@angular/common": ">=17.2.4",
+"@angular/core": ">=17.2.4",
+"@angular/platform-browser": ">=17.2.4",
+"@angular/platform-browser-dynamic": ">=17.2.4",
 ```
 
 ## Installation

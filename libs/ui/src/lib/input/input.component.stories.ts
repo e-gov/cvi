@@ -17,7 +17,13 @@ export default {
       imports: [ReactiveFormsModule],
     }),
   ],
-  parameters: { notes },
+  parameters: {
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
+  },
   argTypes: {
     suffixIconName: {
       name: 'Icon',

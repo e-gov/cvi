@@ -1,5 +1,6 @@
 {
   "name": "ria",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "sourceRoot": "apps/ria/src",
   "prefix": "cvi-ng",
@@ -58,10 +59,10 @@
       "executor": "@angular-devkit/build-angular:dev-server",
       "configurations": {
         "production": {
-          "browserTarget": "ria:build:production"
+          "buildTarget": "ria:build:production"
         },
         "development": {
-          "browserTarget": "ria:build:development"
+          "buildTarget": "ria:build:development"
         }
       },
       "defaultConfiguration": "development"
@@ -69,21 +70,17 @@
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "browserTarget": "ria:build"
+        "buildTarget": "ria:build"
       }
     },
     "lint": {
-      "executor": "@nrwl/linter:eslint",
-      "options": {
-        "lintFilePatterns": ["apps/ria/**/*.ts", "apps/ria/**/*.html"]
-      }
+      "executor": "@nx/eslint:lint"
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/ria"],
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/apps/ria"],
       "options": {
-        "jestConfig": "apps/ria/jest.config.ts",
-        "passWithNoTests": true
+        "jestConfig": "apps/ria/jest.config.ts"
       }
     }
   },

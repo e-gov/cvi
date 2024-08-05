@@ -7,7 +7,11 @@ export default {
   component: StepComponent,
   parameters: {
     layout: 'padded',
-    notes,
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
   },
 } as Meta;
 

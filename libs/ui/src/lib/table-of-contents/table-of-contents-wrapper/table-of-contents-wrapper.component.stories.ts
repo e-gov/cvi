@@ -7,7 +7,11 @@ export default {
   component: TableOfContentsWrapperComponent,
   parameters: {
     layout: 'padded',
-    notes,
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
     // disabling Chromatic because random text will trigger changes on each run
     chromatic: { disableSnapshot: true },
   },

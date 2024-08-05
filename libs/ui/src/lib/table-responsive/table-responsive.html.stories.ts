@@ -4,7 +4,11 @@ import notes from './table-responsive.html.md';
 export default {
   title: 'HTML/Responsive table',
   parameters: {
-    notes,
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
     options: { selectedPanel: 'storybook/html/panel' },
   },
 } as Meta;

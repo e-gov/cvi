@@ -7,7 +7,11 @@ export default {
   component: TableOfContentsComponent,
   parameters: {
     layout: 'padded',
-    notes,
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
   },
   args: {
     title: 'Table of contents',

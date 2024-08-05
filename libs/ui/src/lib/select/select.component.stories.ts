@@ -16,7 +16,13 @@ export default {
       imports: [UiModule, ReactiveFormsModule],
     }),
   ],
-  parameters: { notes },
+  parameters: {
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
+  },
   argTypes: {
     itemChanged: { action: 'Item changed!' },
     containerWidth: {

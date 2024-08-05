@@ -12,9 +12,8 @@ describe('StepsComponent', () => {
       .get('[data-cy="cvi-steps__list-item_0"]')
       .click();
 
-    cy.get('[data-cy="cvi-steps__list-item_1"]')
-      .click()
-      .shouldHaveClasses('[data-cy="cvi-steps__list-item_0"]', 'is-past')
+    cy.get('[data-cy="cvi-steps__list-item_1"]').click();
+    cy.shouldHaveClasses('[data-cy="cvi-steps__list-item_0"]', 'is-past')
       .shouldNotHaveClasses('[data-cy="cvi-steps__list-item_0"]', 'is-current')
       .shouldHaveClasses('[data-cy="cvi-steps__list-item_1"]', [
         'is-past',

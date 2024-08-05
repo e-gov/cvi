@@ -1,18 +1,11 @@
-import {Meta, Story} from '@storybook/addon-docs';
+import { Meta } from '@storybook/addon-docs';
 import iconsPkg from '/libs/icons/package.json'
 
 <Meta title="Icons/How to install" parameters={{viewMode: 'docs'}}/>
 
 # How to Install CVI Icons
 
-<Story name="Installation">
-  {{
-    props: {iconsPkg},
-    template: `
-      Latest version: {{ iconsPkg.version }}
-    `,
-  }}
-</Story>
+Latest version: { iconsPkg.version }
 
 1. Add the `@egov` registry to your npm configuration (see the first step in the [general Installation instructions](https://github.com/e-gov/cvi#%EF%B8%8F-installation-instructions)).
 

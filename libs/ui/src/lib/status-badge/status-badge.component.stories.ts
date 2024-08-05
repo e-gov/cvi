@@ -6,7 +6,14 @@ import { storybookIconsNames } from '../icons/storybook-icons';
 export default {
   title: 'Angular/Status badge',
   component: StatusBadgeComponent,
-  parameters: { notes, layout: 'centered' },
+  parameters: {
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
+    layout: 'centered',
+  },
   argTypes: {
     severity: {
       name: 'Severity style',

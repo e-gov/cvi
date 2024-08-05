@@ -25,7 +25,13 @@ const getStatusBadgeLabelBySeverity = (severity: StatusBadgeSeverity) =>
 
 export default {
   title: 'Angular/Responsive table',
-  parameters: { notes },
+  parameters: {
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
+  },
   args: {
     headerLabels: [
       'First column',
@@ -150,7 +156,7 @@ export const WithCustomHeaderAndBody: Story = {
 
 export const WithCustomHeaderAndBodyMobile: Story = {
   ...WithCustomHeaderAndBody,
-  storyName: 'With Custom Header And Body (Mobile)',
+  name: 'With Custom Header And Body (Mobile)',
   parameters: {
     viewport: {
       defaultViewport: 'iphone12mini',

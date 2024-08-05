@@ -4,7 +4,13 @@ import { TableCardComponent } from './table-card.component';
 
 export default {
   title: 'Angular/Table Card',
-  parameters: { notes },
+  parameters: {
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
+  },
 } as Meta<TableCardComponent>;
 type Story = StoryObj<TableCardComponent>;
 

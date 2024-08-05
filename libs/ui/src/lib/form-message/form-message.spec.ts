@@ -15,8 +15,7 @@ import { FormMessageSeverity } from './form-message';
       [severityLevel]="severityLevel"
       [displayMessage]="displayMessage"
       [message]="message"
-      [title]=""
-    >
+      [title]="">
     </cvi-ng-datepicker>
   `,
 })

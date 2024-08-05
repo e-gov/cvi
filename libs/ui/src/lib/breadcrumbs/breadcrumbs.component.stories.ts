@@ -5,7 +5,13 @@ import { BreadcrumbsComponent } from './breadcrumbs.component';
 export default {
   title: 'Angular/Breadcrumbs',
   component: BreadcrumbsComponent,
-  parameters: { notes },
+  parameters: {
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
+  },
   args: {
     breadcrumbs: [
       { title: 'Avaleht', href: '/avaleht' },

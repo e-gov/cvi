@@ -9,7 +9,13 @@ type TooltipComponentWithCustomArgs = TooltipComponent & {
 export default {
   title: 'Angular/Tooltip/Tooltip',
   component: TooltipComponent,
-  parameters: { notes },
+  parameters: {
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
+  },
   argTypes: {
     configurableZIndexCSSVar: {
       name: 'Custom z-index',

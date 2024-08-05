@@ -4,7 +4,11 @@ import notes from './modal.html.md';
 export default {
   title: 'HTML/Modal',
   parameters: {
-    notes,
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
     options: { selectedPanel: 'storybook/html/panel' },
   },
 } as Meta;

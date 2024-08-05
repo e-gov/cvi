@@ -1,11 +1,11 @@
 ## General description
 
-Feature | Description
-- | -
-Sass component | `cvi-tab-group`
-Corresponding Javascript component | `TabGroupComponent`
-Permitted parent/ancestors | any
-Permitted Sass components as children | -
+| Feature                               | Description         |
+|---------------------------------------|---------------------|
+| Sass component                        | `cvi-tab-group`     |
+| Corresponding Javascript component    | `TabGroupComponent` |
+| Permitted parent/ancestors            | any                 |
+| Permitted Sass components as children | -                   |
 
 ## Where to use
 

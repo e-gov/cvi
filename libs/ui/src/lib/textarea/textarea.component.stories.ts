@@ -12,7 +12,11 @@ export default {
   title: 'Angular/Form/Textarea',
   component: TextareaComponent,
   parameters: {
-    notes,
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
     // Disabling Chromatic because cvi-ng-textarea triggers a visual change on every build
     chromatic: { disableSnapshot: true },
   },

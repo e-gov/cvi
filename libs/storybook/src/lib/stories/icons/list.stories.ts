@@ -1,5 +1,5 @@
 import { Meta } from '@storybook/angular';
-// eslint-disable-next-line @nrwl/nx/enforce-module-boundaries
+// eslint-disable-next-line @nx/enforce-module-boundaries
 import { storybookIconsNames } from '../../../../../ui/src/lib/icons/storybook-icons';
 
 export default {

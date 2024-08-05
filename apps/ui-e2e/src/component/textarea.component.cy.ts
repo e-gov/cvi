@@ -4,11 +4,9 @@ describe('TextareaComponent', () => {
   });
 
   it('Renders default textarea and inserts input', () => {
-    cy.loadStory('Angular Form Textarea', 'Default')
-      .get('textarea')
-      .should('have.value', '')
-      .type('some text')
-      .should('have.value', 'some text');
+    cy.loadStory('Angular Form Textarea', 'Default');
+    cy.get('textarea').should('have.value', '').type('some text');
+    cy.get('textarea').should('have.value', 'some text');
   });
 
   it('Disables resize when set accordingly', () => {
@@ -19,13 +17,10 @@ describe('TextareaComponent', () => {
   });
 
   it('Displays inserted value correctly using FormGroup', () => {
-    cy.loadStory('Angular Form Textarea', 'With FormGroup')
-      .get('textarea')
-      .should('have.value', 'initial value')
-      .clear()
-      .should('have.value', '')
-      .type('some text')
-      .should('have.value', 'some text');
+    cy.loadStory('Angular Form Textarea', 'With FormGroup');
+    cy.get('textarea').should('have.value', 'initial value').clear();
+    cy.get('textarea').should('have.value', '').type('some text');
+    cy.get('textarea').should('have.value', 'some text');
     cy.get('div').contains('Inserted value: some text');
   });
 
