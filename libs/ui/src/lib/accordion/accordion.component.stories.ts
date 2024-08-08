@@ -5,7 +5,13 @@ import { AccordionComponent } from './accordion.component';
 
 export default {
   title: 'Angular/Accordion',
-  parameters: { notes },
+  parameters: {
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
+  },
   args: {
     singleOpen: true,
     content$: from([

@@ -5,6 +5,7 @@ import {
   Component,
   HostBinding,
   HostListener,
+  OnInit,
 } from '@angular/core';
 import { ToastService } from './toast.service';
 import { ToastPackage } from './toast-config';
@@ -30,7 +31,7 @@ import {
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ToastComponent implements AfterViewInit {
+export class ToastComponent implements OnInit, AfterViewInit {
   toastClasses = '';
   progressBarWidth = -1;
 
@@ -40,11 +41,9 @@ export class ToastComponent implements AfterViewInit {
   private animationTimeOutLength = -1;
 
   @HostBinding('@fade')
-  state = {
+  state: { value: string; params: { easeTime: number } } = {
     value: 'inactive',
-    params: {
-      easeTime: this.toastPackage.config.easeTime,
-    },
+    params: { easeTime: 0 },
   };
 
   @HostBinding('attr.role') role = 'alert';
@@ -55,8 +54,14 @@ export class ToastComponent implements AfterViewInit {
     private readonly toastService: ToastService,
     private readonly toastPackage: ToastPackage,
     private readonly cd: ChangeDetectorRef
-  ) {
-    this.toastClasses = `cvi-toast ${toastPackage.toastType}`;
+  ) {}
+
+  ngOnInit() {
+    this.toastClasses = `cvi-toast ${this.toastPackage.toastType}`;
+    this.state = {
+      value: 'inactive',
+      params: { easeTime: this.toastPackage.config.easeTime },
+    };
   }
 
   @HostBinding('class')

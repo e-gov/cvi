@@ -4,7 +4,11 @@ import notes from './labeled-icon.html.md';
 export default {
   title: 'HTML/Labeled icon',
   parameters: {
-    notes,
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
     options: { selectedPanel: 'storybook/html/panel' },
   },
   argTypes: {

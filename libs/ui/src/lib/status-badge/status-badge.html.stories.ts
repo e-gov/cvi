@@ -4,7 +4,11 @@ import notes from './status-badge.html.md';
 export default {
   title: 'HTML/Status badge',
   parameters: {
-    notes,
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
     options: { selectedPanel: 'storybook/html/panel' },
     layout: 'centered',
   },

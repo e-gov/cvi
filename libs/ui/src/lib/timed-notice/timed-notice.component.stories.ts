@@ -4,7 +4,14 @@ import { TimedNoticeComponent } from './timed-notice.component';
 
 export default {
   title: 'Angular/Timed Notice',
-  parameters: { notes, layout: 'padded' },
+  parameters: {
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
+    layout: 'padded',
+  },
   argTypes: {
     severity: {
       name: 'Severity style',

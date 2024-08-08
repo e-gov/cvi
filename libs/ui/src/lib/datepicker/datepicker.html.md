@@ -1,11 +1,11 @@
 ## General description
 
-Feature | Description
-- | -
-Sass component | `cvi-datepicker`
-Corresponding Javascript component | `DatepickerComponent`
-Permitted parent/ancestors | `cvi-form-item`
-Permitted Sass components as children | -
+| Feature                               | Description           |
+|---------------------------------------|-----------------------|
+| Sass component                        | `cvi-datepicker`      |
+| Corresponding Javascript component    | `DatepickerComponent` |
+| Permitted parent/ancestors            | `cvi-form-item`       |
+| Permitted Sass components as children | -                     |
 
 ## Where to use
 

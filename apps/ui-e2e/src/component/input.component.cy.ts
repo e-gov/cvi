@@ -27,13 +27,10 @@ describe('InputComponent', () => {
   });
 
   it('Displays inserted value correctly and handles enable/disable using FormGroup', () => {
-    cy.loadStory('Angular Form Input', 'With FormGroup')
-      .get('input')
-      .should('have.value', 'initial value')
-      .clear()
-      .should('have.value', '')
-      .type('some text')
-      .should('have.value', 'some text');
+    cy.loadStory('Angular Form Input', 'With FormGroup');
+    cy.get('input').should('have.value', 'initial value').clear();
+    cy.get('input').should('have.value', '').type('some text');
+    cy.get('input').should('have.value', 'some text');
 
     cy.get('div').contains('Inserted value: some text');
 
@@ -43,7 +40,9 @@ describe('InputComponent', () => {
     cy.get('[data-cy=enable-button]').click();
     cy.get('input').should('be.enabled');
 
-    cy.get('input').clear().type('new text').should('have.value', 'new text');
+    cy.get('input').clear();
+    cy.get('input').type('new text');
+    cy.get('input').should('have.value', 'new text');
 
     cy.get('div').contains('Inserted value: new text');
   });

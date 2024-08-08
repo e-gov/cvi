@@ -6,7 +6,11 @@ export default {
   title: 'Angular/Screenreader text',
   component: ScreenreaderTextComponent,
   parameters: {
-    notes,
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
     layout: 'padded',
   },
   args: {

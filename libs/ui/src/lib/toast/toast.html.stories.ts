@@ -4,7 +4,11 @@ import notes from './toast.html.md';
 export default {
   title: 'HTML/Toast',
   parameters: {
-    notes,
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
     options: { selectedPanel: 'storybook/html/panel' },
   },
   argTypes: {

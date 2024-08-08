@@ -1,21 +1,18 @@
 {
   "name": "storybook",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/storybook/src",
   "projectType": "library",
   "targets": {
     "lint": {
-      "executor": "@nrwl/linter:eslint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["libs/storybook/**/*.ts"]
-      }
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"]
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/storybook"],
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/libs/storybook"],
       "options": {
-        "jestConfig": "libs/storybook/jest.config.ts",
-        "passWithNoTests": true
+        "jestConfig": "libs/storybook/jest.config.ts"
       }
     },
     "storybook": {
@@ -25,6 +22,7 @@
         "configDir": "libs/storybook/.storybook",
         "browserTarget": "storybook:build-storybook",
         "compodoc": false,
+        "open": false,
         "styles": ["libs/styles/src/lib/scss/main.scss"]
       },
       "configurations": {

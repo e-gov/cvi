@@ -5,7 +5,13 @@ import notes from './html-section.component.md';
 export default {
   title: 'Angular/Html section',
   component: HtmlSectionComponent,
-  parameters: { notes },
+  parameters: {
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
+  },
   args: {
     html: `
       <h3 class="cvi-html-section__title">Politsei- ja Piirivalveameti kontaktid</h3>

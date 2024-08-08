@@ -4,7 +4,13 @@ import { Meta, StoryObj } from '@storybook/angular';
 
 export default {
   title: 'Angular/Labeled item',
-  parameters: { notes },
+  parameters: {
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
+  },
   content: {
     name: 'Content',
     table: {

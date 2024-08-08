@@ -1,10 +1,14 @@
-import { StoryFn, Meta } from '@storybook/angular';
+import { Meta } from '@storybook/angular';
 import notes from './reorderable-list.html.md';
 
 export default {
   title: 'HTML/Reorderable list',
   parameters: {
-    notes,
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
     layout: 'padded',
     options: { selectedPanel: 'storybook/html/panel' },
   },

@@ -3,7 +3,13 @@ import notes from './notification.html.md';
 
 export default {
   title: 'HTML/Notification',
-  parameters: { notes },
+  parameters: {
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
+  },
 } as Meta;
 
 export const Default = {

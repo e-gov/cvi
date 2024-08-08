@@ -6,7 +6,11 @@ export default {
   title: 'Angular Diagrams/Hierarchical Box Diagram',
   component: HierarchicalBoxDiagramComponent,
   parameters: {
-    notes,
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
     layout: 'fullscreen',
     backgrounds: {
       default: 'default',
@@ -101,7 +105,7 @@ export const Default = {
 function baseBoxStyles(
   color: string,
   borderStyle: 'solid' | 'none' | 'dotted' = 'none',
-  borderColor: string = 'transparent'
+  borderColor = 'transparent'
 ) {
   return {
     color: color,

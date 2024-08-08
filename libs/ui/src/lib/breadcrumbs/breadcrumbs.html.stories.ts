@@ -4,7 +4,11 @@ import notes from './breadcrumbs.html.md';
 export default {
   title: 'HTML/Breadcrumbs',
   parameters: {
-    notes,
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
     options: { selectedPanel: 'storybook/html/panel' },
   },
 } as Meta;

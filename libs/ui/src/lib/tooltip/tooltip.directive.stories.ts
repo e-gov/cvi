@@ -5,7 +5,13 @@ import notes from './tooltip.directive.md';
 export default {
   title: 'Angular/Tooltip/Tooltip Directive',
   component: TooltipDirective,
-  parameters: { notes },
+  parameters: {
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
+  },
 } as Meta;
 
 export const Default = {

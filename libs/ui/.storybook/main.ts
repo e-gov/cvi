@@ -1,9 +1,8 @@
-const rootMain = require('../../../.storybook/main');
+import rootMain from '../../../.storybook/main';
+import { StorybookConfig } from '@storybook/angular';
 
-module.exports = {
+const config: StorybookConfig = {
   ...rootMain,
-
-  core: { ...rootMain.core, builder: 'webpack5' },
 
   stories: [
     ...rootMain.stories,
@@ -21,3 +20,5 @@ module.exports = {
     return config;
   },
 };
+
+export default config;

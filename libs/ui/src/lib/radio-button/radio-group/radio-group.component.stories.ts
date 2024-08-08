@@ -6,7 +6,13 @@ import { RadioGroupAppearance } from './radio-group';
 export default {
   title: 'Angular/Form/Radio button group',
   component: RadioGroupComponent,
-  parameters: { notes },
+  parameters: {
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
+  },
   args: {
     title: 'Did you find what you were looking for?',
     appearance: RadioGroupAppearance.REGULAR,

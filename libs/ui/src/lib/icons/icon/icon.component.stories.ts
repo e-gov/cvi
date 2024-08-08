@@ -7,7 +7,13 @@ import { iconSizeDefault } from './icon';
 export default {
   title: 'Angular/Icon',
   component: IconComponent,
-  parameters: { notes },
+  parameters: {
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
+  },
   argTypes: {
     name: {
       name: 'Name',

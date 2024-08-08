@@ -11,7 +11,13 @@ const wrapperDecorators = [
 export default {
   title: 'Angular/Form/Form item',
   component: FormItemComponent,
-  parameters: { notes },
+  parameters: {
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
+  },
   argTypes: {
     displayMessage: {
       name: 'Show form message?',
@@ -51,6 +57,7 @@ export default {
     message: 'Error',
     severityLevel: 'warning',
     title: 'Warning message',
+    labelPosition: 'top',
   },
 } as Meta<FormItemComponent>;
 

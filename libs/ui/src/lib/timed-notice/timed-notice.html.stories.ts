@@ -3,7 +3,14 @@ import notes from './timed-notice.html.md';
 
 export default {
   title: 'HTML/Timed Notice',
-  parameters: { notes, layout: 'padded' },
+  parameters: {
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
+    layout: 'padded',
+  },
 } as Meta;
 
 export const Default: StoryObj = {

@@ -4,7 +4,7 @@
   "description": "CVI storybook",
   "homepage": "https://e-gov.github.io/cvi/",
   "peerDependencies": {
-    "@angular/common": "~14.1.1",
-    "@angular/core": "~14.1.1"
+    "@angular/common": "~17.2.4",
+    "@angular/core": "~17.2.4"
   }
 }

@@ -11,18 +11,14 @@
       }
     },
     "lint": {
-      "executor": "@nrwl/linter:eslint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["libs/icons/**/*.ts"]
-      }
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"]
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/icons"],
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/libs/icons"],
       "options": {
-        "jestConfig": "libs/icons/jest.config.ts",
-        "passWithNoTests": true
+        "jestConfig": "libs/icons/jest.config.ts"
       }
     },
     "version": {

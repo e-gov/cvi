@@ -35,30 +35,25 @@ describe('DatepickerComponent', () => {
   });
 
   it('can select dates from the calendar', () => {
-    cy.loadStory('Angular Form Datepicker', 'Default')
-      .get('cvi-ng-datepicker')
-      .click()
-      .shouldHaveClasses('cvi-ng-datepicker-calendar > div', [
-        'cvi-datepicker__calendar',
-      ])
-      .get('button.cvi-datepicker__calendar-button')
-      .first()
-      .click()
-      .get('input')
-      .should('not.have.value', undefined);
+    cy.loadStory('Angular Form Datepicker', 'Default');
+    cy.get('cvi-ng-datepicker').click();
+    cy.get('cvi-ng-datepicker').shouldHaveClasses(
+      'cvi-ng-datepicker-calendar > div',
+      ['cvi-datepicker__calendar']
+    );
+    cy.get('button.cvi-datepicker__calendar-button').first().click();
+    cy.get('input').should('not.have.value', undefined);
   });
 
   it('can input a date and it gets selected in the calendar', () => {
-    cy.loadStory('Angular Form Datepicker', 'Default')
-      .get('input')
-      .clear()
-      .should('have.value', '')
-      .type('28.02.2023')
-      .click()
-      .shouldHaveClasses('cvi-ng-datepicker-calendar > div', [
-        'cvi-datepicker__calendar',
-      ])
-      .get('button.cvi-datepicker__calendar-button')
+    cy.loadStory('Angular Form Datepicker', 'Default');
+    cy.get('input').clear();
+    cy.get('input').should('have.value', '').type('28.02.2023');
+    cy.get('cvi-ng-datepicker-calendar').shouldHaveClasses(
+      'cvi-ng-datepicker-calendar > div',
+      ['cvi-datepicker__calendar']
+    );
+    cy.get('button.cvi-datepicker__calendar-button')
       .last()
       .shouldHaveClasses('button.cvi-datepicker__calendar-button', [
         'cvi-datepicker__calendar-button cvi-datepicker__calendar-button--selected',

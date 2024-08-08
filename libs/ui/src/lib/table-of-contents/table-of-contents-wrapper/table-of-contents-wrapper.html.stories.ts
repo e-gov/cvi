@@ -5,7 +5,11 @@ export default {
   title: 'HTML/Table of contents',
   parameters: {
     layout: 'padded',
-    notes,
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
   },
 } as Meta;
 

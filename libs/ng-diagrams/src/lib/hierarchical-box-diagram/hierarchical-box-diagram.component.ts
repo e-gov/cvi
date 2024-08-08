@@ -194,14 +194,15 @@ export class HierarchicalBoxDiagramComponent implements OnDestroy, OnChanges {
         (d: HierarchyPointNode<BoxNode>) => `translate(${d.y},${d.x})`
       );
 
-    const boxAnchor = boxesSelection
-      .append('a')
-      .each(function (this: SVGAElement, d: HierarchyPointNode<BoxNode>) {
-        const href = d.data.data.href;
-        if (href) {
-          d3.select(this).attr('href', href);
-        }
-      });
+    const boxAnchor = boxesSelection.append('a').each(function (
+      this: SVGAElement,
+      d: HierarchyPointNode<BoxNode>
+    ) {
+      const href = d.data.data.href;
+      if (href) {
+        d3.select(this).attr('href', href);
+      }
+    });
 
     // Title for Screen Readers
     boxAnchor
@@ -214,10 +215,13 @@ export class HierarchicalBoxDiagramComponent implements OnDestroy, OnChanges {
     // Making SVG elements focusable
     boxAnchor.attr('tabindex', '0');
 
-    const idToLabelLookup = nodes.reduce((acc, boxNode) => {
-      acc[boxNode.data.data.id] = boxNode.data.data.label;
-      return acc;
-    }, {} as Record<string, string>);
+    const idToLabelLookup = nodes.reduce(
+      (acc, boxNode) => {
+        acc[boxNode.data.data.id] = boxNode.data.data.label;
+        return acc;
+      },
+      {} as Record<string, string>
+    );
 
     // Description to understand the box and its links
     boxAnchor.append('desc').text((d: HierarchyPointNode<BoxNode>) => {

@@ -3,7 +3,13 @@ import notes from './modal.directive.md';
 
 export default {
   title: 'Angular/Modal/Modal directive',
-  parameters: { notes },
+  parameters: {
+    docs: {
+      description: {
+        component: notes,
+      },
+    },
+  },
   argTypes: {
     modalOpen: {
       table: {
