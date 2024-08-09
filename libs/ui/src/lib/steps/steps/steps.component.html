@@ -84,11 +84,40 @@
         </ol>
         <div #rightEdge style="width: 1px"></div>
       </div>
+
+      <div *ngIf="this.stepChildren.length > 1 && this.currentStepIndex !== null"
+           class="cvi-steps__directional-buttons cvi-steps__directional-buttons--mobile"
+           dataAttribute="steps_directional_buttons">
+        <button *ngIf="this.currentStepIndex > 0"
+                class="cvi-steps__directional-button cvi-steps__directional-button--direction-prev"
+                (click)="stepSelected(this.currentStepIndex - 1)"
+                [title]="this.stepTitles[this.currentStepIndex - 1]"
+                [dataAttribute]="'previous_step_button_' + this.currentStepIndex">
+          <cvi-ng-icon [name]="'arrow_a_left'" [svgClass]="'cvi-steps__directional-button-icon'"></cvi-ng-icon>
+          <span class="cvi-steps__directional-button-label">
+            {{ this.stepTitles[this.currentStepIndex - 1] }}
+          </span>
+        </button>
+        <button *ngIf="this.currentStepIndex < this.stepChildren.length - 1 || urlStepTitle"
+                class="cvi-steps__directional-button cvi-steps__directional-button--direction-next"
+                (click)="stepSelected(this.currentStepIndex + 1)"
+                [title]="this.stepTitles[this.currentStepIndex + 1]"
+                [dataAttribute]="'next_step_button_' + this.currentStepIndex">
+          <span class="cvi-steps__directional-button-label">
+            {{ this.stepTitles[this.currentStepIndex + 1] }}
+          </span>
+          <span *ngIf="urlStepTitle && currentStepIndex === stepTitles.length - 1"
+                class="cvi-steps__directional-button-label">
+            {{ (urlStepLabel ? urlStepLabel : '') + urlStepTitle }}
+          </span>
+          <cvi-ng-icon [name]="'arrow_a_right'" [svgClass]="'cvi-steps__directional-button-icon'"></cvi-ng-icon>
+        </button>
+      </div>
     </div>
 
     <ng-content></ng-content>
     <div *ngIf="this.stepChildren.length > 1 && this.currentStepIndex !== null"
-        class="cvi-steps__directional-buttons"
+        class="cvi-steps__directional-buttons cvi-steps__directional-buttons--desktop"
         dataAttribute="steps_directional_buttons">
       <button *ngIf="this.currentStepIndex > 0"
               class="cvi-steps__directional-button cvi-steps__directional-button--direction-prev"
