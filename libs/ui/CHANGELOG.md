@@ -2,6 +2,33 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [3.0.0](https://github.com/e-gov/cvi/compare/ui-2.11.0...ui-3.0.0) (2024-08-12)
+
+
+### chore
+
+* upgrade angular version to 17.2 EBS-1380 STPA-343 ([#229](https://github.com/e-gov/cvi/issues/229)) ([b6b8038](https://github.com/e-gov/cvi/commit/b6b8038a78d63fcb256aa13fcc79a5d95eb1f966)), closes [#64](https://github.com/e-gov/cvi/issues/64)
+
+
+### Features
+
+* **ui:** stick mobile steps navigation to top EBS-1418 STPA-366  ([#230](https://github.com/e-gov/cvi/issues/230)) ([0d2a758](https://github.com/e-gov/cvi/commit/0d2a758c5ed84ec67297c43b8131b77fcec7a27c))
+
+
+### BREAKING CHANGES
+
+* upgrade to angular 17.2
+
+* chore(storybook): upgrade to storybook 7.6
+* upgrade to storybook 7.6
+
+* chore(ui): upgrade to angular 17.2
+* upgrade to angular 17.2
+
+* chore: remove duplicate empty line from readme
+
+
+
 # [2.11.0](https://github.com/e-gov/cvi/compare/ui-2.10.1...ui-2.11.0) (2024-05-08)
 
 
