@@ -2,6 +2,33 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [1.0.0](https://github.com/e-gov/cvi/compare/react-ui-0.2.0...react-ui-1.0.0) (2024-08-12)
+
+
+### Bug Fixes
+
+* **ui:** import jest for react tests ([#231](https://github.com/e-gov/cvi/issues/231)) ([958ff4b](https://github.com/e-gov/cvi/commit/958ff4bd3c35d179d76285a87f04a8f76eda2943))
+
+
+### chore
+
+* upgrade angular version to 17.2 EBS-1380 STPA-343 ([#229](https://github.com/e-gov/cvi/issues/229)) ([b6b8038](https://github.com/e-gov/cvi/commit/b6b8038a78d63fcb256aa13fcc79a5d95eb1f966)), closes [#64](https://github.com/e-gov/cvi/issues/64)
+
+
+### BREAKING CHANGES
+
+* upgrade to angular 17.2
+
+* chore(storybook): upgrade to storybook 7.6
+* upgrade to storybook 7.6
+
+* chore(ui): upgrade to angular 17.2
+* upgrade to angular 17.2
+
+* chore: remove duplicate empty line from readme
+
+
+
 # 0.1.0 (2023-11-22)
 
 
