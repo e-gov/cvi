@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [3.0.1](https://github.com/e-gov/cvi/compare/styles-3.0.0...styles-3.0.1) (2024-08-22)
+
+
+### Bug Fixes
+
+* **ui:** step navigation z-index below 40 ([#232](https://github.com/e-gov/cvi/issues/232)) ([37cf5fb](https://github.com/e-gov/cvi/commit/37cf5fb1c2f1568accace808cfc6ed458ae0e73f))
+
+
+
 # [3.0.0](https://github.com/e-gov/cvi/compare/styles-2.8.0...styles-3.0.0) (2024-08-12)
 
 
