@@ -9,6 +9,10 @@ $cvi-z-indexes: (
   'tooltip': (
     'root',
   ),
+  'steps': (
+    '__scroll-button',
+    '__scroll-wrapper'
+  ),
   'modal': (
     '__backdrop',
     '__dialog'
@@ -18,9 +22,5 @@ $cvi-z-indexes: (
   ),
   'datepicker': (
     '__calender',
-  ),
-  'steps': (
-    '__scroll-button',
-    '__scroll-wrapper'
   ),
 );
