@@ -1773,7 +1773,7 @@ h2 {
     position: sticky;
     top: 0;
     box-shadow: var(--cvi-shadow-alpha);
-    z-index: 52;
+    z-index: 22;
   }
 }
 
@@ -1798,7 +1798,7 @@ h2 {
 @media (min-width: 602px) {
   .cvi-steps__scroll-button {
     position: absolute;
-    z-index: 51;
+    z-index: 21;
     height: calc(100% - var(--cvi-spacing-kuressaare));
     width: 32px;
     background-color: var(--cvi-color-black-coral-20);
@@ -2333,7 +2333,7 @@ h2 {
   border-bottom-left-radius: var(--cvi-radius-s);
   border-bottom-right-radius: var(--cvi-radius-s);
   border: 1px solid var(--cvi-color-black-coral-3);
-  z-index: 31;
+  z-index: 41;
   max-height: 300px;
   overflow-y: auto;
 }
@@ -2511,7 +2511,7 @@ h2 {
   width: 100%;
   background-color: var(--cvi-color-white);
   border-radius: var(--cvi-radius-s);
-  z-index: 31;
+  z-index: 41;
   overflow-y: auto;
   border: 1px solid var(--cvi-color-black-coral-3);
 }
@@ -2789,13 +2789,13 @@ h2 {
 @media (min-width: 602px) {
   .cvi-modal__backdrop {
     background-color: rgba(var(--cvi-color-rgb-black-coral-18)/0.6);
-    z-index: 21;
+    z-index: 31;
   }
 }
 
 .cvi-modal__dialog {
   background-color: var(--cvi-color-white);
-  z-index: 22;
+  z-index: 32;
   padding: var(--cvi-spacing-kuressaare);
   color: var(--cvi-color-black-coral-18);
 }
@@ -3056,7 +3056,7 @@ h2 {
   width: 392px;
   height: 280px;
   color: var(--cvi-color-black-coral-15);
-  z-index: 41;
+  z-index: 51;
 }
 .cvi-datepicker__calendar-header {
   width: 100%;
