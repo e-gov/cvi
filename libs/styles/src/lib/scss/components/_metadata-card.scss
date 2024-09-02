@@ -1,0 +1,33 @@
+@mixin cvi-metadata-card($base: &) {
+  --comment: 'A card with a coloured left border and content';
+
+  display: flex;
+  border-radius: var(--cvi-radius-s);
+
+  @include cvi-breakpoint-up(sm) {
+    box-shadow: var(--cvi-shadow-beta);
+  }
+
+  #{$base}__left-border {
+    width: 6px;
+    background-color: var(--left-border-color);
+    border-top-left-radius: var(--cvi-radius-s);
+    border-bottom-left-radius: var(--cvi-radius-s);
+  }
+
+  #{$base}__content {
+    padding-inline: get-spacing('kuressaare');
+    padding-block: get-spacing('haapsalu');
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0;
+
+    @include cvi-breakpoint-down(sm) {
+      border: 1px solid get-color(black-coral-2);
+      border-left: none;
+      border-top-right-radius: var(--cvi-radius-s);
+      border-bottom-right-radius: var(--cvi-radius-s);
+    }
+  }
+}
+
