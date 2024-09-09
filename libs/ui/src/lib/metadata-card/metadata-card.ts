@@ -5,25 +5,25 @@ export const metadataCardCustomPropertyGroups: MetadataCardCustomPropertyGroup[]
     {
       severity: 'info',
       customProperties: {
-        '--left-border-color': '--cvi-color-sapphire-blue-10',
+        '--cvi-metadata-card-left-border-color': '--cvi-color-sapphire-blue-10',
       },
     },
     {
       severity: 'success',
       customProperties: {
-        '--left-border-color': '--cvi-color-sea-green-11',
+        '--cvi-metadata-card-left-border-color': '--cvi-color-sea-green-11',
       },
     },
     {
       severity: 'warning',
       customProperties: {
-        '--left-border-color': '--cvi-color-dark-tangerine-10',
+        '--cvi-metadata-card-left-border-color': '--cvi-color-dark-tangerine-10',
       },
     },
     {
       severity: 'error',
       customProperties: {
-        '--left-border-color': '--cvi-color-jasper-10',
+        '--cvi-metadata-card-left-border-color': '--cvi-color-jasper-10',
       },
     },
   ];
@@ -34,5 +34,5 @@ export type MetadataCardCustomPropertyGroup = {
 };
 
 export type MetadataCardCustomProperties = {
-  '--left-border-color': string;
+  '--cvi-metadata-card-left-border-color': string;
 };

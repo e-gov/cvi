@@ -15,4 +15,4 @@ Use if you need to display metadata information in a card-like format with colou
 
 ## How to use
 
-Pass `--left-border-color` CSS variable to the Sass component. (See example colors in `metadata-card.ts`.)
+Pass `--cvi-metadata-card-left-border-color` CSS variable to the Sass component. (See example colors in `metadata-card.ts`.)

@@ -15,7 +15,6 @@ export default {
   argTypes: {
     severity: {
       name: 'Severity style',
-      options: ['info', 'success', 'warning', 'error'],
       control: { type: 'select' },
     },
   },
@@ -59,7 +58,7 @@ export const WithCustomStyle: Story = {
   render: (args: MetadataCardComponent) => ({
     props: args,
     template: `
-      <cvi-ng-metadata-card style="--left-border-color: var(--cvi-color-sea-green-10)">
+      <cvi-ng-metadata-card style="--cvi-metadata-card-left-border-color: var(--cvi-color-sea-green-10)">
         <cvi-ng-labeled-item label="Item 1">How do you do?</cvi-ng-labeled-item>
         <cvi-ng-labeled-item label="Item 2">Hello!</cvi-ng-labeled-item>
         <cvi-ng-labeled-item label="Item 3">Some text</cvi-ng-labeled-item>

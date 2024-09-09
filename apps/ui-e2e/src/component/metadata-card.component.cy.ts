@@ -7,7 +7,7 @@ describe('MetadataCardComponent', () => {
     cy.loadStory('Angular Metadata Card', 'Default');
     cy.shouldHaveCSSVar(
       'cvi-ng-metadata-card',
-      '--left-border-color',
+      '--cvi-metadata-card-left-border-color',
       '#005aa3'
     );
   });
@@ -18,7 +18,7 @@ describe('MetadataCardComponent', () => {
       .changeArg('severity', 'success');
     cy.shouldHaveCSSVar(
       'cvi-ng-metadata-card',
-      '--left-border-color',
+      '--cvi-metadata-card-left-border-color',
       '#2c7a4c'
     );
   });
@@ -29,7 +29,7 @@ describe('MetadataCardComponent', () => {
       .changeArg('severity', 'warning');
     cy.shouldHaveCSSVar(
       'cvi-ng-metadata-card',
-      '--left-border-color',
+      '--cvi-metadata-card-left-border-color',
       '#ffb511'
     );
   });
@@ -40,7 +40,7 @@ describe('MetadataCardComponent', () => {
       .changeArg('severity', 'error');
     cy.shouldHaveCSSVar(
       'cvi-ng-metadata-card',
-      '--left-border-color',
+      '--cvi-metadata-card-left-border-color',
       '#d73e3e'
     );
   });
