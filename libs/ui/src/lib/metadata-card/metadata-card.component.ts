@@ -19,9 +19,8 @@ import {
 export class MetadataCardComponent {
   @Input() severity: MetadataCardSeverity = 'info';
 
-  @HostBinding('style.--cvi-metadata-card-left-border-color') get hostStyleLeftBorderColor():
-    | string
-    | null {
+  @HostBinding('style.--cvi-metadata-card-left-border-color')
+  get hostStyleLeftBorderColor(): string | null {
     return this.getCustomProperty('--cvi-metadata-card-left-border-color');
   }
 

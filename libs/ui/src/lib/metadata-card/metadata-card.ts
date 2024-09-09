@@ -17,7 +17,8 @@ export const metadataCardCustomPropertyGroups: MetadataCardCustomPropertyGroup[]
     {
       severity: 'warning',
       customProperties: {
-        '--cvi-metadata-card-left-border-color': '--cvi-color-dark-tangerine-10',
+        '--cvi-metadata-card-left-border-color':
+          '--cvi-color-dark-tangerine-10',
       },
     },
     {
