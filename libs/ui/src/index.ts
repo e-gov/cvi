@@ -80,3 +80,4 @@ export * from './lib/circle/circle.component';
 export * from './lib/table-card/table-card.component';
 export * from './lib/table-responsive/table-responsive.component';
 export * from './lib/labeled-item/labeled-item.component';
+export * from './lib/metadata-card/metadata-card.component';

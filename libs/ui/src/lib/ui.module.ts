@@ -108,6 +108,7 @@ import { FormMessageSeverityToHeaderIconPipe } from './form-message/form-message
 import { TableCardComponent } from './table-card/table-card.component';
 import { TableResponsiveComponent } from './table-responsive/table-responsive.component';
 import { LabeledItemComponent } from './labeled-item/labeled-item.component';
+import { MetadataCardComponent } from './metadata-card/metadata-card.component';
 
 const components = [
   TrackComponent,
@@ -172,6 +173,7 @@ const components = [
   TableCardComponent,
   TableResponsiveComponent,
   LabeledItemComponent,
+  MetadataCardComponent,
 ];
 
 const pipes = [
