@@ -3294,6 +3294,33 @@ h2 {
   font-size: var(--cvi-font-size-80);
 }
 
+.cvi-metadata-card {
+  --comment: "A card with a coloured left border and content";
+  display: flex;
+  border-radius: var(--cvi-radius-s);
+  border-left: 6px solid var(--cvi-metadata-card-left-border-color);
+}
+@media (min-width: 602px) {
+  .cvi-metadata-card {
+    box-shadow: var(--cvi-shadow-beta);
+  }
+}
+.cvi-metadata-card .cvi-metadata-card__content {
+  padding-inline: var(--cvi-spacing-kuressaare);
+  padding-block: var(--cvi-spacing-haapsalu);
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0;
+}
+@media (max-width: 601px) {
+  .cvi-metadata-card .cvi-metadata-card__content {
+    border: 1px solid var(--cvi-color-black-coral-2);
+    border-left: none;
+    border-top-right-radius: var(--cvi-radius-s);
+    border-bottom-right-radius: var(--cvi-radius-s);
+  }
+}
+
 body.sb-show-main {
   background-color: transparent;
 }
