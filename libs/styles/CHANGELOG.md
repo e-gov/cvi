@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [3.1.0](https://github.com/e-gov/cvi/compare/styles-3.0.1...styles-3.1.0) (2024-09-10)
+
+
+### Features
+
+* **ui:** create metadata card component EBS-1516 ([#234](https://github.com/e-gov/cvi/issues/234)) ([62d8cac](https://github.com/e-gov/cvi/commit/62d8cac6b8281e6442969a63d5525b276aadfdfc))
+
+
+
 ## [3.0.1](https://github.com/e-gov/cvi/compare/styles-3.0.0...styles-3.0.1) (2024-08-22)
 
 
