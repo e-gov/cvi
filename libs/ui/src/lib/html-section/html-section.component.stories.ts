@@ -93,3 +93,28 @@ export const List = {
     `,
   },
 };
+
+export const NestedList = {
+  ...Default,
+  args: {
+    html: `
+      <p>Ordered nested list</p>
+      <ol>
+        <li>Heading one:
+            <ul>
+                <li>Step one</li>
+                <li>Step two</li>
+                <li>Step three</li>
+            </ul>
+        </li>
+        <li>Heading two:
+            <ul>
+                <li>Step one</li>
+                <li>Step two</li>
+                <li>Step three</li>
+            </ul>
+      </li>
+      </ol>
+    `,
+  },
+};

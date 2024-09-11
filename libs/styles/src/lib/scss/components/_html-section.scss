@@ -56,6 +56,17 @@
     }
   }
 
+  li li {
+    &.list-style-none {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    &:not(.list-style-none) {
+      padding-left: 18px;
+    }
+  }
+
   p, a {
     overflow-wrap: break-word;
     min-width: 0;
