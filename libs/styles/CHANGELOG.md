@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [3.2.0](https://github.com/e-gov/cvi/compare/styles-3.1.0...styles-3.2.0) (2024-09-11)
+
+
+### Features
+
+* **ui:** add nested list option for html section EBS-1547 ([#235](https://github.com/e-gov/cvi/issues/235)) ([48d71a6](https://github.com/e-gov/cvi/commit/48d71a63ec7da73f2966c93875173138c44c488d))
+
+
+
 # [3.1.0](https://github.com/e-gov/cvi/compare/styles-3.0.1...styles-3.1.0) (2024-09-10)
 
 
