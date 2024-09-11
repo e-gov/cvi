@@ -1940,6 +1940,13 @@ h2 {
 .cvi-html-section ul:not(.list-style-none) {
   padding-left: 18px;
 }
+.cvi-html-section li li.list-style-none {
+  list-style: none;
+  padding-left: 0;
+}
+.cvi-html-section li li:not(.list-style-none) {
+  padding-left: 18px;
+}
 .cvi-html-section p, .cvi-html-section a {
   overflow-wrap: break-word;
   min-width: 0;
