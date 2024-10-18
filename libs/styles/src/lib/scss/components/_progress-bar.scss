@@ -1,0 +1,20 @@
+@mixin cvi-metadata-card($base: &) {
+  --comment: 'A card with a coloured left border and content';
+
+  display: flex;
+  border-radius: var(--cvi-radius-s);
+  border-left: 6px solid var(--cvi-metadata-card-left-border-color);
+  box-shadow: var(--cvi-shadow-beta);
+
+  #{$base}__content {
+    padding-inline: get-spacing('kuressaare');
+    padding-block: get-spacing('haapsalu');
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0;
+    border: 1px solid get-color(black-coral-2);
+    border-left: none;
+    border-top-right-radius: var(--cvi-radius-s);
+    border-bottom-right-radius: var(--cvi-radius-s);
+  }
+}
