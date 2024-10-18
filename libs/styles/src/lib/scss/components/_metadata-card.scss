@@ -4,10 +4,7 @@
   display: flex;
   border-radius: var(--cvi-radius-s);
   border-left: 6px solid var(--cvi-metadata-card-left-border-color);
-
-  @include cvi-breakpoint-up(sm) {
-    box-shadow: var(--cvi-shadow-beta);
-  }
+  box-shadow: var(--cvi-shadow-beta);
 
   #{$base}__content {
     padding-inline: get-spacing('kuressaare');
@@ -15,13 +12,9 @@
     flex-grow: 1;
     flex-shrink: 1;
     flex-basis: 0;
-
-    @include cvi-breakpoint-down(sm) {
-      border: 1px solid get-color(black-coral-2);
-      border-left: none;
-      border-top-right-radius: var(--cvi-radius-s);
-      border-bottom-right-radius: var(--cvi-radius-s);
-    }
+    border: 1px solid get-color(black-coral-2);
+    border-left: none;
+    border-top-right-radius: var(--cvi-radius-s);
+    border-bottom-right-radius: var(--cvi-radius-s);
   }
 }
-
