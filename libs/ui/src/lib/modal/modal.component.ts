@@ -17,6 +17,7 @@ export class ModalComponent implements OnDestroy {
   templateRef!: TemplateRef<any>;
 
   title!: string;
+  closeable!: boolean;
 
   @Output() closed = new EventEmitter();
 

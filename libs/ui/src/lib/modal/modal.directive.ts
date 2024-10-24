@@ -19,6 +19,7 @@ export class ModalDirective implements OnInit {
   @Input() cviNgModal!: TemplateRef<any>;
   @Input() modalTitle!: string;
   @Input() open = false;
+  @Input() closeable = true;
 
   private componentRef: ComponentRef<ModalComponent> | null = null;
 
@@ -47,6 +48,7 @@ export class ModalDirective implements OnInit {
     this.componentRef = this.viewContainerRef.createComponent(ModalComponent);
     this.componentRef.instance.templateRef = this.cviNgModal;
     this.componentRef.instance.title = this.modalTitle;
+    this.componentRef.instance.closeable = this.closeable;
     this.componentRef.instance.closed.subscribe(() => this.hideModal());
   }
 

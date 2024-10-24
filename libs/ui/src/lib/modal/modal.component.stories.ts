@@ -15,7 +15,7 @@ export const Default = {
         <h1>{{ testModalTitle }}</h1>
         <p dataAttribute="test-content">Modal content</p>
       </ng-template>
-      <cvi-ng-button [cviNgModal]="modal" modalTitle="Some title" dataAttribute="test-button">Open modal</cvi-ng-button>
+      <cvi-ng-button [cviNgModal]="modal" modalTitle="Some title" closeable="true" dataAttribute="test-button">Open modal</cvi-ng-button>
     `,
   }),
 };
