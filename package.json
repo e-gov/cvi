@@ -14,7 +14,7 @@
     "affected:lint": "nx affected:lint --fix --parallel --uncommitted",
     "storybook:compodoc": "npx compodoc -p ./tsconfig.compodoc.json -e json -d ./libs/storybook/.storybook --disableLifeCycleHooks --disableInternal",
     "storybook": "npm run generate-icons && npm run storybook:compodoc && nx run storybook:storybook",
-    "build-storybook": "npm run generate-icons && npm run storybook:compodoc && nx run storybook:build-storybook",
+    "build-storybook": "npm run generate-icons && npm run storybook:compodoc && NX_REJECT_UNKNOWN_LOCAL_CACHE=0 nx run storybook:build-storybook",
     "prepare": "husky install",
     "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\"",
     "generate-icons": "svg-to-ts-files",
