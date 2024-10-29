@@ -20,6 +20,7 @@ export default {
     confirmButtonText: 'Confirm',
     cancelButtonText: 'Cancel',
     open: false,
+    closeable: true,
   },
 } as Meta<ConfirmationModalComponent>;
 
@@ -38,7 +39,7 @@ export const Default = {
           <br><p>All will be lost!!!</p>
         </cvi-ng-confirmation-modal>
       </ng-template>
-      <cvi-ng-button [cviNgModal]="modal" [modalTitle]="modalTitle" [open]="open" dataAttribute="test-button">Open modal</cvi-ng-button>
+      <cvi-ng-button [cviNgModal]="modal" [modalTitle]="modalTitle" [open]="open" [closeable]="closeable" dataAttribute="test-button">Open modal</cvi-ng-button>
     `,
   }),
 };

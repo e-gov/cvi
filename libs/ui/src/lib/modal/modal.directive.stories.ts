@@ -20,6 +20,7 @@ export default {
   args: {
     modalTitle: 'Hey, I am Modal, how are you?',
     modalOpen: false,
+    closeable: true,
   },
 } as Meta;
 
@@ -32,7 +33,7 @@ export const Default = {
         <h2 *ngIf="testModalTitle">{{ testModalTitle }}</h2>
         <p>Modal content</p>
       </ng-template>
-      <cvi-ng-button [cviNgModal]="modal" [modalTitle]="modalTitle" [open]="modalOpen">Open modal</cvi-ng-button>
+      <cvi-ng-button [cviNgModal]="modal" [modalTitle]="modalTitle" [open]="modalOpen" [closeable]="closeable">Open modal</cvi-ng-button>
     `,
   }),
 };
@@ -64,7 +65,7 @@ export const ModalOpenWithoutButton = {
       <ng-template #modal>
         <p>Modal content</p>
       </ng-template>
-      <ng-container [cviNgModal]="modal" [open]="true"></ng-container>
+      <ng-container [cviNgModal]="modal" [open]="true" [closeable]="closeable"></ng-container>
     `,
   }),
   parameters: {
