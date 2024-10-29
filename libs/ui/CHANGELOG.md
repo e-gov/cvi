@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [3.3.0](https://github.com/e-gov/cvi/compare/ui-3.2.0...ui-3.3.0) (2024-10-29)
+
+
+### Features
+
+* **ui:** non-closeable modal support ([#236](https://github.com/e-gov/cvi/issues/236)) ([dc38053](https://github.com/e-gov/cvi/commit/dc380530d5a3d59421eddffa76794c44d4fe6603))
+
+
+
 # [3.2.0](https://github.com/e-gov/cvi/compare/ui-3.1.0...ui-3.2.0) (2024-09-11)
 
 
