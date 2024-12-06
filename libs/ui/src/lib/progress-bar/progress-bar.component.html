@@ -1,7 +1,35 @@
-<div class="cvi-progress-bar">
-  <div class="cvi-progress-bar__content">
-    <ng-content></ng-content>
+<div class="cvi-progress-bar__content">
+
+  <div  class="cvi-progress-bar">
+    <cvi-ng-track [gap]="1"
+                  [layout]="layout"
+                  [gridRows]="1"
+                  [verticalAlignment]="verticalAlignement">
+
+      <cvi-ng-icon [hidden]="!progressFinished" [name]="'check'" [svgClass]="'cvi-progress-bar__success_icon'"></cvi-ng-icon>
+
+      <cvi-ng-labeled-item [hidden]="!progressFinished" class="cvi-progress-bar__text_content">
+        {{ successMessage }}
+      </cvi-ng-labeled-item>
+      <cvi-ng-labeled-item [hidden]="progressFinished" class="cvi-progress-bar__text_content">
+        {{ progressMessage }}
+      </cvi-ng-labeled-item>
+
+      <cvi-ng-labeled-item [hidden]="progressFinished" [class]="statusAlignement">
+        <div class="cvi-progress-bar__numeric_content">
+          {{ progressValue }}/{{ progressValueMax }}
+        </div>
+      </cvi-ng-labeled-item>
+    </cvi-ng-track>
   </div>
 </div>
 
 
+<!-- We need this filter in order for rounded corners to work -->
+<svg style="visibility: hidden; position: absolute;" width="0" height="0" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <filter id="round">
+    <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur" />
+    <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 19 -9" result="goo" />
+    <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
+  </filter>
+</svg>

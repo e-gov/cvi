@@ -1,20 +1,100 @@
-@mixin cvi-metadata-card($base: &) {
-  --comment: 'A card with a coloured left border and content';
+@mixin cvi-progress-bar($base: &) {
+  --comment: 'Configurable progress bar component';
 
+  $progress-bar-border-width: 15px;
+  $progress-bar-content-border-width: 24px;
+
+  $width-m: 600px;
+  $width-s: 250px;
+
+  $cvi-line-height-100: 100px;
+  $cvi-line-height-250: 250px;
+
+  $icon-size-m: 35px;
+  $icon-size-s: 60px;
+
+  border: $progress-bar-border-width solid transparent;
+  color: var(--cvi-circle-color, var(--color));
+  fill: var(--cvi-circle-color, var(--color));
+  background-color: var(--background-color);
+  aspect-ratio: 1;
   display: flex;
-  border-radius: var(--cvi-radius-s);
-  border-left: 6px solid var(--cvi-metadata-card-left-border-color);
-  box-shadow: var(--cvi-shadow-beta);
+  justify-content: center;
+  align-items: center;
 
-  #{$base}__content {
-    padding-inline: get-spacing('kuressaare');
-    padding-block: get-spacing('haapsalu');
-    flex-grow: 1;
-    flex-shrink: 1;
-    flex-basis: 0;
-    border: 1px solid get-color(black-coral-2);
-    border-left: none;
-    border-top-right-radius: var(--cvi-radius-s);
-    border-bottom-right-radius: var(--cvi-radius-s);
+  // This prevents the circle to get shrunk when inside of a flex track
+  flex-shrink: 0;
+
+  @at-root {
+    #{$base}--size-s {
+      border-radius: 51%;
+      border: $progress-bar-content-border-width solid transparent;
+      width: $width-s;
+      height: $cvi-line-height-250;
+
+      #{$base}__numeric_content {
+        font-weight: get-font-weight(gamma);
+        font-size: get-font-size(400);
+      }
+
+      #{$base}--with-progress {
+        border: $progress-bar-border-width solid transparent;
+      }
+
+      #{$base}__success_icon {
+        height: $icon-size-s;
+        fill: get-color(sea-green-10);
+      }
+
+      #{$base}__content {
+        margin-top: 3%;
+        text-align: center;
+      }
+    }
+
+    #{$base}--size-m {
+      border-radius: 50%;
+      width: $width-m;
+      height: $cvi-line-height-100;
+      justify-content: left;
+
+      #{$base}__numeric_content {
+        font-weight: get-font-weight(beta);
+        font-size: get-font-size(200);
+      }
+
+      #{$base}--with-progress {
+        border-radius: 51%;
+      }
+
+      #{$base}__success_icon {
+        padding-top: 5px;
+        height: $icon-size-m;
+        fill: get-color(sea-green-10);
+      }
+
+      #{$base}__content {
+        text-align: left;
+      }
+    }
+
+    &#{$base}--severity-none {
+      color: get-color(black-coral-10);
+    }
+
+    #{$base}__content-icon {
+      fill: get-color(sea-green-10);
+    }
+
+    #{$base}--with-progress {
+      background-image: linear-gradient(
+          var(--progress-background-color),
+          var(--progress-background-color)),
+      conic-gradient(
+          get-color(sea-green-10) var(--progress),
+          get-color(black-coral-2) var(--progress));
+      background-origin: border-box;
+      background-clip: content-box, border-box;
+    }
   }
 }
