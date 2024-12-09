@@ -33,6 +33,8 @@ export class ProgressBarComponent {
   @Input() layout = 'grid' as const;
   @Input() verticalAlignement = 'center' as const;
   @Input() statusAlignement = 'center' as const;
+  @Input() horizontalAlignement = 'left' as const;
+  @Input() flexColumnsEqual = true as const;
 
   private severity?: 'none' | 'success' = undefined;
   private theme: ProgressBarTheme = 'dark';

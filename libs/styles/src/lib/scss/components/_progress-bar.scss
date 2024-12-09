@@ -4,16 +4,17 @@
   $progress-bar-border-width: 15px;
   $progress-bar-content-border-width: 24px;
 
-  $width-m: 600px;
+  $width-m: 700px;
   $width-s: 250px;
-
-  $cvi-line-height-100: 100px;
+  $bar-width-m:450px;
+  $cvi-line-height-100: 1px;
   $cvi-line-height-250: 250px;
+  $empty-padding: 460px;
 
   $icon-size-m: 35px;
   $icon-size-s: 60px;
 
-  border: $progress-bar-border-width solid transparent;
+  border: 0;
   color: var(--cvi-circle-color, var(--color));
   fill: var(--cvi-circle-color, var(--color));
   background-color: var(--background-color);
@@ -21,9 +22,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
   // This prevents the circle to get shrunk when inside of a flex track
   flex-shrink: 0;
+  box-shadow: var(--cvi-shadow-beta);
 
   @at-root {
     #{$base}--size-s {
@@ -47,34 +48,45 @@
       }
 
       #{$base}__content {
-        margin-top: 3%;
+        margin-top: var(--cvi-spacing-haapsalu);
         text-align: center;
       }
     }
 
     #{$base}--size-m {
-      border-radius: 50%;
-      width: $width-m;
+      min-width: $width-m;
       height: $cvi-line-height-100;
       justify-content: left;
 
+      #{$base}__text_content {
+        padding-left: 10px;
+      }
+
       #{$base}__numeric_content {
         font-weight: get-font-weight(beta);
-        font-size: get-font-size(200);
+        font-size: get-font-size(100);
+        width: 100%;
       }
 
       #{$base}--with-progress {
-        border-radius: 51%;
+        border-radius: 50%;
       }
 
       #{$base}__success_icon {
         padding-top: 5px;
+        padding-left: 10px;
         height: $icon-size-m;
         fill: get-color(sea-green-10);
       }
 
       #{$base}__content {
-        text-align: left;
+        border: 1px solid get-color(black-coral-2);
+        border-radius: var(--cvi-radius-s);
+      }
+
+      #{$base}__empty {
+        // makes finished progress bar fill available width
+        min-width: $empty-padding;
       }
     }
 
@@ -91,10 +103,25 @@
           var(--progress-background-color),
           var(--progress-background-color)),
       conic-gradient(
+
           get-color(sea-green-10) var(--progress),
           get-color(black-coral-2) var(--progress));
       background-origin: border-box;
       background-clip: content-box, border-box;
+    }
+
+    #{$base}__linear {
+      margin-top: var(--cvi-spacing-haapsalu);
+      margin-bottom: var(--cvi-spacing-haapsalu);
+      margin-left: var(--cvi-spacing-haapsalu);
+      margin-right: var(--cvi-spacing-haapsalu);
+      width: $bar-width-m;
+      min-width: $bar-width-m;
+      height: 10px;
+      background-image: linear-gradient(
+          to right,
+          get-color(sea-green-10) var(--progress),
+          get-color(black-coral-2) var(--progress));
     }
   }
 }

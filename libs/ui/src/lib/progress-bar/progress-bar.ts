@@ -38,7 +38,6 @@ export const progressBarSeverityPropertyGroups: ProgressBarSeverityPropertyGroup
     {
       severity: 'none',
       properties: {
-        // Note that literal, non CSS-variable-like values like this need special treatment in the component logic
         '--background-color': 'transparent',
         '--progress-background-color': '--cvi-color-white',
       },
