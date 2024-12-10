@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { CircleComponent } from './circle/circle.component';
+import { ProgressBarComponent } from './progress-bar/progress-bar.component';
 import { ToStepCircleIconNamePipe } from './steps/steps/to-step-circle-icon-name.pipe';
 import { ToStepCircleSeverityPipe } from './steps/steps/to-step-circle-severity.pipe';
 
@@ -174,6 +175,7 @@ const components = [
   TableResponsiveComponent,
   LabeledItemComponent,
   MetadataCardComponent,
+  ProgressBarComponent,
 ];
 
 const pipes = [

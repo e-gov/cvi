@@ -1,0 +1,126 @@
+@mixin cvi-progress-bar($base: &) {
+  --comment: 'Progress bar component that appears as a horizontal bar on desktop and a circle on mobile';
+
+  /* stylelint-disable-next-line color-no-hex, declaration-property-value-allowed-list */
+  --color: #599e75;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @include cvi-breakpoint-down(sm) {
+    position: relative;
+    width: calc(var(--circle-radius) * 2 * 1px);
+    height: calc(var(--circle-radius) * 2 * 1px);
+  }
+
+  @include cvi-breakpoint-up(sm) {
+    gap: var(--cvi-spacing-haapsalu);
+  }
+
+  @at-root {
+    #{$base}.is-progress-finished {
+      #{$base}__label-wrapper {
+        @include cvi-breakpoint-down(sm) {
+          font-size: var(--cvi-font-size-70);
+        }
+      }
+    }
+
+    #{$base}__circular-bar {
+      @include cvi-breakpoint-down(sm) {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+      }
+
+      @include cvi-breakpoint-up(sm) {
+        display: none;
+      }
+    }
+
+    #{$base}__circular-bar-background {
+      fill: none;
+      stroke: var(--cvi-color-black-coral-0);
+      stroke-width: var(--circle-stroke-width);
+    }
+
+    #{$base}__circular-bar-progress {
+      fill: none;
+      stroke: var(--color);
+      stroke-width: var(--circle-stroke-width);
+      transform: rotate(-90deg);
+      transform-origin: 50% 50%;
+      transition: stroke-dashoffset 0.35s;
+      stroke-linecap: round;
+    }
+
+    #{$base}__horizontal-bar {
+      --height: 18px;
+
+      @include cvi-breakpoint-down(sm) {
+        display: none;
+      }
+
+      @include cvi-breakpoint-up(sm) {
+        width: 100%;
+        height: var(--height);
+        border-radius: calc(var(--height) / 2);
+        background-color: var(--cvi-color-black-coral-0);
+        position: relative;
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: var(--progress);
+          height: 100%;
+          background-color: var(--color);
+          border-radius: inherit;
+        }
+      }
+    }
+
+    #{$base}__numeric-content {
+      color: var(--cvi-color-black-coral-20);
+      font-weight: var(--cvi-font-weight-delta);
+
+      @include cvi-breakpoint-down(sm) {
+        font-size: var(--cvi-font-size-250);
+      }
+    }
+
+    #{$base}__label-wrapper {
+      display: flex;
+      align-items: center;
+      font-size: var(--cvi-font-size-80);
+      line-height: var(--cvi-line-height-300);
+
+      @include cvi-breakpoint-down(sm) {
+        flex-direction: column;
+        text-align: center;
+        padding-inline: calc(
+          var(--circle-stroke-width) * 1px + var(--cvi-spacing-paldiski)
+        );
+      }
+
+      @include cvi-breakpoint-up(sm) {
+        gap: var(--cvi-spacing-paldiski);
+      }
+    }
+
+    #{$base}__label {
+      color: var(--cvi-color-black-coral-12);
+    }
+
+    #{$base}__success-icon {
+      fill: var(--color);
+
+      @include cvi-breakpoint-down(sm) {
+        height: 40px;
+      }
+    }
+  }
+}

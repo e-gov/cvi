@@ -1,0 +1,24 @@
+<div class="cvi-progress-bar__label-wrapper">
+  <cvi-ng-icon *ngIf="progressFinished" name="check" svgClass="cvi-progress-bar__success-icon">
+  </cvi-ng-icon>
+
+  <span class="cvi-progress-bar__label">
+    <ng-container *ngIf="!progressFinished">
+      {{ progressMessage }}
+    </ng-container>
+    <ng-container *ngIf="progressFinished">
+      {{ successMessage }}
+    </ng-container>
+  </span>
+
+  <span *ngIf="!progressFinished" class="cvi-progress-bar__numeric-content">
+    {{ progressValue }}/{{ progressValueMax }}
+  </span>
+</div>
+
+<div *ngIf="!progressFinished" class="cvi-progress-bar__horizontal-bar"></div>
+
+<svg class="cvi-progress-bar__circular-bar" xmlns="http://www.w3.org/2000/svg" [attr.width]="getCircleDiameter()" [attr.height]="getCircleDiameter()" [attr.viewBox]="'0 0 ' + getCircleDiameter() + ' ' + getCircleDiameter()">
+  <circle class="cvi-progress-bar__circular-bar-background" [attr.cx]="circleRadius" [attr.cy]="circleRadius" [attr.r]="getCircleBoundaries()" />
+  <circle class="cvi-progress-bar__circular-bar-progress" [attr.cx]="circleRadius" [attr.cy]="circleRadius" [attr.r]="getCircleBoundaries()" [ngStyle]="{ 'stroke-dasharray': getCircleCircumference() + ' ' + getCircleCircumference(), 'stroke-dashoffset': getCircleOffset() }" />
+</svg>
