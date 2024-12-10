@@ -125,6 +125,8 @@ module.exports = {
           '100%',
           '/^var\\(--cvi-radius-/',
           '/^map\\.get\\(\\$cvi-radii/',
+          '/^calc\\(/',
+          'inherit',
         ],
         'font-size': [
           '/^var\\(/',
@@ -132,7 +134,7 @@ module.exports = {
           'inherit',
           '/^typography\\./',
         ],
-        'font-weight': ['/^get-font-weight\\(/'],
+        'font-weight': ['/^get-font-weight\\(/', '/^var\\(--cvi-font-weight-/',],
         'line-height': ['/^var\\(/', '/^get-line-height\\(/', '0'],
         'z-index': ['/^get-z-index\\(/', '/^var\\(/', '-1'],
       },
