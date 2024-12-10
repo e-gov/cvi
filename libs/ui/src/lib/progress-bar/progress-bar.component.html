@@ -1,17 +1,47 @@
 <div class="cvi-progress-bar__content">
+<ng-container *ngIf="size==='s'">
+    <cvi-ng-track [gap]="1"
+                  [gridRows]="1"
+                  flexDirection="vertical">
+      <cvi-ng-track [gap]="1"
+                    [gridRows]="1">
+        <cvi-ng-icon
+          [hidden]="!progressFinished"
+          [name]="'check'"
+          [svgClass]="'cvi-progress-bar__success_icon'">
+        </cvi-ng-icon>
+
+        <cvi-ng-labeled-item
+          [hidden]="!progressFinished"
+          class="cvi-progress-bar__text_content">
+          {{ successMessage }}
+        </cvi-ng-labeled-item>
+        <cvi-ng-labeled-item
+          [hidden]="progressFinished"
+          class="cvi-progress-bar__text_content">
+          {{ progressMessage }}
+        </cvi-ng-labeled-item>
+      </cvi-ng-track>
+
+      <cvi-ng-labeled-item
+        [hidden]="progressFinished">
+        <div class="cvi-progress-bar__numeric_content">
+          {{ progressValue }}/{{ progressValueMax }}
+        </div>
+      </cvi-ng-labeled-item>
+    </cvi-ng-track>
+</ng-container>
+
+<ng-container *ngIf="size==='m'">
   <cvi-ng-track [gap]="1"
-                [layout]="layout"
                 [gridRows]="1"
-                [verticalAlignment]="verticalAlignement"
-                [flexColumnsEqual]="flexColumnsEqual"
+                layout="grid"
+                verticalAlignment="center"
                 flexDirection="vertical">
 
     <cvi-ng-track [gap]="1"
-                  [layout]="layout"
                   [gridRows]="1"
-                  [flexColumnsEqual]="flexColumnsEqual"
                   flexDirection="horizontal">
-
       <cvi-ng-icon
         [hidden]="!progressFinished"
         [name]="'check'"
@@ -31,17 +61,17 @@
     </cvi-ng-track>
 
     <cvi-ng-labeled-item
-      [hidden]="progressFinished"
-      [class]="statusAlignement">
+      [hidden]="progressFinished">
       <div class="cvi-progress-bar__numeric_content">
         {{ progressValue }}/{{ progressValueMax }}
       </div>
     </cvi-ng-labeled-item>
-    <ng-container *ngIf="size==='m' && !progressFinished">
+    <ng-container *ngIf="!progressFinished">
       <div class="cvi-progress-bar__linear"></div>
     </ng-container>
-    <ng-container *ngIf="size==='m' && progressFinished">
+    <ng-container *ngIf="progressFinished">
       <div class="cvi-progress-bar__empty"></div>
     </ng-container>
   </cvi-ng-track>
+</ng-container>
 </div>
