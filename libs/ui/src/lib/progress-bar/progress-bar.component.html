@@ -1,77 +1,24 @@
-<div class="cvi-progress-bar__content">
-<ng-container *ngIf="size==='s'">
-    <cvi-ng-track [gap]="1"
-                  [gridRows]="1"
-                  flexDirection="vertical">
-      <cvi-ng-track [gap]="1"
-                    [gridRows]="1">
-        <cvi-ng-icon
-          [hidden]="!progressFinished"
-          [name]="'check'"
-          [svgClass]="'cvi-progress-bar__success_icon'">
-        </cvi-ng-icon>
+<div class="cvi-progress-bar__label-wrapper">
+  <cvi-ng-icon *ngIf="progressFinished" name="check" svgClass="cvi-progress-bar__success-icon">
+  </cvi-ng-icon>
 
-        <cvi-ng-labeled-item
-          [hidden]="!progressFinished"
-          class="cvi-progress-bar__text_content">
-          {{ successMessage }}
-        </cvi-ng-labeled-item>
-        <cvi-ng-labeled-item
-          [hidden]="progressFinished"
-          class="cvi-progress-bar__text_content">
-          {{ progressMessage }}
-        </cvi-ng-labeled-item>
-      </cvi-ng-track>
-
-      <cvi-ng-labeled-item
-        [hidden]="progressFinished">
-        <div class="cvi-progress-bar__numeric_content">
-          {{ progressValue }}/{{ progressValueMax }}
-        </div>
-      </cvi-ng-labeled-item>
-    </cvi-ng-track>
-</ng-container>
-
-<ng-container *ngIf="size==='m'">
-  <cvi-ng-track [gap]="1"
-                [gridRows]="1"
-                layout="grid"
-                verticalAlignment="center"
-                flexDirection="vertical">
-
-    <cvi-ng-track [gap]="1"
-                  [gridRows]="1"
-                  flexDirection="horizontal">
-      <cvi-ng-icon
-        [hidden]="!progressFinished"
-        [name]="'check'"
-        [svgClass]="'cvi-progress-bar__success_icon'">
-      </cvi-ng-icon>
-
-      <cvi-ng-labeled-item
-        [hidden]="!progressFinished"
-        class="cvi-progress-bar__text_content">
-        {{ successMessage }}
-      </cvi-ng-labeled-item>
-      <cvi-ng-labeled-item
-        [hidden]="progressFinished"
-        class="cvi-progress-bar__text_content">
-        {{ progressMessage }}
-      </cvi-ng-labeled-item>
-    </cvi-ng-track>
-
-    <cvi-ng-labeled-item
-      [hidden]="progressFinished">
-      <div class="cvi-progress-bar__numeric_content">
-        {{ progressValue }}/{{ progressValueMax }}
-      </div>
-    </cvi-ng-labeled-item>
+  <span class="cvi-progress-bar__label">
     <ng-container *ngIf="!progressFinished">
-      <div class="cvi-progress-bar__linear"></div>
+      {{ progressMessage }}
     </ng-container>
     <ng-container *ngIf="progressFinished">
-      <div class="cvi-progress-bar__empty"></div>
+      {{ successMessage }}
     </ng-container>
-  </cvi-ng-track>
-</ng-container>
+  </span>
+
+  <span *ngIf="!progressFinished" class="cvi-progress-bar__numeric-content">
+    {{ progressValue }}/{{ progressValueMax }}
+  </span>
 </div>
+
+<div *ngIf="!progressFinished" class="cvi-progress-bar__horizontal-bar"></div>
+
+<svg class="cvi-progress-bar__circular-bar" xmlns="http://www.w3.org/2000/svg" [attr.width]="getCircleDiameter()" [attr.height]="getCircleDiameter()" [attr.viewBox]="'0 0 ' + getCircleDiameter() + ' ' + getCircleDiameter()">
+  <circle class="cvi-progress-bar__circular-bar-background" [attr.cx]="circleRadius" [attr.cy]="circleRadius" [attr.r]="getCircleBoundaries()" />
+  <circle class="cvi-progress-bar__circular-bar-progress" [attr.cx]="circleRadius" [attr.cy]="circleRadius" [attr.r]="getCircleBoundaries()" [ngStyle]="{ 'stroke-dasharray': getCircleCircumference() + ' ' + getCircleCircumference(), 'stroke-dashoffset': getCircleOffset() }" />
+</svg>

@@ -5,41 +5,26 @@ import {
   Input,
 } from '@angular/core';
 
-import {
-  ProgressBarSeverityProperties,
-  ProgressBarSeverityPropertyGroup,
-  progressBarSeverityPropertyGroups,
-  ProgressBarTheme,
-  ProgressBarThemeProperties,
-  ProgressBarThemePropertyGroup,
-  progressThemePropertyGroups,
-} from './progress-bar';
-
 @Component({
   selector: 'cvi-ng-progress-bar',
   templateUrl: './progress-bar.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProgressBarComponent {
-  @Input() size: 'm' | 's' = 's';
-
   @Input() progressValueMin?: number = 0;
   @Input() progressValueMax?: number = 3;
   @Input() progressValue?: number = 0;
 
-  @Input() progressMessage?: string = 'Lõpetatud tegevused:';
-  @Input() successMessage?: string = 'Kõik tegevused lõpetatud';
-
-  private severity?: 'none' | 'success' = undefined;
-  private theme: ProgressBarTheme = 'dark';
+  @Input() progressMessage?: string;
+  @Input() successMessage?: string;
 
   @HostBinding('class') get hostClasses(): string {
-    return `cvi-progress-bar cvi-progress-bar--size-${this.size}`;
+    return `cvi-progress-bar`;
   }
 
-  @HostBinding('class.cvi-progress-bar--with-progress')
-  get hostProgressClass(): boolean {
-    return true;
+  @HostBinding('class.is-progress-finished')
+  get progressFinished(): boolean {
+    return this.progressValue === this.progressValueMax;
   }
 
   @HostBinding('style.--progress')
@@ -52,26 +37,38 @@ export class ProgressBarComponent {
     return `${percentage}%`;
   }
 
-  @HostBinding('style.--progress-finished')
-  get progressFinished(): boolean {
-    return this.progressValue === this.progressValueMax;
+  @HostBinding('style.--circle-stroke-width')
+  get circleStrokeWidth(): number {
+    return 16;
   }
 
-  @HostBinding('style.--progress-background-color')
-  get hostStyleProgressBackgroundColor(): string | null {
-    return this.getBackgroundProperty('--progress-background-color');
+  @HostBinding('style.--circle-radius')
+  get circleRadius(): number {
+    return 90;
   }
 
-  @HostBinding('style.--border-color')
-  get hostStyleBorderColor(): string | null {
-    return this.getThemeProperty('--border-color');
+  getCircleDiameter(): number {
+    return this.circleRadius * 2;
   }
 
-  @HostBinding('style.--color')
-  get hostStyleColor(): string | null {
-    return this.severity === 'none'
-      ? this.getThemeProperty('--color')
-      : this.getBackgroundProperty('--color');
+  getCircleBoundaries(): number {
+    return this.circleRadius - this.circleStrokeWidth / 2;
+  }
+
+  getCircleCircumference(): number {
+    return 2 * Math.PI * this.circleRadius;
+  }
+
+  getCircleOffset(): number {
+    const progress = this.getProgressPercentage(
+      this.progressValueMin,
+      this.progressValueMax,
+      this.progressValue
+    );
+    return (
+      this.getCircleCircumference() -
+      (progress / 100) * this.getCircleCircumference()
+    );
   }
 
   getProgressPercentage(
@@ -84,34 +81,5 @@ export class ProgressBarComponent {
 
     const progress = ((currentValue - minValue) / (maxValue - minValue)) * 100;
     return Math.round(progress);
-  }
-
-  getThemeProperty(propName: keyof ProgressBarThemeProperties): string | null {
-    const item = progressThemePropertyGroups.find(
-      (group: ProgressBarThemePropertyGroup) => group.theme === this.theme
-    );
-    if (item) {
-      return `var(${item.properties[propName as keyof ProgressBarThemeProperties]})`;
-    }
-    return null;
-  }
-
-  getBackgroundProperty(
-    propName: keyof ProgressBarSeverityProperties
-  ): string | null {
-    const item = progressBarSeverityPropertyGroups.find(
-      (group: ProgressBarSeverityPropertyGroup) =>
-        group.severity === this.severity
-    );
-    if (item) {
-      const cssValue =
-        item.properties[propName as keyof ProgressBarSeverityProperties];
-      if (cssValue !== 'transparent') {
-        return `var(${cssValue})`;
-      } else {
-        return 'transparent';
-      }
-    }
-    return null;
   }
 }

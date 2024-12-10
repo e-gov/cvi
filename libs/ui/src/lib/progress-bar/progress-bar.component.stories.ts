@@ -1,4 +1,4 @@
-import { componentWrapperDecorator, Meta, StoryObj } from '@storybook/angular';
+import { componentWrapperDecorator, Meta } from '@storybook/angular';
 import notes from '../progress-bar/progress-bar.component.md';
 import { ProgressBarComponent } from './progress-bar.component';
 
@@ -7,8 +7,9 @@ const wrapperDecorators = [
     return args;
   }),
 ];
+
 export default {
-  title: 'Angular/ProgressBar',
+  title: 'Angular/Progress bar',
   component: ProgressBarComponent,
   parameters: {
     docs: {
@@ -16,34 +17,14 @@ export default {
         component: notes,
       },
     },
-    layout: 'centered',
-    backgrounds: {
-      default: 'Gray',
-    },
-  },
-  argTypes: {
-    background: {
-      name: 'background',
-      control: { type: 'inline-radio' },
-    },
-    size: {
-      name: 'Size',
-      control: { type: 'inline-radio' },
-    },
-    progressValue: {
-      name: 'progressValue',
-      control: { type: 'range', min: 0, max: 3, step: 1 },
-    },
+    layout: 'padded',
   },
   args: {
-    theme: 'dark',
-    severity: 'none',
-    size: 's',
     progressValue: 0,
+    progressMessage: 'Lõpetatud tegevused:',
+    successMessage: 'Kõik tegevused lõpetatud',
   },
 } as Meta<ProgressBarComponent>;
-
-type Story = StoryObj<ProgressBarComponent>;
 
 export const Default = {
   render: (args: ProgressBarComponent) => ({
@@ -60,9 +41,6 @@ export const Mobile0 = {
       defaultViewport: 'iphone12mini',
     },
   },
-  args: {
-    size: 's',
-  },
 };
 
 export const Mobile1 = {
@@ -73,7 +51,6 @@ export const Mobile1 = {
     },
   },
   args: {
-    size: 's',
     progressValue: 1,
   },
 };
@@ -86,7 +63,6 @@ export const Mobile2 = {
     },
   },
   args: {
-    size: 's',
     progressValue: 2,
   },
 };
@@ -99,7 +75,6 @@ export const Mobile3 = {
     },
   },
   args: {
-    size: 's',
     progressValue: 3,
   },
 };
@@ -107,7 +82,6 @@ export const Mobile3 = {
 export const Desktop0 = {
   ...Default,
   args: {
-    size: 'm',
     progressValue: 0,
   },
 };
@@ -115,7 +89,6 @@ export const Desktop0 = {
 export const Desktop1 = {
   ...Default,
   args: {
-    size: 'm',
     progressValue: 1,
   },
 };
@@ -123,7 +96,6 @@ export const Desktop1 = {
 export const Desktop2 = {
   ...Default,
   args: {
-    size: 'm',
     progressValue: 2,
   },
 };
@@ -131,7 +103,6 @@ export const Desktop2 = {
 export const Desktop3 = {
   ...Default,
   args: {
-    size: 'm',
     progressValue: 3,
   },
 };

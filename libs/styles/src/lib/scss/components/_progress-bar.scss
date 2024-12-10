@@ -1,126 +1,126 @@
 @mixin cvi-progress-bar($base: &) {
-  --comment: 'Configurable progress bar component';
+  --comment: 'Progress bar component that appears as a horizontal bar on desktop and a circle on mobile';
 
-  $progress-bar-border-width: 15px;
-  $progress-bar-content-border-width: 24px;
+  /* stylelint-disable-next-line color-no-hex, declaration-property-value-allowed-list */
+  --color: #599e75;
 
-  $width-m: 700px;
-  $width-s: 250px;
-  $bar-width-m:450px;
-  $cvi-line-height-100: 1px;
-  $cvi-line-height-250: 250px;
-  $empty-padding: 460px;
-
-  $icon-size-m: 35px;
-  $icon-size-s: 60px;
-
-  border: 0;
-  color: var(--cvi-circle-color, var(--color));
-  fill: var(--cvi-circle-color, var(--color));
-  aspect-ratio: 1;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
-  // This prevents the circle to get shrunk when inside of a flex track
-  flex-shrink: 0;
-  box-shadow: var(--cvi-shadow-beta);
+
+  @include cvi-breakpoint-down(sm) {
+    position: relative;
+    width: calc(var(--circle-radius) * 2 * 1px);
+    height: calc(var(--circle-radius) * 2 * 1px);
+  }
+
+  @include cvi-breakpoint-up(sm) {
+    gap: var(--cvi-spacing-haapsalu);
+  }
 
   @at-root {
-    #{$base}--size-s {
-      border-radius: 51%;
-      border: $progress-bar-content-border-width solid transparent;
-      width: $width-s;
-      height: $cvi-line-height-250;
-
-      #{$base}__numeric_content {
-        font-weight: get-font-weight(gamma);
-        font-size: get-font-size(400);
-      }
-
-      #{$base}--with-progress {
-        border: $progress-bar-border-width solid transparent;
-      }
-
-      #{$base}__success_icon {
-        height: $icon-size-s;
-        fill: get-color(sea-green-10);
-      }
-
-      #{$base}__content {
-        margin-top: var(--cvi-spacing-haapsalu);
-        text-align: center;
+    #{$base}.is-progress-finished {
+      #{$base}__label-wrapper {
+        @include cvi-breakpoint-down(sm) {
+          font-size: var(--cvi-font-size-70);
+        }
       }
     }
 
-    #{$base}--size-m {
-      min-width: $width-m;
-      height: $cvi-line-height-100;
-      justify-content: left;
-
-      #{$base}__text_content {
-        padding-left: 10px;
+    #{$base}__circular-bar {
+      @include cvi-breakpoint-down(sm) {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
       }
 
-      #{$base}__numeric_content {
-        font-weight: get-font-weight(beta);
-        font-size: get-font-size(100);
+      @include cvi-breakpoint-up(sm) {
+        display: none;
+      }
+    }
+
+    #{$base}__circular-bar-background {
+      fill: none;
+      stroke: var(--cvi-color-black-coral-0);
+      stroke-width: var(--circle-stroke-width);
+    }
+
+    #{$base}__circular-bar-progress {
+      fill: none;
+      stroke: var(--color);
+      stroke-width: var(--circle-stroke-width);
+      transform: rotate(-90deg);
+      transform-origin: 50% 50%;
+      transition: stroke-dashoffset 0.35s;
+      stroke-linecap: round;
+    }
+
+    #{$base}__horizontal-bar {
+      --height: 18px;
+
+      @include cvi-breakpoint-down(sm) {
+        display: none;
+      }
+
+      @include cvi-breakpoint-up(sm) {
         width: 100%;
-      }
+        height: var(--height);
+        border-radius: calc(var(--height) / 2);
+        background-color: var(--cvi-color-black-coral-0);
+        position: relative;
 
-      #{$base}--with-progress {
-        border-radius: 50%;
-      }
-
-      #{$base}__success_icon {
-        padding-top: 5px;
-        padding-left: 10px;
-        height: $icon-size-m;
-        fill: get-color(sea-green-10);
-      }
-
-      #{$base}__content {
-        border: 1px solid get-color(black-coral-2);
-        border-radius: var(--cvi-radius-s);
-      }
-
-      #{$base}__empty {
-        // makes finished progress bar fill available width
-        min-width: $empty-padding;
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: var(--progress);
+          height: 100%;
+          background-color: var(--color);
+          border-radius: inherit;
+        }
       }
     }
 
-    &#{$base}--severity-none {
-      color: get-color(black-coral-10);
+    #{$base}__numeric-content {
+      color: var(--cvi-color-black-coral-20);
+      font-weight: var(--cvi-font-weight-delta);
+
+      @include cvi-breakpoint-down(sm) {
+        font-size: var(--cvi-font-size-250);
+      }
     }
 
-    #{$base}__content-icon {
-      fill: get-color(sea-green-10);
+    #{$base}__label-wrapper {
+      display: flex;
+      align-items: center;
+      font-size: var(--cvi-font-size-80);
+      line-height: var(--cvi-line-height-300);
+
+      @include cvi-breakpoint-down(sm) {
+        flex-direction: column;
+        text-align: center;
+        padding-inline: calc(
+          var(--circle-stroke-width) * 1px + var(--cvi-spacing-paldiski)
+        );
+      }
+
+      @include cvi-breakpoint-up(sm) {
+        gap: var(--cvi-spacing-paldiski);
+      }
     }
 
-    #{$base}--with-progress {
-      background-image: linear-gradient(
-          var(--progress-background-color),
-          var(--progress-background-color)),
-      conic-gradient(
-
-          get-color(sea-green-10) var(--progress),
-          get-color(black-coral-2) var(--progress));
-      background-origin: border-box;
-      background-clip: content-box, border-box;
+    #{$base}__label {
+      color: var(--cvi-color-black-coral-12);
     }
 
-    #{$base}__linear {
-      margin-top: var(--cvi-spacing-haapsalu);
-      margin-bottom: var(--cvi-spacing-haapsalu);
-      margin-left: var(--cvi-spacing-haapsalu);
-      margin-right: var(--cvi-spacing-haapsalu);
-      width: $bar-width-m;
-      min-width: $bar-width-m;
-      height: 10px;
-      background-image: linear-gradient(
-          to right,
-          get-color(sea-green-10) var(--progress),
-          get-color(black-coral-2) var(--progress));
+    #{$base}__success-icon {
+      fill: var(--color);
+
+      @include cvi-breakpoint-down(sm) {
+        height: 40px;
+      }
     }
   }
 }
