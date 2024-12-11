@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [3.3.1](https://github.com/e-gov/cvi/compare/styles-3.3.0...styles-3.3.1) (2024-12-11)
+
+
+### Bug Fixes
+
+* **ui:** remove z-index from circular-bar scss EBS-1515 ([#239](https://github.com/e-gov/cvi/issues/239)) ([102758b](https://github.com/e-gov/cvi/commit/102758bb77b344d2e492dd19736d6d505faed5a4))
+
+
+
 # [3.3.0](https://github.com/e-gov/cvi/compare/styles-3.2.0...styles-3.3.0) (2024-12-11)
 
 
