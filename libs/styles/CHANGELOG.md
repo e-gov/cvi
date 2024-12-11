@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [3.3.0](https://github.com/e-gov/cvi/compare/styles-3.2.0...styles-3.3.0) (2024-12-11)
+
+
+### Features
+
+* **ui:** add progress bar component EBS-1515 ([#238](https://github.com/e-gov/cvi/issues/238)) ([8e8ee93](https://github.com/e-gov/cvi/commit/8e8ee93e6cb0c5a74b5dc59481c8a2079df20be3))
+
+
+
 # [3.2.0](https://github.com/e-gov/cvi/compare/styles-3.1.0...styles-3.2.0) (2024-09-11)
 
 
